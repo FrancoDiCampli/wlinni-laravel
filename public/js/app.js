@@ -1939,6 +1939,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3168,6 +3173,12 @@ var render = function() {
     "div",
     [
       _c("w-parallax", { attrs: { image: "/images/bg.jpg", height: "50" } }),
+      _vm._v(" "),
+      _c(
+        "w-navbar",
+        [_c("w-top-bar", [_c("w-icon", { attrs: { icon: "flag" } })], 1)],
+        1
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "card" }, [
         _c(
@@ -20929,7 +20940,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel-projects\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
 
 
 /***/ })
