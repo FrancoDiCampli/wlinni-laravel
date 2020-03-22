@@ -1,0 +1,46 @@
+@import "./_variables.scss";
+
+.btn {
+  position: relative;
+  float: left;
+  margin: 20px 12px;
+  padding: 13px 26px;
+  font-size: 13px;
+  text-transform: uppercase;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  -moz-user-disabled: none;
+  -webkit-user-select: none;
+  user-select: none;
+  &.dark {
+    color: white;
+  }
+  &.large {
+    padding: 20px 40px;
+    &.rounded {
+      border-radius: 40px;
+    }
+    &.outlined {
+      border-width: 4.5px;
+    }
+  }
+  &.small {
+    padding: 6px 16px;
+    &.rounded {
+      border-radius: 16px;
+    }
+    &.outlined {
+      border-width: 1.5px;
+    }
+  }
+  &.rounded {
+    border-radius: 26px;
+  }
+  &.outlined {
+    background-color: white;
+    border-width: 3px;
+    border-style: solid;
+  }
+}

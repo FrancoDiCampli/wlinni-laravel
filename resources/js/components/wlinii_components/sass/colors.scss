@@ -1,0 +1,51 @@
+@import "./_variables.scss";
+
+.primary {
+  background-color: $primary;
+}
+.secondary {
+  background-color: $secondary;
+}
+.tertiary {
+  background-color: $tertiary;
+}
+.accent {
+  background-color: $accent;
+}
+.success {
+  background-color: $success;
+}
+.error {
+  background-color: $error;
+}
+.black {
+  background-color: black;
+}
+.white {
+  background-color: white;
+}
+
+.primary-text {
+  color: $primary;
+}
+.secondary-text {
+  color: $secondary;
+}
+.tertiary-text {
+  color: $tertiary;
+}
+.accent-text {
+  color: $accent;
+}
+.success-text {
+  color: $success;
+}
+.error-text {
+  color: $error;
+}
+.black-text {
+  color: black;
+}
+.white-text {
+  color: white;
+}
