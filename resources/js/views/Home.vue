@@ -1,17 +1,23 @@
 <template>
-    <div>
-        <w-parallax image="/images/bg.jpg" height="50"></w-parallax>
+    <div class="container m-auto">
         <w-navbar>
             <w-top-bar>
-                <w-icon :icon="'flag'"></w-icon>
+                <w-icon icon="flag" h="20px"></w-icon>
             </w-top-bar>
         </w-navbar>
-        <div class="card">
-            <form>
-                <w-input label="Nombre" v-model="name" color="secondary"></w-input>
-                <p class="title bold primary-text">{{ name }}</p>
-            </form>
-        </div>
+
+        <w-parallax image="/images/bg.jpg" height="50">
+            <div class="main-content">
+                <div class="title-content">
+                    <h1 class="title">
+                        Profesionales inmobiliarios dedicados a usted
+                    </h1>
+                </div>
+                <div class="card-content">
+                    <div class="temporary-card"></div>
+                </div>
+            </div>
+        </w-parallax>
     </div>
 </template>
 

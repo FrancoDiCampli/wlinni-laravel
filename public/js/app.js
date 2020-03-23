@@ -1944,6 +1944,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1954,9 +1960,214 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PreciosSuscripcion.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/PreciosSuscripcion.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      cards1: [{
+        tipo: "FREE",
+        tarifa: 0
+      }, {
+        tipo: "STANDAR",
+        tarifa: 39
+      }, {
+        tipo: "PREMIUM",
+        tarifa: 74
+      }],
+      cards2: [{
+        tipo: "FREE",
+        tarifa: 80
+      }, {
+        tipo: "GOLD",
+        tarifa: 99
+      }, {
+        tipo: "PREMIUM",
+        tarifa: 106
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/wlinii_components/sass/app.scss":
 /*!****************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./resources/js/components/wlinii_components/sass/app.scss ***!
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/wlinii_components/sass/app.scss ***!
   \****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1967,7 +2178,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: \"Roboto-Regular\";\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Regular.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Regular.ttf")) + ") format(\"truetype\");\n}\n@font-face {\n  font-family: \"Roboto-Bold\";\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Bold.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Bold.ttf")) + ") format(\"truetype\");\n}\n@font-face {\n  font-family: \"Roboto-Light\";\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Light.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Light.ttf")) + ") format(\"truetype\");\n}\nhtml {\n  font-family: Roboto-Regular, sans-serif;\n  font-weight: normal;\n}\n\n.bold {\n  font-family: Roboto-Bold, sans-serif;\n  font-weight: bold;\n}\n\n.light {\n  font-family: Roboto-Light, sans-serif;\n  font-weight: lighter;\n}\n\n.title {\n  font-size: 55px;\n}\n\n.subtitle {\n  font-size: 34px;\n}\n\n.body {\n  font-size: 21px;\n}\n\n.caption {\n  font-size: 13px;\n}\n\n.primary {\n  background-color: #041e42;\n}\n\n.secondary {\n  background-color: #ff7500;\n}\n\n.tertiary {\n  background-color: #a08629;\n}\n\n.accent {\n  background-color: #193c63;\n}\n\n.success {\n  background-color: #0ebfa7;\n}\n\n.error {\n  background-color: #ff0000;\n}\n\n.black {\n  background-color: black;\n}\n\n.white {\n  background-color: white;\n}\n\n.primary-text {\n  color: #041e42;\n}\n\n.secondary-text {\n  color: #ff7500;\n}\n\n.tertiary-text {\n  color: #a08629;\n}\n\n.accent-text {\n  color: #193c63;\n}\n\n.success-text {\n  color: #0ebfa7;\n}\n\n.error-text {\n  color: #ff0000;\n}\n\n.black-text {\n  color: black;\n}\n\n.white-text {\n  color: white;\n}\n\n.nav-container {\n  margin-bottom: 160px;\n}\n.nav-container .navbar {\n  width: 100%;\n  height: auto;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 9;\n  transition: ease 0.25s;\n}\n.nav-container .navbar.nav-hidden {\n  transition: ease 1s;\n  transform: translateY(-60px);\n}\n.nav-container .navbar.main-nav .top-bar {\n  background-color: transparent;\n}\n.nav-container .navbar.main-nav .top-bar .nav-btn {\n  color: white;\n}\n.nav-container .navbar.main-nav .bottom-bar {\n  background-color: transparent;\n}\n.nav-container .navbar.main-nav .bottom-bar .nav-btn {\n  color: white;\n}\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar {\n  transition: ease 1s;\n  background-color: white;\n  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n}\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar .nav-btn {\n  color: black;\n}\n.nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n  width: 100%;\n  padding: 0px 60px;\n}\n.nav-container .navbar .top-bar {\n  height: 60px;\n  background-color: #041e42;\n}\n.nav-container .navbar .top-bar .nav-btn {\n  height: 60px;\n  color: white;\n}\n.nav-container .navbar .top-bar .nav-btn.disabled {\n  color: white;\n}\n.nav-container .navbar .top-bar .nav-btn-icon {\n  height: 60px;\n}\n.nav-container .navbar .bottom-bar {\n  height: 80px;\n  background-color: white;\n}\n.nav-container .navbar .bottom-bar .nav-btn,\n.nav-container .navbar .bottom-bar .nav-btn-icon {\n  height: 80px;\n}\n.nav-container .navbar .nav-btn,\n.nav-container .navbar .nav-btn-icon {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: auto;\n  float: left;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  user-select: none;\n}\n.nav-container .navbar .nav-btn.disabled,\n.nav-container .navbar .nav-btn-icon.disabled {\n  color: #757575;\n  cursor: default;\n}\n.nav-container .navbar .nav-btn.disabled:hover,\n.nav-container .navbar .nav-btn-icon.disabled:hover {\n  background-color: transparent;\n}\n.nav-container .navbar .nav-btn.active,\n.nav-container .navbar .nav-btn-icon.active {\n  border-bottom: 3px solid #041e42;\n}\n.nav-container .navbar .nav-btn {\n  padding: 16px;\n  text-transform: uppercase;\n}\n.nav-container .navbar .nav-btn .icon {\n  margin-right: 16px;\n}\n.nav-container .navbar .nav-btn:hover {\n  background-color: rgba(0, 0, 0, 0.25);\n}\n.nav-container .navbar .nav-btn-icon {\n  padding: 6px;\n}\n\n@media (max-width: 800px) {\n  .nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n    padding: 0px 15px;\n  }\n}\n@media (max-width: 768px) {\n  .nav-container {\n    margin-bottom: 80px;\n  }\n  .nav-container .navbar.nav-hidden {\n    transform: translateY(0px);\n  }\n  .nav-container .navbar.main-nav.nav-hidden .top-bar {\n    transition: ease 1s;\n    background-color: white;\n    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n  }\n  .nav-container .navbar.main-nav.nav-hidden .top-bar .nav-btn {\n    color: white;\n  }\n  .nav-container .navbar .top-bar.desktop,\n.nav-container .navbar .bottom-bar.desktop {\n    display: none;\n  }\n  .nav-container .navbar .top-bar.mobile,\n.nav-container .navbar .bottom-bar.mobile {\n    display: flex;\n  }\n}\n@media (min-width: 769px) {\n  .nav-container .navbar .top-bar.desktop,\n.nav-container .navbar .bottom-bar.desktop {\n    display: flex;\n  }\n  .nav-container .navbar .top-bar.mobile,\n.nav-container .navbar .bottom-bar.mobile {\n    display: none;\n  }\n}\nform {\n  position: relative;\n  padding: 36px 0px;\n}\nform .input-container {\n  height: 62px;\n  margin-bottom: 16px;\n}\nform .input-container .input-group {\n  position: relative;\n  width: 100%;\n  height: 42px;\n  background-color: white;\n  border: thin solid black;\n  border-radius: 21px;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\nform .input-container .input-group.disabled {\n  border-color: #9e9e9e;\n}\nform .input-container .input-group input {\n  width: 100%;\n  height: 99%;\n  font-size: 13px;\n  padding: 12px 0px;\n  border: none;\n}\nform .input-container .input-group input.active ~ label {\n  transform: translateY(-34px);\n}\nform .input-container .input-group input:focus ~ label {\n  transform: translateY(-34px);\n}\nform .input-container .input-group input:focus {\n  outline: none;\n}\nform .input-container .input-group input.disabled {\n  background-color: white;\n}\nform .input-container .input-group input.disabled ~ label {\n  color: #9e9e9e;\n}\nform .input-container .input-group label {\n  color: #000;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  position: absolute;\n  pointer-events: none;\n  transition: 0.25s ease all;\n  -moz-transition: 0.25s ease all;\n  -webkit-transition: 0.25s ease all;\n}\nform .input-container .error-input {\n  margin: 2px 0px 0px 21px;\n  font-size: 13px;\n  color: #ff0000;\n}\nform .checkbox-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 19px;\n}\nform .checkbox-group label {\n  margin: 0px 8px;\n  font-size: 13px;\n  color: black;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  user-select: none;\n}\nform .checkbox-group label:before, form .checkbox-group label:after {\n  content: \"\";\n  position: absolute;\n  left: 19px;\n  top: 0;\n}\nform .checkbox-group label:before {\n  width: 15px;\n  height: 15px;\n  background: #fff;\n  border: 1px solid #000;\n  cursor: pointer;\n  transition: background 0.3s;\n}\nform .checkbox-group input[type=checkbox] {\n  outline: 0;\n  visibility: hidden;\n  width: 15px;\n  margin: 0;\n}\nform .checkbox-group input[type=checkbox]:disabled + label {\n  color: #9e9e9e;\n}\nform .checkbox-group input[type=checkbox]:disabled + label:before {\n  border-color: #9e9e9e;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label {\n  color: #041e42;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label:before {\n  background: #041e42;\n  border: none;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label {\n  color: #ff7500;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label:before {\n  background: #ff7500;\n  border: none;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label {\n  color: #a08629;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label:before {\n  background: #a08629;\n  border: none;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label {\n  color: #193c63;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label:before {\n  background: #193c63;\n  border: none;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label {\n  color: #0ebfa7;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label:before {\n  background: #0ebfa7;\n  border: none;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label {\n  color: #ff0000;\n}\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label:before {\n  background: #ff0000;\n  border: none;\n}\nform .checkbox-group input[type=checkbox]:checked:disabled + label:before {\n  background: #9e9e9e;\n  border: none;\n}\nform .checkbox-group input[type=checkbox]:checked + label:after {\n  transform: translate(4px, 4.8076923077px) rotate(-45deg);\n  width: 7px;\n  height: 3.5px;\n  border: 2px solid white;\n  border-top-style: none;\n  border-right-style: none;\n}\nform button[type=submit] {\n  border: none;\n  width: 100%;\n  height: 42px;\n  border-radius: 21px;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  color: white;\n  background-color: #a08629;\n}\n\n.parallax-container .parallax {\n  width: 100%;\n  top: 0;\n  left: 0;\n  background-position-y: 0;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.carousel-container {\n  display: flex;\n  justify-content: center;\n  overflow: hidden;\n  background-size: 100% 75%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n.carousel-container .carousel {\n  width: 75%;\n  margin: auto;\n}\n.carousel-container .carousel .carousel-item {\n  padding: 0px 21px;\n}\n.carousel-container .carousel .VueCarousel .VueCarousel-navigation button {\n  outline: none;\n}\n\n@media (max-width: 600px) {\n  .carousel-container {\n    background: none;\n  }\n  .carousel-container .carousel {\n    width: 100%;\n  }\n  .carousel-container .carousel .carousel-item {\n    width: 85%;\n    margin: auto;\n  }\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot {\n    width: 12px !important;\n    height: 12px !important;\n    padding: 7px !important;\n    background-color: black !important;\n  }\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot.VueCarousel-dot--active {\n    background-color: #a08629 !important;\n  }\n}\n.btn {\n  position: relative;\n  float: left;\n  margin: 20px 12px;\n  padding: 13px 26px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  border: none;\n  cursor: pointer;\n  outline: none;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  user-select: none;\n}\n.btn.dark {\n  color: white;\n}\n.btn.large {\n  padding: 20px 40px;\n}\n.btn.large.rounded {\n  border-radius: 40px;\n}\n.btn.large.outlined {\n  border-width: 4.5px;\n}\n.btn.small {\n  padding: 6px 16px;\n}\n.btn.small.rounded {\n  border-radius: 16px;\n}\n.btn.small.outlined {\n  border-width: 1.5px;\n}\n.btn.rounded {\n  border-radius: 26px;\n}\n.btn.outlined {\n  background-color: white;\n  border-width: 3px;\n  border-style: solid;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\nbody::-webkit-scrollbar {\n  width: 0.5rem;\n}\n\nbody::-webkit-scrollbar-thumb {\n  background-color: #193c63;\n}", ""]);
+exports.push([module.i, "@font-face {\n  font-family: \"Roboto-Regular\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Regular.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Regular.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Bold\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Bold.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Bold.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Light\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Light.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Light.ttf")) + ") format(\"truetype\");\n}\n\nhtml {\n  font-family: Roboto-Regular, sans-serif;\n  font-weight: normal;\n}\n\n.bold {\n  font-family: Roboto-Bold, sans-serif;\n  font-weight: bold;\n}\n\n.light {\n  font-family: Roboto-Light, sans-serif;\n  font-weight: lighter;\n}\n\n.title {\n  font-size: 55px;\n}\n\n.subtitle {\n  font-size: 34px;\n}\n\n.body {\n  font-size: 21px;\n}\n\n.caption {\n  font-size: 13px;\n}\n\n.primary {\n  background-color: #041e42;\n}\n\n.secondary {\n  background-color: #ff7500;\n}\n\n.tertiary {\n  background-color: #a08629;\n}\n\n.accent {\n  background-color: #193c63;\n}\n\n.success {\n  background-color: #0ebfa7;\n}\n\n.error {\n  background-color: #ff0000;\n}\n\n.black {\n  background-color: black;\n}\n\n.white {\n  background-color: white;\n}\n\n.primary-text {\n  color: #041e42;\n}\n\n.secondary-text {\n  color: #ff7500;\n}\n\n.tertiary-text {\n  color: #a08629;\n}\n\n.accent-text {\n  color: #193c63;\n}\n\n.success-text {\n  color: #0ebfa7;\n}\n\n.error-text {\n  color: #ff0000;\n}\n\n.black-text {\n  color: black;\n}\n\n.white-text {\n  color: white;\n}\n\n.nav-container {\n  margin-bottom: 160px;\n}\n\n.nav-container .navbar {\n  width: 100%;\n  height: auto;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 9;\n  transition: ease 0.25s;\n}\n\n.nav-container .navbar.nav-hidden {\n  transition: ease 1s;\n  transform: translateY(-60px);\n}\n\n.nav-container .navbar.main-nav .top-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .top-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav .bottom-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .bottom-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar {\n  transition: ease 1s;\n  background-color: white;\n  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar .nav-btn {\n  color: black;\n}\n\n.nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n  width: 100%;\n  padding: 0px 60px;\n}\n\n.nav-container .navbar .top-bar {\n  height: 60px;\n  background-color: #041e42;\n}\n\n.nav-container .navbar .top-bar .nav-btn {\n  height: 60px;\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn.disabled {\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn-icon {\n  height: 60px;\n}\n\n.nav-container .navbar .bottom-bar {\n  height: 80px;\n  background-color: white;\n}\n\n.nav-container .navbar .bottom-bar .nav-btn,\n.nav-container .navbar .bottom-bar .nav-btn-icon {\n  height: 80px;\n}\n\n.nav-container .navbar .nav-btn,\n.nav-container .navbar .nav-btn-icon {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: auto;\n  float: left;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.nav-container .navbar .nav-btn.disabled,\n.nav-container .navbar .nav-btn-icon.disabled {\n  color: #757575;\n  cursor: default;\n}\n\n.nav-container .navbar .nav-btn.disabled:hover,\n.nav-container .navbar .nav-btn-icon.disabled:hover {\n  background-color: transparent;\n}\n\n.nav-container .navbar .nav-btn.active,\n.nav-container .navbar .nav-btn-icon.active {\n  border-bottom: 3px solid #041e42;\n}\n\n.nav-container .navbar .nav-btn {\n  padding: 16px;\n  text-transform: uppercase;\n}\n\n.nav-container .navbar .nav-btn .icon {\n  margin-right: 16px;\n}\n\n.nav-container .navbar .nav-btn:hover {\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n.nav-container .navbar .nav-btn-icon {\n  padding: 6px;\n}\n\n@media (max-width: 800px) {\n  .nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n    padding: 0px 15px;\n  }\n}\n\n@media (max-width: 768px) {\n  .nav-container {\n    margin-bottom: 80px;\n  }\n\n  .nav-container .navbar.nav-hidden {\n    transform: translateY(0px);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar {\n    transition: ease 1s;\n    background-color: white;\n    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar .nav-btn {\n    color: white;\n  }\n\n  .nav-container .navbar .top-bar.desktop,\n.nav-container .navbar .bottom-bar.desktop {\n    display: none;\n  }\n\n  .nav-container .navbar .top-bar.mobile,\n.nav-container .navbar .bottom-bar.mobile {\n    display: flex;\n  }\n}\n\n@media (min-width: 769px) {\n  .nav-container .navbar .top-bar.desktop,\n.nav-container .navbar .bottom-bar.desktop {\n    display: flex;\n  }\n\n  .nav-container .navbar .top-bar.mobile,\n.nav-container .navbar .bottom-bar.mobile {\n    display: none;\n  }\n}\n\nform {\n  position: relative;\n  padding: 36px 0px;\n}\n\nform .input-container {\n  height: 62px;\n  margin-bottom: 16px;\n}\n\nform .input-container .input-group {\n  position: relative;\n  width: 100%;\n  height: 42px;\n  background-color: white;\n  border: thin solid black;\n  border-radius: 21px;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .input-container .input-group.disabled {\n  border-color: #9e9e9e;\n}\n\nform .input-container .input-group input {\n  width: 100%;\n  height: 99%;\n  font-size: 13px;\n  padding: 12px 0px;\n  border: none;\n}\n\nform .input-container .input-group input.active ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group input:focus ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group input:focus {\n  outline: none;\n}\n\nform .input-container .input-group input.disabled {\n  background-color: white;\n}\n\nform .input-container .input-group input.disabled ~ label {\n  color: #9e9e9e;\n}\n\nform .input-container .input-group label {\n  color: #000;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  position: absolute;\n  pointer-events: none;\n  transition: 0.25s ease all;\n  -moz-transition: 0.25s ease all;\n  -webkit-transition: 0.25s ease all;\n}\n\nform .input-container .error-input {\n  margin: 2px 0px 0px 21px;\n  font-size: 13px;\n  color: #ff0000;\n}\n\nform .checkbox-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 19px;\n}\n\nform .checkbox-group label {\n  margin: 0px 8px;\n  font-size: 13px;\n  color: black;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .checkbox-group label:before, form .checkbox-group label:after {\n  content: \"\";\n  position: absolute;\n  left: 19px;\n  top: 0;\n}\n\nform .checkbox-group label:before {\n  width: 15px;\n  height: 15px;\n  background: #fff;\n  border: 1px solid #000;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n\nform .checkbox-group input[type=checkbox] {\n  outline: 0;\n  visibility: hidden;\n  width: 15px;\n  margin: 0;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label {\n  color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label:before {\n  border-color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label {\n  color: #041e42;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label:before {\n  background: #041e42;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label {\n  color: #ff7500;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label:before {\n  background: #ff7500;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label {\n  color: #a08629;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label:before {\n  background: #a08629;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label {\n  color: #193c63;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label:before {\n  background: #193c63;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label {\n  color: #0ebfa7;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label:before {\n  background: #0ebfa7;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label {\n  color: #ff0000;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label:before {\n  background: #ff0000;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked:disabled + label:before {\n  background: #9e9e9e;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked + label:after {\n  transform: translate(4px, 4.8076923077px) rotate(-45deg);\n  width: 7px;\n  height: 3.5px;\n  border: 2px solid white;\n  border-top-style: none;\n  border-right-style: none;\n}\n\nform button[type=submit] {\n  border: none;\n  width: 100%;\n  height: 42px;\n  border-radius: 21px;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  color: white;\n  background-color: #a08629;\n}\n\n.parallax-container .parallax {\n  width: 100%;\n  top: 0;\n  left: 0;\n  background-position-y: 0;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.carousel-container {\n  display: flex;\n  justify-content: center;\n  overflow: hidden;\n  background-size: 100% 75%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n\n.carousel-container .carousel {\n  width: 75%;\n  margin: auto;\n}\n\n.carousel-container .carousel .carousel-item {\n  padding: 0px 21px;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-navigation button {\n  outline: none;\n}\n\n@media (max-width: 600px) {\n  .carousel-container {\n    background: none;\n  }\n\n  .carousel-container .carousel {\n    width: 100%;\n  }\n\n  .carousel-container .carousel .carousel-item {\n    width: 85%;\n    margin: auto;\n  }\n\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot {\n    width: 12px !important;\n    height: 12px !important;\n    padding: 7px !important;\n    background-color: black !important;\n  }\n\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot.VueCarousel-dot--active {\n    background-color: #a08629 !important;\n  }\n}\n\n.btn {\n  position: relative;\n  float: left;\n  margin: 20px 12px;\n  padding: 13px 26px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  border: none;\n  cursor: pointer;\n  outline: none;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.btn.dark {\n  color: white;\n}\n\n.btn.large {\n  padding: 20px 40px;\n}\n\n.btn.large.rounded {\n  border-radius: 40px;\n}\n\n.btn.large.outlined {\n  border-width: 4.5px;\n}\n\n.btn.small {\n  padding: 6px 16px;\n}\n\n.btn.small.rounded {\n  border-radius: 16px;\n}\n\n.btn.small.outlined {\n  border-width: 1.5px;\n}\n\n.btn.rounded {\n  border-radius: 26px;\n}\n\n.btn.outlined {\n  background-color: white;\n  border-width: 3px;\n  border-style: solid;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\nbody::-webkit-scrollbar {\n  width: 0.5rem;\n}\n\nbody::-webkit-scrollbar-thumb {\n  background-color: #193c63;\n}", ""]);
 
 // exports
 
@@ -1976,7 +2187,7 @@ exports.push([module.i, "@font-face {\n  font-family: \"Roboto-Regular\";\n  src
 
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true& ***!
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true& ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2502,13 +2713,13 @@ process.umask = function() { return 0; };
 
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true&":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true& ***!
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true& ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true&");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -3171,40 +3382,411 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "container m-auto" },
     [
-      _c("w-parallax", { attrs: { image: "/images/bg.jpg", height: "50" } }),
-      _vm._v(" "),
       _c(
         "w-navbar",
-        [_c("w-top-bar", [_c("w-icon", { attrs: { icon: "flag" } })], 1)],
+        [
+          _c(
+            "w-top-bar",
+            [_c("w-icon", { attrs: { icon: "flag", h: "20px" } })],
+            1
+          )
+        ],
         1
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _c(
-          "form",
-          [
-            _c("w-input", {
-              attrs: { label: "Nombre", color: "secondary" },
-              model: {
-                value: _vm.name,
-                callback: function($$v) {
-                  _vm.name = $$v
-                },
-                expression: "name"
-              }
-            }),
-            _vm._v(" "),
-            _c("p", { staticClass: "title bold primary-text" }, [
-              _vm._v(_vm._s(_vm.name))
+      _c("w-parallax", { attrs: { image: "/images/bg.jpg", height: "50" } }, [
+        _c("div", { staticClass: "main-content" }, [
+          _c("div", { staticClass: "title-content" }, [
+            _c("h1", { staticClass: "title" }, [
+              _vm._v(
+                "\n                    Profesionales inmobiliarios dedicados a usted\n                "
+              )
             ])
-          ],
-          1
-        )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-content" }, [
+            _c("div", { staticClass: "temporary-card" })
+          ])
+        ])
       ])
     ],
     1
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PreciosSuscripcion.vue?vue&type=template&id=4f0a76c4&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/PreciosSuscripcion.vue?vue&type=template&id=4f0a76c4& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "container m-auto rounded-lg overflow-hidden shadow-lg" },
+      [
+        _c("div", { staticClass: "flex-wrap" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex justify-center tracking-wide pl-12 lg:pl-0 font-bold text-4xl"
+            },
+            [_vm._v("\n                Precios de suscripción\n            ")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex-wrap" }, [
+            _c(
+              "div",
+              { staticClass: "my-8" },
+              [
+                _c(
+                  "w-carousel",
+                  { attrs: { items: 1, pagination: true } },
+                  _vm._l(_vm.cards1, function(item) {
+                    return _c("slide", { key: item.i }, [
+                      _c("div", { staticClass: "carousel-item" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "w-auto rounded-lg overflow-hidden shadow-lg"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-center primary" },
+                              [
+                                _c("p", { staticClass: "text-white p-4" }, [
+                                  _vm._v(
+                                    "\n                                            " +
+                                      _vm._s(item.tipo) +
+                                      "\n                                        "
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "flex justify-center text-tertiary"
+                              },
+                              [
+                                _c("div", { staticClass: "flex items-start" }, [
+                                  _c(
+                                    "h1",
+                                    { staticClass: "text-4xl font-bold mt-3" },
+                                    [
+                                      _vm._v(
+                                        "\n                                                S/\n                                            "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h1",
+                                    { staticClass: "text-6xl font-bold" },
+                                    [
+                                      _vm._v(
+                                        "\n                                                " +
+                                          _vm._s(item.tarifa) +
+                                          "\n                                            "
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-center mb-8" },
+                              [
+                                _c("h1", { staticClass: "text-sm font-bold" }, [
+                                  _vm._v(
+                                    "\n                                            MENSUAL\n                                        "
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "h1",
+                              {
+                                staticClass: "flex justify-center text-sm my-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        10 propiedades\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("hr", {
+                              staticClass:
+                                "border-b-1 border-gray-500 mx-10 my-2"
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "h1",
+                              {
+                                staticClass: "flex justify-center text-sm my-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        3 agentes\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("hr", {
+                              staticClass:
+                                "border-b-1 border-gray-500 mx-10 my-2"
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "h1",
+                              {
+                                staticClass: "flex justify-center text-sm my-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        8 destacados\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("hr", {
+                              staticClass:
+                                "border-b-1 border-gray-500 mx-10 my-2"
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "h1",
+                              {
+                                staticClass: "flex justify-center text-sm my-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Propiedades destacadas\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-center" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    staticClass:
+                                      "large block justify-center my-6",
+                                    attrs: { color: _vm.$wlinii.tertiary }
+                                  },
+                                  [_vm._v("NUEVA PUBLICACIÓN")]
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  }),
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "my-8" },
+              [
+                _c(
+                  "w-carousel",
+                  { attrs: { items: 1, pagination: true } },
+                  _vm._l(_vm.cards2, function(item) {
+                    return _c("slide", { key: item.i }, [
+                      _c("div", { staticClass: "carousel-item" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "w-auto rounded-lg overflow-hidden shadow-lg"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-center primary" },
+                              [
+                                _c("p", { staticClass: "text-white p-4" }, [
+                                  _vm._v(
+                                    "\n                                            " +
+                                      _vm._s(item.tipo) +
+                                      "\n                                        "
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "flex justify-center text-tertiary"
+                              },
+                              [
+                                _c("div", { staticClass: "flex items-start" }, [
+                                  _c(
+                                    "h1",
+                                    { staticClass: "text-4xl font-bold mt-3" },
+                                    [
+                                      _vm._v(
+                                        "\n                                                S/\n                                            "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h1",
+                                    { staticClass: "text-6xl font-bold" },
+                                    [
+                                      _vm._v(
+                                        "\n                                                " +
+                                          _vm._s(item.tarifa) +
+                                          "\n                                            "
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-center mb-8" },
+                              [
+                                _c("h1", { staticClass: "text-sm font-bold" }, [
+                                  _vm._v(
+                                    "\n                                            MENSUAL\n                                        "
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "h1",
+                              {
+                                staticClass: "flex justify-center text-sm my-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        10 propiedades\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("hr", {
+                              staticClass:
+                                "border-b-1 border-gray-500 mx-10 my-2"
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "h1",
+                              {
+                                staticClass: "flex justify-center text-sm my-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        3 agentes\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("hr", {
+                              staticClass:
+                                "border-b-1 border-gray-500 mx-10 my-2"
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "h1",
+                              {
+                                staticClass: "flex justify-center text-sm my-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        8 destacados\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("hr", {
+                              staticClass:
+                                "border-b-1 border-gray-500 mx-10 my-2"
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "h1",
+                              {
+                                staticClass: "flex justify-center text-sm my-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Propiedades destacadas\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-center" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    staticClass:
+                                      "large block justify-center my-6",
+                                    attrs: { color: _vm.$wlinii.tertiary }
+                                  },
+                                  [_vm._v("NUEVA PUBLICACIÓN")]
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  }),
+                  1
+                )
+              ],
+              1
+            )
+          ])
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19340,6 +19922,17 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./resources/css/main.css":
+/*!********************************!*\
+  !*** ./resources/css/main.css ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/js/App.vue":
 /*!******************************!*\
   !*** ./resources/js/App.vue ***!
@@ -20772,7 +21365,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$wlinii = {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./app.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/wlinii_components/sass/app.scss");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./app.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/wlinii_components/sass/app.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -20807,6 +21400,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/Home */ "./resources/js/views/Home.vue");
+/* harmony import */ var _views_PreciosSuscripcion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/PreciosSuscripcion */ "./resources/js/views/PreciosSuscripcion.vue");
+
 
 
 
@@ -20817,6 +21412,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: "/",
     name: "home",
     component: _views_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
+    path: "/precios_suscripcion",
+    name: "preciosSuscripcion",
+    component: _views_PreciosSuscripcion__WEBPACK_IMPORTED_MODULE_3__["default"]
   }]
 }));
 
@@ -20908,10 +21507,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_dist_cjs_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Home.vue?vue&type=style&index=0&id=63cd6604&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_style_index_0_id_63cd6604_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -20933,14 +21532,84 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/PreciosSuscripcion.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/views/PreciosSuscripcion.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PreciosSuscripcion_vue_vue_type_template_id_4f0a76c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PreciosSuscripcion.vue?vue&type=template&id=4f0a76c4& */ "./resources/js/views/PreciosSuscripcion.vue?vue&type=template&id=4f0a76c4&");
+/* harmony import */ var _PreciosSuscripcion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PreciosSuscripcion.vue?vue&type=script&lang=js& */ "./resources/js/views/PreciosSuscripcion.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PreciosSuscripcion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PreciosSuscripcion_vue_vue_type_template_id_4f0a76c4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PreciosSuscripcion_vue_vue_type_template_id_4f0a76c4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/PreciosSuscripcion.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/PreciosSuscripcion.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/views/PreciosSuscripcion.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreciosSuscripcion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PreciosSuscripcion.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PreciosSuscripcion.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PreciosSuscripcion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/PreciosSuscripcion.vue?vue&type=template&id=4f0a76c4&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/views/PreciosSuscripcion.vue?vue&type=template&id=4f0a76c4& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PreciosSuscripcion_vue_vue_type_template_id_4f0a76c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PreciosSuscripcion.vue?vue&type=template&id=4f0a76c4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/PreciosSuscripcion.vue?vue&type=template&id=4f0a76c4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PreciosSuscripcion_vue_vue_type_template_id_4f0a76c4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PreciosSuscripcion_vue_vue_type_template_id_4f0a76c4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ 0:
-/*!***********************************!*\
-  !*** multi ./resources/js/app.js ***!
-  \***********************************/
+/*!************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/css/main.css ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
 
 
 /***/ })
