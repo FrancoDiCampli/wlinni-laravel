@@ -17,3 +17,6 @@ import "./WCarousel/WCarousel";
 
 // BUTTON
 import "./WButton/WButton";
+
+// CARD
+import "./WCard/WCard";
