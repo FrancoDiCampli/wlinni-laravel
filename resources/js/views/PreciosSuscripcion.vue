@@ -8,92 +8,56 @@
                 >Precios de suscripción</div>
                 <div class="flex-wrap">
                     <div class="my-8">
-                        <!-- SM -->
-                        <div class="block lg:hidden">
-                            <w-carousel :items="1" :pagination="true" :navigation="false">
+                        <div>
+                            <w-carousel
+                                :items="windowWidth <= 764 ? 1 : 3"
+                                :pagination="true"
+                                :navigation="false"
+                            >
                                 <slide v-for="item in cards1" :key="item.i">
                                     <div class="carousel-item">
-                                        <!-- Insert Card -->
-                                        <div
-                                            class="w-auto bg-white lg:w-64 rounded-lg overflow-hidden shadow-lg"
-                                        >
-                                            <div class="flex justify-center primary">
-                                                <p class="text-white p-4">{{ item.tipo }}</p>
-                                            </div>
-                                            <div class="flex justify-center tertiary-text">
-                                                <div class="flex items-start">
-                                                    <h1 class="text-4xl font-bold mt-3">S/</h1>
-                                                    <h1 class="text-6xl font-bold">{{ item.tarifa }}</h1>
+                                        <w-card>
+                                            <template slot="header">
+                                                <div class="flex justify-center">
+                                                    <p
+                                                        class="white-text bold body p-4"
+                                                    >{{ item.tipo }}</p>
+                                                </div>
+                                            </template>
+                                            <div>
+                                                <div class="flex justify-center tertiary-text">
+                                                    <div class="flex items-start">
+                                                        <h1 class="text-4xl bold mt-3">S/</h1>
+                                                        <h1 class="text-6xl bold">{{ item.tarifa }}</h1>
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-center mb-8">
+                                                    <h1 class="caption bold">MENSUAL</h1>
+                                                </div>
+                                                <h1
+                                                    class="flex justify-center caption my-2"
+                                                >10 propiedades</h1>
+                                                <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                                <h1
+                                                    class="flex justify-center caption my-2"
+                                                >3 agentes</h1>
+                                                <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                                <h1
+                                                    class="flex justify-center caption my-2"
+                                                >8 destacados</h1>
+                                                <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                                <h1
+                                                    class="flex justify-center caption my-2"
+                                                >Propiedades destacadas</h1>
+                                                <div class="flex justify-center">
+                                                    <w-btn
+                                                        class="white-text bold justify-center"
+                                                        :color="$wlinii.tertiary"
+                                                        :small="true"
+                                                    >suscribirse</w-btn>
                                                 </div>
                                             </div>
-                                            <div class="flex justify-center mb-8">
-                                                <h1 class="text-sm font-bold">MENSUAL</h1>
-                                            </div>
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >10 propiedades</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1 class="flex justify-center text-sm my-2">3 agentes</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >8 destacados</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >Propiedades destacadas</h1>
-                                            <div class="flex justify-center">
-                                                <w-btn
-                                                    class="large block text-white text-terteary font-bold justify-center my-6"
-                                                    :color="$wlinii.tertiary"
-                                                >SUSCRIBIRSE</w-btn>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </slide>
-                            </w-carousel>
-                        </div>
-                        <!-- LG -->
-                        <div class="hidden lg:block">
-                            <w-carousel :items="3" :pagination="true" :navigation="false">
-                                <slide v-for="item in cards1" :key="item.i">
-                                    <div class="carousel-item">
-                                        <!-- Insert Card -->
-                                        <div
-                                            class="w-auto bg-white lg:w-64 rounded-lg overflow-hidden shadow-lg"
-                                        >
-                                            <div class="flex justify-center primary">
-                                                <p class="text-white p-4">{{ item.tipo }}</p>
-                                            </div>
-                                            <div class="flex justify-center tertiary-text">
-                                                <div class="flex items-start">
-                                                    <h1 class="text-4xl font-bold mt-3">S/</h1>
-                                                    <h1 class="text-6xl font-bold">{{ item.tarifa }}</h1>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-center mb-8">
-                                                <h1 class="text-sm font-bold">MENSUAL</h1>
-                                            </div>
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >10 propiedades</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1 class="flex justify-center text-sm my-2">3 agentes</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >8 destacados</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >Propiedades destacadas</h1>
-                                            <div class="flex justify-center">
-                                                <w-btn
-                                                    class="large block text-white text-terteary font-bold justify-center my-6"
-                                                    :color="$wlinii.tertiary"
-                                                >SUSCRIBIRSE</w-btn>
-                                            </div>
-                                        </div>
+                                        </w-card>
                                     </div>
                                 </slide>
                             </w-carousel>
@@ -101,92 +65,56 @@
                     </div>
 
                     <div class="my-8">
-                        <!-- SM -->
-                        <div class="block lg:hidden">
-                            <w-carousel :items="1" :pagination="true" :navigation="false">
+                        <div>
+                            <w-carousel
+                                :items="windowWidth <= 764 ? 1 : 3"
+                                :pagination="true"
+                                :navigation="false"
+                            >
                                 <slide v-for="item in cards2" :key="item.i">
                                     <div class="carousel-item">
-                                        <!-- Insert Card -->
-                                        <div
-                                            class="w-auto bg-white lg:w-64 rounded-lg overflow-hidden shadow-lg"
-                                        >
-                                            <div class="flex justify-center primary">
-                                                <p class="text-white p-4">{{ item.tipo }}</p>
-                                            </div>
-                                            <div class="flex justify-center tertiary-text">
-                                                <div class="flex items-start">
-                                                    <h1 class="text-4xl font-bold mt-3">S/</h1>
-                                                    <h1 class="text-6xl font-bold">{{ item.tarifa }}</h1>
+                                        <w-card>
+                                            <template slot="header">
+                                                <div class="flex justify-center">
+                                                    <p
+                                                        class="white-text bold body p-4"
+                                                    >{{ item.tipo }}</p>
+                                                </div>
+                                            </template>
+                                            <div>
+                                                <div class="flex justify-center tertiary-text">
+                                                    <div class="flex items-start">
+                                                        <h1 class="text-4xl bold mt-3">S/</h1>
+                                                        <h1 class="text-6xl bold">{{ item.tarifa }}</h1>
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-center mb-8">
+                                                    <h1 class="caption bold">MENSUAL</h1>
+                                                </div>
+                                                <h1
+                                                    class="flex justify-center caption my-2"
+                                                >10 propiedades</h1>
+                                                <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                                <h1
+                                                    class="flex justify-center caption my-2"
+                                                >3 agentes</h1>
+                                                <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                                <h1
+                                                    class="flex justify-center caption my-2"
+                                                >8 destacados</h1>
+                                                <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                                <h1
+                                                    class="flex justify-center caption my-2"
+                                                >Propiedades destacadas</h1>
+                                                <div class="flex justify-center">
+                                                    <w-btn
+                                                        class="white-text bold justify-center"
+                                                        :color="$wlinii.tertiary"
+                                                        :small="true"
+                                                    >suscribirse</w-btn>
                                                 </div>
                                             </div>
-                                            <div class="flex justify-center mb-8">
-                                                <h1 class="text-sm font-bold">MENSUAL</h1>
-                                            </div>
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >10 propiedades</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1 class="flex justify-center text-sm my-2">3 agentes</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >8 destacados</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >Propiedades destacadas</h1>
-                                            <div class="flex justify-center">
-                                                <w-btn
-                                                    class="large block text-white font-bold justify-center my-6"
-                                                    :color="$wlinii.tertiary"
-                                                >SUSCRIBIRSE</w-btn>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </slide>
-                            </w-carousel>
-                        </div>
-                        <!-- LG -->
-                        <div class="hidden lg:block">
-                            <w-carousel :items="3" :pagination="true" :navigation="false">
-                                <slide v-for="item in cards2" :key="item.i">
-                                    <div class="carousel-item">
-                                        <!-- Insert Card -->
-                                        <div
-                                            class="w-auto bg-white lg:w-64 rounded-lg overflow-hidden shadow-lg"
-                                        >
-                                            <div class="flex justify-center primary">
-                                                <p class="text-white p-4">{{ item.tipo }}</p>
-                                            </div>
-                                            <div class="flex justify-center tertiary-text">
-                                                <div class="flex items-start">
-                                                    <h1 class="text-4xl font-bold mt-3">S/</h1>
-                                                    <h1 class="text-6xl font-bold">{{ item.tarifa }}</h1>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-center mb-8">
-                                                <h1 class="text-sm font-bold">MENSUAL</h1>
-                                            </div>
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >10 propiedades</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1 class="flex justify-center text-sm my-2">3 agentes</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >8 destacados</h1>
-                                            <hr class="border-b-1 border-gray-500 mx-10 my-2" />
-                                            <h1
-                                                class="flex justify-center text-sm my-2"
-                                            >Propiedades destacadas</h1>
-                                            <div class="flex justify-center">
-                                                <w-btn
-                                                    class="large block text-white font-bold justify-center my-6"
-                                                    :color="$wlinii.tertiary"
-                                                >SUSCRIBIRSE</w-btn>
-                                            </div>
-                                        </div>
+                                        </w-card>
                                     </div>
                                 </slide>
                             </w-carousel>
@@ -202,6 +130,8 @@
 export default {
     data() {
         return {
+            windowWidth: window.innerWidth,
+
             cards1: [
                 {
                     tipo: "FREE",
@@ -231,6 +161,15 @@ export default {
                 }
             ]
         };
+    },
+
+    mounted() {
+        this.$nextTick(() => {
+            window.addEventListener(
+                "resize",
+                (this.windowWidth = window.innerWidth)
+            );
+        });
     }
 };
 </script>

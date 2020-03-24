@@ -2265,81 +2265,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      windowWidth: window.innerWidth,
       cards1: [{
         tipo: "FREE",
         tarifa: 0
@@ -2361,6 +2290,13 @@ __webpack_require__.r(__webpack_exports__);
         tarifa: 106
       }]
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$nextTick(function () {
+      window.addEventListener("resize", _this.windowWidth = window.innerWidth);
+    });
   }
 });
 
@@ -3965,292 +3901,161 @@ var render = function() {
             _c("div", { staticClass: "my-8" }, [
               _c(
                 "div",
-                { staticClass: "block lg:hidden" },
                 [
                   _c(
                     "w-carousel",
                     {
-                      attrs: { items: 1, pagination: true, navigation: false }
+                      attrs: {
+                        items: _vm.windowWidth <= 764 ? 1 : 3,
+                        pagination: true,
+                        navigation: false
+                      }
                     },
                     _vm._l(_vm.cards1, function(item) {
                       return _c("slide", { key: item.i }, [
-                        _c("div", { staticClass: "carousel-item" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-auto bg-white lg:w-64 rounded-lg overflow-hidden shadow-lg"
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center primary" },
-                                [
-                                  _c("p", { staticClass: "text-white p-4" }, [
-                                    _vm._v(_vm._s(item.tipo))
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "flex justify-center tertiary-text"
-                                },
-                                [
+                        _c(
+                          "div",
+                          { staticClass: "carousel-item" },
+                          [
+                            _c(
+                              "w-card",
+                              [
+                                _c("template", { slot: "header" }, [
                                   _c(
                                     "div",
-                                    { staticClass: "flex items-start" },
+                                    { staticClass: "flex justify-center" },
                                     [
                                       _c(
-                                        "h1",
+                                        "p",
                                         {
-                                          staticClass: "text-4xl font-bold mt-3"
+                                          staticClass:
+                                            "white-text bold body p-4"
                                         },
-                                        [_vm._v("S/")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "h1",
-                                        { staticClass: "text-6xl font-bold" },
-                                        [_vm._v(_vm._s(item.tarifa))]
+                                        [_vm._v(_vm._s(item.tipo))]
                                       )
                                     ]
                                   )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center mb-8" },
-                                [
-                                  _c(
-                                    "h1",
-                                    { staticClass: "text-sm font-bold" },
-                                    [_vm._v("MENSUAL")]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("10 propiedades")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("3 agentes")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("8 destacados")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("Propiedades destacadas")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center" },
-                                [
-                                  _c(
-                                    "w-btn",
-                                    {
-                                      staticClass:
-                                        "large block text-white text-terteary font-bold justify-center my-6",
-                                      attrs: { color: _vm.$wlinii.tertiary }
-                                    },
-                                    [_vm._v("SUSCRIBIRSE")]
-                                  )
-                                ],
-                                1
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    }),
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "hidden lg:block" },
-                [
-                  _c(
-                    "w-carousel",
-                    {
-                      attrs: { items: 3, pagination: true, navigation: false }
-                    },
-                    _vm._l(_vm.cards1, function(item) {
-                      return _c("slide", { key: item.i }, [
-                        _c("div", { staticClass: "carousel-item" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-auto bg-white lg:w-64 rounded-lg overflow-hidden shadow-lg"
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center primary" },
-                                [
-                                  _c("p", { staticClass: "text-white p-4" }, [
-                                    _vm._v(_vm._s(item.tipo))
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "flex justify-center tertiary-text"
-                                },
-                                [
+                                ]),
+                                _vm._v(" "),
+                                _c("div", [
                                   _c(
                                     "div",
-                                    { staticClass: "flex items-start" },
+                                    {
+                                      staticClass:
+                                        "flex justify-center tertiary-text"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "flex items-start" },
+                                        [
+                                          _c(
+                                            "h1",
+                                            {
+                                              staticClass: "text-4xl bold mt-3"
+                                            },
+                                            [_vm._v("S/")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "h1",
+                                            { staticClass: "text-6xl bold" },
+                                            [_vm._v(_vm._s(item.tarifa))]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "flex justify-center mb-8" },
                                     [
                                       _c(
                                         "h1",
-                                        {
-                                          staticClass: "text-4xl font-bold mt-3"
-                                        },
-                                        [_vm._v("S/")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "h1",
-                                        { staticClass: "text-6xl font-bold" },
-                                        [_vm._v(_vm._s(item.tarifa))]
+                                        { staticClass: "caption bold" },
+                                        [_vm._v("MENSUAL")]
                                       )
                                     ]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center mb-8" },
-                                [
+                                  ),
+                                  _vm._v(" "),
                                   _c(
                                     "h1",
-                                    { staticClass: "text-sm font-bold" },
-                                    [_vm._v("MENSUAL")]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("10 propiedades")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("3 agentes")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("8 destacados")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("Propiedades destacadas")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center" },
-                                [
-                                  _c(
-                                    "w-btn",
                                     {
                                       staticClass:
-                                        "large block text-white text-terteary font-bold justify-center my-6",
-                                      attrs: { color: _vm.$wlinii.tertiary }
+                                        "flex justify-center caption my-2"
                                     },
-                                    [_vm._v("SUSCRIBIRSE")]
+                                    [_vm._v("10 propiedades")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("hr", {
+                                    staticClass:
+                                      "border-b-1 border-gray-500 mx-10 my-2"
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h1",
+                                    {
+                                      staticClass:
+                                        "flex justify-center caption my-2"
+                                    },
+                                    [_vm._v("3 agentes")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("hr", {
+                                    staticClass:
+                                      "border-b-1 border-gray-500 mx-10 my-2"
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h1",
+                                    {
+                                      staticClass:
+                                        "flex justify-center caption my-2"
+                                    },
+                                    [_vm._v("8 destacados")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("hr", {
+                                    staticClass:
+                                      "border-b-1 border-gray-500 mx-10 my-2"
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h1",
+                                    {
+                                      staticClass:
+                                        "flex justify-center caption my-2"
+                                    },
+                                    [_vm._v("Propiedades destacadas")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "flex justify-center" },
+                                    [
+                                      _c(
+                                        "w-btn",
+                                        {
+                                          staticClass:
+                                            "white-text bold justify-center",
+                                          attrs: {
+                                            color: _vm.$wlinii.tertiary,
+                                            small: true
+                                          }
+                                        },
+                                        [_vm._v("suscribirse")]
+                                      )
+                                    ],
+                                    1
                                   )
-                                ],
-                                1
-                              )
-                            ]
-                          )
-                        ])
+                                ])
+                              ],
+                              2
+                            )
+                          ],
+                          1
+                        )
                       ])
                     }),
                     1
@@ -4263,292 +4068,161 @@ var render = function() {
             _c("div", { staticClass: "my-8" }, [
               _c(
                 "div",
-                { staticClass: "block lg:hidden" },
                 [
                   _c(
                     "w-carousel",
                     {
-                      attrs: { items: 1, pagination: true, navigation: false }
+                      attrs: {
+                        items: _vm.windowWidth <= 764 ? 1 : 3,
+                        pagination: true,
+                        navigation: false
+                      }
                     },
                     _vm._l(_vm.cards2, function(item) {
                       return _c("slide", { key: item.i }, [
-                        _c("div", { staticClass: "carousel-item" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-auto bg-white lg:w-64 rounded-lg overflow-hidden shadow-lg"
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center primary" },
-                                [
-                                  _c("p", { staticClass: "text-white p-4" }, [
-                                    _vm._v(_vm._s(item.tipo))
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "flex justify-center tertiary-text"
-                                },
-                                [
+                        _c(
+                          "div",
+                          { staticClass: "carousel-item" },
+                          [
+                            _c(
+                              "w-card",
+                              [
+                                _c("template", { slot: "header" }, [
                                   _c(
                                     "div",
-                                    { staticClass: "flex items-start" },
+                                    { staticClass: "flex justify-center" },
                                     [
                                       _c(
-                                        "h1",
+                                        "p",
                                         {
-                                          staticClass: "text-4xl font-bold mt-3"
+                                          staticClass:
+                                            "white-text bold body p-4"
                                         },
-                                        [_vm._v("S/")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "h1",
-                                        { staticClass: "text-6xl font-bold" },
-                                        [_vm._v(_vm._s(item.tarifa))]
+                                        [_vm._v(_vm._s(item.tipo))]
                                       )
                                     ]
                                   )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center mb-8" },
-                                [
-                                  _c(
-                                    "h1",
-                                    { staticClass: "text-sm font-bold" },
-                                    [_vm._v("MENSUAL")]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("10 propiedades")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("3 agentes")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("8 destacados")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("Propiedades destacadas")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center" },
-                                [
-                                  _c(
-                                    "w-btn",
-                                    {
-                                      staticClass:
-                                        "large block text-white font-bold justify-center my-6",
-                                      attrs: { color: _vm.$wlinii.tertiary }
-                                    },
-                                    [_vm._v("SUSCRIBIRSE")]
-                                  )
-                                ],
-                                1
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    }),
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "hidden lg:block" },
-                [
-                  _c(
-                    "w-carousel",
-                    {
-                      attrs: { items: 3, pagination: true, navigation: false }
-                    },
-                    _vm._l(_vm.cards2, function(item) {
-                      return _c("slide", { key: item.i }, [
-                        _c("div", { staticClass: "carousel-item" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-auto bg-white lg:w-64 rounded-lg overflow-hidden shadow-lg"
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center primary" },
-                                [
-                                  _c("p", { staticClass: "text-white p-4" }, [
-                                    _vm._v(_vm._s(item.tipo))
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "flex justify-center tertiary-text"
-                                },
-                                [
+                                ]),
+                                _vm._v(" "),
+                                _c("div", [
                                   _c(
                                     "div",
-                                    { staticClass: "flex items-start" },
+                                    {
+                                      staticClass:
+                                        "flex justify-center tertiary-text"
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "flex items-start" },
+                                        [
+                                          _c(
+                                            "h1",
+                                            {
+                                              staticClass: "text-4xl bold mt-3"
+                                            },
+                                            [_vm._v("S/")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "h1",
+                                            { staticClass: "text-6xl bold" },
+                                            [_vm._v(_vm._s(item.tarifa))]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "flex justify-center mb-8" },
                                     [
                                       _c(
                                         "h1",
-                                        {
-                                          staticClass: "text-4xl font-bold mt-3"
-                                        },
-                                        [_vm._v("S/")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "h1",
-                                        { staticClass: "text-6xl font-bold" },
-                                        [_vm._v(_vm._s(item.tarifa))]
+                                        { staticClass: "caption bold" },
+                                        [_vm._v("MENSUAL")]
                                       )
                                     ]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center mb-8" },
-                                [
+                                  ),
+                                  _vm._v(" "),
                                   _c(
                                     "h1",
-                                    { staticClass: "text-sm font-bold" },
-                                    [_vm._v("MENSUAL")]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("10 propiedades")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("3 agentes")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("8 destacados")]
-                              ),
-                              _vm._v(" "),
-                              _c("hr", {
-                                staticClass:
-                                  "border-b-1 border-gray-500 mx-10 my-2"
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "flex justify-center text-sm my-2"
-                                },
-                                [_vm._v("Propiedades destacadas")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "flex justify-center" },
-                                [
-                                  _c(
-                                    "w-btn",
                                     {
                                       staticClass:
-                                        "large block text-white font-bold justify-center my-6",
-                                      attrs: { color: _vm.$wlinii.tertiary }
+                                        "flex justify-center caption my-2"
                                     },
-                                    [_vm._v("SUSCRIBIRSE")]
+                                    [_vm._v("10 propiedades")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("hr", {
+                                    staticClass:
+                                      "border-b-1 border-gray-500 mx-10 my-2"
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h1",
+                                    {
+                                      staticClass:
+                                        "flex justify-center caption my-2"
+                                    },
+                                    [_vm._v("3 agentes")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("hr", {
+                                    staticClass:
+                                      "border-b-1 border-gray-500 mx-10 my-2"
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h1",
+                                    {
+                                      staticClass:
+                                        "flex justify-center caption my-2"
+                                    },
+                                    [_vm._v("8 destacados")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("hr", {
+                                    staticClass:
+                                      "border-b-1 border-gray-500 mx-10 my-2"
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h1",
+                                    {
+                                      staticClass:
+                                        "flex justify-center caption my-2"
+                                    },
+                                    [_vm._v("Propiedades destacadas")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "flex justify-center" },
+                                    [
+                                      _c(
+                                        "w-btn",
+                                        {
+                                          staticClass:
+                                            "white-text bold justify-center",
+                                          attrs: {
+                                            color: _vm.$wlinii.tertiary,
+                                            small: true
+                                          }
+                                        },
+                                        [_vm._v("suscribirse")]
+                                      )
+                                    ],
+                                    1
                                   )
-                                ],
-                                1
-                              )
-                            ]
-                          )
-                        ])
+                                ])
+                              ],
+                              2
+                            )
+                          ],
+                          1
+                        )
                       ])
                     }),
                     1
