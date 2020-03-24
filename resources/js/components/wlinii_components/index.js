@@ -6,7 +6,7 @@ Vue.prototype.$wlinii = {
   secondary: "#ff7500",
   tertiary: "#a08629",
   accent: "#193c63",
-  success: "#0ebfa7",
+  success: "#00ce59",
   error: "#ff0000"
 };
 
