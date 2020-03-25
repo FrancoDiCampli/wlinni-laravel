@@ -1,0 +1,22 @@
+@import "./_variables.scss";
+
+.circlePublicado {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: $success;
+}
+
+.circleBorrador {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: $tertiary;
+}
+
+.circleVendido {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: $secondary;
+}
