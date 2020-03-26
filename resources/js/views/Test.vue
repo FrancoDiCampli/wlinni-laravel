@@ -73,8 +73,13 @@
           </section>
         </w-card>
       </div>
-      <div id="map" class="bg-white w-7/12 rounded-lg p-10">
+      <div id="main" class="bg-white w-7/12 rounded-lg p-10">
         <h1 class="title bold">Listado de Inmuebles</h1>
+        <div id="map">
+          <div class="google-map" ref="googleMap">
+            <!-- <GmapMap :center="center" :zoom="8"></GmapMap> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -83,6 +88,10 @@
 export default {
   data() {
     return {
+      center: {
+        lat: -27.576737,
+        lng: -60.711405
+      },
       shown: true,
       filters: [],
       operaciones: ["Venta", "Alquiler", "Traspaso"],

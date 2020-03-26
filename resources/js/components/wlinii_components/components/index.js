@@ -20,5 +20,7 @@ import "./WButton/WButton";
 
 // CARD
 import "./WCard/WCard";
+// Test
+import "./Common/WTest";
 
 
