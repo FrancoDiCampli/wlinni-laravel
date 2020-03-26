@@ -2,74 +2,9 @@
     <div class="bg-gray-300">
         <!-- PAGINAS 8 - 14 - 25 - 56 -->
 
-        <div class="flex justify-around items-start lg:px-12">
+        <div class="flex-wrap lg:flex justify-between items-start lg:px-12">
             <div class="hidden lg:flex">
-                <!-- Insertar Desplegable -->
-                <div class="w-64 bg-white rounded-lg overflow-hidden shadow-lg my-8">
-                    <div class="flex justify-between items-center primary lg:secondary">
-                        <p class="text-white p-2 pl-4">ORDENAR POR</p>
-                        <h1 class="text-white pr-4 lg:hidden">X</h1>
-                    </div>
-
-                    <div class="justify-center p-4">
-                        <div>
-                            <div class="flex justify-between p-2">
-                                <li class="block font-bold text-sm">OPERACIONES</li>
-                                <w-icon icon="arrow-up" h="24px"></w-icon>
-                            </div>
-                            <div id="operaciones" class="bg-gray-200 p-4">
-                                <ul>
-                                    <li>
-                                        <a href>Venta</a>
-                                    </li>
-                                    <li>
-                                        <a href>Alquiler</a>
-                                    </li>
-                                    <li>
-                                        <a href>Traspaso</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <hr class="border-b-2 border-gray-500" />
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between p-2">
-                                <li class="block font-bold text-sm">PUBLICACIONES</li>
-                                <w-icon icon="arrow-down" h="24px"></w-icon>
-                            </div>
-                            <div id="publicaciones" class="bg-gray-200 p-4 hidden">
-                                <ul>
-                                    <li>
-                                        <a href>2</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <hr class="border-b-2 border-gray-500" />
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between p-2">
-                                <li class="block font-bold text-sm">BORRADOR</li>
-                                <w-icon icon="arrow-down" h="24px"></w-icon>
-                            </div>
-                            <div id="borrador" class="bg-gray-200 p-4 hidden">
-                                <ul>
-                                    <li>
-                                        <a href>2</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <hr class="border-b-2 border-gray-500" />
-                        </div>
-
-                        <w-btn
-                            class="large block text-white justify-center my-6"
-                            :color="$wlinii.secondary"
-                        >NUEVA PUBLICACIÓN</w-btn>
-                    </div>
-                </div>
-                <!-- -------------------- -->
+                <filtro></filtro>
             </div>
 
             <div class="bg-white rounded-lg overflow-hidden shadow-lg my-8">
@@ -156,6 +91,8 @@
 </template>
 
 <script>
+import Filtro from "./filtros/FiltroPublicacion.vue";
+
 export default {
     data() {
         return {
@@ -186,6 +123,10 @@ export default {
                 }
             ]
         };
+    },
+
+    components: {
+        Filtro
     }
 };
 </script>
