@@ -81,5 +81,8 @@ $sizes: (
       font-family: Roboto-Light, sans-serif;
       font-weight: lighter;
     }
+    .fan-#{$name} {
+        font-size: 28px;
+      }
   }
 }
