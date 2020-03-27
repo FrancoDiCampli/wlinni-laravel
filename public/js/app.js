@@ -2290,93 +2290,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {
-      center: {
-        lat: -27.576737,
-        lng: -60.711405
-      },
-      shown: true,
-      filters: [],
-      operaciones: ["Venta", "Alquiler", "Traspaso"],
-      publicaciones: ["Casas", "Alquileres", "Oficinas"]
-    };
+    return {};
   },
-  methods: {
-    set: function set(op) {
-      this.filters.push(op);
-    },
-    unset: function unset(op) {
-      var i = this.filters.indexOf(op);
-      this.filters.splice(i, 1);
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -2451,7 +2369,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container {\n  height: 500px;\n}\n.in {\n  visibility: visible;\n  position: relative;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n.out {\n  visibility: hidden;\n  position: absolute;\n  -webkit-animation: 1s fadeIn;\n          animation: 1s fadeIn;\n  opacity: 0;\n  transition: visibility 0s linear 300ms, opacity 300ms;\n}\n.undeployed {\n  transform: rotate(360deg);\n  transition: 500ms;\n  transition-duration: 1s;\n}\n.deployed {\n  transform: rotate(180deg);\n  transition: 500ms;\n}\n", ""]);
+exports.push([module.i, ".container {\n  height: 500px;\n}\n", ""]);
 
 // exports
 
@@ -4629,199 +4547,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {}, [
-    _c("div", { staticClass: "bg-gray-300 flex justify-around p-5" }, [
-      _c(
-        "div",
-        { staticClass: "w-3/12", attrs: { id: "filter" } },
-        [
-          _c(
-            "w-card",
-            [
-              _c("template", { slot: "header" }, [
-                _c(
-                  "h1",
-                  {
-                    staticClass:
-                      "text-white uppercase text-center caption tracking-wider bold"
-                  },
-                  [_vm._v("Filtros aplicados")]
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "flex flex-wrap m-0 p-0",
-                  attrs: { id: "filtros" }
-                },
-                _vm._l(_vm.filters, function(filter) {
-                  return _c(
-                    "div",
-                    {
-                      key: filter,
-                      staticClass:
-                        "text-center secondary text-white px-5 rounded-full m-2"
-                    },
-                    [
-                      _vm._v(
-                        "\n            " + _vm._s(filter) + "\n            "
-                      ),
-                      _c(
-                        "button",
-                        {
-                          on: {
-                            click: function($event) {
-                              return _vm.unset(filter)
-                            }
-                          }
-                        },
-                        [_vm._v("X")]
-                      )
-                    ]
-                  )
-                }),
-                0
-              ),
-              _vm._v(" "),
-              _c("section", { staticClass: "w-full mx-auto" }, [
-                _c("article", [
-                  _c("div", { staticClass: "flex justify-between p-5" }, [
-                    _c(
-                      "h1",
-                      { staticClass: "uppercase text-lg font-semibold" },
-                      [_vm._v("Operaciones")]
-                    ),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.shown = !_vm.shown
-                            }
-                          }
-                        },
-                        [
-                          _c("img", {
-                            staticClass: "h-5",
-                            class: _vm.shown ? "deployed" : "undeployed",
-                            attrs: { src: "/images/arrow-up.png", alt: "" }
-                          })
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "bg-gray-300 mx-auto px-10 py-5",
-                      class: _vm.shown ? " in" : " out"
-                    },
-                    _vm._l(_vm.operaciones, function(operacion) {
-                      return _c(
-                        "button",
-                        {
-                          key: operacion,
-                          staticClass: "outline-none block py-3",
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.set(operacion)
-                            }
-                          }
-                        },
-                        [_vm._v(_vm._s(operacion))]
-                      )
-                    }),
-                    0
-                  )
-                ]),
-                _vm._v(" "),
-                _c("article", [
-                  _c("div", { staticClass: "flex justify-between p-5" }, [
-                    _c(
-                      "h1",
-                      { staticClass: "uppercase text-lg font-semibold" },
-                      [_vm._v("Publicaciones")]
-                    ),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.shown = !_vm.shown
-                            }
-                          }
-                        },
-                        [
-                          _c("img", {
-                            staticClass: "h-5",
-                            class: _vm.shown ? "deployed" : "undeployed",
-                            attrs: { src: "/images/arrow-up.png", alt: "" }
-                          })
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "bg-gray-300 mx-auto px-10 py-5",
-                      class: _vm.shown ? " in" : " out"
-                    },
-                    _vm._l(_vm.publicaciones, function(publicacion) {
-                      return _c(
-                        "button",
-                        {
-                          key: publicacion,
-                          staticClass: "outline-none block py-3",
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.set(publicacion)
-                            }
-                          }
-                        },
-                        [_vm._v(_vm._s(publicacion))]
-                      )
-                    }),
-                    0
-                  )
-                ])
-              ])
-            ],
-            2
+  return _c("div", { staticClass: "bg-gray-200 p-10" }, [
+    _c("div", { staticClass: "bg-white w-11/12 mx-auto p-10" }, [
+      _c("div", { staticClass: "w-10/12", attrs: { id: "container" } }, [
+        _c("h1", { staticClass: "title bold" }, [
+          _vm._v("Agregar Publicacion")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "caption" }, [
+          _vm._v("Agregar la informacion de la nueva publicacion")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "accent text-white caption p-5" }, [
+          _vm._v(
+            "Configuración flexible y formas de edición, agregue y edite información de listado, fotos y ubicación de la posición"
           )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "bg-white w-7/12 rounded-lg p-10",
-          attrs: { id: "main" }
-        },
-        [
-          _c("h1", { staticClass: "title bold" }, [
-            _vm._v("Listado de Inmuebles")
-          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "tipo" } }, [
+          _c("h1", [_vm._v("Tipo de Inmueble")]),
           _vm._v(" "),
-          _c("div", { attrs: { id: "map" } }, [
-            _c("div", { ref: "googleMap", staticClass: "google-map" })
-          ])
-        ]
-      )
+          _c(
+            "form",
+            [
+              _c("label", { attrs: { for: "" } }, [_vm._v("Tipo de Inmueble")]),
+              _vm._v(" "),
+              _c("w-input", { attrs: { label: "tipo de inmueble" } })
+            ],
+            1
+          )
+        ])
+      ])
     ])
   ])
 }
