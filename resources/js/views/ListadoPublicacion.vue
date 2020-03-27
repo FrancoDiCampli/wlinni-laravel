@@ -2,9 +2,9 @@
     <div class="bg-gray-200">
         <!-- PAGINAS 8 - 14 - 25 - 56 -->
 
-        <div class="flex justify-between items-start">
+        <div class="flex justify-around items-start">
             <div class="hidden lg:flex lg:m-8 mr-4">
-                <filtro></filtro>
+                <filtro-publicacion></filtro-publicacion>
             </div>
 
             <div class="m-8 ml-4">
@@ -13,7 +13,7 @@
                         <div class="subtitle bold">Listado de Publicaciones</div>
                     </div>
 
-                    <div class="container lg:hidden m-auto">
+                    <div class="flex lg:hidden m-auto">
                         <div class="flex">
                             <w-btn
                                 class="flex bold white-text items-center"
@@ -24,7 +24,6 @@
                             </w-btn>
                         </div>
                     </div>
-
                     <div class="bg-gray-200 lg:bg-white lg:my-4">
                         <div
                             class="flex-wrap lg:grid gap-8 grid-cols-3 justify-between items-center"
@@ -119,7 +118,7 @@
 </template>
 
 <script>
-import Filtro from "./filtros/FiltroPublicacion.vue";
+import FiltroPublicacion from "./filtros/FiltroPublicacion.vue";
 
 export default {
     data() {
@@ -154,7 +153,7 @@ export default {
     },
 
     components: {
-        Filtro
+        FiltroPublicacion
     }
 };
 </script>

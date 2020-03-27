@@ -2,14 +2,14 @@
     <div class="bg-gray-200">
         <!-- PAGINAS 12 - 19 - 26 - 35 -->
 
-        <div class="flex justify-around items-start">
-            <div class="hidden lg:flex lg:m-8 mr-4">
-                <filtro></filtro>
+        <div class="flex justify-between items-start">
+            <div class="lg:flex lg:m-8 mr-4">
+                <filtro-inmueble></filtro-inmueble>
             </div>
 
             <div class="m-8 ml-4">
                 <w-card>
-                    <div class="container bg-gray-200 m-auto">
+                    <div class="bg-gray-200 m-auto">
                         <div
                             class="flex lg:bg-white items-center justify-center lg:justify-between"
                         >
@@ -28,7 +28,7 @@
                         </div>
                     </div>
 
-                    <div class="container bg-white lg:hidden m-auto">
+                    <div class="bg-white lg:hidden m-auto">
                         <div class="flex justify-center justify-around">
                             <w-btn
                                 small
@@ -135,7 +135,7 @@
 </template>
 
 <script>
-import Filtro from "./filtros/FiltroInmueble.vue";
+import FiltroInmueble from "./filtros/FiltroInmueble.vue";
 
 export default {
     data: () => ({
@@ -160,7 +160,7 @@ export default {
     }),
 
     components: {
-        Filtro
+        FiltroInmueble
     }
 };
 </script>

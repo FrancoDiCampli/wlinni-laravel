@@ -4,15 +4,15 @@
             <w-card>
                 <template slot="header">
                     <h1
-                        class="text-white uppercase text-center caption tracking-wider bold"
-                    >Filtros aplicados</h1>
+                        class="white-text uppercase text-left caption tracking-wider bold"
+                    >Ordenar Por</h1>
                 </template>
 
-                <div id="filtros" class="flex flex-wrap m-0 p-0">
+                <div id="filtros" class="flex-wrap m-0 p-0">
                     <div
                         v-for="filter in filters"
                         :key="filter"
-                        class="text-center secondary text-white px-5 rounded-full m-2"
+                        class="text-center secondary white-text caption px-5 rounded-full m-2"
                     >
                         {{filter}}
                         <button @click="unset(filter)">X</button>
@@ -21,128 +21,101 @@
                 <section class="m-auto">
                     <!-- Operaciones  -->
                     <article>
-                        <div class="flex justify-between p-5">
-                            <h1 class="uppercase text-lg font-semibold">Operaciones</h1>
+                        <div class="flex justify-between py-5 px-2">
+                            <h1 class="uppercase block caption bold">Operaciones</h1>
                             <div>
-                                <a href @click.prevent="shown=!shown">
+                                <a href @click.prevent="shownOperaciones=!shownOperaciones">
                                     <img
-                                        :class="shown ? 'deployed' : 'undeployed'"
+                                        :class="shownOperaciones ? 'deployed' : 'undeployed'"
                                         class="h-5"
-                                        src="/images/arrow-up.png"
+                                        :src="shownOperaciones ? '/images/arrow-up.png':'/images/arrow-down.png'"
                                         alt
                                     />
                                 </a>
                             </div>
                         </div>
 
-                        <div :class="shown ? ' in' : ' out'" class="bg-gray-300 mx-auto px-10 py-5">
+                        <div
+                            :class="shownOperaciones ? ' in' : ' out'"
+                            class="bg-gray-300 mx-auto px-10 py-5"
+                        >
                             <button
                                 @click.prevent="set(operacion)"
                                 v-for="operacion in operaciones"
                                 :key="operacion"
-                                class="outline-none block py-3"
+                                class="outline-none block py-3 caption"
                             >{{operacion}}</button>
                         </div>
+                        <hr class="border-b-2 border-gray-500" />
                     </article>
                     <!-- Publicaciones  -->
                     <article>
-                        <div class="flex justify-between p-5">
-                            <h1 class="uppercase text-lg font-semibold">Publicaciones</h1>
+                        <div class="flex justify-between py-5 px-2">
+                            <h1 class="uppercase block caption bold">Publicaciones</h1>
                             <div>
-                                <a href @click.prevent="shown=!shown">
+                                <a href @click.prevent="shownPublicaciones=!shownPublicaciones">
                                     <img
-                                        :class="shown ? 'deployed' : 'undeployed'"
+                                        :class="shownPublicaciones ? 'deployed' : 'undeployed'"
                                         class="h-5"
-                                        src="/images/arrow-up.png"
+                                        :src="shownPublicaciones ? '/images/arrow-up.png':'/images/arrow-down.png'"
                                         alt
                                     />
                                 </a>
                             </div>
                         </div>
 
-                        <div :class="shown ? ' in' : ' out'" class="bg-gray-300 mx-auto px-10 py-5">
+                        <div
+                            :class="shownPublicaciones ? ' in' : ' out'"
+                            class="bg-gray-300 mx-auto px-10 py-5"
+                        >
                             <button
                                 @click.prevent="set(publicacion)"
                                 v-for="publicacion in publicaciones"
                                 :key="publicacion"
-                                class="outline-none block py-3"
+                                class="outline-none block py-3 caption"
                             >{{publicacion}}</button>
                         </div>
+                        <hr class="border-b-2 border-gray-500" />
+                    </article>
+                    <!-- Borrador -->
+                    <article>
+                        <div class="flex justify-between py-5 px-2">
+                            <h1 class="uppercase block caption bold">Borrador</h1>
+                            <div>
+                                <a href @click.prevent="shownBorrador=!shownBorrador">
+                                    <img
+                                        :class="shownBorrador ? 'deployed' : 'undeployed'"
+                                        class="h-5"
+                                        :src="shownBorrador ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        alt
+                                    />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div
+                            :class="shownBorrador ? ' in' : ' out'"
+                            class="bg-gray-300 mx-auto px-10 py-5"
+                        >
+                            <button
+                                @click.prevent="set(borrador)"
+                                v-for="borrador in borradores"
+                                :key="borrador"
+                                class="outline-none block py-3 caption"
+                            >{{borrador}}</button>
+                        </div>
+                        <hr class="border-b-2 border-gray-500" />
                     </article>
                 </section>
-            </w-card>
-        </div>
-
-        <!-- <w-card>
-            <template slot="header">
-                <div
-                    class="flex justify-center lg:justify-between items-center secondary primary-lg"
-                >
-                    <p class="hidden lg:block white-text caption bold">ORDENAR POR</p>
-
-                    <w-btn small class="block lg:hidden caption bold white-text">FILTROS X</w-btn>
-                </div>
-            </template>
-            <div class="justify-center">
-                <div>
-                    <div class="flex justify-between p-2">
-                        <li class="block caption bold">OPERACIONES</li>
-                        <w-icon icon="arrow-up" h="20px"></w-icon>
-                    </div>
-                    <div id="operaciones" class="bg-gray-200 p-4">
-                        <ul>
-                            <li>
-                                <a class="caption" href>Venta</a>
-                            </li>
-                            <li>
-                                <a class="caption" href>Alquiler</a>
-                            </li>
-                            <li>
-                                <a class="caption" href>Traspaso</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr class="border-b-2 border-gray-500" />
-                </div>
-
-                <div>
-                    <div class="flex justify-between p-2">
-                        <li class="block caption bold">PUBLICACIONES</li>
-                        <w-icon icon="arrow-down" h="20px"></w-icon>
-                    </div>
-                    <div id="publicaciones" class="bg-gray-200 p-4 hidden">
-                        <ul>
-                            <li>
-                                <a href>2</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr class="border-b-2 border-gray-500" />
-                </div>
-
-                <div>
-                    <div class="flex justify-between p-2">
-                        <li class="block caption bold">BORRADOR</li>
-                        <w-icon icon="arrow-down" h="20px"></w-icon>
-                    </div>
-                    <div id="borrador" class="bg-gray-200 p-4 hidden">
-                        <ul>
-                            <li>
-                                <a class="caption" href>2</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr class="border-b-2 border-gray-500" />
-                </div>
-
                 <div class="flex justify-center">
                     <w-btn
+                        small
                         class="white-text justify-center"
                         :color="$wlinii.secondary"
                     >NUEVA PUBLICACIÓN</w-btn>
                 </div>
-            </div>
-        </w-card>-->
+            </w-card>
+        </div>
     </div>
 </template>
 
@@ -151,10 +124,13 @@ export default {
     name: "FiltroPublicacion",
     data() {
         return {
-            shown: true,
+            shownOperaciones: false,
+            shownPublicaciones: false,
+            shownBorrador: false,
             filters: [],
             operaciones: ["Venta", "Alquiler", "Traspaso"],
-            publicaciones: ["Casas", "Alquileres", "Oficinas"]
+            publicaciones: ["Casas", "Alquileres", "Oficinas", "Pausa"],
+            borradores: ["Option"]
         };
     },
     methods: {
@@ -187,12 +163,12 @@ export default {
     transition: visibility 0s linear 300ms, opacity 300ms;
 }
 .undeployed {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
     transition: 500ms;
     transition-duration: 1s;
 }
 .deployed {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
     transition: 500ms;
 }
 </style>

@@ -2126,7 +2126,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   components: {
-    Filtro: _filtros_FiltroInmueble_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    FiltroInmueble: _filtros_FiltroInmueble_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -2142,7 +2142,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _filtros_FiltroPublicacion_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filtros/FiltroPublicacion.vue */ "./resources/js/views/filtros/FiltroPublicacion.vue");
-//
 //
 //
 //
@@ -2288,7 +2287,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   components: {
-    Filtro: _filtros_FiltroPublicacion_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    FiltroPublicacion: _filtros_FiltroPublicacion_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -2735,107 +2734,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "FiltroInmueble"
+  name: "FiltroInmueble",
+  data: function data() {
+    return {
+      shownTipoInmueble: false,
+      shownUbicacion: false,
+      shownPrecio: false,
+      shownDormitorio: false,
+      shownArea: false,
+      shownCochera: false,
+      shownAntiguedad: false,
+      shownEstado: false,
+      filters: [],
+      tipoInmueble: ["Departamento", "Casa", "Oficina"],
+      ubicaciones: ["San Isidro", "Miraflores", "Santiago de Surco", "La Molina"],
+      precios: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"],
+      dormitorios: ["1 dorm.", "2 dorm."],
+      areas: ["120m"],
+      cocheras: ["0 coch.", "1 coch.", "2 coch."],
+      antiguedades: ["Option"],
+      estados: ["A estrenar"]
+    };
+  },
+  methods: {
+    set: function set(op) {
+      this.filters.push(op);
+    },
+    unset: function unset(op) {
+      var i = this.filters.indexOf(op);
+      this.filters.splice(i, 1);
+    }
+  }
 });
 
 /***/ }),
@@ -2970,41 +2900,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltroPublicacion",
   data: function data() {
     return {
-      shown: true,
+      shownOperaciones: false,
+      shownPublicaciones: false,
+      shownBorrador: false,
       filters: [],
       operaciones: ["Venta", "Alquiler", "Traspaso"],
-      publicaciones: ["Casas", "Alquileres", "Oficinas"]
+      publicaciones: ["Casas", "Alquileres", "Oficinas", "Pausa"],
+      borradores: ["Option"]
     };
   },
   methods: {
@@ -3071,7 +2977,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container {\n  height: 500px;\n}\n.in {\n  visibility: visible;\n  position: relative;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n.out {\n  visibility: hidden;\n  position: absolute;\n  -webkit-animation: 1s fadeIn;\n          animation: 1s fadeIn;\n  opacity: 0;\n  transition: visibility 0s linear 300ms, opacity 300ms;\n}\n.undeployed {\n  transform: rotate(360deg);\n  transition: 500ms;\n  transition-duration: 1s;\n}\n.deployed {\n  transform: rotate(180deg);\n  transition: 500ms;\n}\r\n", ""]);
+exports.push([module.i, ".container {\n  height: 500px;\n}\n.in {\n  visibility: visible;\n  position: relative;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n.out {\n  visibility: hidden;\n  position: absolute;\n  -webkit-animation: 1s fadeIn;\n          animation: 1s fadeIn;\n  opacity: 0;\n  transition: visibility 0s linear 300ms, opacity 300ms;\n}\n.undeployed {\n  transform: rotate(0deg);\n  transition: 500ms;\n  transition-duration: 1s;\n}\n.deployed {\n  transform: rotate(0deg);\n  transition: 500ms;\n}\r\n", ""]);
 
 // exports
 
@@ -4342,11 +4248,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "bg-gray-200" }, [
-    _c("div", { staticClass: "flex justify-around items-start" }, [
+    _c("div", { staticClass: "flex justify-between items-start" }, [
       _c(
         "div",
-        { staticClass: "hidden lg:flex lg:m-8 mr-4" },
-        [_c("filtro")],
+        { staticClass: "lg:flex lg:m-8 mr-4" },
+        [_c("filtro-inmueble")],
         1
       ),
       _vm._v(" "),
@@ -4355,7 +4261,7 @@ var render = function() {
         { staticClass: "m-8 ml-4" },
         [
           _c("w-card", [
-            _c("div", { staticClass: "container bg-gray-200 m-auto" }, [
+            _c("div", { staticClass: "bg-gray-200 m-auto" }, [
               _c(
                 "div",
                 {
@@ -4402,7 +4308,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "container bg-white lg:hidden m-auto" }, [
+            _c("div", { staticClass: "bg-white lg:hidden m-auto" }, [
               _c(
                 "div",
                 { staticClass: "flex justify-center justify-around" },
@@ -4683,11 +4589,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "bg-gray-200" }, [
-    _c("div", { staticClass: "flex justify-between items-start" }, [
+    _c("div", { staticClass: "flex justify-around items-start" }, [
       _c(
         "div",
         { staticClass: "hidden lg:flex lg:m-8 mr-4" },
-        [_c("filtro")],
+        [_c("filtro-publicacion")],
         1
       ),
       _vm._v(" "),
@@ -4709,7 +4615,7 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "container lg:hidden m-auto" }, [
+            _c("div", { staticClass: "flex lg:hidden m-auto" }, [
               _c(
                 "div",
                 { staticClass: "flex" },
@@ -5286,387 +5192,585 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "w-card",
-        [
-          _c("template", { slot: "header" }, [
+  return _c("div", [
+    _c(
+      "div",
+      { attrs: { id: "filter" } },
+      [
+        _c(
+          "w-card",
+          [
+            _c("template", { slot: "header" }, [
+              _c(
+                "h1",
+                {
+                  staticClass:
+                    "white-text uppercase text-left caption tracking-wider bold"
+                },
+                [_vm._v("Filtros")]
+              )
+            ]),
+            _vm._v(" "),
             _c(
               "div",
-              {
-                staticClass:
-                  "flex justify-center lg:justify-between items-center secondary primary-lg"
-              },
-              [
-                _c(
-                  "p",
-                  { staticClass: "hidden lg:block white-text caption bold" },
-                  [_vm._v("\n                    FILTROS\n                ")]
-                ),
+              { staticClass: "flex-wrap m-0 p-0", attrs: { id: "filtros" } },
+              _vm._l(_vm.filters, function(filter) {
+                return _c(
+                  "div",
+                  {
+                    key: filter,
+                    staticClass:
+                      "text-center secondary white-text caption px-5 rounded-full m-2"
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(filter) +
+                        "\n                    "
+                    ),
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.unset(filter)
+                          }
+                        }
+                      },
+                      [_vm._v("X")]
+                    )
+                  ]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("section", { staticClass: "m-auto" }, [
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Tipo De Inmueble")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownTipoInmueble = !_vm.shownTipoInmueble
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownTipoInmueble
+                            ? "deployed"
+                            : "undeployed",
+                          attrs: {
+                            src: _vm.shownTipoInmueble
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
                 _vm._v(" "),
                 _c(
-                  "w-btn",
+                  "div",
                   {
-                    staticClass: "block lg:hidden caption bold white-text",
-                    attrs: { small: "" }
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownTipoInmueble ? " in" : " out"
                   },
-                  [_vm._v("FILTROS X")]
+                  _vm._l(_vm.tipoInmueble, function(inmueble) {
+                    return _c(
+                      "button",
+                      {
+                        key: inmueble,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(inmueble)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(inmueble))]
+                    )
+                  }),
+                  0
                 )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "justify-center " }, [
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex justify-between border-b-2 border-gray-500 p-2"
-                },
-                [
-                  _c("li", { staticClass: "block caption bold" }, [
-                    _vm._v("TIPO DE INMUEBLE")
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Distrito/Ubicación")
                   ]),
                   _vm._v(" "),
-                  _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "bg-gray-200 p-4",
-                  attrs: { id: "tipoinmueble" }
-                },
-                [
-                  _c("ul", [
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("Departamento")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("Casa")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("Oficinas")
-                      ])
-                    ])
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownUbicacion = !_vm.shownUbicacion
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownUbicacion ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownUbicacion
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
                   ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex justify-between border-b-2 border-gray-500 p-2"
-                },
-                [
-                  _c("li", { staticClass: "block caption bold" }, [
-                    _vm._v("DISTRITO/UBICACIÓN")
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownUbicacion ? " in" : " out"
+                  },
+                  _vm._l(_vm.ubicaciones, function(ubicacion) {
+                    return _c(
+                      "button",
+                      {
+                        key: ubicacion,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(ubicacion)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(ubicacion))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Precio")
                   ]),
                   _vm._v(" "),
-                  _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "bg-gray-200 p-4",
-                  attrs: { id: "distrito_ubicacion" }
-                },
-                [
-                  _c("ul", [
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("San Isidro")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("Miraflores")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("Santiago de Surco")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("La Molina")
-                      ])
-                    ])
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownPrecio = !_vm.shownPrecio
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownPrecio ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownPrecio
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
                   ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex justify-between border-b-2 border-gray-500 p-2"
-                },
-                [
-                  _c("li", { staticClass: "block caption bold" }, [
-                    _vm._v("PRECIO")
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownPrecio ? " in" : " out"
+                  },
+                  _vm._l(_vm.precios, function(precio) {
+                    return _c(
+                      "button",
+                      {
+                        key: precio,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(precio)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(precio))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Dormitorios")
                   ]),
                   _vm._v(" "),
-                  _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "bg-gray-200 p-4", attrs: { id: "precio" } },
-                [
-                  _c("ul", [
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("S/ 1500")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("S/ 2500")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("S/ 3550")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("S/ 5400")
-                      ])
-                    ])
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownDormitorio = !_vm.shownDormitorio
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownDormitorio
+                            ? "deployed"
+                            : "undeployed",
+                          attrs: {
+                            src: _vm.shownDormitorio
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
                   ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex justify-between border-b-2 border-gray-500 p-2"
-                },
-                [
-                  _c("li", { staticClass: "block caption bold" }, [
-                    _vm._v("DORMITORIOS")
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownDormitorio ? " in" : " out"
+                  },
+                  _vm._l(_vm.dormitorios, function(dormitorio) {
+                    return _c(
+                      "button",
+                      {
+                        key: dormitorio,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(dormitorio)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(dormitorio))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Area Total (M2)")
                   ]),
                   _vm._v(" "),
-                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "bg-gray-200 p-4 hidden",
-                  attrs: { id: "dormitorios" }
-                },
-                [
-                  _c("ul", [
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("2")
-                      ])
-                    ])
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownArea = !_vm.shownArea
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownArea ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownArea
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
                   ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex justify-between border-b-2 border-gray-500 p-2"
-                },
-                [
-                  _c("li", { staticClass: "block caption bold" }, [
-                    _vm._v("AREA TOTAL (M2)")
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownArea ? " in" : " out"
+                  },
+                  _vm._l(_vm.areas, function(area) {
+                    return _c(
+                      "button",
+                      {
+                        key: area,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(area)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(area))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Cocheras")
                   ]),
                   _vm._v(" "),
-                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "bg-gray-200 p-4 hidden",
-                  attrs: { id: "area" }
-                },
-                [
-                  _c("ul", [
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("2")
-                      ])
-                    ])
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownCochera = !_vm.shownCochera
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownCochera ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownCochera
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
                   ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex justify-between border-b-2 border-gray-500 p-2"
-                },
-                [
-                  _c("li", { staticClass: "block caption bold" }, [
-                    _vm._v("COCHERAS")
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownCochera ? " in" : " out"
+                  },
+                  _vm._l(_vm.cocheras, function(cochera) {
+                    return _c(
+                      "button",
+                      {
+                        key: cochera,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(cochera)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(cochera))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Antigüedad")
                   ]),
                   _vm._v(" "),
-                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "bg-gray-200 p-4 hidden",
-                  attrs: { id: "cocheras" }
-                },
-                [
-                  _c("ul", [
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("2")
-                      ])
-                    ])
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownAntiguedad = !_vm.shownAntiguedad
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownAntiguedad
+                            ? "deployed"
+                            : "undeployed",
+                          attrs: {
+                            src: _vm.shownAntiguedad
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
                   ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex justify-between border-b-2 border-gray-500 p-2"
-                },
-                [
-                  _c("li", { staticClass: "block caption bold" }, [
-                    _vm._v("ANTIGÜEDAD")
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownAntiguedad ? " in" : " out"
+                  },
+                  _vm._l(_vm.antiguedades, function(antiguedad) {
+                    return _c(
+                      "button",
+                      {
+                        key: antiguedad,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(antiguedad)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(antiguedad))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Estado")
                   ]),
                   _vm._v(" "),
-                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "bg-gray-200 p-4 hidden",
-                  attrs: { id: "antiguedad" }
-                },
-                [
-                  _c("ul", [
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("2")
-                      ])
-                    ])
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownEstado = !_vm.shownEstado
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownEstado ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownEstado
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
                   ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "flex justify-between border-b-2 border-gray-500 p-2"
-                },
-                [
-                  _c("li", { staticClass: "block caption bold" }, [
-                    _vm._v("ESTADO")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "bg-gray-200 p-4 hidden",
-                  attrs: { id: "estado" }
-                },
-                [
-                  _c("ul", [
-                    _c("li", [
-                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-                        _vm._v("2")
-                      ])
-                    ])
-                  ])
-                ]
-              )
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownEstado ? " in" : " out"
+                  },
+                  _vm._l(_vm.estados, function(estado) {
+                    return _c(
+                      "button",
+                      {
+                        key: estado,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(estado)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(estado))]
+                    )
+                  }),
+                  0
+                )
+              ])
             ]),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "flex justify-center lg:hidden mt-2" },
+              { staticClass: "flex justify-center lg:hidden" },
               [
                 _c(
                   "w-btn",
                   {
                     staticClass: "caption bold white-text",
-                    attrs: { large: "", color: _vm.$wlinii.secondary }
+                    attrs: { small: "", color: _vm.$wlinii.secondary }
                   },
                   [_vm._v("APLICAR")]
                 )
               ],
               1
             )
-          ])
-        ],
-        2
-      )
-    ],
-    1
-  )
+          ],
+          2
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -5703,25 +5807,22 @@ var render = function() {
                 "h1",
                 {
                   staticClass:
-                    "text-white uppercase text-center caption tracking-wider bold"
+                    "white-text uppercase text-left caption tracking-wider bold"
                 },
-                [_vm._v("Filtros aplicados")]
+                [_vm._v("Ordenar Por")]
               )
             ]),
             _vm._v(" "),
             _c(
               "div",
-              {
-                staticClass: "flex flex-wrap m-0 p-0",
-                attrs: { id: "filtros" }
-              },
+              { staticClass: "flex-wrap m-0 p-0", attrs: { id: "filtros" } },
               _vm._l(_vm.filters, function(filter) {
                 return _c(
                   "div",
                   {
                     key: filter,
                     staticClass:
-                      "text-center secondary text-white px-5 rounded-full m-2"
+                      "text-center secondary white-text caption px-5 rounded-full m-2"
                   },
                   [
                     _vm._v(
@@ -5748,8 +5849,8 @@ var render = function() {
             _vm._v(" "),
             _c("section", { staticClass: "m-auto" }, [
               _c("article", [
-                _c("div", { staticClass: "flex justify-between p-5" }, [
-                  _c("h1", { staticClass: "uppercase text-lg font-semibold" }, [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
                     _vm._v("Operaciones")
                   ]),
                   _vm._v(" "),
@@ -5761,15 +5862,22 @@ var render = function() {
                         on: {
                           click: function($event) {
                             $event.preventDefault()
-                            _vm.shown = !_vm.shown
+                            _vm.shownOperaciones = !_vm.shownOperaciones
                           }
                         }
                       },
                       [
                         _c("img", {
                           staticClass: "h-5",
-                          class: _vm.shown ? "deployed" : "undeployed",
-                          attrs: { src: "/images/arrow-up.png", alt: "" }
+                          class: _vm.shownOperaciones
+                            ? "deployed"
+                            : "undeployed",
+                          attrs: {
+                            src: _vm.shownOperaciones
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
                         })
                       ]
                     )
@@ -5780,14 +5888,14 @@ var render = function() {
                   "div",
                   {
                     staticClass: "bg-gray-300 mx-auto px-10 py-5",
-                    class: _vm.shown ? " in" : " out"
+                    class: _vm.shownOperaciones ? " in" : " out"
                   },
                   _vm._l(_vm.operaciones, function(operacion) {
                     return _c(
                       "button",
                       {
                         key: operacion,
-                        staticClass: "outline-none block py-3",
+                        staticClass: "outline-none block py-3 caption",
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -5799,12 +5907,14 @@ var render = function() {
                     )
                   }),
                   0
-                )
+                ),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" })
               ]),
               _vm._v(" "),
               _c("article", [
-                _c("div", { staticClass: "flex justify-between p-5" }, [
-                  _c("h1", { staticClass: "uppercase text-lg font-semibold" }, [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
                     _vm._v("Publicaciones")
                   ]),
                   _vm._v(" "),
@@ -5816,15 +5926,22 @@ var render = function() {
                         on: {
                           click: function($event) {
                             $event.preventDefault()
-                            _vm.shown = !_vm.shown
+                            _vm.shownPublicaciones = !_vm.shownPublicaciones
                           }
                         }
                       },
                       [
                         _c("img", {
                           staticClass: "h-5",
-                          class: _vm.shown ? "deployed" : "undeployed",
-                          attrs: { src: "/images/arrow-up.png", alt: "" }
+                          class: _vm.shownPublicaciones
+                            ? "deployed"
+                            : "undeployed",
+                          attrs: {
+                            src: _vm.shownPublicaciones
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
                         })
                       ]
                     )
@@ -5835,14 +5952,14 @@ var render = function() {
                   "div",
                   {
                     staticClass: "bg-gray-300 mx-auto px-10 py-5",
-                    class: _vm.shown ? " in" : " out"
+                    class: _vm.shownPublicaciones ? " in" : " out"
                   },
                   _vm._l(_vm.publicaciones, function(publicacion) {
                     return _c(
                       "button",
                       {
                         key: publicacion,
-                        staticClass: "outline-none block py-3",
+                        staticClass: "outline-none block py-3 caption",
                         on: {
                           click: function($event) {
                             $event.preventDefault()
@@ -5854,9 +5971,89 @@ var render = function() {
                     )
                   }),
                   0
-                )
+                ),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" })
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Borrador")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownBorrador = !_vm.shownBorrador
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownBorrador ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownBorrador
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownBorrador ? " in" : " out"
+                  },
+                  _vm._l(_vm.borradores, function(borrador) {
+                    return _c(
+                      "button",
+                      {
+                        key: borrador,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(borrador)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(borrador))]
+                    )
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" })
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex justify-center" },
+              [
+                _c(
+                  "w-btn",
+                  {
+                    staticClass: "white-text justify-center",
+                    attrs: { small: "", color: _vm.$wlinii.secondary }
+                  },
+                  [_vm._v("NUEVA PUBLICACIÓN")]
+                )
+              ],
+              1
+            )
           ],
           2
         )
