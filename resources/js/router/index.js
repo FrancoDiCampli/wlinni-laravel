@@ -4,6 +4,7 @@ import Home from "../views/Home";
 import PreciosSuscripcion from "../views/PreciosSuscripcion";
 import ListadoPublicacion from "../views/ListadoPublicacion";
 import ListadoInmueble from "../views/ListadoInmueble";
+import DetallePublicacion from "../views/DetallePublicacion";
 
 Vue.use(Router);
 
@@ -29,6 +30,11 @@ export default new Router({
             path: "/listado_inmueble",
             name: "listadoInmueble",
             component: ListadoInmueble
+        },
+        {
+            path: "/detalle_publicacion",
+            name: "detallePublicacion",
+            component: DetallePublicacion
         }
     ]
 });

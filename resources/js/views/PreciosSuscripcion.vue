@@ -1,7 +1,7 @@
 <template>
     <!-- PAGINAS 22 - 24 -->
     <div class="bg-gray-200 py-16">
-        <div class="container m-auto bg-white rounded-lg overflow-hidden shadow-lg">
+        <div class="m-auto bg-white rounded-lg overflow-hidden shadow-lg">
             <div class="flex-wrap bg-gray-200 lg:bg-white py-8">
                 <div
                     class="flex justify-center tracking-wide pl-12 lg:pl-0 font-bold text-4xl"

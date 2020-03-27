@@ -3,7 +3,7 @@
         <!-- PAGINAS 12 - 19 - 26 - 35 -->
 
         <div class="flex justify-between items-start">
-            <div class="lg:flex lg:m-8 mr-4">
+            <div class="hidden lg:flex lg:m-8 mr-4">
                 <filtro-inmueble></filtro-inmueble>
             </div>
 
