@@ -2094,6 +2094,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2130,6 +2142,34 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _filtros_FiltroPublicacion_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filtros/FiltroPublicacion.vue */ "./resources/js/views/filtros/FiltroPublicacion.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2590,6 +2630,210 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltroInmueble"
 });
@@ -2677,8 +2921,101 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "FiltroPublicacion"
+  name: "FiltroPublicacion",
+  data: function data() {
+    return {
+      shown: true,
+      filters: [],
+      operaciones: ["Venta", "Alquiler", "Traspaso"],
+      publicaciones: ["Casas", "Alquileres", "Oficinas"]
+    };
+  },
+  methods: {
+    set: function set(op) {
+      this.filters.push(op);
+    },
+    unset: function unset(op) {
+      var i = this.filters.indexOf(op);
+      this.filters.splice(i, 1);
+    }
+  }
 });
 
 /***/ }),
@@ -2716,6 +3053,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".card[data-v-63cd6604] {\n  width: 525px;\n  margin: auto;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=style&index=0&lang=css&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container {\n  height: 500px;\n}\n.in {\n  visibility: visible;\n  position: relative;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n.out {\n  visibility: hidden;\n  position: absolute;\n  -webkit-animation: 1s fadeIn;\n          animation: 1s fadeIn;\n  opacity: 0;\n  transition: visibility 0s linear 300ms, opacity 300ms;\n}\n.undeployed {\n  transform: rotate(360deg);\n  transition: 500ms;\n  transition-duration: 1s;\n}\n.deployed {\n  transform: rotate(180deg);\n  transition: 500ms;\n}\r\n", ""]);
 
 // exports
 
@@ -3252,6 +3608,36 @@ options.transform = transform
 options.insertInto = undefined;
 
 var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=style&index=0&lang=css&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=style&index=0&lang=css& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./FiltroPublicacion.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -3955,23 +4341,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "bg-gray-300" }, [
-    _c(
-      "div",
-      { staticClass: "flex-wrap lg:flex justify-between items-start lg:px-12" },
-      [
-        _c(
-          "div",
-          { staticClass: "hidden lg:flex bg-white" },
-          [_c("filtro")],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "rounded-lg overflow-hidden shadow-lg my-8" },
-          [
-            _c("div", { staticClass: "container bg-gray-300 m-auto" }, [
+  return _c("div", { staticClass: "bg-gray-200" }, [
+    _c("div", { staticClass: "flex justify-around items-start" }, [
+      _c(
+        "div",
+        { staticClass: "hidden lg:flex lg:m-8 mr-4" },
+        [_c("filtro")],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "m-8 ml-4" },
+        [
+          _c("w-card", [
+            _c("div", { staticClass: "container bg-gray-200 m-auto" }, [
               _c(
                 "div",
                 {
@@ -3996,7 +4380,7 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                            BUSQUEDA DE MAPA\n                            "
+                            "\n                                BUSQUEDA DE MAPA\n                                "
                           ),
                           _c(
                             "div",
@@ -4018,282 +4402,262 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "container bg-white lg:hidden m-auto py-8 px-2" },
-              [
-                _c(
-                  "div",
-                  { staticClass: "flex justify-center justify-around" },
-                  [
-                    _c(
-                      "w-btn",
-                      {
-                        staticClass:
-                          "flex caption bold white-text items-center",
-                        attrs: { color: _vm.$wlinii.tertiary }
-                      },
-                      [
-                        _vm._v(
-                          "\n                        VER MAPA\n                        "
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "pl-4" },
-                          [
-                            _c("w-icon", {
-                              staticClass: "bg-white",
-                              attrs: { icon: "map", h: "24px" }
-                            })
-                          ],
-                          1
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "w-btn",
-                      {
-                        staticClass:
-                          "flex caption bold white-text items-center",
-                        attrs: { color: _vm.$wlinii.secondary }
-                      },
-                      [
-                        _vm._v(
-                          "\n                        FILTRAR\n                        "
-                        ),
-                        _c("w-icon", {
-                          staticClass: "pl-4",
-                          attrs: { icon: "bars-white", h: "24px" }
-                        })
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "container bg-gray-300 lg:bg-white m-auto p-8 lg:pt-0"
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "auto" },
-                  _vm._l(_vm.cards, function(item) {
-                    return _c("div", { key: item.i }, [
+            _c("div", { staticClass: "container bg-white lg:hidden m-auto" }, [
+              _c(
+                "div",
+                { staticClass: "flex justify-center justify-around" },
+                [
+                  _c(
+                    "w-btn",
+                    {
+                      staticClass: "flex caption bold white-text items-center",
+                      attrs: { small: "", color: _vm.$wlinii.tertiary }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            VER MAPA\n                            "
+                      ),
+                      _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "my-8 lg:my-4" },
+                        { staticClass: "pl-4" },
                         [
-                          _c(
-                            "w-card",
-                            {
-                              attrs: { image: item.image, hover: "full-hover" }
-                            },
-                            [
-                              _c("template", { slot: "image" }, [
-                                _c("div", [
-                                  _c("p", { staticClass: "caption bold" }, [
-                                    _vm._v("BUILT-UP-65 SQ FT")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "caption bold" }, [
-                                    _vm._v("LAND SIZE-110 SQ FT")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("br"),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "caption" }, [
-                                    _vm._v(
-                                      "\n                                            Casa frente a un grande parque con juegos para\n                                            niños, lugares para hacer ejercicios y otros.\n                                        "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
+                          _c("w-icon", {
+                            staticClass: "bg-white",
+                            attrs: { icon: "map", h: "20px" }
+                          })
+                        ],
+                        1
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "w-btn",
+                    {
+                      staticClass: "flex caption bold white-text items-center",
+                      attrs: { small: "", color: _vm.$wlinii.secondary }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            FILTRAR\n                            "
+                      ),
+                      _c("w-icon", {
+                        staticClass: "pl-4",
+                        attrs: { icon: "bars-white", h: "20px" }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "bg-gray-200 lg:bg-white" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex-wrap lg:grid gap-4 grid-cols-3 justify-between items-center"
+                },
+                _vm._l(_vm.cards, function(item) {
+                  return _c("div", { key: item.i }, [
+                    _c(
+                      "div",
+                      { staticClass: "my-8 lg:my-0" },
+                      [
+                        _c(
+                          "w-card",
+                          { attrs: { image: item.image, hover: "full-hover" } },
+                          [
+                            _c("template", { slot: "image" }, [
+                              _c("div", [
+                                _c("p", { staticClass: "caption bold" }, [
+                                  _vm._v("BUILT-UP-65 SQ FT")
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "caption bold" }, [
+                                  _vm._v("LAND SIZE-110 SQ FT")
+                                ]),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "caption" }, [
+                                  _vm._v(
+                                    "\n                                                Casa frente a un grande\n                                                parque con juegos para\n                                                niños, lugares para hacer\n                                                ejercicios y otros.\n                                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "block lg:hidden" }, [
                                   _c(
-                                    "div",
-                                    { staticClass: "block lg:hidden" },
+                                    "p",
+                                    {
+                                      staticClass: "caption bold secondary-text"
+                                    },
                                     [
-                                      _c(
-                                        "p",
-                                        {
-                                          staticClass:
-                                            "caption bold secondary-text"
-                                        },
-                                        [_vm._v("Agregado hace: 5 días atras")]
+                                      _vm._v(
+                                        "\n                                                    Agregado hace: 5 días\n                                                    atras\n                                                "
                                       )
                                     ]
                                   )
                                 ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("template", { slot: "state" }, [
+                              _c(
+                                "p",
+                                { staticClass: "caption bold white-text" },
+                                [_vm._v(_vm._s(item.tipo))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("h1", { staticClass: "caption bold" }, [
+                                _vm._v("958 Calle montreal")
                               ]),
                               _vm._v(" "),
-                              _c("template", { slot: "state" }, [
-                                _c(
-                                  "p",
-                                  { staticClass: "caption bold white-text" },
-                                  [_vm._v(_vm._s(item.tipo))]
-                                )
+                              _c("p", { staticClass: "caption" }, [
+                                _vm._v("Av.montreal")
                               ]),
                               _vm._v(" "),
-                              _c("div", {}, [
-                                _c("h1", { staticClass: "caption bold" }, [
-                                  _vm._v("958 Calle montreal")
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "caption" }, [
-                                  _vm._v("Av.montreal")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "flex justify-between" },
-                                  [
-                                    _c("p", { staticClass: "caption" }, [
-                                      _vm._v("Comisión")
-                                    ]),
-                                    _vm._v(" "),
-                                    item.tipo == "Alquiler"
-                                      ? _c(
-                                          "h1",
-                                          {
-                                            staticClass:
-                                              "flex caption justify-end"
-                                          },
-                                          [_vm._v("MES")]
-                                        )
-                                      : _vm._e()
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "flex justify-between" },
-                                  [
-                                    _c("h1", { staticClass: "body bold" }, [
-                                      _vm._v("5%")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("div", [
-                                      _c(
+                              _c(
+                                "div",
+                                { staticClass: "flex justify-between" },
+                                [
+                                  _c("p", { staticClass: "caption" }, [
+                                    _vm._v("Comisión")
+                                  ]),
+                                  _vm._v(" "),
+                                  item.tipo == "Alquiler"
+                                    ? _c(
                                         "h1",
                                         {
-                                          staticClass: "body bold tertiary-text"
+                                          staticClass:
+                                            "flex caption justify-end"
                                         },
-                                        [_vm._v("S/ 86,723")]
+                                        [_vm._v("MES")]
                                       )
-                                    ])
-                                  ]
-                                )
-                              ]),
+                                    : _vm._e()
+                                ]
+                              ),
                               _vm._v(" "),
-                              _c("template", { slot: "footer" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "flex justify-around" },
-                                  [
+                              _c(
+                                "div",
+                                { staticClass: "flex justify-between" },
+                                [
+                                  _c("h1", { staticClass: "body bold" }, [
+                                    _vm._v("5%")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", [
                                     _c(
-                                      "div",
-                                      { staticClass: "info-item" },
-                                      [
-                                        _c("w-icon", {
-                                          attrs: {
-                                            icon: "room-solid",
-                                            h: "12px"
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "p",
-                                          { staticClass: "caption white-text" },
-                                          [_vm._v("3")]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "info-item" },
-                                      [
-                                        _c("w-icon", {
-                                          attrs: {
-                                            icon: "bath-solid",
-                                            h: "14px"
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "p",
-                                          { staticClass: "caption white-text" },
-                                          [_vm._v("3")]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "info-item" },
-                                      [
-                                        _c("w-icon", {
-                                          attrs: {
-                                            icon: "parking-solid",
-                                            h: "13px"
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "p",
-                                          { staticClass: "caption white-text" },
-                                          [_vm._v("3")]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "info-item" }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "info-item" },
-                                      [
-                                        _c("w-icon", {
-                                          attrs: { icon: "size", h: "15px" }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "p",
-                                          { staticClass: "caption white-text" },
-                                          [_vm._v("120m")]
-                                        )
-                                      ],
-                                      1
+                                      "h1",
+                                      {
+                                        staticClass: "body bold tertiary-text"
+                                      },
+                                      [_vm._v("S/ 86,723")]
                                     )
-                                  ]
-                                )
-                              ])
-                            ],
-                            2
-                          )
-                        ],
-                        1
-                      )
-                    ])
-                  }),
-                  0
-                )
-              ]
-            )
-          ]
-        )
-      ]
-    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("template", { slot: "footer" }, [
+                              _c(
+                                "div",
+                                { staticClass: "flex justify-between" },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "info-item" },
+                                    [
+                                      _c("w-icon", {
+                                        attrs: { icon: "room-solid", h: "12px" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "caption white-text" },
+                                        [_vm._v("3")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "info-item" },
+                                    [
+                                      _c("w-icon", {
+                                        attrs: { icon: "bath-solid", h: "12px" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "caption white-text" },
+                                        [_vm._v("3")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "info-item" },
+                                    [
+                                      _c("w-icon", {
+                                        attrs: {
+                                          icon: "parking-solid",
+                                          h: "12px"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "caption white-text" },
+                                        [_vm._v("3")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "info-item" },
+                                    [
+                                      _c("w-icon", {
+                                        attrs: { icon: "size", h: "12px" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "caption white-text" },
+                                        [_vm._v("120m")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ]
+                              )
+                            ])
+                          ],
+                          2
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                }),
+                0
+              )
+            ])
+          ])
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -4318,20 +4682,34 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "bg-gray-300" }, [
-    _c(
-      "div",
-      { staticClass: "flex-wrap lg:flex justify-between items-start lg:px-12" },
-      [
-        _c("div", { staticClass: "hidden lg:flex" }, [_c("filtro")], 1),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "bg-white rounded-lg overflow-hidden shadow-lg my-8" },
-          [
-            _vm._m(0),
+  return _c("div", { staticClass: "bg-gray-200" }, [
+    _c("div", { staticClass: "flex justify-between items-start" }, [
+      _c(
+        "div",
+        { staticClass: "hidden lg:flex lg:m-8 mr-4" },
+        [_c("filtro")],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "m-8 ml-4" },
+        [
+          _c("w-card", [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex bg-gray-200 lg:bg-white justify-center lg:justify-start"
+              },
+              [
+                _c("div", { staticClass: "subtitle bold" }, [
+                  _vm._v("Listado de Publicaciones")
+                ])
+              ]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "container lg:hidden m-auto py-4 px-8" }, [
+            _c("div", { staticClass: "container lg:hidden m-auto" }, [
               _c(
                 "div",
                 { staticClass: "flex" },
@@ -4344,7 +4722,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                        FILTRAR\n                        "
+                        "\n                            FILTRAR\n                            "
                       ),
                       _c("w-icon", {
                         staticClass: "pl-4",
@@ -4358,179 +4736,155 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "container bg-gray-300 lg:bg-white m-auto p-8 lg:pt-0"
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "flex-wrap lg:flex justify-between items-center"
-                  },
-                  _vm._l(_vm.cards, function(item) {
-                    return _c("div", { key: item.i }, [
-                      _c(
-                        "div",
-                        { staticClass: "my-8 lg:my-4" },
-                        [
-                          _c(
-                            "w-card",
-                            {
-                              attrs: { image: item.image, hover: "full-hover" }
-                            },
-                            [
-                              _c("template", { slot: "header" }, [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "flex items-center justify-between caption white-text"
-                                  },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "flex items-center" },
-                                      [
-                                        _c("div", [
-                                          item.tipo == "Borrador"
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass: "circleBorrador"
-                                                })
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          item.tipo == "Vendido"
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass: "circleVendido"
-                                                })
-                                              ])
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          item.tipo == "Publicado"
-                                            ? _c("div", [
-                                                _c("div", {
-                                                  staticClass: "circlePublicado"
-                                                })
-                                              ])
-                                            : _vm._e()
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("p", { staticClass: "px-2" }, [
-                                          _vm._v(_vm._s(item.tipo))
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "flex items-center" },
-                                      [
-                                        _c("w-nav-btn", {
-                                          staticClass: "px-4",
-                                          attrs: { icon: "edit", iconH: "14px" }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("w-nav-btn", {
-                                          staticClass: "px-4",
-                                          attrs: {
-                                            icon: "parking-solid",
-                                            iconH: "14px"
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("template", { slot: "image" }, [
-                                _c(
-                                  "form",
-                                  [_c("w-input"), _vm._v(" "), _c("w-input")],
-                                  1
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", [
-                                _c(
-                                  "h1",
-                                  { staticClass: "caption bold tertiary-text" },
-                                  [_vm._v("850 Pennsylvania")]
-                                ),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "caption html" }, [
-                                  _vm._v("Philiadelphia, Cherry Hill, DC205500")
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "caption html" }, [
-                                  _vm._v("Modificación: 2020/09/05")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              item.tipo == "Publicado"
-                                ? _c(
+            _c("div", { staticClass: "bg-gray-200 lg:bg-white lg:my-4" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex-wrap lg:grid gap-8 grid-cols-3 justify-between items-center"
+                },
+                _vm._l(_vm.cards, function(item) {
+                  return _c("div", { key: item.i }, [
+                    _c(
+                      "div",
+                      { staticClass: "my-8 lg:my-0" },
+                      [
+                        _c(
+                          "w-card",
+                          { attrs: { image: item.image, hover: "full-hover" } },
+                          [
+                            _c("template", { slot: "header" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "flex items-center justify-between caption white-text"
+                                },
+                                [
+                                  _c(
                                     "div",
-                                    { staticClass: "flex justify-center mt-4" },
+                                    { staticClass: "flex items-center" },
                                     [
-                                      _c(
-                                        "w-btn",
-                                        {
-                                          staticClass: "caption white-text",
-                                          attrs: { color: _vm.$wlinii.primary }
-                                        },
-                                        [_vm._v("CERRAR PUBLICACIÓN")]
-                                      )
+                                      _c("div", [
+                                        item.tipo == "Borrador"
+                                          ? _c("div", [
+                                              _c("div", {
+                                                staticClass: "circleBorrador"
+                                              })
+                                            ])
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        item.tipo == "Vendido"
+                                          ? _c("div", [
+                                              _c("div", {
+                                                staticClass: "circleVendido"
+                                              })
+                                            ])
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        item.tipo == "Publicado"
+                                          ? _c("div", [
+                                              _c("div", {
+                                                staticClass: "circlePublicado"
+                                              })
+                                            ])
+                                          : _vm._e()
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "px-2" }, [
+                                        _vm._v(_vm._s(item.tipo))
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "flex items-center" },
+                                    [
+                                      _c("w-nav-btn", {
+                                        staticClass: "px-4",
+                                        attrs: { icon: "edit", iconH: "14px" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("w-nav-btn", {
+                                        staticClass: "px-4",
+                                        attrs: {
+                                          icon: "parking-solid",
+                                          iconH: "14px"
+                                        }
+                                      })
                                     ],
                                     1
                                   )
-                                : _vm._e()
-                            ],
-                            2
-                          )
-                        ],
-                        1
-                      )
-                    ])
-                  }),
-                  0
-                )
-              ]
-            )
-          ]
-        )
-      ]
-    )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("template", { slot: "image" }, [
+                              _c(
+                                "form",
+                                [_c("w-input"), _vm._v(" "), _c("w-input")],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c(
+                                "h1",
+                                { staticClass: "caption bold tertiary-text" },
+                                [_vm._v("850 Pennsylvania")]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption html" }, [
+                                _vm._v(
+                                  "\n                                            Philiadelphia, Cherry Hill,\n                                            DC205500\n                                        "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption html" }, [
+                                _vm._v("Modificación: 2020/09/05")
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            item.tipo == "Publicado"
+                              ? _c(
+                                  "div",
+                                  { staticClass: "flex justify-center" },
+                                  [
+                                    _c(
+                                      "w-btn",
+                                      {
+                                        staticClass: "caption white-text",
+                                        attrs: {
+                                          small: "",
+                                          color: _vm.$wlinii.primary
+                                        }
+                                      },
+                                      [_vm._v("CERRAR PUBLICACIÓN")]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e()
+                          ],
+                          2
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                }),
+                0
+              )
+            ])
+          ])
+        ],
+        1
+      )
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "container bg-gray-300 lg:bg-white m-auto p-8 lg:px-8" },
-      [
-        _c(
-          "div",
-          { staticClass: "flex lg:bg-white justify-center lg:justify-start" },
-          [
-            _c("div", { staticClass: "subtitle bold" }, [
-              _vm._v("Listado de Publicaciones")
-            ])
-          ]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -4932,399 +5286,389 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "w-64 rounded-lg overflow-hidden shadow-lg" }, [
+  return _c(
+    "div",
+    [
       _c(
-        "div",
-        {
-          staticClass:
-            "flex justify-center lg:justify-between items-center secondary primary-lg"
-        },
+        "w-card",
         [
-          _c(
-            "p",
-            { staticClass: "hidden lg:block white-text caption bold p-2 pl-4" },
-            [_vm._v("FILTROS")]
-          ),
-          _vm._v(" "),
-          _c(
-            "w-btn",
-            {
-              staticClass: "block lg:hidden caption bold white-text",
-              attrs: { small: "" }
-            },
-            [_vm._v("FILTROS X")]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "justify-center p-4" }, [
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass: "flex justify-between border-b-2 border-gray-500 p-2"
-            },
-            [
-              _c("li", { staticClass: "block caption bold" }, [
-                _vm._v("TIPO DE INMUEBLE")
-              ]),
-              _vm._v(" "),
-              _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(0)
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass: "flex justify-between border-b-2 border-gray-500 p-2"
-            },
-            [
-              _c("li", { staticClass: "block caption bold" }, [
-                _vm._v("DISTRITO/UBICACIÓN")
-              ]),
-              _vm._v(" "),
-              _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(1)
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass: "flex justify-between border-b-2 border-gray-500 p-2"
-            },
-            [
-              _c("li", { staticClass: "block caption bold" }, [
-                _vm._v("PRECIO")
-              ]),
-              _vm._v(" "),
-              _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(2)
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass: "flex justify-between border-b-2 border-gray-500 p-2"
-            },
-            [
-              _c("li", { staticClass: "block caption bold" }, [
-                _vm._v("DORMITORIOS")
-              ]),
-              _vm._v(" "),
-              _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(3)
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass: "flex justify-between border-b-2 border-gray-500 p-2"
-            },
-            [
-              _c("li", { staticClass: "block caption bold" }, [
-                _vm._v("AREA TOTAL (M2)")
-              ]),
-              _vm._v(" "),
-              _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(4)
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass: "flex justify-between border-b-2 border-gray-500 p-2"
-            },
-            [
-              _c("li", { staticClass: "block caption bold" }, [
-                _vm._v("COCHERAS")
-              ]),
-              _vm._v(" "),
-              _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(5)
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass: "flex justify-between border-b-2 border-gray-500 p-2"
-            },
-            [
-              _c("li", { staticClass: "block caption bold" }, [
-                _vm._v("ANTIGÜEDAD")
-              ]),
-              _vm._v(" "),
-              _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(6)
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass: "flex justify-between border-b-2 border-gray-500 p-2"
-            },
-            [
-              _c("li", { staticClass: "block caption bold" }, [
-                _vm._v("ESTADO")
-              ]),
-              _vm._v(" "),
-              _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(7)
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "flex justify-center lg:hidden mt-2" },
-          [
+          _c("template", { slot: "header" }, [
             _c(
-              "w-btn",
+              "div",
               {
-                staticClass: "caption bold white-text",
-                attrs: { large: "", color: _vm.$wlinii.secondary }
+                staticClass:
+                  "flex justify-center lg:justify-between items-center secondary primary-lg"
               },
-              [_vm._v("APLICAR")]
+              [
+                _c(
+                  "p",
+                  { staticClass: "hidden lg:block white-text caption bold" },
+                  [_vm._v("\n                    FILTROS\n                ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "w-btn",
+                  {
+                    staticClass: "block lg:hidden caption bold white-text",
+                    attrs: { small: "" }
+                  },
+                  [_vm._v("FILTROS X")]
+                )
+              ],
+              1
             )
-          ],
-          1
-        )
-      ])
-    ])
-  ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "justify-center " }, [
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-between border-b-2 border-gray-500 p-2"
+                },
+                [
+                  _c("li", { staticClass: "block caption bold" }, [
+                    _vm._v("TIPO DE INMUEBLE")
+                  ]),
+                  _vm._v(" "),
+                  _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "bg-gray-200 p-4",
+                  attrs: { id: "tipoinmueble" }
+                },
+                [
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("Departamento")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("Casa")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("Oficinas")
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-between border-b-2 border-gray-500 p-2"
+                },
+                [
+                  _c("li", { staticClass: "block caption bold" }, [
+                    _vm._v("DISTRITO/UBICACIÓN")
+                  ]),
+                  _vm._v(" "),
+                  _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "bg-gray-200 p-4",
+                  attrs: { id: "distrito_ubicacion" }
+                },
+                [
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("San Isidro")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("Miraflores")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("Santiago de Surco")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("La Molina")
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-between border-b-2 border-gray-500 p-2"
+                },
+                [
+                  _c("li", { staticClass: "block caption bold" }, [
+                    _vm._v("PRECIO")
+                  ]),
+                  _vm._v(" "),
+                  _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "bg-gray-200 p-4", attrs: { id: "precio" } },
+                [
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("S/ 1500")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("S/ 2500")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("S/ 3550")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("S/ 5400")
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-between border-b-2 border-gray-500 p-2"
+                },
+                [
+                  _c("li", { staticClass: "block caption bold" }, [
+                    _vm._v("DORMITORIOS")
+                  ]),
+                  _vm._v(" "),
+                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "bg-gray-200 p-4 hidden",
+                  attrs: { id: "dormitorios" }
+                },
+                [
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("2")
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-between border-b-2 border-gray-500 p-2"
+                },
+                [
+                  _c("li", { staticClass: "block caption bold" }, [
+                    _vm._v("AREA TOTAL (M2)")
+                  ]),
+                  _vm._v(" "),
+                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "bg-gray-200 p-4 hidden",
+                  attrs: { id: "area" }
+                },
+                [
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("2")
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-between border-b-2 border-gray-500 p-2"
+                },
+                [
+                  _c("li", { staticClass: "block caption bold" }, [
+                    _vm._v("COCHERAS")
+                  ]),
+                  _vm._v(" "),
+                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "bg-gray-200 p-4 hidden",
+                  attrs: { id: "cocheras" }
+                },
+                [
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("2")
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-between border-b-2 border-gray-500 p-2"
+                },
+                [
+                  _c("li", { staticClass: "block caption bold" }, [
+                    _vm._v("ANTIGÜEDAD")
+                  ]),
+                  _vm._v(" "),
+                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "bg-gray-200 p-4 hidden",
+                  attrs: { id: "antiguedad" }
+                },
+                [
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("2")
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex justify-between border-b-2 border-gray-500 p-2"
+                },
+                [
+                  _c("li", { staticClass: "block caption bold" }, [
+                    _vm._v("ESTADO")
+                  ]),
+                  _vm._v(" "),
+                  _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "bg-gray-200 p-4 hidden",
+                  attrs: { id: "estado" }
+                },
+                [
+                  _c("ul", [
+                    _c("li", [
+                      _c("a", { staticClass: "caption", attrs: { href: "" } }, [
+                        _vm._v("2")
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex justify-center lg:hidden mt-2" },
+              [
+                _c(
+                  "w-btn",
+                  {
+                    staticClass: "caption bold white-text",
+                    attrs: { large: "", color: _vm.$wlinii.secondary }
+                  },
+                  [_vm._v("APLICAR")]
+                )
+              ],
+              1
+            )
+          ])
+        ],
+        2
+      )
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4", attrs: { id: "tipoinmueble" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("Departamento")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("Casa")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("Oficinas")
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4", attrs: { id: "distrito_ubicacion" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("San Isidro")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("Miraflores")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("Santiago de Surco")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("La Molina")
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4", attrs: { id: "precio" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("S/ 1500")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("S/ 2500")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("S/ 3550")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("S/ 5400")
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4 hidden", attrs: { id: "dormitorios" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("2")
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4 hidden", attrs: { id: "area" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("2")
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4 hidden", attrs: { id: "cocheras" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("2")
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4 hidden", attrs: { id: "antiguedad" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("2")
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4 hidden", attrs: { id: "estado" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("2")
-            ])
-          ])
-        ])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -5349,175 +5693,179 @@ var render = function() {
   return _c("div", [
     _c(
       "div",
-      {
-        staticClass: "w-64 bg-white rounded-lg overflow-hidden shadow-lg my-8"
-      },
+      { attrs: { id: "filter" } },
       [
         _c(
-          "div",
-          {
-            staticClass:
-              "flex justify-center lg:justify-between items-center secondary primary-lg"
-          },
+          "w-card",
           [
-            _c(
-              "p",
-              {
-                staticClass: "hidden lg:block white-text caption bold p-2 pl-6"
-              },
-              [_vm._v("ORDENAR POR")]
-            ),
-            _vm._v(" "),
-            _c(
-              "w-btn",
-              {
-                staticClass: "block lg:hidden caption bold white-text",
-                attrs: { small: "" }
-              },
-              [_vm._v("FILTROS X")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "justify-center p-4 pb-0" }, [
-          _c("div", [
-            _c(
-              "div",
-              { staticClass: "flex justify-between p-2" },
-              [
-                _c("li", { staticClass: "block caption bold" }, [
-                  _vm._v("OPERACIONES")
-                ]),
-                _vm._v(" "),
-                _c("w-icon", { attrs: { icon: "arrow-up", h: "20px" } })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _vm._m(0),
-            _vm._v(" "),
-            _c("hr", { staticClass: "border-b-2 border-gray-500" })
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c(
-              "div",
-              { staticClass: "flex justify-between p-2" },
-              [
-                _c("li", { staticClass: "block caption bold" }, [
-                  _vm._v("PUBLICACIONES")
-                ]),
-                _vm._v(" "),
-                _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _c("hr", { staticClass: "border-b-2 border-gray-500" })
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c(
-              "div",
-              { staticClass: "flex justify-between p-2" },
-              [
-                _c("li", { staticClass: "block caption bold" }, [
-                  _vm._v("BORRADOR")
-                ]),
-                _vm._v(" "),
-                _c("w-icon", { attrs: { icon: "arrow-down", h: "20px" } })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _vm._m(2),
-            _vm._v(" "),
-            _c("hr", { staticClass: "border-b-2 border-gray-500" })
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex justify-center" },
-            [
+            _c("template", { slot: "header" }, [
               _c(
-                "w-btn",
+                "h1",
                 {
-                  staticClass: "white-text justify-center",
-                  attrs: { color: _vm.$wlinii.secondary }
+                  staticClass:
+                    "text-white uppercase text-center caption tracking-wider bold"
                 },
-                [_vm._v("NUEVA PUBLICACIÓN")]
+                [_vm._v("Filtros aplicados")]
               )
-            ],
-            1
-          )
-        ])
-      ]
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "flex flex-wrap m-0 p-0",
+                attrs: { id: "filtros" }
+              },
+              _vm._l(_vm.filters, function(filter) {
+                return _c(
+                  "div",
+                  {
+                    key: filter,
+                    staticClass:
+                      "text-center secondary text-white px-5 rounded-full m-2"
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(filter) +
+                        "\n                    "
+                    ),
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.unset(filter)
+                          }
+                        }
+                      },
+                      [_vm._v("X")]
+                    )
+                  ]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("section", { staticClass: "m-auto" }, [
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between p-5" }, [
+                  _c("h1", { staticClass: "uppercase text-lg font-semibold" }, [
+                    _vm._v("Operaciones")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shown = !_vm.shown
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shown ? "deployed" : "undeployed",
+                          attrs: { src: "/images/arrow-up.png", alt: "" }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shown ? " in" : " out"
+                  },
+                  _vm._l(_vm.operaciones, function(operacion) {
+                    return _c(
+                      "button",
+                      {
+                        key: operacion,
+                        staticClass: "outline-none block py-3",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(operacion)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(operacion))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between p-5" }, [
+                  _c("h1", { staticClass: "uppercase text-lg font-semibold" }, [
+                    _vm._v("Publicaciones")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shown = !_vm.shown
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shown ? "deployed" : "undeployed",
+                          attrs: { src: "/images/arrow-up.png", alt: "" }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shown ? " in" : " out"
+                  },
+                  _vm._l(_vm.publicaciones, function(publicacion) {
+                    return _c(
+                      "button",
+                      {
+                        key: publicacion,
+                        staticClass: "outline-none block py-3",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(publicacion)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(publicacion))]
+                    )
+                  }),
+                  0
+                )
+              ])
+            ])
+          ],
+          2
+        )
+      ],
+      1
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4", attrs: { id: "operaciones" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("Venta")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("Alquiler")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("Traspaso")
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4 hidden", attrs: { id: "publicaciones" } },
-      [_c("ul", [_c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("2")])])])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-200 p-4 hidden", attrs: { id: "borrador" } },
-      [
-        _c("ul", [
-          _c("li", [
-            _c("a", { staticClass: "caption", attrs: { href: "" } }, [
-              _vm._v("2")
-            ])
-          ])
-        ])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -23621,7 +23969,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FiltroPublicacion_vue_vue_type_template_id_2c009efc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FiltroPublicacion.vue?vue&type=template&id=2c009efc& */ "./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=template&id=2c009efc&");
 /* harmony import */ var _FiltroPublicacion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FiltroPublicacion.vue?vue&type=script&lang=js& */ "./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _FiltroPublicacion_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FiltroPublicacion.vue?vue&type=style&index=0&lang=css& */ "./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -23629,7 +23979,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _FiltroPublicacion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _FiltroPublicacion_vue_vue_type_template_id_2c009efc___WEBPACK_IMPORTED_MODULE_0__["render"],
   _FiltroPublicacion_vue_vue_type_template_id_2c009efc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -23658,6 +24008,22 @@ component.options.__file = "resources/js/views/filtros/FiltroPublicacion.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./FiltroPublicacion.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=style&index=0&lang=css&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=style&index=0&lang=css& ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./FiltroPublicacion.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/filtros/FiltroPublicacion.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
