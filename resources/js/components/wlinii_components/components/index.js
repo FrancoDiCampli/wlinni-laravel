@@ -22,3 +22,6 @@ import "./WButton/WButton";
 
 // CARD
 import "./WCard/WCard";
+
+// PANEL
+import "./WPanels/WPanels";

@@ -1,5 +1,5 @@
 import Vue from "vue";
-import anime, { set } from "animejs";
+import anime from "animejs";
 
 Vue.component("w-select", {
   data: () => ({
@@ -13,6 +13,7 @@ Vue.component("w-select", {
     disabled: Boolean,
     tile: Boolean,
     dark: Boolean,
+    placeholder: String,
     label: String,
     color: {
       type: String,
@@ -37,6 +38,7 @@ Vue.component("w-select", {
                         :value="selectOption"
                         @input="$emit('input', $event.target.value)"
                         :class="inputClass"
+                        :placeholder="placeholder"
                     />
                     <label :style="labelStyle">{{ label }}</label>
                 </div>
@@ -161,15 +163,15 @@ Vue.component("w-select", {
       anime({
         targets: optionsElement,
         scaleY: [0, 1],
-        duration: 150,
-        easing: "linear"
+        duration: 250,
+        easing: "easeInOutSine"
       });
 
       anime({
         targets: iconElement,
         rotate: ["0deg", "180deg"],
-        duration: 150,
-        easing: "linear"
+        duration: 250,
+        easing: "easeInOutSine"
       });
     },
 
@@ -179,8 +181,8 @@ Vue.component("w-select", {
       anime({
         targets: iconElement,
         rotate: ["180deg", "0deg"],
-        duration: 150,
-        easing: "linear"
+        duration: 250,
+        easing: "easeInOutSine"
       });
     }
   }

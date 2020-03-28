@@ -15,8 +15,6 @@ form {
       border-radius: 21px;
       padding: 0px 19px;
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
       align-items: center;
       &.dark {
         border-color: white;
@@ -40,13 +38,14 @@ form {
       }
       .input-label {
         height: 100%;
+        width: inherit;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
         input {
-          width: 100%;
           height: inherit;
+          width: inherit;
           font-size: 13px;
           padding: 12px 0px;
           border: none;
