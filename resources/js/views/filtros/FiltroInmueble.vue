@@ -11,7 +11,7 @@
                     </div>
                 </template>
 
-                <div id="filtros" class="flex-wrap">
+                <div id="filtros" class="flex grid grid-cols-2">
                     <div
                         v-for="filter in filters"
                         :key="filter"
@@ -21,326 +21,58 @@
                         <button @click="unset(filter)">X</button>
                     </div>
                 </div>
-                <section class="m-auto">
-                    <!-- Tipo Inmueble  -->
-                    <article>
-                        <div class="flex justify-between pb-5 px-2">
-                            <h1 class="uppercase block caption bold">Tipo De Inmueble</h1>
-                            <div>
-                                <a
-                                    href
-                                    @click.prevent="
-                                        shownTipoInmueble = !shownTipoInmueble
-                                    "
-                                >
-                                    <img
-                                        :class="
-                                            shownTipoInmueble
-                                                ? 'deployed'
-                                                : 'undeployed'
-                                        "
-                                        class="h-5"
-                                        :src="
-                                            shownTipoInmueble
-                                                ? '/images/arrow-up.png'
-                                                : '/images/arrow-down.png'
-                                        "
-                                        alt
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                        <hr class="border-b-2 border-gray-500" />
-                        <div
-                            :class="shownTipoInmueble ? ' in' : ' out'"
-                            class="bg-gray-300 mx-auto px-10 py-5"
-                        >
-                            <button
-                                @click.prevent="set(inmueble)"
-                                v-for="inmueble in tipoInmueble"
-                                :key="inmueble"
-                                class="outline-none block py-3 caption"
-                            >{{ inmueble }}</button>
-                        </div>
-                    </article>
-                    <!-- Distrito / Ubicacion  -->
-                    <article>
-                        <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Distrito/Ubicación</h1>
-                            <div>
-                                <a
-                                    href
-                                    @click.prevent="
-                                        shownUbicacion = !shownUbicacion
-                                    "
-                                >
-                                    <img
-                                        :class="
-                                            shownUbicacion
-                                                ? 'deployed'
-                                                : 'undeployed'
-                                        "
-                                        class="h-5"
-                                        :src="
-                                            shownUbicacion
-                                                ? '/images/arrow-up.png'
-                                                : '/images/arrow-down.png'
-                                        "
-                                        alt
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                        <hr class="border-b-2 border-gray-500" />
-                        <div
-                            :class="shownUbicacion ? ' in' : ' out'"
-                            class="bg-gray-300 mx-auto px-10 py-5"
-                        >
-                            <button
-                                @click.prevent="set(ubicacion)"
-                                v-for="ubicacion in ubicaciones"
-                                :key="ubicacion"
-                                class="outline-none block py-3 caption"
-                            >{{ ubicacion }}</button>
-                        </div>
-                    </article>
-                    <!-- Precio -->
-                    <article>
-                        <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Precio</h1>
-                            <div>
-                                <a href @click.prevent="shownPrecio = !shownPrecio">
-                                    <img
-                                        :class="
-                                            shownPrecio
-                                                ? 'deployed'
-                                                : 'undeployed'
-                                        "
-                                        class="h-5"
-                                        :src="
-                                            shownPrecio
-                                                ? '/images/arrow-up.png'
-                                                : '/images/arrow-down.png'
-                                        "
-                                        alt
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                        <hr class="border-b-2 border-gray-500" />
-                        <div
-                            :class="shownPrecio ? ' in' : ' out'"
-                            class="bg-gray-300 mx-auto px-10 py-5"
-                        >
-                            <button
-                                @click.prevent="set(precio)"
-                                v-for="precio in precios"
-                                :key="precio"
-                                class="outline-none block py-3 caption"
-                            >{{ precio }}</button>
-                        </div>
-                    </article>
 
-                    <!-- Dormitorio -->
-                    <article>
-                        <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Dormitorios</h1>
-                            <div>
-                                <a
-                                    href
-                                    @click.prevent="
-                                        shownDormitorio = !shownDormitorio
-                                    "
-                                >
-                                    <img
-                                        :class="
-                                            shownDormitorio
-                                                ? 'deployed'
-                                                : 'undeployed'
-                                        "
-                                        class="h-5"
-                                        :src="
-                                            shownDormitorio
-                                                ? '/images/arrow-up.png'
-                                                : '/images/arrow-down.png'
-                                        "
-                                        alt
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                        <hr class="border-b-2 border-gray-500" />
-                        <div
-                            :class="shownDormitorio ? ' in' : ' out'"
-                            class="bg-gray-300 mx-auto px-10 py-5"
-                        >
-                            <button
-                                @click.prevent="set(dormitorio)"
-                                v-for="dormitorio in dormitorios"
-                                :key="dormitorio"
-                                class="outline-none block py-3 caption"
-                            >{{ dormitorio }}</button>
-                        </div>
-                    </article>
+                <w-panel header="tipo de inmueble" v-model="shownTipoInmueble">
+                    <w-btn
+                        @click="set(inmueble)"
+                        v-for="inmueble in tipoInmueble"
+                        :key="inmueble"
+                    >{{ inmueble }}</w-btn>
+                </w-panel>
 
-                    <!-- Area Total -->
-                    <article>
-                        <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Area Total (M2)</h1>
-                            <div>
-                                <a href @click.prevent="shownArea = !shownArea">
-                                    <img
-                                        :class="
-                                            shownArea
-                                                ? 'deployed'
-                                                : 'undeployed'
-                                        "
-                                        class="h-5"
-                                        :src="
-                                            shownArea
-                                                ? '/images/arrow-up.png'
-                                                : '/images/arrow-down.png'
-                                        "
-                                        alt
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                        <hr class="border-b-2 border-gray-500" />
-                        <div
-                            :class="shownArea ? ' in' : ' out'"
-                            class="bg-gray-300 mx-auto px-10 py-5"
-                        >
-                            <button
-                                @click.prevent="set(area)"
-                                v-for="area in areas"
-                                :key="area"
-                                class="outline-none block py-3 caption"
-                            >{{ area }}</button>
-                        </div>
-                    </article>
+                <w-panel header="distrito/ubicacion" v-model="shownUbicacion">
+                    <w-btn
+                        @click="set(ubicacion)"
+                        v-for="ubicacion in ubicaciones"
+                        :key="ubicacion"
+                    >{{ ubicacion }}</w-btn>
+                </w-panel>
 
-                    <!-- Cocheras -->
-                    <article>
-                        <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Cocheras</h1>
-                            <div>
-                                <a
-                                    href
-                                    @click.prevent="
-                                        shownCochera = !shownCochera
-                                    "
-                                >
-                                    <img
-                                        :class="
-                                            shownCochera
-                                                ? 'deployed'
-                                                : 'undeployed'
-                                        "
-                                        class="h-5"
-                                        :src="
-                                            shownCochera
-                                                ? '/images/arrow-up.png'
-                                                : '/images/arrow-down.png'
-                                        "
-                                        alt
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                        <hr class="border-b-2 border-gray-500" />
-                        <div
-                            :class="shownCochera ? ' in' : ' out'"
-                            class="bg-gray-300 mx-auto px-10 py-5"
-                        >
-                            <button
-                                @click.prevent="set(cochera)"
-                                v-for="cochera in cocheras"
-                                :key="cochera"
-                                class="outline-none block py-3 caption"
-                            >{{ cochera }}</button>
-                        </div>
-                    </article>
+                <w-panel header="precio" v-model="shownPrecio">
+                    <w-btn @click="set(precio)" v-for="precio in precios" :key="precio">{{ precio }}</w-btn>
+                </w-panel>
 
-                    <!-- Antiguedad -->
-                    <article>
-                        <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Antigüedad</h1>
-                            <div>
-                                <a
-                                    href
-                                    @click.prevent="
-                                        shownAntiguedad = !shownAntiguedad
-                                    "
-                                >
-                                    <img
-                                        :class="
-                                            shownAntiguedad
-                                                ? 'deployed'
-                                                : 'undeployed'
-                                        "
-                                        class="h-5"
-                                        :src="
-                                            shownAntiguedad
-                                                ? '/images/arrow-up.png'
-                                                : '/images/arrow-down.png'
-                                        "
-                                        alt
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                        <hr class="border-b-2 border-gray-500" />
-                        <div
-                            :class="shownAntiguedad ? ' in' : ' out'"
-                            class="bg-gray-300 mx-auto px-10 py-5"
-                        >
-                            <button
-                                @click.prevent="set(antiguedad)"
-                                v-for="antiguedad in antiguedades"
-                                :key="antiguedad"
-                                class="outline-none block py-3 caption"
-                            >{{ antiguedad }}</button>
-                        </div>
-                    </article>
+                <w-panel header="dormitorios" v-model="shownDormitorio">
+                    <w-btn
+                        @click="set(dormitorio)"
+                        v-for="dormitorio in dormitorios"
+                        :key="dormitorio"
+                    >{{ dormitorio }}</w-btn>
+                </w-panel>
 
-                    <!-- Estado -->
-                    <article>
-                        <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Estado</h1>
-                            <div>
-                                <a href @click.prevent="shownEstado = !shownEstado">
-                                    <img
-                                        :class="
-                                            shownEstado
-                                                ? 'deployed'
-                                                : 'undeployed'
-                                        "
-                                        class="h-5"
-                                        :src="
-                                            shownEstado
-                                                ? '/images/arrow-up.png'
-                                                : '/images/arrow-down.png'
-                                        "
-                                        alt
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                        <hr class="border-b-2 border-gray-500" />
-                        <div
-                            :class="shownEstado ? ' in' : ' out'"
-                            class="bg-gray-300 mx-auto px-10 py-5"
-                        >
-                            <button
-                                @click.prevent="set(estado)"
-                                v-for="estado in estados"
-                                :key="estado"
-                                class="outline-none block py-3 caption"
-                            >{{ estado }}</button>
-                        </div>
-                    </article>
-                </section>
+                <w-panel header="area total (M2)" v-model="shownArea">
+                    <w-btn @click="set(area)" v-for="area in areas" :key="area">{{ area }}</w-btn>
+                </w-panel>
+
+                <w-panel header="cocheras" v-model="shownCochera">
+                    <w-btn
+                        @click="set(cochera)"
+                        v-for="cochera in cocheras"
+                        :key="cochera"
+                    >{{ cochera }}</w-btn>
+                </w-panel>
+
+                <w-panel header="antiguedad" v-model="shownAntiguedad">
+                    <w-btn
+                        @click="set(antiguedad)"
+                        v-for="antiguedad in antiguedades"
+                        :key="antiguedad"
+                    >{{ antiguedad }}</w-btn>
+                </w-panel>
+
+                <w-panel header="estado" v-model="shownEstado">
+                    <w-btn @click="set(estado)" v-for="estado in estados" :key="estado">{{ estado }}</w-btn>
+                </w-panel>
 
                 <div class="flex justify-center lg:hidden">
                     <w-btn
