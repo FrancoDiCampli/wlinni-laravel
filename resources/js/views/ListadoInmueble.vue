@@ -15,15 +15,13 @@
                 <filtro-inmueble></filtro-inmueble>
             </div>
 
-            <div :class="`${mostrar ? 'hidden m-8 ml-4' : ' m-8 ml-4'}`">
+            <div :class="`${mostrar ? 'hidden m-4 ml-4' : ''}`">
                 <w-card>
-                    <div class="bg-gray-200 m-auto">
+                    <div class="bg-gray-200 m-auto lg:mx-8">
                         <div
                             class="flex lg:bg-white items-center justify-center lg:justify-between"
                         >
-                            <div class="subtitle bold">
-                                Listado de Inmuebles
-                            </div>
+                            <div class="subtitle bold">Listado de Inmuebles</div>
                             <div class="hidden lg:flex">
                                 <w-btn
                                     class="flex caption bold white-text items-center"
@@ -34,19 +32,15 @@
                                 >
                                     BUSQUEDA DE MAPA
                                     <div class="pl-4">
-                                        <w-icon
-                                            class="bg-white"
-                                            icon="map"
-                                            h="24px"
-                                        ></w-icon>
+                                        <w-icon icon="address" h="24px"></w-icon>
                                     </div>
                                 </w-btn>
                             </div>
                         </div>
                     </div>
 
-                    <div class=" bg-white lg:hidden m-auto">
-                        <div class="flex justify-center justify-around">
+                    <div class="bg-white lg:hidden m-auto">
+                        <div class="flex justify-center justify-between">
                             <w-btn
                                 small
                                 class="flex caption bold white-text items-center"
@@ -56,11 +50,7 @@
                                 VER MAPA
                                 <!-- Falta icono -->
                                 <div class="pl-4">
-                                    <w-icon
-                                        class="bg-white"
-                                        icon="map"
-                                        h="20px"
-                                    ></w-icon>
+                                    <w-icon icon="address" h="20px"></w-icon>
                                 </div>
                             </w-btn>
                             <w-btn
@@ -70,33 +60,22 @@
                                 @click="mostrar = true"
                             >
                                 FILTRAR
-                                <w-icon
-                                    class="pl-4"
-                                    icon="bars-white"
-                                    h="20px"
-                                ></w-icon>
+                                <w-icon class="pl-4" icon="bars-white" h="20px"></w-icon>
                             </w-btn>
                         </div>
                     </div>
 
-                    <div class=" bg-gray-200 lg:bg-white">
+                    <div class="bg-gray-200 lg:bg-white">
                         <div
-                            class="flex-wrap lg:grid gap-4 grid-cols-3 justify-between items-center"
+                            class="flex-wrap lg:grid gap-8 grid-cols-3 justify-between items-center lg:m-8"
                         >
                             <div v-for="item in cards" :key="item.i">
                                 <div class="my-8 lg:my-0">
-                                    <w-card
-                                        :image="item.image"
-                                        :hover="'full-hover'"
-                                    >
+                                    <w-card :image="item.image" :hover="'full-hover'">
                                         <template slot="image">
                                             <div>
-                                                <p class="caption bold">
-                                                    BUILT-UP-65 SQ FT
-                                                </p>
-                                                <p class="caption bold">
-                                                    LAND SIZE-110 SQ FT
-                                                </p>
+                                                <p class="caption bold">BUILT-UP-65 SQ FT</p>
+                                                <p class="caption bold">LAND SIZE-110 SQ FT</p>
                                                 <br />
                                                 <p class="caption">
                                                     Casa frente a un grande
@@ -105,9 +84,7 @@
                                                     ejercicios y otros.
                                                 </p>
                                                 <div class="block lg:hidden">
-                                                    <p
-                                                        class="caption bold secondary-text"
-                                                    >
+                                                    <p class="caption bold secondary-text">
                                                         Agregado hace: 5 días
                                                         atras
                                                     </p>
@@ -116,15 +93,11 @@
                                         </template>
 
                                         <template slot="state">
-                                            <p class="caption bold white-text">
-                                                {{ item.tipo }}
-                                            </p>
+                                            <p class="caption bold white-text">{{ item.tipo }}</p>
                                         </template>
 
                                         <div>
-                                            <h1 class="caption bold">
-                                                958 Calle montreal
-                                            </h1>
+                                            <h1 class="caption bold">958 Calle montreal</h1>
                                             <p class="caption">Av.montreal</p>
                                             <div class="flex justify-between">
                                                 <p class="caption">Comisión</p>
@@ -133,67 +106,37 @@
                                                         item.tipo == 'Alquiler'
                                                     "
                                                     class="flex caption justify-end"
-                                                >
-                                                    MES
-                                                </h1>
+                                                >MES</h1>
                                             </div>
                                             <div class="flex justify-between">
                                                 <h1 class="body bold">5%</h1>
                                                 <div>
-                                                    <h1
-                                                        class="body bold tertiary-text"
-                                                    >
-                                                        S/ 86,723
-                                                    </h1>
+                                                    <h1 class="body bold tertiary-text">S/ 86,723</h1>
                                                 </div>
                                             </div>
                                         </div>
 
+                                        <!-- router push aqui, porque sino no se ve el contenido del hover -->
                                         <template slot="footer">
-                                            <div class="flex justify-between">
+                                            <div
+                                                @click="$router.push('/detalle_publicacion')"
+                                                class="flex justify-between"
+                                            >
                                                 <div class="info-item">
-                                                    <w-icon
-                                                        icon="room-solid"
-                                                        h="12px"
-                                                    ></w-icon>
-                                                    <p
-                                                        class="caption white-text"
-                                                    >
-                                                        3
-                                                    </p>
+                                                    <w-icon icon="room-solid" h="12px"></w-icon>
+                                                    <p class="caption white-text">3</p>
                                                 </div>
                                                 <div class="info-item">
-                                                    <w-icon
-                                                        icon="bath-solid"
-                                                        h="12px"
-                                                    ></w-icon>
-                                                    <p
-                                                        class="caption white-text"
-                                                    >
-                                                        3
-                                                    </p>
+                                                    <w-icon icon="bath-solid" h="12px"></w-icon>
+                                                    <p class="caption white-text">3</p>
                                                 </div>
                                                 <div class="info-item">
-                                                    <w-icon
-                                                        icon="parking-solid"
-                                                        h="12px"
-                                                    ></w-icon>
-                                                    <p
-                                                        class="caption white-text"
-                                                    >
-                                                        3
-                                                    </p>
+                                                    <w-icon icon="parking-solid" h="12px"></w-icon>
+                                                    <p class="caption white-text">3</p>
                                                 </div>
                                                 <div class="info-item">
-                                                    <w-icon
-                                                        icon="size"
-                                                        h="12px"
-                                                    ></w-icon>
-                                                    <p
-                                                        class="caption white-text"
-                                                    >
-                                                        120m
-                                                    </p>
+                                                    <w-icon icon="size" h="12px"></w-icon>
+                                                    <p class="caption white-text">120m</p>
                                                 </div>
                                             </div>
                                         </template>

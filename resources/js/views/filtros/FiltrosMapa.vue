@@ -6,12 +6,12 @@
                     <div class="flex justify-between items-center">
                         <h1
                             class="white-text uppercase text-left caption tracking-wider bold"
-                        >Filtros</h1>
+                        >Filtros Aplicados</h1>
                         <w-btn class="lg:hidden white-text bold">X</w-btn>
                     </div>
                 </template>
 
-                <div id="filtros" class="flex-wrap">
+                <div id="filtros" class="flex grid grid-cols-3">
                     <div
                         v-for="filter in filters"
                         :key="filter"

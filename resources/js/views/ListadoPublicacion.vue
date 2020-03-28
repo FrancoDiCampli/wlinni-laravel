@@ -3,18 +3,22 @@
         <!-- PAGINAS 8 - 14 - 25 - 56 -->
 
         <div class="flex justify-around items-start">
-            <div class="hidden lg:flex lg:m-8 mr-4">
+            <div
+                :class="
+                    `${
+                        mostrar
+                            ? 'flex justify-center lg:flex lg:m-8 mr-4'
+                            : 'hidden lg:flex lg:m-8 mr-4'
+                    }`
+                "
+            >
                 <filtro-publicacion></filtro-publicacion>
             </div>
 
-            <div class="m-8 ml-4">
+            <div :class="`${mostrar ? 'hidden m-4 ml-4' : ''}`">
                 <w-card>
-                    <div
-                        class="flex bg-gray-200 lg:bg-white justify-center lg:justify-start"
-                    >
-                        <div class="subtitle bold">
-                            Listado de Publicaciones
-                        </div>
+                    <div class="flex bg-gray-200 lg:bg-white justify-center lg:justify-start">
+                        <div class="subtitle bold">Listado de Publicaciones</div>
                     </div>
 
                     <div class="flex lg:hidden m-auto">
@@ -22,13 +26,10 @@
                             <w-btn
                                 class="flex bold white-text items-center"
                                 :color="$wlinii.secondary"
+                                @click="mostrar = true"
                             >
                                 FILTRAR
-                                <w-icon
-                                    class="pl-4"
-                                    icon="bars-white"
-                                    h="24px"
-                                ></w-icon>
+                                <w-icon class="pl-4" icon="bars-white" h="24px"></w-icon>
                             </w-btn>
                         </div>
                     </div>
@@ -43,10 +44,7 @@
                                         :activeContent="true"
                                         v-model="item.showForm"
                                     >
-                                        <template
-                                            slot="header"
-                                            v-if="!item.showForm"
-                                        >
+                                        <template slot="header" v-if="!item.showForm">
                                             <div
                                                 class="flex items-center justify-between caption white-text"
                                             >
@@ -76,17 +74,12 @@
                                                         ></div>
                                                         <p
                                                             class="caption white-text"
-                                                        >
-                                                            {{ item.state }}
-                                                        </p>
+                                                        >{{ item.state }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center">
                                                     <w-btn :icon="true">
-                                                        <w-icon
-                                                            icon="edit-white"
-                                                            h="13px"
-                                                        ></w-icon>
+                                                        <w-icon icon="edit-white" h="13px"></w-icon>
                                                     </w-btn>
                                                     <w-btn
                                                         :icon="true"
@@ -94,19 +87,14 @@
                                                             item.showForm = true
                                                         "
                                                     >
-                                                        <w-icon
-                                                            icon="trash-white"
-                                                            h="13px"
-                                                        ></w-icon>
+                                                        <w-icon icon="trash-white" h="13px"></w-icon>
                                                     </w-btn>
                                                 </div>
                                             </div>
                                         </template>
 
                                         <div v-if="item.showForm">
-                                            <h1 class="body bold white-text">
-                                                Dar de baja
-                                            </h1>
+                                            <h1 class="body bold white-text">Dar de baja</h1>
                                             <br />
                                             <form>
                                                 <w-select
@@ -123,22 +111,25 @@
                                                     v-model="item.form.select"
                                                 ></w-select>
                                                 <w-input
-                                                    :dark="false"
+                                                    color="white"
+                                                    :dark="true"
                                                     :tile="true"
                                                     v-model="item.form.input1"
-                                                    placeholder="Buscar Asesor"
+                                                    label="Buscar Asesor"
                                                 ></w-input>
                                                 <w-input
+                                                    color="white"
                                                     :dark="true"
                                                     :tile="true"
                                                     v-model="item.form.input2"
-                                                    placeholder="Elegir Moneda"
+                                                    label="Elegir Moneda"
                                                 ></w-input>
                                                 <w-input
+                                                    color="white"
                                                     :dark="true"
                                                     :tile="true"
                                                     v-model="item.form.input3"
-                                                    placeholder="Ingresar Monto de Venta"
+                                                    label="Ingresar Monto de Venta"
                                                 ></w-input>
                                             </form>
                                             <w-btn
@@ -147,31 +138,23 @@
                                                 small
                                                 :dark="true"
                                                 :fullwidth="true"
-                                                >Guardar</w-btn
-                                            >
+                                            >Guardar</w-btn>
                                         </div>
 
                                         <div v-else>
-                                            <h1
-                                                class="caption bold tertiary-text"
-                                            >
-                                                850 Pennsylvania
-                                            </h1>
+                                            <h1 class="caption bold tertiary-text">850 Pennsylvania</h1>
                                             <p class="caption html">
                                                 Philiadelphia, Cherry Hill,
                                                 DC205500
                                             </p>
-                                            <p class="caption html">
-                                                Modificación: 2020/09/05
-                                            </p>
+                                            <p class="caption html">Modificación: 2020/09/05</p>
                                             <w-btn
                                                 v-if="item.boton"
                                                 :dark="true"
                                                 :small="true"
                                                 :fullwidth="true"
                                                 color="primary"
-                                                >{{ item.boton }}</w-btn
-                                            >
+                                            >{{ item.boton }}</w-btn>
                                         </div>
                                     </w-card>
                                 </div>
@@ -190,6 +173,7 @@ import FiltroPublicacion from "./filtros/FiltroPublicacion.vue";
 export default {
     data() {
         return {
+            mostrar: false,
             cards: [
                 {
                     state: "Publicado",

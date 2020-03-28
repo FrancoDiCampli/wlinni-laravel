@@ -3,19 +3,17 @@
         <!-- PAGINAS 30 -->
 
         <div class="flex justify-between items-start">
-            <div class="m-8">
-                <filtro-inmueble></filtro-inmueble>
+            <div class="hidden lg:flex m-8">
+                <filtro-mapa></filtro-mapa>
             </div>
 
             <div class="container m-8">
-                <div class=" rounded-lg  shadow-lg">
-                    <div class="bg-gray-200 ">
+                <div class="rounded-lg shadow-lg">
+                    <div class="bg-gray-200">
                         <div
                             class="flex lg:bg-white items-center justify-center lg:justify-between p-8"
                         >
-                            <div class="subtitle bold">
-                                Listado de Inmuebles
-                            </div>
+                            <div class="subtitle bold">Listado de Inmuebles</div>
                         </div>
                     </div>
 
@@ -36,7 +34,7 @@
 </template>
 
 <script>
-import FiltroInmueble from "./filtros/FiltroInmueble.vue";
+import FiltroMapa from "./filtros/FiltrosMapa.vue";
 import GoogleMap from "vue-maps";
 
 export default {
@@ -65,7 +63,7 @@ export default {
         };
     },
     components: {
-        FiltroInmueble,
+        FiltroMapa,
         GoogleMap
     }
 };

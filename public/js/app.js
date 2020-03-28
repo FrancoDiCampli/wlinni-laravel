@@ -3224,32 +3224,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -3459,63 +3433,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3552,11 +3469,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _filtros_FiltroInmueble_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filtros/FiltroInmueble.vue */ "./resources/js/views/filtros/FiltroInmueble.vue");
+/* harmony import */ var _filtros_FiltrosMapa_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./filtros/FiltrosMapa.vue */ "./resources/js/views/filtros/FiltrosMapa.vue");
 /* harmony import */ var vue_maps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-maps */ "./node_modules/vue-maps/dist/index.js");
 /* harmony import */ var vue_maps__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_maps__WEBPACK_IMPORTED_MODULE_1__);
-//
-//
 //
 //
 //
@@ -3616,7 +3531,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   components: {
-    FiltroInmueble: _filtros_FiltroInmueble_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    FiltroMapa: _filtros_FiltrosMapa_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     GoogleMap: vue_maps__WEBPACK_IMPORTED_MODULE_1___default.a
   }
 });
@@ -3802,27 +3717,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      mostrar: false,
       cards: [{
         state: "Publicado",
         foto: "/images/departamentos/1.jpg",
@@ -3874,12 +3773,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -4071,39 +3964,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -4675,15 +4535,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltroPublicacion",
   data: function data() {
@@ -4695,6 +4546,409 @@ __webpack_require__.r(__webpack_exports__);
       operaciones: ["Venta", "Alquiler", "Traspaso"],
       publicaciones: ["Casas", "Alquileres", "Oficinas", "Pausa"],
       borradores: ["Option"]
+    };
+  },
+  methods: {
+    set: function set(op) {
+      this.filters.push(op);
+    },
+    unset: function unset(op) {
+      var i = this.filters.indexOf(op);
+      this.filters.splice(i, 1);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/filtros/FiltrosMapa.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/filtros/FiltrosMapa.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "FiltroInmueble",
+  data: function data() {
+    return {
+      shownTipoInmueble: false,
+      shownUbicacion: false,
+      shownPrecio: false,
+      shownDormitorio: false,
+      shownArea: false,
+      shownCochera: false,
+      shownAntiguedad: false,
+      shownEstado: false,
+      filters: [],
+      tipoInmueble: ["Departamento", "Casa", "Oficina"],
+      ubicaciones: ["San Isidro", "Miraflores", "Santiago de Surco", "La Molina"],
+      precios: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"],
+      dormitorios: ["1 dorm.", "2 dorm."],
+      areas: ["120m"],
+      cocheras: ["0 coch.", "1 coch.", "2 coch."],
+      antiguedades: ["Option"],
+      estados: ["A estrenar"]
     };
   },
   methods: {
@@ -5974,56 +6228,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div")
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container bg-gray-200 m-auto" }, [
-      _c("div", { staticClass: "rounded-lg bg-white m-8" }, [
-        _c(
-          "div",
-          { staticClass: "flex-wrap lg:flex justify-around items-center m-4" },
-          [
-            _c(
-              "h1",
-              {
-                staticClass:
-                  "flex order-first lg:order-last secondary caption white-text p-1 px-2"
-              },
-              [
-                _vm._v("\n                Comisión\n                "),
-                _c("h1", { staticClass: "caption bold pl-2" }, [_vm._v("5%")])
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", [
-              _c("div", { staticClass: "subtitle bold" }, [
-                _vm._v("Torre valdelomar")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "caption bold" }, [
-                _vm._v(
-                  "\n                    Av. Montreal 2178 - Lima / MIralfores\n                "
-                )
-              ])
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "rounded-lg bg-white m-8" }, [
-        _c("h1", [_vm._v("mapa")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "rounded-lg bg-white m-8" }, [
-        _c("h1", [_vm._v("perfil")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -6119,10 +6326,10 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { class: "" + (_vm.mostrar ? "hidden m-8 ml-4" : " m-8 ml-4") },
+        { class: "" + (_vm.mostrar ? "hidden m-4 ml-4" : "") },
         [
           _c("w-card", [
-            _c("div", { staticClass: "bg-gray-200 m-auto" }, [
+            _c("div", { staticClass: "bg-gray-200 m-auto lg:mx-8" }, [
               _c(
                 "div",
                 {
@@ -6131,9 +6338,7 @@ var render = function() {
                 },
                 [
                   _c("div", { staticClass: "subtitle bold" }, [
-                    _vm._v(
-                      "\n                            Listado de Inmuebles\n                        "
-                    )
+                    _vm._v("Listado de Inmuebles")
                   ]),
                   _vm._v(" "),
                   _c(
@@ -6161,8 +6366,7 @@ var render = function() {
                             { staticClass: "pl-4" },
                             [
                               _c("w-icon", {
-                                staticClass: "bg-white",
-                                attrs: { icon: "map", h: "24px" }
+                                attrs: { icon: "address", h: "24px" }
                               })
                             ],
                             1
@@ -6176,10 +6380,10 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: " bg-white lg:hidden m-auto" }, [
+            _c("div", { staticClass: "bg-white lg:hidden m-auto" }, [
               _c(
                 "div",
-                { staticClass: "flex justify-center justify-around" },
+                { staticClass: "flex justify-center justify-between" },
                 [
                   _c(
                     "w-btn",
@@ -6202,8 +6406,7 @@ var render = function() {
                         { staticClass: "pl-4" },
                         [
                           _c("w-icon", {
-                            staticClass: "bg-white",
-                            attrs: { icon: "map", h: "20px" }
+                            attrs: { icon: "address", h: "20px" }
                           })
                         ],
                         1
@@ -6238,12 +6441,12 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: " bg-gray-200 lg:bg-white" }, [
+            _c("div", { staticClass: "bg-gray-200 lg:bg-white" }, [
               _c(
                 "div",
                 {
                   staticClass:
-                    "flex-wrap lg:grid gap-4 grid-cols-3 justify-between items-center"
+                    "flex-wrap lg:grid gap-8 grid-cols-3 justify-between items-center lg:m-8"
                 },
                 _vm._l(_vm.cards, function(item) {
                   return _c("div", { key: item.i }, [
@@ -6258,15 +6461,11 @@ var render = function() {
                             _c("template", { slot: "image" }, [
                               _c("div", [
                                 _c("p", { staticClass: "caption bold" }, [
-                                  _vm._v(
-                                    "\n                                                BUILT-UP-65 SQ FT\n                                            "
-                                  )
+                                  _vm._v("BUILT-UP-65 SQ FT")
                                 ]),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "caption bold" }, [
-                                  _vm._v(
-                                    "\n                                                LAND SIZE-110 SQ FT\n                                            "
-                                  )
+                                  _vm._v("LAND SIZE-110 SQ FT")
                                 ]),
                                 _vm._v(" "),
                                 _c("br"),
@@ -6297,21 +6496,13 @@ var render = function() {
                               _c(
                                 "p",
                                 { staticClass: "caption bold white-text" },
-                                [
-                                  _vm._v(
-                                    "\n                                            " +
-                                      _vm._s(item.tipo) +
-                                      "\n                                        "
-                                  )
-                                ]
+                                [_vm._v(_vm._s(item.tipo))]
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", [
                               _c("h1", { staticClass: "caption bold" }, [
-                                _vm._v(
-                                  "\n                                            958 Calle montreal\n                                        "
-                                )
+                                _vm._v("958 Calle montreal")
                               ]),
                               _vm._v(" "),
                               _c("p", { staticClass: "caption" }, [
@@ -6333,11 +6524,7 @@ var render = function() {
                                           staticClass:
                                             "flex caption justify-end"
                                         },
-                                        [
-                                          _vm._v(
-                                            "\n                                                MES\n                                            "
-                                          )
-                                        ]
+                                        [_vm._v("MES")]
                                       )
                                     : _vm._e()
                                 ]
@@ -6357,11 +6544,7 @@ var render = function() {
                                       {
                                         staticClass: "body bold tertiary-text"
                                       },
-                                      [
-                                        _vm._v(
-                                          "\n                                                    S/ 86,723\n                                                "
-                                        )
-                                      ]
+                                      [_vm._v("S/ 86,723")]
                                     )
                                   ])
                                 ]
@@ -6371,7 +6554,16 @@ var render = function() {
                             _c("template", { slot: "footer" }, [
                               _c(
                                 "div",
-                                { staticClass: "flex justify-between" },
+                                {
+                                  staticClass: "flex justify-between",
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.$router.push(
+                                        "/detalle_publicacion"
+                                      )
+                                    }
+                                  }
+                                },
                                 [
                                   _c(
                                     "div",
@@ -6384,11 +6576,7 @@ var render = function() {
                                       _c(
                                         "p",
                                         { staticClass: "caption white-text" },
-                                        [
-                                          _vm._v(
-                                            "\n                                                    3\n                                                "
-                                          )
-                                        ]
+                                        [_vm._v("3")]
                                       )
                                     ],
                                     1
@@ -6405,11 +6593,7 @@ var render = function() {
                                       _c(
                                         "p",
                                         { staticClass: "caption white-text" },
-                                        [
-                                          _vm._v(
-                                            "\n                                                    3\n                                                "
-                                          )
-                                        ]
+                                        [_vm._v("3")]
                                       )
                                     ],
                                     1
@@ -6429,11 +6613,7 @@ var render = function() {
                                       _c(
                                         "p",
                                         { staticClass: "caption white-text" },
-                                        [
-                                          _vm._v(
-                                            "\n                                                    3\n                                                "
-                                          )
-                                        ]
+                                        [_vm._v("3")]
                                       )
                                     ],
                                     1
@@ -6450,11 +6630,7 @@ var render = function() {
                                       _c(
                                         "p",
                                         { staticClass: "caption white-text" },
-                                        [
-                                          _vm._v(
-                                            "\n                                                    120m\n                                                "
-                                          )
-                                        ]
+                                        [_vm._v("120m")]
                                       )
                                     ],
                                     1
@@ -6504,12 +6680,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "bg-gray-200" }, [
     _c("div", { staticClass: "flex justify-between items-start" }, [
-      _c("div", { staticClass: "m-8" }, [_c("filtro-inmueble")], 1),
+      _c("div", { staticClass: "hidden lg:flex m-8" }, [_c("filtro-mapa")], 1),
       _vm._v(" "),
       _c("div", { staticClass: "container m-8" }, [
         _c(
           "div",
-          { staticClass: " rounded-lg  shadow-lg" },
+          { staticClass: "rounded-lg shadow-lg" },
           [
             _vm._m(0),
             _vm._v(" "),
@@ -6536,7 +6712,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "bg-gray-200 " }, [
+    return _c("div", { staticClass: "bg-gray-200" }, [
       _c(
         "div",
         {
@@ -6545,9 +6721,7 @@ var staticRenderFns = [
         },
         [
           _c("div", { staticClass: "subtitle bold" }, [
-            _vm._v(
-              "\n                            Listado de Inmuebles\n                        "
-            )
+            _vm._v("Listado de Inmuebles")
           ])
         ]
       )
@@ -6579,14 +6753,20 @@ var render = function() {
     _c("div", { staticClass: "flex justify-around items-start" }, [
       _c(
         "div",
-        { staticClass: "hidden lg:flex lg:m-8 mr-4" },
+        {
+          class:
+            "" +
+            (_vm.mostrar
+              ? "flex justify-center lg:flex lg:m-8 mr-4"
+              : "hidden lg:flex lg:m-8 mr-4")
+        },
         [_c("filtro-publicacion")],
         1
       ),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "m-8 ml-4" },
+        { class: "" + (_vm.mostrar ? "hidden m-4 ml-4" : "") },
         [
           _c("w-card", [
             _c(
@@ -6597,9 +6777,7 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "subtitle bold" }, [
-                  _vm._v(
-                    "\n                        Listado de Publicaciones\n                    "
-                  )
+                  _vm._v("Listado de Publicaciones")
                 ])
               ]
             ),
@@ -6613,7 +6791,12 @@ var render = function() {
                     "w-btn",
                     {
                       staticClass: "flex bold white-text items-center",
-                      attrs: { color: _vm.$wlinii.secondary }
+                      attrs: { color: _vm.$wlinii.secondary },
+                      on: {
+                        click: function($event) {
+                          _vm.mostrar = true
+                        }
+                      }
                     },
                     [
                       _vm._v(
@@ -6697,13 +6880,7 @@ var render = function() {
                                                   staticClass:
                                                     "caption white-text"
                                                 },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                                        " +
-                                                      _vm._s(item.state) +
-                                                      "\n                                                    "
-                                                  )
-                                                ]
+                                                [_vm._v(_vm._s(item.state))]
                                               )
                                             ]
                                           )
@@ -6763,11 +6940,7 @@ var render = function() {
                                     _c(
                                       "h1",
                                       { staticClass: "body bold white-text" },
-                                      [
-                                        _vm._v(
-                                          "\n                                            Dar de baja\n                                        "
-                                        )
-                                      ]
+                                      [_vm._v("Dar de baja")]
                                     ),
                                     _vm._v(" "),
                                     _c("br"),
@@ -6799,9 +6972,10 @@ var render = function() {
                                         _vm._v(" "),
                                         _c("w-input", {
                                           attrs: {
-                                            dark: false,
+                                            color: "white",
+                                            dark: true,
                                             tile: true,
-                                            placeholder: "Buscar Asesor"
+                                            label: "Buscar Asesor"
                                           },
                                           model: {
                                             value: item.form.input1,
@@ -6814,9 +6988,10 @@ var render = function() {
                                         _vm._v(" "),
                                         _c("w-input", {
                                           attrs: {
+                                            color: "white",
                                             dark: true,
                                             tile: true,
-                                            placeholder: "Elegir Moneda"
+                                            label: "Elegir Moneda"
                                           },
                                           model: {
                                             value: item.form.input2,
@@ -6829,10 +7004,10 @@ var render = function() {
                                         _vm._v(" "),
                                         _c("w-input", {
                                           attrs: {
+                                            color: "white",
                                             dark: true,
                                             tile: true,
-                                            placeholder:
-                                              "Ingresar Monto de Venta"
+                                            label: "Ingresar Monto de Venta"
                                           },
                                           model: {
                                             value: item.form.input3,
@@ -6875,11 +7050,7 @@ var render = function() {
                                         staticClass:
                                           "caption bold tertiary-text"
                                       },
-                                      [
-                                        _vm._v(
-                                          "\n                                            850 Pennsylvania\n                                        "
-                                        )
-                                      ]
+                                      [_vm._v("850 Pennsylvania")]
                                     ),
                                     _vm._v(" "),
                                     _c("p", { staticClass: "caption html" }, [
@@ -6889,9 +7060,7 @@ var render = function() {
                                     ]),
                                     _vm._v(" "),
                                     _c("p", { staticClass: "caption html" }, [
-                                      _vm._v(
-                                        "\n                                            Modificación: 2020/09/05\n                                        "
-                                      )
+                                      _vm._v("Modificación: 2020/09/05")
                                     ]),
                                     _vm._v(" "),
                                     item.boton
@@ -6951,24 +7120,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div")
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container bg-gray-200 m-auto" }, [
-      _c("div", { staticClass: "rounded-lg bg-white m-8" }, [
-        _c(
-          "div",
-          { staticClass: "flex-wrap lg:flex justify-around items-center m-4" },
-          [_vm._v("\n            nueva publicacion\n        ")]
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -7377,18 +7531,29 @@ var render = function() {
           [
             _c("template", { slot: "header" }, [
               _c(
-                "h1",
-                {
-                  staticClass:
-                    "white-text uppercase text-left caption tracking-wider bold"
-                },
-                [_vm._v("\n                    Filtros\n                ")]
+                "div",
+                { staticClass: "flex justify-between items-center" },
+                [
+                  _c(
+                    "h1",
+                    {
+                      staticClass:
+                        "white-text uppercase text-left caption tracking-wider bold"
+                    },
+                    [_vm._v("Filtros")]
+                  ),
+                  _vm._v(" "),
+                  _c("w-btn", { staticClass: "lg:hidden white-text bold" }, [
+                    _vm._v("X")
+                  ])
+                ],
+                1
               )
             ]),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "flex-wrap m-0 p-0", attrs: { id: "filtros" } },
+              { staticClass: "flex-wrap", attrs: { id: "filtros" } },
               _vm._l(_vm.filters, function(filter) {
                 return _c(
                   "div",
@@ -7422,11 +7587,9 @@ var render = function() {
             _vm._v(" "),
             _c("section", { staticClass: "m-auto" }, [
               _c("article", [
-                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                _c("div", { staticClass: "flex justify-between pb-5 px-2" }, [
                   _c("h1", { staticClass: "uppercase block caption bold" }, [
-                    _vm._v(
-                      "\n                            Tipo De Inmueble\n                        "
-                    )
+                    _vm._v("Tipo De Inmueble")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -7480,13 +7643,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(inmueble) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(inmueble))]
                     )
                   }),
                   0
@@ -7496,9 +7653,7 @@ var render = function() {
               _c("article", [
                 _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
                   _c("h1", { staticClass: "uppercase block caption bold" }, [
-                    _vm._v(
-                      "\n                            Distrito/Ubicación\n                        "
-                    )
+                    _vm._v("Distrito/Ubicación")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -7550,13 +7705,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(ubicacion) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(ubicacion))]
                     )
                   }),
                   0
@@ -7618,13 +7767,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(precio) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(precio))]
                     )
                   }),
                   0
@@ -7634,9 +7777,7 @@ var render = function() {
               _c("article", [
                 _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
                   _c("h1", { staticClass: "uppercase block caption bold" }, [
-                    _vm._v(
-                      "\n                            Dormitorios\n                        "
-                    )
+                    _vm._v("Dormitorios")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -7690,13 +7831,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(dormitorio) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(dormitorio))]
                     )
                   }),
                   0
@@ -7706,9 +7841,7 @@ var render = function() {
               _c("article", [
                 _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
                   _c("h1", { staticClass: "uppercase block caption bold" }, [
-                    _vm._v(
-                      "\n                            Area Total (M2)\n                        "
-                    )
+                    _vm._v("Area Total (M2)")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -7760,13 +7893,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(area) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(area))]
                     )
                   }),
                   0
@@ -7776,9 +7903,7 @@ var render = function() {
               _c("article", [
                 _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
                   _c("h1", { staticClass: "uppercase block caption bold" }, [
-                    _vm._v(
-                      "\n                            Cocheras\n                        "
-                    )
+                    _vm._v("Cocheras")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -7830,13 +7955,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(cochera) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(cochera))]
                     )
                   }),
                   0
@@ -7846,9 +7965,7 @@ var render = function() {
               _c("article", [
                 _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
                   _c("h1", { staticClass: "uppercase block caption bold" }, [
-                    _vm._v(
-                      "\n                            Antigüedad\n                        "
-                    )
+                    _vm._v("Antigüedad")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -7902,13 +8019,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(antiguedad) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(antiguedad))]
                     )
                   }),
                   0
@@ -7970,13 +8081,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(estado) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(estado))]
                     )
                   }),
                   0
@@ -7996,6 +8101,11 @@ var render = function() {
                       small: "",
                       color: _vm.$wlinii.secondary,
                       fullwidth: true
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push("/")
+                      }
                     }
                   },
                   [_vm._v("APLICAR")]
@@ -8043,12 +8153,32 @@ var render = function() {
           [
             _c("template", { slot: "header" }, [
               _c(
-                "h1",
-                {
-                  staticClass:
-                    "white-text uppercase text-left caption tracking-wider bold"
-                },
-                [_vm._v("\n                    Ordenar Por\n                ")]
+                "div",
+                { staticClass: "flex justify-between items-center" },
+                [
+                  _c(
+                    "h1",
+                    {
+                      staticClass:
+                        "white-text hidden lg:flex uppercase text-left caption tracking-wider bold"
+                    },
+                    [_vm._v("Ordenar Por")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "h1",
+                    {
+                      staticClass:
+                        "white-text lg:hidden uppercase text-left caption tracking-wider bold"
+                    },
+                    [_vm._v("Filtros")]
+                  ),
+                  _vm._v(" "),
+                  _c("w-btn", { staticClass: "lg:hidden white-text bold" }, [
+                    _vm._v("X")
+                  ])
+                ],
+                1
               )
             ]),
             _vm._v(" "),
@@ -8090,9 +8220,7 @@ var render = function() {
               _c("article", [
                 _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
                   _c("h1", { staticClass: "uppercase block caption bold" }, [
-                    _vm._v(
-                      "\n                            Operaciones\n                        "
-                    )
+                    _vm._v("Operaciones")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -8144,13 +8272,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(operacion) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(operacion))]
                     )
                   }),
                   0
@@ -8162,9 +8284,7 @@ var render = function() {
               _c("article", [
                 _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
                   _c("h1", { staticClass: "uppercase block caption bold" }, [
-                    _vm._v(
-                      "\n                            Publicaciones\n                        "
-                    )
+                    _vm._v("Publicaciones")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -8216,13 +8336,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(publicacion) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(publicacion))]
                     )
                   }),
                   0
@@ -8234,9 +8348,7 @@ var render = function() {
               _c("article", [
                 _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
                   _c("h1", { staticClass: "uppercase block caption bold" }, [
-                    _vm._v(
-                      "\n                            Borrador\n                        "
-                    )
+                    _vm._v("Borrador")
                   ]),
                   _vm._v(" "),
                   _c("div", [
@@ -8286,13 +8398,7 @@ var render = function() {
                           }
                         }
                       },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(borrador) +
-                            "\n                        "
-                        )
-                      ]
+                      [_vm._v(_vm._s(borrador))]
                     )
                   }),
                   0
@@ -8322,6 +8428,631 @@ var render = function() {
                     }
                   },
                   [_vm._v("NUEVA PUBLICACIÓN")]
+                )
+              ],
+              1
+            )
+          ],
+          2
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/filtros/FiltrosMapa.vue?vue&type=template&id=ec6deac6&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/filtros/FiltrosMapa.vue?vue&type=template&id=ec6deac6& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { attrs: { id: "filter" } },
+      [
+        _c(
+          "w-card",
+          [
+            _c("template", { slot: "header" }, [
+              _c(
+                "div",
+                { staticClass: "flex justify-between items-center" },
+                [
+                  _c(
+                    "h1",
+                    {
+                      staticClass:
+                        "white-text uppercase text-left caption tracking-wider bold"
+                    },
+                    [_vm._v("Filtros Aplicados")]
+                  ),
+                  _vm._v(" "),
+                  _c("w-btn", { staticClass: "lg:hidden white-text bold" }, [
+                    _vm._v("X")
+                  ])
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "flex grid grid-cols-3",
+                attrs: { id: "filtros" }
+              },
+              _vm._l(_vm.filters, function(filter) {
+                return _c(
+                  "div",
+                  {
+                    key: filter,
+                    staticClass:
+                      "text-center secondary white-text caption px-5 rounded-full m-2"
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(filter) +
+                        "\n                    "
+                    ),
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.unset(filter)
+                          }
+                        }
+                      },
+                      [_vm._v("X")]
+                    )
+                  ]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("section", { staticClass: "m-auto" }, [
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between pb-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Tipo De Inmueble")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownTipoInmueble = !_vm.shownTipoInmueble
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownTipoInmueble
+                            ? "deployed"
+                            : "undeployed",
+                          attrs: {
+                            src: _vm.shownTipoInmueble
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownTipoInmueble ? " in" : " out"
+                  },
+                  _vm._l(_vm.tipoInmueble, function(inmueble) {
+                    return _c(
+                      "button",
+                      {
+                        key: inmueble,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(inmueble)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(inmueble))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Distrito/Ubicación")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownUbicacion = !_vm.shownUbicacion
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownUbicacion ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownUbicacion
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownUbicacion ? " in" : " out"
+                  },
+                  _vm._l(_vm.ubicaciones, function(ubicacion) {
+                    return _c(
+                      "button",
+                      {
+                        key: ubicacion,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(ubicacion)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(ubicacion))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Precio")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownPrecio = !_vm.shownPrecio
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownPrecio ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownPrecio
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownPrecio ? " in" : " out"
+                  },
+                  _vm._l(_vm.precios, function(precio) {
+                    return _c(
+                      "button",
+                      {
+                        key: precio,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(precio)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(precio))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Dormitorios")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownDormitorio = !_vm.shownDormitorio
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownDormitorio
+                            ? "deployed"
+                            : "undeployed",
+                          attrs: {
+                            src: _vm.shownDormitorio
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownDormitorio ? " in" : " out"
+                  },
+                  _vm._l(_vm.dormitorios, function(dormitorio) {
+                    return _c(
+                      "button",
+                      {
+                        key: dormitorio,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(dormitorio)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(dormitorio))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Area Total (M2)")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownArea = !_vm.shownArea
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownArea ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownArea
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownArea ? " in" : " out"
+                  },
+                  _vm._l(_vm.areas, function(area) {
+                    return _c(
+                      "button",
+                      {
+                        key: area,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(area)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(area))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Cocheras")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownCochera = !_vm.shownCochera
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownCochera ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownCochera
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownCochera ? " in" : " out"
+                  },
+                  _vm._l(_vm.cocheras, function(cochera) {
+                    return _c(
+                      "button",
+                      {
+                        key: cochera,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(cochera)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(cochera))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Antigüedad")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownAntiguedad = !_vm.shownAntiguedad
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownAntiguedad
+                            ? "deployed"
+                            : "undeployed",
+                          attrs: {
+                            src: _vm.shownAntiguedad
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownAntiguedad ? " in" : " out"
+                  },
+                  _vm._l(_vm.antiguedades, function(antiguedad) {
+                    return _c(
+                      "button",
+                      {
+                        key: antiguedad,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(antiguedad)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(antiguedad))]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("article", [
+                _c("div", { staticClass: "flex justify-between py-5 px-2" }, [
+                  _c("h1", { staticClass: "uppercase block caption bold" }, [
+                    _vm._v("Estado")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.shownEstado = !_vm.shownEstado
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "h-5",
+                          class: _vm.shownEstado ? "deployed" : "undeployed",
+                          attrs: {
+                            src: _vm.shownEstado
+                              ? "/images/arrow-up.png"
+                              : "/images/arrow-down.png",
+                            alt: ""
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr", { staticClass: "border-b-2 border-gray-500" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg-gray-300 mx-auto px-10 py-5",
+                    class: _vm.shownEstado ? " in" : " out"
+                  },
+                  _vm._l(_vm.estados, function(estado) {
+                    return _c(
+                      "button",
+                      {
+                        key: estado,
+                        staticClass: "outline-none block py-3 caption",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.set(estado)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(estado))]
+                    )
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex justify-center lg:hidden" },
+              [
+                _c(
+                  "w-btn",
+                  {
+                    staticClass: "caption bold white-text",
+                    attrs: {
+                      small: "",
+                      color: _vm.$wlinii.secondary,
+                      fullwidth: true
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push("/")
+                      }
+                    }
+                  },
+                  [_vm._v("APLICAR")]
                 )
               ],
               1
@@ -30406,6 +31137,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_template_id_2c009efc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroPublicacion_vue_vue_type_template_id_2c009efc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/filtros/FiltrosMapa.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/views/filtros/FiltrosMapa.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FiltrosMapa_vue_vue_type_template_id_ec6deac6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FiltrosMapa.vue?vue&type=template&id=ec6deac6& */ "./resources/js/views/filtros/FiltrosMapa.vue?vue&type=template&id=ec6deac6&");
+/* harmony import */ var _FiltrosMapa_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FiltrosMapa.vue?vue&type=script&lang=js& */ "./resources/js/views/filtros/FiltrosMapa.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FiltrosMapa_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FiltrosMapa_vue_vue_type_template_id_ec6deac6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FiltrosMapa_vue_vue_type_template_id_ec6deac6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/filtros/FiltrosMapa.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/filtros/FiltrosMapa.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/views/filtros/FiltrosMapa.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltrosMapa_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./FiltrosMapa.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/filtros/FiltrosMapa.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltrosMapa_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/filtros/FiltrosMapa.vue?vue&type=template&id=ec6deac6&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/views/filtros/FiltrosMapa.vue?vue&type=template&id=ec6deac6& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltrosMapa_vue_vue_type_template_id_ec6deac6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./FiltrosMapa.vue?vue&type=template&id=ec6deac6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/filtros/FiltrosMapa.vue?vue&type=template&id=ec6deac6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltrosMapa_vue_vue_type_template_id_ec6deac6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltrosMapa_vue_vue_type_template_id_ec6deac6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
