@@ -1,8 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Test from "../views/Test";
-import PreciosSuscripcion from "../views/PreciosSuscripcion";
-import ListadoPublicacion from "../views/ListadoPublicacion";
+import Notification from "../views/Notification";
+import Login from "../views/Login";
+import Broker from "../views/Broker";
+
 
 Vue.use(Router);
 
@@ -15,14 +17,19 @@ export default new Router({
             component: Test
         },
         {
-            path: "/precios_suscripcion",
-            name: "preciosSuscripcion",
-            component: PreciosSuscripcion
+            path: "/notification",
+            name: "notification",
+            component: Notification
         },
         {
-            path: "/listado_publicacion",
-            name: "listadoPublicacion",
-            component: ListadoPublicacion
-        }
+            path: "/login",
+            name: "login",
+            component: Login
+        },
+        {
+            path: "/broker",
+            name: "broker",
+            component: Broker
+        },
     ]
 });
