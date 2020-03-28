@@ -4008,9 +4008,117 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      reg: false,
       empresa: {
         nombre: "Corredores Peru SAC",
         estado: "Activo",
@@ -7139,7 +7247,285 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _vm._m(0)
+            _c(
+              "div",
+              { staticClass: "bg-white mt-10 py-5 px-5 lg:px-20 rounded-lg" },
+              [
+                _c(
+                  "div",
+                  { staticClass: "flex items-center justify-between" },
+                  [
+                    _c("div", { staticClass: "flex items-center" }, [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "m-1 lg:m-5 bg-orange-500 rounded-full border-grey flex items-center cursor-pointer w-10",
+                          class: _vm.reg ? "justify-start" : "justify-end",
+                          on: {
+                            click: function($event) {
+                              _vm.reg = !_vm.reg
+                            }
+                          }
+                        },
+                        [
+                          _c("span", {
+                            staticClass:
+                              "rounded-full w-5 h-5 shadow-inner bg-white shadow"
+                          })
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c(
+                        "svg",
+                        {
+                          staticClass:
+                            "hidden lg:block h-8 svg-inline--fa fa-info-circle fa-w-16",
+                          attrs: {
+                            "aria-hidden": "true",
+                            focusable: "false",
+                            "data-prefix": "fas",
+                            "data-icon": "info-circle",
+                            role: "img",
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 512 512"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              fill: "currentColor",
+                              d:
+                                "M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+                            }
+                          })
+                        ]
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", {
+                  staticClass: "border-t border-gray-500 w-full my-5"
+                }),
+                _vm._v(" "),
+                _c(
+                  "h1",
+                  {
+                    staticClass:
+                      "caption text-center bold lg:text-left lg:ml-10"
+                  },
+                  [_vm._v("INGRESAR NUEVO USUARIO")]
+                ),
+                _vm._v(" "),
+                _vm.reg
+                  ? _c("div", { staticClass: "mt-10" }, [
+                      _c(
+                        "form",
+                        [
+                          _c("w-input", {
+                            staticClass: "m-5",
+                            attrs: { label: "Código MVCS" }
+                          }),
+                          _vm._v(" "),
+                          _c("w-input", {
+                            staticClass: "m-5",
+                            attrs: { label: "Número Teléfono" }
+                          }),
+                          _vm._v(" "),
+                          _vm._m(1)
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        [
+                          _c(
+                            "w-btn",
+                            {
+                              staticClass: "full-width",
+                              attrs: { color: "tertiary", dark: true }
+                            },
+                            [_vm._v("regitrar")]
+                          )
+                        ],
+                        1
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                !_vm.reg
+                  ? _c("div", { staticClass: "mt-10" }, [
+                      _c(
+                        "form",
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "lg:flex items-center" },
+                            [
+                              _c("w-input", {
+                                staticClass: "w-full p-5",
+                                attrs: { label: "Código MVCS" }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "flex w-full lg:ml-5 justify-center items-center tertiary text-white py-3 rounded-full lg:mt-5"
+                                },
+                                [
+                                  _c(
+                                    "svg",
+                                    {
+                                      staticClass:
+                                        "h-5 w-5 svg-inline--fa fa-search fa-w-16",
+                                      attrs: {
+                                        "aria-hidden": "true",
+                                        focusable: "false",
+                                        "data-prefix": "fas",
+                                        "data-icon": "search",
+                                        role: "img",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        viewBox: "0 0 512 512"
+                                      }
+                                    },
+                                    [
+                                      _c("path", {
+                                        attrs: {
+                                          fill: "currentColor",
+                                          d:
+                                            "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "text-md ml-2 uppercase" },
+                                    [_vm._v("Buscar")]
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "primary text-white caption rounded-lg my-5"
+                            },
+                            [
+                              _c(
+                                "p",
+                                { staticClass: "p-5 text-center lg:text-left" },
+                                [
+                                  _vm._v(
+                                    "* Usted eligio la empresa: " +
+                                      _vm._s(_vm.empresa.nombre)
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "bg-gray-200 my-5 rounded-lg p-5 caption"
+                            },
+                            [
+                              _c("p", [
+                                _vm._v("Empresa: " + _vm._s(_vm.empresa.nombre))
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v("Estado: " + _vm._s(_vm.empresa.estado))
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v("Codigo: " + _vm._s(_vm.empresa.cod))
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "lg:flex mt-5" },
+                            [
+                              _c("w-input", {
+                                staticClass: "w-full p-5",
+                                attrs: { label: "Primer Nombre" }
+                              }),
+                              _vm._v(" "),
+                              _c("w-input", {
+                                staticClass: "w-full p-5",
+                                attrs: { label: "Segundo Nombre" }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "lg:flex mt-5" },
+                            [
+                              _c("w-input", {
+                                staticClass: "w-full p-5",
+                                attrs: { label: "Apellido Paterno" }
+                              }),
+                              _vm._v(" "),
+                              _c("w-input", {
+                                staticClass: "w-full p-5",
+                                attrs: { label: "Apellido Materno" }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("w-input", {
+                            staticClass: "w-full p-5 mt-5",
+                            attrs: { label: "Ingresar correo electrónico" }
+                          }),
+                          _vm._v(" "),
+                          _c("w-input", {
+                            staticClass: "w-full p-5 mt-5",
+                            attrs: { label: "Ingresar documento de identidad" }
+                          }),
+                          _vm._v(" "),
+                          _vm._m(2),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex justify-center" },
+                            [
+                              _c(
+                                "w-btn",
+                                {
+                                  staticClass: "w-full lg:w-1/4",
+                                  attrs: { color: "tertiary", dark: true }
+                                },
+                                [_vm._v("Registrar")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ])
+                  : _vm._e()
+              ]
+            )
           ]
         )
       ])
@@ -7151,40 +7537,58 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-white mt-10 py-5 px-5 lg:px-20 rounded-lg" },
-      [
-        _c("div", { staticClass: "flex items-center justify-between" }, [
-          _c("div", { staticClass: "flex items-center" }, [
-            _c("span", { staticClass: "xxs body-lg lg:text-lg lg:uppercase" }, [
-              _vm._v("\n                Registrados MVCS/\n                "),
-              _c(
-                "span",
-                {
-                  staticClass: "text-orange-600 font-normal lg:font-bold mr-5"
-                },
-                [_vm._v("Asesores Inmobiliarias")]
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "span",
-              {
-                staticClass:
-                  "lg:m-5 bg-orange-500 rounded-full border-grey flex items-center cursor-pointer w-10 justify-end"
-              },
-              [
-                _c("span", {
-                  staticClass:
-                    "rounded-full w-5 h-5 shadow-inner bg-white shadow"
-                })
-              ]
-            )
-          ])
-        ])
-      ]
-    )
+    return _c("span", { staticClass: "xxs body-lg lg:uppercase" }, [
+      _vm._v("\n                Registrados MVCS/\n                "),
+      _c("span", { staticClass: "secondary-text" }, [
+        _vm._v("Asesores Inmobiliarias")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-11/12 mx-auto" }, [
+      _c("p", { staticClass: "caption" }, [
+        _vm._v("Ingresar una breve descripcion")
+      ]),
+      _vm._v(" "),
+      _c("textarea", {
+        staticClass:
+          "caption p-3 lg:p-5 w-full rounded-lg outline-none border border-gray-500",
+        attrs: {
+          name: "",
+          id: "",
+          cols: "30",
+          rows: "5",
+          placeholder:
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-11/12 mx-auto mt-10" }, [
+      _c("p", { staticClass: "caption" }, [
+        _vm._v("Ingresar una breve descripcion")
+      ]),
+      _vm._v(" "),
+      _c("textarea", {
+        staticClass:
+          "caption p-3 lg:p-5 w-full rounded-lg outline-none border border-gray-500",
+        attrs: {
+          name: "",
+          id: "",
+          cols: "30",
+          rows: "5",
+          placeholder:
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+        }
+      })
+    ])
   }
 ]
 render._withStripped = true
@@ -26888,6 +27292,7 @@ var map = {
 	"./play.png": "./resources/js/components/wlinii_components/iconos/play.png",
 	"./room-regular.png": "./resources/js/components/wlinii_components/iconos/room-regular.png",
 	"./room-solid.png": "./resources/js/components/wlinii_components/iconos/room-solid.png",
+	"./search.png": "./resources/js/components/wlinii_components/iconos/search.png",
 	"./size.png": "./resources/js/components/wlinii_components/iconos/size.png",
 	"./trash-black.png": "./resources/js/components/wlinii_components/iconos/trash-black.png",
 	"./trash-white.png": "./resources/js/components/wlinii_components/iconos/trash-white.png",
@@ -27421,6 +27826,17 @@ module.exports = "/images/room-regular.png?a0509946dd3b2ae87a6a122afc3d2194";
 /***/ (function(module, exports) {
 
 module.exports = "/images/room-solid.png?845540d916a7d95632ca6530c778b65d";
+
+/***/ }),
+
+/***/ "./resources/js/components/wlinii_components/iconos/search.png":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/wlinii_components/iconos/search.png ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/search.png?71fdecdcf845c42a813fb4dcc4c8ead8";
 
 /***/ }),
 
