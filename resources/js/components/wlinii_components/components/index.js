@@ -1,6 +1,8 @@
 // FORM
 import "./WForm/WInput";
 import "./WForm/WCheckbox";
+import "./WForm/WSelect";
+import "./WForm/WSwitch";
 
 // ICONOS
 import "./WIcon/WIcon";

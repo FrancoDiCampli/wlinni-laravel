@@ -26,6 +26,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "animejs": "^3.1.0",
         "node-sass": "^4.13.1",
         "tailwindcss": "^1.2.0",
         "vue-carousel": "^0.18.0",

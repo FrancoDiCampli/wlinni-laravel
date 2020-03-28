@@ -5,7 +5,9 @@
                 <template slot="header">
                     <h1
                         class="white-text uppercase text-left caption tracking-wider bold"
-                    >Ordenar Por</h1>
+                    >
+                        Ordenar Por
+                    </h1>
                 </template>
 
                 <div id="filtros" class="flex-wrap m-0 p-0">
@@ -14,7 +16,7 @@
                         :key="filter"
                         class="text-center secondary white-text caption px-5 rounded-full m-2"
                     >
-                        {{filter}}
+                        {{ filter }}
                         <button @click="unset(filter)">X</button>
                     </div>
                 </div>
@@ -22,13 +24,28 @@
                     <!-- Operaciones  -->
                     <article>
                         <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Operaciones</h1>
+                            <h1 class="uppercase block caption bold">
+                                Operaciones
+                            </h1>
                             <div>
-                                <a href @click.prevent="shownOperaciones=!shownOperaciones">
+                                <a
+                                    href
+                                    @click.prevent="
+                                        shownOperaciones = !shownOperaciones
+                                    "
+                                >
                                     <img
-                                        :class="shownOperaciones ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownOperaciones
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownOperaciones ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownOperaciones
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -44,20 +61,37 @@
                                 v-for="operacion in operaciones"
                                 :key="operacion"
                                 class="outline-none block py-3 caption"
-                            >{{operacion}}</button>
+                            >
+                                {{ operacion }}
+                            </button>
                         </div>
                         <hr class="border-b-2 border-gray-500" />
                     </article>
                     <!-- Publicaciones  -->
                     <article>
                         <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Publicaciones</h1>
+                            <h1 class="uppercase block caption bold">
+                                Publicaciones
+                            </h1>
                             <div>
-                                <a href @click.prevent="shownPublicaciones=!shownPublicaciones">
+                                <a
+                                    href
+                                    @click.prevent="
+                                        shownPublicaciones = !shownPublicaciones
+                                    "
+                                >
                                     <img
-                                        :class="shownPublicaciones ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownPublicaciones
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownPublicaciones ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownPublicaciones
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -73,20 +107,37 @@
                                 v-for="publicacion in publicaciones"
                                 :key="publicacion"
                                 class="outline-none block py-3 caption"
-                            >{{publicacion}}</button>
+                            >
+                                {{ publicacion }}
+                            </button>
                         </div>
                         <hr class="border-b-2 border-gray-500" />
                     </article>
                     <!-- Borrador -->
                     <article>
                         <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Borrador</h1>
+                            <h1 class="uppercase block caption bold">
+                                Borrador
+                            </h1>
                             <div>
-                                <a href @click.prevent="shownBorrador=!shownBorrador">
+                                <a
+                                    href
+                                    @click.prevent="
+                                        shownBorrador = !shownBorrador
+                                    "
+                                >
                                     <img
-                                        :class="shownBorrador ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownBorrador
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownBorrador ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownBorrador
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -102,17 +153,22 @@
                                 v-for="borrador in borradores"
                                 :key="borrador"
                                 class="outline-none block py-3 caption"
-                            >{{borrador}}</button>
+                            >
+                                {{ borrador }}
+                            </button>
                         </div>
                         <hr class="border-b-2 border-gray-500" />
                     </article>
                 </section>
                 <div class="flex justify-center">
                     <w-btn
+                        @click="$router.push('/nueva_publicacion')"
                         small
                         class="white-text justify-center"
                         :color="$wlinii.secondary"
-                    >NUEVA PUBLICACIÓN</w-btn>
+                        :fullwidth="true"
+                        >NUEVA PUBLICACIÓN</w-btn
+                    >
                 </div>
             </w-card>
         </div>

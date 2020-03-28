@@ -12,14 +12,16 @@ Vue.component("w-btn", {
       type: String,
       default: "secondary"
     },
+    icon: Boolean,
     large: Boolean,
     small: Boolean,
+    fullwidth: Boolean,
     rounded: Boolean,
     outlined: Boolean
   },
 
   template: `
-        <button :class="buttonClass" :style="buttonStyle">
+        <button :class="buttonClass" :style="buttonStyle" @click="$emit('click')">
             <slot></slot>
         </button>
     `,
@@ -28,11 +30,17 @@ Vue.component("w-btn", {
     buttonClass() {
       let btnClass = "btn";
 
+      if (this.icon) {
+        btnClass += " icon";
+        return btnClass;
+      }
+
       this.dark ? (btnClass += " dark") : "";
       this.large ? (btnClass += " large") : "";
       this.small ? (btnClass += " small") : "";
       this.rounded ? (btnClass += " rounded") : "";
       this.outlined ? (btnClass += " outlined") : "";
+      this.fullwidth ? (btnClass += " full-width") : "";
 
       return btnClass;
     },

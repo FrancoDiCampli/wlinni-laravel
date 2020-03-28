@@ -3,7 +3,11 @@
         <div id="filter">
             <w-card>
                 <template slot="header">
-                    <h1 class="white-text uppercase text-left caption tracking-wider bold">Filtros</h1>
+                    <h1
+                        class="white-text uppercase text-left caption tracking-wider bold"
+                    >
+                        Filtros
+                    </h1>
                 </template>
 
                 <div id="filtros" class="flex-wrap m-0 p-0">
@@ -12,7 +16,7 @@
                         :key="filter"
                         class="text-center secondary white-text caption px-5 rounded-full m-2"
                     >
-                        {{filter}}
+                        {{ filter }}
                         <button @click="unset(filter)">X</button>
                     </div>
                 </div>
@@ -20,13 +24,28 @@
                     <!-- Tipo Inmueble  -->
                     <article>
                         <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Tipo De Inmueble</h1>
+                            <h1 class="uppercase block caption bold">
+                                Tipo De Inmueble
+                            </h1>
                             <div>
-                                <a href @click.prevent="shownTipoInmueble=!shownTipoInmueble">
+                                <a
+                                    href
+                                    @click.prevent="
+                                        shownTipoInmueble = !shownTipoInmueble
+                                    "
+                                >
                                     <img
-                                        :class="shownTipoInmueble ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownTipoInmueble
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownTipoInmueble ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownTipoInmueble
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -42,19 +61,36 @@
                                 v-for="inmueble in tipoInmueble"
                                 :key="inmueble"
                                 class="outline-none block py-3 caption"
-                            >{{inmueble}}</button>
+                            >
+                                {{ inmueble }}
+                            </button>
                         </div>
                     </article>
                     <!-- Distrito / Ubicacion  -->
                     <article>
                         <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Distrito/Ubicación</h1>
+                            <h1 class="uppercase block caption bold">
+                                Distrito/Ubicación
+                            </h1>
                             <div>
-                                <a href @click.prevent="shownUbicacion=!shownUbicacion">
+                                <a
+                                    href
+                                    @click.prevent="
+                                        shownUbicacion = !shownUbicacion
+                                    "
+                                >
                                     <img
-                                        :class="shownUbicacion ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownUbicacion
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownUbicacion ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownUbicacion
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -70,7 +106,9 @@
                                 v-for="ubicacion in ubicaciones"
                                 :key="ubicacion"
                                 class="outline-none block py-3 caption"
-                            >{{ubicacion}}</button>
+                            >
+                                {{ ubicacion }}
+                            </button>
                         </div>
                     </article>
                     <!-- Precio -->
@@ -78,11 +116,22 @@
                         <div class="flex justify-between py-5 px-2">
                             <h1 class="uppercase block caption bold">Precio</h1>
                             <div>
-                                <a href @click.prevent="shownPrecio=!shownPrecio">
+                                <a
+                                    href
+                                    @click.prevent="shownPrecio = !shownPrecio"
+                                >
                                     <img
-                                        :class="shownPrecio ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownPrecio
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownPrecio ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownPrecio
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -98,20 +147,37 @@
                                 v-for="precio in precios"
                                 :key="precio"
                                 class="outline-none block py-3 caption"
-                            >{{precio}}</button>
+                            >
+                                {{ precio }}
+                            </button>
                         </div>
                     </article>
 
                     <!-- Dormitorio -->
                     <article>
                         <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Dormitorios</h1>
+                            <h1 class="uppercase block caption bold">
+                                Dormitorios
+                            </h1>
                             <div>
-                                <a href @click.prevent="shownDormitorio=!shownDormitorio">
+                                <a
+                                    href
+                                    @click.prevent="
+                                        shownDormitorio = !shownDormitorio
+                                    "
+                                >
                                     <img
-                                        :class="shownDormitorio ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownDormitorio
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownDormitorio ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownDormitorio
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -127,20 +193,32 @@
                                 v-for="dormitorio in dormitorios"
                                 :key="dormitorio"
                                 class="outline-none block py-3 caption"
-                            >{{dormitorio}}</button>
+                            >
+                                {{ dormitorio }}
+                            </button>
                         </div>
                     </article>
 
                     <!-- Area Total -->
                     <article>
                         <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Area Total (M2)</h1>
+                            <h1 class="uppercase block caption bold">
+                                Area Total (M2)
+                            </h1>
                             <div>
-                                <a href @click.prevent="shownArea=!shownArea">
+                                <a href @click.prevent="shownArea = !shownArea">
                                     <img
-                                        :class="shownArea ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownArea
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownArea ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownArea
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -156,20 +234,37 @@
                                 v-for="area in areas"
                                 :key="area"
                                 class="outline-none block py-3 caption"
-                            >{{area}}</button>
+                            >
+                                {{ area }}
+                            </button>
                         </div>
                     </article>
 
                     <!-- Cocheras -->
                     <article>
                         <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Cocheras</h1>
+                            <h1 class="uppercase block caption bold">
+                                Cocheras
+                            </h1>
                             <div>
-                                <a href @click.prevent="shownCochera=!shownCochera">
+                                <a
+                                    href
+                                    @click.prevent="
+                                        shownCochera = !shownCochera
+                                    "
+                                >
                                     <img
-                                        :class="shownCochera ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownCochera
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownCochera ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownCochera
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -185,20 +280,37 @@
                                 v-for="cochera in cocheras"
                                 :key="cochera"
                                 class="outline-none block py-3 caption"
-                            >{{cochera}}</button>
+                            >
+                                {{ cochera }}
+                            </button>
                         </div>
                     </article>
 
                     <!-- Antiguedad -->
                     <article>
                         <div class="flex justify-between py-5 px-2">
-                            <h1 class="uppercase block caption bold">Antigüedad</h1>
+                            <h1 class="uppercase block caption bold">
+                                Antigüedad
+                            </h1>
                             <div>
-                                <a href @click.prevent="shownAntiguedad=!shownAntiguedad">
+                                <a
+                                    href
+                                    @click.prevent="
+                                        shownAntiguedad = !shownAntiguedad
+                                    "
+                                >
                                     <img
-                                        :class="shownAntiguedad ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownAntiguedad
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownAntiguedad ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownAntiguedad
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -214,7 +326,9 @@
                                 v-for="antiguedad in antiguedades"
                                 :key="antiguedad"
                                 class="outline-none block py-3 caption"
-                            >{{antiguedad}}</button>
+                            >
+                                {{ antiguedad }}
+                            </button>
                         </div>
                     </article>
 
@@ -223,11 +337,22 @@
                         <div class="flex justify-between py-5 px-2">
                             <h1 class="uppercase block caption bold">Estado</h1>
                             <div>
-                                <a href @click.prevent="shownEstado=!shownEstado">
+                                <a
+                                    href
+                                    @click.prevent="shownEstado = !shownEstado"
+                                >
                                     <img
-                                        :class="shownEstado ? 'deployed' : 'undeployed'"
+                                        :class="
+                                            shownEstado
+                                                ? 'deployed'
+                                                : 'undeployed'
+                                        "
                                         class="h-5"
-                                        :src="shownEstado ? '/images/arrow-up.png':'/images/arrow-down.png'"
+                                        :src="
+                                            shownEstado
+                                                ? '/images/arrow-up.png'
+                                                : '/images/arrow-down.png'
+                                        "
                                         alt
                                     />
                                 </a>
@@ -243,13 +368,21 @@
                                 v-for="estado in estados"
                                 :key="estado"
                                 class="outline-none block py-3 caption"
-                            >{{estado}}</button>
+                            >
+                                {{ estado }}
+                            </button>
                         </div>
                     </article>
                 </section>
 
                 <div class="flex justify-center lg:hidden">
-                    <w-btn small class="caption bold white-text" :color="$wlinii.secondary">APLICAR</w-btn>
+                    <w-btn
+                        small
+                        class="caption bold white-text"
+                        :color="$wlinii.secondary"
+                        :fullwidth="true"
+                        >APLICAR</w-btn
+                    >
                 </div>
             </w-card>
         </div>
