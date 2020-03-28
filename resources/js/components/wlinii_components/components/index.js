@@ -1,6 +1,8 @@
 // FORM
 import "./WForm/WInput";
 import "./WForm/WCheckbox";
+import "./WForm/WSelect";
+import "./WForm/WSwitch";
 
 // ICONOS
 import "./WIcon/WIcon";
@@ -20,7 +22,3 @@ import "./WButton/WButton";
 
 // CARD
 import "./WCard/WCard";
-// Test
-import "./Common/WTest";
-
-

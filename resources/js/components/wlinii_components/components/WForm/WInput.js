@@ -8,33 +8,37 @@ Vue.component("w-input", {
 
   props: {
     value: [String, Number],
-    disabled: {
-      type: Boolean,
-      default: false
-    },
+    disabled: Boolean,
+    tile: Boolean,
+    dark: Boolean,
     placeholder: String,
     label: String,
     color: {
       type: String,
       default: "primary"
     },
+    beforeIcon: String,
+    afterIcon: String,
     rules: Array
   },
 
   template: `
         <div class="input-container">
-            <div class="input-group" :class="inputGroupClass" :style="inputGroupStyle" >
-                <input
-                    :value="value"
-                    @input="$emit('input', $event.target.value)"
-                    @focus="onFocus = true"
-                    @blur="onFocus = false; validate()"
-                    :disabled="disabled"
-                    :placeholder="placeholder"
-                    :class="inputClass"
-                    
-                />
-                <label :style="labelStyle">{{ label }}</label>
+            <div :class="inputGroupClass" :style="inputGroupStyle" >
+                <w-icon v-if="beforeIcon" :icon="beforeIcon" class="before"></w-icon>
+                <div class="input-label">
+                    <input
+                        :value="value"
+                        @input="$emit('input', $event.target.value)"
+                        @focus="onFocus = true"
+                        @blur="onFocus = false; validate()"
+                        :disabled="disabled"
+                        :placeholder="placeholder"
+                        :class="inputClass"
+                    />
+                    <label :style="labelStyle">{{ label }}</label>
+                </div>
+                <w-icon v-if="afterIcon" :icon="afterIcon" class="after"></w-icon>
             </div>
             <div class="error-input">{{ errorMessage }}</div>
         </div>
@@ -65,7 +69,11 @@ Vue.component("w-input", {
     },
 
     inputGroupClass() {
-      return this.disabled ? "disabled" : "";
+      let inputGroupClass = "input-group";
+      this.disabled ? (inputGroupClass += " disabled") : "";
+      this.tile ? (inputGroupClass += " tile") : "";
+      this.dark ? (inputGroupClass += " dark") : "";
+      return inputGroupClass;
     },
 
     inputClass() {

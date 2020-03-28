@@ -1,12 +1,12 @@
 ## Instalación
 
-1_ Copiar el contenido de la rama dentro de la carpeta components del proyecto Vue.
+1_ Copiar el contenido del repositorio dentro de la carpeta components del proyecto Vue.
 <br>
 <br>
 2_ Instalar las dependencias necesarias.
 
 ```
-npm i node-sass sass-loader vue-carousel
+npm i node-sass sass-loader vue-carousel animejs
 ```
 
 3_ Importar el archivo principal del proyecto dentro en el archivo "main.js" o "app.js"

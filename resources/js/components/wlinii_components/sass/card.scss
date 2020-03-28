@@ -3,19 +3,27 @@
 .card {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: $full_radius;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  cursor: pointer;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
-  &:not(:hover) {
-    background: white !important;
+  &.no-shadow {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
   }
+
+  &:not(.active-state) {
+    &:not(:hover) {
+      background: white !important;
+    }
+  }
+
   &.top-hover {
     &:hover {
       background: white !important;
@@ -43,6 +51,15 @@
         background: rgba($color: $primary, $alpha: 0.66) !important;
         color: white;
       }
+    }
+  }
+
+  &.active-state {
+    .image {
+      display: none;
+    }
+    .card-text {
+      background: rgba($color: $primary, $alpha: 0.66) !important;
     }
   }
 
@@ -75,6 +92,7 @@
   }
 
   .card-text {
+    height: 100%;
     padding: 30px;
     background-color: white;
   }
@@ -87,6 +105,29 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        &.primary {
+          background-color: $primary;
+        }
+        &.secondary {
+          background-color: $secondary;
+        }
+        &.tertiary {
+          background-color: $tertiary;
+        }
+        &.accent {
+          background-color: $accent;
+        }
+        &.success {
+          background-color: $success;
+        }
+        &.error {
+          background-color: $error;
+        }
+      }
       p {
         margin: 0px 20px 0px 12px;
       }

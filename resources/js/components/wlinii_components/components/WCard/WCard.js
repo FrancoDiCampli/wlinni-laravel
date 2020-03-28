@@ -12,16 +12,24 @@ Vue.component("w-card", {
       type: String,
       default: "225px"
     },
+    shadow: {
+      type: Boolean,
+      default: true
+    },
     hover: String,
     state: {
       type: String,
       default: "rounded"
+    },
+    activeContent: {
+      type: Boolean,
+      default: false
     }
   },
 
   template: `
-        <div :class="cardClass" :style="cardStyle" @click="$emit('change', value)">
-            <div v-if="value" class="card-selector">
+        <div :class="setCardClass" :style="cardStyle" @click="$emit('change', value)">
+            <div v-if="value & !activeContent" class="card-selector">
                 <div class="check-circle">
                     <div class="checkmarck"></div>
                 </div>
@@ -49,8 +57,12 @@ Vue.component("w-card", {
     `,
 
   computed: {
-    cardClass() {
-      return this.value ? "card" : `card ${this.hover}`;
+    setCardClass() {
+      let cardClass = "card";
+      this.shadow ? "" : (cardClass += " no-shadow");
+      !this.value && this.hover ? (cardClass += ` ${this.hover}`) : "";
+      this.value && this.activeContent ? (cardClass += " active-state") : "";
+      return cardClass;
     },
 
     cardStyle() {

@@ -1,10 +1,6 @@
 import Vue from "vue";
 
 Vue.component("w-checkbox", {
-  data: () => ({
-    errorMessage: null
-  }),
-
   props: {
     value: Boolean,
     disabled: {
@@ -15,7 +11,8 @@ Vue.component("w-checkbox", {
     color: {
       type: String,
       default: "primary"
-    }
+    },
+    dark: Boolean
   },
 
   template: `
@@ -26,9 +23,9 @@ Vue.component("w-checkbox", {
                     :id="randomId" 
                     type="checkbox"
                     :disabled="disabled"
-                    :class="setInputColor" 
+                    :class="'checkbox-'+color" 
                 />
-                <label :for="randomId" >{{ label }}</label>
+                <label :for="randomId" :style="dark ? 'color: white;' : ''">{{ label }}</label>
             </div>
     `,
 
@@ -43,16 +40,6 @@ Vue.component("w-checkbox", {
         );
       }
       return result;
-    },
-
-    setInputColor() {
-      if (this.$wlinii[this.color]) {
-        if (this.disabled) {
-          return "";
-        }
-        return `checkbox-${this.color}`;
-      }
-      return "checkbox-primary";
     }
   }
 });

@@ -2,8 +2,7 @@
 
 .btn {
   position: relative;
-  float: left;
-  margin: 20px 12px;
+  margin: 20px 12px 0px 12px;
   padding: 13px 26px;
   font-size: 13px;
   text-transform: uppercase;
@@ -14,6 +13,10 @@
   -moz-user-disabled: none;
   -webkit-user-select: none;
   user-select: none;
+  &.full-width {
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+  }
   &.dark {
     color: white;
   }
@@ -42,5 +45,11 @@
     background-color: white;
     border-width: 3px;
     border-style: solid;
+  }
+
+  &.icon {
+    margin: 0px 8px;
+    padding: 0px;
+    background-color: transparent !important;
   }
 }
