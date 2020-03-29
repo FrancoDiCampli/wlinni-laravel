@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div>Nueva Publicacion</div>
 </template>
 
 <script>

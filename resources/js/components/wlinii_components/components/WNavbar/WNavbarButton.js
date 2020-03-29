@@ -14,15 +14,14 @@ Vue.component("w-nav-btn", {
     disabled: {
       type: Boolean,
       default: false
-    },
-    activeIcon: String
+    }
   },
 
   template: `
         <div :class="btnClass" @click="$emit('click')">
             <w-icon
                 v-if="icon"
-                :icon="activeIcon && currentRoute == to ? activeIcon : icon"
+                :icon="icon"
                 :h="iconH || 'auto'"
                 :w="iconW || 'auto'"
             ></w-icon>

@@ -1,12 +1,17 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "../views/Home";
-import PreciosSuscripcion from "../views/PreciosSuscripcion";
-import ListadoPublicacion from "../views/ListadoPublicacion";
-import ListadoInmueble from "../views/ListadoInmueble";
-import DetallePublicacion from "../views/DetallePublicacion";
-import NuevaPublicacion from "../views/NuevaPublicacion";
-import ListadoInmuebleMapa from "../views/ListadoInmuebleMapa";
+
+// PRECIOS
+import Precios from "../views/precios/Precios";
+
+// PUBLICACIONES
+import Publicaciones from "../views/publicaciones/Publicaciones";
+import NuevaPublicacion from "../views/publicaciones/NuevaPublicacion";
+import DetallePublicacion from "../views/publicaciones/DetallePublicacion";
+
+// INMUEBLES
+import Inmuebles from "../views/inmuebles/Inmuebles";
 
 Vue.use(Router);
 
@@ -18,35 +23,37 @@ export default new Router({
             name: "home",
             component: Home
         },
+
+        // PRECIOS
         {
-            path: "/precios_suscripcion",
-            name: "preciosSuscripcion",
-            component: PreciosSuscripcion
+            path: "/precios",
+            name: "precios",
+            component: Precios
+        },
+
+        // PUBLICACIONES
+
+        {
+            path: "/publicaciones",
+            name: "publicaciones",
+            component: Publicaciones
         },
         {
-            path: "/listado_publicacion",
-            name: "listadoPublicacion",
-            component: ListadoPublicacion
-        },
-        {
-            path: "/listado_inmueble",
-            name: "listadoInmueble",
-            component: ListadoInmueble
-        },
-        {
-            path: "/detalle_publicacion",
-            name: "detallePublicacion",
-            component: DetallePublicacion
-        },
-        {
-            path: "/nueva_publicacion",
-            name: "nuevaPublicacion",
+            path: "/publicaciones/nueva",
+            name: "publicaciones_nueva",
             component: NuevaPublicacion
         },
         {
-            path: "/listado_inmueble_mapa",
-            name: "listadoInmuebleMapa",
-            component: ListadoInmuebleMapa
+            path: "/publicaciones/detalle",
+            name: "publicaciones_detalle",
+            component: DetallePublicacion
+        },
+
+        // INMUEBLES
+        {
+            path: "/inmuebles",
+            name: "inmuebles",
+            component: Inmuebles
         }
     ]
 });

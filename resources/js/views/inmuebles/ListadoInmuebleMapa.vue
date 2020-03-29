@@ -1,4 +1,5 @@
 <template>
+    <!-- PENDIENTE -->
     <div class="bg-gray-200">
         <!-- PAGINAS 30 -->
 
@@ -13,7 +14,9 @@
                         <div
                             class="flex lg:bg-white items-center justify-center lg:justify-between p-8"
                         >
-                            <div class="subtitle bold">Listado de Inmuebles</div>
+                            <div class="subtitle bold">
+                                Listado de Inmuebles
+                            </div>
                         </div>
                     </div>
 
