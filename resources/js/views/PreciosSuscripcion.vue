@@ -164,11 +164,8 @@ export default {
     },
 
     mounted() {
-        this.$nextTick(() => {
-            window.addEventListener(
-                "resize",
-                (this.windowWidth = window.innerWidth)
-            );
+        window.addEventListener("resize", () => {
+            this.windowWidth = window.innerWidth;
         });
     }
 };

@@ -3773,6 +3773,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_maps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-maps */ "./node_modules/vue-maps/dist/index.js");
+/* harmony import */ var vue_maps__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_maps__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -3850,10 +3852,138 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "NuevaPublicacion",
   data: function data() {
     return {
+      latitude: -12.1122095,
+      longitude: -77.047945,
+      apiKey: "AIzaSyAXlj8mkvRRg6KTVesim7xcM8CcceMfcAc",
+      windowWidth: window.innerWidth,
       panels: [{
         namePanel: "Tipo Inmueble",
         value: false,
@@ -3861,14 +3991,12 @@ __webpack_require__.r(__webpack_exports__);
           nameSelect: "Tipo de Inmueble",
           placeHolder: "Pendientes",
           info: false,
-          opciones: ["A", "B", "C"],
-          vModel: "form.tipoInmueble"
+          opciones: ["A", "B", "C"]
         }, {
           nameSelect: "Sub-tipo de Inmueble",
           placeHolder: "Pendientes",
           info: false,
-          opciones: ["A", "B", "C"],
-          vModel: "form.subTipoInmueble"
+          opciones: ["A", "B", "C"]
         }],
         checks: []
       }, {
@@ -3878,26 +4006,22 @@ __webpack_require__.r(__webpack_exports__);
           nameSelect: "DEPARTAMENTO",
           info: true,
           placeHolder: "Elegir departamentos",
-          opciones: ["A", "B", "C"],
-          vModel: "form.departamento"
+          opciones: ["A", "B", "C"]
         }, {
           nameSelect: "DiSTRITO",
           info: true,
           placeHolder: "Elegir distrito",
-          opciones: ["A", "B", "C"],
-          vModel: "form.distrito"
+          opciones: ["A", "B", "C"]
         }, {
           nameSelect: "Provincias",
           info: true,
           placeHolder: "Elegir provincia",
-          opciones: ["A", "B", "C"],
-          vModel: "form.provincia"
+          opciones: ["A", "B", "C"]
         }, {
           nameSelect: "Urbanización",
           info: true,
           placeHolder: "Elegir ...",
-          opciones: ["A", "B", "C"],
-          vModel: "form.urbanizacion"
+          opciones: ["A", "B", "C"]
         }],
         checks: [{
           labelCheck: "Mostrar dirección"
@@ -3911,14 +4035,12 @@ __webpack_require__.r(__webpack_exports__);
           nameSelect: "MONEDA",
           info: false,
           placeHolder: "Elegir moneda",
-          opciones: ["Dolar americano", "B", "C"],
-          vModel: "form.moneda"
+          opciones: ["Dolar americano", "B", "C"]
         }, {
           nameSelect: "PRECIO",
           info: false,
           placeHolder: "Elegir precio",
-          opciones: ["S/00", "B", "C"],
-          vModel: "form.precio"
+          opciones: ["S/00", "B", "C"]
         }],
         checks: [{
           labelCheck: "Consultar"
@@ -3930,20 +4052,17 @@ __webpack_require__.r(__webpack_exports__);
           nameSelect: "AREA TOTAL",
           info: false,
           placeHolder: "Elegir area",
-          opciones: ["0", "B", "C"],
-          vModel: "form.areaTotal"
+          opciones: ["0", "B", "C"]
         }, {
           nameSelect: "AREA CONSTRUIDA",
           info: false,
           placeHolder: "Elegir area",
-          opciones: ["0", "B", "C"],
-          vModel: "form.areaConstruida"
+          opciones: ["0", "B", "C"]
         }, {
           nameSelect: "AREA TERRENO",
           info: false,
           placeHolder: "Elegir area",
-          opciones: ["0", "B", "C"],
-          vModel: "form.areaTerreno"
+          opciones: ["0", "B", "C"]
         }],
         checks: []
       }, {
@@ -4021,6 +4140,9 @@ __webpack_require__.r(__webpack_exports__);
       form: {}
     };
   },
+  components: {
+    GoogleMap: vue_maps__WEBPACK_IMPORTED_MODULE_0___default.a
+  },
   methods: {
     set: function set(op) {
       this.filters.push(op);
@@ -4029,6 +4151,13 @@ __webpack_require__.r(__webpack_exports__);
       var i = this.filters.indexOf(op);
       this.filters.splice(i, 1);
     }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    window.addEventListener("resize", function () {
+      _this.windowWidth = window.innerWidth;
+    });
   }
 });
 
@@ -4200,8 +4329,8 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    this.$nextTick(function () {
-      window.addEventListener("resize", _this.windowWidth = window.innerWidth);
+    window.addEventListener("resize", function () {
+      _this.windowWidth = window.innerWidth;
     });
   }
 });
@@ -4637,7 +4766,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container {\n  height: 500px;\n}\n.in {\n  visibility: visible;\n  position: relative;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n.out {\n  visibility: hidden;\n  position: absolute;\n  -webkit-animation: 1s fadeIn;\n          animation: 1s fadeIn;\n  opacity: 0;\n  transition: visibility 0s linear 300ms, opacity 300ms;\n}\n.undeployed {\n  transform: rotate(0deg);\n  transition: 500ms;\n  transition-duration: 1s;\n}\n.deployed {\n  transform: rotate(0deg);\n  transition: 500ms;\n}\r\n", ""]);
+exports.push([module.i, ".fileButton {\n  overflow: hidden;\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  width: 100%;\n  height: auto;\n  line-height: 35px;\n  padding: 0 1.5rem;\n  font-size: 13px;\n  font-family: \"Roboto\";\n  letter-spacing: 0.8px;\n  text-align: center;\n  text-decoration: none;\n  vertical-align: middle;\n  white-space: nowrap;\n  outline: none;\n  border: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  border-radius: 2px;\n  transition: all 0.3s ease-out;\n}\n.fileInput {\n  cursor: pointer;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 99;\n  font-size: 50px;\n  opacity: 0;\n  -moz-opacity: 0;\n  filter: Alpha(opacity=0);\n}\n.container {\n  height: 500px;\n}\n.in {\n  visibility: visible;\n  position: relative;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n.out {\n  visibility: hidden;\n  position: absolute;\n  -webkit-animation: 1s fadeIn;\n          animation: 1s fadeIn;\n  opacity: 0;\n  transition: visibility 0s linear 300ms, opacity 300ms;\n}\n.undeployed {\n  transform: rotate(0deg);\n  transition: 500ms;\n  transition-duration: 1s;\n}\n.deployed {\n  transform: rotate(0deg);\n  transition: 500ms;\n}\r\n", ""]);
 
 // exports
 
@@ -6742,7 +6871,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container bg-gray-300" }, [
+  return _c("div", { staticClass: "bg-gray-300" }, [
     _c(
       "div",
       { staticClass: "flex-wrap rounded-lg bg-white m-4 p-4 lg:m-12 lg:p-16" },
@@ -6757,120 +6886,350 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "block lg:hidden" },
-          _vm._l(_vm.panels, function(item, i) {
-            return _c("div", { key: i }, [
+          { staticClass: "block" },
+          [
+            _vm._l(_vm.panels, function(item, i) {
+              return _c("div", { key: i }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "flex lg:hidden justify-between items-center py-2 px-6 bg-gray-200 rounded-full"
+                  },
+                  [
+                    _c("h1", { staticClass: "tertiary-text body bold" }, [
+                      _vm._v(_vm._s(item.namePanel))
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              item.value = !item.value
+                            }
+                          }
+                        },
+                        [
+                          _c("img", {
+                            staticClass: "h-5",
+                            class: item.value ? "deployed" : "undeployed",
+                            attrs: {
+                              src: item.value
+                                ? "/images/arrow-up.png"
+                                : "/images/arrow-down.png",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _vm.windowWidth <= 764
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "mx-auto py-5 pb-0",
+                        class: item.value ? " in" : " out"
+                      },
+                      [
+                        _vm._l(item.selects, function(sel, j) {
+                          return _c("div", { key: j }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex items-center pb-2" },
+                              [
+                                _c("h1", { staticClass: "caption bold px-5" }, [
+                                  _vm._v(_vm._s(sel.nameSelect))
+                                ]),
+                                _vm._v(" "),
+                                sel.info
+                                  ? _c("w-icon", {
+                                      attrs: {
+                                        icon: "imperios-digitales",
+                                        h: "14px"
+                                      }
+                                    })
+                                  : _vm._e()
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "form",
+                              [
+                                _c("w-select", {
+                                  attrs: {
+                                    placeholder: sel.placeHolder,
+                                    options: sel.opciones
+                                  },
+                                  model: {
+                                    value: sel.vModel,
+                                    callback: function($$v) {
+                                      _vm.$set(sel, "vModel", $$v)
+                                    },
+                                    expression: "sel.vModel"
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "flex grid grid-cols-2 justify-between"
+                          },
+                          _vm._l(item.checks, function(che, n) {
+                            return _c(
+                              "div",
+                              { key: n },
+                              [
+                                _c("w-checkbox", {
+                                  attrs: { label: che.labelCheck }
+                                })
+                              ],
+                              1
+                            )
+                          }),
+                          0
+                        )
+                      ],
+                      2
+                    )
+                  : _c("div", [
+                      _c("h1", { staticClass: "tertiary-text body bold p-5" }, [
+                        _vm._v(_vm._s(item.namePanel))
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "flex justify-between grid",
+                          class:
+                            item.selects.length % 2
+                              ? "grid-cols-3"
+                              : "grid-cols-2"
+                        },
+                        _vm._l(item.selects, function(sel, j) {
+                          return _c(
+                            "div",
+                            { key: j, staticClass: "flex-wrap px-2" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "flex items-center pb-2" },
+                                [
+                                  _c(
+                                    "h1",
+                                    { staticClass: "caption bold px-5" },
+                                    [_vm._v(_vm._s(sel.nameSelect))]
+                                  ),
+                                  _vm._v(" "),
+                                  sel.info
+                                    ? _c("w-icon", {
+                                        attrs: {
+                                          icon: "imperios-digitales",
+                                          h: "14px"
+                                        }
+                                      })
+                                    : _vm._e()
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "form",
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      placeholder: sel.placeHolder,
+                                      options: sel.opciones
+                                    },
+                                    model: {
+                                      value: sel.vModel,
+                                      callback: function($$v) {
+                                        _vm.$set(sel, "vModel", $$v)
+                                      },
+                                      expression: "sel.vModel"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "flex grid grid-cols-3 justify-between"
+                        },
+                        _vm._l(item.checks, function(che, n) {
+                          return _c(
+                            "div",
+                            { key: n },
+                            [
+                              _c("w-checkbox", {
+                                attrs: { label: che.labelCheck }
+                              })
+                            ],
+                            1
+                          )
+                        }),
+                        0
+                      )
+                    ]),
+                _vm._v(" "),
+                _c("br")
+              ])
+            }),
+            _vm._v(" "),
+            _c("div", [
+              _c("h1", { staticClass: "tertiary-text body bold p-5" }, [
+                _vm._v("Enlace de video")
+              ]),
+              _vm._v(" "),
+              _c(
+                "form",
+                { staticClass: "block lg:w-4/5" },
+                [
+                  _c("w-input", {
+                    attrs: {
+                      placeholder:
+                        "Ejemplo: https://www.youtube.com/watch?v=uN5Cux5t0Ak"
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("h1", { staticClass: "tertiary-text body bold p-5" }, [
+                _vm._v("Medidas de ambiente")
+              ]),
+              _vm._v(" "),
               _c(
                 "div",
                 {
                   staticClass:
-                    "flex justify-between items-center py-2 px-6 bg-gray-200 rounded-full"
+                    "block lg:flex lg:grid grid-cols-2 justify-between"
                 },
                 [
-                  _c("h1", { staticClass: "tertiary-text body bold" }, [
-                    _vm._v(_vm._s(item.namePanel))
+                  _c("div", { staticClass: "pr-2" }, [
+                    _c("h1", { staticClass: "caption bold px-5 pb-2" }, [
+                      _vm._v("AMBIENTE")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "form",
+                      { staticClass: "block" },
+                      [
+                        _c("w-input", {
+                          attrs: { placeholder: "Ejemplo: sala, comedor" }
+                        })
+                      ],
+                      1
+                    )
                   ]),
                   _vm._v(" "),
-                  _c("div", [
+                  _c("div", { staticClass: "hidden lg:block pl-2" }, [
+                    _c("h1", { staticClass: "caption bold px-5 pb-2" }, [
+                      _vm._v("AMBIENTE")
+                    ]),
+                    _vm._v(" "),
                     _c(
-                      "a",
-                      {
-                        attrs: { href: "" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            item.value = !item.value
-                          }
-                        }
-                      },
+                      "form",
+                      { staticClass: "block" },
                       [
-                        _c("img", {
-                          staticClass: "h-5",
-                          class: item.value ? "deployed" : "undeployed",
-                          attrs: {
-                            src: item.value
-                              ? "/images/arrow-up.png"
-                              : "/images/arrow-down.png",
-                            alt: ""
-                          }
+                        _c("w-input", {
+                          attrs: { placeholder: "Ejemplo: sala, comedor" }
                         })
-                      ]
+                      ],
+                      1
                     )
                   ])
                 ]
               ),
               _vm._v(" "),
+              _c("h1", { staticClass: "caption bold px-5 pb-2" }, [
+                _vm._v("DESCRIPCION")
+              ]),
+              _vm._v(" "),
+              _c("textarea", {
+                staticClass: "rounded-lg border-black border-2 px-4 py-2",
+                attrs: {
+                  placeholder: "Ejemplo: sala, comedor",
+                  name: "",
+                  id: "",
+                  cols: _vm.windowWidth <= 734 ? "33" : "100",
+                  rows: "10"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              [
+                _c("h1", { staticClass: "tertiary-text body bold p-5" }, [
+                  _vm._v("Locación")
+                ]),
+                _vm._v(" "),
+                _c("h1", { staticClass: "caption bold px-5 pb-2" }, [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("GoogleMap", {
+                  staticClass: "my-4",
+                  attrs: {
+                    latitude: _vm.latitude,
+                    longitude: _vm.longitude,
+                    apiKey: _vm.apiKey,
+                    zoom: 12
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", [
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
               _c(
                 "div",
-                {
-                  staticClass: "mx-auto py-5 pb-0",
-                  class: item.value ? " in" : " out"
-                },
+                { staticClass: "flex justify-center" },
                 [
-                  _vm._l(item.selects, function(sel, j) {
-                    return _c("div", { key: j }, [
-                      _c(
-                        "div",
-                        { staticClass: "flex items-center pb-2" },
-                        [
-                          _c("h1", { staticClass: "caption bold px-5" }, [
-                            _vm._v(_vm._s(sel.nameSelect))
-                          ]),
-                          _vm._v(" "),
-                          sel.info
-                            ? _c("w-icon", {
-                                attrs: { icon: "imperios-digitales", h: "14px" }
-                              })
-                            : _vm._e()
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "form",
-                        [
-                          _c("w-select", {
-                            attrs: {
-                              placeholder: sel.placeHolder,
-                              options: sel.opciones
-                            },
-                            model: {
-                              value: sel.vModel,
-                              callback: function($$v) {
-                                _vm.$set(sel, "vModel", $$v)
-                              },
-                              expression: "sel.vModel"
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ])
-                  }),
-                  _vm._v(" "),
                   _c(
-                    "div",
-                    { staticClass: "flex grid grid-cols-2 justify-between" },
-                    _vm._l(item.checks, function(che, n) {
-                      return _c(
-                        "div",
-                        { key: n },
-                        [
-                          _c("w-checkbox", { attrs: { label: che.labelCheck } })
-                        ],
-                        1
-                      )
-                    }),
-                    0
+                    "w-btn",
+                    {
+                      staticClass: "caption bold white-text",
+                      attrs: { large: "" }
+                    },
+                    [_vm._v("GUARDAR AVISO")]
                   )
                 ],
-                2
-              ),
-              _vm._v(" "),
-              _c("br")
+                1
+              )
             ])
-          }),
-          0
+          ],
+          2
         )
       ]
     )
@@ -6908,6 +7267,122 @@ var staticRenderFns = [
           )
         ]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex items-center p-5" }, [
+      _c("h1", { staticClass: "tertiary-text body bold pr-2" }, [
+        _vm._v("Fotos")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "caption opacity-50 pl-2" }, [
+        _vm._v("(0 a 20 disponibles)")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "flex-wrap lg:flex lg:grid grid-cols-2 justify-around" },
+      [
+        _c(
+          "div",
+          { staticClass: "bg-gray-300 rounded-lg mb-4 lg:mr-4 lg:mb-0" },
+          [
+            _c("div", { staticClass: "fileButton justify-center" }, [
+              _c("img", {
+                attrs: {
+                  src: __webpack_require__(/*! ../components/wlinii_components/iconos/upload-image.png */ "./resources/js/components/wlinii_components/iconos/upload-image.png")
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "fileInput",
+                attrs: { name: "fotos", type: "file" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "caption opacity-75" }, [
+                _vm._v("Arrastra fotos desde tu computadora")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "caption white-text bold bg-blue-300 rounded-full"
+                },
+                [_vm._v("SELECCIONAR FOTOS")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "caption whitespace-normal opacity-75" },
+                [
+                  _vm._v(
+                    "Formatos permitidos: JPG, JPEG, PNG (Tamaño máximo: 5Mb)"
+                  )
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "bg-gray-300 rounded-lg mt-4 lg:ml-4 lg:mt-0" },
+          [
+            _c("div", { staticClass: "fileButton justify-center" }, [
+              _c("img", {
+                attrs: {
+                  src: __webpack_require__(/*! ../components/wlinii_components/iconos/upload-video.png */ "./resources/js/components/wlinii_components/iconos/upload-video.png")
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "fileInput",
+                attrs: { name: "fotos", type: "file" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "caption opacity-75" }, [
+                _vm._v("Arrastra video desde tu computadora")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "caption white-text bold bg-blue-300 rounded-full"
+                },
+                [_vm._v("SELECCIONAR VIDEO")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "caption whitespace-normal opacity-75" },
+                [_vm._v("Formatos permitidos: MP4, AVI, (Tamaño máximo: 50Mb)")]
+              )
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "my-8 mx-2 lg:mx-48" }, [
+      _c("p", { staticClass: "caption opacity-75 text-center" }, [
+        _vm._v(
+          "Si ha completadp todos los campos y está seguro de la exactitud de toda la información, haga clic en el botón a continuación para guardar los datos"
+        )
+      ])
     ])
   }
 ]
