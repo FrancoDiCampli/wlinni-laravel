@@ -26004,7 +26004,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/Home */ "./resources/js/views/Home.vue");
-/* harmony import */ var _views_precios_Precios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/precios/Precios */ "./resources/js/views/precios/Precios.vue");
+/* harmony import */ var _views_precios_Precios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/precios/Precios */ "./resources/js/views/precios/Precios.vue");
 /* harmony import */ var _views_publicaciones_Publicaciones__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/publicaciones/Publicaciones */ "./resources/js/views/publicaciones/Publicaciones.vue");
 /* harmony import */ var _views_publicaciones_NuevaPublicacion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/publicaciones/NuevaPublicacion */ "./resources/js/views/publicaciones/NuevaPublicacion.vue");
 /* harmony import */ var _views_publicaciones_DetallePublicacion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/publicaciones/DetallePublicacion */ "./resources/js/views/publicaciones/DetallePublicacion.vue");
@@ -26031,7 +26031,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
   {
     path: "/precios",
     name: "precios",
-    component: _views_precios_Precios__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _views_precios_Precios__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, // PUBLICACIONES
   {
     path: "/publicaciones",
