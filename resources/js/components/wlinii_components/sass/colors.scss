@@ -24,6 +24,10 @@
 .white {
   background-color: white;
 }
+.default{
+    background-color: $default;
+
+}
 
 .primary-text {
   color: $primary;
@@ -49,6 +53,16 @@
 .white-text {
   color: white;
 }
+
+.primary-border {
+    border-color: $primary;
+  }
+  .secondary-border {
+    border-color: $secondary;
+  }
+  .tertiary-border {
+    border-color: $tertiary;
+  }
 
 $sizes: (
   "xs": 0px,

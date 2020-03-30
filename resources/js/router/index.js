@@ -20,8 +20,18 @@ export default new Router({
     routes: [
         {
             path: "/",
-            name: "home",
-            component: Home
+            name: "test",
+            component: Test
+        },
+        {
+            path: "/notification",
+            name: "notification",
+            component: Notification
+        },
+        {
+            path: "/login",
+            name: "login",
+            component: Login
         },
 
         // PRECIOS
