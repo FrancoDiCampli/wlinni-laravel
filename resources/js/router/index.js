@@ -5,6 +5,7 @@ import Notification from "../views/Notification";
 import Login from "../views/Login";
 import Broker from "../views/Broker";
 import Agent from "../views/Agent";
+import AMC1 from "../views/amc/AM1 ";
 import AMC2 from "../views/amc/AMC2";
 
 
@@ -37,6 +38,11 @@ export default new Router({
             path: "/agent",
             name: "agent",
             component: Agent
+        },
+        {
+            path: "/amc1",
+            name: "AMC1",
+            component: AMC1
         },
         {
             path: "/amc2",
