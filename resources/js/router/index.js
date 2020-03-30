@@ -13,6 +13,9 @@ import DetallePublicacion from "../views/publicaciones/DetallePublicacion";
 // INMUEBLES
 import Inmuebles from "../views/inmuebles/Inmuebles";
 
+// PROBANDO
+import amc2 from "../views/amc/amc2";
+
 Vue.use(Router);
 
 export default new Router({
@@ -20,18 +23,13 @@ export default new Router({
     routes: [
         {
             path: "/",
+            name: "home",
+            component: Home
+        },
+        {
+            path: "/test",
             name: "test",
-            component: Test
-        },
-        {
-            path: "/notification",
-            name: "notification",
-            component: Notification
-        },
-        {
-            path: "/login",
-            name: "login",
-            component: Login
+            component: amc2
         },
 
         // PRECIOS

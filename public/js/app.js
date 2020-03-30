@@ -3511,6 +3511,339 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/amc2.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/amc/amc2.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inmuebles_FiltroInmueble__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../inmuebles/FiltroInmueble */ "./resources/js/views/inmuebles/FiltroInmueble.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      filtrar: false,
+      cards: [{
+        tipo: "Alquiler",
+        image: "/images/departamentos/1.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }, {
+        tipo: "En Venta",
+        image: "/images/departamentos/2.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }, {
+        tipo: "En Venta",
+        image: "/images/departamentos/3.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }, {
+        tipo: "En Venta",
+        image: "/images/departamentos/4.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }, {
+        tipo: "En Venta",
+        image: "/images/departamentos/5.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }, {
+        tipo: "En Venta",
+        image: "/images/departamentos/6.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }, {
+        tipo: "En Venta",
+        image: "/images/departamentos/7.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }, {
+        tipo: "En Venta",
+        image: "/images/departamentos/8.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }, {
+        tipo: "En Venta",
+        image: "/images/departamentos/9.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }]
+    };
+  },
+  components: {
+    FiltroInmueble: _inmuebles_FiltroInmueble__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/inmuebles/FiltroInmueble.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/inmuebles/FiltroInmueble.vue?vue&type=script&lang=js& ***!
@@ -4568,6 +4901,25 @@ exports.push([module.i, ".main-layout .custom-items-margin {\n  margin-right: 65
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/amc/amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".inmuebles-container[data-v-5fb5a59c] {\n  width: 95%;\n  margin: auto;\n}\n@media (max-width: 764px) {\n.inmuebles-container[data-v-5fb5a59c] {\n    width: 100%;\n}\n}\n.filter[data-v-5fb5a59c] {\n  background-color: white;\n}\n.filter .filter-header[data-v-5fb5a59c] {\n  width: 100%;\n  background-color: #ff7500;\n  color: white;\n  text-align: center;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 12px;\n}\n.filter .filter-body[data-v-5fb5a59c] {\n  padding: 12px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/inmuebles/Inmuebles.vue?vue&type=style&index=0&id=349c74c2&lang=scss&scoped=true&":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/inmuebles/Inmuebles.vue?vue&type=style&index=0&id=349c74c2&lang=scss&scoped=true& ***!
@@ -5174,6 +5526,36 @@ options.transform = transform
 options.insertInto = undefined;
 
 var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/amc/amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -6410,6 +6792,533 @@ var render = function() {
   )
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/amc2.vue?vue&type=template&id=5fb5a59c&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/amc/amc2.vue?vue&type=template&id=5fb5a59c&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "bg-gray-200 p-5" }, [
+      _c("div", { staticClass: "bg-white p-5 lg:p-20" }, [
+        _c("h1", { staticClass: "subtitle-lg body-xs bold" }, [
+          _vm._v("Análisis de Mercado Comparativo (AMC)")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "caption" }, [
+          _vm._v("Aplicación de analisis de precios")
+        ]),
+        _vm._v(" "),
+        _c(
+          "p",
+          {
+            staticClass:
+              "uppercase text-white primary px-2 my-5 lg:mt-10 w-1/2 lg:w-1/12 rounded-full text-center"
+          },
+          [_vm._v("02 paso")]
+        ),
+        _vm._v(" "),
+        _c("h1", { staticClass: "subtitle-lg body-xs bold" }, [
+          _vm._v("Agregar oferta pública")
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "lg:flex white-text" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex w-full justify-between tertiary rounded-lg p-5 lg:mr-2 mb-5",
+              attrs: { id: "publicaciones" }
+            },
+            [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "h-12 svg-inline--fa fa-pencil-alt fa-w-16",
+                    attrs: {
+                      "aria-hidden": "true",
+                      focusable: "false",
+                      "data-prefix": "fas",
+                      "data-icon": "pencil-alt",
+                      role: "img",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      viewBox: "0 0 512 512"
+                    }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        fill: "currentColor",
+                        d:
+                          "M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "caption mt-5" }, [_vm._v("Editar")])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(2)
+        ]),
+        _vm._v("Aqui deberia ir filtro y los inmuebles\n      "),
+        _c("div", [
+          _c("div", [
+            _c("div", { staticClass: "inmuebles-container" }, [
+              _c("div", { staticClass: "flex flex-row justify-around gap-8" }, [
+                _c("div", { staticClass: "w-3/12 hidden lg:block" }, [
+                  _c(
+                    "div",
+                    [
+                      _c(
+                        "w-card",
+                        { attrs: { shadow: false } },
+                        [
+                          _c("template", { slot: "header" }, [
+                            _c(
+                              "p",
+                              { staticClass: "caption bold white-text" },
+                              [_vm._v("FILTROS")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("FiltroInmueble")
+                        ],
+                        2
+                      )
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _vm.filtrar
+                  ? _c("div", { staticClass: "w-full" }, [
+                      _c("div", { staticClass: "filter" }, [
+                        _c("div", { staticClass: "filter-header" }, [
+                          _vm._v("filtros")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "filter-body" },
+                          [
+                            _c("FiltroInmueble"),
+                            _vm._v(" "),
+                            _c(
+                              "w-btn",
+                              {
+                                attrs: {
+                                  fullwidth: true,
+                                  color: "secondary",
+                                  dark: true
+                                },
+                                on: {
+                                  click: function($event) {
+                                    _vm.filtrar = false
+                                  }
+                                }
+                              },
+                              [_vm._v("filtrar")]
+                            )
+                          ],
+                          1
+                        )
+                      ])
+                    ])
+                  : _c(
+                      "div",
+                      { staticClass: "sm:w-full lg:w-9/12 px-6" },
+                      [
+                        _c(
+                          "w-card",
+                          { attrs: { shadow: false } },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex flex-row justify-between flex-wrap"
+                              },
+                              [
+                                _c("div", { staticClass: "lg:pl-3" }, [
+                                  _c("h1", { staticClass: "subtitle bold" }, [
+                                    _vm._v("Listado de Inmuebles")
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "lg:pr-3" },
+                                  [
+                                    _c(
+                                      "w-btn",
+                                      {
+                                        staticStyle: {
+                                          margin: "0px !important"
+                                        },
+                                        attrs: { color: "tertiary", dark: true }
+                                      },
+                                      [_vm._v("Búsqueda de mapa")]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c(
+                              "w-btn",
+                              {
+                                staticClass: "lg:hidden",
+                                attrs: { dark: true, color: "secondary" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.filtrar = true
+                                  }
+                                }
+                              },
+                              [_vm._v("filtrar")]
+                            ),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex flex-row justify-between flex-wrap"
+                              },
+                              _vm._l(_vm.cards, function(card, i) {
+                                return _c(
+                                  "div",
+                                  {
+                                    key: i,
+                                    staticClass: "sm:w-full lg:w-1/3 p-3"
+                                  },
+                                  [
+                                    _c(
+                                      "w-card",
+                                      {
+                                        attrs: {
+                                          image: card.image,
+                                          hover: "full-hover"
+                                        }
+                                      },
+                                      [
+                                        _c("template", { slot: "image" }, [
+                                          _c("p", { staticClass: "bold" }, [
+                                            _vm._v(_vm._s(card.direccion))
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("br"),
+                                          _vm._v(" "),
+                                          _c("p", [
+                                            _vm._v(_vm._s(card.descripcion))
+                                          ])
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("template", { slot: "state" }, [
+                                          _c(
+                                            "p",
+                                            { staticClass: "white-text" },
+                                            [_vm._v(_vm._s(card.tipo))]
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("p", { staticClass: "bold" }, [
+                                          _vm._v(_vm._s(card.title))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("p", [_vm._v(_vm._s(card.body))]),
+                                        _vm._v(" "),
+                                        _c("p", [_vm._v("Comisión")]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "flex flex-row justify-between"
+                                          },
+                                          [
+                                            _c(
+                                              "p",
+                                              { staticClass: "body bold" },
+                                              [_vm._v(_vm._s(card.comision))]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              {
+                                                staticClass:
+                                                  "body bold tertiary-text"
+                                              },
+                                              [_vm._v(_vm._s(card.mes))]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("template", { slot: "footer" }, [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "flex flex-row justify-between"
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "flex flex-row justify-between"
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass: "info-item"
+                                                    },
+                                                    [
+                                                      _c("w-icon", {
+                                                        attrs: {
+                                                          icon: "room-solid",
+                                                          h: "12px"
+                                                        }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        {
+                                                          staticClass:
+                                                            "white-text"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "\n                                  " +
+                                                              _vm._s(
+                                                                card.info
+                                                                  .habitaciones
+                                                              ) +
+                                                              "\n                                "
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass: "info-item"
+                                                    },
+                                                    [
+                                                      _c("w-icon", {
+                                                        attrs: {
+                                                          icon: "bath-solid",
+                                                          h: "15px"
+                                                        }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        {
+                                                          staticClass:
+                                                            "white-text"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              card.info.baños
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass: "info-item"
+                                                    },
+                                                    [
+                                                      _c("w-icon", {
+                                                        attrs: {
+                                                          icon: "parking-solid",
+                                                          h: "12px"
+                                                        }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        {
+                                                          staticClass:
+                                                            "white-text"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "\n                                  " +
+                                                              _vm._s(
+                                                                card.info
+                                                                  .estacionamiento
+                                                              ) +
+                                                              "\n                                "
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "info-item" },
+                                                [
+                                                  _c("w-icon", {
+                                                    attrs: {
+                                                      icon: "size",
+                                                      h: "15px"
+                                                    }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass: "white-text"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(card.info.tamaño)
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ]
+                                          )
+                                        ])
+                                      ],
+                                      2
+                                    )
+                                  ],
+                                  1
+                                )
+                              }),
+                              0
+                            ),
+                            _vm._v(" "),
+                            _c("br")
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "lg:flex justify-around mt-10" },
+          [
+            _c(
+              "w-btn",
+              {
+                staticClass: "bold w-full lg:w-1/3",
+                attrs: { large: true, dark: true, color: "primary" }
+              },
+              [_vm._v("siguiente")]
+            )
+          ],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "shadow w-full bg-gray-500 rounded-full mb-10" },
+      [
+        _c("div", {
+          staticClass:
+            "secondary leading-none text-center text-white rounded-full p-2",
+          staticStyle: { width: "55%" }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h1", { staticClass: "body bold" }, [
+        _vm._v("Publicaciones seleccionadas (3)")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "caption" }, [_vm._v("Seleccionadas")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "w-full primary rounded-lg p-5 lg:ml-2 mb-5",
+        attrs: { id: "ingreso" }
+      },
+      [
+        _c("div", { staticClass: "body bold" }, [_vm._v("Ingeso Manual")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "caption" }, [
+          _vm._v("Insertar datos para el cálculo")
+        ]),
+        _vm._v(" "),
+        _c("div")
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -26057,6 +26966,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_publicaciones_NuevaPublicacion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/publicaciones/NuevaPublicacion */ "./resources/js/views/publicaciones/NuevaPublicacion.vue");
 /* harmony import */ var _views_publicaciones_DetallePublicacion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/publicaciones/DetallePublicacion */ "./resources/js/views/publicaciones/DetallePublicacion.vue");
 /* harmony import */ var _views_inmuebles_Inmuebles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/inmuebles/Inmuebles */ "./resources/js/views/inmuebles/Inmuebles.vue");
+/* harmony import */ var _views_amc_amc2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/amc/amc2 */ "./resources/js/views/amc/amc2.vue");
 
 
  // PRECIOS
@@ -26067,22 +26977,20 @@ __webpack_require__.r(__webpack_exports__);
 
  // INMUEBLES
 
+ // PROBANDO
+
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: "history",
   routes: [{
     path: "/",
+    name: "home",
+    component: _views_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
+    path: "/test",
     name: "test",
-    component: Test
-  }, {
-    path: "/notification",
-    name: "notification",
-    component: Notification
-  }, {
-    path: "/login",
-    name: "login",
-    component: Login
+    component: _views_amc_amc2__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, // PRECIOS
   {
     path: "/precios",
@@ -26199,6 +27107,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_63cd6604___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_63cd6604___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/amc/amc2.vue":
+/*!*****************************************!*\
+  !*** ./resources/js/views/amc/amc2.vue ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _amc2_vue_vue_type_template_id_5fb5a59c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./amc2.vue?vue&type=template&id=5fb5a59c&scoped=true& */ "./resources/js/views/amc/amc2.vue?vue&type=template&id=5fb5a59c&scoped=true&");
+/* harmony import */ var _amc2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./amc2.vue?vue&type=script&lang=js& */ "./resources/js/views/amc/amc2.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _amc2_vue_vue_type_style_index_0_id_5fb5a59c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true& */ "./resources/js/views/amc/amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _amc2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _amc2_vue_vue_type_template_id_5fb5a59c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _amc2_vue_vue_type_template_id_5fb5a59c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "5fb5a59c",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/amc/amc2.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/amc/amc2.vue?vue&type=script&lang=js&":
+/*!******************************************************************!*\
+  !*** ./resources/js/views/amc/amc2.vue?vue&type=script&lang=js& ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./amc2.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/amc2.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/amc/amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/views/amc/amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true& ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_style_index_0_id_5fb5a59c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/amc2.vue?vue&type=style&index=0&id=5fb5a59c&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_style_index_0_id_5fb5a59c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_style_index_0_id_5fb5a59c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_style_index_0_id_5fb5a59c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_style_index_0_id_5fb5a59c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_style_index_0_id_5fb5a59c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/views/amc/amc2.vue?vue&type=template&id=5fb5a59c&scoped=true&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/views/amc/amc2.vue?vue&type=template&id=5fb5a59c&scoped=true& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_template_id_5fb5a59c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./amc2.vue?vue&type=template&id=5fb5a59c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/amc2.vue?vue&type=template&id=5fb5a59c&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_template_id_5fb5a59c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_amc2_vue_vue_type_template_id_5fb5a59c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
