@@ -2,12 +2,12 @@ import Vue from "vue";
 import anime from "animejs";
 
 Vue.component("w-panel", {
-  props: {
-    value: Boolean,
-    header: String
-  },
+    props: {
+        value: Boolean,
+        header: String
+    },
 
-  template: `
+    template: `
         <div class="panel">
             <div class="panel-header" @click="active = !active">
                 <div class="header">
@@ -25,55 +25,55 @@ Vue.component("w-panel", {
         </div>
     `,
 
-  computed: {
-    active: {
-      get() {
-        return this.value ? this.value : false;
-      },
-      set(newValue) {
-        this.$emit("input", newValue);
-      }
+    computed: {
+        active: {
+            get() {
+                return this.value ? this.value : false;
+            },
+            set(newValue) {
+                this.$emit("input", newValue);
+            }
+        },
+
+        iconURL() {
+            return require("../../iconos/arrow-up.png");
+        }
     },
 
-    iconURL() {
-      return require("../../iconos/arrow-down.png");
-    }
-  },
-
-  mounted() {
-    if (this.value) {
-      this.$refs.panelIcon.style.transform = "rotate(180deg)";
-    }
-  },
-
-  methods: {
-    enterBody() {
-      let bodyElement = this.$refs.panelBody;
-      let iconElement = this.$refs.panelIcon;
-      anime({
-        targets: bodyElement,
-        scaleY: [0, 1],
-        duration: 250,
-        easing: "easeInOutSine"
-      });
-
-      anime({
-        targets: iconElement,
-        rotate: ["0deg", "180deg"],
-        duration: 250,
-        easing: "easeInOutSine"
-      });
+    mounted() {
+        if (this.value) {
+            this.$refs.panelIcon.style.transform = "rotate(180deg)";
+        }
     },
 
-    leaveBody() {
-      let iconElement = this.$refs.panelIcon;
+    methods: {
+        enterBody() {
+            let bodyElement = this.$refs.panelBody;
+            let iconElement = this.$refs.panelIcon;
+            anime({
+                targets: bodyElement,
+                scaleY: [0, 1],
+                duration: 250,
+                easing: "easeInOutSine"
+            });
 
-      anime({
-        targets: iconElement,
-        rotate: ["180deg", "0deg"],
-        duration: 250,
-        easing: "easeInOutSine"
-      });
+            anime({
+                targets: iconElement,
+                rotate: ["0deg", "180deg"],
+                duration: 250,
+                easing: "easeInOutSine"
+            });
+        },
+
+        leaveBody() {
+            let iconElement = this.$refs.panelIcon;
+
+            anime({
+                targets: iconElement,
+                rotate: ["180deg", "0deg"],
+                duration: 250,
+                easing: "easeInOutSine"
+            });
+        }
     }
-  }
 });

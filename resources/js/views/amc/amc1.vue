@@ -116,7 +116,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      select: null
+    };
+  }
+};
 </script>
 
 <style>

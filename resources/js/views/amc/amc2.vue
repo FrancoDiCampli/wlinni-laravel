@@ -48,6 +48,119 @@
             <p class="caption">Insertar datos para el cálculo</p>
             <div></div>
           </div>
+        </div>Aqui deberia ir filtro y los inmuebles
+        <div>
+          <div>
+            <div class="inmuebles-container">
+              <div class="flex flex-row justify-around gap-8">
+                <div class="w-3/12 hidden lg:block">
+                  <div>
+                    <w-card :shadow="false">
+                      <template slot="header">
+                        <p class="caption bold white-text">FILTROS</p>
+                      </template>
+
+                      <FiltroInmueble></FiltroInmueble>
+                    </w-card>
+                  </div>
+                </div>
+                <div class="w-full" v-if="filtrar">
+                  <div class="filter">
+                    <div class="filter-header">filtros</div>
+                    <div class="filter-body">
+                      <FiltroInmueble></FiltroInmueble>
+                      <w-btn
+                        :fullwidth="true"
+                        color="secondary"
+                        :dark="true"
+                        @click="filtrar = false"
+                      >filtrar</w-btn>
+                    </div>
+                  </div>
+                </div>
+                <div class="sm:w-full lg:w-9/12 px-6" v-else>
+                  <w-card :shadow="false">
+                    <div class="flex flex-row justify-between flex-wrap">
+                      <div class="lg:pl-3">
+                        <h1 class="subtitle bold">Listado de Inmuebles</h1>
+                      </div>
+                      <div class="lg:pr-3">
+                        <w-btn
+                          color="tertiary"
+                          :dark="true"
+                          style=" margin: 0px !important;"
+                        >Búsqueda de mapa</w-btn>
+                      </div>
+                    </div>
+                    <br />
+                    <w-btn
+                      class="lg:hidden"
+                      :dark="true"
+                      color="secondary"
+                      @click="filtrar = true"
+                    >filtrar</w-btn>
+                    <br />
+                    <div class="flex flex-row justify-between flex-wrap">
+                      <div class="sm:w-full lg:w-1/3 p-3" v-for="(card, i) in cards" :key="i">
+                        <w-card :image="card.image" hover="full-hover">
+                          <template slot="image">
+                            <p class="bold">{{ card.direccion }}</p>
+                            <br />
+                            <p>{{ card.descripcion }}</p>
+                          </template>
+                          <template slot="state">
+                            <p class="white-text">{{ card.tipo }}</p>
+                          </template>
+                          <p class="bold">{{ card.title }}</p>
+                          <p>{{ card.body }}</p>
+                          <p>Comisión</p>
+                          <div class="flex flex-row justify-between">
+                            <p class="body bold">{{ card.comision }}</p>
+                            <p class="body bold tertiary-text">{{ card.mes }}</p>
+                          </div>
+
+                          <template slot="footer">
+                            <div class="flex flex-row justify-between">
+                              <div class="flex flex-row justify-between">
+                                <div class="info-item">
+                                  <w-icon icon="room-solid" h="12px"></w-icon>
+                                  <p class="white-text">
+                                    {{
+                                    card.info
+                                    .habitaciones
+                                    }}
+                                  </p>
+                                </div>
+                                <div class="info-item">
+                                  <w-icon icon="bath-solid" h="15px"></w-icon>
+                                  <p class="white-text">{{ card.info.baños }}</p>
+                                </div>
+                                <div class="info-item">
+                                  <w-icon icon="parking-solid" h="12px"></w-icon>
+                                  <p class="white-text">
+                                    {{
+                                    card.info
+                                    .estacionamiento
+                                    }}
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="info-item">
+                                <w-icon icon="size" h="15px"></w-icon>
+                                <p class="white-text">{{ card.info.tamaño }}</p>
+                              </div>
+                            </div>
+                          </template>
+                        </w-card>
+                      </div>
+                    </div>
+                    <br />
+                  </w-card>
+                </div>
+              </div>
+            </div>
+            <br />
+          </div>
         </div>
 
         <div class="lg:flex justify-around mt-10">
@@ -59,8 +172,200 @@
 </template>
 
 <script>
-export default {};
+import FiltroInmueble from "../inmuebles/FiltroInmueble";
+
+export default {
+  data: () => ({
+    filtrar: false,
+    cards: [
+      {
+        tipo: "Alquiler",
+        image: "/images/departamentos/1.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion:
+          " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      },
+      {
+        tipo: "En Venta",
+        image: "/images/departamentos/2.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion:
+          " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      },
+      {
+        tipo: "En Venta",
+        image: "/images/departamentos/3.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion:
+          " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      },
+      {
+        tipo: "En Venta",
+        image: "/images/departamentos/4.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion:
+          " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      },
+      {
+        tipo: "En Venta",
+        image: "/images/departamentos/5.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion:
+          " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      },
+      {
+        tipo: "En Venta",
+        image: "/images/departamentos/6.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion:
+          " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      },
+      {
+        tipo: "En Venta",
+        image: "/images/departamentos/7.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion:
+          " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      },
+      {
+        tipo: "En Venta",
+        image: "/images/departamentos/8.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion:
+          " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      },
+      {
+        tipo: "En Venta",
+        image: "/images/departamentos/9.jpg",
+        title: "958 Calle Montreal",
+        body: "Av.montreal",
+        comision: "5%",
+        mes: "S/ 86,723",
+        direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        descripcion:
+          " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        info: {
+          habitaciones: 3,
+          baños: 2,
+          estacionamiento: 2,
+          tamaño: "120m"
+        }
+      }
+    ]
+  }),
+
+  components: {
+    FiltroInmueble
+  }
+};
 </script>
 
-<style>
+<style lang="scss" scoped>
+.inmuebles-container {
+  width: 95%;
+  margin: auto;
+}
+
+@media (max-width: 764px) {
+  .inmuebles-container {
+    width: 100%;
+  }
+}
+
+.filter {
+  background-color: white;
+  .filter-header {
+    width: 100%;
+    background-color: #ff7500;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px;
+  }
+  .filter-body {
+    padding: 12px;
+  }
+}
 </style>
