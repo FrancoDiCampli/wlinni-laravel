@@ -4085,6 +4085,439 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      windowWidth: window.innerWidth,
+      img: "img/rostros/2.png",
+      imagwn: "img/banners/1.png",
+      agent: {
+        name: "Peter Llanos Barnachea",
+        dir: "Lima / San Borja",
+        job: "Titanio Inversiones Inmobiliarias, SAC",
+        cod: 382358412,
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse molestiae nihil a velit, dolor facere voluptate totam corrupti. Saepe quas voluptatibus tempora itaque",
+        days: 3,
+        img: "img/rostros/1.png",
+        cel: 5194641341,
+        email: "rs@agenlesasociados.com",
+        stars: 2,
+        trans: {
+          n: 200,
+          state: "up",
+          stateN: 3
+        },
+        active: {
+          n: 25,
+          state: "down",
+          stateN: 1
+        },
+        canceled: 10
+      },
+      destacados: [{
+        cod1: "BUILT-UP-65 SQ FT",
+        cod2: "LAND SIZE-110 SQ FT",
+        descripcion: "Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        dias: 5,
+        img: "img/departamentos/1.jpg",
+        estado: "Alquiler",
+        direccion: "958 Calle Montreal",
+        localidad: "Lima / Perú",
+        comision: "5%",
+        precio: "2500 ",
+        habitaciones: 3,
+        banios: 2,
+        cochera: 2,
+        metros: 180
+      }, {
+        cod1: "BUILT-UP-66 SQ FT",
+        cod2: "LAND SIZE-110 SQ FT",
+        descripcion: "Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        dias: 5,
+        img: "img/departamentos/2.jpg",
+        estado: "Alquiler",
+        direccion: "958 Calle Montreal",
+        localidad: "Lima / Perú",
+        comision: "5%",
+        precio: "2500 ",
+        habitaciones: 3,
+        banios: 2,
+        cochera: 2,
+        metros: 180
+      }, {
+        cod1: "BUILT-UP-75 SQ FT",
+        cod2: "LAND SIZE-110 SQ FT",
+        descripcion: "Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        dias: 5,
+        img: "img/departamentos/3.jpg",
+        estado: "Alquiler",
+        direccion: "958 Calle Montreal",
+        localidad: "Lima / Perú",
+        comision: "5%",
+        precio: "2500 ",
+        habitaciones: 3,
+        banios: 2,
+        cochera: 2,
+        metros: 180
+      }, {
+        cod1: "BUILT-UP-756 SQ FT",
+        cod2: "LAND SIZE-110 SQ FT",
+        descripcion: "Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
+        dias: 5,
+        img: "img/departamentos/3.jpg",
+        estado: "Alquiler",
+        direccion: "958 Calle Montreal",
+        localidad: "Lima / Perú",
+        comision: "5%",
+        precio: "2500 ",
+        habitaciones: 3,
+        banios: 2,
+        cochera: 2,
+        metros: 180
+      }],
+      activeClass: "secondary",
+      errorClass: "accent",
+      selected: "bg-blue-900 text-white rounded-lg"
+    };
+  },
+  methods: {},
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$nextTick(function () {
+      window.addEventListener("resize", _this.windowWidth = window.innerWidth);
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/AMC2.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/amc/AMC2.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -4113,6 +4546,25 @@ exports.push([module.i, "@font-face {\n  font-family: \"Roboto-Regular\";\n\n  s
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Broker.vue?vue&type=style&index=0&lang=scss& ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".bn {\n  border: 1px solid black;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4720,6 +5172,36 @@ process.umask = function() { return 0; };
 
 
 var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Broker.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Broker.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Test.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -7116,7 +7598,891 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "bg-gray-200 p-10" }, [
+    _c("div", { staticClass: "bg-gray-200 py-5" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "pt-5 lg:p-20 w-11/12 rounded-lg bg-white lg:mt-10 mx-auto"
+        },
+        [
+          _c("div", { staticClass: "lg:flex justify-between" }, [
+            _c("div", { staticClass: "lg:block p-5" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "w-auto",
+                staticStyle: { height: "400px" },
+                attrs: { src: _vm.agent.img, alt: "" }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "lg:hidden flex items-center justify-between" },
+                [
+                  _c("h1", { staticClass: "subtitle bold" }, [
+                    _vm._v(_vm._s(_vm.agent.name))
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-5" }, [
+                _c("p", { staticClass: "text-center caption" }, [
+                  _vm._v("Valoración del agente")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "flex justify-center" },
+                  [
+                    _vm._l(_vm.agent.stars, function(star) {
+                      return _c(
+                        "svg",
+                        {
+                          key: star,
+                          staticClass:
+                            "h-5 svg-inline--fa fa-star fa-w-18 tertiary-text",
+                          attrs: {
+                            "aria-hidden": "true",
+                            "data-prefix": "fas",
+                            "data-icon": "star",
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 576 512"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              fill: "currentColor",
+                              d:
+                                "M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            }
+                          })
+                        ]
+                      )
+                    }),
+                    _vm._v(" "),
+                    _vm._l(5 - _vm.agent.stars, function(i) {
+                      return _c(
+                        "svg",
+                        {
+                          key: i * 5,
+                          staticClass:
+                            "h-5 svg-inline--fa fa-star fa-w-18 text-gray-300",
+                          attrs: {
+                            "aria-hidden": "true",
+                            "data-prefix": "fas",
+                            "data-icon": "star",
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 576 512"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              fill: "currentColor",
+                              d:
+                                "M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                            }
+                          })
+                        ]
+                      )
+                    })
+                  ],
+                  2
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "mt-5 text-gray-600 flex items-center justify-center"
+                },
+                [
+                  _c("router-link", { attrs: { to: "/" } }, [
+                    _c(
+                      "svg",
+                      {
+                        staticClass:
+                          "mr-5 h-6 svg-inline--fa fa-envelope fa-w-16",
+                        attrs: {
+                          "aria-hidden": "true",
+                          "data-prefix": "fas",
+                          "data-icon": "envelope",
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 512 512"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "currentColor",
+                            d:
+                              "M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                          }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("router-link", { attrs: { to: "/" } }, [
+                    _c(
+                      "svg",
+                      {
+                        staticClass:
+                          "mr-5 h-6 svg-inline--fa fa-facebook-f fa-w-10",
+                        attrs: {
+                          "aria-hidden": "true",
+                          focusable: "false",
+                          "data-prefix": "fab",
+                          "data-icon": "facebook-f",
+                          role: "img",
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 320 512"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "currentColor",
+                            d:
+                              "M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                          }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("router-link", { attrs: { to: "/" } }, [
+                    _c(
+                      "svg",
+                      {
+                        staticClass:
+                          "mr-5 h-6 svg-inline--fa fa-linkedin-in fa-w-14",
+                        attrs: {
+                          "aria-hidden": "true",
+                          focusable: "false",
+                          "data-prefix": "fab",
+                          "data-icon": "linkedin-in",
+                          role: "img",
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 448 512"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "currentColor",
+                            d:
+                              "M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                          }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("router-link", { attrs: { to: "/" } }, [
+                    _c(
+                      "svg",
+                      {
+                        staticClass:
+                          "mr-5 h-6 svg-inline--fa fa-twitter fa-w-16",
+                        attrs: {
+                          "aria-hidden": "true",
+                          "data-prefix": "fab",
+                          "data-icon": "twitter",
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 512 512"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "currentColor",
+                            d:
+                              "M459.37 151.72c.33 4.54.33 9.1.33 13.64 0 138.72-105.59 298.56-298.56 298.56-59.45 0-114.68-17.22-161.14-47.1 8.45.97 16.57 1.3 25.34 1.3 49.05 0 94.21-16.58 130.27-44.84a105.12 105.12 0 01-98.1-72.77c6.49.97 12.99 1.62 19.81 1.62 9.42 0 18.84-1.3 27.61-3.57A104.95 104.95 0 0120.8 195.57v-1.3a105.68 105.68 0 0047.43 13.32 104.86 104.86 0 01-46.78-87.39c0-19.49 5.2-37.36 14.3-52.95a298.27 298.27 0 00216.36 109.8c-1.62-7.8-2.6-15.91-2.6-24.03 0-57.83 46.78-104.94 104.94-104.94 30.2 0 57.5 12.67 76.67 33.14a206.6 206.6 0 0066.6-25.34 104.65 104.65 0 01-46.14 57.83c21.12-2.28 41.59-8.13 60.43-16.25a225.57 225.57 0 01-52.63 54.26z"
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-4/5 lg:w-2/3 lg:mx-10 mx-auto" }, [
+              _c("div", { staticClass: "hidden lg:block" }, [
+                _c("h1", { staticClass: "text-sm font-bold tracking-widest" }, [
+                  _vm._v("PERFIL AGENTES")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "border-t-2 tertiary w-2/12 my-5" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "flex items-center justify-between" },
+                  [
+                    _c("h1", { staticClass: "fan subtitle-lg bold" }, [
+                      _vm._v(_vm._s(_vm.agent.name))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "svg",
+                      {
+                        staticClass:
+                          "hidden lg:block h-8 svg-inline--fa fa-info-circle fa-w-16",
+                        attrs: {
+                          "aria-hidden": "true",
+                          focusable: "false",
+                          "data-prefix": "fas",
+                          "data-icon": "info-circle",
+                          role: "img",
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 512 512"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "currentColor",
+                            d:
+                              "M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "caption my-4" }, [
+                _vm._v(_vm._s(_vm.agent.dir))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "caption bold" }, [
+                _vm._v(_vm._s(_vm.agent.job))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "caption mb-5" }, [
+                _vm._v("Codigo Ministerio de vivienda:" + _vm._s(_vm.agent.cod))
+              ]),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "hidden lg:block border-t w-full border-gray-600"
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-5 lg:flex" }, [
+                _c(
+                  "h3",
+                  {
+                    staticClass:
+                      "tertiary-text font-bold lg:w-1/4 tertiary-text"
+                  },
+                  [_vm._v("Cel:")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "caption lg:w-3/4" }, [
+                  _vm._v(_vm._s(_vm.agent.cel))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-5 lg:flex" }, [
+                _c("h3", { staticClass: "tertiary-text font-bold lg:w-1/4" }, [
+                  _vm._v("Email:")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "caption lg:w-3/4" }, [
+                  _vm._v(_vm._s(_vm.agent.email))
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "my-5 lg:flex" }, [
+                _c("h3", { staticClass: "tertiary-text font-bold lg:w-1/4" }, [
+                  _vm._v("Descripcion:")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "caption lg:w-3/4" }, [
+                  _vm._v(_vm._s(_vm.agent.description))
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "flex flex-wrap", attrs: { id: "cards" } },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "w-1/2 lg:w-1/4 rounded-lg primary text-white p-5 m-1"
+                    },
+                    [
+                      _c("p", { staticClass: "caption" }, [
+                        _vm._v("Transacciones")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "title" }, [
+                        _vm._v(_vm._s(_vm.agent.trans.n))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "uppercase" }, [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(_vm.agent.trans.state) +
+                            " " +
+                            _vm._s(_vm.agent.trans.stateN) +
+                            "%\n                "
+                        ),
+                        _c("span", { staticClass: "inline-block" }, [
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "h-5 svg-inline--fa fa-arrow-up fa-w-14",
+                              class:
+                                _vm.agent.trans.state == "up"
+                                  ? "text-green-500"
+                                  : " transform rotate-180 text-red-400 ",
+                              attrs: {
+                                "aria-hidden": "true",
+                                focusable: "false",
+                                "data-prefix": "fas",
+                                "data-icon": "arrow-up",
+                                role: "img",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 448 512"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  fill: "currentColor",
+                                  d:
+                                    "M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"
+                                }
+                              })
+                            ]
+                          )
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "w-1/2 lg:w-1/4 rounded-lg primary text-white p-5 m-1"
+                    },
+                    [
+                      _c("p", { staticClass: "caption" }, [_vm._v("Acivas")]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "title" }, [
+                        _vm._v(_vm._s(_vm.agent.active.n))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "uppercase" }, [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(_vm.agent.active.state) +
+                            " " +
+                            _vm._s(_vm.agent.active.stateN) +
+                            "%\n                "
+                        ),
+                        _c("span", { staticClass: "inline-block" }, [
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "h-5 svg-inline--fa fa-arrow-up fa-w-14",
+                              class:
+                                _vm.agent.active.state == "up"
+                                  ? "text-green-500"
+                                  : " transform rotate-180 text-red-400 ",
+                              attrs: {
+                                "aria-hidden": "true",
+                                focusable: "false",
+                                "data-prefix": "fas",
+                                "data-icon": "arrow-up",
+                                role: "img",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 448 512"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  fill: "currentColor",
+                                  d:
+                                    "M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"
+                                }
+                              })
+                            ]
+                          )
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "w-1/2 lg:w-1/4 rounded-lg primary text-white p-5 m-1"
+                    },
+                    [
+                      _c("p", { staticClass: "caption" }, [
+                        _vm._v("Canceladas")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "title" }, [
+                        _vm._v(_vm._s(_vm.agent.canceled))
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ])
+          ])
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "flex justify-center my-10" },
+      [
+        _c("w-btn", { attrs: { outlined: true, color: "tertiary" } }, [
+          _c("span", { staticClass: "body bold" }, [_vm._v("ultimos ingresos")])
+        ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      [
+        _c(
+          "w-carousel",
+          {
+            attrs: {
+              pagination: true,
+              items: _vm.windowWidth <= 764 ? 1 : 3,
+              navigation: true
+            }
+          },
+          _vm._l(_vm.destacados, function(item) {
+            return _c("slide", { key: item.cod1 }, [
+              _c(
+                "div",
+                { staticClass: "carousel-item pt-5" },
+                [
+                  _c(
+                    "w-card",
+                    {
+                      attrs: {
+                        image: item.img,
+                        hover: "full-hover",
+                        state: "runded"
+                      }
+                    },
+                    [
+                      _c("template", { slot: "image" }, [
+                        _c("p", { staticClass: "caption bold" }, [
+                          _vm._v(_vm._s(item.cod1))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption bold" }, [
+                          _vm._v(_vm._s(item.cod2))
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption" }, [
+                          _vm._v(_vm._s(item.descripcion))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption secondary-text" }, [
+                          _vm._v(
+                            "Agregado hace: " +
+                              _vm._s(item.dias) +
+                              " días atras"
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "template",
+                        { slot: "state" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass:
+                                "text-white text-sm px-10 py-2 lg:px-8 secondary",
+                              attrs: { to: "/" }
+                            },
+                            [_vm._v(_vm._s(item.estado))]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", { staticClass: "body bold" }, [
+                          _vm._v(_vm._s(item.direccion))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption" }, [
+                          _vm._v(_vm._s(item.localidad))
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "flex justify-between items-center" },
+                          [
+                            _c("div", [
+                              _c("p", { staticClass: "caption" }, [
+                                _vm._v("Comisión")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "body bold" }, [
+                                _vm._v(_vm._s(item.comision))
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "body bold tertiary-text" },
+                              [
+                                _c("p", [_vm._v("Mes")]),
+                                _vm._v(" "),
+                                _c("p", [_vm._v("S/" + _vm._s(item.precio))])
+                              ]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("template", { slot: "footer" }, [
+                        _c("div", { staticClass: "flex justify-between" }, [
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "room-solid", h: "12px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption white-text" }, [
+                                _vm._v(_vm._s(item.habitaciones))
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "bath-solid", h: "12px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption white-text" }, [
+                                _vm._v(_vm._s(item.banios))
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "parking-solid", h: "12px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption white-text" }, [
+                                _vm._v(_vm._s(item.cochera))
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "size", h: "12px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption white-text" }, [
+                                _vm._v(_vm._s(item.metros))
+                              ])
+                            ],
+                            1
+                          )
+                        ])
+                      ])
+                    ],
+                    2
+                  )
+                ],
+                1
+              )
+            ])
+          }),
+          1
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "flex justify-center my-10" },
+      [
+        _c("w-btn", { attrs: { outlined: true, color: "tertiary" } }, [
+          _c("span", { staticClass: "body bold" }, [_vm._v("Mas destacados")])
+        ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      [
+        _c(
+          "w-carousel",
+          {
+            attrs: {
+              background: _vm.imagwn,
+              pagination: true,
+              items: _vm.windowWidth <= 764 ? 1 : 3,
+              navigation: true
+            }
+          },
+          _vm._l(_vm.destacados, function(item) {
+            return _c("slide", { key: item.cod1 }, [
+              _c(
+                "div",
+                { staticClass: "carousel-item pt-5" },
+                [
+                  _c(
+                    "w-card",
+                    {
+                      attrs: {
+                        image: item.img,
+                        hover: "full-hover",
+                        state: "runded"
+                      }
+                    },
+                    [
+                      _c("template", { slot: "image" }, [
+                        _c("p", { staticClass: "caption bold" }, [
+                          _vm._v(_vm._s(item.cod1))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption bold" }, [
+                          _vm._v(_vm._s(item.cod2))
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption" }, [
+                          _vm._v(_vm._s(item.descripcion))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption secondary-text" }, [
+                          _vm._v(
+                            "Agregado hace: " +
+                              _vm._s(item.dias) +
+                              " días atras"
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "template",
+                        { slot: "state" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass:
+                                "text-white text-sm px-10 py-2 lg:px-8 secondary",
+                              attrs: { to: "/" }
+                            },
+                            [_vm._v(_vm._s(item.estado))]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", { staticClass: "body bold" }, [
+                          _vm._v(_vm._s(item.direccion))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption" }, [
+                          _vm._v(_vm._s(item.localidad))
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "flex justify-between items-center" },
+                          [
+                            _c("div", [
+                              _c("p", { staticClass: "caption" }, [
+                                _vm._v("Comisión")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "body bold" }, [
+                                _vm._v(_vm._s(item.comision))
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "body bold tertiary-text" },
+                              [
+                                _c("p", [_vm._v("Mes")]),
+                                _vm._v(" "),
+                                _c("p", [_vm._v("S/" + _vm._s(item.precio))])
+                              ]
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("template", { slot: "footer" }, [
+                        _c("div", { staticClass: "flex justify-between" }, [
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "room-solid", h: "12px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption white-text" }, [
+                                _vm._v(_vm._s(item.habitaciones))
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "bath-solid", h: "12px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption white-text" }, [
+                                _vm._v(_vm._s(item.banios))
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "parking-solid", h: "12px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption white-text" }, [
+                                _vm._v(_vm._s(item.cochera))
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "size", h: "12px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "caption white-text" }, [
+                                _vm._v(_vm._s(item.metros))
+                              ])
+                            ],
+                            1
+                          )
+                        ])
+                      ])
+                    ],
+                    2
+                  )
+                ],
+                1
+              )
+            ])
+          }),
+          1
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "lg:hidden" }, [
+      _c("h1", { staticClass: "text-sm font-bold tracking-widest" }, [
+        _vm._v("PERFIL AGENTES")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "border-t-2 tertiary w-2/12 my-5" })
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/AMC2.vue?vue&type=template&id=009d1552&":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/amc/AMC2.vue?vue&type=template&id=009d1552& ***!
+  \******************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "bg-gray-200 p-5" }, [
       _c("div", { staticClass: "bg-white p-5 lg:p-20" }, [
         _c("h1", { staticClass: "subtitle-lg body-xs bold" }, [
           _vm._v("Análisis de Mercado Comparativo (AMC)")
@@ -7132,201 +8498,64 @@ var render = function() {
             staticClass:
               "uppercase text-white primary px-2 my-5 lg:mt-10 w-1/2 lg:w-1/12 rounded-full text-center"
           },
-          [_vm._v("01 paso")]
+          [_vm._v("02 paso")]
         ),
         _vm._v(" "),
         _c("h1", { staticClass: "subtitle-lg body-xs bold" }, [
-          _vm._v("Completar Formulario")
+          _vm._v("Agregar oferta pública")
         ]),
         _vm._v(" "),
         _vm._m(0),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "mt-5 lg:flex items-start", attrs: { id: "form" } },
-          [
-            _c("form", { staticClass: "w-full lg:pr-10" }, [
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("TIPO DE INMUEBLE")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-select", {
-                    attrs: { options: [1, 2] },
-                    model: {
-                      value: _vm.select,
-                      callback: function($$v) {
-                        _vm.select = $$v
-                      },
-                      expression: "select"
-                    }
-                  })
-                ],
-                1
-              ),
+        _c("div", { staticClass: "lg:flex white-text" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex w-full justify-between tertiary rounded-lg p-5 lg:mr-2 mb-5",
+              attrs: { id: "publicaciones" }
+            },
+            [
+              _vm._m(1),
               _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                  _vm._v("TIPO DE OPERACION")
-                ]),
-                _vm._v(" "),
+              _c("div", [
                 _c(
-                  "div",
-                  { staticClass: "flex" },
+                  "svg",
+                  {
+                    staticClass: "h-12 svg-inline--fa fa-pencil-alt fa-w-16",
+                    attrs: {
+                      "aria-hidden": "true",
+                      focusable: "false",
+                      "data-prefix": "fas",
+                      "data-icon": "pencil-alt",
+                      role: "img",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      viewBox: "0 0 512 512"
+                    }
+                  },
                   [
-                    _c(
-                      "w-btn",
-                      {
-                        staticClass: "full-width",
-                        attrs: { color: "tertiary", rounded: true, dark: true }
-                      },
-                      [_vm._v("venta")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "w-btn",
-                      {
-                        staticClass: "full-width",
-                        attrs: { color: "tertiary", rounded: true, dark: true }
-                      },
-                      [_vm._v("alquiler")]
-                    )
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group mt-5" },
-                [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("DIRECCIÓN")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-input")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group mt-5" },
-                [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("precio")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-input")
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("form", { staticClass: "w-full lg:pl-10" }, [
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("ANTIGUEDAD")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-input")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("HABITACIONES")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-input")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("CUARTO DE SERVICIO")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-input")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("BAÑOS")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-input")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("COCHERAS")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-input")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("Zonificación")
-                  ]),
-                  _vm._v(" "),
-                  _c("w-input")
-                ],
-                1
-              )
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _vm._m(2),
-        _vm._v(" "),
-        _vm._m(3),
+                    _c("path", {
+                      attrs: {
+                        fill: "currentColor",
+                        d:
+                          "M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "caption mt-5" }, [_vm._v("Editar")])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(2)
+        ]),
         _vm._v(" "),
         _c(
           "div",
           { staticClass: "lg:flex justify-around mt-10" },
           [
-            _c(
-              "w-btn",
-              {
-                staticClass: "bold w-full lg:w-1/3",
-                attrs: { large: true, dark: true }
-              },
-              [_vm._v("GUARDAR CAMBIOS")]
-            ),
-            _vm._v(" "),
             _c(
               "w-btn",
               {
@@ -7349,12 +8578,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "shadow w-full bg-gray-500 rounded-full" },
+      { staticClass: "shadow w-full bg-gray-500 rounded-full mb-10" },
       [
         _c("div", {
           staticClass:
             "secondary leading-none text-center text-white rounded-full p-2",
-          staticStyle: { width: "25%" }
+          staticStyle: { width: "55%" }
         })
       ]
     )
@@ -7363,145 +8592,34 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "lg:w-1/2" }, [
-      _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-        _vm._v("CALIDAD DE CONSTRUCCIÓN")
+    return _c("div", [
+      _c("h1", { staticClass: "body bold" }, [
+        _vm._v("Publicaciones seleccionadas (3)")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "flex flex-wrap" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("excelente")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("bueno")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("malo")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("regular")]
-        )
-      ])
+      _c("p", { staticClass: "caption" }, [_vm._v("Seleccionadas")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "lg:w-1/2" }, [
-      _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-        _vm._v("CALIDAD DE ACABADOS")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex flex-wrap" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("excelente")]
-        ),
+    return _c(
+      "div",
+      {
+        staticClass: "w-full primary rounded-lg p-5 lg:ml-2 mb-5",
+        attrs: { id: "ingreso" }
+      },
+      [
+        _c("div", { staticClass: "body bold" }, [_vm._v("Ingeso Manual")]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("bueno")]
-        ),
+        _c("p", { staticClass: "caption" }, [
+          _vm._v("Insertar datos para el cálculo")
+        ]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("malo")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("regular")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "lg:w-1/2" }, [
-      _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-        _vm._v("CALIDAD DE CONSERVACIÓN")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex flex-wrap" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("excelente")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("bueno")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("malo")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "caption w-5/12 p-3 default uppercase text-white rounded-full m-2"
-          },
-          [_vm._v("regular")]
-        )
-      ])
-    ])
+        _c("div")
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -26277,7 +27395,7 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_google_maps__WEBPACK_IMPORTED_MODULE_5__, {
   load: {
-    key: 'AIzaSyA43rPJ1Lt5zxs3KABtJiq9xh4yANAkYUw',
+    key: '',
     libraries: 'places'
   },
   installComponents: true
@@ -26968,6 +28086,75 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-nav-btn", {
 
 /***/ }),
 
+/***/ "./resources/js/components/wlinii_components/components/WPanels/WPanels.js":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/wlinii_components/components/WPanels/WPanels.js ***!
+  \*********************************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! animejs */ "./node_modules/animejs/lib/anime.es.js");
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-panel", {
+  props: {
+    value: Boolean,
+    header: String
+  },
+  template: "\n        <div class=\"panel\">\n            <div class=\"panel-header\" @click=\"active = !active\">\n                <div class=\"header\">\n                    {{ header }}\n                </div>\n                <div class=\"icon panel-icon\">\n                    <img :src=\"iconURL\" ref=\"panelIcon\" />\n                </div>\n            </div>\n            <transition @enter=\"enterBody\" @before-leave=\"leaveBody\">\n                <div class=\"panel-body\" ref=\"panelBody\" v-if=\"active\">\n                    <slot></slot>\n                </div>\n            </transition>\n        </div>\n    ",
+  computed: {
+    active: {
+      get: function get() {
+        return this.value ? this.value : false;
+      },
+      set: function set(newValue) {
+        this.$emit("input", newValue);
+      }
+    },
+    iconURL: function iconURL() {
+      return __webpack_require__(/*! ../../iconos/arrow-down.png */ "./resources/js/components/wlinii_components/iconos/arrow-down.png");
+    }
+  },
+  mounted: function mounted() {
+    if (this.value) {
+      this.$refs.panelIcon.style.transform = "rotate(180deg)";
+    }
+  },
+  methods: {
+    enterBody: function enterBody() {
+      var bodyElement = this.$refs.panelBody;
+      var iconElement = this.$refs.panelIcon;
+      Object(animejs__WEBPACK_IMPORTED_MODULE_1__["default"])({
+        targets: bodyElement,
+        scaleY: [0, 1],
+        duration: 250,
+        easing: "easeInOutSine"
+      });
+      Object(animejs__WEBPACK_IMPORTED_MODULE_1__["default"])({
+        targets: iconElement,
+        rotate: ["0deg", "180deg"],
+        duration: 250,
+        easing: "easeInOutSine"
+      });
+    },
+    leaveBody: function leaveBody() {
+      var iconElement = this.$refs.panelIcon;
+      Object(animejs__WEBPACK_IMPORTED_MODULE_1__["default"])({
+        targets: iconElement,
+        rotate: ["180deg", "0deg"],
+        duration: 250,
+        easing: "easeInOutSine"
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/components/wlinii_components/components/WParallax/WParallax.js":
 /*!*************************************************************************************!*\
   !*** ./resources/js/components/wlinii_components/components/WParallax/WParallax.js ***!
@@ -27033,6 +28220,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _WCarousel_WCarousel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./WCarousel/WCarousel */ "./resources/js/components/wlinii_components/components/WCarousel/WCarousel.js");
 /* harmony import */ var _WButton_WButton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./WButton/WButton */ "./resources/js/components/wlinii_components/components/WButton/WButton.js");
 /* harmony import */ var _WCard_WCard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./WCard/WCard */ "./resources/js/components/wlinii_components/components/WCard/WCard.js");
+/* harmony import */ var _WPanels_WPanels__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./WPanels/WPanels */ "./resources/js/components/wlinii_components/components/WPanels/WPanels.js");
 // FORM
 
 
@@ -27049,6 +28237,8 @@ __webpack_require__.r(__webpack_exports__);
  // BUTTON
 
  // CARD
+
+ // PANEL
 
 
 
@@ -28022,6 +29212,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_Notification__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/Notification */ "./resources/js/views/Notification.vue");
 /* harmony import */ var _views_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/Login */ "./resources/js/views/Login.vue");
 /* harmony import */ var _views_Broker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/Broker */ "./resources/js/views/Broker.vue");
+/* harmony import */ var _views_amc_AMC2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/amc/AMC2 */ "./resources/js/views/amc/AMC2.vue");
+
 
 
 
@@ -28047,6 +29239,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: "/broker",
     name: "broker",
     component: _views_Broker__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }, {
+    path: "/amc2",
+    name: "AMC2",
+    component: _views_amc_AMC2__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 }));
 
@@ -28348,7 +29544,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Test.vue?vue&type=template&id=b28ce99e& */ "./resources/js/views/Test.vue?vue&type=template&id=b28ce99e&");
 /* harmony import */ var _Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Test.vue?vue&type=script&lang=js& */ "./resources/js/views/Test.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Test.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -28356,7 +29554,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -28388,6 +29586,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss& ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Test.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "./resources/js/views/Test.vue?vue&type=template&id=b28ce99e&":
 /*!********************************************************************!*\
   !*** ./resources/js/views/Test.vue?vue&type=template&id=b28ce99e& ***!
@@ -28401,6 +29615,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/amc/AMC2.vue":
+/*!*****************************************!*\
+  !*** ./resources/js/views/amc/AMC2.vue ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AMC2_vue_vue_type_template_id_009d1552___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AMC2.vue?vue&type=template&id=009d1552& */ "./resources/js/views/amc/AMC2.vue?vue&type=template&id=009d1552&");
+/* harmony import */ var _AMC2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AMC2.vue?vue&type=script&lang=js& */ "./resources/js/views/amc/AMC2.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AMC2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AMC2_vue_vue_type_template_id_009d1552___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AMC2_vue_vue_type_template_id_009d1552___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/amc/AMC2.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/amc/AMC2.vue?vue&type=script&lang=js&":
+/*!******************************************************************!*\
+  !*** ./resources/js/views/amc/AMC2.vue?vue&type=script&lang=js& ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AMC2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./AMC2.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/AMC2.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AMC2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/amc/AMC2.vue?vue&type=template&id=009d1552&":
+/*!************************************************************************!*\
+  !*** ./resources/js/views/amc/AMC2.vue?vue&type=template&id=009d1552& ***!
+  \************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AMC2_vue_vue_type_template_id_009d1552___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./AMC2.vue?vue&type=template&id=009d1552& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/AMC2.vue?vue&type=template&id=009d1552&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AMC2_vue_vue_type_template_id_009d1552___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AMC2_vue_vue_type_template_id_009d1552___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
