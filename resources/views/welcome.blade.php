@@ -16,7 +16,11 @@
     <div id="app">
     </div>
 
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+
     <script src="{{ url('/js/app.js') }}"></script>
+
 </body>
 
 </html>
