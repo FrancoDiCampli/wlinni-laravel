@@ -4,14 +4,8 @@ import router from "./router";
 import store from "./store";
 window.axios = require("axios");
 import "./components/wlinii_components";
-import * as VueGoogleMaps from 'vue2-google-maps'
-Vue.use(VueGoogleMaps, {
-    load: {
-        key: '',
-        libraries: 'places',
-    },
-    installComponents: true
-})
+
+
 
 Vue.config.productionTip = false;
 
