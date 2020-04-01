@@ -3415,6 +3415,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -6464,50 +6481,278 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "bg-gray-300" }, [
-    _c("div", { staticClass: "white rounded-lg p-8 m-4 lg:m-12" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex-wrap block lg:flex-wrap-reverse" }, [
+    _c(
+      "div",
+      { staticClass: "p-2 m-4 lg:m-12" },
+      [
+        _c("w-card", { attrs: { shadow: false } }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex-wrap lg:flex justify-start lg:justify-between items-center p-4 lg:p-16"
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex w-32 order-1 caption justify-center secondary white-text px-4 py-2"
+                },
+                [
+                  _vm._v(
+                    "\n                    Comisión\n                    "
+                  ),
+                  _c("h1", { staticClass: "caption bold pl-2" }, [_vm._v("5%")])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", {}, [
+                _c("h1", { staticClass: "subtitle bold" }, [
+                  _vm._v("Torre valdelomar")
+                ]),
+                _vm._v(" "),
+                _c("h1", { staticClass: "caption" }, [
+                  _vm._v("Av. Montreal 2178 - Lima / MIralfores")
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex-wrap" }, [
+            _c(
+              "div",
+              { staticClass: "lg:order-1" },
+              [
+                _c(
+                  "w-carousel",
+                  { attrs: { items: 1, pagination: true } },
+                  _vm._l(_vm.fotos, function(item) {
+                    return _c("slide", { key: item.i }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex grid-cols-2 justify-between absolute"
+                        },
+                        [
+                          _c("div", [
+                            _c(
+                              "h1",
+                              {
+                                staticClass:
+                                  "w-20 caption bold secondary justify-center white-text px-4 py-2"
+                              },
+                              [_vm._v("Alquiler")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c(
+                              "h1",
+                              {
+                                staticClass:
+                                  "hidden w-64 lg:flex w-20 caption bold primary justify-center white-text px-8 py-4 justify-end opacity-75"
+                              },
+                              [_vm._v(_vm._s(item.descripcion))]
+                            )
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("img", { attrs: { src: item.imagen, alt: "" } })
+                      ])
+                    ])
+                  }),
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex-wrap lg:flex justify-between items-center p-4 lg:p-16"
+              },
+              [
+                _c("div", [
+                  _c(
+                    "h1",
+                    { staticClass: "subtitle text-center bold tertiary-text" },
+                    [_vm._v("S/ 2,399,900")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "block lg:flex justify-around" },
+                  [
+                    _c(
+                      "w-btn",
+                      {
+                        staticClass:
+                          "flex justify-center caption bold white-text",
+                        attrs: {
+                          large: "",
+                          fullwidth: _vm.windowWidth <= 734 ? true : false,
+                          color: "success"
+                        }
+                      },
+                      [
+                        _c("w-icon", {
+                          staticClass: "pr-4",
+                          attrs: { icon: "twitter-white", h: "16px" }
+                        }),
+                        _vm._v("WHATSAPP\n                        ")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "w-btn",
+                      {
+                        staticClass: "flex justify-center caption bold",
+                        attrs: {
+                          outlined: "",
+                          large: "",
+                          fullwidth: _vm.windowWidth <= 734 ? true : false,
+                          color: "black"
+                        }
+                      },
+                      [
+                        _c("w-icon", {
+                          staticClass: "pr-4",
+                          attrs: { icon: "twitter-black", h: "16px" }
+                        }),
+                        _vm._v("FICHA TÉCNICA\n                        ")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "w-btn",
+                      {
+                        staticClass: "flex justify-center caption bold",
+                        attrs: {
+                          outlined: "",
+                          large: "",
+                          fullwidth: _vm.windowWidth <= 734 ? true : false,
+                          color: "black"
+                        }
+                      },
+                      [
+                        _c("w-icon", {
+                          staticClass: "pr-4",
+                          attrs: { icon: "twitter-black", h: "16px" }
+                        }),
+                        _vm._v("CONSULTAR\n                        ")
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex justify-center lg:justify-start p-4 lg:px-16 lg:py-4"
+            },
+            [
+              _c("div", { staticClass: "block border-r-2 px-4" }, [
+                _c("div", { staticClass: "caption" }, [
+                  _vm._v("Tipo Propiedad")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "body bold" }, [_vm._v("Apartamento")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "block border-l-2 px-4" }, [
+                _c("div", { staticClass: "caption" }, [_vm._v("Publicado")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "body bold" }, [_vm._v("11/03/2020")])
+              ])
+            ]
+          )
+        ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "p-2 m-4 lg:m-12" },
+      [
         _c(
-          "div",
+          "w-card",
+          { attrs: { shadow: false } },
           [
             _c(
               "w-carousel",
-              { attrs: { items: 1, pagination: true } },
-              _vm._l(_vm.fotos, function(item) {
+              {
+                attrs: {
+                  items: _vm.windowWidth <= 734 ? 1 : 5,
+                  pagination: true
+                }
+              },
+              _vm._l(_vm.cards, function(item) {
                 return _c("slide", { key: item.i }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "flex grid-cols-2 justify-between absolute"
-                    },
-                    [
-                      _c("div", [
-                        _c(
-                          "h1",
-                          {
-                            staticClass:
-                              "w-20 caption bold secondary justify-center white-text px-4 py-2"
-                          },
-                          [_vm._v("Alquiler")]
-                        )
-                      ]),
+                  _c("div", { staticClass: "primary rounded-lg m-2" }, [
+                    _c("div", { staticClass: "flex-wrap justify-center p-8" }, [
+                      _c(
+                        "div",
+                        { staticClass: "flex justify-center my-4" },
+                        [
+                          _c("w-icon", {
+                            attrs: { icon: item.icon, h: "90px" }
+                          })
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
-                      _c("div", [
-                        _c(
-                          "h1",
-                          {
-                            staticClass:
-                              "hidden w-64 lg:flex w-20 caption bold primary justify-center white-text px-8 py-4 justify-end opacity-75"
-                          },
-                          [_vm._v(_vm._s(item.descripcion))]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("img", { attrs: { src: item.imagen, alt: "" } })
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex justify-center border-yellow-700 border-b-2 p-2"
+                        },
+                        [
+                          _c(
+                            "h1",
+                            {
+                              staticClass:
+                                "caption white-text bold tracking-widest"
+                            },
+                            [_vm._v(_vm._s(item.name))]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex justify-center border-yellow-700 border-t-2 p-2"
+                        },
+                        [
+                          _c(
+                            "h1",
+                            {
+                              staticClass:
+                                "body white-text bold tracking-widest"
+                            },
+                            [_vm._v(_vm._s(item.number))]
+                          )
+                        ]
+                      )
+                    ])
                   ])
                 ])
               }),
@@ -6515,393 +6760,205 @@ var render = function() {
             )
           ],
           1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "flex-wrap lg:flex justify-between items-center p-4 lg:p-16"
-          },
-          [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "block lg:flex justify-around" },
-              [
-                _c(
-                  "w-btn",
-                  {
-                    staticClass: "flex justify-center caption bold white-text",
-                    attrs: {
-                      large: "",
-                      fullwidth: _vm.windowWidth <= 734 ? true : false,
-                      color: "success"
-                    }
-                  },
-                  [
-                    _c("w-icon", {
-                      staticClass: "pr-4",
-                      attrs: { icon: "twitter-white", h: "16px" }
-                    }),
-                    _vm._v("WHATSAPP\n                    ")
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "w-btn",
-                  {
-                    staticClass: "flex justify-center caption bold",
-                    attrs: {
-                      outlined: "",
-                      large: "",
-                      fullwidth: _vm.windowWidth <= 734 ? true : false,
-                      color: "black"
-                    }
-                  },
-                  [
-                    _c("w-icon", {
-                      staticClass: "pr-4",
-                      attrs: { icon: "twitter-black", h: "16px" }
-                    }),
-                    _vm._v("FICHA TÉCNICA\n                    ")
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "w-btn",
-                  {
-                    staticClass: "flex justify-center caption bold",
-                    attrs: {
-                      outlined: "",
-                      large: "",
-                      fullwidth: _vm.windowWidth <= 734 ? true : false,
-                      color: "black"
-                    }
-                  },
-                  [
-                    _c("w-icon", {
-                      staticClass: "pr-4",
-                      attrs: { icon: "twitter-black", h: "16px" }
-                    }),
-                    _vm._v("CONSULTAR\n                    ")
-                  ],
-                  1
-                )
-              ],
-              1
-            )
-          ]
         )
-      ]),
-      _vm._v(" "),
-      _vm._m(2)
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "white rounded-lg p-8 m-4 lg:m-12" }, [
-      _c(
-        "div",
-        [
-          _c(
-            "w-carousel",
-            {
-              attrs: { items: _vm.windowWidth <= 734 ? 1 : 5, pagination: true }
-            },
-            _vm._l(_vm.cards, function(item) {
-              return _c("slide", { key: item.i }, [
-                _c("div", { staticClass: "primary rounded-lg m-2" }, [
-                  _c("div", { staticClass: "flex-wrap justify-center p-8" }, [
-                    _c(
-                      "div",
-                      { staticClass: "flex justify-center my-4" },
-                      [_c("w-icon", { attrs: { icon: item.icon, h: "90px" } })],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "flex justify-center border-yellow-700 border-b-2 p-2"
-                      },
-                      [
-                        _c(
-                          "h1",
-                          {
-                            staticClass:
-                              "caption white-text bold tracking-widest"
-                          },
-                          [_vm._v(_vm._s(item.name))]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "flex justify-center border-yellow-700 border-t-2 p-2"
-                      },
-                      [
-                        _c(
-                          "h1",
-                          {
-                            staticClass: "body white-text bold tracking-widest"
-                          },
-                          [_vm._v(_vm._s(item.number))]
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            }),
-            1
-          )
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _vm._m(5),
+      ],
+      1
+    ),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "white rounded-lg p-8 m-4 lg:m-12" },
-      [_c("perfil-agente")],
+      { staticClass: "p-2 m-4 lg:m-12" },
+      [
+        _c("w-card", { attrs: { shadow: false } }, [
+          _c(
+            "div",
+            {
+              staticClass: "block lg:flex lg:grid grid-cols-2 justify-between"
+            },
+            [
+              _c("div", { staticClass: "block lg:px-8" }, [
+                _c(
+                  "h1",
+                  { staticClass: "body text-center lg:text-left bold py-4" },
+                  [_vm._v("Descripción")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "flex caption text-left whitespace-pre-line" },
+                  [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi."
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "block lg:px-8" }, [
+                _c(
+                  "h1",
+                  { staticClass: "body text-center lg:text-left bold py-4" },
+                  [_vm._v("Características generales")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "flex caption text-left whitespace-pre-line" },
+                  [
+                    _c("ul", [
+                      _c("li", [_vm._v("• Centros Comerciales Cercanos")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Piscina")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Cerca a colegios")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Ascensor(es): 4")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Cerca Hospital")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Número de pisos: 20")]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _vm._v("• Cerca a Parque (a menos de 2 cdras)")
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Parrilla")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Sala de Reuniones")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Area de lavandería")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Juegos infantiles")]),
+                      _vm._v(" "),
+                      _c("li", [_vm._v("• Gimnasio")])
+                    ])
+                  ]
+                )
+              ])
+            ]
+          )
+        ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "p-2 m-4 lg:m-12" },
+      [
+        _c("w-card", { attrs: { shadow: false } }, [
+          _c("div", { staticClass: "flex-wrap lg:flex lg:justify-around" }, [
+            _c(
+              "div",
+              { staticClass: "flex justify-between lg:justify-between" },
+              [
+                _c("div", { staticClass: "block" }, [
+                  _c("div", { staticClass: "caption" }, [_vm._v("Entrega")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "body bold" }, [
+                    _vm._v("Diciembre 2021")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "border-2 lg:mx-10" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "block" }, [
+                  _c("div", { staticClass: "caption" }, [
+                    _vm._v("Metros techados")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "body bold" }, [
+                    _vm._v("40 a 105 m²")
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "hidden lg:block border-2" }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex justify-between lg:justify-between" },
+              [
+                _c("div", { staticClass: "block" }, [
+                  _c("div", { staticClass: "caption" }, [_vm._v("Unidades")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "body bold" }, [_vm._v("62")])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "border-2 lg:mx-10" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "block" }, [
+                  _c("div", { staticClass: "caption" }, [
+                    _vm._v("Dormitorios")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "body bold" }, [_vm._v("1 a 4")])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "hidden lg:block border-2" }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex justify-between lg:justify-between" },
+              [
+                _c("div", { staticClass: "block" }, [
+                  _c("div", { staticClass: "caption" }, [
+                    _vm._v("Metros totales")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "body bold" }, [
+                    _vm._v("40 a 105 m²")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "border-2 lg:mx-10" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "block" }, [
+                  _c("div", { staticClass: "caption" }, [
+                    _vm._v("Estacionamientos")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "body bold" }, [_vm._v("-")])
+                ])
+              ]
+            )
+          ])
+        ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "p-2 m-4 lg:m-12" },
+      [
+        _c("w-card", { attrs: { shadow: false } }, [
+          _c("h1", { staticClass: "body text-center lg:text-left bold" }, [
+            _vm._v("Ubicación en mapa")
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v(
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum numquam nisi aliquid a debitis voluptatem sunt exercitationem? Modi alias fugit ad assumenda corrupti, dignissimos consequatur odio libero, tempora dolorum amet?"
+            )
+          ])
+        ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "p-2 m-4 lg:m-12" },
+      [_c("w-card", { attrs: { shadow: false } }, [_c("perfil-agente")], 1)],
       1
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "flex-wrap lg:flex justify-start lg:justify-between items-center p-4 lg:p-16"
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass:
-              "flex w-32 order-1 caption justify-center secondary white-text px-4 py-2"
-          },
-          [
-            _vm._v("\n                Comisión\n                "),
-            _c("h1", { staticClass: "caption bold pl-2" }, [_vm._v("5%")])
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", {}, [
-          _c("h1", { staticClass: "subtitle bold" }, [
-            _vm._v("Torre valdelomar")
-          ]),
-          _vm._v(" "),
-          _c("h1", { staticClass: "caption" }, [
-            _vm._v("Av. Montreal 2178 - Lima / MIralfores")
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h1", { staticClass: "subtitle text-center bold tertiary-text" }, [
-        _vm._v("S/ 2,399,900")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "flex justify-center lg:justify-start p-4 lg:px-16 lg:py-4"
-      },
-      [
-        _c("div", { staticClass: "block border-r-2 px-4" }, [
-          _c("div", { staticClass: "caption" }, [_vm._v("Tipo Propiedad")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "body bold" }, [_vm._v("Apartamento")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "block border-l-2 px-4" }, [
-          _c("div", { staticClass: "caption" }, [_vm._v("Publicado")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "body bold" }, [_vm._v("11/03/2020")])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "white rounded-lg p-8 m-4 lg:m-12" }, [
-      _c(
-        "div",
-        { staticClass: "block lg:flex lg:grid grid-cols-2 justify-between" },
-        [
-          _c("div", { staticClass: "block lg:px-8" }, [
-            _c(
-              "h1",
-              { staticClass: "body text-center lg:text-left bold py-4" },
-              [_vm._v("Descripción")]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "flex caption text-left whitespace-pre-line" },
-              [
-                _vm._v(
-                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi."
-                )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "block lg:px-8" }, [
-            _c(
-              "h1",
-              { staticClass: "body text-center lg:text-left bold py-4" },
-              [_vm._v("Características generales")]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "flex caption text-left whitespace-pre-line" },
-              [
-                _c("ul", [
-                  _c("li", [_vm._v("• Centros Comerciales Cercanos")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Piscina")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Cerca a colegios")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Ascensor(es): 4")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Cerca Hospital")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Número de pisos: 20")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Cerca a Parque (a menos de 2 cdras)")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Parrilla")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Sala de Reuniones")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Area de lavandería")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Juegos infantiles")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("• Gimnasio")])
-                ])
-              ]
-            )
-          ])
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "white block lg:flex lg:justify-around rounded-lg p-4 m-4 lg:m-12"
-      },
-      [
-        _c("div", { staticClass: "flex justify-between lg:justify-start" }, [
-          _c("div", { staticClass: "block" }, [
-            _c("div", { staticClass: "caption" }, [_vm._v("Entrega")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "body bold" }, [_vm._v("Diciembre 2021")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "border-2" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "block" }, [
-            _c("div", { staticClass: "caption" }, [_vm._v("Metros techados")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "body bold" }, [_vm._v("40 a 105 m²")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "hidden lg:block border-2" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex justify-between lg:justify-start" }, [
-          _c("div", { staticClass: "block" }, [
-            _c("div", { staticClass: "caption" }, [_vm._v("Unidades")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "body bold" }, [_vm._v("62")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "border-2" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "block" }, [
-            _c("div", { staticClass: "caption" }, [_vm._v("Dormitorios")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "body bold" }, [_vm._v("1 a 4")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "hidden lg:block border-2" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex justify-between lg:justify-start" }, [
-          _c("div", { staticClass: "block" }, [
-            _c("div", { staticClass: "caption" }, [_vm._v("Metros totales")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "body bold" }, [_vm._v("40 a 105 m²")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "border-2" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "block" }, [
-            _c("div", { staticClass: "caption" }, [_vm._v("Estacionamientos")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "body bold" }, [_vm._v("-")])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "white rounded-lg p-8 m-4 lg:m-12" }, [
-      _c("h1", { staticClass: "body text-center lg:text-left bold" }, [
-        _vm._v("Ubicación en mapa")
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _vm._v(
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum numquam nisi aliquid a debitis voluptatem sunt exercitationem? Modi alias fugit ad assumenda corrupti, dignissimos consequatur odio libero, tempora dolorum amet?"
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
