@@ -4,9 +4,10 @@
         <div class="precios-container py-16">
             <w-card :shadow="false">
                 <div class="flex justify-center">
-                    <p class="subtitle bold" style="margin: 67px 0px 44px 0px;">
-                        Precios de suscripción
-                    </p>
+                    <p
+                        class="subtitle bold"
+                        style="margin: 67px 0px 44px 0px;"
+                    >Precios de suscripción</p>
                 </div>
                 <br />
                 <div>
@@ -21,65 +22,34 @@
                                 <w-card>
                                     <template slot="header">
                                         <div class="flex justify-center">
-                                            <p class="white-text bold body p-4">
-                                                {{ item.tipo }}
-                                            </p>
+                                            <p class="white-text bold body p-4">{{ item.tipo }}</p>
                                         </div>
                                     </template>
                                     <div>
-                                        <div
-                                            class="flex justify-center tertiary-text"
-                                        >
+                                        <div class="flex justify-center tertiary-text">
                                             <div class="flex items-start">
-                                                <h1 class="text-4xl bold mt-3">
-                                                    S/
-                                                </h1>
-                                                <h1 class="text-6xl bold">
-                                                    {{ item.tarifa }}
-                                                </h1>
+                                                <h1 class="text-4xl bold mt-3">S/</h1>
+                                                <h1 class="text-6xl bold">{{ item.tarifa }}</h1>
                                             </div>
                                         </div>
                                         <div class="flex justify-center mb-8">
-                                            <h1 class="caption bold">
-                                                MENSUAL
-                                            </h1>
+                                            <h1 class="caption bold">MENSUAL</h1>
                                         </div>
+                                        <h1 class="flex justify-center caption my-2">10 propiedades</h1>
+                                        <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                        <h1 class="flex justify-center caption my-2">3 agentes</h1>
+                                        <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                        <h1 class="flex justify-center caption my-2">8 destacados</h1>
+                                        <hr class="border-b-1 border-gray-500 mx-10 my-2" />
                                         <h1
                                             class="flex justify-center caption my-2"
-                                        >
-                                            10 propiedades
-                                        </h1>
-                                        <hr
-                                            class="border-b-1 border-gray-500 mx-10 my-2"
-                                        />
-                                        <h1
-                                            class="flex justify-center caption my-2"
-                                        >
-                                            3 agentes
-                                        </h1>
-                                        <hr
-                                            class="border-b-1 border-gray-500 mx-10 my-2"
-                                        />
-                                        <h1
-                                            class="flex justify-center caption my-2"
-                                        >
-                                            8 destacados
-                                        </h1>
-                                        <hr
-                                            class="border-b-1 border-gray-500 mx-10 my-2"
-                                        />
-                                        <h1
-                                            class="flex justify-center caption my-2"
-                                        >
-                                            Propiedades destacadas
-                                        </h1>
+                                        >Propiedades destacadas</h1>
                                         <div class="flex justify-center">
                                             <w-btn
                                                 class="white-text bold justify-center"
                                                 color="tertiary"
                                                 :fullwidth="true"
-                                                >suscribirse</w-btn
-                                            >
+                                            >suscribirse</w-btn>
                                         </div>
                                     </div>
                                 </w-card>
@@ -100,65 +70,34 @@
                                 <w-card>
                                     <template slot="header">
                                         <div class="flex justify-center">
-                                            <p class="white-text bold body p-4">
-                                                {{ item.tipo }}
-                                            </p>
+                                            <p class="white-text bold body p-4">{{ item.tipo }}</p>
                                         </div>
                                     </template>
                                     <div>
-                                        <div
-                                            class="flex justify-center tertiary-text"
-                                        >
+                                        <div class="flex justify-center tertiary-text">
                                             <div class="flex items-start">
-                                                <h1 class="text-4xl bold mt-3">
-                                                    S/
-                                                </h1>
-                                                <h1 class="text-6xl bold">
-                                                    {{ item.tarifa }}
-                                                </h1>
+                                                <h1 class="text-4xl bold mt-3">S/</h1>
+                                                <h1 class="text-6xl bold">{{ item.tarifa }}</h1>
                                             </div>
                                         </div>
                                         <div class="flex justify-center mb-8">
-                                            <h1 class="caption bold">
-                                                MENSUAL
-                                            </h1>
+                                            <h1 class="caption bold">MENSUAL</h1>
                                         </div>
+                                        <h1 class="flex justify-center caption my-2">10 propiedades</h1>
+                                        <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                        <h1 class="flex justify-center caption my-2">3 agentes</h1>
+                                        <hr class="border-b-1 border-gray-500 mx-10 my-2" />
+                                        <h1 class="flex justify-center caption my-2">8 destacados</h1>
+                                        <hr class="border-b-1 border-gray-500 mx-10 my-2" />
                                         <h1
                                             class="flex justify-center caption my-2"
-                                        >
-                                            10 propiedades
-                                        </h1>
-                                        <hr
-                                            class="border-b-1 border-gray-500 mx-10 my-2"
-                                        />
-                                        <h1
-                                            class="flex justify-center caption my-2"
-                                        >
-                                            3 agentes
-                                        </h1>
-                                        <hr
-                                            class="border-b-1 border-gray-500 mx-10 my-2"
-                                        />
-                                        <h1
-                                            class="flex justify-center caption my-2"
-                                        >
-                                            8 destacados
-                                        </h1>
-                                        <hr
-                                            class="border-b-1 border-gray-500 mx-10 my-2"
-                                        />
-                                        <h1
-                                            class="flex justify-center caption my-2"
-                                        >
-                                            Propiedades destacadas
-                                        </h1>
+                                        >Propiedades destacadas</h1>
                                         <div class="flex justify-center">
                                             <w-btn
                                                 class="white-text bold justify-center"
                                                 :color="$wlinii.tertiary"
-                                                :small="true"
-                                                >suscribirse</w-btn
-                                            >
+                                                :fullwidth="true"
+                                            >suscribirse</w-btn>
                                         </div>
                                     </div>
                                 </w-card>
