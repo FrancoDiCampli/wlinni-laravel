@@ -4462,88 +4462,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      center: {
-        lat: -27.583,
-        lng: -60.717
-      },
-      markers: [{
-        position: {
-          lat: -27.576832,
-          lng: -60.711363
-        }
-      }],
-      places: [],
-      currentPlace: null,
-      mapOptions: {
-        mapTypeControl: false
-      },
-      markerOptions: {
-        url: "images/key-hole.png",
-        size: {
-          width: 20,
-          height: 35,
-          f: "px",
-          b: "px"
-        },
-        scaledSize: {
-          width: 10,
-          height: 20,
-          f: "px",
-          b: "px"
-        }
-      }
+      image: "/img/departamentos/8.jpg"
     };
-  },
-  methods: {
-    setPlace: function setPlace(place) {
-      this.currentPlace = place;
-    },
-    addMarker: function addMarker() {
-      if (this.currentPlace) {
-        var marker = {
-          lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng()
-        };
-        this.markers.push({
-          position: marker
-        });
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
-      }
-    },
-    geolocate: function geolocate() {
-      var _this = this;
-
-      navigator.geolocation.getCurrentPosition(function (position) {
-        _this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-      });
-    }
   }
 });
 
@@ -5103,6 +5026,195 @@ __webpack_require__.r(__webpack_exports__);
     unset: function unset(op) {
       var i = this.filtros.indexOf(op);
       this.filtros.splice(i, 1);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FiltroInmueble_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FiltroInmueble.vue */ "./resources/js/views/inmuebles/FiltroInmueble.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// import FiltroMapa from "./filtros/FiltrosMapa.vue";
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      center: {
+        lat: -12.1122095,
+        lng: -77.047945
+      },
+      markers: [{
+        position: {
+          lat: -12.1221005,
+          lng: -77.0315953
+        },
+        title: "Miraflores",
+        image: "/img/departamentos/8.jpg",
+        dir: "Calle los ficus Mz B lt. 10",
+        description: " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
+        precio: "86,723",
+        entrega: "Inmediata",
+        condicion: "Preventa en planos"
+      }, {
+        position: {
+          lat: -12.1001099,
+          lng: -77.0554858
+        },
+        title: "San Isidro",
+        image: "/img/departamentos/7.jpg",
+        dir: "Calle los ficus Mz B lt. 10",
+        description: " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
+        precio: "90,232",
+        entrega: "Inmediata",
+        condicion: "Preventa en planos"
+      }, {
+        position: {
+          lat: -12.1206998,
+          lng: -77.0347257
+        },
+        title: "Santiago de Surco",
+        image: "/img/departamentos/6.jpg",
+        dir: " Calle los ficus Mz B lt. 10",
+        description: "19 unidades 1 a 3 dormitorio 45m a 97m techados",
+        precio: "90,232",
+        entrega: "Inmediata",
+        condicion: "Preventa en planos"
+      }],
+      places: [],
+      currentPlace: null,
+      mapOptions: {
+        mapTypeControl: false
+      },
+      // iconos de los marcadores
+      markerOptions: {
+        url: "images/key-hole.png",
+        size: {
+          width: 20,
+          height: 35,
+          f: "px",
+          b: "px"
+        },
+        scaledSize: {
+          width: 15,
+          height: 25,
+          f: "px",
+          b: "px"
+        }
+      },
+      filtrar: false,
+      infoContent: "",
+      infoWindowPos: {
+        lat: 0,
+        lng: 0
+      },
+      infoWinOpen: false,
+      currentMidx: null,
+      infoOptions: {
+        pixelOffset: {
+          width: 0,
+          height: -35
+        }
+      },
+      card: {
+        image: "/img/departamentos/6.jpg"
+      }
+    };
+  },
+  components: {
+    FiltroInmueble: _FiltroInmueble_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  methods: {
+    toggleInfoWindow: function toggleInfoWindow(marker, idx) {
+      this.infoWindowPos = marker.position;
+      this.infoContent = this.getInfoWindowContent(marker);
+      this.card = marker; //check if its the same marker that was selected if yes toggle
+
+      if (this.currentMidx == idx) {
+        this.infoWinOpen = !this.infoWinOpen;
+      } //if different marker set infowindow to open and reset current marker index
+      else {
+          this.infoWinOpen = true;
+          this.currentMidx = idx;
+        }
+    },
+    getInfoWindowContent: function getInfoWindowContent(marker) {
+      return "<div style=\"width:200px;\">\n                <img src=\"".concat(marker.image, "\" alt=\"depto 8\" style=\"height:120px; width:0 auto;\">\n                <p class=\"bold\">").concat(marker.title, "</p>\n                <p>").concat(marker.description, "</p>\n                <p>Comisi\xF3n</p>\n                <div class=\"flex flex-row justify-between my-5\">\n                    <p class=\"body bold\">5%</p>\n                    <p class=\"body bold tertiary-text\">200</p>\n                </div>\n                        <router-link\n                        to=\"/\"\n                        class=\"w-full secondary p-2  text-white uppercase rounded-full\"\n                        >Contactar</router-link>\n\n            </div>");
     }
   }
 });
@@ -9117,37 +9229,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("Mapa")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "map-container" },
-      [
-        _c(
-          "gmap-map",
-          {
-            ref: "mapRef",
-            staticStyle: { width: "100%", height: "400px" },
-            attrs: { center: _vm.center, zoom: 12, options: _vm.mapOptions }
-          },
-          _vm._l(_vm.markers, function(m, index) {
-            return _c("gmap-marker", {
-              key: index,
-              attrs: { icon: _vm.markerOptions, position: m.position },
-              on: {
-                click: function($event) {
-                  _vm.center = m.position
-                }
-              }
-            })
-          }),
-          1
-        )
-      ],
-      1
-    )
-  ])
+  return _c("div", { staticClass: "w-1/6" })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -10179,6 +10261,180 @@ var render = function() {
     ],
     2
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=template&id=1ad97bc8&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=template&id=1ad97bc8& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "inmuebles-container" }, [
+      _c("div", { staticClass: "flex flex-row justify-around gap-8" }, [
+        _c("div", { staticClass: "w-3/12 hidden lg:block" }, [
+          _c(
+            "div",
+            [
+              _c(
+                "w-card",
+                { attrs: { shadow: false } },
+                [
+                  _c("template", { slot: "header" }, [
+                    _c("p", { staticClass: "caption bold white-text" }, [
+                      _vm._v("FILTROS")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("FiltroInmueble")
+                ],
+                2
+              )
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "sm:w-full lg:w-9/12 px-6 bg-white rounded-lg p-10 mx-5"
+          },
+          [
+            _c("div", [
+              _c("h1", { staticClass: "title bold" }, [
+                _vm._v("Listado de Inmuebles")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "map-container" },
+                [
+                  _c(
+                    "gmap-map",
+                    {
+                      ref: "mapRef",
+                      staticStyle: { width: "100%", height: "600px" },
+                      attrs: {
+                        center: _vm.center,
+                        zoom: 12,
+                        options: _vm.mapOptions
+                      }
+                    },
+                    [
+                      _vm._l(_vm.markers, function(m, index) {
+                        return _c("gmap-marker", {
+                          key: index,
+                          attrs: {
+                            icon: _vm.markerOptions,
+                            position: m.position
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.toggleInfoWindow(m, index)
+                            }
+                          }
+                        })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "gmap-info-window",
+                        {
+                          attrs: {
+                            options: _vm.infoOptions,
+                            position: _vm.infoWindowPos,
+                            opened: _vm.infoWinOpen
+                          },
+                          on: {
+                            closeclick: function($event) {
+                              _vm.infoWinOpen = false
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "w-card",
+                            {
+                              staticStyle: { width: "220px" },
+                              attrs: { image: _vm.card.image, shadow: false }
+                            },
+                            [
+                              _c("div", { staticClass: "caption" }, [
+                                _c("p", [_vm._v("Desde")]),
+                                _vm._v(" "),
+                                _c(
+                                  "h1",
+                                  { staticClass: "body tertiary-text bold" },
+                                  [_vm._v(_vm._s(_vm.card.precio))]
+                                ),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "bold" }, [
+                                  _vm._v(_vm._s(_vm.card.dir))
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "xxs" }, [
+                                  _vm._v(_vm._s(_vm.card.description))
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "flex xxs justify-between mt-2"
+                                  },
+                                  [
+                                    _c("p", [_vm._v(_vm._s(_vm.card.entrega))]),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v(_vm._s(_vm.card.condicion))
+                                    ])
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "w-btn",
+                                {
+                                  staticClass: "w-full",
+                                  attrs: { dark: true, rounded: true }
+                                },
+                                [_vm._v("Contactar")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    2
+                  )
+                ],
+                1
+              )
+            ])
+          ]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("br")
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -28955,11 +29211,7 @@ var VueGoogleMaps = __webpack_require__(/*! vue2-google-maps */ "./node_modules/
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyA43rPJ1Lt5zxs3KABtJiq9xh4yANAkYUw',
-    libraries: 'places' // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
-
+    libraries: 'places'
   }
 });
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.config.productionTip = false;
@@ -30777,6 +31029,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_Agent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/Agent */ "./resources/js/views/Agent.vue");
 /* harmony import */ var _views_amc_amc1__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/amc/amc1 */ "./resources/js/views/amc/amc1.vue");
 /* harmony import */ var _views_amc_amc2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/amc/amc2 */ "./resources/js/views/amc/amc2.vue");
+/* harmony import */ var _views_inmuebles_ListadoInmuebleMapa__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../views/inmuebles/ListadoInmuebleMapa */ "./resources/js/views/inmuebles/ListadoInmuebleMapa.vue");
+
 
 
 
@@ -30817,6 +31071,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: "/amc2",
     name: "AMC2",
     component: _views_amc_amc2__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }, {
+    path: "/mapa",
+    name: "Mapa",
+    component: _views_inmuebles_ListadoInmuebleMapa__WEBPACK_IMPORTED_MODULE_9__["default"]
   }]
 }));
 
@@ -31483,6 +31741,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroInmueble_vue_vue_type_template_id_55c255ae___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FiltroInmueble_vue_vue_type_template_id_55c255ae___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/inmuebles/ListadoInmuebleMapa.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/views/inmuebles/ListadoInmuebleMapa.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ListadoInmuebleMapa_vue_vue_type_template_id_1ad97bc8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListadoInmuebleMapa.vue?vue&type=template&id=1ad97bc8& */ "./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=template&id=1ad97bc8&");
+/* harmony import */ var _ListadoInmuebleMapa_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListadoInmuebleMapa.vue?vue&type=script&lang=js& */ "./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ListadoInmuebleMapa_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ListadoInmuebleMapa_vue_vue_type_template_id_1ad97bc8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ListadoInmuebleMapa_vue_vue_type_template_id_1ad97bc8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/inmuebles/ListadoInmuebleMapa.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListadoInmuebleMapa_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ListadoInmuebleMapa.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ListadoInmuebleMapa_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=template&id=1ad97bc8&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=template&id=1ad97bc8& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListadoInmuebleMapa_vue_vue_type_template_id_1ad97bc8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ListadoInmuebleMapa.vue?vue&type=template&id=1ad97bc8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/inmuebles/ListadoInmuebleMapa.vue?vue&type=template&id=1ad97bc8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListadoInmuebleMapa_vue_vue_type_template_id_1ad97bc8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListadoInmuebleMapa_vue_vue_type_template_id_1ad97bc8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

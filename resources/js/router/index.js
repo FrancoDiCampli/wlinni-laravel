@@ -8,6 +8,7 @@ import Agent from "../views/Agent";
 
 import AMC1 from "../views/amc/amc1";
 import AMC2 from "../views/amc/amc2";
+import Mapa from "../views/inmuebles/ListadoInmuebleMapa";
 
 
 Vue.use(Router);
@@ -49,6 +50,11 @@ export default new Router({
             path: "/amc2",
             name: "AMC2",
             component: AMC2
+        },
+        {
+            path: "/mapa",
+            name: "Mapa",
+            component: Mapa
         },
     ]
 });
