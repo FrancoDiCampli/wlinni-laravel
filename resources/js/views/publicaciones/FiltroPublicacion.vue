@@ -1,4 +1,9 @@
 <template>
+    <!-- 
+    
+        MB-listado-de-publicacion-1 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/e6046d22-e0ea-4f7e-9b58-31ded648428e/MB-listado-de-publicacion-1)
+
+    -->
     <div>
         <div class="flex flex-row flex-wrap" v-if="filtros.length > 0">
             <w-btn
@@ -9,19 +14,11 @@
                 v-for="(filtro, i) in filtros"
                 :key="i"
                 @click="unset(filtro)"
-            >
-                {{ filtro }} X
-            </w-btn>
+            >{{ filtro }} X</w-btn>
         </div>
         <div v-for="(panel, i) in panels" :key="i">
             <w-panel :header="panel.name" v-model="panel.value">
-                <w-btn
-                    v-for="(op, i) in panel.options"
-                    :key="i"
-                    @click="set(op)"
-                >
-                    {{ op }}
-                </w-btn>
+                <w-btn v-for="(op, i) in panel.options" :key="i" @click="set(op)">{{ op }}</w-btn>
             </w-panel>
         </div>
     </div>

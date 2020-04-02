@@ -4769,9 +4769,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltroPublicacion",
   data: function data() {
@@ -4835,35 +4832,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FiltroInmueble_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FiltroInmueble.vue */ "./resources/js/views/inmuebles/FiltroInmueble.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -5259,6 +5227,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5348,9 +5321,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltroPublicacion",
   data: function data() {
@@ -5411,26 +5381,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FiltroPublicacion_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FiltroPublicacion.vue */ "./resources/js/views/publicaciones/FiltroPublicacion.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -27565,7 +27515,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("\n            " + _vm._s(filtro) + " X\n        ")]
+                [_vm._v(_vm._s(filtro) + " X")]
               )
             }),
             1
@@ -27600,7 +27550,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                " + _vm._s(op) + "\n            ")]
+                  [_vm._v(_vm._s(op))]
                 )
               }),
               1
@@ -27648,9 +27598,7 @@ var render = function() {
                 [
                   _c("template", { slot: "header" }, [
                     _c("p", { staticClass: "caption bold white-text" }, [
-                      _vm._v(
-                        "\n                                FILTROS\n                            "
-                      )
+                      _vm._v("FILTROS")
                     ])
                   ]),
                   _vm._v(" "),
@@ -27712,10 +27660,8 @@ var render = function() {
                       },
                       [
                         _c("div", { staticClass: "lg:pl-3" }, [
-                          _c("h1", { staticClass: "subtitle bold " }, [
-                            _vm._v(
-                              "\n                                Listado de Inmuebles\n                            "
-                            )
+                          _c("h1", { staticClass: "subtitle bold" }, [
+                            _vm._v("Listado de Inmuebles")
                           ])
                         ]),
                         _vm._v(" "),
@@ -27729,11 +27675,7 @@ var render = function() {
                                 staticStyle: { margin: "0px !important" },
                                 attrs: { color: "tertiary", dark: true }
                               },
-                              [
-                                _vm._v(
-                                  "\n                                Búsqueda de mapa\n                            "
-                                )
-                              ]
+                              [_vm._v("Búsqueda de mapa")]
                             )
                           ],
                           1
@@ -27790,11 +27732,7 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("template", { slot: "state" }, [
                                   _c("p", { staticClass: "white-text" }, [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(card.tipo) +
-                                        "\n                                    "
-                                    )
+                                    _vm._v(_vm._s(card.tipo))
                                   ])
                                 ]),
                                 _vm._v(" "),
@@ -27813,11 +27751,7 @@ var render = function() {
                                   },
                                   [
                                     _c("p", { staticClass: "body bold" }, [
-                                      _vm._v(
-                                        "\n                                        " +
-                                          _vm._s(card.comision) +
-                                          "\n                                    "
-                                      )
+                                      _vm._v(_vm._s(card.comision))
                                     ]),
                                     _vm._v(" "),
                                     _c(
@@ -27825,13 +27759,7 @@ var render = function() {
                                       {
                                         staticClass: "body bold tertiary-text"
                                       },
-                                      [
-                                        _vm._v(
-                                          "\n                                        " +
-                                            _vm._s(card.mes) +
-                                            "\n                                    "
-                                        )
-                                      ]
+                                      [_vm._v(_vm._s(card.mes))]
                                     )
                                   ]
                                 ),
@@ -27895,9 +27823,7 @@ var render = function() {
                                                 { staticClass: "white-text" },
                                                 [
                                                   _vm._v(
-                                                    "\n                                                    " +
-                                                      _vm._s(card.info.baños) +
-                                                      "\n                                                "
+                                                    _vm._s(card.info.baños)
                                                   )
                                                 ]
                                               )
@@ -27947,13 +27873,7 @@ var render = function() {
                                           _c(
                                             "p",
                                             { staticClass: "white-text" },
-                                            [
-                                              _vm._v(
-                                                "\n                                                " +
-                                                  _vm._s(card.info.tamaño) +
-                                                  "\n                                            "
-                                              )
-                                            ]
+                                            [_vm._v(_vm._s(card.info.tamaño))]
                                           )
                                         ],
                                         1
@@ -28423,7 +28343,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("\n            " + _vm._s(filtro) + " X\n        ")]
+                [_vm._v(_vm._s(filtro) + " X")]
               )
             }),
             1
@@ -28458,7 +28378,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n                " + _vm._s(op) + "\n            ")]
+                  [_vm._v(_vm._s(op))]
                 )
               }),
               1
@@ -28530,9 +28450,7 @@ var render = function() {
                 [
                   _c("template", { slot: "header" }, [
                     _c("p", { staticClass: "caption bold white-text" }, [
-                      _vm._v(
-                        "\n                                ORDENAR POR\n                            "
-                      )
+                      _vm._v("ORDENAR POR")
                     ])
                   ]),
                   _vm._v(" "),
@@ -28553,11 +28471,7 @@ var render = function() {
                         }
                       }
                     },
-                    [
-                      _vm._v(
-                        "\n                            nueva publicación\n                        "
-                      )
-                    ]
+                    [_vm._v("nueva publicación")]
                   )
                 ],
                 2
@@ -28610,9 +28524,7 @@ var render = function() {
                   { attrs: { shadow: false } },
                   [
                     _c("h1", { staticClass: "subtitle bold lg:pl-3" }, [
-                      _vm._v(
-                        "\n                        Listado de Publicaciones\n                    "
-                      )
+                      _vm._v("Listado de Publicaciones")
                     ]),
                     _vm._v(" "),
                     _c("br"),
@@ -28694,13 +28606,7 @@ var render = function() {
                                               _c(
                                                 "p",
                                                 { staticClass: "white-text" },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                                " +
-                                                      _vm._s(card.state) +
-                                                      "\n                                            "
-                                                  )
-                                                ]
+                                                [_vm._v(_vm._s(card.state))]
                                               )
                                             ]
                                           ),
@@ -28759,11 +28665,7 @@ var render = function() {
                                           {
                                             staticClass: "body bold white-text"
                                           },
-                                          [
-                                            _vm._v(
-                                              "\n                                        Dar de Baja\n                                    "
-                                            )
-                                          ]
+                                          [_vm._v("Dar de Baja")]
                                         ),
                                         _vm._v(" "),
                                         _c("br"),
@@ -28884,13 +28786,7 @@ var render = function() {
                                           staticClass:
                                             "caption bold tertiary-text"
                                         },
-                                        [
-                                          _vm._v(
-                                            "\n                                        " +
-                                              _vm._s(card.title) +
-                                              "\n                                    "
-                                          )
-                                        ]
+                                        [_vm._v(_vm._s(card.title))]
                                       ),
                                       _vm._v(" "),
                                       _c("br"),

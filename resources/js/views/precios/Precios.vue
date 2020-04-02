@@ -1,5 +1,10 @@
 <template>
-    <!-- PAGINAS 22 - 24 -->
+    <!-- 
+        
+        precios-de-subscripcion (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/e20ae64d-28f7-44bf-8603-409a756dd42c/precios-de-suscripcion)
+        MB-precios-de-subscripcion (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/03edf50b-3d03-4f00-a638-3757612172fa/MB-precios-de-suscripcion)
+
+    -->
     <div>
         <div class="precios-container py-16">
             <w-card :shadow="false">
