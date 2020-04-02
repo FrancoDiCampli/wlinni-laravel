@@ -18,6 +18,9 @@ import DetallePublicacion from "../views/publicaciones/DetallePublicacion";
 // INMUEBLES
 import Inmuebles from "../views/inmuebles/Inmuebles";
 
+// NOTIFICACIONES
+import Notificaciones from "../views/notificaciones/Notificaciones";
+
 Vue.use(Router);
 
 export default new Router({
@@ -76,6 +79,13 @@ export default new Router({
             path: "/inmuebles",
             name: "inmuebles",
             component: Inmuebles
+        },
+
+        // NOTIFICACIONES
+        {
+            path: "/notificaciones",
+            name: "notificaciones",
+            component: Notificaciones
         }
     ]
 });

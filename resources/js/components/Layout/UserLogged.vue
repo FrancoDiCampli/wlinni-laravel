@@ -9,7 +9,7 @@
         <div class="logged">
             <div class="logged-container">
                 <div class="notification-btn mr-3">
-                    <w-btn :icon="true">
+                    <w-btn :icon="true" @click="$router.push('/notificaciones')">
                         <w-icon icon="notification" h="45px"></w-icon>
                     </w-btn>
                     <div class="badge">3</div>
