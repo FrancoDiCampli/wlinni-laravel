@@ -3,6 +3,7 @@ import "./WForm/WInput";
 import "./WForm/WCheckbox";
 import "./WForm/WSelect";
 import "./WForm/WSwitch";
+import "./WForm/WTextarea";
 
 // ICONOS
 import "./WIcon/WIcon";

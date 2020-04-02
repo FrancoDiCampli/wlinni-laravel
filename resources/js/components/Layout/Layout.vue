@@ -28,7 +28,10 @@
                                 <w-nav-btn icon="twitter-white" iconH="15px"></w-nav-btn>
                                 <w-nav-btn icon="youtube-white" iconH="13px"></w-nav-btn>
                             </div>
-                            <div>
+                            <div v-if="logged">
+                                <UserLogged></UserLogged>
+                            </div>
+                            <div v-else>
                                 <w-nav-btn
                                     @click="$router.push('/login', () => {})"
                                     :icon="
@@ -76,35 +79,45 @@
 
             <w-bottom-bar class="mobile-bar">
                 <div class="flex flex-row justify-between">
-                    <div class="flex-1">
+                    <div class="flex-auto">
                         <w-nav-btn :icon="logo" iconH="56px" @click="$router.push('/', () => {})"></w-nav-btn>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-auto">
                         <div class="flex flex-row justify-end">
-                            <w-nav-btn
-                                @click="$router.push('/login', () => {})"
-                                :icon="
+                            <div v-if="logged" class="mt-3">
+                                <UserLogged :barIcon="barBtn">
+                                    <template name="bars">asdf</template>
+                                </UserLogged>
+                            </div>
+                            <div v-else>
+                                <w-nav-btn
+                                    @click="$router.push('/login', () => {})"
+                                    :icon="
                                     currentPath == '/login'
                                         ? 'user-white'
                                         : 'user-brown'
                                 "
-                                iconH="30px"
-                            ></w-nav-btn>
-                            <w-nav-btn
-                                @click="$router.push('/register', () => {})"
-                                :icon="
+                                    iconH="30px"
+                                ></w-nav-btn>
+                                <w-nav-btn
+                                    @click="$router.push('/register', () => {})"
+                                    :icon="
                                     currentPath == '/register'
                                         ? 'edit-circle-white'
                                         : 'edit-circle-brown'
                                 "
-                                iconH="30px"
-                            ></w-nav-btn>
-                            <w-nav-btn :icon="barBtn" iconH="30px"></w-nav-btn>
+                                    iconH="30px"
+                                ></w-nav-btn>
+                                <w-nav-btn :icon="barBtn" iconH="30px" @click="drawer = true"></w-nav-btn>
+                            </div>
                         </div>
                     </div>
                 </div>
             </w-bottom-bar>
         </w-navbar>
+
+        <!-- SIDENAV -->
+        <Drawer v-model="drawer"></Drawer>
 
         <!-- PAGES -->
         <router-view></router-view>
@@ -164,8 +177,13 @@
 </template>
 
 <script>
+import UserLogged from "./UserLogged";
+import Drawer from "./Drawer";
+
 export default {
     data: () => ({
+        logged: JSON.parse(localStorage.getItem("logged")),
+        drawer: false,
         routes: [
             { name: "precios", path: "/precios" },
             { name: "alquiler", path: "/alquiler" },
@@ -176,6 +194,11 @@ export default {
         currentPath: "/",
         scroll: false
     }),
+
+    components: {
+        UserLogged,
+        Drawer
+    },
 
     mounted() {
         this.currentPath = this.$router.currentRoute.path;
