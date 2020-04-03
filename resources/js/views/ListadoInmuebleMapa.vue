@@ -13,7 +13,9 @@
                         <div
                             class="flex lg:bg-white items-center justify-center lg:justify-between p-8"
                         >
-                            <div class="subtitle bold">Listado de Inmuebles</div>
+                            <div class="subtitle bold">
+                                Listado de Inmuebles
+                            </div>
                         </div>
                     </div>
 
@@ -35,7 +37,6 @@
 
 <script>
 import FiltroMapa from "./filtros/FiltrosMapa.vue";
-import GoogleMap from "vue-maps";
 
 export default {
     data() {
@@ -47,25 +48,24 @@ export default {
                 {
                     title: "Miraflores",
                     latitude: -12.1221005,
-                    longitude: -77.0315953
+                    longitude: -77.0315953,
                 },
                 {
                     title: "San Isidro",
                     latitude: -12.1001099,
-                    longitude: -77.0554858
+                    longitude: -77.0554858,
                 },
                 {
                     title: "Santiago de Surco",
                     latitude: -12.1206998,
-                    longitude: -77.0347257
-                }
-            ]
+                    longitude: -77.0347257,
+                },
+            ],
         };
     },
     components: {
         FiltroMapa,
-        GoogleMap
-    }
+    },
 };
 </script>
 
