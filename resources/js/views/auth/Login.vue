@@ -8,7 +8,11 @@
 
     <div class="login">
         <div class="login-container">
-            <w-card image="/images/login.png" class="login-card" :shadow="false">
+            <w-card
+                image="/images/login.png"
+                class="login-card"
+                :shadow="false"
+            >
                 <p class="bold ml-4">INGRESARA A LA PLATAFORMA</p>
                 <form class="mt-6" @submit.prevent="login">
                     <w-input
@@ -24,7 +28,13 @@
                         v-model="form.pass"
                     ></w-input>
                     <a class="login-link ml-4">¿Ha olvidado la contraseña?</a>
-                    <w-btn @click="login()" color="tertiary" :dark="true" :fullwidth="true">Ingresar</w-btn>
+                    <w-btn
+                        @click="login()"
+                        color="tertiary"
+                        :dark="true"
+                        :fullwidth="true"
+                        >Ingresar</w-btn
+                    >
                     <w-checkbox
                         class="mt-6 ml-4"
                         color="tertiary"

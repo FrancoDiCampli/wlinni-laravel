@@ -4480,6 +4480,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -48372,7 +48382,11 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-card", {
       return cardClass;
     },
     cardStyle: function cardStyle() {
-      return this.image ? "background-image: url(".concat(this.image, ");") : "";
+      if (this.hover) {
+        return this.image ? "background-image: url(".concat(this.image, ");") : "";
+      }
+
+      return "background-color: white;";
     },
     cardImageStyle: function cardImageStyle() {
       return this.image ? "background-image: url(".concat(this.image, "); height: ").concat(this.imageHeight, ";") : "";

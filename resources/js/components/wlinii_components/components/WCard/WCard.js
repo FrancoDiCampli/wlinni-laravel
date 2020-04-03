@@ -66,7 +66,10 @@ Vue.component("w-card", {
     },
 
     cardStyle() {
-      return this.image ? `background-image: url(${this.image});` : "";
+      if (this.hover) {
+        return this.image ? `background-image: url(${this.image});` : "";
+      }
+      return "background-color: white;";
     },
 
     cardImageStyle() {
