@@ -30,7 +30,7 @@ Vue.component("w-select", {
 
   template: `
         <div class="input-container">
-            <div :class="inputGroupClass" :style="inputGroupStyle" @click="showOptions = !showOptions">
+            <div :class="inputGroupClass" :style="inputGroupStyle" @click="showOptions = !showOptions" ref="inputGroup">
                 <w-icon v-if="beforeIcon" :icon="beforeIcon" class="before"></w-icon>
                 <div class="input-label">
                     <input
@@ -103,14 +103,16 @@ Vue.component("w-select", {
     },
 
     selectOptionsStyle() {
+      let optionsStyle = this.setOptionsWidth();
       if (this.errorMessage) {
-        return `border: 2px solid ${this.$wlinii["error"]}`;
+        optionsStyle += ` border: 2px solid ${this.$wlinii["error"]}`;
       } else {
         if (this.value || this.onFocus) {
-          return this.setInputColor().group;
+          optionsStyle += ` this.setInputColor().group`;
         }
-        return "";
       }
+
+      return optionsStyle;
     },
 
     inputGroupClass() {
@@ -141,6 +143,14 @@ Vue.component("w-select", {
           group: `border: 2px solid ${this.color};`,
           label: `color: ${this.color};`
         };
+      }
+    },
+
+    setOptionsWidth() {
+      if (this.$refs.inputGroup) {
+        return `width: ${this.$refs.inputGroup.clientWidth}px;`;
+      } else {
+        return `width: auto;`;
       }
     },
 
