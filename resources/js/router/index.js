@@ -21,6 +21,11 @@ import Inmuebles from "../views/inmuebles/Inmuebles";
 // NOTIFICACIONES
 import Notificaciones from "../views/notificaciones/Notificaciones";
 
+// AMC
+import AMC1 from "../views/amc/amc1";
+import AMC2 from "../views/amc/amc2";
+import AMC4 from "../views/amc/amc4";
+
 Vue.use(Router);
 
 export default new Router({
@@ -86,6 +91,22 @@ export default new Router({
             path: "/notificaciones",
             name: "notificaciones",
             component: Notificaciones
+        },
+        // AMC
+        {
+            path: "/amc1",
+            name: "amc1",
+            component: AMC1
+        },
+        {
+            path: "/amc2",
+            name: "amc2",
+            component: AMC2
+        },
+        {
+            path: "/amc4",
+            name: "amc4",
+            component: AMC4
         }
     ]
 });
