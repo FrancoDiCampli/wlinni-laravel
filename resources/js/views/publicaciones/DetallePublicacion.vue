@@ -277,7 +277,7 @@
 </template>
 
 <script>
-import PerfilAgente from "./PerfilAgente.vue";
+import PerfilAgente from "../PerfilAgente.vue";
 
 export default {
     data() {
