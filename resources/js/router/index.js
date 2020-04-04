@@ -27,6 +27,8 @@ import AMC2 from "../views/amc/amc2";
 import AMC4 from "../views/amc/amc4";
 // Brocker
 import Brocker from "../views/brocker/brocker";
+// Agente
+import Agente from "../views/agentes/Agente";
 
 Vue.use(Router);
 
@@ -115,6 +117,12 @@ export default new Router({
             path: "/brocker",
             name: "brocker",
             component: Brocker
+        },
+        // Agente
+        {
+            path: "/agente",
+            name: "agente",
+            component: Agente
         }
     ]
 });
