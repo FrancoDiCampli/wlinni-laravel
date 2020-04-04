@@ -30822,7 +30822,7 @@ var render = function() {
               "p",
               {
                 staticClass:
-                  "uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-1/12 rounded-full text-center"
+                  "uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-2/12 rounded-full text-center"
               },
               [_vm._v("01 paso")]
             ),
@@ -30888,7 +30888,7 @@ var render = function() {
                       _c(
                         "w-btn",
                         {
-                          staticClass: "full-width",
+                          staticClass: "full-width mr-2",
                           attrs: {
                             color: "tertiary",
                             rounded: true,
@@ -31470,7 +31470,7 @@ var render = function() {
                 "p",
                 {
                   staticClass:
-                    "uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-1/12 rounded-full text-center"
+                    "uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-2/12 rounded-full text-center"
                 },
                 [_vm._v("02 paso")]
               ),

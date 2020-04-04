@@ -11,7 +11,7 @@
           <h1 class="subtitle-lg fan bold">Análisis de Mercado Comparativo (AMC)</h1>
           <p class="caption">Aplicación de analisis de precios</p>
           <p
-            class="uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-1/12 rounded-full text-center"
+            class="uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-2/12 rounded-full text-center"
           >01 paso</p>
           <h1 class="subtitle-lg fan bold">Completar Formulario</h1>
           <div class="shadow w-full rounded-full default my-5">
@@ -35,7 +35,7 @@
               <label class="caption uppercase bold ml-5">TIPO DE OPERACION</label>
               <div class="flex justify-between">
                 <w-btn
-                  class="full-width"
+                  class="full-width mr-2"
                   color="tertiary"
                   :rounded="true"
                   :dark="true"
