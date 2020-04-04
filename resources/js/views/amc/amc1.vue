@@ -14,7 +14,7 @@
             class="uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-1/12 rounded-full text-center"
           >01 paso</p>
           <h1 class="subtitle-lg fan bold">Completar Formulario</h1>
-          <div class="shadow w-full rounded-full gris my-5">
+          <div class="shadow w-full rounded-full default my-5">
             <div class="secondary leading-none text-center rounded-full p-2" style="width: 25%"></div>
           </div>
         </div>
@@ -104,22 +104,22 @@
               <button
                 @click.prevent="setCuality('EXCELENTE')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >EXCELENTE</button>
               <button
                 @click.prevent="setCuality('BUENO')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >BUENO</button>
               <button
                 @click.prevent="setCuality('REGULAR')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >REGULAR</button>
               <button
                 @click.prevent="setCuality('MALO')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >MALO</button>
             </div>
           </div>
@@ -131,22 +131,22 @@
               <button
                 @click.prevent="setDetails('EXCELENTE')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >EXCELENTE</button>
               <button
                 @click.prevent="setDetails('BUENO')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >BUENO</button>
               <button
                 @click.prevent="setDetails('REGULAR')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >REGULAR</button>
               <button
                 @click.prevent="setDetails('MALO')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >MALO</button>
             </div>
           </div>
@@ -157,22 +157,22 @@
               <button
                 @click.prevent="setConservation('EXCELENTE')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >EXCELENTE</button>
               <button
                 @click.prevent="setConservation('BUENO')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >BUENO</button>
               <button
                 @click.prevent="setConservation('REGULAR')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >REGULAR</button>
               <button
                 @click.prevent="setConservation('MALO')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >MALO</button>
             </div>
           </div>
@@ -183,22 +183,22 @@
               <button
                 @click.prevent="setLocation('EXCELENTE')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >EXCELENTE</button>
               <button
                 @click.prevent="setLocation('BUENO')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >BUENO</button>
               <button
                 @click.prevent="setLocation('REGULAR')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >REGULAR</button>
               <button
                 @click.prevent="setLocation('MALO')"
                 style="width:135px"
-                class="gris text-white text-center px-3 py-2 rounded-full m-1"
+                class="default text-white text-center px-3 py-2 rounded-full m-1"
               >MALO</button>
             </div>
           </div>

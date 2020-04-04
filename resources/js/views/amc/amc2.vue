@@ -13,7 +13,7 @@
               class="uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-1/12 rounded-full text-center"
             >02 paso</p>
             <h1 class="subtitle-lg fan bold">Agregar Oferta Pública</h1>
-            <div class="shadow w-full rounded-full gris mt-5">
+            <div class="shadow w-full rounded-full default mt-5">
               <div class="secondary leading-none text-center rounded-full p-2" style="width: 55%"></div>
             </div>
           </div>
