@@ -35,6 +35,7 @@
             transparent 0%,
             rgba($color: #000, $alpha: 0.7) 100%
           );
+          line-height: 1.2;
         }
       }
     }
@@ -45,6 +46,7 @@
         background: rgba($color: $primary, $alpha: 0.66) !important;
         .card-image-content {
           visibility: visible;
+          line-height: 1.2;
         }
       }
       .card-text {
@@ -92,7 +94,7 @@
   }
 
   .card-text {
-    height: 100%;
+    height: auto;
     padding: 30px;
     background-color: white;
   }
@@ -129,7 +131,7 @@
         }
       }
       p {
-        margin: 0px 20px 0px 12px;
+        margin: 0px 6px 0px 12px;
       }
     }
   }

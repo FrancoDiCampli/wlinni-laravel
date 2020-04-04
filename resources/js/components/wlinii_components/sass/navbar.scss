@@ -85,7 +85,8 @@
         }
       }
       &.active {
-        border-bottom: 3px solid $primary;
+        font-weight: bold;
+        color: $tertiary;
       }
     }
     .nav-btn {
@@ -117,7 +118,7 @@
 
 @media (max-width: 768px) {
   .nav-container {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
     .navbar {
       &.nav-hidden {
         transform: translateY(0px);
@@ -136,11 +137,8 @@
       }
       .top-bar,
       .bottom-bar {
-        &.desktop {
+        &.desktop-bar {
           display: none;
-        }
-        &.mobile {
-          display: flex;
         }
       }
     }
@@ -152,10 +150,7 @@
     .navbar {
       .top-bar,
       .bottom-bar {
-        &.desktop {
-          display: flex;
-        }
-        &.mobile {
+        &.mobile-bar {
           display: none;
         }
       }

@@ -1,12 +1,34 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "../views/Home";
-import PreciosSuscripcion from "../views/PreciosSuscripcion";
-import ListadoPublicacion from "../views/ListadoPublicacion";
-import ListadoInmueble from "../views/ListadoInmueble";
-import DetallePublicacion from "../views/DetallePublicacion";
-import NuevaPublicacion from "../views/NuevaPublicacion";
-import ListadoInmuebleMapa from "../views/ListadoInmuebleMapa";
+
+// AUTH
+import Login from "../views/auth/Login";
+import Register from "../views/auth/Register";
+import RegisterSuccessful from "../views/auth/RegisterSuccessful";
+
+// PRECIOS
+import Precios from "../views/precios/Precios";
+
+// PUBLICACIONES
+import Publicaciones from "../views/publicaciones/Publicaciones";
+import NuevaPublicacion from "../views/publicaciones/NuevaPublicacion";
+import DetallePublicacion from "../views/publicaciones/DetallePublicacion";
+
+// INMUEBLES
+import Inmuebles from "../views/inmuebles/Inmuebles";
+
+// NOTIFICACIONES
+import Notificaciones from "../views/notificaciones/Notificaciones";
+
+// AMC
+import AMC1 from "../views/amc/amc1";
+import AMC2 from "../views/amc/amc2";
+import AMC4 from "../views/amc/amc4";
+// Brocker
+import Brocker from "../views/brocker/brocker";
+// Agente
+import Agente from "../views/agentes/Agente";
 
 Vue.use(Router);
 
@@ -18,35 +40,89 @@ export default new Router({
             name: "home",
             component: Home
         },
+
+        // AUTH
         {
-            path: "/precios_suscripcion",
-            name: "preciosSuscripcion",
-            component: PreciosSuscripcion
+            path: "/login",
+            name: "login",
+            component: Login
         },
         {
-            path: "/listado_publicacion",
-            name: "listadoPublicacion",
-            component: ListadoPublicacion
+            path: "/register",
+            name: "register",
+            component: Register
         },
         {
-            path: "/listado_inmueble",
-            name: "listadoInmueble",
-            component: ListadoInmueble
+            path: "/register/successful",
+            name: "register_successful",
+            component: RegisterSuccessful
+        },
+
+        // PRECIOS
+        {
+            path: "/precios",
+            name: "precios",
+            component: Precios
+        },
+
+        // PUBLICACIONES
+
+        {
+            path: "/publicaciones",
+            name: "publicaciones",
+            component: Publicaciones
         },
         {
-            path: "/detalle_publicacion",
-            name: "detallePublicacion",
-            component: DetallePublicacion
-        },
-        {
-            path: "/nueva_publicacion",
-            name: "nuevaPublicacion",
+            path: "/publicaciones/nueva",
+            name: "publicaciones_nueva",
             component: NuevaPublicacion
         },
         {
-            path: "/listado_inmueble_mapa",
-            name: "listadoInmuebleMapa",
-            component: ListadoInmuebleMapa
+            path: "/publicaciones/detalle",
+            name: "publicaciones_detalle",
+            component: DetallePublicacion
+        },
+
+        // INMUEBLES
+        {
+            path: "/inmuebles",
+            name: "inmuebles",
+            component: Inmuebles
+        },
+
+        // NOTIFICACIONES
+        {
+            path: "/notificaciones",
+            name: "notificaciones",
+            component: Notificaciones
+        },
+        // AMC
+        {
+            path: "/amc1",
+            name: "amc1",
+            component: AMC1
+        },
+        {
+            path: "/amc2",
+            name: "amc2",
+            component: AMC2
+        },
+        {
+            path: "/amc4",
+            name: "amc4",
+            component: AMC4
+        },
+        // Brocker
+        {
+            path: "/brocker",
+            name: "brocker",
+            component: Brocker
+        },
+        // Agente
+        {
+            path: "/agente",
+            name: "agente",
+            component: Agente
         }
     ]
 });

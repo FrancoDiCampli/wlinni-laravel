@@ -1,4 +1,5 @@
 <template>
+    <!-- PENDIENTE -->
     <div class="bg-gray-200">
         <!-- PAGINAS 30 -->
 

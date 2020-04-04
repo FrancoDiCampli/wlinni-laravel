@@ -8,6 +8,7 @@
   text-transform: uppercase;
   overflow: hidden;
   border: none;
+  outline: none !important;
   cursor: pointer;
   outline: none;
   -moz-user-disabled: none;
@@ -30,7 +31,7 @@
     }
   }
   &.small {
-    padding: 6px 16px;
+    padding: 8px 18px;
     &.rounded {
       border-radius: 16px;
     }

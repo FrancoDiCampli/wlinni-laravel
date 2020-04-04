@@ -1,4 +1,5 @@
 <template>
+    <!-- PENDIENTE -->
     <div>
         <div id="filter">
             <w-card>
@@ -6,7 +7,9 @@
                     <div class="flex justify-between items-center">
                         <h1
                             class="white-text uppercase text-left caption tracking-wider bold"
-                        >Filtros Aplicados</h1>
+                        >
+                            Filtros Aplicados
+                        </h1>
                         <w-btn class="lg:hidden white-text bold">X</w-btn>
                     </div>
                 </template>
@@ -23,12 +26,16 @@
                 </div>
 
                 <div>
-                    <w-panel header="tipo de inmueble" v-model="shownTipoInmueble">
+                    <w-panel
+                        header="tipo de inmueble"
+                        v-model="shownTipoInmueble"
+                    >
                         <w-btn
                             @click="set(inmueble)"
                             v-for="inmueble in tipoInmueble"
                             :key="inmueble"
-                        >{{ inmueble }}</w-btn>
+                            >{{ inmueble }}</w-btn
+                        >
                     </w-panel>
 
                     <w-panel header="departamento" v-model="shownDepartamento">
@@ -36,7 +43,8 @@
                             @click="set(departamento)"
                             v-for="departamento in departamentos"
                             :key="departamento"
-                        >{{ departamento }}</w-btn>
+                            >{{ departamento }}</w-btn
+                        >
                     </w-panel>
 
                     <w-panel header="precio" v-model="shownPrecio">
@@ -44,7 +52,8 @@
                             @click="set(precio)"
                             v-for="precio in precios"
                             :key="precio"
-                        >{{ precio }}</w-btn>
+                            >{{ precio }}</w-btn
+                        >
                     </w-panel>
 
                     <w-panel header="dormitorios" v-model="shownDormitorio">
@@ -52,11 +61,17 @@
                             @click="set(dormitorio)"
                             v-for="dormitorio in dormitorios"
                             :key="dormitorio"
-                        >{{ dormitorio }}</w-btn>
+                            >{{ dormitorio }}</w-btn
+                        >
                     </w-panel>
 
                     <w-panel header="area total (M2)" v-model="shownArea">
-                        <w-btn @click="set(area)" v-for="area in areas" :key="area">{{ area }}</w-btn>
+                        <w-btn
+                            @click="set(area)"
+                            v-for="area in areas"
+                            :key="area"
+                            >{{ area }}</w-btn
+                        >
                     </w-panel>
 
                     <w-panel header="cocheras" v-model="shownCochera">
@@ -64,7 +79,8 @@
                             @click="set(cochera)"
                             v-for="cochera in cocheras"
                             :key="cochera"
-                        >{{ cochera }}</w-btn>
+                            >{{ cochera }}</w-btn
+                        >
                     </w-panel>
 
                     <w-panel header="antiguedad" v-model="shownAntiguedad">
@@ -72,7 +88,8 @@
                             @click="set(antiguedad)"
                             v-for="antiguedad in antiguedades"
                             :key="antiguedad"
-                        >{{ antiguedad }}</w-btn>
+                            >{{ antiguedad }}</w-btn
+                        >
                     </w-panel>
 
                     <w-panel header="estado" v-model="shownEstado">
@@ -80,7 +97,8 @@
                             @click="set(estado)"
                             v-for="estado in estados"
                             :key="estado"
-                        >{{ estado }}</w-btn>
+                            >{{ estado }}</w-btn
+                        >
                     </w-panel>
                 </div>
 
@@ -91,7 +109,8 @@
                         :color="$wlinii.secondary"
                         :fullwidth="true"
                         @click="$router.push('/')"
-                    >APLICAR</w-btn>
+                        >APLICAR</w-btn
+                    >
                 </div>
             </w-card>
         </div>

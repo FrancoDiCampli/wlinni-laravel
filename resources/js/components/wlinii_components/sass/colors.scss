@@ -24,6 +24,9 @@
 .white {
   background-color: white;
 }
+.default {
+    background-color:$default;
+  }
 
 .primary-text {
   color: $primary;
@@ -49,6 +52,7 @@
 .white-text {
   color: white;
 }
+
 
 $sizes: (
   "xs": 0px,

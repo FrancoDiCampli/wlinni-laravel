@@ -1,12 +1,21 @@
 <template>
     <div>
-        <router-view></router-view>
+        <Layout></Layout>
     </div>
 </template>
 
 <script>
-export default {};
+import Layout from "./components/Layout/Layout.vue";
+
+export default {
+    components: {
+        Layout
+    }
+};
 </script>
 
 <style>
+html {
+    background-color: #ececec;
+}
 </style>
