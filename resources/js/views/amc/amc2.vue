@@ -96,7 +96,7 @@
                 <w-card :shadow="false">
                   <div class="flex flex-row justify-between flex-wrap">
                     <div class="sm:w-full lg:w-1/3 p-3" v-for="(card, i) in cards" :key="i">
-                      <w-card :image="card.image" hover="full-hover">
+                      <w-card :image="card.image" :value="card.selected">
                         <template slot="image">
                           <p class="bold">{{ card.direccion }}</p>
                           <br />
@@ -187,6 +187,7 @@ export default {
           comision: "5%",
           mes: "S/ 86,723",
           direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+          selected: true,
           descripcion:
             " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
           info: {
@@ -204,6 +205,7 @@ export default {
           comision: "5%",
           mes: "S/ 86,723",
           direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+          selected: false,
           descripcion:
             " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
           info: {
@@ -221,6 +223,7 @@ export default {
           comision: "5%",
           mes: "S/ 86,723",
           direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+          selected: false,
           descripcion:
             " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
           info: {
@@ -238,6 +241,7 @@ export default {
           comision: "5%",
           mes: "S/ 86,723",
           direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+          selected: false,
           descripcion:
             " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
           info: {
@@ -255,6 +259,7 @@ export default {
           comision: "5%",
           mes: "S/ 86,723",
           direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+          selected: false,
           descripcion:
             " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
           info: {
@@ -272,6 +277,7 @@ export default {
           comision: "5%",
           mes: "S/ 86,723",
           direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+          selected: false,
           descripcion:
             " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
           info: {
@@ -289,6 +295,7 @@ export default {
           comision: "5%",
           mes: "S/ 86,723",
           direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+          selected: false,
           descripcion:
             " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
           info: {
@@ -306,6 +313,7 @@ export default {
           comision: "5%",
           mes: "S/ 86,723",
           direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+          selected: false,
           descripcion:
             " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
           info: {
@@ -323,6 +331,7 @@ export default {
           comision: "5%",
           mes: "S/ 86,723",
           direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+          selected: false,
           descripcion:
             " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
           info: {

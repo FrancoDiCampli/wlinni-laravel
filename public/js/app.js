@@ -5452,6 +5452,7 @@ __webpack_require__.r(__webpack_exports__);
         comision: "5%",
         mes: "S/ 86,723",
         direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        selected: true,
         descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
         info: {
           habitaciones: 3,
@@ -5467,6 +5468,7 @@ __webpack_require__.r(__webpack_exports__);
         comision: "5%",
         mes: "S/ 86,723",
         direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        selected: false,
         descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
         info: {
           habitaciones: 3,
@@ -5482,6 +5484,7 @@ __webpack_require__.r(__webpack_exports__);
         comision: "5%",
         mes: "S/ 86,723",
         direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        selected: false,
         descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
         info: {
           habitaciones: 3,
@@ -5497,6 +5500,7 @@ __webpack_require__.r(__webpack_exports__);
         comision: "5%",
         mes: "S/ 86,723",
         direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        selected: false,
         descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
         info: {
           habitaciones: 3,
@@ -5512,6 +5516,7 @@ __webpack_require__.r(__webpack_exports__);
         comision: "5%",
         mes: "S/ 86,723",
         direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        selected: false,
         descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
         info: {
           habitaciones: 3,
@@ -5527,6 +5532,7 @@ __webpack_require__.r(__webpack_exports__);
         comision: "5%",
         mes: "S/ 86,723",
         direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        selected: false,
         descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
         info: {
           habitaciones: 3,
@@ -5542,6 +5548,7 @@ __webpack_require__.r(__webpack_exports__);
         comision: "5%",
         mes: "S/ 86,723",
         direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        selected: false,
         descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
         info: {
           habitaciones: 3,
@@ -5557,6 +5564,7 @@ __webpack_require__.r(__webpack_exports__);
         comision: "5%",
         mes: "S/ 86,723",
         direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        selected: false,
         descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
         info: {
           habitaciones: 3,
@@ -5572,6 +5580,7 @@ __webpack_require__.r(__webpack_exports__);
         comision: "5%",
         mes: "S/ 86,723",
         direccion: "BUILT-UP-65 SQ FT LAND SIZE-110 SQ FT",
+        selected: false,
         descripcion: " Casa frente a un grande parque con juegos para niños, lugares para hacer ejercicios y otros.",
         info: {
           habitaciones: 3,
@@ -31672,7 +31681,7 @@ var render = function() {
                                     {
                                       attrs: {
                                         image: card.image,
-                                        hover: "full-hover"
+                                        value: card.selected
                                       }
                                     },
                                     [
