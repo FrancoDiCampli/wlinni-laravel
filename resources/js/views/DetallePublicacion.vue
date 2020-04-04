@@ -202,16 +202,12 @@
         </div>
 
         <div class="p-2 m-4 lg:m-12">
-            <w-card :shadow="false">
-                <perfil-agente></perfil-agente>
-            </w-card>
+            <w-card :shadow="false">perfil</w-card>
         </div>
     </div>
 </template>
 
 <script>
-import PerfilAgente from "./PerfilAgente.vue";
-
 export default {
     data() {
         return {
@@ -271,10 +267,6 @@ export default {
                 }
             ]
         };
-    },
-
-    components: {
-        PerfilAgente
     },
 
     mounted() {

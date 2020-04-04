@@ -1,22 +1,14 @@
 <template>
     <div class="container m-auto">
-        <div>
-            <!-- <HereMap /> -->
-        </div>
+        <div></div>
     </div>
 </template>
 
 <script>
-import HereMap from "./HereMap.vue";
-
 export default {
     data: () => ({
         name: null
-    }),
-
-    components: {
-        HereMap
-    }
+    })
 };
 </script>
 
