@@ -4800,42 +4800,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -30638,17 +30602,6 @@ var render = function() {
               ])
             }),
             1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex justify-center my-5" },
-            [
-              _c("w-btn", { attrs: { large: true, dark: true } }, [
-                _vm._v("ver mas propiedades")
-              ])
-            ],
-            1
           )
         ],
         1
@@ -30821,17 +30774,6 @@ var render = function() {
               ])
             }),
             1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex justify-center my-5" },
-            [
-              _c("w-btn", { attrs: { large: true, dark: true } }, [
-                _vm._v("ver mas propiedades")
-              ])
-            ],
-            1
           )
         ],
         1
@@ -30880,7 +30822,7 @@ var render = function() {
               "p",
               {
                 staticClass:
-                  "uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-1/12 rounded-full text-center"
+                  "uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-2/12 rounded-full text-center"
               },
               [_vm._v("01 paso")]
             ),
@@ -30946,7 +30888,7 @@ var render = function() {
                       _c(
                         "w-btn",
                         {
-                          staticClass: "full-width",
+                          staticClass: "full-width mr-2",
                           attrs: {
                             color: "tertiary",
                             rounded: true,
@@ -31528,7 +31470,7 @@ var render = function() {
                 "p",
                 {
                   staticClass:
-                    "uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-1/12 rounded-full text-center"
+                    "uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-2/12 rounded-full text-center"
                 },
                 [_vm._v("02 paso")]
               ),
