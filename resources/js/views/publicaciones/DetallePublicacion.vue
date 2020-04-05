@@ -259,25 +259,41 @@
                 <h1 class="body text-center lg:text-left bold">
                     Ubicación en mapa
                 </h1>
-                <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nostrum numquam nisi aliquid a debitis voluptatem sunt
-                    exercitationem? Modi alias fugit ad assumenda corrupti,
-                    dignissimos consequatur odio libero, tempora dolorum amet?
-                </div>
+
+                <mapas :center="center" :markers="markers"></mapas>
             </w-card>
         </div>
 
         <div class="p-2 m-4 lg:m-12">
-            <w-card :shadow="false">perfil</w-card>
+            <w-card :shadow="false">
+                <perfil-agente></perfil-agente>
+            </w-card>
         </div>
     </div>
 </template>
 
 <script>
+import PerfilAgente from "../agentes/PerfilAgente";
+import Mapas from "../mapas/Mapas";
+
 export default {
     data() {
         return {
+            center: { lat: -12.1122095, lng: -77.047945 },
+            markers: [
+                {
+                    position: { lat: -12.1221005, lng: -77.0315953 },
+                    title: "Miraflores",
+                    image: "/images/departamentos/8.jpg",
+                    dir: "Calle los ficus Mz B lt. 10",
+                    description:
+                        " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
+                    precio: "86,723",
+                    entrega: "Inmediata",
+                    condicion: "Preventa en planos",
+                },
+            ],
+
             windowWidth: window.innerWidth,
             cards: [
                 {
@@ -334,6 +350,19 @@ export default {
                 },
             ],
         };
+    },
+
+    components: {
+        PerfilAgente,
+        Mapas,
+    },
+
+    methods: {
+        toggleInfoWindow: function (marker, idx) {
+            this.infoWindowPos = marker.position;
+            this.card = marker;
+            this.infoWinOpen = !this.infoWinOpen;
+        },
     },
 
     mounted() {

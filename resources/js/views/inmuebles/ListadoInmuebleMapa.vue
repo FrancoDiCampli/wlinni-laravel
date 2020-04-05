@@ -1,73 +1,142 @@
 <template>
-    <!-- PENDIENTE -->
-    <div class="bg-gray-200">
-        <!-- PAGINAS 30 -->
+    <!-- Paginas 30 - 36 - 39 - 41 -->
 
-        <div class="flex justify-between items-start">
-            <div class="hidden lg:flex m-8">
-                <filtro-mapa></filtro-mapa>
-            </div>
+    <div>
+        <div class="inmuebles-container">
+            <div class="flex flex-row justify-around gap-8">
+                <div class="w-3/12 hidden lg:block">
+                    <div>
+                        <w-card :shadow="false">
+                            <template slot="header">
+                                <p class="caption bold white-text">
+                                    FILTROS APLICADOS
+                                </p>
+                            </template>
 
-            <div class="container m-8">
-                <div class="rounded-lg shadow-lg">
-                    <div class="bg-gray-200">
-                        <div
-                            class="flex lg:bg-white items-center justify-center lg:justify-between p-8"
-                        >
-                            <div class="subtitle bold">
-                                Listado de Inmuebles
-                            </div>
+                            <filtros-mapa></filtros-mapa>
+                        </w-card>
+                    </div>
+                </div>
+                <div class="w-full" v-if="filtrar">
+                    <div class="filter">
+                        <div class="filter-header">filtros</div>
+                        <div class="filter-body">
+                            <filtros-mapa></filtros-mapa>
+                            <w-btn
+                                :fullwidth="true"
+                                color="secondary"
+                                :dark="true"
+                                @click="filtrar = false"
+                                >filtrar</w-btn
+                            >
                         </div>
                     </div>
+                </div>
+                <div class="sm:w-full lg:w-9/12 px-6" v-else>
+                    <w-card :shadow="false">
+                        <div class="flex flex-row justify-between flex-wrap">
+                            <div class="lg:pl-3">
+                                <h1 class="subtitle bold">
+                                    Listado de Inmuebles
+                                </h1>
+                            </div>
+                        </div>
+                        <br />
+                        <w-btn
+                            class="lg:hidden"
+                            :dark="true"
+                            color="secondary"
+                            @click="filtrar = true"
+                            >filtrar</w-btn
+                        >
+                        <br />
 
-                    <!-- editar el icono -->
-                    <GoogleMap
-                        :latitude="latitude"
-                        :longitude="longitude"
-                        :apiKey="apiKey"
-                        :zoom="12"
-                        with-marker
-                        :locations="locations"
-                        icon="../components/wlinii_components/iconos/lock.png"
-                    />
+                        <mapas :center="center" :markers="markers"></mapas>
+
+                        <br />
+                    </w-card>
                 </div>
             </div>
         </div>
+        <br />
     </div>
 </template>
 
 <script>
-import FiltroMapa from "./filtros/FiltrosMapa.vue";
+import FiltrosMapa from "./FiltrosMapa";
+import Mapas from "../mapas/Mapas";
 
 export default {
-    data() {
-        return {
-            latitude: -12.1122095,
-            longitude: -77.047945,
-            apiKey: "AIzaSyAXlj8mkvRRg6KTVesim7xcM8CcceMfcAc",
-            locations: [
-                {
-                    title: "Miraflores",
-                    latitude: -12.1221005,
-                    longitude: -77.0315953,
-                },
-                {
-                    title: "San Isidro",
-                    latitude: -12.1001099,
-                    longitude: -77.0554858,
-                },
-                {
-                    title: "Santiago de Surco",
-                    latitude: -12.1206998,
-                    longitude: -77.0347257,
-                },
-            ],
-        };
-    },
+    data: () => ({
+        filtrar: false,
+        center: { lat: -12.1122095, lng: -77.047945 },
+        markers: [
+            {
+                position: { lat: -12.1221005, lng: -77.0315953 },
+                title: "Miraflores",
+                image: "/images/departamentos/8.jpg",
+                dir: "Calle los ficus Mz B lt. 10",
+                description: " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
+                precio: "86,723",
+                entrega: "Inmediata",
+                condicion: "Preventa en planos",
+            },
+            {
+                position: { lat: -12.1001099, lng: -77.0554858 },
+                title: "San Isidro",
+                image: "/images/departamentos/7.jpg",
+                dir: "Calle los ficus Mz B lt. 10",
+                description: " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
+                precio: "90,232",
+                entrega: "Inmediata",
+                condicion: "Preventa en planos",
+            },
+            {
+                position: { lat: -12.1206998, lng: -77.0347257 },
+                title: "Santiago de Surco",
+                image: "/images/departamentos/6.jpg",
+                dir: " Calle los ficus Mz B lt. 10",
+                description: "19 unidades 1 a 3 dormitorio 45m a 97m techados",
+                precio: "90,232",
+                entrega: "Inmediata",
+                condicion: "Preventa en planos",
+            },
+        ],
+    }),
+
     components: {
-        FiltroMapa,
+        FiltrosMapa,
+        Mapas,
     },
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.inmuebles-container {
+    width: 95%;
+    margin: auto;
+}
+
+@media (max-width: 764px) {
+    .inmuebles-container {
+        width: 100%;
+    }
+}
+
+.filter {
+    background-color: white;
+    .filter-header {
+        width: 100%;
+        background-color: #ff7500;
+        color: white;
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 12px;
+    }
+    .filter-body {
+        padding: 12px;
+    }
+}
+</style>

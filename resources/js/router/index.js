@@ -17,6 +17,7 @@ import DetallePublicacion from "../views/publicaciones/DetallePublicacion";
 
 // INMUEBLES
 import Inmuebles from "../views/inmuebles/Inmuebles";
+import InmueblesMapa from "../views/inmuebles/ListadoInmuebleMapa";
 
 // NOTIFICACIONES
 import Notificaciones from "../views/notificaciones/Notificaciones";
@@ -38,31 +39,31 @@ export default new Router({
         {
             path: "/",
             name: "home",
-            component: Home
+            component: Home,
         },
 
         // AUTH
         {
             path: "/login",
             name: "login",
-            component: Login
+            component: Login,
         },
         {
             path: "/register",
             name: "register",
-            component: Register
+            component: Register,
         },
         {
             path: "/register/successful",
             name: "register_successful",
-            component: RegisterSuccessful
+            component: RegisterSuccessful,
         },
 
         // PRECIOS
         {
             path: "/precios",
             name: "precios",
-            component: Precios
+            component: Precios,
         },
 
         // PUBLICACIONES
@@ -70,59 +71,64 @@ export default new Router({
         {
             path: "/publicaciones",
             name: "publicaciones",
-            component: Publicaciones
+            component: Publicaciones,
         },
         {
             path: "/publicaciones/nueva",
             name: "publicaciones_nueva",
-            component: NuevaPublicacion
+            component: NuevaPublicacion,
         },
         {
             path: "/publicaciones/detalle",
             name: "publicaciones_detalle",
-            component: DetallePublicacion
+            component: DetallePublicacion,
         },
 
         // INMUEBLES
         {
             path: "/inmuebles",
             name: "inmuebles",
-            component: Inmuebles
+            component: Inmuebles,
+        },
+        {
+            path: "/inmuebles/mapa",
+            name: "inmuebles_mapa",
+            component: InmueblesMapa,
         },
 
         // NOTIFICACIONES
         {
             path: "/notificaciones",
             name: "notificaciones",
-            component: Notificaciones
+            component: Notificaciones,
         },
         // AMC
         {
             path: "/amc1",
             name: "amc1",
-            component: AMC1
+            component: AMC1,
         },
         {
             path: "/amc2",
             name: "amc2",
-            component: AMC2
+            component: AMC2,
         },
         {
             path: "/amc4",
             name: "amc4",
-            component: AMC4
+            component: AMC4,
         },
         // Brocker
         {
             path: "/brocker",
             name: "brocker",
-            component: Brocker
+            component: Brocker,
         },
         // Agente
         {
             path: "/agente",
             name: "agente",
-            component: Agente
-        }
-    ]
+            component: Agente,
+        },
+    ],
 });

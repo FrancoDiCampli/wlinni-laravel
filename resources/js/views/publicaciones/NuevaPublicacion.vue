@@ -10,13 +10,19 @@
         <div class="container_publicacion">
             <w-card :shadow="false">
                 <p class="subtitle bold mt-5 ml-5">Agregar Publicación</p>
-                <p class="ml-5">Agregar la información de la nueva publicación</p>
-                <form>
+                <p class="ml-5">
+                    Agregar la información de la nueva publicación
+                </p>
+                <form @submit.prevent>
                     <div class="form-section">
                         <div
                             class="form-header"
                             :class="sections.inmueble ? 'header-active' : ''"
-                            @click="windowWidth <= 768 ? sections.inmueble = !sections.inmueble : ''"
+                            @click="
+                                windowWidth <= 768
+                                    ? (sections.inmueble = !sections.inmueble)
+                                    : ''
+                            "
                         >
                             <p>Tipo de Inmueble</p>
                             <w-icon icon="arrow-down" h="18px"></w-icon>
@@ -46,7 +52,11 @@
                         <div
                             class="form-header"
                             :class="sections.ubicacion ? 'header-active' : ''"
-                            @click="windowWidth <= 768 ? sections.ubicacion = !sections.ubicacion : ''"
+                            @click="
+                                windowWidth <= 768
+                                    ? (sections.ubicacion = !sections.ubicacion)
+                                    : ''
+                            "
                         >
                             <p>Ubicación</p>
                             <w-icon icon="arrow-down" h="18px"></w-icon>
@@ -89,7 +99,9 @@
                                 </div>
                             </div>
 
-                            <div class="w-full md:w-1/3 flex flex-row flex-wrap">
+                            <div
+                                class="w-full md:w-1/3 flex flex-row flex-wrap"
+                            >
                                 <div class="w-full md:w-1/2">
                                     <w-checkbox
                                         label="Mostrar dirección"
@@ -109,7 +121,11 @@
                         <div
                             class="form-header"
                             :class="sections.precio ? 'header-active' : ''"
-                            @click="windowWidth <= 768 ? sections.precio = !sections.precio : ''"
+                            @click="
+                                windowWidth <= 768
+                                    ? (sections.precio = !sections.precio)
+                                    : ''
+                            "
                         >
                             <p>Precio</p>
                             <w-icon icon="arrow-down" h="18px"></w-icon>
@@ -132,8 +148,14 @@
                                         v-model="form.precio"
                                     ></w-select>
                                 </div>
-                                <div class="w-full md:w-1/3 self-center" style="margin-top: -10px;">
-                                    <w-checkbox label="Consultar" v-model="form.consultar"></w-checkbox>
+                                <div
+                                    class="w-full md:w-1/3 self-center"
+                                    style="margin-top: -10px;"
+                                >
+                                    <w-checkbox
+                                        label="Consultar"
+                                        v-model="form.consultar"
+                                    ></w-checkbox>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +164,11 @@
                         <div
                             class="form-header"
                             :class="sections.datos ? 'header-active' : ''"
-                            @click="windowWidth <= 768 ? sections.datos = !sections.datos : ''"
+                            @click="
+                                windowWidth <= 768
+                                    ? (sections.datos = !sections.datos)
+                                    : ''
+                            "
                         >
                             <p>Datos del inmueble</p>
                             <w-icon icon="arrow-down" h="18px"></w-icon>
@@ -255,7 +281,11 @@
                         <div
                             class="form-header"
                             :class="sections.servicios ? 'header-active' : ''"
-                            @click="windowWidth <= 768 ? sections.servicios = !sections.servicios : ''"
+                            @click="
+                                windowWidth <= 768
+                                    ? (sections.servicios = !sections.servicios)
+                                    : ''
+                            "
                         >
                             <p>Servicios</p>
                             <w-icon icon="arrow-down" h="18px"></w-icon>
@@ -263,10 +293,18 @@
                         <div class="form-body" v-if="sections.servicios">
                             <div class="flex flex-row flex-wrap">
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Agua" v-model="form.agua"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Agua"
+                                        v-model="form.agua"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Luz" v-model="form.luz"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Luz"
+                                        v-model="form.luz"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -283,7 +321,11 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Cable" v-model="form.cable"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Cable"
+                                        v-model="form.cable"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -293,7 +335,11 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Guardia" v-model="form.guardia"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Guardia"
+                                        v-model="form.guardia"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -316,7 +362,11 @@
                         <div
                             class="form-header"
                             :class="sections.ambientes ? 'header-active' : ''"
-                            @click="windowWidth <= 768 ? sections.ambientes = !sections.ambientes : ''"
+                            @click="
+                                windowWidth <= 768
+                                    ? (sections.ambientes = !sections.ambientes)
+                                    : ''
+                            "
                         >
                             <p>Ambientes</p>
                             <w-icon icon="arrow-down" h="18px"></w-icon>
@@ -324,10 +374,18 @@
                         <div class="form-body" v-if="sections.ambientes">
                             <div class="flex flex-row flex-wrap">
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Agua" v-model="form.agua"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Agua"
+                                        v-model="form.agua"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Luz" v-model="form.luz"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Luz"
+                                        v-model="form.luz"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -344,7 +402,11 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Cable" v-model="form.cable"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Cable"
+                                        v-model="form.cable"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -354,7 +416,11 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Guardia" v-model="form.guardia"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Guardia"
+                                        v-model="form.guardia"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -371,10 +437,18 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Agua" v-model="form.agua"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Agua"
+                                        v-model="form.agua"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Luz" v-model="form.luz"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Luz"
+                                        v-model="form.luz"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -391,7 +465,11 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Cable" v-model="form.cable"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Cable"
+                                        v-model="form.cable"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -401,7 +479,11 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Guardia" v-model="form.guardia"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Guardia"
+                                        v-model="form.guardia"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -423,8 +505,14 @@
                     <div class="form-section">
                         <div
                             class="form-header"
-                            :class="sections.areascomunes ? 'header-active' : ''"
-                            @click="windowWidth <= 768 ? sections.areascomunes = !sections.areascomunes : ''"
+                            :class="
+                                sections.areascomunes ? 'header-active' : ''
+                            "
+                            @click="
+                                windowWidth <= 768
+                                    ? (sections.areascomunes = !sections.areascomunes)
+                                    : ''
+                            "
                         >
                             <p>Areas comunes</p>
                             <w-icon icon="arrow-down" h="18px"></w-icon>
@@ -432,10 +520,18 @@
                         <div class="form-body" v-if="sections.areascomunes">
                             <div class="flex flex-row flex-wrap">
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Agua" v-model="form.agua"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Agua"
+                                        v-model="form.agua"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Luz" v-model="form.luz"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Luz"
+                                        v-model="form.luz"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -452,7 +548,11 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Cable" v-model="form.cable"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Cable"
+                                        v-model="form.cable"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -462,7 +562,11 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox class="ml-5" label="Guardia" v-model="form.guardia"></w-checkbox>
+                                    <w-checkbox
+                                        class="ml-5"
+                                        label="Guardia"
+                                        v-model="form.guardia"
+                                    ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -521,64 +625,85 @@
                     </div>
                     <div>
                         <p class="body bold tertiary-text ml-5">Locación</p>
-                        <p
-                            class="ml-5"
-                        >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+                        <mapas-agregar :center="center"></mapas-agregar>
                     </div>
                     <div class="mt-20">
                         <div class="f-header">
                             Fotos
-                            <span class="caption black-text">(0 de 20 disponibles)</span>
+                            <span class="caption black-text"
+                                >(0 de 20 disponibles)</span
+                            >
                         </div>
                         <div class="flex flex-row justify-center flex-wrap">
                             <div class="w-full md:w-1/2 px-2">
-                                <w-card :shadow="false" class="upload-file-card">
+                                <w-card
+                                    :shadow="false"
+                                    class="upload-file-card"
+                                >
                                     <div class="flex flex-col items-center">
-                                        <w-icon icon="upload-image" h="137px"></w-icon>
-                                        <p
-                                            class="text-center mt-5"
-                                        >Arrastra fotos desde tu computadora</p>
+                                        <w-icon
+                                            icon="upload-image"
+                                            h="137px"
+                                        ></w-icon>
+                                        <p class="text-center mt-5">
+                                            Arrastra fotos desde tu computadora
+                                        </p>
                                         <w-btn
                                             color="#57BCD1"
                                             :dark="true"
                                             :rounded="true"
                                             :small="true"
-                                        >seleccionar fotos</w-btn>
-                                        <p
-                                            class="text-center mt-5"
-                                        >Formatos permitidos: JPG, JPEG, PNG (Tamaño máximo: 5Mb)</p>
+                                            >seleccionar fotos</w-btn
+                                        >
+                                        <p class="text-center mt-5">
+                                            Formatos permitidos: JPG, JPEG, PNG
+                                            (Tamaño máximo: 5Mb)
+                                        </p>
                                     </div>
                                 </w-card>
                             </div>
                             <div class="w-full md:w-1/2 px-2">
-                                <w-card :shadow="false" class="upload-file-card">
+                                <w-card
+                                    :shadow="false"
+                                    class="upload-file-card"
+                                >
                                     <div class="flex flex-col items-center">
-                                        <w-icon icon="upload-video" h="137px"></w-icon>
-                                        <p
-                                            class="text-center mt-5"
-                                        >Arrastra videos desde tu computadora</p>
+                                        <w-icon
+                                            icon="upload-video"
+                                            h="137px"
+                                        ></w-icon>
+                                        <p class="text-center mt-5">
+                                            Arrastra videos desde tu computadora
+                                        </p>
                                         <w-btn
                                             color="#57BCD1"
                                             :dark="true"
                                             :rounded="true"
                                             :small="true"
-                                        >seleccionar videos</w-btn>
-                                        <p
-                                            class="text-center mt-5"
-                                        >Formatos permitidos: MP4, AVI, (Tamaño máximo: 50Mb)</p>
+                                            >seleccionar videos</w-btn
+                                        >
+                                        <p class="text-center mt-5">
+                                            Formatos permitidos: MP4, AVI,
+                                            (Tamaño máximo: 50Mb)
+                                        </p>
                                     </div>
                                 </w-card>
                             </div>
                         </div>
                         <div class="flex flex-row justify-center">
                             <div class="w-full md:w-1/2 px-2 mt-10 mb-20">
-                                <p
-                                    class="text-center"
-                                >Si ha completadp todos los campos y está seguro de la exactitud de toda la información, haga clic en el botón a continuación para guardar los datos</p>
+                                <p class="text-center">
+                                    Si ha completadp todos los campos y está
+                                    seguro de la exactitud de toda la
+                                    información, haga clic en el botón a
+                                    continuación para guardar los datos
+                                </p>
                             </div>
                         </div>
                         <div class="flex flex-row justify-center">
-                            <w-btn :dark="true" :large="true">GUARDAR AVISO</w-btn>
+                            <w-btn :dark="true" :large="true"
+                                >GUARDAR AVISO</w-btn
+                            >
                         </div>
                     </div>
                 </form>
@@ -588,8 +713,10 @@
 </template>
 
 <script>
+import MapasAgregar from "../mapas/MapasAgregar";
 export default {
     data: () => ({
+        center: { lat: -12.1122095, lng: -77.047945 },
         windowWidth: window.innerWidth,
         sections: {
             inmueble: true,
@@ -599,16 +726,20 @@ export default {
             servicios: true,
             ambientes: true,
             areascomunes: true,
-            video: true
+            video: true,
         },
-        form: {}
+        form: {},
     }),
+
+    components: {
+        MapasAgregar,
+    },
 
     mounted() {
         window.addEventListener("resize", () => {
             this.windowWidth = window.innerWidth;
         });
-    }
+    },
 };
 </script>
 
