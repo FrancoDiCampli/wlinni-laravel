@@ -22,11 +22,13 @@ import Inmuebles from "../views/inmuebles/Inmuebles";
 import Notificaciones from "../views/notificaciones/Notificaciones";
 
 // AMC
-import AMC1 from "../views/amc/amc1";
-import AMC2 from "../views/amc/amc2";
-import AMC4 from "../views/amc/amc4";
+import AMC1 from "../views/amc/AMC1";
+import AMC2 from "../views/amc/AMC2";
+import AMC4 from "../views/amc/AMC3";
+
 // Brocker
-import Brocker from "../views/brocker/brocker";
+import Brocker from "../views/brocker/Brocker";
+
 // Agente
 import Agente from "../views/agentes/Agente";
 
@@ -101,28 +103,31 @@ export default new Router({
             name: "notificaciones",
             component: Notificaciones,
         },
+
         // AMC
         {
-            path: "/amc1",
-            name: "amc1",
+            path: "/amc/1",
+            name: "amc_1",
             component: AMC1,
         },
         {
-            path: "/amc2",
-            name: "amc2",
+            path: "/amc/2",
+            name: "amc_2",
             component: AMC2,
         },
         {
-            path: "/amc4",
-            name: "amc4",
+            path: "/amc/3",
+            name: "amc_3",
             component: AMC4,
         },
+
         // Brocker
         {
-            path: "/brocker",
-            name: "brocker",
+            path: "/perfil/brocker",
+            name: "perfil_brocker",
             component: Brocker,
         },
+
         // Agente
         {
             path: "/agente",

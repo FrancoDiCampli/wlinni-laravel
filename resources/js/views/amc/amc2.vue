@@ -1,12 +1,32 @@
 <template>
     <!--
-       AMC1 web y mobil
-  -->
-    <div class="amc">
-        <div class="amc-container py-16">
-            <w-card :shadow="false">
+        AMC-2 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/a65a74cc-d205-4719-82f8-8e12fd489483/AMC-2)
+        MB-AMC-2 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/69f65c4f-6de4-4cb9-aec9-12ba0bdac37e/MB-AMC-2)
+        MB-AMC-2-1 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/dd038808-f064-4b0d-963b-bc5fe4209bfc/MB-AMC-2-1)
+        AMC-3 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/719ad7aa-aa1a-47a1-86a8-74e58a4110e5/AMC-3)
+        MB-AMC-3 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/537968de-610f-4f6f-87cc-b43a657829c0/MB-AMC-3)
+
+    -->
+    <div class="amc-2">
+        <div class="amc-container md:py-16">
+            <div class="w-full" v-if="filtrar">
+                <div class="filter">
+                    <div class="filter-header">filtros</div>
+                    <div class="filter-body">
+                        <FiltroInmueble></FiltroInmueble>
+                        <w-btn
+                            :fullwidth="true"
+                            color="secondary"
+                            :dark="true"
+                            @click="filtrar = false"
+                            >filtrar</w-btn
+                        >
+                    </div>
+                </div>
+            </div>
+            <w-card :shadow="false" v-else>
                 <div>
-                    <p class="subtitle bold ml-5">
+                    <p class="body subtitle-md bold ml-5">
                         Análisis de Mercado Comparativo (AMC)
                     </p>
                     <p class="caption primary-text ml-5">
@@ -21,7 +41,7 @@
                         class="step-btn"
                         >02 PASO</w-btn
                     >
-                    <p class="subtitle bold ml-5">
+                    <p class="body subtitle-md bold ml-5">
                         Agregar Oferta Pública
                     </p>
                     <div class="w-full px-5">
@@ -33,7 +53,7 @@
                     </div>
                 </div>
                 <div class="flex flex-row justify-between flex-wrap">
-                    <div class="w-full md:w-1/2 pl-5 pr-2">
+                    <div class="w-full md:w-1/2 p-5 md:pl-5 md:pr-2">
                         <div class="tertiary alert">
                             <div class="flex flex-row justify-between">
                                 <div>
@@ -49,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full md:w-1/2 pr-5 pl-2">
+                    <div class="w-full md:w-1/2 p-5 md:pr-5 md:pl-2">
                         <div class="primary alert">
                             <p class="body bold white-text">Ingeso Manual</p>
                             <p class="white-text">
@@ -72,22 +92,8 @@
                             </w-card>
                         </div>
                     </div>
-                    <div class="w-full" v-if="filtrar">
-                        <div class="filter">
-                            <div class="filter-header">filtros</div>
-                            <div class="filter-body">
-                                <FiltroInmueble></FiltroInmueble>
-                                <w-btn
-                                    :fullwidth="true"
-                                    color="secondary"
-                                    :dark="true"
-                                    @click="filtrar = false"
-                                    >filtrar</w-btn
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sm:w-full lg:w-9/12" v-else>
+
+                    <div class="sm:w-full lg:w-9/12">
                         <w-btn
                             class="lg:hidden"
                             :dark="true"
@@ -101,11 +107,14 @@
                                 v-for="(card, i) in cards"
                                 :key="i"
                             >
-                                <w-card :image="card.image" hover="full-hover">
+                                <w-card
+                                    :image="card.image"
+                                    :value="card.selected"
+                                    @change="card.selected = !card.selected"
+                                    style="cursor: pointer;"
+                                >
                                     <template slot="image">
-                                        <p class="bold">
-                                            {{ card.direccion }}
-                                        </p>
+                                        <p class="bold">{{ card.direccion }}</p>
                                         <br />
                                         <p>{{ card.descripcion }}</p>
                                     </template>
@@ -196,7 +205,7 @@ export default {
         return {
             checked: true,
             windowWidth: window.innerWidth,
-            select: null,
+            select: true,
             form: {},
             filtrar: false,
             cards: [
@@ -400,7 +409,7 @@ export default {
 </script>
 
 <style lang="scss">
-.amc {
+.amc-2 {
     .amc-container {
         width: 95%;
         margin: auto;
@@ -448,10 +457,11 @@ export default {
     }
 }
 
-.bn {
-    border: 1px solid black;
-}
-.fan {
-    font-size: 28px;
+@media (max-width: 768px) {
+    .amc-2 {
+        .amc-container {
+            width: 100%;
+        }
+    }
 }
 </style>
