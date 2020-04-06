@@ -7598,10 +7598,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -7797,16 +7793,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     center: Object
   },
   data: function data() {
     return {
+      cent: {},
       marker: {},
       mapOptions: {
         mapTypeControl: false
@@ -7843,8 +7836,19 @@ __webpack_require__.r(__webpack_exports__);
       card: {}
     };
   },
+  computed: {
+    centro: function centro() {
+      return this.center;
+    }
+  },
   mounted: function mounted() {
     this.geolocate();
+    this.$refs.mapRef.$mapPromise.then(function (map) {
+      var myControl = document.getElementById("myAutocomplete");
+      myControl.index = 1; // Esto es importante sino arroja error.
+
+      map.controls[google.maps.ControlPosition.TOP_CENTER].push(myControl);
+    });
   },
   methods: {
     // receives a place object via the autocomplete component
@@ -36447,9 +36451,7 @@ var render = function() {
                 [
                   _c("template", { slot: "header" }, [
                     _c("p", { staticClass: "caption bold white-text" }, [
-                      _vm._v(
-                        "\n                                FILTROS APLICADOS\n                            "
-                      )
+                      _vm._v("FILTROS APLICADOS")
                     ])
                   ]),
                   _vm._v(" "),
@@ -36463,7 +36465,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _vm.filtrar
-          ? _c("div", { staticClass: "w-full" }, [
+          ? _c("div", { staticClass: "w-full pb-16" }, [
               _c("div", { staticClass: "filter" }, [
                 _c("div", { staticClass: "filter-header" }, [
                   _vm._v("filtros")
@@ -36512,9 +36514,7 @@ var render = function() {
                       [
                         _c("div", { staticClass: "lg:pl-3" }, [
                           _c("h1", { staticClass: "subtitle bold" }, [
-                            _vm._v(
-                              "\n                                Listado de Inmuebles\n                            "
-                            )
+                            _vm._v("Listado de Inmuebles")
                           ])
                         ])
                       ]
@@ -36523,17 +36523,24 @@ var render = function() {
                     _c("br"),
                     _vm._v(" "),
                     _c(
-                      "w-btn",
-                      {
-                        staticClass: "lg:hidden",
-                        attrs: { dark: true, color: "secondary" },
-                        on: {
-                          click: function($event) {
-                            _vm.filtrar = true
-                          }
-                        }
-                      },
-                      [_vm._v("filtrar")]
+                      "div",
+                      { staticClass: "pb-2 lg:pb-0" },
+                      [
+                        _c(
+                          "w-btn",
+                          {
+                            staticClass: "lg:hidden",
+                            attrs: { dark: true, color: "secondary" },
+                            on: {
+                              click: function($event) {
+                                _vm.filtrar = true
+                              }
+                            }
+                          },
+                          [_vm._v("filtrar")]
+                        )
+                      ],
+                      1
                     ),
                     _vm._v(" "),
                     _c("br"),
@@ -36697,32 +36704,35 @@ var render = function() {
   return _c(
     "div",
     [
-      _c(
-        "div",
-        [
-          _c("gmap-autocomplete", {
-            staticClass: "form-control",
-            on: { place_changed: _vm.setPlace }
-          }),
-          _vm._v(" "),
-          _c(
-            "w-btn",
-            {
-              attrs: { dark: "", rounded: "", small: "" },
-              on: { click: _vm.addMarker }
-            },
-            [_vm._v("\n            Agregar\n        ")]
-          )
-        ],
-        1
-      ),
+      _c("div", { staticClass: "hide" }, [
+        _c(
+          "div",
+          { attrs: { id: "myAutocomplete" } },
+          [
+            _c("gmap-autocomplete", {
+              staticClass: "my-4",
+              on: { place_changed: _vm.setPlace }
+            }),
+            _vm._v(" "),
+            _c(
+              "w-btn",
+              {
+                attrs: { dark: "", rounded: "", small: "" },
+                on: { click: _vm.addMarker }
+              },
+              [_vm._v("ADD")]
+            )
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c(
         "gmap-map",
         {
           ref: "mapRef",
           staticStyle: { width: "100%", height: "600px" },
-          attrs: { center: _vm.center, zoom: 14, options: _vm.mapOptions }
+          attrs: { center: _vm.centro, zoom: 14, options: _vm.mapOptions }
         },
         [
           _c("gmap-marker", {

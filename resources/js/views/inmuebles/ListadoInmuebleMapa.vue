@@ -8,16 +8,14 @@
                     <div>
                         <w-card :shadow="false">
                             <template slot="header">
-                                <p class="caption bold white-text">
-                                    FILTROS APLICADOS
-                                </p>
+                                <p class="caption bold white-text">FILTROS APLICADOS</p>
                             </template>
 
                             <filtros-mapa></filtros-mapa>
                         </w-card>
                     </div>
                 </div>
-                <div class="w-full" v-if="filtrar">
+                <div class="w-full pb-16" v-if="filtrar">
                     <div class="filter">
                         <div class="filter-header">filtros</div>
                         <div class="filter-body">
@@ -27,8 +25,7 @@
                                 color="secondary"
                                 :dark="true"
                                 @click="filtrar = false"
-                                >filtrar</w-btn
-                            >
+                            >filtrar</w-btn>
                         </div>
                     </div>
                 </div>
@@ -36,19 +33,18 @@
                     <w-card :shadow="false">
                         <div class="flex flex-row justify-between flex-wrap">
                             <div class="lg:pl-3">
-                                <h1 class="subtitle bold">
-                                    Listado de Inmuebles
-                                </h1>
+                                <h1 class="subtitle bold">Listado de Inmuebles</h1>
                             </div>
                         </div>
                         <br />
-                        <w-btn
-                            class="lg:hidden"
-                            :dark="true"
-                            color="secondary"
-                            @click="filtrar = true"
-                            >filtrar</w-btn
-                        >
+                        <div class="pb-2 lg:pb-0">
+                            <w-btn
+                                class="lg:hidden"
+                                :dark="true"
+                                color="secondary"
+                                @click="filtrar = true"
+                            >filtrar</w-btn>
+                        </div>
                         <br />
 
                         <mapas :center="center" :markers="markers"></mapas>
@@ -79,7 +75,7 @@ export default {
                 description: " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
                 precio: "86,723",
                 entrega: "Inmediata",
-                condicion: "Preventa en planos",
+                condicion: "Preventa en planos"
             },
             {
                 position: { lat: -12.1001099, lng: -77.0554858 },
@@ -89,7 +85,7 @@ export default {
                 description: " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
                 precio: "90,232",
                 entrega: "Inmediata",
-                condicion: "Preventa en planos",
+                condicion: "Preventa en planos"
             },
             {
                 position: { lat: -12.1206998, lng: -77.0347257 },
@@ -99,15 +95,15 @@ export default {
                 description: "19 unidades 1 a 3 dormitorio 45m a 97m techados",
                 precio: "90,232",
                 entrega: "Inmediata",
-                condicion: "Preventa en planos",
-            },
-        ],
+                condicion: "Preventa en planos"
+            }
+        ]
     }),
 
     components: {
         FiltrosMapa,
-        Mapas,
-    },
+        Mapas
+    }
 };
 </script>
 
