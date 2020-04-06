@@ -36,7 +36,7 @@
                                 <h1 class="subtitle bold">Listado de Inmuebles</h1>
                             </div>
                         </div>
-                        <br />
+
                         <div class="pb-2 lg:pb-0">
                             <w-btn
                                 class="lg:hidden"

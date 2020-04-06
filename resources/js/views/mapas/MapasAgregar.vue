@@ -2,10 +2,21 @@
     <div>
         <div class="hide">
             <div class id="myAutocomplete">
-                <gmap-autocomplete class="my-4" @place_changed="setPlace"></gmap-autocomplete>
-                <w-btn dark rounded small @click="addMarker">ADD</w-btn>
+                <div class="flex items-center my-4">
+                    <gmap-autocomplete
+                        style="min-height: 42px;"
+                        class="form-control my-0 py-1"
+                        @place_changed="setPlace"
+                    ></gmap-autocomplete>
+                    <div class>
+                        <w-btn @click="addMarker" :icon="true">
+                            <w-icon icon="address" h="32px"></w-icon>
+                        </w-btn>
+                    </div>
+                </div>
             </div>
         </div>
+
         <gmap-map
             ref="mapRef"
             :center="centro"
@@ -24,7 +35,6 @@ export default {
         center: Object
     },
     data: () => ({
-        cent: {},
         marker: {},
         mapOptions: {
             mapTypeControl: false
@@ -61,9 +71,7 @@ export default {
         this.geolocate();
         this.$refs.mapRef.$mapPromise.then(map => {
             var myControl = document.getElementById("myAutocomplete");
-
-            myControl.index = 1; // Esto es importante sino arroja error.
-
+            myControl.index = 1;
             map.controls[google.maps.ControlPosition.TOP_CENTER].push(
                 myControl
             );
@@ -71,7 +79,6 @@ export default {
     },
 
     methods: {
-        // receives a place object via the autocomplete component
         setPlace(place) {
             this.currentPlace = place;
         },
@@ -99,4 +106,21 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+form {
+    input {
+        position: relative;
+        height: auto;
+        min-height: 42px;
+        width: auto;
+        background-color: white;
+        border: thin solid black;
+        border-radius: 21px;
+        padding: 0px 19px;
+        outline: none;
+        &:focus {
+            border: 2px solid #041e42;
+        }
+    }
+}
+</style>
