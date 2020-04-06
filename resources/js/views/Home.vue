@@ -781,6 +781,9 @@ export default {
                     background: transparent !important;
                 }
             }
+            &:hover {
+                background-color: transparent !important;
+            }
             .card-text {
                 background-color: rgba($color: #000000, $alpha: 0.66);
                 padding-right: 50px;
