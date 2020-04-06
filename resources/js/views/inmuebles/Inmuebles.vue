@@ -1,15 +1,22 @@
 <template>
+    <!-- 
+        
+        listado-de-inmueble (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/6d821de4-bfa5-4d87-879d-d9416f6b55c6/listado-de-inmueble)
+        listado-de-inmueble-1 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/9c9dddc1-3559-45ac-8344-5691f5ff4895/listado-de-inmueble-1)
+        listado-de-inmueble-2 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/60ee5103-e431-4bdf-9aea-45af9d43e0fc/listado-de-inmueble-2)
+        MB-listado-de-inmueble (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/7faff0ca-0105-4ce5-bd70-43cf949c00fb/MB-listado-de-inmueble)    
+
+    -->
+
     <div>
         <div class="inmuebles-container">
             <div class="flex flex-row justify-around gap-8">
                 <div class="w-3/12 hidden lg:block">
                     <div>
                         <w-card :shadow="false">
-                            <template slot="header"
-                                ><p class="caption bold white-text">
-                                    FILTROS
-                                </p></template
-                            >
+                            <template slot="header">
+                                <p class="caption bold white-text">FILTROS</p>
+                            </template>
 
                             <FiltroInmueble></FiltroInmueble>
                         </w-card>
@@ -25,8 +32,7 @@
                                 color="secondary"
                                 :dark="true"
                                 @click="filtrar = false"
-                                >filtrar</w-btn
-                            >
+                            >filtrar</w-btn>
                         </div>
                     </div>
                 </div>
@@ -34,18 +40,14 @@
                     <w-card :shadow="false">
                         <div class="flex flex-row justify-between flex-wrap">
                             <div class="lg:pl-3">
-                                <h1 class="subtitle bold ">
-                                    Listado de Inmuebles
-                                </h1>
+                                <h1 class="subtitle bold">Listado de Inmuebles</h1>
                             </div>
                             <div class="lg:pr-3">
                                 <w-btn
                                     color="tertiary"
                                     :dark="true"
                                     style=" margin: 0px !important;"
-                                >
-                                    Búsqueda de mapa
-                                </w-btn>
+                                >Búsqueda de mapa</w-btn>
                             </div>
                         </div>
                         <br />
@@ -54,15 +56,10 @@
                             :dark="true"
                             color="secondary"
                             @click="filtrar = true"
-                            >filtrar</w-btn
-                        >
+                        >filtrar</w-btn>
                         <br />
                         <div class="flex flex-row justify-between flex-wrap">
-                            <div
-                                class="sm:w-full lg:w-1/3 p-3"
-                                v-for="(card, i) in cards"
-                                :key="i"
-                            >
+                            <div class="sm:w-full lg:w-1/3 p-3" v-for="(card, i) in cards" :key="i">
                                 <w-card :image="card.image" hover="full-hover">
                                     <template slot="image">
                                         <p class="bold">{{ card.direccion }}</p>
@@ -70,71 +67,45 @@
                                         <p>{{ card.descripcion }}</p>
                                     </template>
                                     <template slot="state">
-                                        <p class="white-text">
-                                            {{ card.tipo }}
-                                        </p>
+                                        <p class="white-text">{{ card.tipo }}</p>
                                     </template>
                                     <p class="bold">{{ card.title }}</p>
                                     <p>{{ card.body }}</p>
                                     <p>Comisión</p>
                                     <div class="flex flex-row justify-between">
-                                        <p class="body bold">
-                                            {{ card.comision }}
-                                        </p>
-                                        <p class="body bold tertiary-text">
-                                            {{ card.mes }}
-                                        </p>
+                                        <p class="body bold">{{ card.comision }}</p>
+                                        <p class="body bold tertiary-text">{{ card.mes }}</p>
                                     </div>
 
                                     <template slot="footer">
-                                        <div
-                                            class="flex flex-row justify-between"
-                                        >
-                                            <div
-                                                class="flex flex-row justify-between"
-                                            >
+                                        <div class="flex flex-row justify-between">
+                                            <div class="flex flex-row justify-between">
                                                 <div class="info-item">
-                                                    <w-icon
-                                                        icon="room-solid"
-                                                        h="12px"
-                                                    ></w-icon>
+                                                    <w-icon icon="room-solid" h="12px"></w-icon>
                                                     <p class="white-text">
                                                         {{
-                                                            card.info
-                                                                .habitaciones
+                                                        card.info
+                                                        .habitaciones
                                                         }}
                                                     </p>
                                                 </div>
                                                 <div class="info-item">
-                                                    <w-icon
-                                                        icon="bath-solid"
-                                                        h="15px"
-                                                    ></w-icon>
-                                                    <p class="white-text">
-                                                        {{ card.info.baños }}
-                                                    </p>
+                                                    <w-icon icon="bath-solid" h="15px"></w-icon>
+                                                    <p class="white-text">{{ card.info.baños }}</p>
                                                 </div>
                                                 <div class="info-item">
-                                                    <w-icon
-                                                        icon="parking-solid"
-                                                        h="12px"
-                                                    ></w-icon>
+                                                    <w-icon icon="parking-solid" h="12px"></w-icon>
                                                     <p class="white-text">
                                                         {{
-                                                            card.info
-                                                                .estacionamiento
+                                                        card.info
+                                                        .estacionamiento
                                                         }}
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="info-item">
-                                                <w-icon
-                                                    icon="size"
-                                                    h="15px"
-                                                ></w-icon>
-                                                <p class="white-text">
-                                                    {{ card.info.tamaño }}
-                                                </p>
+                                                <w-icon icon="size" h="15px"></w-icon>
+                                                <p class="white-text">{{ card.info.tamaño }}</p>
                                             </div>
                                         </div>
                                     </template>

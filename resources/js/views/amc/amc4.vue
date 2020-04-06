@@ -1,195 +1,260 @@
 <template>
-  <div>
-    <div class="bg-gray-200 p-5">
-      <div class="bg-white p-5 lg:p-20">
-        <h1 class="subtitle-lg body-xs bold">Análisis de Mercado Comparativo (AMC)</h1>
-        <p class="caption">Aplicación de analisis de precios</p>
-        <p
-          class="uppercase text-white primary px-2 my-5 lg:mt-10 w-1/2 lg:w-1/12 rounded-full text-center"
-        >04 paso</p>
-        <h1 class="subtitle-lg body-xs bold">Resultado Final</h1>
-        <div class="shadow w-full bg-gray-500 rounded-full mb-10">
-          <div
-            class="secondary leading-none text-center text-white rounded-full p-2"
-            style="width: 100%"
-          ></div>
+    <div class="amc-4">
+        <div class="amc-container py-16">
+            <w-card :shadow="false">
+                <div>
+                    <p class="body subtitle-md bold md:ml-5">
+                        Análisis de Mercado Comparativo (AMC)
+                    </p>
+                    <p class="caption primary-text md:ml-5">
+                        Aplicación de analisis de precios
+                    </p>
+                    <w-btn
+                        :disabled="true"
+                        :rounded="true"
+                        :dark="true"
+                        :small="true"
+                        color="primary"
+                        class="step-btn"
+                        >02 PASO</w-btn
+                    >
+                    <p class="body subtitle-md bold md:ml-5">
+                        Resultado Final
+                    </p>
+                    <div class="w-full md:px-5">
+                        <progress
+                            value="100"
+                            max="100"
+                            class="amc-progress"
+                        ></progress>
+                    </div>
+                </div>
+                <p class="body bold ml-3 md:ml-5 my-5">OFERTA</p>
+                <div class="amc-table-container">
+                    <table class="amc-table">
+                        <tr>
+                            <th>Dirección</th>
+                            <th>Precio</th>
+                            <th class="hidden-cell">M2</th>
+                            <th class="hidden-cell">S/m2</th>
+                        </tr>
+                        <tr>
+                            <td>Miraflores</td>
+                            <td>10000000</td>
+                            <td class="hidden-cell">200</td>
+                            <td class="hidden-cell">481</td>
+                        </tr>
+                    </table>
+                </div>
+                <p class="body bold ml-3 md:ml-5 my-5">VENDIDOS</p>
+                <div class="amc-table-container">
+                    <table class="amc-table">
+                        <tr>
+                            <th>Dirección</th>
+                            <th>Precio</th>
+                            <th class="hidden-cell">M2</th>
+                            <th class="hidden-cell">S/m2</th>
+                        </tr>
+                        <tr>
+                            <td>Miraflores</td>
+                            <td>15000000</td>
+                            <td class="hidden-cell">350</td>
+                            <td class="hidden-cell">481</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="amc-table-container mt-5">
+                    <table class="amc-table">
+                        <tr>
+                            <th></th>
+                            <th>Máximo</th>
+                            <th>Mínimo</th>
+                            <th class="hidden-cell">Promedio</th>
+                            <th class="hidden-cell">Desviación Estandar</th>
+                        </tr>
+                        <tr>
+                            <td>OFERTAS</td>
+                            <td>Miraflores</td>
+                            <td>105045614</td>
+                            <td class="hidden-cell">201</td>
+                            <td class="hidden-cell">480</td>
+                        </tr>
+                        <tr>
+                            <td>VENDIDOS</td>
+                            <td>Miraflores</td>
+                            <td>852568840</td>
+                            <td class="hidden-cell">2010</td>
+                            <td class="hidden-cell">470</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="w-full md:px-5 my-10">
+                    <div class="primary alert">
+                        <div
+                            class="flex flex-row justify-center md:justify-between flex-wrap"
+                        >
+                            <div class="w-full md:w-auto">
+                                <p
+                                    class="body bold white-text text-center md:text-left"
+                                >
+                                    PRECIO SUGERIDO:
+                                    <span class="hidden md:block">S/100</span>
+                                </p>
+                            </div>
+                            <div class="w-full md:w-auto">
+                                <p
+                                    class="body bold white-text text-center md:text-right"
+                                >
+                                    M2:1245
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:px-5 mt-10 mb-5">
+                    <form>
+                        <w-textarea
+                            label="OBSERVACIONES"
+                            placeholder=" "
+                            v-model="form.observaciones"
+                        ></w-textarea>
+                    </form>
+                </div>
+                <div class="flex flex-row justify-center">
+                    <div class="w-full md:w-1/2">
+                        <div class="flex flex-row justify-between flex-wrap">
+                            <div class="w-full md:w-1/2 px-2">
+                                <w-btn
+                                    :fullwidth="true"
+                                    :large="true"
+                                    :dark="true"
+                                    color="secondary"
+                                    >DESCARGAR PDF</w-btn
+                                >
+                            </div>
+                            <div class="w-full md:w-1/2 px-2">
+                                <w-btn
+                                    :fullwidth="true"
+                                    :large="true"
+                                    :dark="true"
+                                    color="primary"
+                                    >GUARDAR ANÁLISiS</w-btn
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </w-card>
         </div>
-
-        <div id="table">
-          <!-- ofertas  -->
-          <div id="group">
-            <h1 class="body bold">OFERTA</h1>
-
-            <div class="lg:flex">
-              <div id="t1" class="lg:w-1/2">
-                <div
-                  class="flex body bg-gray-300 flex justify-between justify-around p-5 rounded-t-lg lg:rounded-r-none"
-                >
-                  <p>Dirección</p>
-                  <p>Precio</p>
-                </div>
-                <div
-                  class="flex body bg-gray-200 flex justify-between justify-around p-5 rounded-b-lg lg:rounded-r-none"
-                >
-                  <p>{{ofertas.direccion}}</p>
-                  <p>{{ofertas.precio}}</p>
-                </div>
-              </div>
-              <div class="lg:hidden bg-white p-2"></div>
-              <div id="t2" class="lg:w-1/2">
-                <div
-                  class="flex body bg-gray-300 flex justify-between justify-around p-5 rounded-t-lg lg:rounded-l-none"
-                >
-                  <p>M2</p>
-                  <p>S/m2</p>
-                </div>
-                <div
-                  class="flex body bg-gray-200 flex justify-between justify-around p-5 rounded-b-lg lg:rounded-l-none"
-                >
-                  <p>{{ofertas.m2}}</p>
-                  <p>{{ofertas.pm2}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- vendidos  -->
-          <div id="group">
-            <h1 class="body bold UPPERCASE">VENDIDOS</h1>
-
-            <div class="lg:flex">
-              <div id="t1" class="lg:w-1/2">
-                <div
-                  class="flex body bg-gray-300 flex justify-between justify-around p-5 rounded-t-lg lg:rounded-r-none"
-                >
-                  <p>Dirección</p>
-                  <p>Precio</p>
-                </div>
-                <div
-                  class="flex body bg-gray-200 flex justify-between justify-around p-5 rounded-b-lg lg:rounded-r-none"
-                >
-                  <p>{{vendidos.direccion}}</p>
-                  <p>{{vendidos.precio}}</p>
-                </div>
-              </div>
-              <div class="lg:hidden bg-white p-2"></div>
-              <div id="t2" class="lg:w-1/2">
-                <div
-                  class="flex body bg-gray-300 flex justify-between justify-around p-5 rounded-t-lg lg:rounded-l-none"
-                >
-                  <p>M2</p>
-                  <p>S/m2</p>
-                </div>
-                <div
-                  class="flex body bg-gray-200 flex justify-between justify-around p-5 rounded-b-lg lg:rounded-l-none"
-                >
-                  <p>{{vendidos.m2}}</p>
-                  <p>{{vendidos.pm2}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Max y Minimo  -->
-          <div id="group" class="pt-10">
-            <div class="lg:flex">
-              <div id="t1" class="lg:w-1/2">
-                <div
-                  class="flex body bg-gray-300 flex justify-between justify-around p-5 rounded-t-lg lg:rounded-r-none"
-                >
-                  <p class="lg:w-2/12"></p>
-                  <p class="hidden lg:block">Máximo</p>
-                  <p>Mínimo</p>
-                </div>
-                <div
-                  class="flex body bg-gray-200 flex justify-between justify-around p-5 lg:rounded-r-none"
-                >
-                  <p>OFERTAS</p>
-                  <p class="hidden lg:block">{{ofertas.direccion}}</p>
-                  <p>{{ofertas.precio}}</p>
-                </div>
-                <div
-                  class="flex body bg-gray-200 flex justify-between justify-around p-5 rounded-b-lg lg:rounded-r-none"
-                >
-                  <p>VENDIDOS</p>
-                  <p class="hidden lg:block">{{vendidos.direccion}}</p>
-                  <p>{{vendidos.precio}}</p>
-                </div>
-              </div>
-              <div class="lg:hidden bg-white p-2"></div>
-              <div id="t2" class="lg:w-1/2">
-                <div
-                  class="flex body bg-gray-300 justify-between lg:justify-around p-5 rounded-t-lg lg:rounded-l-none"
-                >
-                  <p>Promedio</p>
-                  <p>Desviación Estandar</p>
-                </div>
-                <div
-                  class="flex body bg-gray-200 justify-between lg:justify-around p-5 lg:rounded-l-none"
-                >
-                  <p>{{ofertas.m2}}</p>
-                  <p>{{ofertas.pm2}}</p>
-                </div>
-                <div
-                  class="body bg-gray-200 flex justify-between lg:justify-around p-5 rounded-b-lg lg:rounded-l-none"
-                >
-                  <p>{{vendidos.m2}}</p>
-                  <p>{{vendidos.pm2}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="text-center primary white-text body bold lg:flex justify-between rounded-lg p-5 lg:p-10 mt-10"
-          >
-            <p>PRECIO SUGERIDO: S/100</p>
-            <p>M2:1245</p>
-          </div>
-
-          <div class="mt-5">
-            <h1 class="caption">OBSERVACIONES</h1>
-            <textarea class="bg-gray-300 rounded-lg w-full mt-5" name id rows="10"></textarea>
-          </div>
-        </div>
-
-        <div class="lg:flex justify-around mt-10">
-          <w-btn
-            class="bold w-full lg:w-1/3"
-            :large="true"
-            :dark="true"
-            color="secondary"
-          >DESCARGAR PDF</w-btn>
-          <w-btn
-            class="bold w-full lg:w-1/3"
-            :large="true"
-            :dark="true"
-            color="primary"
-          >GUARDAR ANÁLISiS</w-btn>
-        </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
-import FiltroInmueble from "./inmuebles/FiltroInmueble";
-
 export default {
-  data: () => ({
-    filtrar: false,
-    ofertas: {
-      direccion: "Miraflores",
-      precio: 100000,
-      m2: 200,
-      pm2: 480
-    },
-    vendidos: {
-      direccion: "Miraflores",
-      precio: 150000,
-      m2: 350,
-      pm2: 481
-    }
-  })
+    data: () => ({
+        form: {},
+    }),
 };
 </script>
+
+<style lang="scss">
+.amc-4 {
+    .amc-container {
+        max-width: 90%;
+        margin: auto;
+
+        .step-btn {
+            padding: 5px 25px;
+            margin: 20px 18px;
+        }
+
+        .amc-progress {
+            width: inherit;
+            margin: 20px 0px;
+            &[value] {
+                &::-webkit-progress-bar {
+                    background-color: #aaaaaa;
+                    border-radius: 15px;
+                }
+                &::-webkit-progress-value {
+                    background-color: #ff7500;
+                    border-radius: 15px;
+                }
+            }
+        }
+        .amc-table-container {
+            padding: 0px 20px;
+            table {
+                &.amc-table {
+                    background-color: rgba($color: #aaaaaa, $alpha: 0.18);
+                    overflow: hidden;
+                    width: 100%;
+                    border-radius: 32px;
+                    th,
+                    td {
+                        text-align: left;
+                        padding: 32px 64px;
+                    }
+                    th {
+                        background-color: rgba($color: #aaaaaa, $alpha: 0.18);
+                        &:first-child {
+                            border-bottom-left-radius: 32px;
+                        }
+
+                        &:last-child {
+                            border-bottom-right-radius: 32px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .alert {
+            border-radius: 31px;
+            padding: 34px 75px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .amc-4 {
+        .amc-container {
+            width: 95%;
+            .step-btn {
+                padding: 5px 25px;
+                margin: 20px 0px !important;
+            }
+
+            .amc-table-container {
+                padding: 0px !important;
+                table {
+                    &.amc-table {
+                        th,
+                        td {
+                            padding: 16px 32px !important;
+                        }
+                        .hidden-cell {
+                            display: none;
+                        }
+                        th {
+                            &:first-child {
+                                border-bottom-left-radius: 32px;
+                            }
+                            &:not(.hidden-cell) {
+                                &:not(:first-child) {
+                                    border-bottom-right-radius: 32px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .alert {
+                border-radius: 31px;
+                padding: 14px 45px;
+            }
+        }
+    }
+}
+</style>

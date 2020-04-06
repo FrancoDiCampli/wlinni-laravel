@@ -1,15 +1,26 @@
 <template>
+    <!-- 
+
+        listado-de-publicacion (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/2deb2d30-7c24-47ac-abd0-9ccb7e8b36a0/listado-de-publicacion)    
+        listado-de-publicacion-1 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/78933429-40cb-4660-9cd7-d39369f157a6/listado-de-publicacion-1)
+        listado-de-publicacion-2 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/9c805ad2-bc8b-473c-8bc7-760f59becdeb/listado-de-publicacion-2)
+        listado-de-publicacion-3 (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/5c65027e-2c50-473b-90a2-9703b73fb9be/listado-de-publicacion-3)
+        MB-listado-de-publicacion (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/82301175-3fef-44c3-8991-844d69c18bf7/MB-listado-de-publicacion)
+        
+
+    -->
+
     <div>
         <div class="publicaciones-container">
-            <div class="flex flex-row justify-around gap-8">
+            <div class="flex flex-row justify-around">
                 <div class="w-3/12 hidden lg:block">
                     <div>
                         <w-card :shadow="false">
-                            <template slot="header"
-                                ><p class="caption bold white-text">
+                            <template slot="header">
+                                <p class="caption bold white-text">
                                     ORDENAR POR
-                                </p></template
-                            >
+                                </p>
+                            </template>
 
                             <FiltroPublicacion></FiltroPublicacion>
 
@@ -19,9 +30,8 @@
                                 :fullwidth="true"
                                 color="secondary"
                                 @click="$router.push('publicaciones/nueva')"
+                                >nueva publicación</w-btn
                             >
-                                nueva publicación
-                            </w-btn>
                         </w-card>
                     </div>
                 </div>
@@ -77,7 +87,7 @@
                                                 <div
                                                     v-if="
                                                         card.state ==
-                                                            'Publicado'
+                                                        'Publicado'
                                                     "
                                                     class="dot success"
                                                 ></div>
@@ -129,7 +139,7 @@
                                                 :options="[
                                                     'porque si',
                                                     'se me ocurrio',
-                                                    'asi nomas'
+                                                    'asi nomas',
                                                 ]"
                                                 v-model="card.form.motivo"
                                                 :dark="true"
@@ -209,7 +219,7 @@ export default {
                     title: "850 Pennsylvania",
                     body:
                         "Philiadelphia, Cherry Hill, DC205500 Modificación: 2020/09/05",
-                    form: {}
+                    form: {},
                 },
                 {
                     showForm: false,
@@ -219,7 +229,7 @@ export default {
                     body:
                         "Philiadelphia, Cherry Hill, DC205500 Modificación: 2020/09/05",
 
-                    form: {}
+                    form: {},
                 },
                 {
                     showForm: false,
@@ -228,7 +238,7 @@ export default {
                     title: "850 Pennsylvania",
                     body:
                         "Philiadelphia, Cherry Hill, DC205500 Modificación: 2020/09/05",
-                    form: {}
+                    form: {},
                 },
                 {
                     showForm: false,
@@ -238,7 +248,7 @@ export default {
                     body:
                         "Philiadelphia, Cherry Hill, DC205500 Modificación: 2020/09/05",
                     boton: "cerrar publicación",
-                    form: {}
+                    form: {},
                 },
                 {
                     showForm: false,
@@ -248,7 +258,7 @@ export default {
                     body:
                         "Philiadelphia, Cherry Hill, DC205500 Modificación: 2020/09/05",
                     boton: "cerrar publicación",
-                    form: {}
+                    form: {},
                 },
                 {
                     showForm: false,
@@ -258,7 +268,7 @@ export default {
                     body:
                         "Philiadelphia, Cherry Hill, DC205500 Modificación: 2020/09/05",
                     boton: "cerrar publicación",
-                    form: {}
+                    form: {},
                 },
                 {
                     showForm: false,
@@ -268,7 +278,7 @@ export default {
                     body:
                         "Philiadelphia, Cherry Hill, DC205500 Modificación: 2020/09/05",
                     boton: "cerrar publicación",
-                    form: {}
+                    form: {},
                 },
                 {
                     showForm: false,
@@ -278,7 +288,7 @@ export default {
                     body:
                         "Philiadelphia, Cherry Hill, DC205500 Modificación: 2020/09/05",
                     boton: "cerrar publicación",
-                    form: {}
+                    form: {},
                 },
                 {
                     showForm: false,
@@ -288,15 +298,15 @@ export default {
                     body:
                         "Philiadelphia, Cherry Hill, DC205500 Modificación: 2020/09/05",
                     boton: "cerrar publicación",
-                    form: {}
-                }
-            ]
+                    form: {},
+                },
+            ],
         };
     },
 
     components: {
-        FiltroPublicacion
-    }
+        FiltroPublicacion,
+    },
 };
 </script>
 

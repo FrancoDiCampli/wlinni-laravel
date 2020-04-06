@@ -18,34 +18,20 @@
                         <div class="flex flex-row justify-end">
                             <div class="custom-items-margin">
                                 <w-nav-btn :disabled="true">
-                                    <w-icon
-                                        icon="phone-brown"
-                                        h="17px"
-                                    ></w-icon>
-                                    <p class="caption bold white-text">
-                                        +51 994641341
-                                    </p>
+                                    <w-icon icon="phone-brown" h="17px"></w-icon>
+                                    <p class="caption bold white-text">+51 994641341</p>
                                 </w-nav-btn>
                             </div>
                             <div class="custom-items-margin">
-                                <w-nav-btn
-                                    icon="facebook-white"
-                                    iconH="16px"
-                                ></w-nav-btn>
-                                <w-nav-btn
-                                    icon="instagram-white"
-                                    iconH="16px"
-                                ></w-nav-btn>
-                                <w-nav-btn
-                                    icon="twitter-white"
-                                    iconH="15px"
-                                ></w-nav-btn>
-                                <w-nav-btn
-                                    icon="youtube-white"
-                                    iconH="13px"
-                                ></w-nav-btn>
+                                <w-nav-btn icon="facebook-white" iconH="16px"></w-nav-btn>
+                                <w-nav-btn icon="instagram-white" iconH="16px"></w-nav-btn>
+                                <w-nav-btn icon="twitter-white" iconH="15px"></w-nav-btn>
+                                <w-nav-btn icon="youtube-white" iconH="13px"></w-nav-btn>
                             </div>
-                            <div>
+                            <div v-if="logged">
+                                <UserLogged></UserLogged>
+                            </div>
+                            <div v-else>
                                 <w-nav-btn
                                     @click="$router.push('/login', () => {})"
                                     :icon="
@@ -72,11 +58,7 @@
             <w-bottom-bar class="desktop-bar">
                 <div class="flex flex-row justify-between">
                     <div class="flex-1">
-                        <w-nav-btn
-                            :icon="logo"
-                            iconH="56px"
-                            @click="$router.push('/', () => {})"
-                        ></w-nav-btn>
+                        <w-nav-btn :icon="logo" iconH="56px" @click="$router.push('/', () => {})"></w-nav-btn>
                     </div>
                     <div class="flex-1">
                         <div class="flex flex-row justify-end">
@@ -88,9 +70,7 @@
                                             ? 'active'
                                             : ''
                                     "
-                                >
-                                    {{ route.name }}
-                                </w-nav-btn>
+                                >{{ route.name }}</w-nav-btn>
                             </div>
                         </div>
                     </div>
@@ -99,42 +79,45 @@
 
             <w-bottom-bar class="mobile-bar">
                 <div class="flex flex-row justify-between">
-                    <div class="flex-1">
-                        <w-nav-btn
-                            :icon="logo"
-                            iconH="56px"
-                            @click="$router.push('/', () => {})"
-                        ></w-nav-btn>
+                    <div class="flex-auto">
+                        <w-nav-btn :icon="logo" iconH="56px" @click="$router.push('/', () => {})"></w-nav-btn>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-auto">
                         <div class="flex flex-row justify-end">
-                            <w-nav-btn
-                                @click="$router.push('/login', () => {})"
-                                :icon="
+                            <div v-if="logged" class="mt-3">
+                                <UserLogged :barIcon="barBtn">
+                                    <template name="bars">asdf</template>
+                                </UserLogged>
+                            </div>
+                            <div v-else>
+                                <w-nav-btn
+                                    @click="$router.push('/login', () => {})"
+                                    :icon="
                                     currentPath == '/login'
                                         ? 'user-white'
                                         : 'user-brown'
                                 "
-                                iconH="30px"
-                            ></w-nav-btn>
-                            <w-nav-btn
-                                @click="$router.push('/register', () => {})"
-                                :icon="
+                                    iconH="30px"
+                                ></w-nav-btn>
+                                <w-nav-btn
+                                    @click="$router.push('/register', () => {})"
+                                    :icon="
                                     currentPath == '/register'
                                         ? 'edit-circle-white'
                                         : 'edit-circle-brown'
                                 "
-                                iconH="30px"
-                            ></w-nav-btn>
-                            <w-nav-btn
-                                icon="bars-black"
-                                iconH="30px"
-                            ></w-nav-btn>
+                                    iconH="30px"
+                                ></w-nav-btn>
+                                <w-nav-btn :icon="barBtn" iconH="30px" @click="drawer = true"></w-nav-btn>
+                            </div>
                         </div>
                     </div>
                 </div>
             </w-bottom-bar>
         </w-navbar>
+
+        <!-- SIDENAV -->
+        <Drawer v-model="drawer"></Drawer>
 
         <!-- PAGES -->
         <router-view></router-view>
@@ -147,47 +130,28 @@
                 <w-icon icon="wlinii-black" h="82px"></w-icon>
             </div>
             <br />
-            <div
-                class="w-full flex flex-row justify-center flex-wrap mobile-footer-content"
-            >
+            <div class="w-full flex flex-row justify-center flex-wrap mobile-footer-content">
                 <div v-for="(route, i) in routes" :key="i">
-                    <w-btn
-                        @click="$router.push(route.path, () => {})"
-                        color="white"
-                    >
+                    <w-btn @click="$router.push(route.path, () => {})" color="white">
                         <p class="caption bold">{{ route.name }}</p>
                     </w-btn>
                 </div>
             </div>
             <br />
-            <div
-                class="w-full flex flex-row justify-center items-center flex-wrap"
-            >
+            <div class="w-full flex flex-row justify-center items-center flex-wrap">
                 <div class="custom-item-margin fix-footer-btn">
                     <w-btn color="white" :disabled="true">
                         <div class="flex">
-                            <w-icon
-                                icon="phone-black"
-                                h="15px"
-                                class="custom-icon-margin"
-                            ></w-icon>
-                            <p class="caption bold">
-                                +51 994641341
-                            </p>
+                            <w-icon icon="phone-black" h="15px" class="custom-icon-margin"></w-icon>
+                            <p class="caption bold">+51 994641341</p>
                         </div>
                     </w-btn>
                 </div>
                 <div class="custom-item-margin fix-footer-btn">
                     <w-btn color="white" :disabled="true">
                         <div class="flex">
-                            <w-icon
-                                icon="address"
-                                h="15px"
-                                class="custom-icon-margin"
-                            ></w-icon>
-                            <p class="caption bold">
-                                Av. Javier Prado 1278 - San Isidro
-                            </p>
+                            <w-icon icon="address" h="15px" class="custom-icon-margin"></w-icon>
+                            <p class="caption bold">Av. Javier Prado 1278 - San Isidro</p>
                         </div>
                     </w-btn>
                 </div>
@@ -207,16 +171,19 @@
                 </div>
             </div>
             <br />
-            <div class="wlinii-copyright">
-                © Wlinii 2020 - Todos Los Derechos Reservados.
-            </div>
+            <div class="wlinii-copyright">© Wlinii 2020 - Todos Los Derechos Reservados.</div>
         </div>
     </div>
 </template>
 
 <script>
+import UserLogged from "./UserLogged";
+import Drawer from "./Drawer";
+
 export default {
     data: () => ({
+        logged: JSON.parse(localStorage.getItem("logged")),
+        drawer: false,
         routes: [
             { name: "precios", path: "/precios" },
             { name: "alquiler", path: "/alquiler" },
@@ -227,6 +194,11 @@ export default {
         currentPath: "/",
         scroll: false
     }),
+
+    components: {
+        UserLogged,
+        Drawer
+    },
 
     mounted() {
         this.currentPath = this.$router.currentRoute.path;
@@ -244,6 +216,14 @@ export default {
                 return this.scroll ? "wlinii-black" : "wlinii-white";
             } else {
                 return "wlinii-black";
+            }
+        },
+
+        barBtn() {
+            if (this.currentPath == "/") {
+                return this.scroll ? "bars-black" : "bars-white";
+            } else {
+                return "bars-black";
             }
         }
     },

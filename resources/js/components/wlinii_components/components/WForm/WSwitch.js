@@ -23,7 +23,6 @@ Vue.component("w-switch", {
                 @input="$emit('input', $event.target.checked)"
                 type="checkbox" 
                 :id="randomId" 
-                type="checkbox"
                 :disabled="disabled"
                 :class="'checkbox-'+color"
             >
