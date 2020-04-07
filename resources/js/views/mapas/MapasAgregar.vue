@@ -10,7 +10,7 @@
                     ></gmap-autocomplete>
                     <div class>
                         <w-btn @click="addMarker" :icon="true">
-                            <w-icon icon="address" h="32px"></w-icon>
+                            <w-icon icon="address-secondary" h="32px"></w-icon>
                         </w-btn>
                     </div>
                 </div>
@@ -37,7 +37,8 @@ export default {
     data: () => ({
         marker: {},
         mapOptions: {
-            mapTypeControl: false
+            mapTypeControl: false,
+            streetViewControl: false
         },
         places: [],
         currentPlace: null,

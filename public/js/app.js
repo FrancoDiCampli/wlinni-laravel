@@ -7907,14 +7907,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     markers: Array,
@@ -7923,7 +7915,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       mapOptions: {
-        mapTypeControl: false
+        mapTypeControl: false,
+        streetViewControl: false
       },
       // iconos de los marcadores
       markerOptions: {
@@ -8014,7 +8007,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       marker: {},
       mapOptions: {
-        mapTypeControl: false
+        mapTypeControl: false,
+        streetViewControl: false
       },
       places: [],
       currentPlace: null,
@@ -8690,6 +8684,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -8735,20 +8767,17 @@ __webpack_require__.r(__webpack_exports__);
         number: 2
       }],
       fotos: [{
-        imagen: "images/departamentos/14.jpg",
+        imagen: "/images/departamentos/10.jpg",
         descripcion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, reprehenderit architecto ipsum dicta corporis iure? Voluptatibus, delectus repudiandae. Officia modi aliquam aut ducimus, atque porro eos tempora vero veniam ad?"
       }, {
-        imagen: "images/departamentos/15.jpg",
+        imagen: "/images/departamentos/11.jpg",
         descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem exercitationem, fuga ut eos optio minima? Eum dolorum sunt necessitatibus voluptate. Doloribus voluptatem nobis reprehenderit incidunt iste magni repellat libero nulla!"
       }, {
-        imagen: "images/departamentos/16.jpg",
+        imagen: "/images/departamentos/12.jpg",
         descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores harum blanditiis at similique autem aut fugit modi eum laboriosam! Exercitationem blanditiis, nulla quae dicta debitis eveniet quaerat veritatis! Ex, et?"
       }, {
-        imagen: "images/departamentos/17.jpg",
+        imagen: "/images/departamentos/13.jpg",
         descripcion: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veritatis beatae qui error architecto repellendus, fugit veniam doloribus quidem iste in consectetur omnis fuga dicta molestias suscipit modi dolor aspernatur!"
-      }, {
-        imagen: "images/departamentos/18.jpg",
-        descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit rem quod nihil ipsum. Odit necessitatibus molestias illo, quibusdam a alias aliquid quasi quas. Vero molestias asperiores a reprehenderit. Accusamus, quos!"
       }]
     };
   },
@@ -8852,98 +8881,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mapas_MapasAgregar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mapas/MapasAgregar */ "./resources/js/views/mapas/MapasAgregar.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -36948,21 +36885,13 @@ var render = function() {
                     _c("p", { staticClass: "bold" }, [_vm._v("Desde")]),
                     _vm._v(" "),
                     _c("h1", { staticClass: "body tertiary-text bold" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.card.precio) +
-                          "\n                    "
-                      )
+                      _vm._v(_vm._s(_vm.card.precio))
                     ]),
                     _vm._v(" "),
                     _c("p", {}, [_vm._v(_vm._s(_vm.card.dir))]),
                     _vm._v(" "),
                     _c("p", { staticClass: "bold" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.card.description) +
-                          "\n                    "
-                      )
+                      _vm._v(_vm._s(_vm.card.description))
                     ]),
                     _vm._v(" "),
                     _c(
@@ -37038,7 +36967,11 @@ var render = function() {
                   _c(
                     "w-btn",
                     { attrs: { icon: true }, on: { click: _vm.addMarker } },
-                    [_c("w-icon", { attrs: { icon: "address", h: "32px" } })],
+                    [
+                      _c("w-icon", {
+                        attrs: { icon: "address-secondary", h: "32px" }
+                      })
+                    ],
                     1
                   )
                 ],
@@ -37711,14 +37644,14 @@ var render = function() {
   return _c("div", { staticClass: "bg-gray-300" }, [
     _c(
       "div",
-      { staticClass: "p-2 m-4 lg:m-12" },
+      { staticClass: "p-2 m-4 lg:m-8" },
       [
         _c("w-card", { attrs: { shadow: false } }, [
           _c(
             "div",
             {
               staticClass:
-                "flex-wrap lg:flex justify-start lg:justify-between items-center p-4 lg:p-16"
+                "flex-wrap lg:flex justify-start lg:justify-between items-center px-4 lg:px-16"
             },
             [
               _c(
@@ -37741,18 +37674,15 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("h1", { staticClass: "caption" }, [
-                  _vm._v(
-                    "\n                        Av. Montreal 2178 - Lima / MIralfores\n                    "
-                  )
+                  _vm._v("Av. Montreal 2178 - Lima / MIralfores")
                 ])
               ])
             ]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "flex-wrap" }, [
+          _c("div", { staticClass: "lg:hidden" }, [
             _c(
               "div",
-              { staticClass: "lg:order-1" },
               [
                 _c(
                   "w-carousel",
@@ -37773,11 +37703,7 @@ var render = function() {
                                 staticClass:
                                   "w-20 caption bold secondary justify-center white-text px-4 py-2"
                               },
-                              [
-                                _vm._v(
-                                  "\n                                        Alquiler\n                                    "
-                                )
-                              ]
+                              [_vm._v("Alquiler")]
                             )
                           ]),
                           _vm._v(" "),
@@ -37788,13 +37714,7 @@ var render = function() {
                                 staticClass:
                                   "hidden w-64 lg:flex w-20 caption bold primary justify-center white-text px-8 py-4 justify-end opacity-75"
                               },
-                              [
-                                _vm._v(
-                                  "\n                                        " +
-                                    _vm._s(item.descripcion) +
-                                    "\n                                    "
-                                )
-                              ]
+                              [_vm._v(_vm._s(item.descripcion))]
                             )
                           ])
                         ]
@@ -37813,26 +37733,19 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              {
-                staticClass:
-                  "flex-wrap lg:flex justify-between items-center p-4 lg:p-16"
-              },
+              { staticClass: "flex-wrap justify-center items-center p-2" },
               [
                 _c("div", [
                   _c(
                     "h1",
                     { staticClass: "subtitle text-center bold tertiary-text" },
-                    [
-                      _vm._v(
-                        "\n                            S/ 2,399,900\n                        "
-                      )
-                    ]
+                    [_vm._v("S/ 2,399,900")]
                   )
                 ]),
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "block lg:flex justify-around" },
+                  { staticClass: "block" },
                   [
                     _c(
                       "w-btn",
@@ -37903,6 +37816,142 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
+          _c("div", { staticClass: "hidden lg:block" }, [
+            _c(
+              "div",
+              { staticClass: "flex justify-between items-center p-4 px-16" },
+              [
+                _c("div", [
+                  _c(
+                    "h1",
+                    { staticClass: "subtitle text-center bold tertiary-text" },
+                    [_vm._v("S/ 2,399,900")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "flex" },
+                  [
+                    _c(
+                      "w-btn",
+                      {
+                        staticClass:
+                          "flex justify-center caption bold white-text",
+                        attrs: {
+                          large: "",
+                          fullwidth: _vm.windowWidth <= 734 ? true : false,
+                          color: "success"
+                        }
+                      },
+                      [
+                        _c("w-icon", {
+                          staticClass: "pr-4",
+                          attrs: { icon: "twitter-white", h: "16px" }
+                        }),
+                        _vm._v("WHATSAPP\n                        ")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "w-btn",
+                      {
+                        staticClass: "flex justify-center caption bold",
+                        attrs: {
+                          outlined: "",
+                          large: "",
+                          fullwidth: _vm.windowWidth <= 734 ? true : false,
+                          color: "black"
+                        }
+                      },
+                      [
+                        _c("w-icon", {
+                          staticClass: "pr-4",
+                          attrs: { icon: "twitter-black", h: "16px" }
+                        }),
+                        _vm._v("FICHA TÉCNICA\n                        ")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "w-btn",
+                      {
+                        staticClass: "flex justify-center caption bold",
+                        attrs: {
+                          outlined: "",
+                          large: "",
+                          fullwidth: _vm.windowWidth <= 734 ? true : false,
+                          color: "black"
+                        }
+                      },
+                      [
+                        _c("w-icon", {
+                          staticClass: "pr-4",
+                          attrs: { icon: "twitter-black", h: "16px" }
+                        }),
+                        _vm._v("CONSULTAR\n                        ")
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              [
+                _c(
+                  "w-carousel",
+                  { attrs: { items: 1, pagination: true } },
+                  _vm._l(_vm.fotos, function(item) {
+                    return _c("slide", { key: item.i }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex grid-cols-2 justify-between absolute"
+                        },
+                        [
+                          _c("div", [
+                            _c(
+                              "h1",
+                              {
+                                staticClass:
+                                  "w-20 caption bold secondary justify-center white-text px-4 py-2"
+                              },
+                              [_vm._v("Alquiler")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c(
+                              "h1",
+                              {
+                                staticClass:
+                                  "hidden w-64 lg:flex w-20 caption bold primary justify-center white-text px-8 py-4 justify-end opacity-75"
+                              },
+                              [_vm._v(_vm._s(item.descripcion))]
+                            )
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("img", { attrs: { src: item.imagen, alt: "" } })
+                      ])
+                    ])
+                  }),
+                  1
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
           _c(
             "div",
             {
@@ -37932,98 +37981,146 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "p-2 m-4 lg:m-12" },
+      { staticClass: "p-2 m-4 lg:m-8" },
       [
-        _c(
-          "w-card",
-          { attrs: { shadow: false } },
-          [
-            _c(
-              "w-carousel",
-              {
-                attrs: {
-                  items: _vm.windowWidth <= 734 ? 1 : 5,
-                  pagination: true
-                }
-              },
-              _vm._l(_vm.cards, function(item) {
-                return _c("slide", { key: item.i }, [
-                  _c("div", { staticClass: "primary rounded-lg m-2" }, [
-                    _c("div", { staticClass: "flex-wrap justify-center p-8" }, [
-                      _c(
-                        "div",
-                        { staticClass: "flex justify-center my-4" },
-                        [
-                          _c("w-icon", {
-                            attrs: { icon: item.icon, h: "90px" }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "flex justify-center border-yellow-700 border-b-2 p-2"
-                        },
-                        [
-                          _c(
-                            "h1",
-                            {
-                              staticClass:
-                                "caption white-text bold tracking-widest"
-                            },
-                            [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(item.name) +
-                                  "\n                                "
-                              )
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "flex justify-center border-yellow-700 border-t-2 p-2"
-                        },
-                        [
-                          _c(
-                            "h1",
-                            {
-                              staticClass:
-                                "body white-text bold tracking-widest"
-                            },
-                            [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(item.number) +
-                                  "\n                                "
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ])
+        _c("w-card", { attrs: { shadow: false } }, [
+          _c(
+            "div",
+            { staticClass: "lg:hidden" },
+            [
+              _c(
+                "w-carousel",
+                { attrs: { items: 1, pagination: true } },
+                _vm._l(_vm.cards, function(item) {
+                  return _c("slide", { key: item.i }, [
+                    _c(
+                      "div",
+                      { staticClass: "primary w-auto rounded-lg m-2" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "flex-wrap justify-center p-8" },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "flex justify-center my-4" },
+                              [
+                                _c("w-icon", {
+                                  attrs: { icon: item.icon, h: "70px" }
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex justify-center border-yellow-700 border-b-2 p-2"
+                              },
+                              [
+                                _c(
+                                  "h1",
+                                  {
+                                    staticClass:
+                                      "caption white-text bold tracking-widest"
+                                  },
+                                  [_vm._v(_vm._s(item.name))]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "flex justify-center border-yellow-700 border-t-2 p-2"
+                              },
+                              [
+                                _c(
+                                  "h1",
+                                  {
+                                    staticClass:
+                                      "body white-text bold tracking-widest"
+                                  },
+                                  [_vm._v(_vm._s(item.number))]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                }),
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "hidden lg:flex justify-center" },
+            _vm._l(_vm.cards, function(item) {
+              return _c("div", { key: item.i, attrs: { c: "" } }, [
+                _c("div", { staticClass: "primary w-48 rounded-lg m-2" }, [
+                  _c("div", { staticClass: "flex-wrap justify-center p-8" }, [
+                    _c(
+                      "div",
+                      { staticClass: "flex justify-center my-4" },
+                      [_c("w-icon", { attrs: { icon: item.icon, h: "60px" } })],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "flex justify-center border-yellow-700 border-b-2 p-2"
+                      },
+                      [
+                        _c(
+                          "h1",
+                          {
+                            staticClass:
+                              "caption white-text bold tracking-widest"
+                          },
+                          [_vm._v(_vm._s(item.name))]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "flex justify-center border-yellow-700 border-t-2 p-2"
+                      },
+                      [
+                        _c(
+                          "h1",
+                          {
+                            staticClass: "body white-text bold tracking-widest"
+                          },
+                          [_vm._v(_vm._s(item.number))]
+                        )
+                      ]
+                    )
                   ])
                 ])
-              }),
-              1
-            )
-          ],
-          1
-        )
+              ])
+            }),
+            0
+          )
+        ])
       ],
       1
     ),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "p-2 m-4 lg:m-12" },
+      { staticClass: "p-2 m-4 lg:m-8" },
       [
         _c("w-card", { attrs: { shadow: false } }, [
           _c(
@@ -38036,11 +38133,7 @@ var render = function() {
                 _c(
                   "h1",
                   { staticClass: "body text-center lg:text-left bold py-4" },
-                  [
-                    _vm._v(
-                      "\n                        Descripción\n                    "
-                    )
-                  ]
+                  [_vm._v("Descripción")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -38058,11 +38151,7 @@ var render = function() {
                 _c(
                   "h1",
                   { staticClass: "body text-center lg:text-left bold py-4" },
-                  [
-                    _vm._v(
-                      "\n                        Características generales\n                    "
-                    )
-                  ]
+                  [_vm._v("Características generales")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -38108,7 +38197,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "p-2 m-4 lg:m-12" },
+      { staticClass: "p-2 m-4 lg:m-8" },
       [
         _c("w-card", { attrs: { shadow: false } }, [
           _c("div", { staticClass: "flex-wrap lg:flex lg:justify-around" }, [
@@ -38197,15 +38286,17 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "p-2 m-4 lg:m-12" },
+      { staticClass: "p-2 m-4 lg:m-8" },
       [
         _c(
           "w-card",
           { attrs: { shadow: false } },
           [
-            _c("h1", { staticClass: "body text-center lg:text-left bold" }, [
-              _vm._v("\n                Ubicación en mapa\n            ")
-            ]),
+            _c(
+              "h1",
+              { staticClass: "body text-center lg:text-left bold mb-4" },
+              [_vm._v("Ubicación en mapa")]
+            ),
             _vm._v(" "),
             _c("mapas", { attrs: { center: _vm.center, markers: _vm.markers } })
           ],
@@ -38217,7 +38308,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "p-2 m-4 lg:m-12" },
+      { staticClass: "p-2 m-4 lg:m-8" },
       [_c("w-card", { attrs: { shadow: false } }, [_c("perfil-agente")], 1)],
       1
     )
@@ -38350,9 +38441,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("p", { staticClass: "ml-5" }, [
-            _vm._v(
-              "\n                Agregar la información de la nueva publicación\n            "
-            )
+            _vm._v("Agregar la información de la nueva publicación")
           ]),
           _vm._v(" "),
           _c(
@@ -39864,9 +39953,11 @@ var render = function() {
               _c(
                 "div",
                 [
-                  _c("p", { staticClass: "body bold tertiary-text ml-5" }, [
-                    _vm._v("Locación")
-                  ]),
+                  _c(
+                    "p",
+                    { staticClass: "body bold tertiary-text ml-5 mb-4" },
+                    [_vm._v("Locación")]
+                  ),
                   _vm._v(" "),
                   _c("mapas-agregar", { attrs: { center: _vm.center } })
                 ],
@@ -39907,9 +39998,7 @@ var render = function() {
                                 }),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "text-center mt-5" }, [
-                                  _vm._v(
-                                    "\n                                        Arrastra fotos desde tu computadora\n                                    "
-                                  )
+                                  _vm._v("Arrastra fotos desde tu computadora")
                                 ]),
                                 _vm._v(" "),
                                 _c(
@@ -39959,9 +40048,7 @@ var render = function() {
                                 }),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "text-center mt-5" }, [
-                                  _vm._v(
-                                    "\n                                        Arrastra videos desde tu computadora\n                                    "
-                                  )
+                                  _vm._v("Arrastra videos desde tu computadora")
                                 ]),
                                 _vm._v(" "),
                                 _c(
@@ -60713,6 +60800,7 @@ module.exports = "/fonts/Roboto-Regular.ttf?11eabca2251325cfc5589c9c6fb57b46";
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./address-secondary.png": "./resources/js/components/wlinii_components/iconos/address-secondary.png",
 	"./address.png": "./resources/js/components/wlinii_components/iconos/address.png",
 	"./arrow-down.png": "./resources/js/components/wlinii_components/iconos/arrow-down.png",
 	"./arrow-left.png": "./resources/js/components/wlinii_components/iconos/arrow-left.png",
@@ -60797,6 +60885,17 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./resources/js/components/wlinii_components/iconos sync recursive ^\\.\\/.*\\.png$";
+
+/***/ }),
+
+/***/ "./resources/js/components/wlinii_components/iconos/address-secondary.png":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/wlinii_components/iconos/address-secondary.png ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/address-secondary.png?c182b2e197799ed42daebbfa0679d01a";
 
 /***/ }),
 

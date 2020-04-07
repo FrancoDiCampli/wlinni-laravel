@@ -10,9 +10,7 @@
         <div class="container_publicacion">
             <w-card :shadow="false">
                 <p class="subtitle bold mt-5 ml-5">Agregar Publicación</p>
-                <p class="ml-5">
-                    Agregar la información de la nueva publicación
-                </p>
+                <p class="ml-5">Agregar la información de la nueva publicación</p>
                 <form @submit.prevent>
                     <div class="form-section">
                         <div
@@ -99,9 +97,7 @@
                                 </div>
                             </div>
 
-                            <div
-                                class="w-full md:w-1/3 flex flex-row flex-wrap"
-                            >
+                            <div class="w-full md:w-1/3 flex flex-row flex-wrap">
                                 <div class="w-full md:w-1/2">
                                     <w-checkbox
                                         label="Mostrar dirección"
@@ -148,14 +144,8 @@
                                         v-model="form.precio"
                                     ></w-select>
                                 </div>
-                                <div
-                                    class="w-full md:w-1/3 self-center"
-                                    style="margin-top: -10px;"
-                                >
-                                    <w-checkbox
-                                        label="Consultar"
-                                        v-model="form.consultar"
-                                    ></w-checkbox>
+                                <div class="w-full md:w-1/3 self-center" style="margin-top: -10px;">
+                                    <w-checkbox label="Consultar" v-model="form.consultar"></w-checkbox>
                                 </div>
                             </div>
                         </div>
@@ -293,18 +283,10 @@
                         <div class="form-body" v-if="sections.servicios">
                             <div class="flex flex-row flex-wrap">
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Agua"
-                                        v-model="form.agua"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Agua" v-model="form.agua"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Luz"
-                                        v-model="form.luz"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Luz" v-model="form.luz"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -321,11 +303,7 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Cable"
-                                        v-model="form.cable"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Cable" v-model="form.cable"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -335,11 +313,7 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Guardia"
-                                        v-model="form.guardia"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Guardia" v-model="form.guardia"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -374,18 +348,10 @@
                         <div class="form-body" v-if="sections.ambientes">
                             <div class="flex flex-row flex-wrap">
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Agua"
-                                        v-model="form.agua"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Agua" v-model="form.agua"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Luz"
-                                        v-model="form.luz"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Luz" v-model="form.luz"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -402,11 +368,7 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Cable"
-                                        v-model="form.cable"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Cable" v-model="form.cable"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -416,11 +378,7 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Guardia"
-                                        v-model="form.guardia"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Guardia" v-model="form.guardia"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -437,18 +395,10 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Agua"
-                                        v-model="form.agua"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Agua" v-model="form.agua"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Luz"
-                                        v-model="form.luz"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Luz" v-model="form.luz"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -465,11 +415,7 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Cable"
-                                        v-model="form.cable"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Cable" v-model="form.cable"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -479,11 +425,7 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Guardia"
-                                        v-model="form.guardia"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Guardia" v-model="form.guardia"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -520,18 +462,10 @@
                         <div class="form-body" v-if="sections.areascomunes">
                             <div class="flex flex-row flex-wrap">
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Agua"
-                                        v-model="form.agua"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Agua" v-model="form.agua"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Luz"
-                                        v-model="form.luz"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Luz" v-model="form.luz"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -548,11 +482,7 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Cable"
-                                        v-model="form.cable"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Cable" v-model="form.cable"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -562,11 +492,7 @@
                                     ></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
-                                    <w-checkbox
-                                        class="ml-5"
-                                        label="Guardia"
-                                        v-model="form.guardia"
-                                    ></w-checkbox>
+                                    <w-checkbox class="ml-5" label="Guardia" v-model="form.guardia"></w-checkbox>
                                 </div>
                                 <div class="w-full md:w-1/3 self-center">
                                     <w-checkbox
@@ -624,37 +550,28 @@
                         </div>
                     </div>
                     <div>
-                        <p class="body bold tertiary-text ml-5">Locación</p>
+                        <p class="body bold tertiary-text ml-5 mb-4">Locación</p>
                         <mapas-agregar :center="center"></mapas-agregar>
                     </div>
                     <div class="mt-20">
                         <div class="f-header">
                             Fotos
-                            <span class="caption black-text"
-                                >(0 de 20 disponibles)</span
-                            >
+                            <span class="caption black-text">(0 de 20 disponibles)</span>
                         </div>
                         <div class="flex flex-row justify-center flex-wrap">
                             <div class="w-full md:w-1/2 px-2">
-                                <w-card
-                                    :shadow="false"
-                                    class="upload-file-card"
-                                >
+                                <w-card :shadow="false" class="upload-file-card">
                                     <div class="flex flex-col items-center">
-                                        <w-icon
-                                            icon="upload-image"
-                                            h="137px"
-                                        ></w-icon>
-                                        <p class="text-center mt-5">
-                                            Arrastra fotos desde tu computadora
-                                        </p>
+                                        <w-icon icon="upload-image" h="137px"></w-icon>
+                                        <p
+                                            class="text-center mt-5"
+                                        >Arrastra fotos desde tu computadora</p>
                                         <w-btn
                                             color="#57BCD1"
                                             :dark="true"
                                             :rounded="true"
                                             :small="true"
-                                            >seleccionar fotos</w-btn
-                                        >
+                                        >seleccionar fotos</w-btn>
                                         <p class="text-center mt-5">
                                             Formatos permitidos: JPG, JPEG, PNG
                                             (Tamaño máximo: 5Mb)
@@ -663,25 +580,18 @@
                                 </w-card>
                             </div>
                             <div class="w-full md:w-1/2 px-2">
-                                <w-card
-                                    :shadow="false"
-                                    class="upload-file-card"
-                                >
+                                <w-card :shadow="false" class="upload-file-card">
                                     <div class="flex flex-col items-center">
-                                        <w-icon
-                                            icon="upload-video"
-                                            h="137px"
-                                        ></w-icon>
-                                        <p class="text-center mt-5">
-                                            Arrastra videos desde tu computadora
-                                        </p>
+                                        <w-icon icon="upload-video" h="137px"></w-icon>
+                                        <p
+                                            class="text-center mt-5"
+                                        >Arrastra videos desde tu computadora</p>
                                         <w-btn
                                             color="#57BCD1"
                                             :dark="true"
                                             :rounded="true"
                                             :small="true"
-                                            >seleccionar videos</w-btn
-                                        >
+                                        >seleccionar videos</w-btn>
                                         <p class="text-center mt-5">
                                             Formatos permitidos: MP4, AVI,
                                             (Tamaño máximo: 50Mb)
@@ -701,9 +611,7 @@
                             </div>
                         </div>
                         <div class="flex flex-row justify-center">
-                            <w-btn :dark="true" :large="true"
-                                >GUARDAR AVISO</w-btn
-                            >
+                            <w-btn :dark="true" :large="true">GUARDAR AVISO</w-btn>
                         </div>
                     </div>
                 </form>
@@ -726,20 +634,20 @@ export default {
             servicios: true,
             ambientes: true,
             areascomunes: true,
-            video: true,
+            video: true
         },
-        form: {},
+        form: {}
     }),
 
     components: {
-        MapasAgregar,
+        MapasAgregar
     },
 
     mounted() {
         window.addEventListener("resize", () => {
             this.windowWidth = window.innerWidth;
         });
-    },
+    }
 };
 </script>
 

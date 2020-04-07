@@ -20,20 +20,12 @@
                 :opened="infoWinOpen"
                 @closeclick="infoWinOpen = false"
             >
-                <w-card
-                    :image="card.image"
-                    style="width: 250px;"
-                    :shadow="false"
-                >
+                <w-card :image="card.image" style="width: 250px;" :shadow="false">
                     <div class="caption">
                         <p class="bold">Desde</p>
-                        <h1 class="body tertiary-text bold">
-                            {{ card.precio }}
-                        </h1>
-                        <p class="">{{ card.dir }}</p>
-                        <p class="bold">
-                            {{ card.description }}
-                        </p>
+                        <h1 class="body tertiary-text bold">{{ card.precio }}</h1>
+                        <p class>{{ card.dir }}</p>
+                        <p class="bold">{{ card.description }}</p>
                         <div class="flex xxs justify-between mt-2">
                             <p>{{ card.entrega }}</p>
                             <p>{{ card.condicion }}</p>
@@ -51,40 +43,41 @@
 export default {
     props: {
         markers: Array,
-        center: Object,
+        center: Object
     },
     data: () => ({
         mapOptions: {
             mapTypeControl: false,
+            streetViewControl: false
         },
         // iconos de los marcadores
         markerOptions: {
             url: "/images/lock.png",
             size: { width: 20, height: 35, f: "px", b: "px" },
-            scaledSize: { width: 15, height: 25, f: "px", b: "px" },
+            scaledSize: { width: 15, height: 25, f: "px", b: "px" }
         },
 
         infoWindowPos: {
             lat: 0,
-            lng: 0,
+            lng: 0
         },
         infoWinOpen: false,
 
         infoOptions: {
             pixelOffset: {
                 width: 0,
-                height: -35,
-            },
+                height: -35
+            }
         },
-        card: {},
+        card: {}
     }),
     methods: {
-        toggleInfoWindow: function (marker, idx) {
+        toggleInfoWindow: function(marker, idx) {
             this.infoWindowPos = marker.position;
             this.card = marker;
             this.infoWinOpen = !this.infoWinOpen;
-        },
-    },
+        }
+    }
 };
 </script>
 

@@ -2,10 +2,10 @@
     <div class="bg-gray-300">
         <!-- Paginas 20 - 23 -->
 
-        <div class="p-2 m-4 lg:m-12">
+        <div class="p-2 m-4 lg:m-8">
             <w-card :shadow="false">
                 <div
-                    class="flex-wrap lg:flex justify-start lg:justify-between items-center p-4 lg:p-16"
+                    class="flex-wrap lg:flex justify-start lg:justify-between items-center px-4 lg:px-16"
                 >
                     <div
                         class="flex w-32 order-1 caption justify-center secondary white-text px-4 py-2"
@@ -15,34 +15,24 @@
                     </div>
                     <div class>
                         <h1 class="subtitle bold">Torre valdelomar</h1>
-                        <h1 class="caption">
-                            Av. Montreal 2178 - Lima / MIralfores
-                        </h1>
+                        <h1 class="caption">Av. Montreal 2178 - Lima / MIralfores</h1>
                     </div>
                 </div>
 
-                <div class="flex-wrap">
-                    <!-- No estaria funcionando la clase order wn lg -->
-                    <div class="lg:order-1">
+                <div class="lg:hidden">
+                    <div>
                         <w-carousel :items="1" :pagination="true">
                             <slide v-for="item in fotos" :key="item.i">
-                                <div
-                                    class="flex grid-cols-2 justify-between absolute"
-                                >
+                                <div class="flex grid-cols-2 justify-between absolute">
                                     <div>
                                         <h1
                                             class="w-20 caption bold secondary justify-center white-text px-4 py-2"
-                                        >
-                                            Alquiler
-                                        </h1>
+                                        >Alquiler</h1>
                                     </div>
-                                    <!-- mostrar abajo a la derecha de la imagen en lg -->
                                     <div>
                                         <h1
                                             class="hidden w-64 lg:flex w-20 caption bold primary justify-center white-text px-8 py-4 justify-end opacity-75"
-                                        >
-                                            {{ item.descripcion }}
-                                        </h1>
+                                        >{{ item.descripcion }}</h1>
                                     </div>
                                 </div>
                                 <div>
@@ -51,28 +41,18 @@
                             </slide>
                         </w-carousel>
                     </div>
-
-                    <div
-                        class="flex-wrap lg:flex justify-between items-center p-4 lg:p-16"
-                    >
+                    <div class="flex-wrap justify-center items-center p-2">
                         <div>
-                            <h1 class="subtitle text-center bold tertiary-text">
-                                S/ 2,399,900
-                            </h1>
+                            <h1 class="subtitle text-center bold tertiary-text">S/ 2,399,900</h1>
                         </div>
-                        <div class="block lg:flex justify-around">
+                        <div class="block">
                             <w-btn
                                 large
                                 :fullwidth="windowWidth <= 734 ? true : false"
                                 color="success"
                                 class="flex justify-center caption bold white-text"
                             >
-                                <w-icon
-                                    class="pr-4"
-                                    icon="twitter-white"
-                                    h="16px"
-                                ></w-icon
-                                >WHATSAPP
+                                <w-icon class="pr-4" icon="twitter-white" h="16px"></w-icon>WHATSAPP
                             </w-btn>
                             <w-btn
                                 outlined
@@ -81,12 +61,7 @@
                                 color="black"
                                 class="flex justify-center caption bold"
                             >
-                                <w-icon
-                                    class="pr-4"
-                                    icon="twitter-black"
-                                    h="16px"
-                                ></w-icon
-                                >FICHA TÉCNICA
+                                <w-icon class="pr-4" icon="twitter-black" h="16px"></w-icon>FICHA TÉCNICA
                             </w-btn>
                             <w-btn
                                 outlined
@@ -95,20 +70,70 @@
                                 color="black"
                                 class="flex justify-center caption bold"
                             >
-                                <w-icon
-                                    class="pr-4"
-                                    icon="twitter-black"
-                                    h="16px"
-                                ></w-icon
-                                >CONSULTAR
+                                <w-icon class="pr-4" icon="twitter-black" h="16px"></w-icon>CONSULTAR
                             </w-btn>
                         </div>
                     </div>
                 </div>
 
-                <div
-                    class="flex justify-center lg:justify-start p-4 lg:px-16 lg:py-4"
-                >
+                <div class="hidden lg:block">
+                    <div class="flex justify-between items-center p-4 px-16">
+                        <div>
+                            <h1 class="subtitle text-center bold tertiary-text">S/ 2,399,900</h1>
+                        </div>
+                        <div class="flex">
+                            <w-btn
+                                large
+                                :fullwidth="windowWidth <= 734 ? true : false"
+                                color="success"
+                                class="flex justify-center caption bold white-text"
+                            >
+                                <w-icon class="pr-4" icon="twitter-white" h="16px"></w-icon>WHATSAPP
+                            </w-btn>
+                            <w-btn
+                                outlined
+                                large
+                                :fullwidth="windowWidth <= 734 ? true : false"
+                                color="black"
+                                class="flex justify-center caption bold"
+                            >
+                                <w-icon class="pr-4" icon="twitter-black" h="16px"></w-icon>FICHA TÉCNICA
+                            </w-btn>
+                            <w-btn
+                                outlined
+                                large
+                                :fullwidth="windowWidth <= 734 ? true : false"
+                                color="black"
+                                class="flex justify-center caption bold"
+                            >
+                                <w-icon class="pr-4" icon="twitter-black" h="16px"></w-icon>CONSULTAR
+                            </w-btn>
+                        </div>
+                    </div>
+                    <div>
+                        <w-carousel :items="1" :pagination="true">
+                            <slide v-for="item in fotos" :key="item.i">
+                                <div class="flex grid-cols-2 justify-between absolute">
+                                    <div>
+                                        <h1
+                                            class="w-20 caption bold secondary justify-center white-text px-4 py-2"
+                                        >Alquiler</h1>
+                                    </div>
+                                    <div>
+                                        <h1
+                                            class="hidden w-64 lg:flex w-20 caption bold primary justify-center white-text px-8 py-4 justify-end opacity-75"
+                                        >{{ item.descripcion }}</h1>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img :src="item.imagen" alt />
+                                </div>
+                            </slide>
+                        </w-carousel>
+                    </div>
+                </div>
+
+                <div class="flex justify-center lg:justify-start p-4 lg:px-16 lg:py-4">
                     <div class="block border-r-2 px-4">
                         <div class="caption">Tipo Propiedad</div>
                         <div class="body bold">Apartamento</div>
@@ -122,50 +147,65 @@
             </w-card>
         </div>
 
-        <div class="p-2 m-4 lg:m-12">
+        <div class="p-2 m-4 lg:m-8">
             <w-card :shadow="false">
-                <w-carousel
-                    :items="windowWidth <= 734 ? 1 : 5"
-                    :pagination="true"
-                >
-                    <slide v-for="item in cards" :key="item.i">
-                        <div class="primary rounded-lg m-2">
+                <div class="lg:hidden">
+                    <w-carousel :items="1" :pagination="true">
+                        <slide v-for="item in cards" :key="item.i">
+                            <div class="primary w-auto rounded-lg m-2">
+                                <div class="flex-wrap justify-center p-8">
+                                    <div class="flex justify-center my-4">
+                                        <w-icon :icon="item.icon" h="70px"></w-icon>
+                                    </div>
+                                    <div
+                                        class="flex justify-center border-yellow-700 border-b-2 p-2"
+                                    >
+                                        <h1
+                                            class="caption white-text bold tracking-widest"
+                                        >{{ item.name }}</h1>
+                                    </div>
+                                    <div
+                                        class="flex justify-center border-yellow-700 border-t-2 p-2"
+                                    >
+                                        <h1
+                                            class="body white-text bold tracking-widest"
+                                        >{{ item.number }}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </slide>
+                    </w-carousel>
+                </div>
+
+                <div class="hidden lg:flex justify-center">
+                    <div c v-for="item in cards" :key="item.i">
+                        <div class="primary w-48 rounded-lg m-2">
                             <div class="flex-wrap justify-center p-8">
                                 <div class="flex justify-center my-4">
-                                    <w-icon :icon="item.icon" h="90px"></w-icon>
+                                    <w-icon :icon="item.icon" h="60px"></w-icon>
                                 </div>
-                                <div
-                                    class="flex justify-center border-yellow-700 border-b-2 p-2"
-                                >
+                                <div class="flex justify-center border-yellow-700 border-b-2 p-2">
                                     <h1
                                         class="caption white-text bold tracking-widest"
-                                    >
-                                        {{ item.name }}
-                                    </h1>
+                                    >{{ item.name }}</h1>
                                 </div>
-                                <div
-                                    class="flex justify-center border-yellow-700 border-t-2 p-2"
-                                >
+                                <div class="flex justify-center border-yellow-700 border-t-2 p-2">
                                     <h1
                                         class="body white-text bold tracking-widest"
-                                    >
-                                        {{ item.number }}
-                                    </h1>
+                                    >{{ item.number }}</h1>
                                 </div>
                             </div>
                         </div>
-                    </slide>
-                </w-carousel>
+                    </div>
+                </div>
             </w-card>
         </div>
 
-        <div class="p-2 m-4 lg:m-12">
+        <div class="p-2 m-4 lg:m-8">
             <w-card :shadow="false">
                 <div class="block lg:flex lg:grid grid-cols-2 justify-between">
                     <div class="block lg:px-8">
-                        <h1 class="body text-center lg:text-left bold py-4">
-                            Descripción
-                        </h1>
+                        <h1 class="body text-center lg:text-left bold py-4">Descripción</h1>
                         <div class="flex caption text-left whitespace-pre-line">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing
                             elit. Donec odio. Quisque volutpat mattis eros.
@@ -188,9 +228,9 @@
                     </div>
 
                     <div class="block lg:px-8">
-                        <h1 class="body text-center lg:text-left bold py-4">
-                            Características generales
-                        </h1>
+                        <h1
+                            class="body text-center lg:text-left bold py-4"
+                        >Características generales</h1>
                         <div class="flex caption text-left whitespace-pre-line">
                             <ul>
                                 <li>• Centros Comerciales Cercanos</li>
@@ -212,7 +252,7 @@
             </w-card>
         </div>
 
-        <div class="p-2 m-4 lg:m-12">
+        <div class="p-2 m-4 lg:m-8">
             <w-card :shadow="false">
                 <div class="flex-wrap lg:flex lg:justify-around">
                     <div class="flex justify-between lg:justify-between">
@@ -254,17 +294,15 @@
             </w-card>
         </div>
 
-        <div class="p-2 m-4 lg:m-12">
+        <div class="p-2 m-4 lg:m-8">
             <w-card :shadow="false">
-                <h1 class="body text-center lg:text-left bold">
-                    Ubicación en mapa
-                </h1>
+                <h1 class="body text-center lg:text-left bold mb-4">Ubicación en mapa</h1>
 
                 <mapas :center="center" :markers="markers"></mapas>
             </w-card>
         </div>
 
-        <div class="p-2 m-4 lg:m-12">
+        <div class="p-2 m-4 lg:m-8">
             <w-card :shadow="false">
                 <perfil-agente></perfil-agente>
             </w-card>
@@ -290,8 +328,8 @@ export default {
                         " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
                     precio: "86,723",
                     entrega: "Inmediata",
-                    condicion: "Preventa en planos",
-                },
+                    condicion: "Preventa en planos"
+                }
             ],
 
             windowWidth: window.innerWidth,
@@ -299,77 +337,72 @@ export default {
                 {
                     icon: "plans",
                     name: "AREA-T",
-                    number: 120,
+                    number: 120
                 },
                 {
                     icon: "plans",
                     name: "AREA-C",
-                    number: 180,
+                    number: 180
                 },
                 {
                     icon: "room-regular",
                     name: "DORMITORIOS",
-                    number: 5,
+                    number: 5
                 },
                 {
                     icon: "bath-regular",
                     name: "BAÑO",
-                    number: 3,
+                    number: 3
                 },
                 {
                     icon: "parking-regular",
                     name: "COCHERA",
-                    number: 2,
-                },
+                    number: 2
+                }
             ],
             fotos: [
                 {
-                    imagen: "images/departamentos/14.jpg",
+                    imagen: "/images/departamentos/10.jpg",
                     descripcion:
-                        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, reprehenderit architecto ipsum dicta corporis iure? Voluptatibus, delectus repudiandae. Officia modi aliquam aut ducimus, atque porro eos tempora vero veniam ad?",
+                        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, reprehenderit architecto ipsum dicta corporis iure? Voluptatibus, delectus repudiandae. Officia modi aliquam aut ducimus, atque porro eos tempora vero veniam ad?"
                 },
                 {
-                    imagen: "images/departamentos/15.jpg",
+                    imagen: "/images/departamentos/11.jpg",
                     descripcion:
-                        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem exercitationem, fuga ut eos optio minima? Eum dolorum sunt necessitatibus voluptate. Doloribus voluptatem nobis reprehenderit incidunt iste magni repellat libero nulla!",
+                        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem exercitationem, fuga ut eos optio minima? Eum dolorum sunt necessitatibus voluptate. Doloribus voluptatem nobis reprehenderit incidunt iste magni repellat libero nulla!"
                 },
                 {
-                    imagen: "images/departamentos/16.jpg",
+                    imagen: "/images/departamentos/12.jpg",
                     descripcion:
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores harum blanditiis at similique autem aut fugit modi eum laboriosam! Exercitationem blanditiis, nulla quae dicta debitis eveniet quaerat veritatis! Ex, et?",
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores harum blanditiis at similique autem aut fugit modi eum laboriosam! Exercitationem blanditiis, nulla quae dicta debitis eveniet quaerat veritatis! Ex, et?"
                 },
                 {
-                    imagen: "images/departamentos/17.jpg",
+                    imagen: "/images/departamentos/13.jpg",
                     descripcion:
-                        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veritatis beatae qui error architecto repellendus, fugit veniam doloribus quidem iste in consectetur omnis fuga dicta molestias suscipit modi dolor aspernatur!",
-                },
-                {
-                    imagen: "images/departamentos/18.jpg",
-                    descripcion:
-                        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit rem quod nihil ipsum. Odit necessitatibus molestias illo, quibusdam a alias aliquid quasi quas. Vero molestias asperiores a reprehenderit. Accusamus, quos!",
-                },
-            ],
+                        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam veritatis beatae qui error architecto repellendus, fugit veniam doloribus quidem iste in consectetur omnis fuga dicta molestias suscipit modi dolor aspernatur!"
+                }
+            ]
         };
     },
 
     components: {
         PerfilAgente,
-        Mapas,
+        Mapas
     },
 
     methods: {
-        toggleInfoWindow: function (marker, idx) {
+        toggleInfoWindow: function(marker, idx) {
             this.infoWindowPos = marker.position;
             this.card = marker;
             this.infoWinOpen = !this.infoWinOpen;
-        },
+        }
     },
 
     mounted() {
         window.addEventListener("resize", () => {
             this.windowWidth = window.innerWidth;
         });
-    },
+    }
 };
 </script>
 
