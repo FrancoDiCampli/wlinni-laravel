@@ -6,22 +6,13 @@
                 <div class="lg:flex justify-between">
                     <!-- Esta imagen desaparece en mobil  -->
                     <div class="lg:block">
-                        <img
-                            style="height: 300px;"
-                            class="w-auto"
-                            :src="agent.img"
-                            alt
-                        />
-                        <div
-                            class="lg:hidden flex items-center justify-between"
-                        >
+                        <img style="height: 300px;" class="w-auto" :src="agent.img" alt />
+                        <div class="lg:hidden flex items-center justify-between">
                             <h1 class="subtitle bold">{{ agent.name }}</h1>
                         </div>
                         <!-- valoraciones  -->
                         <div class="my-5">
-                            <p class="text-center caption">
-                                Valoración del agente
-                            </p>
+                            <p class="text-center caption">Valoración del agente</p>
                             <div class="flex justify-center">
                                 <svg
                                     v-for="star in agent.stars"
@@ -57,9 +48,7 @@
                         </div>
 
                         <!-- sociales  -->
-                        <div
-                            class="mt-5 text-gray-600 flex items-center justify-center"
-                        >
+                        <div class="mt-5 text-gray-600 flex items-center justify-center">
                             <router-link to="/">
                                 <svg
                                     aria-hidden="true"
@@ -131,44 +120,26 @@
                     <div class="lg:w-2/3 lg:mx-10 mx-auto">
                         <div class="hidden lg:block">
                             <div class="flex items-center justify-between">
-                                <h1 class="fan subtitle-lg bold">
-                                    {{ agent.name }}
-                                </h1>
+                                <h1 class="fan subtitle-lg bold">{{ agent.name }}</h1>
                             </div>
                         </div>
                         <p class="caption my-4">{{ agent.dir }}</p>
                         <p class="caption bold">{{ agent.job }}</p>
-                        <p class="caption mb-5">
-                            Codigo Ministerio de vivienda:{{ agent.cod }}
-                        </p>
+                        <p class="caption mb-5">Codigo Ministerio de vivienda:{{ agent.cod }}</p>
 
-                        <div
-                            class="hidden lg:block border-t w-full border-gray-600"
-                        ></div>
+                        <div class="hidden lg:block border-t w-full border-gray-600"></div>
                         <!-- <img class="lg:hidden" :src="agent.img" alt /> -->
                         <div class="my-5 lg:flex">
-                            <h3
-                                class="tertiary-text font-bold lg:w-1/4 tertiary-text"
-                            >
-                                Cel:
-                            </h3>
+                            <h3 class="tertiary-text font-bold lg:w-1/4 tertiary-text">Cel:</h3>
                             <p class="caption lg:w-3/4">{{ agent.cel }}</p>
                         </div>
                         <div class="my-5 lg:flex">
-                            <h3 class="tertiary-text font-bold lg:w-1/4">
-                                Email:
-                            </h3>
-                            <p class="caption lg:w-3/4">
-                                {{ agent.email }}
-                            </p>
+                            <h3 class="tertiary-text font-bold lg:w-1/4">Email:</h3>
+                            <p class="caption lg:w-3/4">{{ agent.email }}</p>
                         </div>
                         <div class="my-5 lg:flex">
-                            <h3 class="tertiary-text font-bold lg:w-1/4">
-                                Descripcion:
-                            </h3>
-                            <p class="caption lg:w-3/4">
-                                {{ agent.description }}
-                            </p>
+                            <h3 class="tertiary-text font-bold lg:w-1/4">Descripcion:</h3>
+                            <p class="caption lg:w-3/4">{{ agent.description }}</p>
                         </div>
                     </div>
                 </div>
@@ -199,19 +170,19 @@ export default {
                 trans: {
                     n: 200,
                     state: "up",
-                    stateN: 3,
+                    stateN: 3
                 },
                 active: {
                     n: 25,
                     state: "down",
-                    stateN: 1,
+                    stateN: 1
                 },
 
-                canceled: 10,
+                canceled: 10
             },
             activeClass: "secondary",
             errorClass: "accent",
-            selected: "primary text-white rounded-lg",
+            selected: "primary text-white rounded-lg"
         };
     },
 
@@ -224,8 +195,8 @@ export default {
     methods: {
         showForm() {
             console.log(this.form);
-        },
-    },
+        }
+    }
 };
 </script>
 

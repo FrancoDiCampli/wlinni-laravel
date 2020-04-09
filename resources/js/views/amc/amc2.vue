@@ -86,7 +86,7 @@
                         >filtrar</w-btn>
                         <div class="flex flex-row justify-between flex-wrap">
                             <div
-                                class="sm:w-full lg:w-1/3 pt-5 pr-5"
+                                class="sm:w-full lg:w-1/3 pt-5 md:pr-5"
                                 v-for="(card, i) in cards"
                                 :key="i"
                             >
@@ -150,7 +150,19 @@
                         <br />
                     </div>
                 </div>
+                <div class="flex flex-row justify-center md:justify-end md:mr-5">
+                    <div class="w-full md:w-1/5">
+                        <w-btn
+                            :large="true"
+                            :dark="true"
+                            :fullwidth="true"
+                            color="primary"
+                            @click="$router.push('/amc/3')"
+                        >siguiente</w-btn>
+                    </div>
+                </div>
             </w-card>
+            <br />
         </div>
     </div>
 </template>

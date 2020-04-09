@@ -220,7 +220,7 @@ form {
         content: "";
         position: absolute;
         left: 10px;
-        top: 0;
+        top: 12px;
       }
       &:before {
         width: 15px;
@@ -237,7 +237,6 @@ form {
       visibility: hidden;
       width: 15px;
       margin: 0;
-
       &:disabled {
         + label {
           color: #9e9e9e;

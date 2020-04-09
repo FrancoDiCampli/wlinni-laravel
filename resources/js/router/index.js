@@ -32,7 +32,7 @@ import Brocker from "../views/brocker/Brocker";
 
 // Agente
 import Agente from "../views/agentes/Agente";
-import PerfilAgente from "../views/agentes/PerfilDeAgente";
+import PerfilDeAgente from "../views/agentes/PerfilDeAgente";
 
 Vue.use(Router);
 
@@ -144,7 +144,7 @@ export default new Router({
         {
             path: "/agente/perfil",
             name: "agente_perfil",
-            component: PerfilAgente
+            component: PerfilDeAgente
         }
     ]
 });

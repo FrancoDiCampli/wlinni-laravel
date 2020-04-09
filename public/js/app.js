@@ -3739,11 +3739,11 @@ __webpack_require__.r(__webpack_exports__);
       actions: [{
         name: "Perfil",
         icon: "user",
-        path: "/profile"
+        path: "/agente/perfil"
       }, {
-        name: "Perfil Broker",
+        name: "Perfil Brocker",
         icon: "user",
-        path: "/profile/broker"
+        path: "/perfil/brocker"
       }, {
         name: "Publicación",
         icon: "edit",
@@ -3751,7 +3751,7 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         name: "AMC",
         icon: "database",
-        path: "/"
+        path: "/amc/1"
       }, {
         name: "Cerrar Sesión",
         icon: "logout"
@@ -4811,212 +4811,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5028,23 +4822,25 @@ __webpack_require__.r(__webpack_exports__);
         dir: "Lima / San Borja",
         job: "Titanio Inversiones Inmobiliarias, SAC",
         cod: 382358412,
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse molestiae nihil a velit, dolor facere voluptate totam corrupti. Saepe quas voluptatibus tempora itaque",
-        days: 3,
+        description: "Persona comprometida... Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
         img: "images/rostros/1.png",
         cel: 5194641341,
         email: "rs@agenlesasociados.com",
-        stars: 2,
-        trans: {
+        stars: 4,
+        transacciones: [{
+          name: "Transacciones",
           n: 200,
           state: "up",
-          stateN: 3
-        },
-        active: {
+          percentaje: "3%"
+        }, {
+          name: "Activas",
           n: 25,
           state: "down",
-          stateN: 1
-        },
-        canceled: 10
+          percentaje: "1%"
+        }, {
+          name: "Cancelada",
+          n: 10
+        }]
       },
       cards: [{
         tipo: "Alquiler",
@@ -5181,10 +4977,7 @@ __webpack_require__.r(__webpack_exports__);
           estacionamiento: 2,
           tamaño: "120m"
         }
-      }],
-      activeClass: "secondary",
-      errorClass: "accent",
-      selected: "primary text-white rounded-lg"
+      }]
     };
   },
   mounted: function mounted() {
@@ -5212,35 +5005,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -5450,6 +5214,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5896,41 +5670,90 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      checked: true,
-      windowWidth: window.innerWidth,
-      select: null,
-      form: {}
+      form: {
+        operacion: "VENTA",
+        calidadConstruccion: "",
+        calidadAcabados: "",
+        calidadConservacion: "",
+        ubicacion: ""
+      }
     };
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    window.addEventListener("resize", function () {
-      _this.windowWidth = window.innerWidth;
-    });
-  },
-  methods: {
-    setOperation: function setOperation(op) {
-      this.form.operacion = op;
-    },
-    setCuality: function setCuality(op) {
-      this.form.cuality = op;
-    },
-    setDetails: function setDetails(op) {
-      this.form.details = op;
-    },
-    setConservation: function setConservation(op) {
-      this.form.conservation = op;
-    },
-    setLocation: function setLocation(op) {
-      this.form.location = op;
-    },
-    showForm: function showForm() {
-      console.log(this.form);
-    }
   }
 });
 
@@ -5946,6 +5769,18 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inmuebles_FiltroInmueble__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../inmuebles/FiltroInmueble */ "./resources/js/views/inmuebles/FiltroInmueble.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6302,6 +6137,19 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7076,257 +6924,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       windowWidth: window.innerWidth,
-      img: "images/rostros/2.png",
-      imagwn: "images/banners/1.png",
+      company: {
+        name: "Empresa Gloden Star",
+        dir: "Lima / MIraflores",
+        tel: "+51 94641341",
+        email: "rs@agenlesasociados.com",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
+      },
       users: [{
-        name: "David Nester",
-        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. consectetue ipsum dolor sit",
-        days: 3,
-        img: "images/rostros/1.png",
-        state: "Desafiliar",
-        stars: 2
+        state: "AFILIADO",
+        stars: 3,
+        image: "/images/rostros/1.png",
+        name: "Kazmer Maxi",
+        select: true,
+        content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. consectetue ipsum dolor sit"
       }, {
-        name: "David Gonzales",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse molestiae nihil a velit, dolor facere voluptate totam corrupti. Saepe quas voluptatibus tempora itaque",
-        days: 2,
-        img: "images/rostros/1.png",
-        state: "Afiliar",
-        stars: 4
+        state: "Sin afiliar",
+        stars: 3,
+        image: "/images/rostros/2.png",
+        name: "Escobar German",
+        select: false,
+        content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. consectetue ipsum dolor sit"
+      }, {
+        state: "Sin afiliar",
+        stars: 3,
+        image: "/images/rostros/3.png",
+        name: "Franco Di Campli",
+        select: false,
+        content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. consectetue ipsum dolor sit"
+      }, {
+        state: "Sin afiliar",
+        stars: 3,
+        image: "/images/rostros/4.png",
+        name: "David Nester",
+        select: false,
+        content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. consectetue ipsum dolor sit"
+      }, {
+        state: "Sin afiliar",
+        stars: 3,
+        image: "/images/rostros/4.png",
+        name: "Bruno Diaz",
+        select: false,
+        content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. consectetue ipsum dolor sit"
       }],
       cards: [{
         tipo: "Alquiler",
@@ -7463,10 +7106,7 @@ __webpack_require__.r(__webpack_exports__);
           estacionamiento: 2,
           tamaño: "120m"
         }
-      }],
-      activeClass: "secondary",
-      errorClass: "accent",
-      selected: "primary text-white rounded-lg"
+      }]
     };
   },
   mounted: function mounted() {
@@ -7475,11 +7115,6 @@ __webpack_require__.r(__webpack_exports__);
     window.addEventListener("resize", function () {
       _this.windowWidth = window.innerWidth;
     });
-  },
-  methods: {
-    showForm: function showForm() {
-      console.log(this.form);
-    }
   }
 });
 
@@ -8461,9 +8096,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -9942,36 +9574,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -10069,7 +9671,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: \"Roboto-Regular\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Regular.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Regular.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Bold\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Bold.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Bold.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Light\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Light.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Light.ttf")) + ") format(\"truetype\");\n}\n\nhtml {\n  font-family: Roboto-Regular, sans-serif;\n  font-weight: normal;\n}\n\n.bold {\n  font-family: Roboto-Bold, sans-serif;\n  font-weight: bold;\n}\n\n.light {\n  font-family: Roboto-Light, sans-serif;\n  font-weight: lighter;\n}\n\n.title {\n  font-size: 55px;\n}\n\n.subtitle {\n  font-size: 34px;\n}\n\n.body {\n  font-size: 21px;\n}\n\n.caption {\n  font-size: 13px;\n}\n\n@media (min-width: 0px) {\n  .title-xs {\n    font-size: 55px;\n  }\n\n  .subtitle-xs {\n    font-size: 34px;\n  }\n\n  .body-xs {\n    font-size: 21px;\n  }\n\n  .caption-xs {\n    font-size: 13px;\n  }\n\n  .bold-xs {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xs {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 576px) {\n  .title-sm {\n    font-size: 55px;\n  }\n\n  .subtitle-sm {\n    font-size: 34px;\n  }\n\n  .body-sm {\n    font-size: 21px;\n  }\n\n  .caption-sm {\n    font-size: 13px;\n  }\n\n  .bold-sm {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-sm {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 768px) {\n  .title-md {\n    font-size: 55px;\n  }\n\n  .subtitle-md {\n    font-size: 34px;\n  }\n\n  .body-md {\n    font-size: 21px;\n  }\n\n  .caption-md {\n    font-size: 13px;\n  }\n\n  .bold-md {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-md {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 992px) {\n  .title-lg {\n    font-size: 55px;\n  }\n\n  .subtitle-lg {\n    font-size: 34px;\n  }\n\n  .body-lg {\n    font-size: 21px;\n  }\n\n  .caption-lg {\n    font-size: 13px;\n  }\n\n  .bold-lg {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-lg {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 1200px) {\n  .title-xl {\n    font-size: 55px;\n  }\n\n  .subtitle-xl {\n    font-size: 34px;\n  }\n\n  .body-xl {\n    font-size: 21px;\n  }\n\n  .caption-xl {\n    font-size: 13px;\n  }\n\n  .bold-xl {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xl {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n.primary {\n  background-color: #041e42;\n}\n\n.secondary {\n  background-color: #ff7500;\n}\n\n.tertiary {\n  background-color: #a08629;\n}\n\n.accent {\n  background-color: #193c63;\n}\n\n.success {\n  background-color: #00ce59;\n}\n\n.error {\n  background-color: #ff0000;\n}\n\n.black {\n  background-color: black;\n}\n\n.white {\n  background-color: white;\n}\n\n.default {\n  background-color: #aaaa;\n}\n\n.primary-text {\n  color: #041e42;\n}\n\n.secondary-text {\n  color: #ff7500;\n}\n\n.tertiary-text {\n  color: #a08629;\n}\n\n.accent-text {\n  color: #193c63;\n}\n\n.success-text {\n  color: #00ce59;\n}\n\n.error-text {\n  color: #ff0000;\n}\n\n.black-text {\n  color: black;\n}\n\n.white-text {\n  color: white;\n}\n\n.default-text {\n  color: #aaaa;\n}\n\n.primary-border {\n  border-color: #041e42;\n}\n\n.secondary-border {\n  border-color: #ff7500;\n}\n\n.tertiary-border {\n  border-color: #a08629;\n}\n\n@media (min-width: 0px) {\n  .primary-xs {\n    background-color: #041e42;\n  }\n\n  .secondary-xs {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xs {\n    background-color: #a08629;\n  }\n\n  .accent-xs {\n    background-color: #193c63;\n  }\n\n  .success-xs {\n    background-color: #00ce59;\n  }\n\n  .error-xs {\n    background-color: #ff0000;\n  }\n\n  .black-xs {\n    background-color: black;\n  }\n\n  .white-xs {\n    background-color: white;\n  }\n\n  .primary-text-xs {\n    color: #041e42;\n  }\n\n  .secondary-text-xs {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xs {\n    color: #a08629;\n  }\n\n  .accent-text-xs {\n    color: #193c63;\n  }\n\n  .success-text-xs {\n    color: #00ce59;\n  }\n\n  .error-text-xs {\n    color: #ff0000;\n  }\n\n  .black-text-xs {\n    color: black;\n  }\n\n  .white-text-xs {\n    color: white;\n  }\n}\n\n@media (min-width: 576px) {\n  .primary-sm {\n    background-color: #041e42;\n  }\n\n  .secondary-sm {\n    background-color: #ff7500;\n  }\n\n  .tertiary-sm {\n    background-color: #a08629;\n  }\n\n  .accent-sm {\n    background-color: #193c63;\n  }\n\n  .success-sm {\n    background-color: #00ce59;\n  }\n\n  .error-sm {\n    background-color: #ff0000;\n  }\n\n  .black-sm {\n    background-color: black;\n  }\n\n  .white-sm {\n    background-color: white;\n  }\n\n  .primary-text-sm {\n    color: #041e42;\n  }\n\n  .secondary-text-sm {\n    color: #ff7500;\n  }\n\n  .tertiary-text-sm {\n    color: #a08629;\n  }\n\n  .accent-text-sm {\n    color: #193c63;\n  }\n\n  .success-text-sm {\n    color: #00ce59;\n  }\n\n  .error-text-sm {\n    color: #ff0000;\n  }\n\n  .black-text-sm {\n    color: black;\n  }\n\n  .white-text-sm {\n    color: white;\n  }\n}\n\n@media (min-width: 768px) {\n  .primary-md {\n    background-color: #041e42;\n  }\n\n  .secondary-md {\n    background-color: #ff7500;\n  }\n\n  .tertiary-md {\n    background-color: #a08629;\n  }\n\n  .accent-md {\n    background-color: #193c63;\n  }\n\n  .success-md {\n    background-color: #00ce59;\n  }\n\n  .error-md {\n    background-color: #ff0000;\n  }\n\n  .black-md {\n    background-color: black;\n  }\n\n  .white-md {\n    background-color: white;\n  }\n\n  .primary-text-md {\n    color: #041e42;\n  }\n\n  .secondary-text-md {\n    color: #ff7500;\n  }\n\n  .tertiary-text-md {\n    color: #a08629;\n  }\n\n  .accent-text-md {\n    color: #193c63;\n  }\n\n  .success-text-md {\n    color: #00ce59;\n  }\n\n  .error-text-md {\n    color: #ff0000;\n  }\n\n  .black-text-md {\n    color: black;\n  }\n\n  .white-text-md {\n    color: white;\n  }\n}\n\n@media (min-width: 992px) {\n  .primary-lg {\n    background-color: #041e42;\n  }\n\n  .secondary-lg {\n    background-color: #ff7500;\n  }\n\n  .tertiary-lg {\n    background-color: #a08629;\n  }\n\n  .accent-lg {\n    background-color: #193c63;\n  }\n\n  .success-lg {\n    background-color: #00ce59;\n  }\n\n  .error-lg {\n    background-color: #ff0000;\n  }\n\n  .black-lg {\n    background-color: black;\n  }\n\n  .white-lg {\n    background-color: white;\n  }\n\n  .primary-text-lg {\n    color: #041e42;\n  }\n\n  .secondary-text-lg {\n    color: #ff7500;\n  }\n\n  .tertiary-text-lg {\n    color: #a08629;\n  }\n\n  .accent-text-lg {\n    color: #193c63;\n  }\n\n  .success-text-lg {\n    color: #00ce59;\n  }\n\n  .error-text-lg {\n    color: #ff0000;\n  }\n\n  .black-text-lg {\n    color: black;\n  }\n\n  .white-text-lg {\n    color: white;\n  }\n}\n\n@media (min-width: 1200px) {\n  .primary-xl {\n    background-color: #041e42;\n  }\n\n  .secondary-xl {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xl {\n    background-color: #a08629;\n  }\n\n  .accent-xl {\n    background-color: #193c63;\n  }\n\n  .success-xl {\n    background-color: #00ce59;\n  }\n\n  .error-xl {\n    background-color: #ff0000;\n  }\n\n  .black-xl {\n    background-color: black;\n  }\n\n  .white-xl {\n    background-color: white;\n  }\n\n  .primary-text-xl {\n    color: #041e42;\n  }\n\n  .secondary-text-xl {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xl {\n    color: #a08629;\n  }\n\n  .accent-text-xl {\n    color: #193c63;\n  }\n\n  .success-text-xl {\n    color: #00ce59;\n  }\n\n  .error-text-xl {\n    color: #ff0000;\n  }\n\n  .black-text-xl {\n    color: black;\n  }\n\n  .white-text-xl {\n    color: white;\n  }\n}\n\n.nav-container {\n  margin-bottom: 160px;\n}\n\n.nav-container .navbar {\n  width: 100%;\n  height: auto;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 9;\n  transition: ease 0.25s;\n}\n\n.nav-container .navbar.nav-hidden {\n  transition: ease 1s;\n  transform: translateY(-60px);\n}\n\n.nav-container .navbar.main-nav .top-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .top-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav .bottom-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .bottom-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar {\n  transition: ease 1s;\n  background-color: white;\n  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar .nav-btn {\n  color: black;\n}\n\n.nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n  width: 100%;\n  padding: 0px 60px;\n}\n\n.nav-container .navbar .top-bar {\n  height: 60px;\n  background-color: #041e42;\n}\n\n.nav-container .navbar .top-bar .nav-btn {\n  height: 60px;\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn.disabled {\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn-icon {\n  height: 60px;\n}\n\n.nav-container .navbar .bottom-bar {\n  height: 80px;\n  background-color: white;\n}\n\n.nav-container .navbar .bottom-bar .nav-btn,\n.nav-container .navbar .bottom-bar .nav-btn-icon {\n  height: 80px;\n}\n\n.nav-container .navbar .nav-btn,\n.nav-container .navbar .nav-btn-icon {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: auto;\n  float: left;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.nav-container .navbar .nav-btn.disabled,\n.nav-container .navbar .nav-btn-icon.disabled {\n  color: #757575;\n  cursor: default;\n}\n\n.nav-container .navbar .nav-btn.disabled:hover,\n.nav-container .navbar .nav-btn-icon.disabled:hover {\n  background-color: transparent;\n}\n\n.nav-container .navbar .nav-btn.active,\n.nav-container .navbar .nav-btn-icon.active {\n  font-weight: bold;\n  color: #a08629;\n}\n\n.nav-container .navbar .nav-btn {\n  padding: 16px;\n  text-transform: uppercase;\n}\n\n.nav-container .navbar .nav-btn .icon {\n  margin-right: 16px;\n}\n\n.nav-container .navbar .nav-btn:hover {\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n.nav-container .navbar .nav-btn-icon {\n  padding: 6px;\n}\n\n@media (max-width: 800px) {\n  .nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n    padding: 0px 15px;\n  }\n}\n\n@media (max-width: 768px) {\n  .nav-container {\n    margin-bottom: 100px;\n  }\n\n  .nav-container .navbar.nav-hidden {\n    transform: translateY(0px);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar {\n    transition: ease 1s;\n    background-color: white;\n    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar .nav-btn {\n    color: white;\n  }\n\n  .nav-container .navbar .top-bar.desktop-bar,\n.nav-container .navbar .bottom-bar.desktop-bar {\n    display: none;\n  }\n}\n\n@media (min-width: 769px) {\n  .nav-container .navbar .top-bar.mobile-bar,\n.nav-container .navbar .bottom-bar.mobile-bar {\n    display: none;\n  }\n}\n\nform {\n  position: relative;\n}\n\nform .input-container {\n  height: auto;\n  margin-bottom: 32px;\n}\n\nform .input-container .input-group,\nform .input-container .select-group {\n  height: auto;\n  min-height: 42px;\n  position: relative;\n  width: 100%;\n  background-color: white;\n  border: thin solid black;\n  border-radius: 21px;\n  padding: 0px 19px;\n  display: flex;\n  align-items: center;\n}\n\nform .input-container .input-group.dark,\nform .input-container .select-group.dark {\n  border-color: white;\n}\n\nform .input-container .input-group.dark input.active ~ label,\nform .input-container .input-group.dark textarea.active ~ label,\nform .input-container .select-group.dark input.active ~ label,\nform .input-container .select-group.dark textarea.active ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:focus ~ label,\nform .input-container .input-group.dark textarea:focus ~ label,\nform .input-container .select-group.dark input:focus ~ label,\nform .input-container .select-group.dark textarea:focus ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:placeholder-shown ~ label,\nform .input-container .input-group.dark textarea:placeholder-shown ~ label,\nform .input-container .select-group.dark input:placeholder-shown ~ label,\nform .input-container .select-group.dark textarea:placeholder-shown ~ label {\n  color: white;\n}\n\nform .input-container .input-group .icon,\nform .input-container .select-group .icon {\n  position: relative;\n}\n\nform .input-container .input-group .icon.before,\nform .input-container .select-group .icon.before {\n  margin: 0px 8px 0px 0px;\n}\n\nform .input-container .input-group .icon.after,\nform .input-container .select-group .icon.after {\n  margin: 0px 0px 0px 8px;\n}\n\nform .input-container .input-group .icon img,\nform .input-container .select-group .icon img {\n  height: 16px !important;\n  width: 16px !important;\n}\n\nform .input-container .input-group.tile,\nform .input-container .select-group.tile {\n  border-radius: 0px;\n  padding: 0px 12px;\n}\n\nform .input-container .input-group .input-label,\nform .input-container .select-group .input-label {\n  height: 100%;\n  width: inherit;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .input-container .input-group .input-label input,\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label input,\nform .input-container .select-group .input-label textarea {\n  height: inherit;\n  width: inherit;\n  font-size: 13px;\n  padding: 12px 0px;\n  border: none;\n}\n\nform .input-container .input-group .input-label input.active ~ label,\nform .input-container .input-group .input-label textarea.active ~ label,\nform .input-container .select-group .input-label input.active ~ label,\nform .input-container .select-group .input-label textarea.active ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:focus ~ label,\nform .input-container .input-group .input-label textarea:focus ~ label,\nform .input-container .select-group .input-label input:focus ~ label,\nform .input-container .select-group .input-label textarea:focus ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label,\nform .input-container .select-group .input-label input:placeholder-shown ~ label,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:focus,\nform .input-container .input-group .input-label textarea:focus,\nform .input-container .select-group .input-label input:focus,\nform .input-container .select-group .input-label textarea:focus {\n  outline: none;\n}\n\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label textarea {\n  border: none;\n  outline: none;\n  resize: none;\n  overflow: none;\n  height: 125px;\n}\n\nform .input-container .input-group .input-label textarea ~ label,\nform .input-container .select-group .input-label textarea ~ label {\n  top: 10px;\n}\n\nform .input-container .input-group .input-label label,\nform .input-container .select-group .input-label label {\n  color: #000;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  position: absolute;\n  pointer-events: none;\n  transition: 0.25s ease all;\n  -moz-transition: 0.25s ease all;\n  -webkit-transition: 0.25s ease all;\n}\n\nform .input-container .input-group.disabled {\n  border-color: #9e9e9e;\n}\n\nform .input-container .input-group .input-label input:disabled,\nform .input-container .input-group .input-label textarea:disabled {\n  background-color: white;\n}\n\nform .input-container .input-group .input-label input:disabled ~ label,\nform .input-container .input-group .input-label textarea:disabled ~ label {\n  color: #9e9e9e;\n}\n\nform .input-container .select-group {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .icon.select-icon {\n  margin-top: 4px;\n}\n\nform .input-container .select-group .icon.select-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\nform .input-container .select-group .input-label {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input:disabled {\n  background-color: white;\n}\n\nform .input-container .select-options {\n  height: auto;\n  position: absolute;\n  z-index: 9;\n  border-radius: 21px;\n  margin: 8px 0px;\n  overflow: hidden;\n  transform-origin: 0% 0%;\n  border: thin solid black;\n  background-color: white;\n}\n\nform .input-container .select-options.tile {\n  border-radius: 0px;\n}\n\nform .input-container .select-options .opt {\n  position: relative;\n  padding: 12px 32px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-options .opt:hover {\n  background-color: rgba(0, 0, 0, 0.15);\n}\n\nform .input-container .error-input {\n  margin: 2px 0px 0px 21px;\n  font-size: 13px;\n  color: #ff0000;\n}\n\nform .checkbox-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\nform .checkbox-group label {\n  font-size: 13px;\n  color: black;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .checkbox-group label:before, form .checkbox-group label:after {\n  content: \"\";\n  position: absolute;\n  left: 10px;\n  top: 0;\n}\n\nform .checkbox-group label:before {\n  width: 15px;\n  height: 15px;\n  background: #fff;\n  border: 1px solid #000;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n\nform .checkbox-group input[type=checkbox] {\n  outline: 0;\n  visibility: hidden;\n  width: 15px;\n  margin: 0;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label {\n  color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label:before {\n  border-color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label {\n  color: #041e42;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label:before {\n  background: #041e42;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label {\n  color: #ff7500;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label:before {\n  background: #ff7500;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label {\n  color: #a08629;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label:before {\n  background: #a08629;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label {\n  color: #193c63;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label:before {\n  background: #193c63;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label {\n  color: #00ce59;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label:before {\n  background: #00ce59;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label {\n  color: #ff0000;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label:before {\n  background: #ff0000;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked:disabled + label:before {\n  background: #9e9e9e;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked + label:after {\n  transform: translate(4px, 4.8076923077px) rotate(-45deg);\n  width: 7px;\n  height: 3.5px;\n  border: 2px solid white;\n  border-top-style: none;\n  border-right-style: none;\n}\n\nform .switch-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .switch-group label {\n  position: relative;\n  cursor: pointer;\n  margin: 0px 16px 20px 16px;\n  padding: 6px 0 6px 44px;\n}\n\nform .switch-group label:before, form .switch-group label:after {\n  content: \"\";\n  position: absolute;\n  margin: 0;\n  outline: 0;\n  top: 49%;\n  transform: translate(0, -50%);\n  transition: all 0.3s ease;\n}\n\nform .switch-group label:before {\n  left: -12px;\n  width: 40px;\n  height: 24px;\n  border-radius: 13px;\n}\n\nform .switch-group label:after {\n  left: -7px;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background-color: #fafafa;\n}\n\nform .switch-group label.switch-primary:before {\n  background-color: #041e42;\n}\n\nform .switch-group label.switch-secondary:before {\n  background-color: #ff7500;\n}\n\nform .switch-group label.switch-tertiary:before {\n  background-color: #a08629;\n}\n\nform .switch-group label.switch-accent:before {\n  background-color: #193c63;\n}\n\nform .switch-group label.switch-success:before {\n  background-color: #00ce59;\n}\n\nform .switch-group label.switch-error:before {\n  background-color: #ff0000;\n}\n\nform .switch-group label:disabled:before {\n  background-color: #9e9e9e;\n}\n\nform .switch-group input[type=checkbox] {\n  display: none;\n}\n\nform .switch-group input[type=checkbox]:checked + label:after {\n  transform: translate(125%, -50%);\n}\n\n.parallax-container .parallax {\n  width: 100%;\n  top: 0;\n  left: 0;\n  background-position-y: 0;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.carousel-container {\n  display: flex;\n  justify-content: center;\n  overflow: hidden;\n  background-size: 100% 75%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n\n.carousel-container .carousel {\n  width: 75%;\n  margin: auto;\n}\n\n.carousel-container .carousel .carousel-item {\n  padding: 0px 21px;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-navigation button {\n  outline: none;\n}\n\n@media (max-width: 600px) {\n  .carousel-container {\n    background: none;\n  }\n\n  .carousel-container .carousel {\n    width: 100%;\n  }\n\n  .carousel-container .carousel .carousel-item {\n    width: 100%;\n    padding: 0 12px;\n    margin: auto;\n  }\n\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot {\n    width: 12px !important;\n    height: 12px !important;\n    padding: 7px !important;\n    background-color: black !important;\n  }\n\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot.VueCarousel-dot--active {\n    background-color: #a08629 !important;\n  }\n}\n\n.btn {\n  position: relative;\n  margin: 20px 12px 0px 12px;\n  padding: 13px 26px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  border: none;\n  outline: none !important;\n  cursor: pointer;\n  outline: none;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.btn.full-width {\n  width: 100%;\n  margin: 20px 0px 0px 0px;\n}\n\n.btn.dark {\n  color: white;\n}\n\n.btn.large {\n  padding: 20px 40px;\n}\n\n.btn.large.rounded {\n  border-radius: 40px;\n}\n\n.btn.large.outlined {\n  border-width: 4.5px;\n}\n\n.btn.small {\n  padding: 8px 18px;\n}\n\n.btn.small.rounded {\n  border-radius: 16px;\n}\n\n.btn.small.outlined {\n  border-width: 1.5px;\n}\n\n.btn.rounded {\n  border-radius: 26px;\n}\n\n.btn.outlined {\n  background-color: white;\n  border-width: 3px;\n  border-style: solid;\n}\n\n.btn.icon {\n  margin: 0px 8px;\n  padding: 0px;\n  background-color: transparent !important;\n}\n\n.card {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  border-radius: 15px 15px 15px 15px;\n  overflow: hidden;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.card.no-shadow {\n  box-shadow: none !important;\n}\n\n.card:not(.active-state):not(:hover) {\n  background: white !important;\n}\n\n.card.top-hover:hover {\n  background: white !important;\n}\n\n.card.top-hover:hover .image .card-image-content {\n  visibility: visible;\n  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .image {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card.full-hover:hover .image .card-image-content {\n  visibility: visible;\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n  color: white;\n}\n\n.card.active-state .image {\n  display: none;\n}\n\n.card.active-state .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card .image {\n  width: inherit;\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n.card .image .card-image-content {\n  height: inherit;\n  visibility: hidden;\n  padding: 30px;\n  color: white;\n}\n\n.card .card-state {\n  float: left;\n  height: auto;\n  padding: 5px 20px;\n  text-align: center;\n  background-color: #ff7500;\n  margin-left: 12px;\n}\n\n.card .card-state.rounded {\n  border-radius: 20px;\n}\n\n.card .card-state.tile {\n  border-radius: none;\n}\n\n.card .card-text {\n  height: auto;\n  padding: 30px;\n  background-color: white;\n}\n\n.card .card-info {\n  padding: 13px;\n  background-color: #041e42;\n}\n\n.card .card-info .info-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.card .card-info .info-item .dot {\n  width: 7px;\n  height: 7px;\n  border-radius: 50%;\n}\n\n.card .card-info .info-item .dot.primary {\n  background-color: #041e42;\n}\n\n.card .card-info .info-item .dot.secondary {\n  background-color: #ff7500;\n}\n\n.card .card-info .info-item .dot.tertiary {\n  background-color: #a08629;\n}\n\n.card .card-info .info-item .dot.accent {\n  background-color: #193c63;\n}\n\n.card .card-info .info-item .dot.success {\n  background-color: #00ce59;\n}\n\n.card .card-info .info-item .dot.error {\n  background-color: #ff0000;\n}\n\n.card .card-info .info-item p {\n  margin: 0px 6px 0px 12px;\n}\n\n.card .card-selector {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 9;\n  background-color: rgba(160, 134, 41, 0.66);\n}\n\n.card .card-selector .check-circle {\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  margin: 6px;\n  background-color: #00ce59;\n}\n\n.card .card-selector .check-circle .checkmarck {\n  height: 10px;\n  width: 20px;\n  border: 4px solid #fff;\n  border-top: none;\n  border-right: none;\n  position: absolute;\n  top: 15px;\n  left: 13px;\n  transform: rotate(-45deg);\n}\n\n.panel {\n  width: auto;\n  height: auto;\n  background-color: white;\n}\n\n.panel .panel-header {\n  width: inherit;\n  height: auto;\n  padding: 18px 9px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.panel .panel-header .header {\n  color: black;\n  font-weight: bold;\n  font-size: 13px;\n  text-transform: uppercase;\n}\n\n.panel .panel-header .icon.panel-icon {\n  margin-top: 4px;\n}\n\n.panel .panel-header .icon.panel-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\n.panel .panel-body {\n  height: auto;\n  width: 100%;\n  background-color: #ececec;\n  padding: 30px 0px;\n  border-bottom: thin solid black;\n  transform-origin: 0% 0%;\n}\n\n.panel .panel-body .btn {\n  width: 100%;\n  margin: 0px !important;\n  background-color: #ececec !important;\n  color: black !important;\n  text-align: left !important;\n  outline: none !important;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\nbody::-webkit-scrollbar {\n  width: 0.5rem;\n}\n\nbody::-webkit-scrollbar-thumb {\n  background-color: #193c63;\n}", ""]);
+exports.push([module.i, "@font-face {\n  font-family: \"Roboto-Regular\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Regular.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Regular.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Bold\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Bold.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Bold.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Light\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Light.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Light.ttf")) + ") format(\"truetype\");\n}\n\nhtml {\n  font-family: Roboto-Regular, sans-serif;\n  font-weight: normal;\n}\n\n.bold {\n  font-family: Roboto-Bold, sans-serif;\n  font-weight: bold;\n}\n\n.light {\n  font-family: Roboto-Light, sans-serif;\n  font-weight: lighter;\n}\n\n.title {\n  font-size: 55px;\n}\n\n.subtitle {\n  font-size: 34px;\n}\n\n.body {\n  font-size: 21px;\n}\n\n.caption {\n  font-size: 13px;\n}\n\n@media (min-width: 0px) {\n  .title-xs {\n    font-size: 55px;\n  }\n\n  .subtitle-xs {\n    font-size: 34px;\n  }\n\n  .body-xs {\n    font-size: 21px;\n  }\n\n  .caption-xs {\n    font-size: 13px;\n  }\n\n  .bold-xs {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xs {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 576px) {\n  .title-sm {\n    font-size: 55px;\n  }\n\n  .subtitle-sm {\n    font-size: 34px;\n  }\n\n  .body-sm {\n    font-size: 21px;\n  }\n\n  .caption-sm {\n    font-size: 13px;\n  }\n\n  .bold-sm {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-sm {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 768px) {\n  .title-md {\n    font-size: 55px;\n  }\n\n  .subtitle-md {\n    font-size: 34px;\n  }\n\n  .body-md {\n    font-size: 21px;\n  }\n\n  .caption-md {\n    font-size: 13px;\n  }\n\n  .bold-md {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-md {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 992px) {\n  .title-lg {\n    font-size: 55px;\n  }\n\n  .subtitle-lg {\n    font-size: 34px;\n  }\n\n  .body-lg {\n    font-size: 21px;\n  }\n\n  .caption-lg {\n    font-size: 13px;\n  }\n\n  .bold-lg {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-lg {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 1200px) {\n  .title-xl {\n    font-size: 55px;\n  }\n\n  .subtitle-xl {\n    font-size: 34px;\n  }\n\n  .body-xl {\n    font-size: 21px;\n  }\n\n  .caption-xl {\n    font-size: 13px;\n  }\n\n  .bold-xl {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xl {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n.primary {\n  background-color: #041e42;\n}\n\n.secondary {\n  background-color: #ff7500;\n}\n\n.tertiary {\n  background-color: #a08629;\n}\n\n.accent {\n  background-color: #193c63;\n}\n\n.success {\n  background-color: #00ce59;\n}\n\n.error {\n  background-color: #ff0000;\n}\n\n.black {\n  background-color: black;\n}\n\n.white {\n  background-color: white;\n}\n\n.default {\n  background-color: #aaaa;\n}\n\n.primary-text {\n  color: #041e42;\n}\n\n.secondary-text {\n  color: #ff7500;\n}\n\n.tertiary-text {\n  color: #a08629;\n}\n\n.accent-text {\n  color: #193c63;\n}\n\n.success-text {\n  color: #00ce59;\n}\n\n.error-text {\n  color: #ff0000;\n}\n\n.black-text {\n  color: black;\n}\n\n.white-text {\n  color: white;\n}\n\n.default-text {\n  color: #aaaa;\n}\n\n.primary-border {\n  border-color: #041e42;\n}\n\n.secondary-border {\n  border-color: #ff7500;\n}\n\n.tertiary-border {\n  border-color: #a08629;\n}\n\n@media (min-width: 0px) {\n  .primary-xs {\n    background-color: #041e42;\n  }\n\n  .secondary-xs {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xs {\n    background-color: #a08629;\n  }\n\n  .accent-xs {\n    background-color: #193c63;\n  }\n\n  .success-xs {\n    background-color: #00ce59;\n  }\n\n  .error-xs {\n    background-color: #ff0000;\n  }\n\n  .black-xs {\n    background-color: black;\n  }\n\n  .white-xs {\n    background-color: white;\n  }\n\n  .primary-text-xs {\n    color: #041e42;\n  }\n\n  .secondary-text-xs {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xs {\n    color: #a08629;\n  }\n\n  .accent-text-xs {\n    color: #193c63;\n  }\n\n  .success-text-xs {\n    color: #00ce59;\n  }\n\n  .error-text-xs {\n    color: #ff0000;\n  }\n\n  .black-text-xs {\n    color: black;\n  }\n\n  .white-text-xs {\n    color: white;\n  }\n}\n\n@media (min-width: 576px) {\n  .primary-sm {\n    background-color: #041e42;\n  }\n\n  .secondary-sm {\n    background-color: #ff7500;\n  }\n\n  .tertiary-sm {\n    background-color: #a08629;\n  }\n\n  .accent-sm {\n    background-color: #193c63;\n  }\n\n  .success-sm {\n    background-color: #00ce59;\n  }\n\n  .error-sm {\n    background-color: #ff0000;\n  }\n\n  .black-sm {\n    background-color: black;\n  }\n\n  .white-sm {\n    background-color: white;\n  }\n\n  .primary-text-sm {\n    color: #041e42;\n  }\n\n  .secondary-text-sm {\n    color: #ff7500;\n  }\n\n  .tertiary-text-sm {\n    color: #a08629;\n  }\n\n  .accent-text-sm {\n    color: #193c63;\n  }\n\n  .success-text-sm {\n    color: #00ce59;\n  }\n\n  .error-text-sm {\n    color: #ff0000;\n  }\n\n  .black-text-sm {\n    color: black;\n  }\n\n  .white-text-sm {\n    color: white;\n  }\n}\n\n@media (min-width: 768px) {\n  .primary-md {\n    background-color: #041e42;\n  }\n\n  .secondary-md {\n    background-color: #ff7500;\n  }\n\n  .tertiary-md {\n    background-color: #a08629;\n  }\n\n  .accent-md {\n    background-color: #193c63;\n  }\n\n  .success-md {\n    background-color: #00ce59;\n  }\n\n  .error-md {\n    background-color: #ff0000;\n  }\n\n  .black-md {\n    background-color: black;\n  }\n\n  .white-md {\n    background-color: white;\n  }\n\n  .primary-text-md {\n    color: #041e42;\n  }\n\n  .secondary-text-md {\n    color: #ff7500;\n  }\n\n  .tertiary-text-md {\n    color: #a08629;\n  }\n\n  .accent-text-md {\n    color: #193c63;\n  }\n\n  .success-text-md {\n    color: #00ce59;\n  }\n\n  .error-text-md {\n    color: #ff0000;\n  }\n\n  .black-text-md {\n    color: black;\n  }\n\n  .white-text-md {\n    color: white;\n  }\n}\n\n@media (min-width: 992px) {\n  .primary-lg {\n    background-color: #041e42;\n  }\n\n  .secondary-lg {\n    background-color: #ff7500;\n  }\n\n  .tertiary-lg {\n    background-color: #a08629;\n  }\n\n  .accent-lg {\n    background-color: #193c63;\n  }\n\n  .success-lg {\n    background-color: #00ce59;\n  }\n\n  .error-lg {\n    background-color: #ff0000;\n  }\n\n  .black-lg {\n    background-color: black;\n  }\n\n  .white-lg {\n    background-color: white;\n  }\n\n  .primary-text-lg {\n    color: #041e42;\n  }\n\n  .secondary-text-lg {\n    color: #ff7500;\n  }\n\n  .tertiary-text-lg {\n    color: #a08629;\n  }\n\n  .accent-text-lg {\n    color: #193c63;\n  }\n\n  .success-text-lg {\n    color: #00ce59;\n  }\n\n  .error-text-lg {\n    color: #ff0000;\n  }\n\n  .black-text-lg {\n    color: black;\n  }\n\n  .white-text-lg {\n    color: white;\n  }\n}\n\n@media (min-width: 1200px) {\n  .primary-xl {\n    background-color: #041e42;\n  }\n\n  .secondary-xl {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xl {\n    background-color: #a08629;\n  }\n\n  .accent-xl {\n    background-color: #193c63;\n  }\n\n  .success-xl {\n    background-color: #00ce59;\n  }\n\n  .error-xl {\n    background-color: #ff0000;\n  }\n\n  .black-xl {\n    background-color: black;\n  }\n\n  .white-xl {\n    background-color: white;\n  }\n\n  .primary-text-xl {\n    color: #041e42;\n  }\n\n  .secondary-text-xl {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xl {\n    color: #a08629;\n  }\n\n  .accent-text-xl {\n    color: #193c63;\n  }\n\n  .success-text-xl {\n    color: #00ce59;\n  }\n\n  .error-text-xl {\n    color: #ff0000;\n  }\n\n  .black-text-xl {\n    color: black;\n  }\n\n  .white-text-xl {\n    color: white;\n  }\n}\n\n.nav-container {\n  margin-bottom: 160px;\n}\n\n.nav-container .navbar {\n  width: 100%;\n  height: auto;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 9;\n  transition: ease 0.25s;\n}\n\n.nav-container .navbar.nav-hidden {\n  transition: ease 1s;\n  transform: translateY(-60px);\n}\n\n.nav-container .navbar.main-nav .top-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .top-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav .bottom-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .bottom-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar {\n  transition: ease 1s;\n  background-color: white;\n  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar .nav-btn {\n  color: black;\n}\n\n.nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n  width: 100%;\n  padding: 0px 60px;\n}\n\n.nav-container .navbar .top-bar {\n  height: 60px;\n  background-color: #041e42;\n}\n\n.nav-container .navbar .top-bar .nav-btn {\n  height: 60px;\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn.disabled {\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn-icon {\n  height: 60px;\n}\n\n.nav-container .navbar .bottom-bar {\n  height: 80px;\n  background-color: white;\n}\n\n.nav-container .navbar .bottom-bar .nav-btn,\n.nav-container .navbar .bottom-bar .nav-btn-icon {\n  height: 80px;\n}\n\n.nav-container .navbar .nav-btn,\n.nav-container .navbar .nav-btn-icon {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: auto;\n  float: left;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.nav-container .navbar .nav-btn.disabled,\n.nav-container .navbar .nav-btn-icon.disabled {\n  color: #757575;\n  cursor: default;\n}\n\n.nav-container .navbar .nav-btn.disabled:hover,\n.nav-container .navbar .nav-btn-icon.disabled:hover {\n  background-color: transparent;\n}\n\n.nav-container .navbar .nav-btn.active,\n.nav-container .navbar .nav-btn-icon.active {\n  font-weight: bold;\n  color: #a08629;\n}\n\n.nav-container .navbar .nav-btn {\n  padding: 16px;\n  text-transform: uppercase;\n}\n\n.nav-container .navbar .nav-btn .icon {\n  margin-right: 16px;\n}\n\n.nav-container .navbar .nav-btn:hover {\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n.nav-container .navbar .nav-btn-icon {\n  padding: 6px;\n}\n\n@media (max-width: 800px) {\n  .nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n    padding: 0px 15px;\n  }\n}\n\n@media (max-width: 768px) {\n  .nav-container {\n    margin-bottom: 100px;\n  }\n\n  .nav-container .navbar.nav-hidden {\n    transform: translateY(0px);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar {\n    transition: ease 1s;\n    background-color: white;\n    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar .nav-btn {\n    color: white;\n  }\n\n  .nav-container .navbar .top-bar.desktop-bar,\n.nav-container .navbar .bottom-bar.desktop-bar {\n    display: none;\n  }\n}\n\n@media (min-width: 769px) {\n  .nav-container .navbar .top-bar.mobile-bar,\n.nav-container .navbar .bottom-bar.mobile-bar {\n    display: none;\n  }\n}\n\nform {\n  position: relative;\n}\n\nform .input-container {\n  height: auto;\n  margin-bottom: 32px;\n}\n\nform .input-container .input-group,\nform .input-container .select-group {\n  height: auto;\n  min-height: 42px;\n  position: relative;\n  width: 100%;\n  background-color: white;\n  border: thin solid black;\n  border-radius: 21px;\n  padding: 0px 19px;\n  display: flex;\n  align-items: center;\n}\n\nform .input-container .input-group.dark,\nform .input-container .select-group.dark {\n  border-color: white;\n}\n\nform .input-container .input-group.dark input.active ~ label,\nform .input-container .input-group.dark textarea.active ~ label,\nform .input-container .select-group.dark input.active ~ label,\nform .input-container .select-group.dark textarea.active ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:focus ~ label,\nform .input-container .input-group.dark textarea:focus ~ label,\nform .input-container .select-group.dark input:focus ~ label,\nform .input-container .select-group.dark textarea:focus ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:placeholder-shown ~ label,\nform .input-container .input-group.dark textarea:placeholder-shown ~ label,\nform .input-container .select-group.dark input:placeholder-shown ~ label,\nform .input-container .select-group.dark textarea:placeholder-shown ~ label {\n  color: white;\n}\n\nform .input-container .input-group .icon,\nform .input-container .select-group .icon {\n  position: relative;\n}\n\nform .input-container .input-group .icon.before,\nform .input-container .select-group .icon.before {\n  margin: 0px 8px 0px 0px;\n}\n\nform .input-container .input-group .icon.after,\nform .input-container .select-group .icon.after {\n  margin: 0px 0px 0px 8px;\n}\n\nform .input-container .input-group .icon img,\nform .input-container .select-group .icon img {\n  height: 16px !important;\n  width: 16px !important;\n}\n\nform .input-container .input-group.tile,\nform .input-container .select-group.tile {\n  border-radius: 0px;\n  padding: 0px 12px;\n}\n\nform .input-container .input-group .input-label,\nform .input-container .select-group .input-label {\n  height: 100%;\n  width: inherit;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .input-container .input-group .input-label input,\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label input,\nform .input-container .select-group .input-label textarea {\n  height: inherit;\n  width: inherit;\n  font-size: 13px;\n  padding: 12px 0px;\n  border: none;\n}\n\nform .input-container .input-group .input-label input.active ~ label,\nform .input-container .input-group .input-label textarea.active ~ label,\nform .input-container .select-group .input-label input.active ~ label,\nform .input-container .select-group .input-label textarea.active ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:focus ~ label,\nform .input-container .input-group .input-label textarea:focus ~ label,\nform .input-container .select-group .input-label input:focus ~ label,\nform .input-container .select-group .input-label textarea:focus ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label,\nform .input-container .select-group .input-label input:placeholder-shown ~ label,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:focus,\nform .input-container .input-group .input-label textarea:focus,\nform .input-container .select-group .input-label input:focus,\nform .input-container .select-group .input-label textarea:focus {\n  outline: none;\n}\n\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label textarea {\n  border: none;\n  outline: none;\n  resize: none;\n  overflow: none;\n  height: 125px;\n}\n\nform .input-container .input-group .input-label textarea ~ label,\nform .input-container .select-group .input-label textarea ~ label {\n  top: 10px;\n}\n\nform .input-container .input-group .input-label label,\nform .input-container .select-group .input-label label {\n  color: #000;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  position: absolute;\n  pointer-events: none;\n  transition: 0.25s ease all;\n  -moz-transition: 0.25s ease all;\n  -webkit-transition: 0.25s ease all;\n}\n\nform .input-container .input-group.disabled {\n  border-color: #9e9e9e;\n}\n\nform .input-container .input-group .input-label input:disabled,\nform .input-container .input-group .input-label textarea:disabled {\n  background-color: white;\n}\n\nform .input-container .input-group .input-label input:disabled ~ label,\nform .input-container .input-group .input-label textarea:disabled ~ label {\n  color: #9e9e9e;\n}\n\nform .input-container .select-group {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .icon.select-icon {\n  margin-top: 4px;\n}\n\nform .input-container .select-group .icon.select-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\nform .input-container .select-group .input-label {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input:disabled {\n  background-color: white;\n}\n\nform .input-container .select-options {\n  height: auto;\n  position: absolute;\n  z-index: 9;\n  border-radius: 21px;\n  margin: 8px 0px;\n  overflow: hidden;\n  transform-origin: 0% 0%;\n  border: thin solid black;\n  background-color: white;\n}\n\nform .input-container .select-options.tile {\n  border-radius: 0px;\n}\n\nform .input-container .select-options .opt {\n  position: relative;\n  padding: 12px 32px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-options .opt:hover {\n  background-color: rgba(0, 0, 0, 0.15);\n}\n\nform .input-container .error-input {\n  margin: 2px 0px 0px 21px;\n  font-size: 13px;\n  color: #ff0000;\n}\n\nform .checkbox-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\nform .checkbox-group label {\n  font-size: 13px;\n  color: black;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .checkbox-group label:before, form .checkbox-group label:after {\n  content: \"\";\n  position: absolute;\n  left: 10px;\n  top: 12px;\n}\n\nform .checkbox-group label:before {\n  width: 15px;\n  height: 15px;\n  background: #fff;\n  border: 1px solid #000;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n\nform .checkbox-group input[type=checkbox] {\n  outline: 0;\n  visibility: hidden;\n  width: 15px;\n  margin: 0;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label {\n  color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label:before {\n  border-color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label {\n  color: #041e42;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label:before {\n  background: #041e42;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label {\n  color: #ff7500;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label:before {\n  background: #ff7500;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label {\n  color: #a08629;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label:before {\n  background: #a08629;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label {\n  color: #193c63;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label:before {\n  background: #193c63;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label {\n  color: #00ce59;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label:before {\n  background: #00ce59;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label {\n  color: #ff0000;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label:before {\n  background: #ff0000;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked:disabled + label:before {\n  background: #9e9e9e;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked + label:after {\n  transform: translate(4px, 4.8076923077px) rotate(-45deg);\n  width: 7px;\n  height: 3.5px;\n  border: 2px solid white;\n  border-top-style: none;\n  border-right-style: none;\n}\n\nform .switch-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .switch-group label {\n  position: relative;\n  cursor: pointer;\n  margin: 0px 16px 20px 16px;\n  padding: 6px 0 6px 44px;\n}\n\nform .switch-group label:before, form .switch-group label:after {\n  content: \"\";\n  position: absolute;\n  margin: 0;\n  outline: 0;\n  top: 49%;\n  transform: translate(0, -50%);\n  transition: all 0.3s ease;\n}\n\nform .switch-group label:before {\n  left: -12px;\n  width: 40px;\n  height: 24px;\n  border-radius: 13px;\n}\n\nform .switch-group label:after {\n  left: -7px;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background-color: #fafafa;\n}\n\nform .switch-group label.switch-primary:before {\n  background-color: #041e42;\n}\n\nform .switch-group label.switch-secondary:before {\n  background-color: #ff7500;\n}\n\nform .switch-group label.switch-tertiary:before {\n  background-color: #a08629;\n}\n\nform .switch-group label.switch-accent:before {\n  background-color: #193c63;\n}\n\nform .switch-group label.switch-success:before {\n  background-color: #00ce59;\n}\n\nform .switch-group label.switch-error:before {\n  background-color: #ff0000;\n}\n\nform .switch-group label:disabled:before {\n  background-color: #9e9e9e;\n}\n\nform .switch-group input[type=checkbox] {\n  display: none;\n}\n\nform .switch-group input[type=checkbox]:checked + label:after {\n  transform: translate(125%, -50%);\n}\n\n.parallax-container .parallax {\n  width: 100%;\n  top: 0;\n  left: 0;\n  background-position-y: 0;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.carousel-container {\n  display: flex;\n  justify-content: center;\n  overflow: hidden;\n  background-size: 100% 75%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n\n.carousel-container .carousel {\n  width: 75%;\n  margin: auto;\n}\n\n.carousel-container .carousel .carousel-item {\n  padding: 0px 21px;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-navigation button {\n  outline: none;\n}\n\n@media (max-width: 600px) {\n  .carousel-container {\n    background: none;\n  }\n\n  .carousel-container .carousel {\n    width: 100%;\n  }\n\n  .carousel-container .carousel .carousel-item {\n    width: 100%;\n    padding: 0 12px;\n    margin: auto;\n  }\n\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot {\n    width: 12px !important;\n    height: 12px !important;\n    padding: 7px !important;\n    background-color: black !important;\n  }\n\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot.VueCarousel-dot--active {\n    background-color: #a08629 !important;\n  }\n}\n\n.btn {\n  position: relative;\n  margin: 20px 12px 0px 12px;\n  padding: 13px 26px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  border: none;\n  outline: none !important;\n  cursor: pointer;\n  outline: none;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.btn.full-width {\n  width: 100%;\n  margin: 20px 0px 0px 0px;\n}\n\n.btn.dark {\n  color: white;\n}\n\n.btn.large {\n  padding: 20px 40px;\n}\n\n.btn.large.rounded {\n  border-radius: 40px;\n}\n\n.btn.large.outlined {\n  border-width: 4.5px;\n}\n\n.btn.small {\n  padding: 8px 18px;\n}\n\n.btn.small.rounded {\n  border-radius: 16px;\n}\n\n.btn.small.outlined {\n  border-width: 1.5px;\n}\n\n.btn.rounded {\n  border-radius: 26px;\n}\n\n.btn.outlined {\n  background-color: transparent;\n  border-width: 3px;\n  border-style: solid;\n}\n\n.btn.icon {\n  margin: 0px 8px;\n  padding: 0px;\n  background-color: transparent !important;\n}\n\n.card {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  border-radius: 15px 15px 15px 15px;\n  overflow: hidden;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.card.no-shadow {\n  box-shadow: none !important;\n}\n\n.card:not(.active-state):not(:hover) {\n  background: white !important;\n}\n\n.card.top-hover:hover {\n  background: white !important;\n}\n\n.card.top-hover:hover .image .card-image-content {\n  visibility: visible;\n  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .image {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card.full-hover:hover .image .card-image-content {\n  visibility: visible;\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n  color: white;\n}\n\n.card.active-state .image {\n  display: none;\n}\n\n.card.active-state .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card .image {\n  width: inherit;\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n.card .image .card-image-content {\n  height: inherit;\n  visibility: hidden;\n  padding: 30px;\n  color: white;\n}\n\n.card .card-state {\n  float: left;\n  height: auto;\n  padding: 5px 20px;\n  text-align: center;\n  background-color: #ff7500;\n  margin-left: 12px;\n}\n\n.card .card-state.rounded {\n  border-radius: 20px;\n}\n\n.card .card-state.tile {\n  border-radius: none;\n}\n\n.card .card-text {\n  height: auto;\n  padding: 30px;\n  background-color: white;\n}\n\n.card .card-info {\n  padding: 13px;\n  background-color: #041e42;\n}\n\n.card .card-info .info-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.card .card-info .info-item .dot {\n  width: 7px;\n  height: 7px;\n  border-radius: 50%;\n}\n\n.card .card-info .info-item .dot.primary {\n  background-color: #041e42;\n}\n\n.card .card-info .info-item .dot.secondary {\n  background-color: #ff7500;\n}\n\n.card .card-info .info-item .dot.tertiary {\n  background-color: #a08629;\n}\n\n.card .card-info .info-item .dot.accent {\n  background-color: #193c63;\n}\n\n.card .card-info .info-item .dot.success {\n  background-color: #00ce59;\n}\n\n.card .card-info .info-item .dot.error {\n  background-color: #ff0000;\n}\n\n.card .card-info .info-item p {\n  margin: 0px 6px 0px 12px;\n}\n\n.card .card-selector {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 8;\n  background-color: rgba(160, 134, 41, 0.66);\n}\n\n.card .card-selector .check-circle {\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  margin: 6px;\n  background-color: #00ce59;\n}\n\n.card .card-selector .check-circle .checkmarck {\n  height: 10px;\n  width: 20px;\n  border: 4px solid #fff;\n  border-top: none;\n  border-right: none;\n  position: absolute;\n  top: 15px;\n  left: 13px;\n  transform: rotate(-45deg);\n}\n\n@media (max-width: 768px) {\n  .card .card-text {\n    padding: 15px;\n  }\n}\n\n.panel {\n  width: auto;\n  height: auto;\n  background-color: white;\n}\n\n.panel .panel-header {\n  width: inherit;\n  height: auto;\n  padding: 18px 9px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.panel .panel-header .header {\n  color: black;\n  font-weight: bold;\n  font-size: 13px;\n  text-transform: uppercase;\n}\n\n.panel .panel-header .icon.panel-icon {\n  margin-top: 4px;\n}\n\n.panel .panel-header .icon.panel-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\n.panel .panel-body {\n  height: auto;\n  width: 100%;\n  background-color: #ececec;\n  padding: 30px 0px;\n  border-bottom: thin solid black;\n  transform-origin: 0% 0%;\n}\n\n.panel .panel-body .btn {\n  width: 100%;\n  margin: 0px !important;\n  background-color: #ececec !important;\n  color: black !important;\n  text-align: left !important;\n  outline: none !important;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\nbody::-webkit-scrollbar {\n  width: 0.5rem;\n}\n\nbody::-webkit-scrollbar-thumb {\n  background-color: #193c63;\n}", ""]);
 
 // exports
 
@@ -10183,7 +9785,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".tertiary-border {\n  background-color: #a08629;\n}\n.gris {\n  background-color: #f5f5f5;\n}\n.bn {\n  border: 1px solid black;\n}\n.fan {\n  font-size: 28px;\n}\n.precios-container {\n  width: 90%;\n  margin: auto;\n}\n@media (max-width: 764px) {\n.precios-container {\n    width: 95%;\n}\n}", ""]);
+exports.push([module.i, ".agente-container {\n  width: 90%;\n  margin: auto;\n}\n.agente-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.agente-container .full-divider {\n  height: 0px;\n  width: 100%;\n  border: thin solid rgba(4, 30, 66, 0.12);\n}\n.agente-container .info-card-container {\n  padding: 10px;\n}\n.agente-container .info-card-container .info-card {\n  background-color: #2f3a4a;\n  border-radius: 7px;\n  padding: 12px 20px;\n  color: white;\n  height: 100%;\n}\n.agente-container .info-card-container .info-card .arrow-up {\n  height: 13px;\n  width: 13px;\n  border: 2px solid #56d837;\n  border-top: none;\n  border-left: none;\n  margin: 8px 0px 0px 12px;\n  transform: rotate(-135deg);\n}\n.agente-container .info-card-container .info-card .arrow-down {\n  height: 13px;\n  width: 13px;\n  border: 2px solid #ff0000;\n  border-left: none;\n  border-bottom: none;\n  margin: 0px 0px 8px 12px;\n  transform: rotate(135deg);\n}\n@media (max-width: 764px) {\n.agente-container {\n    width: 95%;\n    font-size: 12px;\n}\n.agente-container .info-card-container {\n    padding: 5px;\n}\n}", ""]);
 
 // exports
 
@@ -10209,6 +9811,25 @@ exports.push([module.i, ".tertiary-border {\n  background-color: #a08629;\n}\n.g
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".agente-perfil-container[data-v-748f6370] {\n  width: 90%;\n  margin: auto;\n}\n@media (max-width: 768px) {\n.agente-perfil-container[data-v-748f6370] {\n    width: 95%;\n    margin: auto;\n}\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/AMC1.vue?vue&type=style&index=0&lang=scss&":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/amc/AMC1.vue?vue&type=style&index=0&lang=scss& ***!
@@ -10221,7 +9842,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".bn {\n  border: 1px solid black;\n}\n.fan {\n  font-size: 28px;\n}\n.precios-container {\n  width: 90%;\n  margin: auto;\n}\n@media (max-width: 764px) {\n.precios-container {\n    width: 95%;\n}\n}\n.custom-carousel .carousel {\n  width: 95% !important;\n}", ""]);
+exports.push([module.i, ".amc-1 .amc-container {\n  width: 95%;\n  margin: auto;\n}\n.amc-1 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-1 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n@media (max-width: 768px) {\n.amc-1 .amc-container {\n    width: 100%;\n}\n}", ""]);
 
 // exports
 
@@ -10335,7 +9956,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".gris {\n  background-color: #f5f5f5;\n}\n.bn {\n  border: 1px solid black;\n}\n.fan {\n  font-size: 28px;\n}\n.precios-container {\n  width: 90%;\n  margin: auto;\n}\n@media (max-width: 764px) {\n.precios-container {\n    width: 95%;\n}\n}", ""]);
+exports.push([module.i, ".brocker-container {\n  width: 90%;\n  margin: auto;\n}\n.brocker-container .brocker-img {\n  width: 290px;\n  height: 370px;\n  background-image: url(\"/images/banners/3.png\");\n  background-repeat: no-repeat;\n  background-position: top center;\n}\n.brocker-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.brocker-container .full-divider {\n  height: 0px;\n  width: 100%;\n  border: thin solid rgba(4, 30, 66, 0.12);\n}\n.brocker-container .user-row .card-text {\n  background-color: #f5f5f5;\n}\n.brocker-container .user-row .card-text .user-check {\n  cursor: pointer;\n  padding: 6px 0px;\n  border-radius: 5px;\n}\n.brocker-container .user-row .card-text .user-check.user-check-active {\n  background-color: #041e42;\n  color: white;\n}\n.brocker-container .user-row .card-text .user-check .avatar {\n  width: 45px;\n  height: 45px;\n  margin: auto;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n.brocker-container .user-card .card-text {\n  background-color: #f5f5f5;\n  padding: 16px;\n}\n.brocker-container .user-card .card-text .user-check {\n  cursor: pointer;\n  padding: 8px 16px;\n  border-radius: 5px;\n}\n.brocker-container .user-card .card-text .user-check.user-check-active {\n  background-color: #041e42;\n  color: white;\n}\n.brocker-container .user-card .card-text .user-check .avatar {\n  width: 52px;\n  height: 52px;\n  margin: auto;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n@media (max-width: 764px) {\n.brocker-container {\n    width: 95%;\n    font-size: 12px;\n}\n}", ""]);
 
 // exports
 
@@ -28854,6 +28475,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/amc/AMC1.vue?vue&type=style&index=0&lang=scss&":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/amc/AMC1.vue?vue&type=style&index=0&lang=scss& ***!
@@ -32217,901 +31868,676 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "precios-container py-16" },
-      [
-        _c("w-card", { attrs: { shadow: false } }, [
-          _c("div", { staticClass: "w-full lg:w-11/12 mx-auto mt-10" }, [
-            _c("div", { staticClass: "lg:flex justify-between" }, [
-              _c("div", { staticClass: "lg:block p-5" }, [
-                _c("div", { staticClass: "lg:hidden" }, [
-                  _c(
-                    "h1",
-                    { staticClass: "text-sm font-bold tracking-widest" },
-                    [
-                      _vm._v(
-                        "\n                                PERFIL AGENTES\n                            "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", {
-                    staticClass: "border-t-2 tertiary-border w-2/12 my-5"
-                  })
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "w-auto",
-                  staticStyle: { height: "300px" },
-                  attrs: { src: _vm.agent.img, alt: "" }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "lg:hidden flex items-center justify-between"
-                  },
-                  [
-                    _c("h1", { staticClass: "subtitle bold" }, [
-                      _vm._v(_vm._s(_vm.agent.name))
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "my-5" }, [
-                  _c("p", { staticClass: "text-center caption" }, [
-                    _vm._v(
-                      "\n                                Valoración del agente\n                            "
-                    )
+  return _c(
+    "div",
+    [
+      _c(
+        "div",
+        { staticClass: "agente-container" },
+        [
+          _c("w-card", { attrs: { shadow: false } }, [
+            _c(
+              "div",
+              { staticClass: "flex flex-row justify-between flex-wrap" },
+              [
+                _c("div", { staticClass: "w-full md:w-1/3" }, [
+                  _c("div", { staticClass: "block md:hidden ml-1" }, [
+                    _c("p", { staticClass: "bold" }, [
+                      _vm._v("PERFIL AGENTES")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider my-5" })
                   ]),
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "flex justify-center" },
+                    { staticClass: "flex flex-col items-center flex-wrap" },
                     [
-                      _vm._l(_vm.agent.stars, function(star) {
-                        return _c(
-                          "svg",
-                          {
-                            key: star,
-                            staticClass:
-                              "h-5 svg-inline--fa fa-star fa-w-18 tertiary-text",
+                      _c(
+                        "div",
+                        { staticClass: "w-full flex flex-row justify-center" },
+                        [
+                          _c("img", {
                             attrs: {
-                              "aria-hidden": "true",
-                              "data-prefix": "fas",
-                              "data-icon": "star",
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 576 512"
+                              src: _vm.agent.img,
+                              width: "290",
+                              height: "auto"
                             }
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                fill: "currentColor",
-                                d:
-                                  "M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              }
-                            })
-                          ]
-                        )
-                      }),
+                          })
+                        ]
+                      ),
                       _vm._v(" "),
-                      _vm._l(5 - _vm.agent.stars, function(i) {
-                        return _c(
-                          "svg",
-                          {
-                            key: i * 5,
-                            staticClass:
-                              "h-5 svg-inline--fa fa-star fa-w-18 text-gray-300",
-                            attrs: {
-                              "aria-hidden": "true",
-                              "data-prefix": "fas",
-                              "data-icon": "star",
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 576 512"
-                            }
-                          },
-                          [
-                            _c("path", {
-                              attrs: {
-                                fill: "currentColor",
-                                d:
-                                  "M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                              }
-                            })
-                          ]
-                        )
-                      })
-                    ],
-                    2
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "hidden md:w-full md:flex md:flex-row md:justify-center md:flex-wrap"
+                        },
+                        [
+                          _c("p", { staticClass: "my-3" }, [
+                            _vm._v("Valoración del agente")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "w-full flex flex-row justify-center"
+                            },
+                            _vm._l(5, function(i) {
+                              return _c(
+                                "w-btn",
+                                {
+                                  key: i,
+                                  staticStyle: { margin: "2px" },
+                                  attrs: { icon: true, disabled: true }
+                                },
+                                [
+                                  _c("w-icon", {
+                                    attrs: {
+                                      icon:
+                                        _vm.agent.stars >= i
+                                          ? "star-brown"
+                                          : "star-grey",
+                                      h: "14px"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            }),
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "w-full flex flex-row justify-center my-5"
+                            },
+                            [
+                              _c(
+                                "w-btn",
+                                { attrs: { icon: true } },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "mail-grey", h: "12px" }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "w-btn",
+                                { attrs: { icon: true } },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "facebook-grey", h: "15px" }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "w-btn",
+                                { attrs: { icon: true } },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "linkedin-grey", h: "17px" }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "w-btn",
+                                { attrs: { icon: true } },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "twitter-grey", h: "15px" }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    ]
                   )
                 ]),
                 _vm._v(" "),
+                _c("div", { staticClass: "w-full md:w-2/3" }, [
+                  _c("div", { staticClass: "hidden md:block" }, [
+                    _c("p", { staticClass: "bold" }, [
+                      _vm._v("PERFIL AGENTES")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider my-5" })
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "subtitle bold mt-5 md:mt-0" }, [
+                    _vm._v(_vm._s(_vm.agent.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "mb-8" }, [
+                    _vm._v(_vm._s(_vm.agent.dir))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "bold" }, [
+                    _vm._v(_vm._s(_vm.agent.job))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "md:mb-10" }, [
+                    _vm._v(
+                      "Codigo Ministerio de vivienda: " + _vm._s(_vm.agent.cod)
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "full-divider block md:hidden mt-5"
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex flex-row flex-wrap md:hidden" },
+                    [
+                      _c("div", { staticClass: "w-1/2 self-center" }, [
+                        _c("p", { staticClass: "my-3" }, [
+                          _vm._v("Valoración del agente")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "w-1/2 self-center" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "w-full flex flex-row justify-center"
+                          },
+                          _vm._l(5, function(i) {
+                            return _c(
+                              "w-btn",
+                              {
+                                key: i,
+                                staticStyle: { margin: "2px" },
+                                attrs: { icon: true, disabled: true }
+                              },
+                              [
+                                _c("w-icon", {
+                                  attrs: {
+                                    icon:
+                                      _vm.agent.stars >= i
+                                        ? "star-brown"
+                                        : "star-grey",
+                                    h: "14px"
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          }),
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "w-full" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "w-full flex flex-row justify-start mb-5",
+                            staticStyle: { "margin-left": "-6px" }
+                          },
+                          [
+                            _c(
+                              "w-btn",
+                              { attrs: { icon: true } },
+                              [
+                                _c("w-icon", {
+                                  attrs: { icon: "mail-grey", h: "12px" }
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "w-btn",
+                              { attrs: { icon: true } },
+                              [
+                                _c("w-icon", {
+                                  attrs: { icon: "facebook-grey", h: "15px" }
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "w-btn",
+                              { attrs: { icon: true } },
+                              [
+                                _c("w-icon", {
+                                  attrs: { icon: "linkedin-grey", h: "17px" }
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "w-btn",
+                              { attrs: { icon: true } },
+                              [
+                                _c("w-icon", {
+                                  attrs: { icon: "twitter-grey", h: "15px" }
+                                })
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "full-divider block md:hidden mb-5"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex flex-row flex-wrap" }, [
+                    _c("div", { staticClass: "w-full md:w-1/3 my-0 md:my-3" }, [
+                      _c("p", { staticClass: "bold tertiary-text" }, [
+                        _vm._v("Cel.")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
+                      _c("p", [_vm._v(_vm._s(_vm.agent.cel))])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "w-full md:w-1/3 my-0 md:my-3" }, [
+                      _c("p", { staticClass: "bold tertiary-text" }, [
+                        _vm._v("Email")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
+                      _c("p", [_vm._v(_vm._s(_vm.agent.email))])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "w-full md:w-1/3 my-0 md:my-3" }, [
+                      _c("p", { staticClass: "bold tertiary-text" }, [
+                        _vm._v("Acerca de mi")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
+                      _c("p", [_vm._v(_vm._s(_vm.agent.description))])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex flex-row flex-wrap" },
+                    _vm._l(_vm.agent.transacciones, function(t, i) {
+                      return _c(
+                        "div",
+                        {
+                          key: i,
+                          staticClass: "w-1/2 md:w-1/4 info-card-container"
+                        },
+                        [
+                          _c("div", { staticClass: "info-card" }, [
+                            _c("p", { staticClass: "bold" }, [
+                              _vm._v(_vm._s(t.name))
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "title" }, [
+                              _vm._v(_vm._s(t.n))
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "flex flex-row" }, [
+                              _c("p", [
+                                _vm._v(
+                                  _vm._s(t.state) + " " + _vm._s(t.percentaje)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              t.state == "up"
+                                ? _c("div", { staticClass: "arrow-up" })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              t.state == "down"
+                                ? _c("div", { staticClass: "arrow-down" })
+                                : _vm._e()
+                            ])
+                          ])
+                        ]
+                      )
+                    }),
+                    0
+                  )
+                ])
+              ]
+            )
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex flex-row justify-center mt-20" },
+        [
+          _c("w-btn", { attrs: { outlined: true, color: "tertiary" } }, [
+            _c("p", { staticClass: "body bold" }, [_vm._v("ÚLTIMOS INGRESOS")])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "w-carousel",
+        {
+          staticClass: "mt-10",
+          attrs: {
+            items: _vm.windowWidth >= 768 ? 3 : 1,
+            pagination: _vm.windowWidth < 768,
+            navigation: _vm.windowWidth >= 768
+          }
+        },
+        _vm._l(_vm.cards, function(card, i) {
+          return _c("slide", { key: i }, [
+            _c(
+              "div",
+              { staticClass: "px-5" },
+              [
                 _c(
-                  "div",
-                  {
-                    staticClass:
-                      "mt-5 text-gray-600 flex items-center justify-center"
-                  },
+                  "w-card",
+                  { attrs: { image: card.image, hover: "full-hover" } },
                   [
-                    _c("router-link", { attrs: { to: "/" } }, [
-                      _c(
-                        "svg",
-                        {
-                          staticClass:
-                            "mr-5 h-6 svg-inline--fa fa-envelope fa-w-16",
-                          attrs: {
-                            "aria-hidden": "true",
-                            "data-prefix": "fas",
-                            "data-icon": "envelope",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 512 512"
-                          }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              fill: "currentColor",
-                              d:
-                                "M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                            }
-                          })
-                        ]
-                      )
+                    _c("template", { slot: "image" }, [
+                      _c("p", { staticClass: "bold" }, [
+                        _vm._v(_vm._s(card.direccion))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mt-5" }, [
+                        _vm._v(_vm._s(card.descripcion))
+                      ])
                     ]),
                     _vm._v(" "),
-                    _c("router-link", { attrs: { to: "/" } }, [
-                      _c(
-                        "svg",
-                        {
-                          staticClass:
-                            "mr-5 h-6 svg-inline--fa fa-facebook-f fa-w-10",
-                          attrs: {
-                            "aria-hidden": "true",
-                            focusable: "false",
-                            "data-prefix": "fab",
-                            "data-icon": "facebook-f",
-                            role: "img",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 320 512"
-                          }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              fill: "currentColor",
-                              d:
-                                "M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-                            }
-                          })
-                        ]
-                      )
+                    _c("template", { slot: "state" }, [
+                      _c("p", { staticClass: "white-text" }, [
+                        _vm._v(_vm._s(card.tipo))
+                      ])
                     ]),
                     _vm._v(" "),
-                    _c("router-link", { attrs: { to: "/" } }, [
-                      _c(
-                        "svg",
-                        {
-                          staticClass:
-                            "mr-5 h-6 svg-inline--fa fa-linkedin-in fa-w-14",
-                          attrs: {
-                            "aria-hidden": "true",
-                            focusable: "false",
-                            "data-prefix": "fab",
-                            "data-icon": "linkedin-in",
-                            role: "img",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 448 512"
-                          }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              fill: "currentColor",
-                              d:
-                                "M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
-                            }
-                          })
-                        ]
-                      )
+                    _c("p", { staticClass: "bold" }, [
+                      _vm._v(_vm._s(card.title))
                     ]),
                     _vm._v(" "),
-                    _c("router-link", { attrs: { to: "/" } }, [
+                    _c("p", [_vm._v(_vm._s(card.body))]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Comisión")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "flex flex-row justify-between" },
+                      [
+                        _c("p", { staticClass: "body bold" }, [
+                          _vm._v(_vm._s(card.comision))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "body bold tertiary-text" }, [
+                          _vm._v(_vm._s(card.mes))
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("template", { slot: "footer" }, [
                       _c(
-                        "svg",
-                        {
-                          staticClass:
-                            "mr-5 h-6 svg-inline--fa fa-twitter fa-w-16",
-                          attrs: {
-                            "aria-hidden": "true",
-                            "data-prefix": "fab",
-                            "data-icon": "twitter",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 512 512"
-                          }
-                        },
+                        "div",
+                        { staticClass: "flex flex-row justify-between" },
                         [
-                          _c("path", {
-                            attrs: {
-                              fill: "currentColor",
-                              d:
-                                "M459.37 151.72c.33 4.54.33 9.1.33 13.64 0 138.72-105.59 298.56-298.56 298.56-59.45 0-114.68-17.22-161.14-47.1 8.45.97 16.57 1.3 25.34 1.3 49.05 0 94.21-16.58 130.27-44.84a105.12 105.12 0 01-98.1-72.77c6.49.97 12.99 1.62 19.81 1.62 9.42 0 18.84-1.3 27.61-3.57A104.95 104.95 0 0120.8 195.57v-1.3a105.68 105.68 0 0047.43 13.32 104.86 104.86 0 01-46.78-87.39c0-19.49 5.2-37.36 14.3-52.95a298.27 298.27 0 00216.36 109.8c-1.62-7.8-2.6-15.91-2.6-24.03 0-57.83 46.78-104.94 104.94-104.94 30.2 0 57.5 12.67 76.67 33.14a206.6 206.6 0 0066.6-25.34 104.65 104.65 0 01-46.14 57.83c21.12-2.28 41.59-8.13 60.43-16.25a225.57 225.57 0 01-52.63 54.26z"
-                            }
-                          })
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row justify-between" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "info-item" },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "room-solid", h: "12px" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "white-text" }, [
+                                    _vm._v(_vm._s(card.info.habitaciones))
+                                  ])
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "info-item" },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "bath-solid", h: "15px" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "white-text" }, [
+                                    _vm._v(_vm._s(card.info.baños))
+                                  ])
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "info-item" },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "parking-solid", h: "12px" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "white-text" }, [
+                                    _vm._v(_vm._s(card.info.estacionamiento))
+                                  ])
+                                ],
+                                1
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "size", h: "15px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "white-text" }, [
+                                _vm._v(_vm._s(card.info.tamaño))
+                              ])
+                            ],
+                            1
+                          )
                         ]
                       )
                     ])
                   ],
-                  1
+                  2
                 )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "lg:w-2/3 lg:mx-10 mx-auto" }, [
-                _c("div", { staticClass: "hidden lg:block" }, [
-                  _c(
-                    "h1",
-                    { staticClass: "text-sm font-bold tracking-widest" },
-                    [
-                      _vm._v(
-                        "\n                                PERFIL AGENTES\n                            "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "border-t-2 tertiary w-2/12 my-5" }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "flex items-center justify-between" },
-                    [
-                      _c("h1", { staticClass: "fan subtitle-lg bold" }, [
-                        _vm._v(
-                          "\n                                    " +
-                            _vm._s(_vm.agent.name) +
-                            "\n                                "
-                        )
+              ],
+              1
+            )
+          ])
+        }),
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex flex-row justify-center mt-5" },
+        [
+          _c("w-btn", { attrs: { outlined: true, color: "tertiary" } }, [
+            _c("p", { staticClass: "body bold" }, [
+              _c("span", { staticClass: "secondary-text" }, [_vm._v("+")]),
+              _vm._v(" MÁS DESTACADOS\n            ")
+            ])
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "w-carousel",
+        {
+          staticClass: "mt-10",
+          attrs: {
+            background: _vm.windowWidth >= 768 ? "/images/banners/1.png" : "",
+            items: _vm.windowWidth >= 768 ? 3 : 1,
+            pagination: _vm.windowWidth < 768,
+            navigation: _vm.windowWidth >= 768
+          }
+        },
+        _vm._l(_vm.cards, function(card, i) {
+          return _c("slide", { key: i }, [
+            _c(
+              "div",
+              { staticClass: "px-5" },
+              [
+                _c(
+                  "w-card",
+                  { attrs: { image: card.image, hover: "full-hover" } },
+                  [
+                    _c("template", { slot: "image" }, [
+                      _c("p", { staticClass: "bold" }, [
+                        _vm._v(_vm._s(card.direccion))
                       ]),
                       _vm._v(" "),
+                      _c("p", { staticClass: "mt-5" }, [
+                        _vm._v(_vm._s(card.descripcion))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("template", { slot: "state" }, [
+                      _c("p", { staticClass: "white-text" }, [
+                        _vm._v(_vm._s(card.tipo))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "bold" }, [
+                      _vm._v(_vm._s(card.title))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(card.body))]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Comisión")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "flex flex-row justify-between" },
+                      [
+                        _c("p", { staticClass: "body bold" }, [
+                          _vm._v(_vm._s(card.comision))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "body bold tertiary-text" }, [
+                          _vm._v(_vm._s(card.mes))
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("template", { slot: "footer" }, [
                       _c(
-                        "svg",
-                        {
-                          staticClass:
-                            "hidden lg:block h-8 svg-inline--fa fa-info-circle fa-w-16",
-                          attrs: {
-                            "aria-hidden": "true",
-                            focusable: "false",
-                            "data-prefix": "fas",
-                            "data-icon": "info-circle",
-                            role: "img",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 512 512"
-                          }
-                        },
+                        "div",
+                        { staticClass: "flex flex-row justify-between" },
                         [
-                          _c("path", {
-                            attrs: {
-                              fill: "currentColor",
-                              d:
-                                "M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
-                            }
-                          })
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row justify-between" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "info-item" },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "room-solid", h: "12px" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "white-text" }, [
+                                    _vm._v(_vm._s(card.info.habitaciones))
+                                  ])
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "info-item" },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "bath-solid", h: "15px" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "white-text" }, [
+                                    _vm._v(_vm._s(card.info.baños))
+                                  ])
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "info-item" },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "parking-solid", h: "12px" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "white-text" }, [
+                                    _vm._v(_vm._s(card.info.estacionamiento))
+                                  ])
+                                ],
+                                1
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "info-item" },
+                            [
+                              _c("w-icon", {
+                                attrs: { icon: "size", h: "15px" }
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "white-text" }, [
+                                _vm._v(_vm._s(card.info.tamaño))
+                              ])
+                            ],
+                            1
+                          )
                         ]
                       )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "caption my-4" }, [
-                  _vm._v(_vm._s(_vm.agent.dir))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "caption bold" }, [
-                  _vm._v(_vm._s(_vm.agent.job))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "caption mb-5" }, [
-                  _vm._v(
-                    "\n                            Codigo Ministerio de vivienda:" +
-                      _vm._s(_vm.agent.cod) +
-                      "\n                        "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "hidden lg:block border-t w-full border-gray-600"
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "my-5 lg:flex" }, [
-                  _c(
-                    "h3",
-                    {
-                      staticClass:
-                        "tertiary-text font-bold lg:w-1/4 tertiary-text"
-                    },
-                    [
-                      _vm._v(
-                        "\n                                Cel:\n                            "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "caption lg:w-3/4" }, [
-                    _vm._v(_vm._s(_vm.agent.cel))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "my-5 lg:flex" }, [
-                  _c(
-                    "h3",
-                    { staticClass: "tertiary-text font-bold lg:w-1/4" },
-                    [
-                      _vm._v(
-                        "\n                                Email:\n                            "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "caption lg:w-3/4" }, [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(_vm.agent.email) +
-                        "\n                            "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "my-5 lg:flex" }, [
-                  _c(
-                    "h3",
-                    { staticClass: "tertiary-text font-bold lg:w-1/4" },
-                    [
-                      _vm._v(
-                        "\n                                Descripcion:\n                            "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "caption lg:w-3/4" }, [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(_vm.agent.description) +
-                        "\n                            "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "flex flex-wrap", attrs: { id: "cards" } },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "w-1/2 lg:w-1/3 rounded-lg primary text-white text-center p-3 m-1"
-                      },
-                      [
-                        _c("p", { staticClass: "caption" }, [
-                          _vm._v("Transacciones")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "title" }, [
-                          _vm._v(_vm._s(_vm.agent.trans.n))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "uppercase" }, [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(_vm.agent.trans.state) +
-                              "\n                                    " +
-                              _vm._s(_vm.agent.trans.stateN) +
-                              "%\n                                    "
-                          ),
-                          _c("span", { staticClass: "inline-block" }, [
-                            _c(
-                              "svg",
-                              {
-                                staticClass:
-                                  "h-5 svg-inline--fa fa-arrow-up fa-w-14",
-                                class:
-                                  _vm.agent.trans.state == "up"
-                                    ? "text-green-500"
-                                    : " transform rotate-180 text-red-400 ",
-                                attrs: {
-                                  "aria-hidden": "true",
-                                  focusable: "false",
-                                  "data-prefix": "fas",
-                                  "data-icon": "arrow-up",
-                                  role: "img",
-                                  xmlns: "http://www.w3.org/2000/svg",
-                                  viewBox: "0 0 448 512"
-                                }
-                              },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    fill: "currentColor",
-                                    d:
-                                      "M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"
-                                  }
-                                })
-                              ]
-                            )
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "w-1/2 lg:w-1/3 rounded-lg primary text-white text-center p-3 m-1"
-                      },
-                      [
-                        _c("p", { staticClass: "caption" }, [
-                          _vm._v("Activas")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "title" }, [
-                          _vm._v(_vm._s(_vm.agent.active.n))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "uppercase" }, [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(_vm.agent.active.state) +
-                              "\n                                    " +
-                              _vm._s(_vm.agent.active.stateN) +
-                              "%\n                                    "
-                          ),
-                          _c("span", { staticClass: "inline-block" }, [
-                            _c(
-                              "svg",
-                              {
-                                staticClass:
-                                  "h-5 svg-inline--fa fa-arrow-up fa-w-14",
-                                class:
-                                  _vm.agent.active.state == "up"
-                                    ? "text-green-500"
-                                    : " transform rotate-180 text-red-400 ",
-                                attrs: {
-                                  "aria-hidden": "true",
-                                  focusable: "false",
-                                  "data-prefix": "fas",
-                                  "data-icon": "arrow-up",
-                                  role: "img",
-                                  xmlns: "http://www.w3.org/2000/svg",
-                                  viewBox: "0 0 448 512"
-                                }
-                              },
-                              [
-                                _c("path", {
-                                  attrs: {
-                                    fill: "currentColor",
-                                    d:
-                                      "M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"
-                                  }
-                                })
-                              ]
-                            )
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "w-1/2 lg:w-1/3 rounded-lg primary text-white text-center p-5 m-1"
-                      },
-                      [
-                        _c("p", { staticClass: "caption" }, [
-                          _vm._v("Canceladas")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "title" }, [
-                          _vm._v(_vm._s(_vm.agent.canceled))
-                        ])
-                      ]
-                    )
-                  ]
+                    ])
+                  ],
+                  2
                 )
-              ])
-            ])
+              ],
+              1
+            )
           ])
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c("div", [
-      _c(
-        "div",
-        { staticClass: "flex justify-center my-10" },
-        [
-          _c("w-btn", { attrs: { outlined: true, color: "tertiary" } }, [
-            _c("span", { staticClass: "body bold" }, [
-              _vm._v("ÚLTIMOS INGRESOS")
-            ])
-          ])
-        ],
+        }),
         1
       ),
       _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c(
-            "w-carousel",
-            {
-              staticClass: "mt-10",
-              attrs: {
-                items: _vm.windowWidth >= 768 ? 3 : 1,
-                pagination: _vm.windowWidth < 768,
-                navigation: _vm.windowWidth >= 768
-              }
-            },
-            _vm._l(_vm.cards, function(card, i) {
-              return _c("slide", { key: i }, [
-                _c(
-                  "div",
-                  { staticClass: "px-5" },
-                  [
-                    _c(
-                      "w-card",
-                      { attrs: { image: card.image, hover: "full-hover" } },
-                      [
-                        _c("template", { slot: "image" }, [
-                          _c("p", { staticClass: "bold" }, [
-                            _vm._v(_vm._s(card.direccion))
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "mt-5" }, [
-                            _vm._v(_vm._s(card.descripcion))
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("template", { slot: "state" }, [
-                          _c("p", { staticClass: "white-text" }, [
-                            _vm._v(_vm._s(card.tipo))
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "bold" }, [
-                          _vm._v(_vm._s(card.title))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v(_vm._s(card.body))]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("Comisión")]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "flex flex-row justify-between" },
-                          [
-                            _c("p", { staticClass: "body bold" }, [
-                              _vm._v(_vm._s(card.comision))
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "p",
-                              { staticClass: "body bold tertiary-text" },
-                              [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(card.mes) +
-                                    "\n                                "
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("template", { slot: "footer" }, [
-                          _c(
-                            "div",
-                            { staticClass: "flex flex-row justify-between" },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "flex flex-row justify-between"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "info-item" },
-                                    [
-                                      _c("w-icon", {
-                                        attrs: { icon: "room-solid", h: "12px" }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                                " +
-                                            _vm._s(card.info.habitaciones) +
-                                            "\n                                            "
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "info-item" },
-                                    [
-                                      _c("w-icon", {
-                                        attrs: { icon: "bath-solid", h: "15px" }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                                " +
-                                            _vm._s(card.info.baños) +
-                                            "\n                                            "
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "info-item" },
-                                    [
-                                      _c("w-icon", {
-                                        attrs: {
-                                          icon: "parking-solid",
-                                          h: "12px"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                                " +
-                                            _vm._s(card.info.estacionamiento) +
-                                            "\n                                            "
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "info-item" },
-                                [
-                                  _c("w-icon", {
-                                    attrs: { icon: "size", h: "15px" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "white-text" }, [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(card.info.tamaño) +
-                                        "\n                                        "
-                                    )
-                                  ])
-                                ],
-                                1
-                              )
-                            ]
-                          )
-                        ])
-                      ],
-                      2
-                    )
-                  ],
-                  1
-                )
-              ])
-            }),
-            1
-          )
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", [
-      _c(
-        "div",
-        { staticClass: "flex justify-center my-10" },
-        [
-          _c("w-btn", { attrs: { outlined: true, color: "tertiary" } }, [
-            _c("span", { staticClass: "body bold" }, [_vm._v("Mas destacados")])
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c(
-            "w-carousel",
-            {
-              staticClass: "mt-10",
-              attrs: {
-                background:
-                  _vm.windowWidth >= 768 ? "/images/banners/1.png" : "",
-                items: _vm.windowWidth >= 768 ? 3 : 1,
-                pagination: _vm.windowWidth < 768,
-                navigation: _vm.windowWidth >= 768
-              }
-            },
-            _vm._l(_vm.cards, function(card, i) {
-              return _c("slide", { key: i }, [
-                _c(
-                  "div",
-                  { staticClass: "px-5" },
-                  [
-                    _c(
-                      "w-card",
-                      { attrs: { image: card.image, hover: "full-hover" } },
-                      [
-                        _c("template", { slot: "image" }, [
-                          _c("p", { staticClass: "bold" }, [
-                            _vm._v(_vm._s(card.direccion))
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "mt-5" }, [
-                            _vm._v(_vm._s(card.descripcion))
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("template", { slot: "state" }, [
-                          _c("p", { staticClass: "white-text" }, [
-                            _vm._v(_vm._s(card.tipo))
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "bold" }, [
-                          _vm._v(_vm._s(card.title))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v(_vm._s(card.body))]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("Comisión")]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "flex flex-row justify-between" },
-                          [
-                            _c("p", { staticClass: "body bold" }, [
-                              _vm._v(_vm._s(card.comision))
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "p",
-                              { staticClass: "body bold tertiary-text" },
-                              [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(card.mes) +
-                                    "\n                                "
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("template", { slot: "footer" }, [
-                          _c(
-                            "div",
-                            { staticClass: "flex flex-row justify-between" },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "flex flex-row justify-between"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "info-item" },
-                                    [
-                                      _c("w-icon", {
-                                        attrs: { icon: "room-solid", h: "12px" }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                                " +
-                                            _vm._s(card.info.habitaciones) +
-                                            "\n                                            "
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "info-item" },
-                                    [
-                                      _c("w-icon", {
-                                        attrs: { icon: "bath-solid", h: "15px" }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                                " +
-                                            _vm._s(card.info.baños) +
-                                            "\n                                            "
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "info-item" },
-                                    [
-                                      _c("w-icon", {
-                                        attrs: {
-                                          icon: "parking-solid",
-                                          h: "12px"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                                " +
-                                            _vm._s(card.info.estacionamiento) +
-                                            "\n                                            "
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "info-item" },
-                                [
-                                  _c("w-icon", {
-                                    attrs: { icon: "size", h: "15px" }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "white-text" }, [
-                                    _vm._v(
-                                      "\n                                            " +
-                                        _vm._s(card.info.tamaño) +
-                                        "\n                                        "
-                                    )
-                                  ])
-                                ],
-                                1
-                              )
-                            ]
-                          )
-                        ])
-                      ],
-                      2
-                    )
-                  ],
-                  1
-                )
-              ])
-            }),
-            1
-          )
-        ],
-        1
-      )
-    ])
-  ])
+      _c("br")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -33160,9 +32586,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "my-5" }, [
                 _c("p", { staticClass: "text-center caption" }, [
-                  _vm._v(
-                    "\n                            Valoración del agente\n                        "
-                  )
+                  _vm._v("Valoración del agente")
                 ]),
                 _vm._v(" "),
                 _c(
@@ -33353,11 +32777,7 @@ var render = function() {
                   { staticClass: "flex items-center justify-between" },
                   [
                     _c("h1", { staticClass: "fan subtitle-lg bold" }, [
-                      _vm._v(
-                        "\n                                " +
-                          _vm._s(_vm.agent.name) +
-                          "\n                            "
-                      )
+                      _vm._v(_vm._s(_vm.agent.name))
                     ])
                   ]
                 )
@@ -33372,11 +32792,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "caption mb-5" }, [
-                _vm._v(
-                  "\n                        Codigo Ministerio de vivienda:" +
-                    _vm._s(_vm.agent.cod) +
-                    "\n                    "
-                )
+                _vm._v("Codigo Ministerio de vivienda:" + _vm._s(_vm.agent.cod))
               ]),
               _vm._v(" "),
               _c("div", {
@@ -33390,11 +32806,7 @@ var render = function() {
                     staticClass:
                       "tertiary-text font-bold lg:w-1/4 tertiary-text"
                   },
-                  [
-                    _vm._v(
-                      "\n                            Cel:\n                        "
-                    )
-                  ]
+                  [_vm._v("Cel:")]
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "caption lg:w-3/4" }, [
@@ -33404,33 +32816,21 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "my-5 lg:flex" }, [
                 _c("h3", { staticClass: "tertiary-text font-bold lg:w-1/4" }, [
-                  _vm._v(
-                    "\n                            Email:\n                        "
-                  )
+                  _vm._v("Email:")
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "caption lg:w-3/4" }, [
-                  _vm._v(
-                    "\n                            " +
-                      _vm._s(_vm.agent.email) +
-                      "\n                        "
-                  )
+                  _vm._v(_vm._s(_vm.agent.email))
                 ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "my-5 lg:flex" }, [
                 _c("h3", { staticClass: "tertiary-text font-bold lg:w-1/4" }, [
-                  _vm._v(
-                    "\n                            Descripcion:\n                        "
-                  )
+                  _vm._v("Descripcion:")
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "caption lg:w-3/4" }, [
-                  _vm._v(
-                    "\n                            " +
-                      _vm._s(_vm.agent.description) +
-                      "\n                        "
-                  )
+                  _vm._v(_vm._s(_vm.agent.description))
                 ])
               ])
             ])
@@ -33448,10 +32848,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370& ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -33466,7 +32866,7 @@ var render = function() {
   return _c("div", {}, [
     _c(
       "div",
-      { staticClass: "px-4" },
+      { staticClass: "agente-perfil-container" },
       [
         _c("w-card", { attrs: { shadow: false } }, [
           _c("p", { staticClass: "subtitle bold mt-5 ml-5" }, [
@@ -33505,7 +32905,7 @@ var render = function() {
               _c("div", { staticClass: "mb-4" }, [
                 _c(
                   "div",
-                  { staticClass: "w-full md:w-1/2" },
+                  { staticClass: "w-full md:w-1/2 ml-5 mt-5 mb-10" },
                   [
                     _c("w-checkbox", {
                       attrs: { label: "Soy un agente" },
@@ -33591,7 +32991,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", [
-                _c("p", { staticClass: "tertiary-text bold body ml-6 mb-1" }, [
+                _c("p", { staticClass: "tertiary-text bold body ml-5 mb-5" }, [
                   _vm._v("Información de Contacto")
                 ]),
                 _vm._v(" "),
@@ -33703,7 +33103,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", [
-                _c("p", { staticClass: "tertiary-text bold body ml-6 mb-1" }, [
+                _c("p", { staticClass: "tertiary-text bold body ml-5 mb-5" }, [
                   _vm._v("Acerca de mi")
                 ]),
                 _vm._v(" "),
@@ -33718,7 +33118,7 @@ var render = function() {
                         attrs: {
                           label: "DESCRIPCIÓN",
                           placeholder:
-                            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. lor sit amet, consectetuer adipiscing elit. Donec odio"
+                            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis."
                         },
                         model: {
                           value: _vm.form.ambiente,
@@ -33747,7 +33147,7 @@ var render = function() {
       { staticClass: "px-4" },
       [
         _c("w-card", { attrs: { shadow: false } }, [
-          _c("p", { staticClass: "tertiary-text bold body ml-6 mb-2" }, [
+          _c("p", { staticClass: "tertiary-text bold body ml-5 mb-5" }, [
             _vm._v("Mis redes sociales")
           ]),
           _vm._v(" "),
@@ -33848,15 +33248,27 @@ var render = function() {
               ),
               _vm._v(" "),
               _c(
-                "w-btn",
+                "div",
                 {
-                  staticClass: "bold",
-                  attrs: { dark: "", large: "", color: _vm.$wlinii.tertiary }
+                  staticClass: "flex flex-row justify-center md:justify-start"
                 },
-                [_vm._v("GUARDAR CAMBIOS")]
+                [
+                  _c(
+                    "w-btn",
+                    {
+                      staticClass: "bold",
+                      attrs: {
+                        dark: "",
+                        large: "",
+                        color: _vm.$wlinii.tertiary
+                      }
+                    },
+                    [_vm._v("GUARDAR CAMBIOS")]
+                  )
+                ],
+                1
               )
-            ],
-            1
+            ]
           )
         ])
       ],
@@ -33872,7 +33284,7 @@ var render = function() {
         _c("w-card", { attrs: { shadow: false } }, [
           _c("div", { staticClass: "flex justify-around" }, [
             _c("div", { staticClass: "w-1/2 px-4" }, [
-              _c("p", { staticClass: "tertiary-text bold body ml-6 mb-2" }, [
+              _c("p", { staticClass: "tertiary-text bold body ml-5 mb-5" }, [
                 _vm._v("Cambia tu contraseña")
               ]),
               _vm._v(" "),
@@ -33946,19 +33358,28 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c(
-                    "w-btn",
+                    "div",
                     {
-                      staticClass: "bold",
-                      attrs: {
-                        dark: "",
-                        large: "",
-                        color: _vm.$wlinii.tertiary
-                      }
+                      staticClass:
+                        "flex flex-row justify-center md:justify-start"
                     },
-                    [_vm._v("GUARDAR CAMBIOS")]
+                    [
+                      _c(
+                        "w-btn",
+                        {
+                          staticClass: "bold",
+                          attrs: {
+                            dark: "",
+                            large: "",
+                            color: _vm.$wlinii.tertiary
+                          }
+                        },
+                        [_vm._v("GUARDAR CAMBIOS")]
+                      )
+                    ],
+                    1
                   )
-                ],
-                1
+                ]
               )
             ]),
             _vm._v(" "),
@@ -33974,7 +33395,9 @@ var render = function() {
               ])
             ])
           ])
-        ])
+        ]),
+        _vm._v(" "),
+        _c("br")
       ],
       1
     )
@@ -34002,626 +33425,850 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "amc-1" }, [
     _c(
       "div",
-      { staticClass: "precios-container py-16" },
+      { staticClass: "amc-container" },
       [
         _c("w-card", { attrs: { shadow: false } }, [
-          _c("div", { staticClass: "lg:w-11/12 mx-auto" }, [
-            _c("h1", { staticClass: "subtitle-lg fan bold" }, [
-              _vm._v("Análisis de Mercado Comparativo (AMC)")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "caption" }, [
-              _vm._v("Aplicación de analisis de precios")
-            ]),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                staticClass:
-                  "uppercase text-white primary px-2 my-5 lg:mt-5 w-1/3 lg:w-2/12 rounded-full text-center"
-              },
-              [_vm._v("01 paso")]
-            ),
-            _vm._v(" "),
-            _c("h1", { staticClass: "subtitle-lg fan bold" }, [
-              _vm._v("Completar Formulario")
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "shadow w-full rounded-full default my-5" },
-              [
-                _c("div", {
-                  staticClass:
-                    "secondary leading-none text-center rounded-full p-2",
-                  staticStyle: { width: "25%" }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
           _c(
             "div",
-            {
-              staticClass: "mt-5 lg:flex items-start lg:w-11/12 mx-auto",
-              attrs: { id: "form" }
-            },
             [
-              _c("form", { staticClass: "w-full lg:pr-10" }, [
-                _c(
-                  "div",
-                  { staticClass: "form-group mt-5" },
-                  [
-                    _c("w-select", {
-                      attrs: {
-                        label: "TIPO DE INMUEBLE",
-                        placeholder: "Pendientes",
-                        options: ["a", "b", "c"]
-                      },
-                      model: {
-                        value: _vm.form.tipoinmueble,
-                        callback: function($$v) {
-                          _vm.$set(_vm.form, "tipoinmueble", $$v)
-                        },
-                        expression: "form.tipoinmueble"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                    _vm._v("TIPO DE OPERACION")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "flex justify-between" },
-                    [
-                      _c(
-                        "w-btn",
-                        {
-                          staticClass: "full-width mr-2",
-                          attrs: {
-                            color: "tertiary",
-                            rounded: true,
-                            dark: true
-                          },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.setOperation("venta")
-                            }
-                          }
-                        },
-                        [_vm._v("venta")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "w-btn",
-                        {
-                          staticClass: "full-width",
-                          attrs: {
-                            color: "tertiary",
-                            rounded: true,
-                            dark: true
-                          },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.setOperation("alquiler")
-                            }
-                          }
-                        },
-                        [_vm._v("alquiler")]
-                      )
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group mt-5" },
-                  [
-                    _c(
-                      "label",
-                      { staticClass: "caption uppercase bold ml-5" },
-                      [_vm._v("DIRECCIÓN")]
-                    ),
-                    _vm._v(" "),
-                    _c("w-input", {
-                      model: {
-                        value: _vm.form.dir,
-                        callback: function($$v) {
-                          _vm.$set(_vm.form, "dir", $$v)
-                        },
-                        expression: "form.dir"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group mt-5" },
-                  [
-                    _c(
-                      "label",
-                      { staticClass: "caption uppercase bold ml-5" },
-                      [_vm._v("precio")]
-                    ),
-                    _vm._v(" "),
-                    _c("w-input", {
-                      model: {
-                        value: _vm.form.price,
-                        callback: function($$v) {
-                          _vm.$set(_vm.form, "price", $$v)
-                        },
-                        expression: "form.price"
-                      }
-                    })
-                  ],
-                  1
-                )
+              _c("p", { staticClass: "body subtitle-md bold ml-5" }, [
+                _vm._v("Análisis de Mercado Comparativo (AMC)")
               ]),
               _vm._v(" "),
-              _c("form", { staticClass: "w-full lg:pl-10" }, [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c(
-                      "label",
-                      { staticClass: "caption uppercase bold ml-5" },
-                      [_vm._v("ANTIGUEDAD")]
-                    ),
-                    _vm._v(" "),
-                    _c("w-input", {
-                      model: {
-                        value: _vm.form.years,
-                        callback: function($$v) {
-                          _vm.$set(_vm.form, "years", $$v)
-                        },
-                        expression: "form.years"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c(
-                      "label",
-                      { staticClass: "caption uppercase bold ml-5" },
-                      [_vm._v("HABITACIONES")]
-                    ),
-                    _vm._v(" "),
-                    _c("w-input", {
-                      model: {
-                        value: _vm.form.room,
-                        callback: function($$v) {
-                          _vm.$set(_vm.form, "room", $$v)
-                        },
-                        expression: "form.room"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c(
-                      "label",
-                      { staticClass: "caption uppercase bold ml-5" },
-                      [_vm._v("CUARTO DE SERVICIO")]
-                    ),
-                    _vm._v(" "),
-                    _c("w-input", {
-                      model: {
-                        value: _vm.form.service,
-                        callback: function($$v) {
-                          _vm.$set(_vm.form, "service", $$v)
-                        },
-                        expression: "form.service"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c(
-                      "label",
-                      { staticClass: "caption uppercase bold ml-5" },
-                      [_vm._v("BAÑOS")]
-                    ),
-                    _vm._v(" "),
-                    _c("w-input")
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c(
-                      "label",
-                      { staticClass: "caption uppercase bold ml-5" },
-                      [_vm._v("COCHERAS")]
-                    ),
-                    _vm._v(" "),
-                    _c("w-input", {
-                      model: {
-                        value: _vm.form.bath,
-                        callback: function($$v) {
-                          _vm.$set(_vm.form, "bath", $$v)
-                        },
-                        expression: "form.bath"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("w-select", {
-                      attrs: {
-                        label: "ZONIFICACION",
-                        placeholder: "Pendientes",
-                        options: ["a", "b", "c"]
-                      },
-                      model: {
-                        value: _vm.form.zonificación,
-                        callback: function($$v) {
-                          _vm.$set(_vm.form, "zonificación", $$v)
-                        },
-                        expression: "form.zonificación"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "lg:w-11/12 mx-auto" }, [
-            _c("div", { staticClass: "w-full lg:w-6/12 my-10" }, [
-              _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                _vm._v("CALIDAD DE CONSTRUCCIÓN")
+              _c("p", { staticClass: "caption primary-text ml-5" }, [
+                _vm._v("Aplicación de analisis de precios")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "flex flex-wrap caption" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setCuality("EXCELENTE")
-                      }
-                    }
-                  },
-                  [_vm._v("EXCELENTE")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setCuality("BUENO")
-                      }
-                    }
-                  },
-                  [_vm._v("BUENO")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setCuality("REGULAR")
-                      }
-                    }
-                  },
-                  [_vm._v("REGULAR")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setCuality("MALO")
-                      }
-                    }
-                  },
-                  [_vm._v("MALO")]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "w-full lg:w-6/12 my-10" }, [
-              _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                _vm._v("CALIDAD DE ACABADOS")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex flex-wrap caption" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setDetails("EXCELENTE")
-                      }
-                    }
-                  },
-                  [_vm._v("EXCELENTE")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setDetails("BUENO")
-                      }
-                    }
-                  },
-                  [_vm._v("BUENO")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setDetails("REGULAR")
-                      }
-                    }
-                  },
-                  [_vm._v("REGULAR")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setDetails("MALO")
-                      }
-                    }
-                  },
-                  [_vm._v("MALO")]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "w-full lg:w-6/12 my-10" }, [
-              _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                _vm._v("CALIDAD DE CONSERVACIÓN")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex flex-wrap caption" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setConservation("EXCELENTE")
-                      }
-                    }
-                  },
-                  [_vm._v("EXCELENTE")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setConservation("BUENO")
-                      }
-                    }
-                  },
-                  [_vm._v("BUENO")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setConservation("REGULAR")
-                      }
-                    }
-                  },
-                  [_vm._v("REGULAR")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setConservation("MALO")
-                      }
-                    }
-                  },
-                  [_vm._v("MALO")]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "w-full lg:w-6/12 my-10" }, [
-              _c("label", { staticClass: "caption uppercase bold ml-5" }, [
-                _vm._v("UBICACIÓN")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex flex-wrap caption" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setLocation("EXCELENTE")
-                      }
-                    }
-                  },
-                  [_vm._v("EXCELENTE")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setLocation("BUENO")
-                      }
-                    }
-                  },
-                  [_vm._v("BUENO")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setLocation("REGULAR")
-                      }
-                    }
-                  },
-                  [_vm._v("REGULAR")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "default text-white text-center px-3 py-2 rounded-full m-1",
-                    staticStyle: { width: "135px" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.setLocation("MALO")
-                      }
-                    }
-                  },
-                  [_vm._v("MALO")]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "lg:flex justify-around mt-10" },
-            [
               _c(
                 "w-btn",
                 {
-                  staticClass: "bold w-full lg:w-1/3",
-                  attrs: { large: true, dark: true },
-                  on: { click: _vm.showForm }
+                  staticClass: "step-btn",
+                  attrs: {
+                    disabled: true,
+                    rounded: true,
+                    dark: true,
+                    small: true,
+                    color: "primary"
+                  }
                 },
-                [_vm._v("GUARDAR CAMBIOS")]
+                [_vm._v("01 PASO")]
               ),
               _vm._v(" "),
-              _c(
-                "w-btn",
-                {
-                  staticClass: "bold w-full lg:w-1/3",
-                  attrs: { large: true, dark: true, color: "primary" }
-                },
-                [_vm._v("siguiente")]
-              )
+              _c("p", { staticClass: "body subtitle-md bold ml-5" }, [
+                _vm._v("Completar Formulario")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full px-5" }, [
+                _c("progress", {
+                  staticClass: "amc-progress",
+                  attrs: { value: "25", max: "100" }
+                })
+              ])
             ],
             1
-          )
-        ])
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "px-5 my-5" }, [
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                  }
+                }
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "flex flex-row justify-between flex-wrap" },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "w-full md:w-1/2" },
+                      [
+                        _c("w-select", {
+                          attrs: {
+                            label: "TIPO DE INMUEBLE",
+                            placeholder: "Lara Group",
+                            options: ["a", "b", "c"]
+                          },
+                          model: {
+                            value: _vm.form.tipoInmueble,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "tipoInmueble", $$v)
+                            },
+                            expression: "form.tipoInmueble"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "w-full" }, [
+                          _c("p", { staticClass: "bold ml-4" }, [
+                            _vm._v("TIPO DE OPERACIÓN")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row justify-between" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-1/2 px-2" },
+                                [
+                                  _c(
+                                    "w-btn",
+                                    {
+                                      attrs: {
+                                        fullwidth: true,
+                                        rounded: true,
+                                        color:
+                                          _vm.form.operacion == "VENTA"
+                                            ? "tertiary"
+                                            : "#aaaaaa",
+                                        dark: true
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.form.operacion = "VENTA"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("VENTA")]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-1/2 px-2" },
+                                [
+                                  _c(
+                                    "w-btn",
+                                    {
+                                      attrs: {
+                                        fullwidth: true,
+                                        rounded: true,
+                                        color:
+                                          _vm.form.operacion == "ALQUILER"
+                                            ? "tertiary"
+                                            : "#aaaaaa",
+                                        dark: true
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.form.operacion = "ALQUILER"
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("ALQUILER")]
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("w-input", {
+                          staticClass: "mt-10",
+                          attrs: {
+                            label: "DIRECCIÓN",
+                            placeholder: "Av- Juan Velasco, Sector 2 lote 1"
+                          },
+                          model: {
+                            value: _vm.form.direccion,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "direccion", $$v)
+                            },
+                            expression: "form.direccion"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("w-input", {
+                          attrs: { label: "PRECIO", placeholder: "S/ 140.45" },
+                          model: {
+                            value: _vm.form.precio,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "precio", $$v)
+                            },
+                            expression: "form.precio"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "w-full md:w-1/2 md:px-16" },
+                      [
+                        _c("w-input", {
+                          attrs: { label: "ANTIGUEDAD", placeholder: "1 año" },
+                          model: {
+                            value: _vm.form.antiguedad,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "antiguedad", $$v)
+                            },
+                            expression: "form.antiguedad"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("w-input", {
+                          attrs: {
+                            label: "HABITACIONES",
+                            placeholder: "4 Habitaciones"
+                          },
+                          model: {
+                            value: _vm.form.habitaciones,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "habitaciones", $$v)
+                            },
+                            expression: "form.habitaciones"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("w-input", {
+                          attrs: {
+                            label: "CUARTO DE SERVICIO",
+                            placeholder: "SI"
+                          },
+                          model: {
+                            value: _vm.form.cuartoServicio,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "cuartoServicio", $$v)
+                            },
+                            expression: "form.cuartoServicio"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("w-input", {
+                          attrs: { label: "BAÑOS", placeholder: "4 baños" },
+                          model: {
+                            value: _vm.form.banios,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "banios", $$v)
+                            },
+                            expression: "form.banios"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("w-input", {
+                          attrs: {
+                            label: "COCHERAS",
+                            placeholder: "2 cocheras"
+                          },
+                          model: {
+                            value: _vm.form.cocheras,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "cocheras", $$v)
+                            },
+                            expression: "form.cocheras"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("w-select", {
+                          attrs: {
+                            label: "Zonificación",
+                            placeholder: "Residencial Multifamiliar",
+                            options: ["a", "b", "c"]
+                          },
+                          model: {
+                            value: _vm.form.zonificacion,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "zonificacion", $$v)
+                            },
+                            expression: "form.zonificacion"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "w-full md:w-1/2" }, [
+                      _c("div", { staticClass: "w-full my-5" }, [
+                        _c("p", { staticClass: "bold ml-4" }, [
+                          _vm._v("CALIDAD DE CONSTRUCCIÓN")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-row justify-center flex-wrap"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadConstruccion ==
+                                        "EXCELENTE"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadConstruccion =
+                                          "EXCELENTE"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("EXCELENTE")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadConstruccion == "BUENO"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadConstruccion = "BUENO"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("BUENO")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadConstruccion ==
+                                        "REGULAR"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadConstruccion = "REGULAR"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("REGULAR")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadConstruccion == "MALO"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadConstruccion = "MALO"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("MALO")]
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "w-full my-5" }, [
+                        _c("p", { staticClass: "bold ml-4" }, [
+                          _vm._v("CALIDAD DE ACABADOS")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-row justify-center flex-wrap"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadAcabados == "EXCELENTE"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadAcabados = "EXCELENTE"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("EXCELENTE")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadAcabados == "BUENO"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadAcabados = "BUENO"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("BUENO")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadAcabados == "REGULAR"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadAcabados = "REGULAR"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("REGULAR")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadAcabados == "MALO"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadAcabados = "MALO"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("MALO")]
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "w-full my-5" }, [
+                        _c("p", { staticClass: "bold ml-4" }, [
+                          _vm._v("CALIDAD DE CONSERVACIÓN")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-row justify-center flex-wrap"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadConservacion ==
+                                        "EXCELENTE"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadConservacion =
+                                          "EXCELENTE"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("EXCELENTE")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadConservacion == "BUENO"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadConservacion = "BUENO"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("BUENO")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadConservacion ==
+                                        "REGULAR"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadConservacion = "REGULAR"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("REGULAR")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.calidadConservacion == "MALO"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.calidadConservacion = "MALO"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("MALO")]
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "w-full my-5" }, [
+                        _c("p", { staticClass: "bold ml-4" }, [
+                          _vm._v("UBICACIÓN")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-row justify-center flex-wrap"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.ubicacion == "EXCELENTE"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.ubicacion = "EXCELENTE"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("EXCELENTE")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.ubicacion == "BUENO"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.ubicacion = "BUENO"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("BUENO")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.ubicacion == "REGULAR"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.ubicacion = "REGULAR"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("REGULAR")]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "w-1/2 md:w-1/3 px-2" },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    attrs: {
+                                      fullwidth: true,
+                                      rounded: true,
+                                      color:
+                                        _vm.form.ubicacion == "MALO"
+                                          ? "tertiary"
+                                          : "#aaaaaa",
+                                      dark: true
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.form.ubicacion = "MALO"
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("MALO")]
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex flex-row justify-center" }, [
+                  _c("div", { staticClass: "w-full md:w-1/2" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "flex flex-row justify-between flex-wrap"
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "w-full md:w-1/2 px-2" },
+                          [
+                            _c(
+                              "w-btn",
+                              {
+                                attrs: {
+                                  type: "submit",
+                                  fullwidth: true,
+                                  large: true,
+                                  dark: true,
+                                  color: "secondary"
+                                }
+                              },
+                              [_vm._v("GUARDAR CAMBIOS")]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "w-full md:w-1/2 px-2" },
+                          [
+                            _c(
+                              "w-btn",
+                              {
+                                attrs: {
+                                  fullwidth: true,
+                                  large: true,
+                                  dark: true,
+                                  color: "primary"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.$router.push("/amc/2")
+                                  }
+                                }
+                              },
+                              [_vm._v("SIGUIENTE")]
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br")
       ],
       1
     )
@@ -34847,7 +34494,7 @@ var render = function() {
                           "div",
                           {
                             key: i,
-                            staticClass: "sm:w-full lg:w-1/3 pt-5 pr-5"
+                            staticClass: "sm:w-full lg:w-1/3 pt-5 md:pr-5"
                           },
                           [
                             _c(
@@ -35040,8 +34687,44 @@ var render = function() {
                   ],
                   1
                 )
-              ])
-            ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex flex-row justify-center md:justify-end md:mr-5"
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "w-full md:w-1/5" },
+                    [
+                      _c(
+                        "w-btn",
+                        {
+                          attrs: {
+                            large: true,
+                            dark: true,
+                            fullwidth: true,
+                            color: "primary"
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.$router.push("/amc/3")
+                            }
+                          }
+                        },
+                        [_vm._v("siguiente")]
+                      )
+                    ],
+                    1
+                  )
+                ]
+              )
+            ]),
+        _vm._v(" "),
+        _c("br")
       ],
       1
     )
@@ -35079,15 +34762,11 @@ var render = function() {
             "div",
             [
               _c("p", { staticClass: "body subtitle-md bold md:ml-5" }, [
-                _vm._v(
-                  "\n                    Análisis de Mercado Comparativo (AMC)\n                "
-                )
+                _vm._v("Análisis de Mercado Comparativo (AMC)")
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "caption primary-text md:ml-5" }, [
-                _vm._v(
-                  "\n                    Aplicación de analisis de precios\n                "
-                )
+                _vm._v("Aplicación de analisis de precios")
               ]),
               _vm._v(" "),
               _c(
@@ -35106,9 +34785,7 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("p", { staticClass: "body subtitle-md bold md:ml-5" }, [
-                _vm._v(
-                  "\n                    Resultado Final\n                "
-                )
+                _vm._v("Resultado Final")
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "w-full md:px-5" }, [
@@ -35177,47 +34854,97 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "amc-table-container mt-5" }, [
-            _c("table", { staticClass: "amc-table" }, [
-              _c("tr", [
-                _c("th"),
+          _c(
+            "div",
+            { staticClass: "amc-table-container mt-5 hidden md:block" },
+            [
+              _c("table", { staticClass: "amc-table" }, [
+                _c("tr", [
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Máximo")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Mínimo")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Promedio")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Desviación Estandar")])
+                ]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Máximo")]),
+                _c("tr", [
+                  _c("td", [_vm._v("OFERTAS")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Miraflores")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("105045614")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("201")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("480")])
+                ]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Mínimo")]),
-                _vm._v(" "),
-                _c("th", { staticClass: "hidden-cell" }, [_vm._v("Promedio")]),
-                _vm._v(" "),
-                _c("th", { staticClass: "hidden-cell" }, [
-                  _vm._v("Desviación Estandar")
+                _c("tr", [
+                  _c("td", [_vm._v("VENDIDOS")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Miraflores")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("852568840")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("2010")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("470")])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td", [_vm._v("OFERTAS")]),
-                _vm._v(" "),
-                _c("td", [_vm._v("Miraflores")]),
-                _vm._v(" "),
-                _c("td", [_vm._v("105045614")]),
-                _vm._v(" "),
-                _c("td", { staticClass: "hidden-cell" }, [_vm._v("201")]),
-                _vm._v(" "),
-                _c("td", { staticClass: "hidden-cell" }, [_vm._v("480")])
-              ]),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td", [_vm._v("VENDIDOS")]),
-                _vm._v(" "),
-                _c("td", [_vm._v("Miraflores")]),
-                _vm._v(" "),
-                _c("td", [_vm._v("852568840")]),
-                _vm._v(" "),
-                _c("td", { staticClass: "hidden-cell" }, [_vm._v("2010")]),
-                _vm._v(" "),
-                _c("td", { staticClass: "hidden-cell" }, [_vm._v("470")])
               ])
-            ])
-          ]),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "amc-table-container mt-5 block md:hidden" },
+            [
+              _c("table", { staticClass: "amc-table" }, [
+                _c("tr", [_c("th"), _vm._v(" "), _c("th", [_vm._v("Mínimo")])]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [_vm._v("OFERTAS")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("105045614")])
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [_vm._v("VENDIDOS")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("852568840")])
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "amc-table-container mt-5 block md:hidden" },
+            [
+              _c("table", { staticClass: "amc-table" }, [
+                _c("tr", [
+                  _c("th", [_vm._v("Promedio")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Desviación Estandar")])
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [_vm._v("201")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("480")])
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [_vm._v("2010")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("470")])
+                ])
+              ])
+            ]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "w-full md:px-5 my-10" }, [
             _c("div", { staticClass: "primary alert" }, [
@@ -35253,11 +34980,7 @@ var render = function() {
                         staticClass:
                           "body bold white-text text-center md:text-right"
                       },
-                      [
-                        _vm._v(
-                          "\n                                M2:1245\n                            "
-                        )
-                      ]
+                      [_vm._v("M2:1245")]
                     )
                   ])
                 ]
@@ -35321,7 +35044,8 @@ var render = function() {
                             fullwidth: true,
                             large: true,
                             dark: true,
-                            color: "primary"
+                            color: "primary",
+                            type: "submit"
                           }
                         },
                         [_vm._v("GUARDAR ANÁLISiS")]
@@ -35990,911 +35714,794 @@ var render = function() {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "precios-container py-16" },
+      { staticClass: "brocker-container" },
       [
-        _c("w-card", { attrs: { shadow: false } }, [
-          _c(
-            "div",
-            { staticClass: "w-full lg:w-11/12 mx-auto mt-10" },
-            [
-              _c("div", { staticClass: "flex justify-between" }, [
-                _c("div", { staticClass: "hidden lg:block w-1/3" }, [
-                  _c("img", {
-                    staticClass: "w-auto",
-                    staticStyle: { height: "400px" },
-                    attrs: { src: "/images/banners/3.png", alt: "" }
-                  })
+        _c(
+          "w-card",
+          { attrs: { shadow: false } },
+          [
+            _c(
+              "div",
+              { staticClass: "flex flex-row justify-between flex-wrap" },
+              [
+                _c("div", { staticClass: "w-full block md:hidden ml-2" }, [
+                  _c("p", { staticClass: "bold" }, [_vm._v("PERFIL BROKER")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "divider my-3" }),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass: "bold",
+                      staticStyle: { "font-size": "28px" }
+                    },
+                    [_vm._v(_vm._s(_vm.company.name))]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "mb-8" }, [
+                    _vm._v(_vm._s(_vm.company.dir))
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "w-4/5 lg:w-2/3 lg:mx-10 mx-auto" }, [
-                  _c(
-                    "h1",
-                    { staticClass: "text-sm font-bold tracking-widest" },
-                    [
-                      _vm._v(
-                        "\n                             PERFIL BROKER\n                         "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "border-t-2 tertiary w-2/12 my-5" }),
-                  _vm._v(" "),
+                _c("div", { staticClass: "w-full md:w-1/3" }, [
                   _c(
                     "div",
-                    { staticClass: "flex items-center justify-between" },
+                    { staticClass: "flex flex-col items-center flex-wrap" },
                     [
-                      _c("h1", { staticClass: "fan subtitle-lg bold" }, [
-                        _vm._v(
-                          "\n                                 Empresa Golden Star\n                             "
-                        )
-                      ]),
-                      _vm._v(" "),
                       _c(
-                        "svg",
-                        {
-                          staticClass:
-                            "hidden lg:block h-8 svg-inline--fa fa-info-circle fa-w-16",
-                          attrs: {
-                            "aria-hidden": "true",
-                            focusable: "false",
-                            "data-prefix": "fas",
-                            "data-icon": "info-circle",
-                            role: "img",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 512 512"
-                          }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              fill: "currentColor",
-                              d:
-                                "M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
-                            }
-                          })
-                        ]
+                        "div",
+                        { staticClass: "w-full flex flex-row justify-center" },
+                        [_c("div", { staticClass: "brocker-img" })]
                       )
                     ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-sm lg:font-bold my-4" }, [
-                    _vm._v(
-                      "\n                             Lima / Miraflores\n                         "
-                    )
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-full md:w-2/3" }, [
+                  _c("div", { staticClass: "hidden md:block" }, [
+                    _c("p", { staticClass: "bold" }, [_vm._v("PERFIL BROKER")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "divider my-5" }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "subtitle bold mt-5 md:mt-0" }, [
+                      _vm._v(_vm._s(_vm.company.name))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mb-8" }, [
+                      _vm._v(_vm._s(_vm.company.dir))
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("div", {
-                    staticClass:
-                      "hidden lg:block border-t w-full border-gray-600"
+                    staticClass: "full-divider hidden md:block mt-5"
                   }),
                   _vm._v(" "),
-                  _c("img", {
-                    staticClass: "lg:hidden",
-                    attrs: { src: "images/banners/3.png", alt: "" }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "my-5 lg:flex" }, [
-                    _c(
-                      "h3",
-                      {
-                        staticClass:
-                          "tertiary-text font-bold lg:w-1/4 tertiary-text"
-                      },
-                      [
-                        _vm._v(
-                          "\n                                 Cel:\n                             "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "lg:w-3/4" }, [
-                      _vm._v("+51 9 5612522892")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "my-5 lg:flex" }, [
-                    _c(
-                      "h3",
-                      { staticClass: "tertiary-text font-bold lg:w-1/4" },
-                      [
-                        _vm._v(
-                          "\n                                 Email:\n                             "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "lg:w-3/4" }, [
-                      _vm._v("yo@mail.com")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "my-5 lg:flex" }, [
-                    _c(
-                      "h3",
-                      { staticClass: "tertiary-text font-bold lg:w-1/4" },
-                      [
-                        _vm._v(
-                          "\n                                 Descripcion:\n                             "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "lg:w-3/4" }, [
-                      _vm._v(
-                        "\n                                 Lorem ipsum dolor sit amet consectetur\n                                 adipisicing elit. Laboriosam nihil\n                                 aspernatur cupiditate. Nam, incidunt. Sit\n                                 veniam corrupti repudiandae quam nulla\n                                 consectetur perspiciatis cum dignissimos\n                                 saepe laborum. Autem vitae pariatur ea.\n                             "
-                      )
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "mt-5 text-gray-600 flex ml-10 items-center justify-around lg:justify-start"
-                },
-                [
-                  _c("router-link", { attrs: { to: "/" } }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass:
-                          "mr-5 h-6 svg-inline--fa fa-envelope fa-w-16",
-                        attrs: {
-                          "aria-hidden": "true",
-                          "data-prefix": "fas",
-                          "data-icon": "envelope",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          viewBox: "0 0 512 512"
-                        }
-                      },
-                      [
-                        _c("path", {
-                          attrs: {
-                            fill: "currentColor",
-                            d:
-                              "M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
-                          }
-                        })
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("router-link", { attrs: { to: "/" } }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass:
-                          "mr-5 h-6 svg-inline--fa fa-facebook-f fa-w-10",
-                        attrs: {
-                          "aria-hidden": "true",
-                          focusable: "false",
-                          "data-prefix": "fab",
-                          "data-icon": "facebook-f",
-                          role: "img",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          viewBox: "0 0 320 512"
-                        }
-                      },
-                      [
-                        _c("path", {
-                          attrs: {
-                            fill: "currentColor",
-                            d:
-                              "M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-                          }
-                        })
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("router-link", { attrs: { to: "/" } }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass:
-                          "mr-5 h-6 svg-inline--fa fa-linkedin-in fa-w-14",
-                        attrs: {
-                          "aria-hidden": "true",
-                          focusable: "false",
-                          "data-prefix": "fab",
-                          "data-icon": "linkedin-in",
-                          role: "img",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          viewBox: "0 0 448 512"
-                        }
-                      },
-                      [
-                        _c("path", {
-                          attrs: {
-                            fill: "currentColor",
-                            d:
-                              "M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
-                          }
-                        })
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("router-link", { attrs: { to: "/" } }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass:
-                          "mr-5 h-6 svg-inline--fa fa-twitter fa-w-16",
-                        attrs: {
-                          "aria-hidden": "true",
-                          "data-prefix": "fab",
-                          "data-icon": "twitter",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          viewBox: "0 0 512 512"
-                        }
-                      },
-                      [
-                        _c("path", {
-                          attrs: {
-                            fill: "currentColor",
-                            d:
-                              "M459.37 151.72c.33 4.54.33 9.1.33 13.64 0 138.72-105.59 298.56-298.56 298.56-59.45 0-114.68-17.22-161.14-47.1 8.45.97 16.57 1.3 25.34 1.3 49.05 0 94.21-16.58 130.27-44.84a105.12 105.12 0 01-98.1-72.77c6.49.97 12.99 1.62 19.81 1.62 9.42 0 18.84-1.3 27.61-3.57A104.95 104.95 0 0120.8 195.57v-1.3a105.68 105.68 0 0047.43 13.32 104.86 104.86 0 01-46.78-87.39c0-19.49 5.2-37.36 14.3-52.95a298.27 298.27 0 00216.36 109.8c-1.62-7.8-2.6-15.91-2.6-24.03 0-57.83 46.78-104.94 104.94-104.94 30.2 0 57.5 12.67 76.67 33.14a206.6 206.6 0 0066.6-25.34 104.65 104.65 0 01-46.14 57.83c21.12-2.28 41.59-8.13 60.43-16.25a225.57 225.57 0 01-52.63 54.26z"
-                          }
-                        })
-                      ]
-                    )
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "h1",
-                { staticClass: "mt-10 mx text-center body bold lg:text-left" },
-                [
-                  _vm._v(
-                    "\n                     Asesores Inmobiliarios\n                 "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _vm._l(_vm.users, function(user) {
-                return _c(
-                  "div",
-                  {
-                    key: user.name,
-                    staticClass:
-                      "hidden gris w-10/12 lg:w-full mx-auto mt-5 rounded-lg p-5 lg:flex lg:items-center"
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "flex items-center justify-center lg:order-3 lg:w-2/12 p-5",
-                        class: [user.state == "Desafiliar" ? _vm.selected : ""]
-                      },
-                      [
-                        _c("img", {
-                          staticClass:
-                            "mr-3 h-12 w-auto border-2 rounded-full border-orange-500",
-                          attrs: { src: "images/rostros/4.png", alt: "" }
-                        }),
-                        _vm._v(" "),
-                        _c("h1", { staticClass: "font-bold" }, [
-                          _vm._v(_vm._s(user.name))
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      {
-                        staticClass:
-                          "text-xs text-center p-5 lg:order-4 lg:w-5/12 font-semibold lg:text-left"
-                      },
-                      [
-                        _vm._v(
-                          "\n                         Lorem ipsum dolor sit amet consectetur adipisicing\n                         elit. Ullam quas sequi cumque delectus provident\n                         voluptatibus unde nobis adipisci dolore.\n                     "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "flex mx-auto justify-center lg:order-2 lg:mx-5 lg:w-2/12"
-                      },
-                      [
-                        _vm._l(user.stars, function(star) {
-                          return _c(
-                            "svg",
-                            {
-                              key: star,
-                              staticClass:
-                                "h-4 tertiary-text svg-inline--fa fa-star fa-w-18 t-brown",
-                              attrs: {
-                                "aria-hidden": "true",
-                                "data-prefix": "fas",
-                                "data-icon": "star",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                viewBox: "0 0 576 512"
-                              }
-                            },
-                            [
-                              _c("path", {
-                                attrs: {
-                                  fill: "currentColor",
-                                  d:
-                                    "M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                                }
-                              })
-                            ]
-                          )
-                        }),
-                        _vm._v(" "),
-                        _vm._l(5 - user.stars, function(i) {
-                          return _c(
-                            "svg",
-                            {
-                              key: i * 5,
-                              staticClass:
-                                "h-4 svg-inline--fa fa-star fa-w-18 text-gray-400",
-                              attrs: {
-                                "aria-hidden": "true",
-                                "data-prefix": "fas",
-                                "data-icon": "star",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                viewBox: "0 0 576 512"
-                              }
-                            },
-                            [
-                              _c("path", {
-                                attrs: {
-                                  fill: "currentColor",
-                                  d:
-                                    "M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                                }
-                              })
-                            ]
-                          )
-                        })
-                      ],
-                      2
-                    ),
-                    _vm._v(" "),
-                    user.state == "Desafiliar"
-                      ? _c(
-                          "p",
-                          {
-                            staticClass:
-                              "text-sm text-center my-5 lg:order-5 lg:w-1/12"
-                          },
-                          [
-                            _vm._v(
-                              "\n                         Estado:\n                         "
-                            ),
-                            _c(
-                              "span",
-                              { staticClass: "text-green-600 font-semibold" },
-                              [_vm._v("AFILIADO")]
-                            )
-                          ]
-                        )
-                      : _c(
-                          "p",
-                          {
-                            staticClass:
-                              "text-sm text-center my-5 lg:order-5 lg:w-1/12"
-                          },
-                          [
-                            _vm._v(
-                              "\n                         Sin afiliar\n                     "
-                            )
-                          ]
-                        ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "text-center lg:order-1 lg:w-2/12" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass:
-                              "text-white text-sm px-10 py-2 rounded-full lg:px-8",
-                            class: [
-                              user.state == "Desafiliar"
-                                ? _vm.activeClass
-                                : _vm.errorClass
-                            ],
-                            attrs: { to: "/" }
-                          },
-                          [_vm._v(_vm._s(user.state))]
-                        )
-                      ],
-                      1
-                    )
-                  ]
-                )
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "lg:flex justify-end items-center mt-10 hidden"
-                },
-                [
-                  _c("router-link", { attrs: { to: "/" } }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass:
-                          "h-5 svg-inline--fa fa-chevron-left fa-w-10 mr-5",
-                        attrs: {
-                          "aria-hidden": "true",
-                          focusable: "false",
-                          "data-prefix": "fas",
-                          "data-icon": "chevron-left",
-                          role: "img",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          viewBox: "0 0 320 512"
-                        }
-                      },
-                      [
-                        _c("path", {
-                          attrs: {
-                            fill: "currentColor",
-                            d:
-                              "M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"
-                          }
-                        })
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
                   _c(
-                    "router-link",
+                    "div",
                     {
                       staticClass:
-                        "rounded-full bg-blue-900 p-2 px-3 text-white text-lg",
-                      attrs: { to: "/" }
+                        "flex flex-row flex-wrap mt-5 ml-2 md:mt-0 md:ml-0"
                     },
-                    [_vm._v("01")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "router-link",
-                    {
-                      staticClass:
-                        "rounded-full p-2 px-3 text-blue-900 text-lg",
-                      attrs: { to: "/" }
-                    },
-                    [_vm._v("02")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "router-link",
-                    {
-                      staticClass:
-                        "rounded-full p-2 px-3 text-blue-900 text-lg",
-                      attrs: { to: "/" }
-                    },
-                    [_vm._v("03")]
-                  ),
-                  _vm._v(" "),
-                  _c("router-link", { attrs: { to: "/" } }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass:
-                          "h-5 svg-inline--fa fa-chevron-right fa-w-10 ml-5",
-                        attrs: {
-                          "aria-hidden": "true",
-                          focusable: "false",
-                          "data-prefix": "fas",
-                          "data-icon": "chevron-right",
-                          role: "img",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          viewBox: "0 0 320 512"
-                        }
-                      },
-                      [
-                        _c("path", {
-                          attrs: {
-                            fill: "currentColor",
-                            d:
-                              "M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-                          }
-                        })
-                      ]
-                    )
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "block lg:hidden" },
-                [
-                  _c(
-                    "w-carousel",
-                    {
-                      attrs: { items: 1, pagination: true, navigation: false }
-                    },
-                    _vm._l(_vm.users, function(user) {
-                      return _c("slide", { key: user.name }, [
-                        _c(
-                          "div",
-                          { staticClass: "carousel-item gris p-5 rounded-lg" },
-                          [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "flex justify-center items-center p-5",
-                                class: [
-                                  user.state == "Desafiliar" ? _vm.selected : ""
-                                ]
-                              },
-                              [
-                                _c("img", {
-                                  staticClass:
-                                    "mr-3 h-12 w-auto border-2 rounded-full border-orange-500",
-                                  attrs: { src: user.img, alt: "" }
-                                }),
-                                _vm._v(" "),
-                                _c("h1", { staticClass: "body bold" }, [
-                                  _vm._v(
-                                    "\n                                         " +
-                                      _vm._s(user.name) +
-                                      "\n                                     "
-                                  )
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "p",
-                              { staticClass: "caption text-center p-5" },
-                              [
-                                _vm._v(
-                                  "\n                                     " +
-                                    _vm._s(user.description) +
-                                    "\n                                 "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "flex mx-auto justify-center" },
-                              [
-                                _vm._l(user.stars, function(star) {
-                                  return _c(
-                                    "svg",
-                                    {
-                                      key: star,
-                                      staticClass:
-                                        "h-4 tertiary-text svg-inline--fa fa-star fa-w-18 t-brown",
-                                      attrs: {
-                                        "aria-hidden": "true",
-                                        "data-prefix": "fas",
-                                        "data-icon": "star",
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        viewBox: "0 0 576 512"
-                                      }
-                                    },
-                                    [
-                                      _c("path", {
-                                        attrs: {
-                                          fill: "currentColor",
-                                          d:
-                                            "M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                }),
-                                _vm._v(" "),
-                                _vm._l(5 - user.stars, function(i) {
-                                  return _c(
-                                    "svg",
-                                    {
-                                      key: i * 5,
-                                      staticClass:
-                                        "h-4 svg-inline--fa fa-star fa-w-18 text-gray-400",
-                                      attrs: {
-                                        "aria-hidden": "true",
-                                        "data-prefix": "fas",
-                                        "data-icon": "star",
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        viewBox: "0 0 576 512"
-                                      }
-                                    },
-                                    [
-                                      _c("path", {
-                                        attrs: {
-                                          fill: "currentColor",
-                                          d:
-                                            "M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                })
-                              ],
-                              2
-                            ),
-                            _vm._v(" "),
-                            user.state == "Guardar"
-                              ? _c(
-                                  "p",
-                                  { staticClass: "text-sm text-center my-5" },
-                                  [
-                                    _vm._v(
-                                      "\n                                     Estado:\n                                     "
-                                    ),
-                                    _c(
-                                      "span",
-                                      {
-                                        staticClass:
-                                          "text-green-600 font-semibold"
-                                      },
-                                      [_vm._v("AFILIADO")]
-                                    )
-                                  ]
-                                )
-                              : _c(
-                                  "p",
-                                  { staticClass: "text-sm text-center my-5" },
-                                  [
-                                    _vm._v(
-                                      "\n                                     Sin afiliar\n                                 "
-                                    )
-                                  ]
-                                ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "text-center p-5" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass:
-                                      "text-white text-sm px-10 py-2 rounded-full",
-                                    class: [
-                                      user.state == "Desafiliar"
-                                        ? _vm.activeClass
-                                        : _vm.errorClass
-                                    ],
-                                    attrs: { to: "/" }
-                                  },
-                                  [_vm._v(_vm._s(user.state))]
-                                )
-                              ],
-                              1
-                            )
-                          ]
-                        )
-                      ])
-                    }),
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            2
-          )
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c("div", [
-      _c(
-        "div",
-        { staticClass: "flex justify-center my-10" },
-        [
-          _c("w-btn", { attrs: { outlined: true, color: "tertiary" } }, [
-            _c("span", { staticClass: "body bold" }, [_vm._v("Mas destacados")])
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c(
-            "w-carousel",
-            {
-              staticClass: "mt-10",
-              attrs: {
-                background:
-                  _vm.windowWidth >= 768 ? "/images/banners/1.png" : "",
-                items: _vm.windowWidth >= 768 ? 3 : 1,
-                pagination: _vm.windowWidth < 768,
-                navigation: _vm.windowWidth >= 768
-              }
-            },
-            _vm._l(_vm.cards, function(card, i) {
-              return _c("slide", { key: i }, [
-                _c(
-                  "div",
-                  { staticClass: "px-5" },
-                  [
-                    _c(
-                      "w-card",
-                      { attrs: { image: card.image, hover: "full-hover" } },
-                      [
-                        _c("template", { slot: "image" }, [
-                          _c("p", { staticClass: "bold" }, [
-                            _vm._v(_vm._s(card.direccion))
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "mt-5" }, [
-                            _vm._v(_vm._s(card.descripcion))
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/3 my-0 md:my-3" },
+                        [
+                          _c("p", { staticClass: "bold tertiary-text" }, [
+                            _vm._v("Cel.")
                           ])
-                        ]),
-                        _vm._v(" "),
-                        _c("template", { slot: "state" }, [
-                          _c("p", { staticClass: "white-text" }, [
-                            _vm._v(_vm._s(card.tipo))
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "bold" }, [
-                          _vm._v(_vm._s(card.title))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v(_vm._s(card.body))]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("Comisión")]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "flex flex-row justify-between" },
-                          [
-                            _c("p", { staticClass: "body bold" }, [
-                              _vm._v(_vm._s(card.comision))
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "p",
-                              { staticClass: "body bold tertiary-text" },
-                              [
-                                _vm._v(
-                                  "\n                                     " +
-                                    _vm._s(card.mes) +
-                                    "\n                                 "
-                                )
-                              ]
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("template", { slot: "footer" }, [
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-2/3 my-3 md:my-3" },
+                        [
                           _c(
                             "div",
                             { staticClass: "flex flex-row justify-between" },
                             [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "flex flex-row justify-between"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "info-item" },
-                                    [
-                                      _c("w-icon", {
-                                        attrs: { icon: "room-solid", h: "12px" }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                                 " +
-                                            _vm._s(card.info.habitaciones) +
-                                            "\n                                             "
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "info-item" },
-                                    [
-                                      _c("w-icon", {
-                                        attrs: { icon: "bath-solid", h: "15px" }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                                 " +
-                                            _vm._s(card.info.baños) +
-                                            "\n                                             "
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "info-item" },
-                                    [
-                                      _c("w-icon", {
-                                        attrs: {
-                                          icon: "parking-solid",
-                                          h: "12px"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                                 " +
-                                            _vm._s(card.info.estacionamiento) +
-                                            "\n                                             "
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  )
-                                ]
-                              ),
+                              _c("p", [_vm._v(_vm._s(_vm.company.tel))]),
                               _vm._v(" "),
                               _c(
                                 "div",
-                                { staticClass: "info-item" },
+                                {
+                                  staticClass:
+                                    "hidden md:w-auto md:flex md:flex-row md:justify-end"
+                                },
                                 [
-                                  _c("w-icon", {
-                                    attrs: { icon: "size", h: "15px" }
-                                  }),
+                                  _c(
+                                    "w-btn",
+                                    { attrs: { icon: true } },
+                                    [
+                                      _c("w-icon", {
+                                        attrs: { icon: "mail-grey", h: "12px" }
+                                      })
+                                    ],
+                                    1
+                                  ),
                                   _vm._v(" "),
-                                  _c("p", { staticClass: "white-text" }, [
-                                    _vm._v(
-                                      "\n                                             " +
-                                        _vm._s(card.info.tamaño) +
-                                        "\n                                         "
-                                    )
-                                  ])
+                                  _c(
+                                    "w-btn",
+                                    { attrs: { icon: true } },
+                                    [
+                                      _c("w-icon", {
+                                        attrs: {
+                                          icon: "facebook-grey",
+                                          h: "15px"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "w-btn",
+                                    { attrs: { icon: true } },
+                                    [
+                                      _c("w-icon", {
+                                        attrs: {
+                                          icon: "linkedin-grey",
+                                          h: "17px"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "w-btn",
+                                    { attrs: { icon: true } },
+                                    [
+                                      _c("w-icon", {
+                                        attrs: {
+                                          icon: "twitter-grey",
+                                          h: "15px"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
                                 ],
                                 1
                               )
                             ]
                           )
-                        ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/3 my-0 md:my-3" },
+                        [
+                          _c("p", { staticClass: "bold tertiary-text" }, [
+                            _vm._v("Email")
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-2/3 my-3 md:my-3" },
+                        [_c("p", [_vm._v(_vm._s(_vm.company.email))])]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/3 my-0 md:my-3" },
+                        [
+                          _c("p", { staticClass: "bold tertiary-text" }, [
+                            _vm._v("Acerca de mi")
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-2/3 my-3 md:my-3" },
+                        [_c("p", [_vm._v(_vm._s(_vm.company.description))])]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "w-full flex flex-row justify-start md:hidden"
+                  },
+                  [
+                    _c(
+                      "w-btn",
+                      { attrs: { icon: true } },
+                      [
+                        _c("w-icon", {
+                          attrs: { icon: "mail-grey", h: "12px" }
+                        })
                       ],
-                      2
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "w-btn",
+                      { attrs: { icon: true } },
+                      [
+                        _c("w-icon", {
+                          attrs: { icon: "facebook-grey", h: "15px" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "w-btn",
+                      { attrs: { icon: true } },
+                      [
+                        _c("w-icon", {
+                          attrs: { icon: "linkedin-grey", h: "17px" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "w-btn",
+                      { attrs: { icon: true } },
+                      [
+                        _c("w-icon", {
+                          attrs: { icon: "twitter-grey", h: "15px" }
+                        })
+                      ],
+                      1
                     )
                   ],
                   1
                 )
-              ])
+              ]
+            ),
+            _vm._v(" "),
+            _vm._l(_vm.users, function(user, i) {
+              return _c(
+                "div",
+                { key: i, staticClass: "my-6 hidden md:block my-5" },
+                [
+                  _c(
+                    "w-card",
+                    { staticClass: "user-row", attrs: { shadow: false } },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "flex flex-row justify-between" },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "w-1/2 flex flex-row justify-between flex-wrap"
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "w-1/3 self-center px-0 md:px-5"
+                                },
+                                [
+                                  _c(
+                                    "w-btn",
+                                    {
+                                      staticStyle: { margin: "0px" },
+                                      attrs: {
+                                        color:
+                                          user.state == "AFILIADO"
+                                            ? "secondary"
+                                            : "primary",
+                                        dark: true,
+                                        rounded: true,
+                                        fullwidth: true,
+                                        small: true
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          user.state == "AFILIADO"
+                                            ? "Desafiliar"
+                                            : "Afiliar"
+                                        )
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "w-1/3 flex flex-row justify-center px-5"
+                                },
+                                _vm._l(5, function(i) {
+                                  return _c(
+                                    "w-btn",
+                                    {
+                                      key: i,
+                                      staticStyle: { margin: "2px" },
+                                      attrs: { icon: true, disabled: true }
+                                    },
+                                    [
+                                      _c("w-icon", {
+                                        attrs: {
+                                          icon:
+                                            user.stars >= i
+                                              ? "star-brown"
+                                              : "star-grey",
+                                          h: "14px"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                }),
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "w-1/3 self-center" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "flex flex-row justify-center user-check mx-2",
+                                    class:
+                                      user.state == "AFILIADO"
+                                        ? "user-check-active"
+                                        : "",
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.$router.push(
+                                          "/agente/perfil"
+                                        )
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("div", { staticClass: "w-1/2" }, [
+                                      _c("div", { staticClass: "avatar" }, [
+                                        _c("img", {
+                                          attrs: { src: user.image }
+                                        })
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "w-1/2 self-center" },
+                                      [
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass: "bold",
+                                            staticStyle: {
+                                              "line-height": "1.2"
+                                            }
+                                          },
+                                          [_vm._v(_vm._s(user.name))]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "w-1/2 flex flex-row justify-between flex-wrap"
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-4/6 self-center px-2" },
+                                [_c("p", [_vm._v(_vm._s(user.content))])]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-1/6 self-center px-2" },
+                                [
+                                  _c("p", [_vm._v("ESTADO")]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "p",
+                                    {
+                                      class:
+                                        user.state == "AFILIADO"
+                                          ? "success-text"
+                                          : ""
+                                    },
+                                    [_vm._v(_vm._s(user.state))]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
             }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex justify-center my-5" },
-            [
-              _c("w-btn", { attrs: { large: true, dark: true } }, [
-                _vm._v("ver mas propiedades")
-              ])
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ])
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "block md:hidden my-5" },
+              [
+                _c(
+                  "w-carousel",
+                  { attrs: { items: 1, pagination: true, navigation: false } },
+                  _vm._l(_vm.users, function(user, i) {
+                    return _c("slide", { key: i }, [
+                      _c(
+                        "div",
+                        { staticClass: "px-1" },
+                        [
+                          _c(
+                            "w-card",
+                            {
+                              staticClass: "user-card",
+                              attrs: { shadow: false }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "flex flex-row justify-center flex-wrap"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "w-full self-center" },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "flex flex-row justify-between user-check mx-2",
+                                          class:
+                                            user.state == "AFILIADO"
+                                              ? "user-check-active"
+                                              : "",
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.$router.push(
+                                                "/agente/perfil"
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("div", { staticClass: "w-1/4" }, [
+                                            _c(
+                                              "div",
+                                              { staticClass: "avatar" },
+                                              [
+                                                _c("img", {
+                                                  attrs: { src: user.image }
+                                                })
+                                              ]
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass: "w-2/4 self-center"
+                                            },
+                                            [
+                                              _c(
+                                                "p",
+                                                {
+                                                  staticClass: "bold",
+                                                  staticStyle: {
+                                                    "line-height": "1.2"
+                                                  }
+                                                },
+                                                [_vm._v(_vm._s(user.name))]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "w-full my-5 px-5" },
+                                    [
+                                      _c("p", { staticClass: "text-center" }, [
+                                        _vm._v(_vm._s(user.content))
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "w-full flex flex-row justify-center px-1"
+                                    },
+                                    _vm._l(5, function(i) {
+                                      return _c(
+                                        "w-btn",
+                                        {
+                                          key: i,
+                                          staticStyle: { margin: "2px" },
+                                          attrs: { icon: true, disabled: true }
+                                        },
+                                        [
+                                          _c("w-icon", {
+                                            attrs: {
+                                              icon:
+                                                user.stars >= i
+                                                  ? "star-brown"
+                                                  : "star-grey",
+                                              h: "14px"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    }),
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "w-full my-5" }, [
+                                    _c("p", { staticClass: "text-center" }, [
+                                      _vm._v(
+                                        "\n                                            Estado:\n                                            "
+                                      ),
+                                      _c(
+                                        "span",
+                                        {
+                                          class:
+                                            user.state == "AFILIADO"
+                                              ? "success-text"
+                                              : ""
+                                        },
+                                        [_vm._v(_vm._s(user.state))]
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "w-btn",
+                                    {
+                                      staticStyle: { margin: "0px" },
+                                      attrs: {
+                                        color:
+                                          user.state == "AFILIADO"
+                                            ? "secondary"
+                                            : "primary",
+                                        dark: true,
+                                        rounded: true,
+                                        small: true
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          user.state == "AFILIADO"
+                                            ? "Desafiliar"
+                                            : "Afiliar"
+                                        )
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ])
+                  }),
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex flex-row justify-center mt-5" },
+              [
+                _c("w-btn", { attrs: { outlined: true, color: "tertiary" } }, [
+                  _c("p", { staticClass: "body bold" }, [
+                    _c("span", { staticClass: "secondary-text" }, [
+                      _vm._v("+")
+                    ]),
+                    _vm._v(" MÁS DESTACADOS\n                    ")
+                  ])
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "w-carousel",
+              {
+                staticClass: "mt-10",
+                attrs: {
+                  background:
+                    _vm.windowWidth >= 768 ? "/images/banners/1.png" : "",
+                  items: _vm.windowWidth >= 768 ? 3 : 1,
+                  pagination: _vm.windowWidth < 768,
+                  navigation: _vm.windowWidth >= 768
+                }
+              },
+              _vm._l(_vm.cards, function(card, i) {
+                return _c("slide", { key: i }, [
+                  _c(
+                    "div",
+                    { staticClass: "px-2" },
+                    [
+                      _c(
+                        "w-card",
+                        { attrs: { image: card.image, hover: "full-hover" } },
+                        [
+                          _c("template", { slot: "image" }, [
+                            _c("p", { staticClass: "bold" }, [
+                              _vm._v(_vm._s(card.direccion))
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "mt-5" }, [
+                              _vm._v(_vm._s(card.descripcion))
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("template", { slot: "state" }, [
+                            _c("p", { staticClass: "white-text" }, [
+                              _vm._v(_vm._s(card.tipo))
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "bold" }, [
+                            _vm._v(_vm._s(card.title))
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v(_vm._s(card.body))]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v("Comisión")]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row justify-between" },
+                            [
+                              _c("p", { staticClass: "body bold" }, [
+                                _vm._v(_vm._s(card.comision))
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "body bold tertiary-text" },
+                                [_vm._v(_vm._s(card.mes))]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("template", { slot: "footer" }, [
+                            _c(
+                              "div",
+                              { staticClass: "flex flex-row justify-between" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "flex flex-row justify-between"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "info-item" },
+                                      [
+                                        _c("w-icon", {
+                                          attrs: {
+                                            icon: "room-solid",
+                                            h: "12px"
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c("p", { staticClass: "white-text" }, [
+                                          _vm._v(_vm._s(card.info.habitaciones))
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "info-item" },
+                                      [
+                                        _c("w-icon", {
+                                          attrs: {
+                                            icon: "bath-solid",
+                                            h: "15px"
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c("p", { staticClass: "white-text" }, [
+                                          _vm._v(_vm._s(card.info.baños))
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "info-item" },
+                                      [
+                                        _c("w-icon", {
+                                          attrs: {
+                                            icon: "parking-solid",
+                                            h: "12px"
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c("p", { staticClass: "white-text" }, [
+                                          _vm._v(
+                                            _vm._s(card.info.estacionamiento)
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "info-item" },
+                                  [
+                                    _c("w-icon", {
+                                      attrs: { icon: "size", h: "15px" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "white-text" }, [
+                                      _vm._v(_vm._s(card.info.tamaño))
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ]
+                            )
+                          ])
+                        ],
+                        2
+                      )
+                    ],
+                    1
+                  )
+                ])
+              }),
+              1
+            )
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c("br")
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -37178,7 +36785,8 @@ var render = function() {
                     _c(
                       "div",
                       {
-                        staticClass: "flex flex-row justify-between flex-wrap"
+                        staticClass:
+                          "flex flex-row justify-between flex-wrap ml-3"
                       },
                       [
                         _c("div", { staticClass: "lg:pl-3" }, [
@@ -37863,7 +37471,7 @@ var render = function() {
                                     "div",
                                     {
                                       staticClass:
-                                        "w-1/2 md:w-1/3 flex flex-row-reverse justify-center px-1 md:px-5"
+                                        "w-1/2 md:w-1/3 flex flex-row justify-center px-1 md:px-5"
                                     },
                                     _vm._l(5, function(i) {
                                       return _c(
@@ -37877,7 +37485,7 @@ var render = function() {
                                           _c("w-icon", {
                                             attrs: {
                                               icon:
-                                                noti.stars <= i
+                                                noti.stars >= i
                                                   ? "star-brown"
                                                   : "star-grey",
                                               h: "14px"
@@ -38035,14 +37643,9 @@ var render = function() {
       [
         _c("w-card", { attrs: { shadow: false } }, [
           _c("div", { staticClass: "flex justify-center" }, [
-            _c(
-              "p",
-              {
-                staticClass: "subtitle bold",
-                staticStyle: { margin: "67px 0px 44px 0px" }
-              },
-              [_vm._v("Precios de suscripción")]
-            )
+            _c("p", { staticClass: "subtitle bold ml-5 my-5 md:ml-0" }, [
+              _vm._v("Precios de suscripción")
+            ])
           ]),
           _vm._v(" "),
           _c("br"),
@@ -40904,9 +40507,7 @@ var render = function() {
                 [
                   _c("template", { slot: "header" }, [
                     _c("p", { staticClass: "caption bold white-text" }, [
-                      _vm._v(
-                        "\n                                ORDENAR POR\n                            "
-                      )
+                      _vm._v("ORDENAR POR")
                     ])
                   ]),
                   _vm._v(" "),
@@ -40979,10 +40580,8 @@ var render = function() {
                   "w-card",
                   { attrs: { shadow: false } },
                   [
-                    _c("h1", { staticClass: "subtitle bold lg:pl-3" }, [
-                      _vm._v(
-                        "\n                        Listado de Publicaciones\n                    "
-                      )
+                    _c("h1", { staticClass: "subtitle bold lg:pl-3 ml-3" }, [
+                      _vm._v("Listado de Publicaciones")
                     ]),
                     _vm._v(" "),
                     _c("br"),
@@ -41064,13 +40663,7 @@ var render = function() {
                                               _c(
                                                 "p",
                                                 { staticClass: "white-text" },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                                " +
-                                                      _vm._s(card.state) +
-                                                      "\n                                            "
-                                                  )
-                                                ]
+                                                [_vm._v(_vm._s(card.state))]
                                               )
                                             ]
                                           ),
@@ -41129,11 +40722,7 @@ var render = function() {
                                           {
                                             staticClass: "body bold white-text"
                                           },
-                                          [
-                                            _vm._v(
-                                              "\n                                        Dar de Baja\n                                    "
-                                            )
-                                          ]
+                                          [_vm._v("Dar de Baja")]
                                         ),
                                         _vm._v(" "),
                                         _c("br"),
@@ -41254,13 +40843,7 @@ var render = function() {
                                           staticClass:
                                             "caption bold tertiary-text"
                                         },
-                                        [
-                                          _vm._v(
-                                            "\n                                        " +
-                                              _vm._s(card.title) +
-                                              "\n                                    "
-                                          )
-                                        ]
+                                        [_vm._v(_vm._s(card.title))]
                                       ),
                                       _vm._v(" "),
                                       _c("br"),
@@ -60527,9 +60110,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-btn", {
     small: Boolean,
     fullwidth: Boolean,
     rounded: Boolean,
-    outlined: Boolean
+    outlined: Boolean,
+    type: String
   },
-  template: "\n        <button :class=\"buttonClass\" :style=\"buttonStyle\" @click=\"$emit('click')\">\n            <slot></slot>\n        </button>\n    ",
+  template: "\n        <button :type=\"type\" :class=\"buttonClass\" :style=\"buttonStyle\" @click=\"$emit('click')\">\n            <slot></slot>\n        </button>\n    ",
   computed: {
     buttonClass: function buttonClass() {
       var btnClass = "btn";
@@ -61574,6 +61158,7 @@ var map = {
 	"./edit-white.png": "./resources/js/components/wlinii_components/iconos/edit-white.png",
 	"./edit.png": "./resources/js/components/wlinii_components/iconos/edit.png",
 	"./facebook-black.png": "./resources/js/components/wlinii_components/iconos/facebook-black.png",
+	"./facebook-grey.png": "./resources/js/components/wlinii_components/iconos/facebook-grey.png",
 	"./facebook-white.png": "./resources/js/components/wlinii_components/iconos/facebook-white.png",
 	"./flag.png": "./resources/js/components/wlinii_components/iconos/flag.png",
 	"./globe.png": "./resources/js/components/wlinii_components/iconos/globe.png",
@@ -61585,9 +61170,11 @@ var map = {
 	"./imperios-digitales.png": "./resources/js/components/wlinii_components/iconos/imperios-digitales.png",
 	"./instagram-black.png": "./resources/js/components/wlinii_components/iconos/instagram-black.png",
 	"./instagram-white.png": "./resources/js/components/wlinii_components/iconos/instagram-white.png",
+	"./linkedin-grey.png": "./resources/js/components/wlinii_components/iconos/linkedin-grey.png",
 	"./lock-transparent.png": "./resources/js/components/wlinii_components/iconos/lock-transparent.png",
 	"./lock.png": "./resources/js/components/wlinii_components/iconos/lock.png",
 	"./logout.png": "./resources/js/components/wlinii_components/iconos/logout.png",
+	"./mail-grey.png": "./resources/js/components/wlinii_components/iconos/mail-grey.png",
 	"./mail-white.png": "./resources/js/components/wlinii_components/iconos/mail-white.png",
 	"./mail.png": "./resources/js/components/wlinii_components/iconos/mail.png",
 	"./map.png": "./resources/js/components/wlinii_components/iconos/map.png",
@@ -61607,6 +61194,7 @@ var map = {
 	"./trash-black.png": "./resources/js/components/wlinii_components/iconos/trash-black.png",
 	"./trash-white.png": "./resources/js/components/wlinii_components/iconos/trash-white.png",
 	"./twitter-black.png": "./resources/js/components/wlinii_components/iconos/twitter-black.png",
+	"./twitter-grey.png": "./resources/js/components/wlinii_components/iconos/twitter-grey.png",
 	"./twitter-white.png": "./resources/js/components/wlinii_components/iconos/twitter-white.png",
 	"./unlock.png": "./resources/js/components/wlinii_components/iconos/unlock.png",
 	"./upload-file.png": "./resources/js/components/wlinii_components/iconos/upload-file.png",
@@ -61842,6 +61430,17 @@ module.exports = "/images/facebook-black.png?1cb8942cc171fda422ae88b1562ce07c";
 
 /***/ }),
 
+/***/ "./resources/js/components/wlinii_components/iconos/facebook-grey.png":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/wlinii_components/iconos/facebook-grey.png ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/facebook-grey.png?14e072ca13f904294071f5630ea9a2c0";
+
+/***/ }),
+
 /***/ "./resources/js/components/wlinii_components/iconos/facebook-white.png":
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/wlinii_components/iconos/facebook-white.png ***!
@@ -61963,6 +61562,17 @@ module.exports = "/images/instagram-white.png?182386c5b66e2f3554127b69fba42d3b";
 
 /***/ }),
 
+/***/ "./resources/js/components/wlinii_components/iconos/linkedin-grey.png":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/wlinii_components/iconos/linkedin-grey.png ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/linkedin-grey.png?2afeb627cdd4dab2d0d3a8f319fccc64";
+
+/***/ }),
+
 /***/ "./resources/js/components/wlinii_components/iconos/lock-transparent.png":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/wlinii_components/iconos/lock-transparent.png ***!
@@ -61993,6 +61603,17 @@ module.exports = "/images/lock.png?ba9497d774d986fbc2d25069fda89a92";
 /***/ (function(module, exports) {
 
 module.exports = "/images/logout.png?ccb59c6a9c3da8480a02e77c69b02fde";
+
+/***/ }),
+
+/***/ "./resources/js/components/wlinii_components/iconos/mail-grey.png":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/wlinii_components/iconos/mail-grey.png ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/mail-grey.png?a6be6831ff9f3e72a55044acada00a78";
 
 /***/ }),
 
@@ -62202,6 +61823,17 @@ module.exports = "/images/trash-white.png?be2f7178cc92e593f795a1893ffe4611";
 /***/ (function(module, exports) {
 
 module.exports = "/images/twitter-black.png?70edfe378fe120ceea4a0df684bbd302";
+
+/***/ }),
+
+/***/ "./resources/js/components/wlinii_components/iconos/twitter-grey.png":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/wlinii_components/iconos/twitter-grey.png ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/twitter-grey.png?b5f36873db1420ac06501cbd08057d47";
 
 /***/ }),
 
@@ -62852,9 +62484,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PerfilDeAgente_vue_vue_type_template_id_748f6370___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerfilDeAgente.vue?vue&type=template&id=748f6370& */ "./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&");
+/* harmony import */ var _PerfilDeAgente_vue_vue_type_template_id_748f6370_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerfilDeAgente.vue?vue&type=template&id=748f6370&scoped=true& */ "./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&scoped=true&");
 /* harmony import */ var _PerfilDeAgente_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PerfilDeAgente.vue?vue&type=script&lang=js& */ "./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _PerfilDeAgente_vue_vue_type_style_index_0_id_748f6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true& */ "./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -62862,13 +62496,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _PerfilDeAgente_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _PerfilDeAgente_vue_vue_type_template_id_748f6370___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _PerfilDeAgente_vue_vue_type_template_id_748f6370___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _PerfilDeAgente_vue_vue_type_template_id_748f6370_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PerfilDeAgente_vue_vue_type_template_id_748f6370_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "748f6370",
   null
   
 )
@@ -62894,19 +62528,35 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370& ***!
-  \**************************************************************************************/
+/***/ "./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true& ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_style_index_0_id_748f6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=style&index=0&id=748f6370&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_style_index_0_id_748f6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_style_index_0_id_748f6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_style_index_0_id_748f6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_style_index_0_id_748f6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_style_index_0_id_748f6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&scoped=true&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&scoped=true& ***!
+  \**************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_template_id_748f6370___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilDeAgente.vue?vue&type=template&id=748f6370& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_template_id_748f6370___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_template_id_748f6370_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilDeAgente.vue?vue&type=template&id=748f6370&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/agentes/PerfilDeAgente.vue?vue&type=template&id=748f6370&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_template_id_748f6370_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_template_id_748f6370___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilDeAgente_vue_vue_type_template_id_748f6370_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -64482,8 +64132,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
+__webpack_require__(/*! C:\xampp\htdocs\laravel-projects\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel-projects\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
 
 
 /***/ })
