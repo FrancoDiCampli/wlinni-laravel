@@ -1,25 +1,18 @@
 <template>
-    <div>
-        <div class="hide">
-            <div class id="myAutocomplete">
-                <div class="flex items-center my-4">
-                    <gmap-autocomplete
-                        style="min-height: 42px;"
-                        class="form-control my-0 py-1"
-                        @place_changed="setPlace"
-                    ></gmap-autocomplete>
-                    <div class>
-                        <w-btn @click="addMarker" :icon="true">
-                            <w-icon icon="address-secondary" h="32px"></w-icon>
-                        </w-btn>
-                    </div>
-                </div>
+    <div class="map-new">
+        <div class="w-full flex flex-row" style="padding: 10px" id="myAutocomplete">
+            <div class="flex flex-row justify-start items-center autocomplete-container">
+                <gmap-autocomplete class="autocomplete-input" @place_changed="setPlace"></gmap-autocomplete>
+                <w-icon icon="address-secondary" h="16px"></w-icon>
+            </div>
+            <div class="autocomplete-btn">
+                <w-btn @click="addMarker" :rounded="true" :dark="true">agregar</w-btn>
             </div>
         </div>
 
         <gmap-map
             ref="mapRef"
-            :center="centro"
+            :center="center"
             :zoom="14"
             :options="mapOptions"
             style="width: 100%; height: 600px;"
@@ -31,10 +24,8 @@
 
 <script>
 export default {
-    props: {
-        center: Object
-    },
     data: () => ({
+        center: { lat: -12.1122095, lng: -77.047945 },
         marker: {},
         mapOptions: {
             mapTypeControl: false,
@@ -42,9 +33,8 @@ export default {
         },
         places: [],
         currentPlace: null,
-        // iconos de los marcadores
         markerOptions: {
-            url: "/images/lock.png",
+            url: "/images/lock-full.png",
             size: { width: 20, height: 35, f: "px", b: "px" },
             scaledSize: { width: 15, height: 25, f: "px", b: "px" }
         },
@@ -63,11 +53,7 @@ export default {
         },
         card: {}
     }),
-    computed: {
-        centro() {
-            return this.center;
-        }
-    },
+
     mounted() {
         this.geolocate();
         this.$refs.mapRef.$mapPromise.then(map => {
@@ -95,7 +81,7 @@ export default {
                 this.currentPlace = null;
             }
         },
-        geolocate: function() {
+        geolocate() {
             navigator.geolocation.getCurrentPosition(position => {
                 this.center = {
                     lat: position.coords.latitude,
@@ -108,19 +94,50 @@ export default {
 </script>
 
 <style lang="scss">
-form {
-    input {
+.map-new {
+    .autocomplete-container {
         position: relative;
         height: auto;
-        min-height: 42px;
-        width: auto;
+        min-height: 38px;
+        width: 332px;
         background-color: white;
-        border: thin solid black;
+        border: 2px solid #ff7500;
         border-radius: 21px;
         padding: 0px 19px;
-        outline: none;
-        &:focus {
-            border: 2px solid #041e42;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .autocomplete-input {
+            width: 90%;
+            outline: none;
+            font-size: 16px;
+        }
+    }
+
+    .autocomplete-btn {
+        .btn {
+            margin: 0px 12px;
+            height: 38px;
+            padding: 0px 19px;
+        }
+    }
+}
+
+.pac-container {
+    margin-top: 16px !important;
+    margin-left: -21px !important;
+    width: 332px !important;
+    border-radius: 21px !important;
+    &::after {
+        display: none !important;
+    }
+    .pac-item {
+        padding: 12px 32px !important;
+        font-size: 13px !important;
+        .pac-icon,
+        .pac-icon-marker {
+            display: none !important;
         }
     }
 }

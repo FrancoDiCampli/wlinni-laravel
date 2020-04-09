@@ -312,7 +312,7 @@
 
 <script>
 import PerfilAgente from "../agentes/PerfilAgente";
-import Mapas from "../mapas/Mapas";
+import Mapas from "../../components/mapas/Mapas";
 
 export default {
     data() {

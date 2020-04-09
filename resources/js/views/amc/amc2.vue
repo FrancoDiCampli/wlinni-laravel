@@ -168,7 +168,8 @@
 </template>
 
 <script>
-import FiltroInmueble from "../inmuebles/FiltroInmueble";
+import FiltroInmueble from "../../components/inmuebles/FiltroInmueble";
+
 export default {
     data() {
         return {

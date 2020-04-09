@@ -551,7 +551,10 @@
                     </div>
                     <div>
                         <p class="body bold tertiary-text ml-5 mb-4">Locación</p>
-                        <mapas-agregar :center="center"></mapas-agregar>
+                        <p
+                            class="ml-5 mb-4"
+                        >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+                        <mapas-agregar></mapas-agregar>
                     </div>
                     <div class="mt-20">
                         <div class="f-header">
@@ -621,10 +624,10 @@
 </template>
 
 <script>
-import MapasAgregar from "../mapas/MapasAgregar";
+import MapasAgregar from "../../components/mapas/MapasAgregar";
+
 export default {
     data: () => ({
-        center: { lat: -12.1122095, lng: -77.047945 },
         windowWidth: window.innerWidth,
         sections: {
             inmueble: true,

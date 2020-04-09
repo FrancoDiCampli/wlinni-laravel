@@ -1,5 +1,4 @@
 <template>
-    <!-- PENDIENTE -->
     <div>
         <div class="flex flex-row flex-wrap" v-if="filtros.length > 0">
             <w-btn
@@ -10,17 +9,11 @@
                 v-for="(filtro, i) in filtros"
                 :key="i"
                 @click="unset(filtro)"
-                >{{ filtro }} X</w-btn
-            >
+            >{{ filtro }} X</w-btn>
         </div>
         <div v-for="(panel, i) in panels" :key="i">
             <w-panel :header="panel.name" v-model="panel.value">
-                <w-btn
-                    v-for="(op, i) in panel.options"
-                    :key="i"
-                    @click="set(op)"
-                    >{{ op }}</w-btn
-                >
+                <w-btn v-for="(op, i) in panel.options" :key="i" @click="set(op)">{{ op }}</w-btn>
             </w-panel>
         </div>
     </div>
@@ -41,8 +34,8 @@ export default {
                         "Casa (250)",
                         "Oficinas (800)",
                         "Locales Comerciales (300)",
-                        "Terrenos (150)",
-                    ],
+                        "Terrenos (150)"
+                    ]
                 },
                 {
                     value: false,
@@ -52,13 +45,13 @@ export default {
                         "Callao (250)",
                         "Trujillo (800)",
                         "Piura (300)",
-                        "Arequipa (150)",
-                    ],
+                        "Arequipa (150)"
+                    ]
                 },
                 {
                     value: false,
                     name: "Precio",
-                    options: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"],
+                    options: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"]
                 },
                 {
                     value: false,
@@ -68,31 +61,31 @@ export default {
                         "2 Dormitorio (250)",
                         "3 Dormitorio (800)",
                         "4 Dormitorio (300)",
-                        "5 Dormitorio (150)",
-                    ],
+                        "5 Dormitorio (150)"
+                    ]
                 },
 
                 {
                     value: false,
                     name: "Area Toral (m2)",
-                    options: ["120m"],
+                    options: ["120m"]
                 },
                 {
                     value: false,
                     name: "Cocheras",
-                    options: ["Opción 1", "Opción 2", "Opción 3"],
+                    options: ["Opción 1", "Opción 2", "Opción 3"]
                 },
                 {
                     value: false,
                     name: "Antigüedad",
-                    options: ["Opción 1", "Opción 2", "Opción 3"],
+                    options: ["Opción 1", "Opción 2", "Opción 3"]
                 },
                 {
                     value: false,
                     name: "Estado",
-                    options: ["Opción 1", "Opción 2", "Opción 3"],
-                },
-            ],
+                    options: ["Opción 1", "Opción 2", "Opción 3"]
+                }
+            ]
         };
     },
     methods: {
@@ -102,8 +95,8 @@ export default {
         unset(op) {
             const i = this.filtros.indexOf(op);
             this.filtros.splice(i, 1);
-        },
-    },
+        }
+    }
 };
 </script>
 

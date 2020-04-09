@@ -11,7 +11,7 @@
                                 <p class="caption bold white-text">FILTROS APLICADOS</p>
                             </template>
 
-                            <filtros-mapa></filtros-mapa>
+                            <FiltrosMapa></FiltrosMapa>
                         </w-card>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                     <div class="filter">
                         <div class="filter-header">filtros</div>
                         <div class="filter-body">
-                            <filtros-mapa></filtros-mapa>
+                            <FiltrosMapa></FiltrosMapa>
                             <w-btn
                                 :fullwidth="true"
                                 color="secondary"
@@ -47,7 +47,7 @@
                         </div>
                         <br />
 
-                        <mapas :center="center" :markers="markers"></mapas>
+                        <Mapas :center="center" :markers="markers"></Mapas>
 
                         <br />
                     </w-card>
@@ -59,8 +59,8 @@
 </template>
 
 <script>
-import FiltrosMapa from "./FiltrosMapa";
-import Mapas from "../mapas/Mapas";
+import FiltrosMapa from "../../components/inmuebles/FiltrosMapa";
+import Mapas from "../../components/mapas/Mapas";
 
 export default {
     data: () => ({
@@ -69,7 +69,6 @@ export default {
         markers: [
             {
                 position: { lat: -12.1221005, lng: -77.0315953 },
-                title: "Miraflores",
                 image: "/images/departamentos/8.jpg",
                 dir: "Calle los ficus Mz B lt. 10",
                 description: " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
@@ -79,7 +78,6 @@ export default {
             },
             {
                 position: { lat: -12.1001099, lng: -77.0554858 },
-                title: "San Isidro",
                 image: "/images/departamentos/7.jpg",
                 dir: "Calle los ficus Mz B lt. 10",
                 description: " 19 unidades 1 a 3 dormitorio 45m a 97m techados",
@@ -89,7 +87,6 @@ export default {
             },
             {
                 position: { lat: -12.1206998, lng: -77.0347257 },
-                title: "Santiago de Surco",
                 image: "/images/departamentos/6.jpg",
                 dir: " Calle los ficus Mz B lt. 10",
                 description: "19 unidades 1 a 3 dormitorio 45m a 97m techados",

@@ -46,8 +46,16 @@
                                 <w-btn
                                     color="tertiary"
                                     :dark="true"
-                                    style=" margin: 0px !important;"
-                                >Búsqueda de mapa</w-btn>
+                                    style=" margin: 0px !important; display: flex;"
+                                    @click="$router.push('/inmuebles/mapa')"
+                                >
+                                    Búsqueda de mapa
+                                    <w-icon
+                                        style="margin: -6px 0px 0px 16px;"
+                                        icon="address-map"
+                                        h="26px"
+                                    ></w-icon>
+                                </w-btn>
                             </div>
                         </div>
                         <br />
@@ -122,7 +130,7 @@
 </template>
 
 <script>
-import FiltroInmueble from "./FiltroInmueble.vue";
+import FiltroInmueble from "../../components/inmuebles/FiltroInmueble";
 
 export default {
     data: () => ({

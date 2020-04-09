@@ -17,7 +17,7 @@ import DetallePublicacion from "../views/publicaciones/DetallePublicacion";
 
 // INMUEBLES
 import Inmuebles from "../views/inmuebles/Inmuebles";
-import InmueblesMapa from "../views/inmuebles/ListadoInmuebleMapa";
+import InmueblesMapa from "../views/inmuebles/InmuebleMapa";
 
 // NOTIFICACIONES
 import Notificaciones from "../views/notificaciones/Notificaciones";
