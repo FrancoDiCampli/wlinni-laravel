@@ -8,17 +8,19 @@
 @import "./button.scss";
 @import "./card.scss";
 @import "./panels.scss";
+@import "./snackbar.scss";
+@import "./pagination.scss";
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body::-webkit-scrollbar {
-    width: 0.5rem;
+  width: 0.5rem;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: $accent;
+  background-color: $accent;
 }

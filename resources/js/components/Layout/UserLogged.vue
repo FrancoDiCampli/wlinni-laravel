@@ -60,7 +60,7 @@ export default {
             {
                 name: "Perfil",
                 icon: "user",
-                path: "/agente/perfil"
+                path: "/agente"
             },
             {
                 name: "Perfil Brocker",

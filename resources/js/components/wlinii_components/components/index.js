@@ -5,6 +5,9 @@ import "./WForm/WSelect";
 import "./WForm/WSwitch";
 import "./WForm/WTextarea";
 
+import "./WSnackbar/WSnackbar";
+import "./WPagination/WPagination";
+
 // ICONOS
 import "./WIcon/WIcon";
 
