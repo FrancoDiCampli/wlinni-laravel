@@ -5317,6 +5317,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7488,6 +7497,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8900,6 +8919,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_mapas_MapasAgregar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/mapas/MapasAgregar */ "./resources/js/components/mapas/MapasAgregar.vue");
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -33020,9 +33046,39 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "w-full md:w-2/3" }, [
                   _c("div", { staticClass: "hidden md:block" }, [
-                    _c("p", { staticClass: "bold" }, [
-                      _vm._v("PERFIL AGENTES")
-                    ]),
+                    _c(
+                      "div",
+                      { staticClass: "flex justify-between items-center" },
+                      [
+                        _c("p", { staticClass: "bold" }, [
+                          _vm._v("PERFIL AGENTES")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "w-snackbar",
+                          { staticClass: "mt-1" },
+                          [
+                            _c("w-icon", {
+                              attrs: { icon: "info", h: "24px" }
+                            }),
+                            _vm._v(" "),
+                            _c("template", { slot: "content" }, [
+                              _c("p", { staticClass: "bold" }, [
+                                _vm._v("Importante!")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
+                                )
+                              ])
+                            ])
+                          ],
+                          2
+                        )
+                      ],
+                      1
+                    ),
                     _vm._v(" "),
                     _c("div", { staticClass: "divider my-5" })
                   ]),
@@ -36977,9 +37033,39 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "divider my-5" }),
                     _vm._v(" "),
-                    _c("p", { staticClass: "subtitle bold mt-5 md:mt-0" }, [
-                      _vm._v(_vm._s(_vm.company.name))
-                    ]),
+                    _c(
+                      "div",
+                      { staticClass: "flex justify-between items-center" },
+                      [
+                        _c("p", { staticClass: "subtitle bold mt-5 md:mt-0" }, [
+                          _vm._v(_vm._s(_vm.company.name))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "w-snackbar",
+                          { staticClass: "mt-1" },
+                          [
+                            _c("w-icon", {
+                              attrs: { icon: "info", h: "24px" }
+                            }),
+                            _vm._v(" "),
+                            _c("template", { slot: "content" }, [
+                              _c("p", { staticClass: "bold" }, [
+                                _vm._v("Importante!")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
+                                )
+                              ])
+                            ])
+                          ],
+                          2
+                        )
+                      ],
+                      1
+                    ),
                     _vm._v(" "),
                     _c("p", { staticClass: "mb-8" }, [
                       _vm._v(_vm._s(_vm.company.dir))
@@ -37353,7 +37439,10 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "flex justify-center lg:justify-end" },
+              {
+                staticClass:
+                  "hidden md:flex lg:flex xl:flex justify-center lg:justify-end"
+              },
               [
                 _c("w-pagination", {
                   attrs: { length: 4 },
@@ -39729,6 +39818,21 @@ var render = function() {
           _c("p", { staticClass: "ml-5" }, [
             _vm._v("Agregar la información de la nueva publicación")
           ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "lg:w-2/3 primary rounded-bl-full rounded-r-full lg:ml-5 mt-6 p-4"
+            },
+            [
+              _c("p", { staticClass: "caption white-text truncate" }, [
+                _vm._v(
+                  "Configuración flexible y formas de edición, agregue y edite información de listado, fotos y ubicación de la posición"
+                )
+              ])
+            ]
+          ),
           _vm._v(" "),
           _c(
             "form",

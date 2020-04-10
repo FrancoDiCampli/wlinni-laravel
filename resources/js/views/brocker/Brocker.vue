@@ -27,7 +27,17 @@
                         <div class="hidden md:block">
                             <p class="bold">PERFIL BROKER</p>
                             <div class="divider my-5"></div>
-                            <p class="subtitle bold mt-5 md:mt-0">{{ company.name }}</p>
+                            <div class="flex justify-between items-center">
+                                <p class="subtitle bold mt-5 md:mt-0">{{ company.name }}</p>
+                                <w-snackbar class="mt-1">
+                                    <w-icon icon="info" h="24px"></w-icon>
+                                    <template slot="content">
+                                        <p class="bold">Importante!</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit</p>
+                                    </template>
+                                </w-snackbar>
+                            </div>
+
                             <p class="mb-8">{{ company.dir }}</p>
                         </div>
                         <div class="full-divider hidden md:block mt-5"></div>
@@ -150,7 +160,7 @@
                     </w-card>
                 </div>
 
-                <div class="flex justify-center lg:justify-end">
+                <div class="hidden md:flex lg:flex xl:flex justify-center lg:justify-end">
                     <w-pagination v-model="page" :length="4" @click="navigate()"></w-pagination>
                 </div>
 
