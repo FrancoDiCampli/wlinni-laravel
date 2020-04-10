@@ -149,6 +149,11 @@
                         </div>
                     </w-card>
                 </div>
+
+                <div class="flex justify-center lg:justify-end">
+                    <w-pagination v-model="page" :length="4" @click="navigate()"></w-pagination>
+                </div>
+
                 <div class="block md:hidden my-5">
                     <w-carousel :items="1" :pagination="true" :navigation="false">
                         <slide v-for="(user, i) in users" :key="i">
@@ -283,6 +288,7 @@
 export default {
     data() {
         return {
+            page: 1,
             windowWidth: window.innerWidth,
             company: {
                 name: "Empresa Gloden Star",

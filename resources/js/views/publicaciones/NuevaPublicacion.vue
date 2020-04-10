@@ -63,11 +63,16 @@
                             <div class="flex flex-row flex-wrap">
                                 <div class="w-full md:w-1/3 px-2">
                                     <w-select
-                                        label="Ubicación"
+                                        label="Departamento"
                                         placeholder="Elegir departamento..."
                                         :options="['a', 'b', 'c']"
-                                        v-model="form.ubicacion"
-                                    ></w-select>
+                                        v-model="form.departamento"
+                                    >
+                                        <template slot="snackbar">
+                                            <p class="bold">Importante!</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas.</p>
+                                        </template>
+                                    </w-select>
                                 </div>
                                 <div class="w-full md:w-1/3 px-2">
                                     <w-select
@@ -75,7 +80,12 @@
                                         placeholder="Elegir departamento..."
                                         :options="['a', 'b', 'c']"
                                         v-model="form.provincias"
-                                    ></w-select>
+                                    >
+                                        <template slot="snackbar">
+                                            <p class="bold">Importante!</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas.</p>
+                                        </template>
+                                    </w-select>
                                 </div>
                             </div>
                             <div class="flex flex-row flex-wrap">
@@ -85,7 +95,12 @@
                                         placeholder="Elegir departamento..."
                                         :options="['a', 'b', 'c']"
                                         v-model="form.distrito"
-                                    ></w-select>
+                                    >
+                                        <template slot="snackbar">
+                                            <p class="bold">Importante!</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas.</p>
+                                        </template>
+                                    </w-select>
                                 </div>
                                 <div class="w-full md:w-1/3 px-2">
                                     <w-select
@@ -93,7 +108,12 @@
                                         placeholder="Elegir departamento..."
                                         :options="['a', 'b', 'c']"
                                         v-model="form.urbanizacion"
-                                    ></w-select>
+                                    >
+                                        <template slot="snackbar">
+                                            <p class="bold">Importante!</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas.</p>
+                                        </template>
+                                    </w-select>
                                 </div>
                             </div>
 
