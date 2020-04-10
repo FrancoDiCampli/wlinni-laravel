@@ -6,7 +6,7 @@ Vue.component("w-select", {
     onFocus: false,
     errorMessage: null,
     showOptions: false,
-    activeSnack: false,
+    activeSnack: false
   }),
 
   props: {
@@ -18,15 +18,15 @@ Vue.component("w-select", {
     label: String,
     color: {
       type: String,
-      default: "primary",
+      default: "primary"
     },
     beforeIcon: String,
     afterIcon: String,
     options: {
       type: Array,
-      required: true,
+      required: true
     },
-    rules: Array,
+    rules: Array
   },
 
   template: `
@@ -41,13 +41,14 @@ Vue.component("w-select", {
             </div>
             <div :class="inputGroupClass" :style="inputGroupStyle"  ref="inputGroup">
                 <w-icon v-if="beforeIcon" :icon="beforeIcon" class="before"></w-icon>
-                <div class="input-label" @click="showOptions = !showOptions">
+                <div class="input-label">
                     <input
-                        disabled
+                        readonly
                         :value="selectOption"
                         @input="$emit('input', $event.target.value)"
                         :class="inputClass"
                         :placeholder="placeholder"
+                        @click="showOptions = !showOptions"
                     />
                     <label :style="labelStyle">
                       {{ label }}
@@ -89,7 +90,7 @@ Vue.component("w-select", {
       },
       set(newValue) {
         this.$emit("input", newValue);
-      },
+      }
     },
 
     iconURL() {
@@ -144,7 +145,7 @@ Vue.component("w-select", {
       this.value ? (inputClass += "active") : "";
       this.disabled ? (inputClass += " disabled") : "";
       return inputClass;
-    },
+    }
   },
 
   methods: {
@@ -152,12 +153,12 @@ Vue.component("w-select", {
       if (this.$wlinii[this.color]) {
         return {
           group: `border: 2px solid ${this.$wlinii[this.color]};`,
-          label: `color: ${this.$wlinii[this.color]};`,
+          label: `color: ${this.$wlinii[this.color]};`
         };
       } else {
         return {
           group: `border: 2px solid ${this.color};`,
-          label: `color: ${this.color};`,
+          label: `color: ${this.color};`
         };
       }
     },
@@ -190,14 +191,14 @@ Vue.component("w-select", {
         targets: optionsElement,
         scaleY: [0, 1],
         duration: 250,
-        easing: "easeInOutSine",
+        easing: "easeInOutSine"
       });
 
       anime({
         targets: iconElement,
         rotate: ["0deg", "180deg"],
         duration: 250,
-        easing: "easeInOutSine",
+        easing: "easeInOutSine"
       });
     },
 
@@ -208,7 +209,7 @@ Vue.component("w-select", {
         targets: iconElement,
         rotate: ["180deg", "0deg"],
         duration: 250,
-        easing: "easeInOutSine",
+        easing: "easeInOutSine"
       });
     },
 
@@ -219,8 +220,8 @@ Vue.component("w-select", {
         targets: snackElement,
         scale: [0, 1],
         duration: 250,
-        easing: "easeInOutSine",
+        easing: "easeInOutSine"
       });
-    },
-  },
+    }
+  }
 });
