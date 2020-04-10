@@ -86,6 +86,10 @@
                         </div>
                     </w-card>
                 </div>
+                <br />
+                <div class="flex justify-center lg:justify-end">
+                    <w-pagination v-model="page" :length="4" @click="navigate()"></w-pagination>
+                </div>
             </w-card>
         </div>
     </div>
@@ -94,6 +98,7 @@
 <script>
 export default {
     data: () => ({
+        page: 1,
         notifications: [
             {
                 state: "guardar",

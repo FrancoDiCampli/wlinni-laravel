@@ -7483,9 +7483,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      page: 1,
       windowWidth: window.innerWidth,
       company: {
         name: "Empresa Gloden Star",
@@ -7945,10 +7951,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      page: 1,
       filtrar: false,
       cards: [{
         tipo: "Alquiler",
@@ -8197,9 +8207,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      page: 1,
       notifications: [{
         state: "guardar",
         stars: 3,
@@ -9531,6 +9546,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -9759,10 +9794,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      page: 1,
       filtrar: false,
       cards: [{
         showForm: false,
@@ -37314,6 +37353,29 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
+              { staticClass: "flex justify-center lg:justify-end" },
+              [
+                _c("w-pagination", {
+                  attrs: { length: 4 },
+                  on: {
+                    click: function($event) {
+                      return _vm.navigate()
+                    }
+                  },
+                  model: {
+                    value: _vm.page,
+                    callback: function($$v) {
+                      _vm.page = $$v
+                    },
+                    expression: "page"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
               { staticClass: "block md:hidden my-5" },
               [
                 _c(
@@ -38169,7 +38231,30 @@ var render = function() {
                       0
                     ),
                     _vm._v(" "),
-                    _c("br")
+                    _c("br"),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "flex justify-center lg:justify-end" },
+                      [
+                        _c("w-pagination", {
+                          attrs: { length: 4 },
+                          on: {
+                            click: function($event) {
+                              return _vm.navigate()
+                            }
+                          },
+                          model: {
+                            value: _vm.page,
+                            callback: function($$v) {
+                              _vm.page = $$v
+                            },
+                            expression: "page"
+                          }
+                        })
+                      ],
+                      1
+                    )
                   ],
                   1
                 )
@@ -38422,7 +38507,32 @@ var render = function() {
                 ],
                 1
               )
-            })
+            }),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex justify-center lg:justify-end" },
+              [
+                _c("w-pagination", {
+                  attrs: { length: 4 },
+                  on: {
+                    click: function($event) {
+                      return _vm.navigate()
+                    }
+                  },
+                  model: {
+                    value: _vm.page,
+                    callback: function($$v) {
+                      _vm.page = $$v
+                    },
+                    expression: "page"
+                  }
+                })
+              ],
+              1
+            )
           ],
           2
         )
@@ -39732,20 +39842,37 @@ var render = function() {
                           "div",
                           { staticClass: "w-full md:w-1/3 px-2" },
                           [
-                            _c("w-select", {
-                              attrs: {
-                                label: "Ubicación",
-                                placeholder: "Elegir departamento...",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.ubicacion,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "ubicacion", $$v)
+                            _c(
+                              "w-select",
+                              {
+                                attrs: {
+                                  label: "Departamento",
+                                  placeholder: "Elegir departamento...",
+                                  options: ["a", "b", "c"]
                                 },
-                                expression: "form.ubicacion"
-                              }
-                            })
+                                model: {
+                                  value: _vm.form.departamento,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "departamento", $$v)
+                                  },
+                                  expression: "form.departamento"
+                                }
+                              },
+                              [
+                                _c("template", { slot: "snackbar" }, [
+                                  _c("p", { staticClass: "bold" }, [
+                                    _vm._v("Importante!")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _vm._v(
+                                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                    )
+                                  ])
+                                ])
+                              ],
+                              2
+                            )
                           ],
                           1
                         ),
@@ -39754,20 +39881,37 @@ var render = function() {
                           "div",
                           { staticClass: "w-full md:w-1/3 px-2" },
                           [
-                            _c("w-select", {
-                              attrs: {
-                                label: "PROVINCIAS",
-                                placeholder: "Elegir departamento...",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.provincias,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "provincias", $$v)
+                            _c(
+                              "w-select",
+                              {
+                                attrs: {
+                                  label: "PROVINCIAS",
+                                  placeholder: "Elegir departamento...",
+                                  options: ["a", "b", "c"]
                                 },
-                                expression: "form.provincias"
-                              }
-                            })
+                                model: {
+                                  value: _vm.form.provincias,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "provincias", $$v)
+                                  },
+                                  expression: "form.provincias"
+                                }
+                              },
+                              [
+                                _c("template", { slot: "snackbar" }, [
+                                  _c("p", { staticClass: "bold" }, [
+                                    _vm._v("Importante!")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _vm._v(
+                                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                    )
+                                  ])
+                                ])
+                              ],
+                              2
+                            )
                           ],
                           1
                         )
@@ -39778,20 +39922,37 @@ var render = function() {
                           "div",
                           { staticClass: "w-full md:w-1/3 px-2" },
                           [
-                            _c("w-select", {
-                              attrs: {
-                                label: "DISTRITO",
-                                placeholder: "Elegir departamento...",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.distrito,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "distrito", $$v)
+                            _c(
+                              "w-select",
+                              {
+                                attrs: {
+                                  label: "DISTRITO",
+                                  placeholder: "Elegir departamento...",
+                                  options: ["a", "b", "c"]
                                 },
-                                expression: "form.distrito"
-                              }
-                            })
+                                model: {
+                                  value: _vm.form.distrito,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "distrito", $$v)
+                                  },
+                                  expression: "form.distrito"
+                                }
+                              },
+                              [
+                                _c("template", { slot: "snackbar" }, [
+                                  _c("p", { staticClass: "bold" }, [
+                                    _vm._v("Importante!")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _vm._v(
+                                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                    )
+                                  ])
+                                ])
+                              ],
+                              2
+                            )
                           ],
                           1
                         ),
@@ -39800,20 +39961,37 @@ var render = function() {
                           "div",
                           { staticClass: "w-full md:w-1/3 px-2" },
                           [
-                            _c("w-select", {
-                              attrs: {
-                                label: "URBANIZACIÓN",
-                                placeholder: "Elegir departamento...",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.urbanizacion,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "urbanizacion", $$v)
+                            _c(
+                              "w-select",
+                              {
+                                attrs: {
+                                  label: "URBANIZACIÓN",
+                                  placeholder: "Elegir departamento...",
+                                  options: ["a", "b", "c"]
                                 },
-                                expression: "form.urbanizacion"
-                              }
-                            })
+                                model: {
+                                  value: _vm.form.urbanizacion,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "urbanizacion", $$v)
+                                  },
+                                  expression: "form.urbanizacion"
+                                }
+                              },
+                              [
+                                _c("template", { slot: "snackbar" }, [
+                                  _c("p", { staticClass: "bold" }, [
+                                    _vm._v("Importante!")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _vm._v(
+                                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                    )
+                                  ])
+                                ])
+                              ],
+                              2
+                            )
                           ],
                           1
                         )
@@ -41740,7 +41918,30 @@ var render = function() {
                       0
                     ),
                     _vm._v(" "),
-                    _c("br")
+                    _c("br"),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "flex justify-center lg:justify-end" },
+                      [
+                        _c("w-pagination", {
+                          attrs: { length: 4 },
+                          on: {
+                            click: function($event) {
+                              return _vm.navigate()
+                            }
+                          },
+                          model: {
+                            value: _vm.page,
+                            callback: function($$v) {
+                              _vm.page = $$v
+                            },
+                            expression: "page"
+                          }
+                        })
+                      ],
+                      1
+                    )
                   ],
                   1
                 )
@@ -65246,8 +65447,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\laravel-projects\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel-projects\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
+__webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
 
 
 /***/ })
