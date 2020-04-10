@@ -178,7 +178,7 @@
 </template>
 
 <script>
-import FiltroPublicacion from "./FiltroPublicacion.vue";
+import FiltroPublicacion from "../../components/publicaciones/FiltroPublicacion";
 
 export default {
     data() {
