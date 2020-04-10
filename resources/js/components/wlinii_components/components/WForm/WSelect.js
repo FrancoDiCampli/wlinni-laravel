@@ -5,7 +5,8 @@ Vue.component("w-select", {
   data: () => ({
     onFocus: false,
     errorMessage: null,
-    showOptions: false
+    showOptions: false,
+    activeSnack: false,
   }),
 
   props: {
@@ -17,22 +18,30 @@ Vue.component("w-select", {
     label: String,
     color: {
       type: String,
-      default: "primary"
+      default: "primary",
     },
     beforeIcon: String,
     afterIcon: String,
     options: {
       type: Array,
-      required: true
+      required: true,
     },
-    rules: Array
+    rules: Array,
   },
 
   template: `
         <div class="input-container">
-            <div :class="inputGroupClass" :style="inputGroupStyle" @click="showOptions = !showOptions" ref="inputGroup">
+          <div class="snackbar">
+              <transition @enter="enterSnack">
+                  <div class="snackbar-card" ref="snack" v-if="$slots.snackbar && activeSnack">
+                      <div class="close-card" @click="activeSnack = false">×</div>
+                      <slot name="snackbar"></slot>
+                  </div>
+              </transition>
+            </div>
+            <div :class="inputGroupClass" :style="inputGroupStyle"  ref="inputGroup">
                 <w-icon v-if="beforeIcon" :icon="beforeIcon" class="before"></w-icon>
-                <div class="input-label">
+                <div class="input-label" @click="showOptions = !showOptions">
                     <input
                         disabled
                         :value="selectOption"
@@ -40,7 +49,14 @@ Vue.component("w-select", {
                         :class="inputClass"
                         :placeholder="placeholder"
                     />
-                    <label :style="labelStyle">{{ label }}</label>
+                    <label :style="labelStyle">
+                      {{ label }}
+                      <div class="snackbar" v-if="$slots.snackbar">
+                          <div class="snackbar-action" @click="activeSnack = true">
+                            <w-icon icon="info" h="12px"></w-icon>
+                          </div> 
+                      </div>
+                    </label>
                 </div>
                 <div class="icon select-icon">
                     <img :src="iconURL" ref="selectIcon" />
@@ -73,7 +89,7 @@ Vue.component("w-select", {
       },
       set(newValue) {
         this.$emit("input", newValue);
-      }
+      },
     },
 
     iconURL() {
@@ -128,7 +144,7 @@ Vue.component("w-select", {
       this.value ? (inputClass += "active") : "";
       this.disabled ? (inputClass += " disabled") : "";
       return inputClass;
-    }
+    },
   },
 
   methods: {
@@ -136,12 +152,12 @@ Vue.component("w-select", {
       if (this.$wlinii[this.color]) {
         return {
           group: `border: 2px solid ${this.$wlinii[this.color]};`,
-          label: `color: ${this.$wlinii[this.color]};`
+          label: `color: ${this.$wlinii[this.color]};`,
         };
       } else {
         return {
           group: `border: 2px solid ${this.color};`,
-          label: `color: ${this.color};`
+          label: `color: ${this.color};`,
         };
       }
     },
@@ -174,14 +190,14 @@ Vue.component("w-select", {
         targets: optionsElement,
         scaleY: [0, 1],
         duration: 250,
-        easing: "easeInOutSine"
+        easing: "easeInOutSine",
       });
 
       anime({
         targets: iconElement,
         rotate: ["0deg", "180deg"],
         duration: 250,
-        easing: "easeInOutSine"
+        easing: "easeInOutSine",
       });
     },
 
@@ -192,8 +208,19 @@ Vue.component("w-select", {
         targets: iconElement,
         rotate: ["180deg", "0deg"],
         duration: 250,
-        easing: "easeInOutSine"
+        easing: "easeInOutSine",
       });
-    }
-  }
+    },
+
+    enterSnack() {
+      let snackElement = this.$refs.snack;
+
+      anime({
+        targets: snackElement,
+        scale: [0, 1],
+        duration: 250,
+        easing: "easeInOutSine",
+      });
+    },
+  },
 });

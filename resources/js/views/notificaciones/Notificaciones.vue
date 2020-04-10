@@ -35,7 +35,7 @@
                                         >{{ noti.state }}</w-btn>
                                     </div>
                                     <div
-                                        class="w-1/2 md:w-1/3 flex flex-row-reverse justify-center px-1 md:px-5"
+                                        class="w-1/2 md:w-1/3 flex flex-row justify-center px-1 md:px-5"
                                     >
                                         <w-btn
                                             :icon="true"
@@ -45,7 +45,7 @@
                                             style="margin: 2px;"
                                         >
                                             <w-icon
-                                                :icon="noti.stars <= i ? 'star-brown' : 'star-grey'"
+                                                :icon="noti.stars >= i ? 'star-brown' : 'star-grey'"
                                                 h="14px"
                                             ></w-icon>
                                         </w-btn>

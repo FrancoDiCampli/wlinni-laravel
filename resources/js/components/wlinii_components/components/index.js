@@ -5,6 +5,9 @@ import "./WForm/WSelect";
 import "./WForm/WSwitch";
 import "./WForm/WTextarea";
 
+import "./WSnackbar/WSnackbar";
+import "./WPagination/WPagination";
+
 // ICONOS
 import "./WIcon/WIcon";
 
@@ -23,6 +26,5 @@ import "./WButton/WButton";
 
 // CARD
 import "./WCard/WCard";
-
 // PANEL
 import "./WPanels/WPanels";

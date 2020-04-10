@@ -12,7 +12,7 @@
 
     <div>
         <div class="publicaciones-container">
-            <div class="flex flex-row justify-around gap-8">
+            <div class="flex flex-row justify-around">
                 <div class="w-3/12 hidden lg:block">
                     <div>
                         <w-card :shadow="false">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="sm:w-full lg:w-9/12 px-6" v-else>
                     <w-card :shadow="false">
-                        <h1 class="subtitle bold lg:pl-3">Listado de Publicaciones</h1>
+                        <h1 class="subtitle bold lg:pl-3 ml-3">Listado de Publicaciones</h1>
                         <br />
                         <w-btn
                             class="lg:hidden"
@@ -71,7 +71,7 @@
                                                 <div
                                                     v-if="
                                                         card.state ==
-                                                            'Publicado'
+                                                        'Publicado'
                                                     "
                                                     class="dot success"
                                                 ></div>
@@ -113,7 +113,7 @@
                                                 :options="[
                                                     'porque si',
                                                     'se me ocurrio',
-                                                    'asi nomas'
+                                                    'asi nomas',
                                                 ]"
                                                 v-model="card.form.motivo"
                                                 :dark="true"
