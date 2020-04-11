@@ -41,7 +41,16 @@
         </div>
         <div class="w-full md:w-2/3">
             <div class="hidden md:block">
-                <p class="bold">PERFIL AGENTES</p>
+                <div class="flex justify-between items-center">
+                    <p class="bold">PERFIL AGENTES</p>
+                    <w-snackbar class="mt-1">
+                        <w-icon icon="info" h="24px"></w-icon>
+                        <template slot="content">
+                            <p class="bold">Importante!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit</p>
+                        </template>
+                    </w-snackbar>
+                </div>
                 <div class="divider my-5"></div>
             </div>
             <p class="subtitle bold mt-5 md:mt-0">{{ agent.name }}</p>

@@ -3911,6 +3911,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -30905,7 +30914,37 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "w-full md:w-2/3" }, [
-      _vm._m(1),
+      _c("div", { staticClass: "hidden md:block" }, [
+        _c(
+          "div",
+          { staticClass: "flex justify-between items-center" },
+          [
+            _c("p", { staticClass: "bold" }, [_vm._v("PERFIL AGENTES")]),
+            _vm._v(" "),
+            _c(
+              "w-snackbar",
+              { staticClass: "mt-1" },
+              [
+                _c("w-icon", { attrs: { icon: "info", h: "24px" } }),
+                _vm._v(" "),
+                _c("template", { slot: "content" }, [
+                  _c("p", { staticClass: "bold" }, [_vm._v("Importante!")]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
+                    )
+                  ])
+                ])
+              ],
+              2
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "divider my-5" })
+      ]),
       _vm._v(" "),
       _c("p", { staticClass: "subtitle bold mt-5 md:mt-0" }, [
         _vm._v(_vm._s(_vm.agent.name))
@@ -30922,7 +30961,7 @@ var render = function() {
       _c("div", { staticClass: "full-divider block md:hidden mt-5" }),
       _vm._v(" "),
       _c("div", { staticClass: "flex flex-row flex-wrap md:hidden" }, [
-        _vm._m(2),
+        _vm._m(1),
         _vm._v(" "),
         _c("div", { staticClass: "w-1/2 self-center" }, [
           _c(
@@ -30995,19 +31034,19 @@ var render = function() {
       _c("div", { staticClass: "full-divider block md:hidden mb-5" }),
       _vm._v(" "),
       _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-        _vm._m(3),
+        _vm._m(2),
         _vm._v(" "),
         _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
           _c("p", [_vm._v(_vm._s(_vm.agent.cel))])
         ]),
         _vm._v(" "),
-        _vm._m(4),
+        _vm._m(3),
         _vm._v(" "),
         _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
           _c("p", [_vm._v(_vm._s(_vm.agent.email))])
         ]),
         _vm._v(" "),
-        _vm._m(5),
+        _vm._m(4),
         _vm._v(" "),
         _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
           _c("p", [_vm._v(_vm._s(_vm.agent.description))])
@@ -31022,16 +31061,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "block md:hidden ml-1" }, [
-      _c("p", { staticClass: "bold" }, [_vm._v("PERFIL AGENTES")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "divider my-5" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "hidden md:block" }, [
       _c("p", { staticClass: "bold" }, [_vm._v("PERFIL AGENTES")]),
       _vm._v(" "),
       _c("div", { staticClass: "divider my-5" })
