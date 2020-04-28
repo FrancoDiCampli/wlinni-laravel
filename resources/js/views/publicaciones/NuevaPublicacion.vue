@@ -742,7 +742,6 @@ export default {
         padding: 25px 0px;
         margin: auto;
         .responsive-nueva-publicacion {
-            border: 2px solid red;
             width: 90%;
             max-width: 1180px;
             margin: auto;
@@ -796,7 +795,6 @@ export default {
             padding: 25px 0px;
             margin: auto;
             .responsive-nueva-publicacion {
-                border: 2px solid red;
                 width: 90%;
                 max-width: 1180px;
                 margin: auto;

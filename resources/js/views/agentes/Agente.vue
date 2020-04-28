@@ -13,7 +13,7 @@
             <w-card :shadow="false">
                 <Perfil></Perfil>
                 <div class="flex flex-row justify-end">
-                    <div class="w-full md:w-2/3">
+                    <div class="w-full lg:w-2/3">
                         <div class="flex flex-row md:justify-end flex-wrap">
                             <div
                                 class="w-1/2 md:w-1/4 info-card-container"
@@ -43,7 +43,7 @@
         </div>
         <w-carousel
             class="mt-10"
-            :items="windowWidth >= 768 ? 3 : 1"
+            :items="carrouselItems"
             :pagination="windowWidth < 768"
             :navigation="windowWidth >= 768"
         >
@@ -66,7 +66,7 @@
                         </div>
 
                         <template slot="footer">
-                            <div class="flex flex-row justify-between">
+                            <div class="flex flex-row justify-between flex-wrap">
                                 <div class="flex flex-row justify-between">
                                     <div class="info-item">
                                         <w-icon icon="room-solid" h="12px"></w-icon>
@@ -103,7 +103,7 @@
         <w-carousel
             class="mt-10"
             :background="windowWidth >= 768 ? '/images/banners/1.png' : ''"
-            :items="windowWidth >= 768 ? 3 : 1"
+            :items="carrouselItems"
             :pagination="windowWidth < 768"
             :navigation="windowWidth >= 768"
         >
@@ -126,7 +126,7 @@
                         </div>
 
                         <template slot="footer">
-                            <div class="flex flex-row justify-between">
+                            <div class="flex flex-row justify-between flex-wrap">
                                 <div class="flex flex-row justify-between">
                                     <div class="info-item">
                                         <w-icon icon="room-solid" h="12px"></w-icon>
@@ -340,6 +340,16 @@ export default {
 
     components: {
         Perfil
+    },
+
+    computed: {
+        carrouselItems() {
+            if (this.windowWidth >= 768) {
+                return this.windowWidth >= 1024 ? 3 : 2;
+            } else {
+                return 1;
+            }
+        }
     },
 
     mounted() {
