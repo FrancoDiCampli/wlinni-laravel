@@ -4259,6 +4259,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4271,7 +4272,6 @@ __webpack_require__.r(__webpack_exports__);
         mapTypeControl: false,
         streetViewControl: false
       },
-      places: [],
       currentPlace: null,
       markerOptions: {
         url: "/images/address-red.png",
@@ -4314,19 +4314,24 @@ __webpack_require__.r(__webpack_exports__);
     setPlace: function setPlace(place) {
       this.currentPlace = place;
     },
-    addMarker: function addMarker() {
+    search: function search() {
       if (this.currentPlace) {
-        var marker = {
+        this.center = {
           lat: this.currentPlace.geometry.location.lat(),
           lng: this.currentPlace.geometry.location.lng()
         };
-        this.marker = {
-          position: marker
-        };
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
       }
+    },
+    addMaker: function addMaker(e) {
+      var marker = {
+        lat: e.latLng.lat(),
+        lng: e.latLng.lng()
+      };
+      this.marker = {
+        position: marker
+      };
+      this.center = marker;
+      this.currentPlace = null;
     },
     geolocate: function geolocate() {
       var _this = this;
@@ -31355,9 +31360,13 @@ var render = function() {
                 "w-btn",
                 {
                   attrs: { rounded: true, dark: true },
-                  on: { click: _vm.addMarker }
+                  on: {
+                    click: function($event) {
+                      return _vm.search()
+                    }
+                  }
                 },
-                [_vm._v("agregar")]
+                [_vm._v("Buscar")]
               )
             ],
             1
@@ -31370,7 +31379,8 @@ var render = function() {
         {
           ref: "mapRef",
           staticStyle: { width: "100%", height: "600px" },
-          attrs: { center: _vm.center, zoom: 14, options: _vm.mapOptions }
+          attrs: { center: _vm.center, zoom: 14, options: _vm.mapOptions },
+          on: { click: _vm.addMaker }
         },
         [
           _c("gmap-marker", {
