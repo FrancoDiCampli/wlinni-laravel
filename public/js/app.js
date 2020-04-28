@@ -6793,23 +6793,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -35389,6 +35372,7 @@ var render = function() {
                               ? _c(
                                   "w-input",
                                   {
+                                    staticClass: "mt-5",
                                     attrs: {
                                       label: "Codigo",
                                       placeholder: "Ingresar el codigo"
@@ -35770,7 +35754,7 @@ var render = function() {
                           { staticClass: "my-5" },
                           [
                             _c("p", { staticClass: "bold ml-5" }, [
-                              _vm._v("Posee usuario Wlinni?")
+                              _vm._v("¿Posee usuario Wlinni?")
                             ]),
                             _vm._v(" "),
                             _c("w-switch", {
@@ -35792,6 +35776,7 @@ var render = function() {
                               ? _c(
                                   "w-input",
                                   {
+                                    staticClass: "mt-5",
                                     attrs: {
                                       label: "Usuario",
                                       placeholder: "Ingresar el Usuario"
@@ -64602,8 +64587,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
+__webpack_require__(/*! C:\xampp\htdocs\laravel-projects\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel-projects\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
 
 
 /***/ })

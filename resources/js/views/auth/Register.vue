@@ -47,8 +47,6 @@
                                 </template>
                             </w-input>
 
-                            <!-- Select hecho en la observacion  -->
-
                             <w-select
                                 label="TIPO DE EMPRESA"
                                 placeholder="Tipo Empresa"
@@ -56,7 +54,6 @@
                                 v-model="form.tipoempresa"
                             ></w-select>
 
-                            <!-- end select  -->
                             <w-input
                                 v-model="form.phone"
                                 label="Número Teléfono"
@@ -68,7 +65,6 @@
                                 </template>
                             </w-input>
 
-                            <!-- Aqui se agrega lo nuevo, luego de las observaciones  -->
                             <div class="my-5">
                                 <p class="bold ml-5">AFILIARSE</p>
                                 <w-switch
@@ -82,6 +78,7 @@
                                     v-if="afiliarse"
                                     label="Codigo"
                                     placeholder="Ingresar el codigo"
+                                    class="mt-5"
                                 >
                                     <template slot="snackbar">
                                         <p class="bold">Importante!</p>
@@ -90,7 +87,6 @@
                                 </w-input>
                             </div>
                             <br />
-                            <!-- end observacion  -->
                             <w-textarea
                                 v-model="form.description"
                                 label="Ingresar breve descripción"
@@ -204,21 +200,8 @@
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas.</p>
                                 </template>
                             </w-input>
-
-                            <!-- <w-input
-                v-model="form.dni"
-                label="Ingresar documento de identidad"
-                placeholder="Ingresar documento"
-              >
-                <template slot="snackbar">
-                  <p class="bold">Importante!</p>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas.</p>
-                </template>
-                            </w-input>-->
-
-                            <!-- Aqui otra observacion   -->
                             <div class="my-5">
-                                <p class="bold ml-5">Posee usuario Wlinni?</p>
+                                <p class="bold ml-5">¿Posee usuario Wlinni?</p>
                                 <w-switch
                                     activeLabel="Si"
                                     inactiveLabel="No"
@@ -230,6 +213,7 @@
                                     v-if="usuario"
                                     label="Usuario"
                                     placeholder="Ingresar el Usuario"
+                                    class="mt-5"
                                 >
                                     <template slot="snackbar">
                                         <p class="bold">Importante!</p>
@@ -238,7 +222,6 @@
                                 </w-input>
                             </div>
                             <br />
-                            <!-- end observacion  -->
                             <w-textarea
                                 v-model="form.description"
                                 label="Ingresar breve descripción"
