@@ -9207,12 +9207,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addFile: function addFile(type) {
-      this.form.files.push({
-        file: this.$refs[type].files[0],
-        url: URL.createObjectURL(this.$refs[type].files[0]),
-        name: this.$refs[type].files[0].name,
-        type: type == "photoFile" ? "img" : "video"
-      });
+      if (this.form.files.length < 20) {
+        this.form.files.push({
+          file: this.$refs[type].files[0],
+          url: URL.createObjectURL(this.$refs[type].files[0]),
+          name: this.$refs[type].files[0].name,
+          type: type == "photoFile" ? "img" : "video"
+        });
+      }
     },
     removeFile: function removeFile(file) {
       var index = this.form.files.indexOf(file);

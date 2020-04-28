@@ -758,12 +758,14 @@ export default {
 
     methods: {
         addFile(type) {
-            this.form.files.push({
-                file: this.$refs[type].files[0],
-                url: URL.createObjectURL(this.$refs[type].files[0]),
-                name: this.$refs[type].files[0].name,
-                type: type == "photoFile" ? "img" : "video"
-            });
+            if (this.form.files.length < 20) {
+                this.form.files.push({
+                    file: this.$refs[type].files[0],
+                    url: URL.createObjectURL(this.$refs[type].files[0]),
+                    name: this.$refs[type].files[0].name,
+                    type: type == "photoFile" ? "img" : "video"
+                });
+            }
         },
 
         removeFile(file) {
