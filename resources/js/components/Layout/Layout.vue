@@ -230,9 +230,7 @@ export default {
 
     methods: {
         handleScroll(evt, el) {
-            window.scrollY > window.innerHeight / 2
-                ? (this.scroll = true)
-                : (this.scroll = false);
+            window.scrollY > 0 ? (this.scroll = true) : (this.scroll = false);
         }
     }
 };

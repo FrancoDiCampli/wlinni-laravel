@@ -674,9 +674,9 @@
 
                             <div class="preview">
                                 <w-carousel
-                                    :items="3"
-                                    :pagination="false"
-                                    :navigation="true"
+                                    :items="carrouselItems"
+                                    :pagination="windowWidth >= 1024 ? false : true"
+                                    :navigation="windowWidth >= 1024 ? true : false"
                                     class="preview-carousel"
                                 >
                                     <slide
@@ -748,6 +748,20 @@ export default {
 
     components: {
         MapasAgregar
+    },
+
+    computed: {
+        carrouselItems() {
+            if (this.windowWidth >= 768) {
+                if (this.windowWidth >= 1024) {
+                    return this.windowWidth >= 1280 ? 4 : 3;
+                } else {
+                    return this.windowWidth >= 1024 ? 3 : 2;
+                }
+            } else {
+                return 1;
+            }
+        }
     },
 
     mounted() {
