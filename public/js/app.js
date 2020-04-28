@@ -6750,12 +6750,74 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       code: false,
       form: {},
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      afiliarse: false,
+      usuario: false
     };
   },
   mounted: function mounted() {
@@ -35254,6 +35316,21 @@ var render = function() {
                           2
                         ),
                         _vm._v(" "),
+                        _c("w-select", {
+                          attrs: {
+                            label: "TIPO DE EMPRESA",
+                            placeholder: "Tipo Empresa",
+                            options: ["Empresa", "Asesor"]
+                          },
+                          model: {
+                            value: _vm.form.tipoempresa,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "tipoempresa", $$v)
+                            },
+                            expression: "form.tipoempresa"
+                          }
+                        }),
+                        _vm._v(" "),
                         _c(
                           "w-input",
                           {
@@ -35284,6 +35361,67 @@ var render = function() {
                           ],
                           2
                         ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "my-5" },
+                          [
+                            _c("p", { staticClass: "bold ml-5" }, [
+                              _vm._v("AFILIARSE")
+                            ]),
+                            _vm._v(" "),
+                            _c("w-switch", {
+                              attrs: {
+                                activeLabel: "Si",
+                                inactiveLabel: "No",
+                                color: "secondary"
+                              },
+                              model: {
+                                value: _vm.afiliarse,
+                                callback: function($$v) {
+                                  _vm.afiliarse = $$v
+                                },
+                                expression: "afiliarse"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.afiliarse
+                              ? _c(
+                                  "w-input",
+                                  {
+                                    attrs: {
+                                      label: "Codigo",
+                                      placeholder: "Ingresar el codigo"
+                                    },
+                                    model: {
+                                      value: _vm.form.afiliado,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "afiliado", $$v)
+                                      },
+                                      expression: "form.afiliado"
+                                    }
+                                  },
+                                  [
+                                    _c("template", { slot: "snackbar" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v("Importante!")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  2
+                                )
+                              : _vm._e()
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("br"),
                         _vm._v(" "),
                         _c("w-textarea", {
                           attrs: {
@@ -35628,35 +35766,65 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c(
-                          "w-input",
-                          {
-                            attrs: {
-                              label: "Ingresar documento de identidad",
-                              placeholder: "Ingresar documento"
-                            },
-                            model: {
-                              value: _vm.form.dni,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "dni", $$v)
-                              },
-                              expression: "form.dni"
-                            }
-                          },
+                          "div",
+                          { staticClass: "my-5" },
                           [
-                            _c("template", { slot: "snackbar" }, [
-                              _c("p", { staticClass: "bold" }, [
-                                _vm._v("Importante!")
-                              ]),
-                              _vm._v(" "),
-                              _c("p", [
-                                _vm._v(
-                                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                            _c("p", { staticClass: "bold ml-5" }, [
+                              _vm._v("Posee usuario Wlinni?")
+                            ]),
+                            _vm._v(" "),
+                            _c("w-switch", {
+                              attrs: {
+                                activeLabel: "Si",
+                                inactiveLabel: "No",
+                                color: "secondary"
+                              },
+                              model: {
+                                value: _vm.usuario,
+                                callback: function($$v) {
+                                  _vm.usuario = $$v
+                                },
+                                expression: "usuario"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.usuario
+                              ? _c(
+                                  "w-input",
+                                  {
+                                    attrs: {
+                                      label: "Usuario",
+                                      placeholder: "Ingresar el Usuario"
+                                    },
+                                    model: {
+                                      value: _vm.form.usuario,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "usuario", $$v)
+                                      },
+                                      expression: "form.usuario"
+                                    }
+                                  },
+                                  [
+                                    _c("template", { slot: "snackbar" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v("Importante!")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  2
                                 )
-                              ])
-                            ])
+                              : _vm._e()
                           ],
-                          2
+                          1
                         ),
+                        _vm._v(" "),
+                        _c("br"),
                         _vm._v(" "),
                         _c("w-textarea", {
                           attrs: {
@@ -64434,8 +64602,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\laravel-projects\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel-projects\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
+__webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
 
 
 /***/ })
