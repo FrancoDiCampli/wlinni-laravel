@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="w-full md:w-4/6 lg:w-9/12 px-6" v-else>
-                    <w-card :shadow="false" :pointer="true">
+                    <w-card :shadow="false">
                         <div class="flex flex-row justify-between flex-wrap ml-3">
                             <div class="lg:pl-3">
                                 <h1 class="subtitle bold">Listado de Inmuebles</h1>
@@ -72,7 +72,7 @@
                                 v-for="(card, i) in cards"
                                 :key="i"
                             >
-                                <w-card :image="card.image" hover="full-hover">
+                                <w-card :image="card.image" hover="full-hover" :pointer="true">
                                     <template slot="image">
                                         <p class="bold">{{ card.direccion }}</p>
                                         <br />

@@ -9547,6 +9547,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -37075,7 +37076,7 @@ var render = function() {
               [
                 _c(
                   "w-card",
-                  { attrs: { shadow: false, pointer: true } },
+                  { attrs: { shadow: false } },
                   [
                     _c(
                       "div",
@@ -37161,7 +37162,8 @@ var render = function() {
                               {
                                 attrs: {
                                   image: card.image,
-                                  hover: "full-hover"
+                                  hover: "full-hover",
+                                  pointer: true
                                 }
                               },
                               [
@@ -40806,7 +40808,7 @@ var render = function() {
               [
                 _c(
                   "w-card",
-                  { attrs: { shadow: false, pointer: true } },
+                  { attrs: { shadow: false } },
                   [
                     _c("h1", { staticClass: "subtitle bold lg:pl-3 ml-3" }, [
                       _vm._v("Listado de Publicaciones")
@@ -40849,7 +40851,8 @@ var render = function() {
                                 attrs: {
                                   image: card.foto,
                                   imageHeight: "200px",
-                                  activeContent: true
+                                  activeContent: true,
+                                  pointer: true
                                 },
                                 model: {
                                   value: card.showForm,
