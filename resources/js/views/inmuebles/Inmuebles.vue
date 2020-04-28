@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="w-full md:w-4/6 lg:w-9/12 px-6" v-else>
-                    <w-card :shadow="false">
+                    <w-card :shadow="false" :pointer="true">
                         <div class="flex flex-row justify-between flex-wrap ml-3">
                             <div class="lg:pl-3">
                                 <h1 class="subtitle bold">Listado de Inmuebles</h1>

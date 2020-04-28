@@ -617,7 +617,7 @@
                                             <w-icon icon="upload-image" h="137px"></w-icon>
                                             <p
                                                 class="text-center mt-5"
-                                            >Arrastra fotos desde tu computadora</p>
+                                            >Sube fotos desde tu computadora</p>
 
                                             <w-btn
                                                 color="#57BCD1"
@@ -647,7 +647,7 @@
                                             <w-icon icon="upload-video" h="137px"></w-icon>
                                             <p
                                                 class="text-center mt-5"
-                                            >Arrastra videos desde tu computadora</p>
+                                            >Sube videos desde tu computadora</p>
                                             <w-btn
                                                 color="#57BCD1"
                                                 :dark="true"
@@ -671,6 +671,39 @@
                                     </w-card>
                                 </div>
                             </div>
+
+                            <div class="preview">
+                                <w-carousel
+                                    :items="3"
+                                    :pagination="false"
+                                    :navigation="true"
+                                    class="preview-carousel"
+                                >
+                                    <slide
+                                        class="preview-slide"
+                                        v-for="(media, i) in form.files"
+                                        :key="i"
+                                    >
+                                        <div class="preview-item">
+                                            <div class="preview-source">
+                                                <img :src="media.url" v-if="media.type == 'img'" />
+                                                <video
+                                                    autoplay
+                                                    muted
+                                                    v-else-if="media.type == 'video'"
+                                                >
+                                                    <source :src="media.url" />
+                                                </video>
+                                                <div
+                                                    class="delete-icon"
+                                                    @click="removeFile(media)"
+                                                >×</div>
+                                            </div>
+                                        </div>
+                                    </slide>
+                                </w-carousel>
+                            </div>
+
                             <div class="flex flex-row justify-center">
                                 <div class="w-full md:w-1/2 px-2 mt-10 mb-20">
                                     <p class="text-center">
@@ -727,8 +760,15 @@ export default {
         addFile(type) {
             this.form.files.push({
                 file: this.$refs[type].files[0],
-                name: this.$refs[type].files[0].name
+                url: URL.createObjectURL(this.$refs[type].files[0]),
+                name: this.$refs[type].files[0].name,
+                type: type == "photoFile" ? "img" : "video"
             });
+        },
+
+        removeFile(file) {
+            let index = this.form.files.indexOf(file);
+            this.form.files.splice(index, 1);
         }
     }
 };
@@ -781,6 +821,70 @@ export default {
                             opacity: 0;
                             -moz-opacity: 0;
                             filter: Alpha(opacity=0);
+                        }
+                    }
+                }
+                .preview {
+                    .preview-carousel {
+                        .carousel {
+                            width: 95%;
+                            .VueCarousel {
+                                .VueCarousel-navigation {
+                                    button {
+                                        padding: 0px !important;
+                                    }
+                                    .VueCarousel-navigation-prev {
+                                        margin-left: 38px !important;
+                                    }
+                                    .VueCarousel-navigation-next {
+                                        margin-right: 38px !important;
+                                    }
+                                }
+                            }
+
+                            .preview-slide {
+                                padding: 12px;
+                                .preview-item {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+                                    cursor: pointer;
+
+                                    .preview-source {
+                                        position: relative;
+                                        width: 225px;
+                                        height: 125px;
+                                        overflow: hidden;
+                                        .delete-icon {
+                                            position: absolute;
+                                            width: 24px;
+                                            height: 24px;
+                                            font-size: 18px;
+                                            border-radius: 50%;
+                                            color: white;
+                                            background-color: $error;
+                                            flex-direction: row;
+                                            justify-content: center;
+                                            align-items: center;
+                                            top: 8px;
+                                            left: 8px;
+                                            cursor: pointer;
+                                            display: none;
+                                        }
+                                        &:hover {
+                                            .delete-icon {
+                                                display: flex;
+                                            }
+                                        }
+                                        img,
+                                        video {
+                                            width: auto;
+                                            height: auto;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

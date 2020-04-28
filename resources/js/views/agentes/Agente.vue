@@ -49,7 +49,7 @@
         >
             <slide v-for="(card, i) in cards" :key="i">
                 <div class="px-5">
-                    <w-card :image="card.image" hover="full-hover">
+                    <w-card :image="card.image" :pointer="true" hover="full-hover">
                         <template slot="image">
                             <p class="bold">{{ card.direccion }}</p>
                             <p class="mt-5">{{ card.descripcion }}</p>
@@ -109,7 +109,7 @@
         >
             <slide v-for="(card, i) in cards" :key="i">
                 <div class="px-5">
-                    <w-card :image="card.image" hover="full-hover">
+                    <w-card :image="card.image" :pointer="true" hover="full-hover">
                         <template slot="image">
                             <p class="bold">{{ card.direccion }}</p>
                             <p class="mt-5">{{ card.descripcion }}</p>

@@ -154,7 +154,7 @@
             >
                 <slide v-for="(card, i) in cards" :key="i">
                     <div class="px-10 lg:px-5">
-                        <w-card :image="card.image" hover="full-hover">
+                        <w-card :image="card.image" :pointer="true" hover="full-hover">
                             <template slot="image">
                                 <p class="bold">{{ card.direccion }}</p>
                                 <p class="mt-5">{{ card.descripcion }}</p>
@@ -212,7 +212,7 @@
             >
                 <slide v-for="(card, i) in cards" :key="i">
                     <div class="px-10 lg:px-5">
-                        <w-card :image="card.image" hover="full-hover">
+                        <w-card :image="card.image" :pointer="true" hover="full-hover">
                             <template slot="image">
                                 <p class="bold">{{ card.direccion }}</p>
                                 <p class="mt-5">{{ card.descripcion }}</p>
@@ -285,7 +285,7 @@
             >
                 <slide v-for="(agent, i) in agents" :key="i">
                     <div class="px-10 lg:px-5">
-                        <w-card :image="agent.image" hover="top-hover">
+                        <w-card :image="agent.image" :pointer="true" hover="top-hover">
                             <template slot="image">
                                 <div style="margin-top: 160px;">
                                     <div class="flex flex-row justify-center">
@@ -363,7 +363,7 @@
                 v-for="(noti, i) in news"
                 :key="i"
             >
-                <w-card :image="noti.image" imageHeight="200px" state="tile">
+                <w-card :image="noti.image" :pointer="true" imageHeight="200px" state="tile">
                     <template slot="state">
                         <p class="body bold white-text">{{ parseDate(noti.date).day }}</p>
                         <p class="caption bold white-text">{{ parseDate(noti.date).month }}</p>

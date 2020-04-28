@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="w-full md:w-6/10 lg:w-9/12 px-6" v-else>
-                    <w-card :shadow="false">
+                    <w-card :shadow="false" :pointer="true">
                         <h1 class="subtitle bold lg:pl-3 ml-3">Listado de Publicaciones</h1>
                         <br />
                         <w-btn
