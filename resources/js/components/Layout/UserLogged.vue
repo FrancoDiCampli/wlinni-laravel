@@ -184,7 +184,7 @@ export default {
             let dropElement = this.$refs[drop];
             anime({
                 targets: dropElement,
-                scaleY: [0, 1],
+                scale: [0, 1],
                 duration: 250,
                 easing: "easeInOutSine"
             });

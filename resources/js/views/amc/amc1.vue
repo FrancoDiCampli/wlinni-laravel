@@ -16,7 +16,6 @@
                         :rounded="true"
                         :dark="true"
                         :small="true"
-                        color="primary"
                         class="step-btn"
                     >01 PASO</w-btn>
                     <p class="body subtitle-md bold ml-5">Completar Formulario</p>
@@ -154,6 +153,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../components/wlinii_components/sass/_variables.scss";
+
 .amc-1 {
     .amc-container {
         width: 90%;
@@ -162,6 +163,7 @@ export default {
         .step-btn {
             padding: 5px 25px;
             margin: 20px 18px;
+            background-color: $primary !important;
         }
 
         .amc-progress {

@@ -8,7 +8,7 @@
                         :small="true"
                         :disabled="true"
                         :dark="true"
-                        class="self-start md:self-center m-btn"
+                        class="self-start md:self-center m-btn secondary-fix-color"
                     >Comisión {{ property.comision }}</w-btn>
                 </div>
                 <p class="ml-5">{{ property.dir }}</p>
@@ -392,6 +392,10 @@ export default {
             &:not(.full-width) {
                 margin: 6px 18px;
             }
+        }
+
+        .secondary-fix-color {
+            background-color: $secondary !important;
         }
 
         .media-player {

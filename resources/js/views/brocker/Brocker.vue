@@ -120,7 +120,7 @@
                                         v-for="i in 5"
                                         :key="i"
                                         :disabled="true"
-                                        style="margin: 2px;"
+                                        style="margin: 2px; background-color: transparent !important;"
                                     >
                                         <w-icon
                                             :icon="user.stars >= i ? 'star-brown' : 'star-grey'"

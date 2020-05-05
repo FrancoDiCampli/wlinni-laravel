@@ -17,7 +17,7 @@
                             v-for="i in 5"
                             :key="i"
                             :disabled="true"
-                            style="margin: 2px;"
+                            style="margin: 2px; background-color: white !important;"
                         >
                             <w-icon :icon="agent.stars >= i ? 'star-brown' : 'star-grey'" h="14px"></w-icon>
                         </w-btn>
@@ -137,7 +137,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .agent-component {
     .agent-img {
         width: 90%;
@@ -145,5 +144,4 @@ export default {
         max-width: 290px;
     }
 }
-
 </style>

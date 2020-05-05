@@ -395,6 +395,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../components/wlinii_components/sass/_variables.scss";
+
 .amc-2 {
     .amc-container {
         width: 90%;
@@ -403,6 +405,7 @@ export default {
         .step-btn {
             padding: 5px 25px;
             margin: 20px 18px;
+            background-color: $primary !important;
         }
 
         .amc-progress {

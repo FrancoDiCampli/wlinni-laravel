@@ -4952,6 +4952,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5154,6 +5157,13 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
+    parallaxHeight: function parallaxHeight() {
+      if (this.windowWidth >= 768) {
+        return this.windowWidth <= 1024 ? "150" : "140";
+      } else {
+        return "130";
+      }
+    },
     carrouselItems: function carrouselItems() {
       if (this.windowWidth >= 768) {
         return this.windowWidth >= 1024 ? 3 : 2;
@@ -5781,7 +5791,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -9338,6 +9347,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -9354,8 +9403,10 @@ __webpack_require__.r(__webpack_exports__);
         video: true
       },
       form: {
-        files: []
-      }
+        photos: [],
+        videos: []
+      },
+      test: false
     };
   },
   components: {
@@ -9382,19 +9433,47 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    addFile: function addFile(type) {
-      if (this.form.files.length < 20) {
-        this.form.files.push({
-          file: this.$refs[type].files[0],
-          url: URL.createObjectURL(this.$refs[type].files[0]),
-          name: this.$refs[type].files[0].name,
-          type: type == "photoFile" ? "img" : "video"
-        });
+    addPhoto: function addPhoto() {
+      if (this.form.photos.length < 20) {
+        var files = this.$refs["photoFile"].files;
+
+        if (files.length <= Number(20 - this.form.photos.length)) {
+          for (var i = 0; i < files.length; i++) {
+            this.form.photos.push({
+              file: files[i],
+              url: URL.createObjectURL(files[i]),
+              name: files[i].name
+            });
+          }
+        } else {
+          alert("has superado el límite máximo de archivos.");
+        }
       }
     },
-    removeFile: function removeFile(file) {
-      var index = this.form.files.indexOf(file);
-      this.form.files.splice(index, 1);
+    addVideo: function addVideo() {
+      if (this.form.videos.length < 3) {
+        var files = this.$refs["videoFile"].files;
+
+        if (files.length <= Number(3 - this.form.videos.length)) {
+          for (var i = 0; i < files.length; i++) {
+            this.form.videos.push({
+              file: files[i],
+              url: URL.createObjectURL(files[i]),
+              name: files[i].name
+            });
+          }
+        } else {
+          alert("has superado el límite máximo de archivos.");
+        }
+      }
+    },
+    removePhoto: function removePhoto(file) {
+      var index = this.form.photos.indexOf(file);
+      this.form.photos.splice(index, 1);
+    },
+    removeVideo: function removeVideo(file) {
+      var index = this.form.videos.indexOf(file);
+      this.form.videos.splice(index, 1);
     }
   }
 });
@@ -9715,7 +9794,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".btn {\n  position: relative;\n  margin: 20px 12px 0px 12px;\n  padding: 13px 26px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  border: none;\n  outline: none !important;\n  cursor: pointer;\n  outline: none;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.btn.full-width {\n  width: 100%;\n  margin: 20px 0px 0px 0px;\n}\n\n.btn.dark {\n  color: white;\n}\n\n.btn.large {\n  padding: 20px 40px;\n}\n\n.btn.large.rounded {\n  border-radius: 40px;\n}\n\n.btn.large.outlined {\n  border-width: 4.5px;\n  padding: 16.5px 36.5px;\n}\n\n.btn.small {\n  padding: 8px 18px;\n}\n\n.btn.small.rounded {\n  border-radius: 16px;\n}\n\n.btn.small.outlined {\n  border-width: 1.5px;\n  padding: 7px 17px;\n}\n\n.btn.rounded {\n  border-radius: 26px;\n}\n\n.btn.outlined {\n  background-color: transparent;\n  border-width: 3px;\n  border-style: solid;\n  padding: 11px 24px;\n}\n\n.btn.icon {\n  margin: 0px 8px;\n  padding: 0px;\n  background-color: transparent !important;\n}\n\n.card {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  border-radius: 15px 15px 15px 15px;\n  overflow: hidden;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.card.no-shadow {\n  box-shadow: none !important;\n}\n\n.card.pointer-card {\n  cursor: pointer;\n}\n\n.card:not(.active-state):not(:hover) {\n  background: white !important;\n}\n\n.card.top-hover:hover {\n  background: white !important;\n}\n\n.card.top-hover:hover .image .card-image-content {\n  visibility: visible;\n  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .image {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card.full-hover:hover .image .card-image-content {\n  visibility: visible;\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n  color: white;\n}\n\n.card.active-state .image {\n  display: none;\n}\n\n.card.active-state .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card .image {\n  width: inherit;\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n.card .image .card-image-content {\n  height: inherit;\n  visibility: hidden;\n  padding: 30px;\n  color: white;\n}\n\n.card .card-state {\n  float: left;\n  height: auto;\n  padding: 5px 20px;\n  text-align: center;\n  background-color: #ff7500;\n  margin-left: 12px;\n}\n\n.card .card-state.rounded {\n  border-radius: 20px;\n}\n\n.card .card-state.tile {\n  border-radius: none;\n}\n\n.card .card-text {\n  height: auto;\n  padding: 30px;\n  background-color: white;\n}\n\n.card .card-info {\n  padding: 13px;\n  background-color: #041e42;\n}\n\n.card .card-info .info-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.card .card-info .info-item .dot {\n  width: 7px;\n  height: 7px;\n  border-radius: 50%;\n}\n\n.card .card-info .info-item .dot.primary {\n  background-color: #041e42;\n}\n\n.card .card-info .info-item .dot.secondary {\n  background-color: #ff7500;\n}\n\n.card .card-info .info-item .dot.tertiary {\n  background-color: #a08629;\n}\n\n.card .card-info .info-item .dot.accent {\n  background-color: #193c63;\n}\n\n.card .card-info .info-item .dot.success {\n  background-color: #00ce59;\n}\n\n.card .card-info .info-item .dot.error {\n  background-color: #ff0000;\n}\n\n.card .card-info .info-item p {\n  margin: 0px 6px 0px 12px;\n}\n\n.card .card-selector {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 8;\n  background-color: rgba(160, 134, 41, 0.66);\n}\n\n.card .card-selector .check-circle {\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  margin: 6px;\n  background-color: #00ce59;\n}\n\n.card .card-selector .check-circle .checkmarck {\n  height: 10px;\n  width: 20px;\n  border: 4px solid #fff;\n  border-top: none;\n  border-right: none;\n  position: absolute;\n  top: 15px;\n  left: 13px;\n  transform: rotate(-45deg);\n}\n\n@media (max-width: 768px) {\n  .card .card-text {\n    padding: 15px;\n  }\n}\n\n.carousel-container {\n  display: flex;\n  justify-content: center;\n  overflow: hidden;\n  background-size: 100% 75%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n\n.carousel-container .carousel {\n  width: 75%;\n  margin: auto;\n}\n\n.carousel-container .carousel .carousel-item {\n  padding: 0px 21px;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-navigation button {\n  outline: none;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot {\n  width: 12px !important;\n  height: 12px !important;\n  padding: 7px !important;\n  background-color: black !important;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot.VueCarousel-dot--active {\n  background-color: #a08629 !important;\n}\n\n@media (max-width: 768px) {\n  .carousel-container {\n    background: none;\n  }\n\n  .carousel-container .carousel {\n    width: 100%;\n  }\n\n  .carousel-container .carousel .carousel-item {\n    width: 100%;\n    padding: 0 12px;\n    margin: auto;\n  }\n}\n\n.primary {\n  background-color: #041e42;\n}\n\n.secondary {\n  background-color: #ff7500;\n}\n\n.tertiary {\n  background-color: #a08629;\n}\n\n.accent {\n  background-color: #193c63;\n}\n\n.success {\n  background-color: #00ce59;\n}\n\n.error {\n  background-color: #ff0000;\n}\n\n.black {\n  background-color: black;\n}\n\n.white {\n  background-color: white;\n}\n\n.default {\n  background-color: #aaaa;\n}\n\n.primary-text {\n  color: #041e42;\n}\n\n.secondary-text {\n  color: #ff7500;\n}\n\n.tertiary-text {\n  color: #a08629;\n}\n\n.accent-text {\n  color: #193c63;\n}\n\n.success-text {\n  color: #00ce59;\n}\n\n.error-text {\n  color: #ff0000;\n}\n\n.black-text {\n  color: black;\n}\n\n.white-text {\n  color: white;\n}\n\n.default-text {\n  color: #aaaa;\n}\n\n.primary-border {\n  border-color: #041e42;\n}\n\n.secondary-border {\n  border-color: #ff7500;\n}\n\n.tertiary-border {\n  border-color: #a08629;\n}\n\n@media (min-width: 0px) {\n  .primary-xs {\n    background-color: #041e42;\n  }\n\n  .secondary-xs {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xs {\n    background-color: #a08629;\n  }\n\n  .accent-xs {\n    background-color: #193c63;\n  }\n\n  .success-xs {\n    background-color: #00ce59;\n  }\n\n  .error-xs {\n    background-color: #ff0000;\n  }\n\n  .black-xs {\n    background-color: black;\n  }\n\n  .white-xs {\n    background-color: white;\n  }\n\n  .primary-text-xs {\n    color: #041e42;\n  }\n\n  .secondary-text-xs {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xs {\n    color: #a08629;\n  }\n\n  .accent-text-xs {\n    color: #193c63;\n  }\n\n  .success-text-xs {\n    color: #00ce59;\n  }\n\n  .error-text-xs {\n    color: #ff0000;\n  }\n\n  .black-text-xs {\n    color: black;\n  }\n\n  .white-text-xs {\n    color: white;\n  }\n}\n\n@media (min-width: 576px) {\n  .primary-sm {\n    background-color: #041e42;\n  }\n\n  .secondary-sm {\n    background-color: #ff7500;\n  }\n\n  .tertiary-sm {\n    background-color: #a08629;\n  }\n\n  .accent-sm {\n    background-color: #193c63;\n  }\n\n  .success-sm {\n    background-color: #00ce59;\n  }\n\n  .error-sm {\n    background-color: #ff0000;\n  }\n\n  .black-sm {\n    background-color: black;\n  }\n\n  .white-sm {\n    background-color: white;\n  }\n\n  .primary-text-sm {\n    color: #041e42;\n  }\n\n  .secondary-text-sm {\n    color: #ff7500;\n  }\n\n  .tertiary-text-sm {\n    color: #a08629;\n  }\n\n  .accent-text-sm {\n    color: #193c63;\n  }\n\n  .success-text-sm {\n    color: #00ce59;\n  }\n\n  .error-text-sm {\n    color: #ff0000;\n  }\n\n  .black-text-sm {\n    color: black;\n  }\n\n  .white-text-sm {\n    color: white;\n  }\n}\n\n@media (min-width: 768px) {\n  .primary-md {\n    background-color: #041e42;\n  }\n\n  .secondary-md {\n    background-color: #ff7500;\n  }\n\n  .tertiary-md {\n    background-color: #a08629;\n  }\n\n  .accent-md {\n    background-color: #193c63;\n  }\n\n  .success-md {\n    background-color: #00ce59;\n  }\n\n  .error-md {\n    background-color: #ff0000;\n  }\n\n  .black-md {\n    background-color: black;\n  }\n\n  .white-md {\n    background-color: white;\n  }\n\n  .primary-text-md {\n    color: #041e42;\n  }\n\n  .secondary-text-md {\n    color: #ff7500;\n  }\n\n  .tertiary-text-md {\n    color: #a08629;\n  }\n\n  .accent-text-md {\n    color: #193c63;\n  }\n\n  .success-text-md {\n    color: #00ce59;\n  }\n\n  .error-text-md {\n    color: #ff0000;\n  }\n\n  .black-text-md {\n    color: black;\n  }\n\n  .white-text-md {\n    color: white;\n  }\n}\n\n@media (min-width: 992px) {\n  .primary-lg {\n    background-color: #041e42;\n  }\n\n  .secondary-lg {\n    background-color: #ff7500;\n  }\n\n  .tertiary-lg {\n    background-color: #a08629;\n  }\n\n  .accent-lg {\n    background-color: #193c63;\n  }\n\n  .success-lg {\n    background-color: #00ce59;\n  }\n\n  .error-lg {\n    background-color: #ff0000;\n  }\n\n  .black-lg {\n    background-color: black;\n  }\n\n  .white-lg {\n    background-color: white;\n  }\n\n  .primary-text-lg {\n    color: #041e42;\n  }\n\n  .secondary-text-lg {\n    color: #ff7500;\n  }\n\n  .tertiary-text-lg {\n    color: #a08629;\n  }\n\n  .accent-text-lg {\n    color: #193c63;\n  }\n\n  .success-text-lg {\n    color: #00ce59;\n  }\n\n  .error-text-lg {\n    color: #ff0000;\n  }\n\n  .black-text-lg {\n    color: black;\n  }\n\n  .white-text-lg {\n    color: white;\n  }\n}\n\n@media (min-width: 1200px) {\n  .primary-xl {\n    background-color: #041e42;\n  }\n\n  .secondary-xl {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xl {\n    background-color: #a08629;\n  }\n\n  .accent-xl {\n    background-color: #193c63;\n  }\n\n  .success-xl {\n    background-color: #00ce59;\n  }\n\n  .error-xl {\n    background-color: #ff0000;\n  }\n\n  .black-xl {\n    background-color: black;\n  }\n\n  .white-xl {\n    background-color: white;\n  }\n\n  .primary-text-xl {\n    color: #041e42;\n  }\n\n  .secondary-text-xl {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xl {\n    color: #a08629;\n  }\n\n  .accent-text-xl {\n    color: #193c63;\n  }\n\n  .success-text-xl {\n    color: #00ce59;\n  }\n\n  .error-text-xl {\n    color: #ff0000;\n  }\n\n  .black-text-xl {\n    color: black;\n  }\n\n  .white-text-xl {\n    color: white;\n  }\n}\n\nform {\n  position: relative;\n}\n\nform .input-container {\n  height: auto;\n  margin-bottom: 32px;\n}\n\nform .input-container .input-group,\nform .input-container .select-group {\n  height: auto;\n  min-height: 42px;\n  position: relative;\n  width: 100%;\n  background-color: white;\n  border: thin solid black;\n  border-radius: 21px;\n  padding: 0px 19px;\n  display: flex;\n  align-items: center;\n}\n\nform .input-container .input-group.dark,\nform .input-container .select-group.dark {\n  border-color: white;\n}\n\nform .input-container .input-group.dark input.active ~ label,\nform .input-container .input-group.dark textarea.active ~ label,\nform .input-container .select-group.dark input.active ~ label,\nform .input-container .select-group.dark textarea.active ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:focus ~ label,\nform .input-container .input-group.dark textarea:focus ~ label,\nform .input-container .select-group.dark input:focus ~ label,\nform .input-container .select-group.dark textarea:focus ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:placeholder-shown ~ label,\nform .input-container .input-group.dark textarea:placeholder-shown ~ label,\nform .input-container .select-group.dark input:placeholder-shown ~ label,\nform .input-container .select-group.dark textarea:placeholder-shown ~ label {\n  color: white;\n}\n\nform .input-container .input-group .icon,\nform .input-container .select-group .icon {\n  position: relative;\n}\n\nform .input-container .input-group .icon.before,\nform .input-container .select-group .icon.before {\n  margin: 0px 8px 0px 0px;\n}\n\nform .input-container .input-group .icon.after,\nform .input-container .select-group .icon.after {\n  margin: 0px 0px 0px 8px;\n}\n\nform .input-container .input-group .icon img,\nform .input-container .select-group .icon img {\n  height: 16px !important;\n  width: 16px !important;\n}\n\nform .input-container .input-group.tile,\nform .input-container .select-group.tile {\n  border-radius: 0px;\n  padding: 0px 12px;\n}\n\nform .input-container .input-group .input-label,\nform .input-container .select-group .input-label {\n  height: 100%;\n  width: inherit;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .input-container .input-group .input-label input,\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label input,\nform .input-container .select-group .input-label textarea {\n  height: inherit;\n  width: inherit;\n  font-size: 13px;\n  padding: 12px 0px;\n  border: none;\n}\n\nform .input-container .input-group .input-label input.active ~ label,\nform .input-container .input-group .input-label textarea.active ~ label,\nform .input-container .select-group .input-label input.active ~ label,\nform .input-container .select-group .input-label textarea.active ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input.active ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea.active ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input.active ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea.active ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:focus ~ label,\nform .input-container .input-group .input-label textarea:focus ~ label,\nform .input-container .select-group .input-label input:focus ~ label,\nform .input-container .select-group .input-label textarea:focus ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:focus ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea:focus ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input:focus ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea:focus ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label,\nform .input-container .select-group .input-label input:placeholder-shown ~ label,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:focus,\nform .input-container .input-group .input-label textarea:focus,\nform .input-container .select-group .input-label input:focus,\nform .input-container .select-group .input-label textarea:focus {\n  outline: none;\n}\n\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label textarea {\n  border: none;\n  outline: none;\n  resize: none;\n  overflow: none;\n  height: 125px;\n}\n\nform .input-container .input-group .input-label textarea ~ label,\nform .input-container .select-group .input-label textarea ~ label {\n  top: 10px;\n}\n\nform .input-container .input-group .input-label label,\nform .input-container .select-group .input-label label {\n  color: #000;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  position: absolute;\n  display: flex;\n  flex-direction: row;\n  transition: 0.25s ease all;\n  -moz-transition: 0.25s ease all;\n  -webkit-transition: 0.25s ease all;\n}\n\nform .input-container .input-group .input-label label .snackbar .snackbar-action,\nform .input-container .select-group .input-label label .snackbar .snackbar-action {\n  display: none;\n  margin: 0px 12px;\n}\n\nform .input-container .input-group.disabled {\n  border-color: #9e9e9e;\n}\n\nform .input-container .input-group .input-label input:disabled,\nform .input-container .input-group .input-label textarea:disabled {\n  background-color: white;\n}\n\nform .input-container .input-group .input-label input:disabled ~ label,\nform .input-container .input-group .input-label textarea:disabled ~ label {\n  color: #9e9e9e;\n}\n\nform .input-container .select-group {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .icon.select-icon {\n  margin-top: 0px;\n}\n\nform .input-container .select-group .icon.select-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\nform .input-container .select-group .input-label {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input:disabled {\n  background-color: white;\n}\n\nform .input-container .select-options {\n  height: auto;\n  position: absolute;\n  z-index: 9;\n  border-radius: 21px;\n  margin: 8px 0px;\n  overflow: hidden;\n  transform-origin: 0% 0%;\n  border: thin solid black;\n  background-color: white;\n}\n\nform .input-container .select-options.tile {\n  border-radius: 0px;\n}\n\nform .input-container .select-options .opt {\n  position: relative;\n  padding: 12px 32px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-options .opt:hover {\n  background-color: rgba(0, 0, 0, 0.15);\n}\n\nform .input-container .error-input {\n  margin: 2px 0px 0px 21px;\n  font-size: 13px;\n  color: #ff0000;\n}\n\nform .checkbox-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\nform .checkbox-group label {\n  font-size: 13px;\n  color: black;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .checkbox-group label:before, form .checkbox-group label:after {\n  content: \"\";\n  position: absolute;\n  left: 10px;\n  top: 2px;\n}\n\nform .checkbox-group label:before {\n  width: 15px;\n  height: 15px;\n  background: #fff;\n  border: 1px solid #000;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n\nform .checkbox-group input[type=checkbox] {\n  outline: 0;\n  visibility: hidden;\n  width: 15px;\n  margin: 0;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label {\n  color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label:before {\n  border-color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label {\n  color: #041e42;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label:before {\n  background: #041e42;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label {\n  color: #ff7500;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label:before {\n  background: #ff7500;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label {\n  color: #a08629;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label:before {\n  background: #a08629;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label {\n  color: #193c63;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label:before {\n  background: #193c63;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label {\n  color: #00ce59;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label:before {\n  background: #00ce59;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label {\n  color: #ff0000;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label:before {\n  background: #ff0000;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked:disabled + label:before {\n  background: #9e9e9e;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked + label:after {\n  transform: translate(4px, 4.8076923077px) rotate(-45deg);\n  width: 7px;\n  height: 3.5px;\n  border: 2px solid white;\n  border-top-style: none;\n  border-right-style: none;\n}\n\nform .switch-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .switch-group label {\n  position: relative;\n  cursor: pointer;\n  margin: 0px 16px 20px 16px;\n  padding: 6px 0 6px 44px;\n}\n\nform .switch-group label:before, form .switch-group label:after {\n  content: \"\";\n  position: absolute;\n  margin: 0;\n  outline: 0;\n  top: 49%;\n  transform: translate(0, -50%);\n  transition: all 0.3s ease;\n}\n\nform .switch-group label:before {\n  left: -12px;\n  width: 40px;\n  height: 24px;\n  border-radius: 13px;\n}\n\nform .switch-group label:after {\n  left: -7px;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background-color: #fafafa;\n}\n\nform .switch-group label.switch-primary:before {\n  background-color: #041e42;\n}\n\nform .switch-group label.switch-secondary:before {\n  background-color: #ff7500;\n}\n\nform .switch-group label.switch-tertiary:before {\n  background-color: #a08629;\n}\n\nform .switch-group label.switch-accent:before {\n  background-color: #193c63;\n}\n\nform .switch-group label.switch-success:before {\n  background-color: #00ce59;\n}\n\nform .switch-group label.switch-error:before {\n  background-color: #ff0000;\n}\n\nform .switch-group label:disabled:before {\n  background-color: #9e9e9e;\n}\n\nform .switch-group input[type=checkbox] {\n  display: none;\n}\n\nform .switch-group input[type=checkbox]:checked + label:after {\n  transform: translate(125%, -50%);\n}\n\n.nav-container {\n  margin-bottom: 160px;\n}\n\n.nav-container .navbar {\n  width: 100%;\n  height: auto;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 9;\n  transition: ease 0.25s;\n}\n\n.nav-container .navbar.nav-hidden {\n  transition: ease 1s;\n  transform: translateY(-60px);\n}\n\n.nav-container .navbar.main-nav .top-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .top-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav .bottom-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .bottom-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar {\n  transition: ease 1s;\n  background-color: white;\n  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar .nav-btn {\n  color: black;\n}\n\n.nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n  width: 100%;\n  padding: 0px 60px;\n}\n\n.nav-container .navbar .top-bar {\n  height: 60px;\n  background-color: #041e42;\n}\n\n.nav-container .navbar .top-bar .nav-btn {\n  height: 60px;\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn.disabled {\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn-icon {\n  height: 60px;\n}\n\n.nav-container .navbar .bottom-bar {\n  height: 80px;\n  background-color: white;\n}\n\n.nav-container .navbar .bottom-bar .nav-btn,\n.nav-container .navbar .bottom-bar .nav-btn-icon {\n  height: 80px;\n}\n\n.nav-container .navbar .nav-btn,\n.nav-container .navbar .nav-btn-icon {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: auto;\n  float: left;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.nav-container .navbar .nav-btn.disabled,\n.nav-container .navbar .nav-btn-icon.disabled {\n  color: #757575;\n  cursor: default;\n}\n\n.nav-container .navbar .nav-btn.disabled:hover,\n.nav-container .navbar .nav-btn-icon.disabled:hover {\n  background-color: transparent;\n}\n\n.nav-container .navbar .nav-btn.active,\n.nav-container .navbar .nav-btn-icon.active {\n  font-weight: bold;\n  color: #a08629;\n}\n\n.nav-container .navbar .nav-btn {\n  padding: 16px;\n  text-transform: uppercase;\n}\n\n.nav-container .navbar .nav-btn .icon {\n  margin-right: 16px;\n}\n\n.nav-container .navbar .nav-btn:hover {\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n.nav-container .navbar .nav-btn-icon {\n  padding: 6px;\n}\n\n@media (max-width: 800px) {\n  .nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n    padding: 0px 15px;\n  }\n}\n\n@media (max-width: 768px) {\n  .nav-container {\n    margin-bottom: 100px;\n  }\n\n  .nav-container .navbar.nav-hidden {\n    transform: translateY(0px);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar {\n    transition: ease 1s;\n    background-color: white;\n    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar .nav-btn {\n    color: white;\n  }\n\n  .nav-container .navbar .top-bar.desktop-bar,\n.nav-container .navbar .bottom-bar.desktop-bar {\n    display: none;\n  }\n}\n\n@media (min-width: 769px) {\n  .nav-container .navbar .top-bar.mobile-bar,\n.nav-container .navbar .bottom-bar.mobile-bar {\n    display: none;\n  }\n}\n\n.pagination {\n  position: relative;\n  width: auto;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n}\n\n.pagination .btn {\n  height: 32px;\n  width: 32px;\n  margin: 0px;\n  padding: 0px;\n  font-size: 14px;\n  margin: 12px 6px;\n  border-radius: 50%;\n  background-color: #fff !important;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.pagination .btn.active {\n  background-color: #041e42 !important;\n  color: white;\n}\n\n.pagination .btn:disabled {\n  color: #aaaaaa;\n}\n\n.pagination .btn:disabled.prev-btn .prev-icon,\n.pagination .btn:disabled.prev-btn .next-icon, .pagination .btn:disabled.next-btn .prev-icon,\n.pagination .btn:disabled.next-btn .next-icon {\n  border-color: #aaaaaa;\n}\n\n.pagination .btn.prev-btn .prev-icon,\n.pagination .btn.prev-btn .next-icon, .pagination .btn.next-btn .prev-icon,\n.pagination .btn.next-btn .next-icon {\n  width: 8px;\n  height: 8px;\n  border: 2px solid #000;\n  transform: rotate(135deg);\n}\n\n.pagination .btn.prev-btn .prev-icon, .pagination .btn.next-btn .prev-icon {\n  border-top: none;\n  border-left: none;\n}\n\n.pagination .btn.prev-btn .next-icon, .pagination .btn.next-btn .next-icon {\n  border-bottom: none;\n  border-right: none;\n}\n\n.panel {\n  width: auto;\n  height: auto;\n  background-color: white;\n}\n\n.panel .panel-header {\n  width: inherit;\n  height: auto;\n  padding: 18px 9px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.panel .panel-header .header {\n  color: black;\n  font-weight: bold;\n  font-size: 13px;\n  text-transform: uppercase;\n}\n\n.panel .panel-header .icon.panel-icon {\n  margin-top: 4px;\n}\n\n.panel .panel-header .icon.panel-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\n.panel .panel-body {\n  height: auto;\n  width: 100%;\n  background-color: #ececec;\n  padding: 30px 0px;\n  border-bottom: thin solid black;\n  transform-origin: 0% 0%;\n}\n\n.panel .panel-body .btn {\n  width: 100%;\n  margin: 0px !important;\n  background-color: #ececec !important;\n  color: black !important;\n  text-align: left !important;\n  outline: none !important;\n}\n\n.parallax-container .parallax {\n  width: 100%;\n  top: 0;\n  left: 0;\n  background-position-y: 0;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.snackbar .snackbar-card {\n  height: auto;\n  width: auto;\n  min-width: 132px;\n  max-width: 485px;\n  overflow: hidden;\n  padding: 12px 24px;\n  position: fixed;\n  z-index: 9;\n  top: 16px;\n  right: 16px;\n  background-color: #405470;\n  color: #ffffff;\n  border-radius: 15px 15px 15px 0px;\n  transform-origin: bottom left;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.snackbar .snackbar-card .close-card {\n  position: absolute;\n  top: 0;\n  right: 15px;\n  font-size: 24px;\n  cursor: pointer;\n  color: white;\n}\n\n.snackbar .snackbar-action {\n  position: relative;\n  height: auto;\n  width: auto;\n  cursor: pointer;\n}\n\n@font-face {\n  font-family: \"Roboto-Regular\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Regular.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Regular.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Bold\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Bold.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Bold.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Light\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Light.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Light.ttf")) + ") format(\"truetype\");\n}\n\nhtml {\n  font-family: Roboto-Regular, sans-serif;\n  font-weight: normal;\n}\n\n.bold {\n  font-family: Roboto-Bold, sans-serif;\n  font-weight: bold;\n}\n\n.light {\n  font-family: Roboto-Light, sans-serif;\n  font-weight: lighter;\n}\n\n.title {\n  font-size: 55px;\n}\n\n.subtitle {\n  font-size: 34px;\n}\n\n.body {\n  font-size: 21px;\n}\n\n.caption {\n  font-size: 13px;\n}\n\n@media (min-width: 0px) {\n  .title-xs {\n    font-size: 55px;\n  }\n\n  .subtitle-xs {\n    font-size: 34px;\n  }\n\n  .body-xs {\n    font-size: 21px;\n  }\n\n  .caption-xs {\n    font-size: 13px;\n  }\n\n  .bold-xs {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xs {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 576px) {\n  .title-sm {\n    font-size: 55px;\n  }\n\n  .subtitle-sm {\n    font-size: 34px;\n  }\n\n  .body-sm {\n    font-size: 21px;\n  }\n\n  .caption-sm {\n    font-size: 13px;\n  }\n\n  .bold-sm {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-sm {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 768px) {\n  .title-md {\n    font-size: 55px;\n  }\n\n  .subtitle-md {\n    font-size: 34px;\n  }\n\n  .body-md {\n    font-size: 21px;\n  }\n\n  .caption-md {\n    font-size: 13px;\n  }\n\n  .bold-md {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-md {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 992px) {\n  .title-lg {\n    font-size: 55px;\n  }\n\n  .subtitle-lg {\n    font-size: 34px;\n  }\n\n  .body-lg {\n    font-size: 21px;\n  }\n\n  .caption-lg {\n    font-size: 13px;\n  }\n\n  .bold-lg {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-lg {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 1200px) {\n  .title-xl {\n    font-size: 55px;\n  }\n\n  .subtitle-xl {\n    font-size: 34px;\n  }\n\n  .body-xl {\n    font-size: 21px;\n  }\n\n  .caption-xl {\n    font-size: 13px;\n  }\n\n  .bold-xl {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xl {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\nbody::-webkit-scrollbar {\n  width: 0.5rem;\n}\n\nbody::-webkit-scrollbar-thumb {\n  background-color: #193c63;\n}", ""]);
+exports.push([module.i, ".btn {\n  position: relative;\n  margin: 20px 12px 0px 12px;\n  padding: 13px 26px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  border: none;\n  outline: none !important;\n  cursor: pointer;\n  outline: none;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.btn.full-width {\n  width: 100%;\n  margin: 20px 0px 0px 0px;\n}\n\n.btn.dark {\n  color: white;\n}\n\n.btn.large {\n  padding: 20px 40px;\n}\n\n.btn.large.rounded {\n  border-radius: 40px;\n}\n\n.btn.large.outlined {\n  border-width: 4.5px;\n  padding: 16.5px 36.5px;\n}\n\n.btn.small {\n  padding: 8px 18px;\n}\n\n.btn.small.rounded {\n  border-radius: 16px;\n}\n\n.btn.small.outlined {\n  border-width: 1.5px;\n  padding: 7px 17px;\n}\n\n.btn.rounded {\n  border-radius: 26px;\n}\n\n.btn.outlined {\n  background-color: transparent;\n  border-width: 3px;\n  border-style: solid;\n  padding: 11px 24px;\n}\n\n.btn.icon {\n  margin: 0px 8px;\n  padding: 0px;\n  background-color: transparent !important;\n}\n\n.btn:disabled {\n  background-color: #aaaa !important;\n  cursor: default !important;\n}\n\n.card {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  border-radius: 15px 15px 15px 15px;\n  overflow: hidden;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.card.no-shadow {\n  box-shadow: none !important;\n}\n\n.card.pointer-card {\n  cursor: pointer;\n}\n\n.card:not(.active-state):not(:hover) {\n  background: white !important;\n}\n\n.card.top-hover:hover {\n  background: white !important;\n}\n\n.card.top-hover:hover .image .card-image-content {\n  visibility: visible;\n  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .image {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card.full-hover:hover .image .card-image-content {\n  visibility: visible;\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n  color: white;\n}\n\n.card.active-state .image {\n  display: none;\n}\n\n.card.active-state .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card .image {\n  width: inherit;\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n.card .image .card-image-content {\n  height: inherit;\n  visibility: hidden;\n  padding: 30px;\n  color: white;\n}\n\n.card .card-state {\n  float: left;\n  height: auto;\n  padding: 5px 20px;\n  text-align: center;\n  background-color: #ff7500;\n  margin-left: 12px;\n}\n\n.card .card-state.rounded {\n  border-radius: 20px;\n}\n\n.card .card-state.tile {\n  border-radius: none;\n}\n\n.card .card-text {\n  height: auto;\n  padding: 30px;\n  background-color: white;\n}\n\n.card .card-info {\n  padding: 13px;\n  background-color: #041e42;\n}\n\n.card .card-info .info-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.card .card-info .info-item .dot {\n  width: 7px;\n  height: 7px;\n  border-radius: 50%;\n}\n\n.card .card-info .info-item .dot.primary {\n  background-color: #041e42;\n}\n\n.card .card-info .info-item .dot.secondary {\n  background-color: #ff7500;\n}\n\n.card .card-info .info-item .dot.tertiary {\n  background-color: #a08629;\n}\n\n.card .card-info .info-item .dot.accent {\n  background-color: #193c63;\n}\n\n.card .card-info .info-item .dot.success {\n  background-color: #00ce59;\n}\n\n.card .card-info .info-item .dot.error {\n  background-color: #ff0000;\n}\n\n.card .card-info .info-item p {\n  margin: 0px 6px 0px 12px;\n}\n\n.card .card-selector {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 8;\n  background-color: rgba(160, 134, 41, 0.66);\n}\n\n.card .card-selector .check-circle {\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  margin: 6px;\n  background-color: #00ce59;\n}\n\n.card .card-selector .check-circle .checkmarck {\n  height: 10px;\n  width: 20px;\n  border: 4px solid #fff;\n  border-top: none;\n  border-right: none;\n  position: absolute;\n  top: 15px;\n  left: 13px;\n  transform: rotate(-45deg);\n}\n\n@media (max-width: 768px) {\n  .card .card-text {\n    padding: 15px;\n  }\n}\n\n.carousel-container {\n  display: flex;\n  justify-content: center;\n  overflow: hidden;\n  background-size: 100% 75%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n\n.carousel-container .carousel {\n  width: 75%;\n  margin: auto;\n}\n\n.carousel-container .carousel .carousel-item {\n  padding: 0px 21px;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-navigation button {\n  outline: none;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot {\n  width: 12px !important;\n  height: 12px !important;\n  padding: 7px !important;\n  background-color: black !important;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot.VueCarousel-dot--active {\n  background-color: #a08629 !important;\n}\n\n@media (max-width: 768px) {\n  .carousel-container {\n    background: none;\n  }\n\n  .carousel-container .carousel {\n    width: 100%;\n  }\n\n  .carousel-container .carousel .carousel-item {\n    width: 100%;\n    padding: 0 12px;\n    margin: auto;\n  }\n}\n\n.primary {\n  background-color: #041e42;\n}\n\n.secondary {\n  background-color: #ff7500;\n}\n\n.tertiary {\n  background-color: #a08629;\n}\n\n.accent {\n  background-color: #193c63;\n}\n\n.success {\n  background-color: #00ce59;\n}\n\n.error {\n  background-color: #ff0000;\n}\n\n.black {\n  background-color: black;\n}\n\n.white {\n  background-color: white;\n}\n\n.default {\n  background-color: #aaaa;\n}\n\n.primary-text {\n  color: #041e42;\n}\n\n.secondary-text {\n  color: #ff7500;\n}\n\n.tertiary-text {\n  color: #a08629;\n}\n\n.accent-text {\n  color: #193c63;\n}\n\n.success-text {\n  color: #00ce59;\n}\n\n.error-text {\n  color: #ff0000;\n}\n\n.black-text {\n  color: black;\n}\n\n.white-text {\n  color: white;\n}\n\n.default-text {\n  color: #aaaa;\n}\n\n.primary-border {\n  border-color: #041e42;\n}\n\n.secondary-border {\n  border-color: #ff7500;\n}\n\n.tertiary-border {\n  border-color: #a08629;\n}\n\n@media (min-width: 0px) {\n  .primary-xs {\n    background-color: #041e42;\n  }\n\n  .secondary-xs {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xs {\n    background-color: #a08629;\n  }\n\n  .accent-xs {\n    background-color: #193c63;\n  }\n\n  .success-xs {\n    background-color: #00ce59;\n  }\n\n  .error-xs {\n    background-color: #ff0000;\n  }\n\n  .black-xs {\n    background-color: black;\n  }\n\n  .white-xs {\n    background-color: white;\n  }\n\n  .primary-text-xs {\n    color: #041e42;\n  }\n\n  .secondary-text-xs {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xs {\n    color: #a08629;\n  }\n\n  .accent-text-xs {\n    color: #193c63;\n  }\n\n  .success-text-xs {\n    color: #00ce59;\n  }\n\n  .error-text-xs {\n    color: #ff0000;\n  }\n\n  .black-text-xs {\n    color: black;\n  }\n\n  .white-text-xs {\n    color: white;\n  }\n}\n\n@media (min-width: 576px) {\n  .primary-sm {\n    background-color: #041e42;\n  }\n\n  .secondary-sm {\n    background-color: #ff7500;\n  }\n\n  .tertiary-sm {\n    background-color: #a08629;\n  }\n\n  .accent-sm {\n    background-color: #193c63;\n  }\n\n  .success-sm {\n    background-color: #00ce59;\n  }\n\n  .error-sm {\n    background-color: #ff0000;\n  }\n\n  .black-sm {\n    background-color: black;\n  }\n\n  .white-sm {\n    background-color: white;\n  }\n\n  .primary-text-sm {\n    color: #041e42;\n  }\n\n  .secondary-text-sm {\n    color: #ff7500;\n  }\n\n  .tertiary-text-sm {\n    color: #a08629;\n  }\n\n  .accent-text-sm {\n    color: #193c63;\n  }\n\n  .success-text-sm {\n    color: #00ce59;\n  }\n\n  .error-text-sm {\n    color: #ff0000;\n  }\n\n  .black-text-sm {\n    color: black;\n  }\n\n  .white-text-sm {\n    color: white;\n  }\n}\n\n@media (min-width: 768px) {\n  .primary-md {\n    background-color: #041e42;\n  }\n\n  .secondary-md {\n    background-color: #ff7500;\n  }\n\n  .tertiary-md {\n    background-color: #a08629;\n  }\n\n  .accent-md {\n    background-color: #193c63;\n  }\n\n  .success-md {\n    background-color: #00ce59;\n  }\n\n  .error-md {\n    background-color: #ff0000;\n  }\n\n  .black-md {\n    background-color: black;\n  }\n\n  .white-md {\n    background-color: white;\n  }\n\n  .primary-text-md {\n    color: #041e42;\n  }\n\n  .secondary-text-md {\n    color: #ff7500;\n  }\n\n  .tertiary-text-md {\n    color: #a08629;\n  }\n\n  .accent-text-md {\n    color: #193c63;\n  }\n\n  .success-text-md {\n    color: #00ce59;\n  }\n\n  .error-text-md {\n    color: #ff0000;\n  }\n\n  .black-text-md {\n    color: black;\n  }\n\n  .white-text-md {\n    color: white;\n  }\n}\n\n@media (min-width: 992px) {\n  .primary-lg {\n    background-color: #041e42;\n  }\n\n  .secondary-lg {\n    background-color: #ff7500;\n  }\n\n  .tertiary-lg {\n    background-color: #a08629;\n  }\n\n  .accent-lg {\n    background-color: #193c63;\n  }\n\n  .success-lg {\n    background-color: #00ce59;\n  }\n\n  .error-lg {\n    background-color: #ff0000;\n  }\n\n  .black-lg {\n    background-color: black;\n  }\n\n  .white-lg {\n    background-color: white;\n  }\n\n  .primary-text-lg {\n    color: #041e42;\n  }\n\n  .secondary-text-lg {\n    color: #ff7500;\n  }\n\n  .tertiary-text-lg {\n    color: #a08629;\n  }\n\n  .accent-text-lg {\n    color: #193c63;\n  }\n\n  .success-text-lg {\n    color: #00ce59;\n  }\n\n  .error-text-lg {\n    color: #ff0000;\n  }\n\n  .black-text-lg {\n    color: black;\n  }\n\n  .white-text-lg {\n    color: white;\n  }\n}\n\n@media (min-width: 1200px) {\n  .primary-xl {\n    background-color: #041e42;\n  }\n\n  .secondary-xl {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xl {\n    background-color: #a08629;\n  }\n\n  .accent-xl {\n    background-color: #193c63;\n  }\n\n  .success-xl {\n    background-color: #00ce59;\n  }\n\n  .error-xl {\n    background-color: #ff0000;\n  }\n\n  .black-xl {\n    background-color: black;\n  }\n\n  .white-xl {\n    background-color: white;\n  }\n\n  .primary-text-xl {\n    color: #041e42;\n  }\n\n  .secondary-text-xl {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xl {\n    color: #a08629;\n  }\n\n  .accent-text-xl {\n    color: #193c63;\n  }\n\n  .success-text-xl {\n    color: #00ce59;\n  }\n\n  .error-text-xl {\n    color: #ff0000;\n  }\n\n  .black-text-xl {\n    color: black;\n  }\n\n  .white-text-xl {\n    color: white;\n  }\n}\n\nform {\n  position: relative;\n}\n\nform .input-container {\n  height: auto;\n  margin-bottom: 32px;\n}\n\nform .input-container .input-group,\nform .input-container .select-group {\n  height: auto;\n  min-height: 42px;\n  position: relative;\n  width: 100%;\n  background-color: white;\n  border: thin solid black;\n  border-radius: 21px;\n  padding: 0px 19px;\n  display: flex;\n  align-items: center;\n}\n\nform .input-container .input-group.dark,\nform .input-container .select-group.dark {\n  border-color: white;\n}\n\nform .input-container .input-group.dark input.active ~ label,\nform .input-container .input-group.dark textarea.active ~ label,\nform .input-container .select-group.dark input.active ~ label,\nform .input-container .select-group.dark textarea.active ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:focus ~ label,\nform .input-container .input-group.dark textarea:focus ~ label,\nform .input-container .select-group.dark input:focus ~ label,\nform .input-container .select-group.dark textarea:focus ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:placeholder-shown ~ label,\nform .input-container .input-group.dark textarea:placeholder-shown ~ label,\nform .input-container .select-group.dark input:placeholder-shown ~ label,\nform .input-container .select-group.dark textarea:placeholder-shown ~ label {\n  color: white;\n}\n\nform .input-container .input-group .icon,\nform .input-container .select-group .icon {\n  position: relative;\n}\n\nform .input-container .input-group .icon.before,\nform .input-container .select-group .icon.before {\n  margin: 0px 8px 0px 0px;\n}\n\nform .input-container .input-group .icon.after,\nform .input-container .select-group .icon.after {\n  margin: 0px 0px 0px 8px;\n}\n\nform .input-container .input-group .icon img,\nform .input-container .select-group .icon img {\n  height: 16px !important;\n  width: 16px !important;\n}\n\nform .input-container .input-group.tile,\nform .input-container .select-group.tile {\n  border-radius: 0px;\n  padding: 0px 12px;\n}\n\nform .input-container .input-group .input-label,\nform .input-container .select-group .input-label {\n  height: 100%;\n  width: inherit;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .input-container .input-group .input-label input,\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label input,\nform .input-container .select-group .input-label textarea {\n  height: inherit;\n  width: inherit;\n  font-size: 13px;\n  padding: 12px 0px;\n  border: none;\n}\n\nform .input-container .input-group .input-label input.active ~ label,\nform .input-container .input-group .input-label textarea.active ~ label,\nform .input-container .select-group .input-label input.active ~ label,\nform .input-container .select-group .input-label textarea.active ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input.active ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea.active ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input.active ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea.active ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:focus ~ label,\nform .input-container .input-group .input-label textarea:focus ~ label,\nform .input-container .select-group .input-label input:focus ~ label,\nform .input-container .select-group .input-label textarea:focus ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:focus ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea:focus ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input:focus ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea:focus ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label,\nform .input-container .select-group .input-label input:placeholder-shown ~ label,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:focus,\nform .input-container .input-group .input-label textarea:focus,\nform .input-container .select-group .input-label input:focus,\nform .input-container .select-group .input-label textarea:focus {\n  outline: none;\n}\n\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label textarea {\n  border: none;\n  outline: none;\n  resize: none;\n  overflow: none;\n  height: 125px;\n}\n\nform .input-container .input-group .input-label textarea ~ label,\nform .input-container .select-group .input-label textarea ~ label {\n  top: 10px;\n}\n\nform .input-container .input-group .input-label label,\nform .input-container .select-group .input-label label {\n  color: #000;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  position: absolute;\n  display: flex;\n  flex-direction: row;\n  transition: 0.25s ease all;\n  -moz-transition: 0.25s ease all;\n  -webkit-transition: 0.25s ease all;\n}\n\nform .input-container .input-group .input-label label .snackbar .snackbar-action,\nform .input-container .select-group .input-label label .snackbar .snackbar-action {\n  display: none;\n  margin: 0px 12px;\n}\n\nform .input-container .input-group.disabled {\n  border-color: #9e9e9e;\n}\n\nform .input-container .input-group .input-label input:disabled,\nform .input-container .input-group .input-label textarea:disabled {\n  background-color: white;\n}\n\nform .input-container .input-group .input-label input:disabled ~ label,\nform .input-container .input-group .input-label textarea:disabled ~ label {\n  color: #9e9e9e;\n}\n\nform .input-container .select-group {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .icon.select-icon {\n  margin-top: 0px;\n}\n\nform .input-container .select-group .icon.select-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\nform .input-container .select-group .input-label {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input:disabled {\n  background-color: white;\n}\n\nform .input-container .select-options {\n  height: auto;\n  position: absolute;\n  z-index: 9;\n  border-radius: 21px;\n  margin: 8px 0px;\n  overflow: hidden;\n  transform-origin: 0% 0%;\n  border: thin solid black;\n  background-color: white;\n}\n\nform .input-container .select-options.tile {\n  border-radius: 0px;\n}\n\nform .input-container .select-options .opt {\n  position: relative;\n  padding: 12px 32px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-options .opt:hover {\n  background-color: rgba(0, 0, 0, 0.15);\n}\n\nform .input-container .error-input {\n  margin: 2px 0px 0px 21px;\n  font-size: 13px;\n  color: #ff0000;\n}\n\nform .checkbox-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\nform .checkbox-group label {\n  font-size: 13px;\n  color: black;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .checkbox-group label:before, form .checkbox-group label:after {\n  content: \"\";\n  position: absolute;\n  left: 10px;\n  top: 2px;\n}\n\nform .checkbox-group label:before {\n  width: 15px;\n  height: 15px;\n  background: #fff;\n  border: 1px solid #000;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n\nform .checkbox-group input[type=checkbox] {\n  outline: 0;\n  visibility: hidden;\n  width: 15px;\n  margin: 0;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label {\n  color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label:before {\n  border-color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label {\n  color: #041e42;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label:before {\n  background: #041e42;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label {\n  color: #ff7500;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label:before {\n  background: #ff7500;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label {\n  color: #a08629;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label:before {\n  background: #a08629;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label {\n  color: #193c63;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label:before {\n  background: #193c63;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label {\n  color: #00ce59;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label:before {\n  background: #00ce59;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label {\n  color: #ff0000;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label:before {\n  background: #ff0000;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked:disabled + label:before {\n  background: #9e9e9e;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked + label:after {\n  transform: translate(4px, 4.8076923077px) rotate(-45deg);\n  width: 7px;\n  height: 3.5px;\n  border: 2px solid white;\n  border-top-style: none;\n  border-right-style: none;\n}\n\nform .switch-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .switch-group label {\n  position: relative;\n  cursor: pointer;\n  margin: 0px 16px 20px 16px;\n  padding: 6px 0 6px 44px;\n}\n\nform .switch-group label:before, form .switch-group label:after {\n  content: \"\";\n  position: absolute;\n  margin: 0;\n  outline: 0;\n  top: 49%;\n  transform: translate(0, -50%);\n  transition: all 0.3s ease;\n}\n\nform .switch-group label:before {\n  left: -12px;\n  width: 40px;\n  height: 24px;\n  border-radius: 13px;\n}\n\nform .switch-group label:after {\n  left: -7px;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background-color: #fafafa;\n}\n\nform .switch-group label.switch-primary:before {\n  background-color: #041e42;\n}\n\nform .switch-group label.switch-secondary:before {\n  background-color: #ff7500;\n}\n\nform .switch-group label.switch-tertiary:before {\n  background-color: #a08629;\n}\n\nform .switch-group label.switch-accent:before {\n  background-color: #193c63;\n}\n\nform .switch-group label.switch-success:before {\n  background-color: #00ce59;\n}\n\nform .switch-group label.switch-error:before {\n  background-color: #ff0000;\n}\n\nform .switch-group label:disabled:before {\n  background-color: #9e9e9e;\n}\n\nform .switch-group input[type=checkbox] {\n  display: none;\n}\n\nform .switch-group input[type=checkbox]:checked + label:after {\n  transform: translate(125%, -50%);\n}\n\n.nav-container {\n  margin-bottom: 160px;\n}\n\n.nav-container .navbar {\n  width: 100%;\n  height: auto;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 9;\n  transition: ease 0.25s;\n}\n\n.nav-container .navbar.nav-hidden {\n  transition: ease 1s;\n  transform: translateY(-60px);\n}\n\n.nav-container .navbar.main-nav .top-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .top-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav .bottom-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .bottom-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar {\n  transition: ease 1s;\n  background-color: white;\n  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar .nav-btn {\n  color: black;\n}\n\n.nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n  width: 100%;\n  padding: 0px 60px;\n}\n\n.nav-container .navbar .top-bar {\n  height: 60px;\n  background-color: #041e42;\n}\n\n.nav-container .navbar .top-bar .nav-btn {\n  height: 60px;\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn.disabled {\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn-icon {\n  height: 60px;\n}\n\n.nav-container .navbar .bottom-bar {\n  height: 80px;\n  background-color: white;\n}\n\n.nav-container .navbar .bottom-bar .nav-btn,\n.nav-container .navbar .bottom-bar .nav-btn-icon {\n  height: 80px;\n}\n\n.nav-container .navbar .nav-btn,\n.nav-container .navbar .nav-btn-icon {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: auto;\n  float: left;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.nav-container .navbar .nav-btn.disabled,\n.nav-container .navbar .nav-btn-icon.disabled {\n  color: #757575;\n  cursor: default;\n}\n\n.nav-container .navbar .nav-btn.disabled:hover,\n.nav-container .navbar .nav-btn-icon.disabled:hover {\n  background-color: transparent;\n}\n\n.nav-container .navbar .nav-btn.active,\n.nav-container .navbar .nav-btn-icon.active {\n  font-weight: bold;\n  color: #a08629;\n}\n\n.nav-container .navbar .nav-btn {\n  padding: 16px;\n  text-transform: uppercase;\n}\n\n.nav-container .navbar .nav-btn .icon {\n  margin-right: 16px;\n}\n\n.nav-container .navbar .nav-btn:hover {\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n.nav-container .navbar .nav-btn-icon {\n  padding: 6px;\n}\n\n@media (max-width: 800px) {\n  .nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n    padding: 0px 15px;\n  }\n}\n\n@media (max-width: 768px) {\n  .nav-container {\n    margin-bottom: 100px;\n  }\n\n  .nav-container .navbar.nav-hidden {\n    transform: translateY(0px);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar {\n    transition: ease 1s;\n    background-color: white;\n    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar .nav-btn {\n    color: white;\n  }\n\n  .nav-container .navbar .top-bar.desktop-bar,\n.nav-container .navbar .bottom-bar.desktop-bar {\n    display: none;\n  }\n}\n\n@media (min-width: 769px) {\n  .nav-container .navbar .top-bar.mobile-bar,\n.nav-container .navbar .bottom-bar.mobile-bar {\n    display: none;\n  }\n}\n\n.pagination {\n  position: relative;\n  width: auto;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n}\n\n.pagination .btn {\n  height: 32px;\n  width: 32px;\n  margin: 0px;\n  padding: 0px;\n  font-size: 14px;\n  margin: 12px 6px;\n  border-radius: 50%;\n  background-color: #fff !important;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.pagination .btn.active {\n  background-color: #041e42 !important;\n  color: white;\n}\n\n.pagination .btn:disabled {\n  color: #aaaaaa;\n}\n\n.pagination .btn:disabled.prev-btn .prev-icon,\n.pagination .btn:disabled.prev-btn .next-icon, .pagination .btn:disabled.next-btn .prev-icon,\n.pagination .btn:disabled.next-btn .next-icon {\n  border-color: #aaaaaa;\n}\n\n.pagination .btn.prev-btn .prev-icon,\n.pagination .btn.prev-btn .next-icon, .pagination .btn.next-btn .prev-icon,\n.pagination .btn.next-btn .next-icon {\n  width: 8px;\n  height: 8px;\n  border: 2px solid #000;\n  transform: rotate(135deg);\n}\n\n.pagination .btn.prev-btn .prev-icon, .pagination .btn.next-btn .prev-icon {\n  border-top: none;\n  border-left: none;\n}\n\n.pagination .btn.prev-btn .next-icon, .pagination .btn.next-btn .next-icon {\n  border-bottom: none;\n  border-right: none;\n}\n\n.panel {\n  width: auto;\n  height: auto;\n  background-color: white;\n}\n\n.panel .panel-header {\n  width: inherit;\n  height: auto;\n  padding: 18px 9px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.panel .panel-header .header {\n  color: black;\n  font-weight: bold;\n  font-size: 13px;\n  text-transform: uppercase;\n}\n\n.panel .panel-header .icon.panel-icon {\n  margin-top: 4px;\n}\n\n.panel .panel-header .icon.panel-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\n.panel .panel-body {\n  height: auto;\n  width: 100%;\n  background-color: #ececec;\n  padding: 30px 0px;\n  border-bottom: thin solid black;\n  transform-origin: 0% 0%;\n}\n\n.panel .panel-body .btn {\n  width: 100%;\n  margin: 0px !important;\n  background-color: #ececec !important;\n  color: black !important;\n  text-align: left !important;\n  outline: none !important;\n}\n\n.parallax-container .parallax {\n  width: 100%;\n  top: 0;\n  left: 0;\n  background-position-y: 0;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.snackbar .snackbar-card {\n  height: auto;\n  width: auto;\n  min-width: 132px;\n  max-width: 485px;\n  overflow: hidden;\n  padding: 12px 24px;\n  position: fixed;\n  z-index: 9;\n  top: 16px;\n  right: 16px;\n  background-color: #405470;\n  color: #ffffff;\n  border-radius: 15px 15px 15px 0px;\n  transform-origin: bottom left;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.snackbar .snackbar-card .close-card {\n  position: absolute;\n  top: 0;\n  right: 15px;\n  font-size: 24px;\n  cursor: pointer;\n  color: white;\n}\n\n.snackbar .snackbar-action {\n  position: relative;\n  height: auto;\n  width: auto;\n  cursor: pointer;\n}\n\n@font-face {\n  font-family: \"Roboto-Regular\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Regular.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Regular.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Bold\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Bold.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Bold.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Light\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Light.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Light.ttf")) + ") format(\"truetype\");\n}\n\nhtml {\n  font-family: Roboto-Regular, sans-serif;\n  font-weight: normal;\n}\n\n.bold {\n  font-family: Roboto-Bold, sans-serif;\n  font-weight: bold;\n}\n\n.light {\n  font-family: Roboto-Light, sans-serif;\n  font-weight: lighter;\n}\n\n.title {\n  font-size: 55px;\n}\n\n.subtitle {\n  font-size: 34px;\n}\n\n.body {\n  font-size: 21px;\n}\n\n.caption {\n  font-size: 13px;\n}\n\n@media (min-width: 0px) {\n  .title-xs {\n    font-size: 55px;\n  }\n\n  .subtitle-xs {\n    font-size: 34px;\n  }\n\n  .body-xs {\n    font-size: 21px;\n  }\n\n  .caption-xs {\n    font-size: 13px;\n  }\n\n  .bold-xs {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xs {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 576px) {\n  .title-sm {\n    font-size: 55px;\n  }\n\n  .subtitle-sm {\n    font-size: 34px;\n  }\n\n  .body-sm {\n    font-size: 21px;\n  }\n\n  .caption-sm {\n    font-size: 13px;\n  }\n\n  .bold-sm {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-sm {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 768px) {\n  .title-md {\n    font-size: 55px;\n  }\n\n  .subtitle-md {\n    font-size: 34px;\n  }\n\n  .body-md {\n    font-size: 21px;\n  }\n\n  .caption-md {\n    font-size: 13px;\n  }\n\n  .bold-md {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-md {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 992px) {\n  .title-lg {\n    font-size: 55px;\n  }\n\n  .subtitle-lg {\n    font-size: 34px;\n  }\n\n  .body-lg {\n    font-size: 21px;\n  }\n\n  .caption-lg {\n    font-size: 13px;\n  }\n\n  .bold-lg {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-lg {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 1200px) {\n  .title-xl {\n    font-size: 55px;\n  }\n\n  .subtitle-xl {\n    font-size: 34px;\n  }\n\n  .body-xl {\n    font-size: 21px;\n  }\n\n  .caption-xl {\n    font-size: 13px;\n  }\n\n  .bold-xl {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xl {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\nbody::-webkit-scrollbar {\n  width: 0.5rem;\n}\n\nbody::-webkit-scrollbar-thumb {\n  background-color: #193c63;\n}", ""]);
 
 // exports
 
@@ -9772,7 +9851,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".main-layout .custom-items-margin {\n  margin-right: 65px;\n}\n.main-layout .custom-icon-margin {\n  margin-right: 17px;\n}\n.main-layout .wlinii-copyright {\n  background-color: black;\n  color: white;\n  padding: 16px;\n  text-align: center;\n}\n.main-layout .app-footer {\n  background-color: white;\n}\n@media (max-width: 764px) {\n.main-layout .mobile-footer-content {\n    display: none;\n}\n}\n.main-layout .fix-footer-btn .btn {\n  margin-top: 0px !important;\n}", ""]);
+exports.push([module.i, ".main-layout .custom-items-margin {\n  margin-right: 65px;\n}\n.main-layout .custom-icon-margin {\n  margin-right: 17px;\n}\n.main-layout .wlinii-copyright {\n  background-color: black;\n  color: white;\n  padding: 16px;\n  text-align: center;\n}\n.main-layout .app-footer {\n  background-color: white;\n}\n@media (max-width: 764px) {\n.main-layout .mobile-footer-content {\n    display: none;\n}\n}\n.main-layout .fix-footer-btn .btn {\n  margin-top: 0px !important;\n}\n.main-layout .fix-footer-btn .btn:disabled {\n  background-color: white !important;\n}", ""]);
 
 // exports
 
@@ -9867,7 +9946,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home .home-container {\n  padding: 165px 150px 0px 150px;\n}\n.home .home-container .home-title {\n  font-size: 55px;\n  font-weight: bold;\n  text-align: left;\n  color: white;\n}\n.home .banner-card.card:not(.active-state):not(:hover) {\n  background: transparent !important;\n}\n.home .banner-card.card:hover {\n  background-color: transparent !important;\n}\n.home .banner-card.card .card-text {\n  background-color: rgba(0, 0, 0, 0.66);\n  padding-right: 50px;\n  padding-left: 50px;\n}\n.home .banner-card.card .icon {\n  margin-left: 10px;\n}\n.home .parallax-tag {\n  position: absolute;\n  bottom: -86px;\n  left: 5%;\n  width: 90%;\n  background-color: #041e42;\n  border-top: 2px solid #a08629;\n  padding: 32px 64px;\n  border-radius: 0px 0px 15px 15px;\n}\n.home .home-fix {\n  border: 2px solid transparent;\n  margin-bottom: 128px;\n}\n.home .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n  margin: auto;\n}\n.home .home-item {\n  text-align: center;\n  padding: 50px;\n}\n.home .home-item .icon img {\n  margin: auto !important;\n}\n.home .agent-carousel .carousel {\n  width: 95%;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 48px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 48px !important;\n}\n.home .publi-banner {\n  background-image: url(\"/images/banners/2.png\");\n  text-align: center;\n}\n.home .graph-banner {\n  background-image: url(\"/images/banners/3.png\");\n}\n.home .publi-banner,\n.home .graph-banner {\n  background-size: cover;\n  background-position: center center;\n  padding: 85px 75px;\n}\n@media (max-width: 1024px) {\n.home .home-container {\n    padding: 165px 48px 0px 48px;\n}\n.home .home-container .home-title {\n    font-size: 45px;\n    font-weight: bold;\n    text-align: center;\n    color: white;\n}\n.parallax-tag {\n    bottom: -200px !important;\n}\n.home-fix {\n    margin-bottom: 200px !important;\n}\n}\n@media (max-width: 768px) {\n.home .home-container {\n    padding: 128px 48px 0px 48px;\n}\n.publi-banner {\n    background-position: top right !important;\n    padding-right: 12px !important;\n    padding-left: 12px !important;\n}\n.parallax-tag {\n    bottom: -190px !important;\n    left: 0 !important;\n    width: 100% !important;\n    border-top: none !important;\n}\n.home-fix {\n    margin-bottom: 300px !important;\n}\n}", ""]);
+exports.push([module.i, ".home .home-container {\n  padding: 165px 150px 0px 150px;\n}\n.home .home-container .home-title {\n  font-size: 55px;\n  font-weight: bold;\n  text-align: left;\n  color: white;\n}\n.home .banner-card.card:not(.active-state):not(:hover) {\n  background: transparent !important;\n}\n.home .banner-card.card:hover {\n  background-color: transparent !important;\n}\n.home .banner-card.card .card-text {\n  background-color: rgba(0, 0, 0, 0.66);\n  padding-right: 50px;\n  padding-left: 50px;\n}\n.home .banner-card.card .icon {\n  margin-left: 10px;\n}\n.home .parallax-tag {\n  position: absolute;\n  bottom: -86px;\n  left: 5%;\n  width: 90%;\n  background-color: #041e42;\n  border-top: 2px solid #a08629;\n  padding: 32px 64px;\n  border-radius: 0px 0px 15px 15px;\n}\n.home .home-fix {\n  border: 2px solid transparent;\n  margin-bottom: 128px;\n}\n.home .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n  margin: auto;\n}\n.home .home-item {\n  text-align: center;\n  padding: 50px;\n}\n.home .home-item .icon img {\n  margin: auto !important;\n}\n.home .agent-carousel .carousel {\n  width: 95%;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 48px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 48px !important;\n}\n.home .publi-banner {\n  background-image: url(\"/images/banners/2.png\");\n  text-align: center;\n}\n.home .graph-banner {\n  background-image: url(\"/images/banners/3.png\");\n}\n.home .publi-banner,\n.home .graph-banner {\n  background-size: cover;\n  background-position: center center;\n  padding: 85px 75px;\n}\n@media (max-width: 1024px) {\n.home .home-container {\n    padding: 165px 48px 0px 48px;\n}\n.home .home-container .home-title {\n    font-size: 45px;\n    font-weight: bold;\n    text-align: center;\n    color: white;\n}\n.parallax-tag {\n    bottom: -216px !important;\n    width: 95% !important;\n    left: 2.5% !important;\n}\n.home-fix {\n    margin-bottom: 250px !important;\n}\n}\n@media (max-width: 768px) {\n.home .home-container {\n    padding: 128px 48px 0px 48px;\n}\n.publi-banner {\n    background-position: top right !important;\n    padding-right: 12px !important;\n    padding-left: 12px !important;\n}\n.parallax-tag {\n    bottom: -190px !important;\n    left: 0 !important;\n    width: 100% !important;\n    border-top: none !important;\n}\n.home-fix {\n    margin-bottom: 300px !important;\n}\n}", ""]);
 
 // exports
 
@@ -9924,7 +10003,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".amc-1 .amc-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.amc-1 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-1 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}", ""]);
+exports.push([module.i, ".amc-1 .amc-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.amc-1 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n  background-color: #041e42 !important;\n}\n.amc-1 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}", ""]);
 
 // exports
 
@@ -9943,7 +10022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".amc-2 .amc-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.amc-2 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-2 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-2 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-2 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n.amc-2 .amc-container .alert {\n  border-radius: 8px;\n  padding: 18px 36px;\n}\n.amc-2 .amc-container .filter {\n  background-color: white;\n}\n.amc-2 .amc-container .filter .filter-header {\n  width: 100%;\n  background-color: #ff7500;\n  color: white;\n  text-align: center;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 12px;\n}\n.amc-2 .amc-container .filter .filter-body {\n  padding: 12px;\n}", ""]);
+exports.push([module.i, ".amc-2 .amc-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.amc-2 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n  background-color: #041e42 !important;\n}\n.amc-2 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-2 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-2 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n.amc-2 .amc-container .alert {\n  border-radius: 8px;\n  padding: 18px 36px;\n}\n.amc-2 .amc-container .filter {\n  background-color: white;\n}\n.amc-2 .amc-container .filter .filter-header {\n  width: 100%;\n  background-color: #ff7500;\n  color: white;\n  text-align: center;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 12px;\n}\n.amc-2 .amc-container .filter .filter-body {\n  padding: 12px;\n}", ""]);
 
 // exports
 
@@ -9962,7 +10041,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".amc-4 .amc-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.amc-4 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-4 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-4 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-4 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n.amc-4 .amc-container .amc-table-container {\n  padding: 0px 20px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table {\n  background-color: rgba(170, 170, 170, 0.18);\n  overflow: hidden;\n  width: 100%;\n  border-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th,\n.amc-4 .amc-container .amc-table-container table.amc-table td {\n  text-align: left;\n  padding: 32px 48px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th {\n  background-color: rgba(170, 170, 170, 0.18);\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:first-child {\n  border-bottom-left-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:last-child {\n  border-bottom-right-radius: 32px;\n}\n.amc-4 .amc-container .alert {\n  border-radius: 31px;\n  padding: 34px 75px;\n}\n@media (max-width: 1024px) {\n.amc-4 .amc-container .step-btn {\n    padding: 5px 25px;\n    margin: 20px 0px !important;\n}\n.amc-4 .amc-container .amc-table-container {\n    padding: 0px !important;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th,\n.amc-4 .amc-container .amc-table-container table.amc-table td {\n    padding: 16px 32px !important;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table .hidden-cell {\n    display: none;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:first-child {\n    border-bottom-left-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:not(.hidden-cell):not(:first-child) {\n    border-bottom-right-radius: 32px;\n}\n.amc-4 .amc-container .alert {\n    border-radius: 31px;\n    padding: 14px 45px;\n}\n}", ""]);
+exports.push([module.i, ".amc-4 .amc-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.amc-4 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n  background-color: #041e42 !important;\n}\n.amc-4 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-4 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-4 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n.amc-4 .amc-container .amc-table-container {\n  padding: 0px 20px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table {\n  background-color: rgba(170, 170, 170, 0.18);\n  overflow: hidden;\n  width: 100%;\n  border-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th,\n.amc-4 .amc-container .amc-table-container table.amc-table td {\n  text-align: left;\n  padding: 32px 48px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th {\n  background-color: rgba(170, 170, 170, 0.18);\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:first-child {\n  border-bottom-left-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:last-child {\n  border-bottom-right-radius: 32px;\n}\n.amc-4 .amc-container .alert {\n  border-radius: 31px;\n  padding: 34px 75px;\n}\n@media (max-width: 1024px) {\n.amc-4 .amc-container .step-btn {\n    padding: 5px 25px;\n    margin: 20px 0px !important;\n}\n.amc-4 .amc-container .amc-table-container {\n    padding: 0px !important;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th,\n.amc-4 .amc-container .amc-table-container table.amc-table td {\n    padding: 16px 32px !important;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table .hidden-cell {\n    display: none;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:first-child {\n    border-bottom-left-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:not(.hidden-cell):not(:first-child) {\n    border-bottom-right-radius: 32px;\n}\n.amc-4 .amc-container .alert {\n    border-radius: 31px;\n    padding: 14px 45px;\n}\n}", ""]);
 
 // exports
 
@@ -10133,7 +10212,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".publicacion-detalle .detalle-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.publicacion-detalle .detalle-container .m-btn:not(.full-width) {\n  margin: 6px 18px;\n}\n.publicacion-detalle .detalle-container .media-player {\n  position: relative;\n}\n.publicacion-detalle .detalle-container .media-player .media-content {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding: 26px 0px 52px 0px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.publicacion-detalle .detalle-container .media-player .media-content:hover .media-control {\n  display: inline;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-state {\n  background-color: #ff7500;\n  width: auto;\n  height: auto;\n  max-height: 45px;\n  margin-left: -16px;\n  padding: 14px 32px;\n  font-size: 13px;\n  color: white;\n  text-align: center;\n  text-transform: uppercase;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-control {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  display: none;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-description-container {\n  background-color: rgba(4, 30, 66, 0.9);\n  align-self: flex-end;\n  padding: 32px 56px;\n  height: auto;\n  width: auto;\n  max-height: 164px;\n  max-width: 456px;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-description-container .media-description {\n  max-height: 96px;\n  color: white;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.publicacion-detalle .detalle-container .media-carousel {\n  margin-top: -68px;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel {\n  width: 95%;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 38px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 38px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item {\n  width: 100%;\n  height: 100%;\n  padding: 0px 12px;\n  cursor: pointer;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source {\n  position: relative;\n  width: inherit;\n  height: inherit;\n  border: 4px solid #fff;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source.active {\n  border-color: #041e42;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source .icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source img,\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source video {\n  width: inherit;\n  height: inherit;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source .media-banner {\n  background-color: #ff7500;\n  width: 145px;\n  height: 45px;\n  padding: 12px 32px;\n  font-size: 13px;\n  color: white;\n  text-align: center;\n  text-transform: uppercase;\n  position: absolute;\n}\n.publicacion-detalle .detalle-container .vertical-divider {\n  width: 0px;\n  height: 100%;\n  border: 1px solid rgba(0, 0, 0, 0.66);\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel {\n  width: 100%;\n  padding: 0px 20px;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item {\n  padding: 0px 20px;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item .feature-card .card-text {\n  background-color: #041e42;\n  color: white;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item .feature-card .card-text .divider {\n  width: 72px;\n  height: 0px;\n  border: 1px solid #a08629;\n}\n.publicacion-detalle .detalle-container .feature-banner {\n  background-color: rgba(130, 145, 167, 0.15);\n  border-radius: 15px;\n  padding: 32px 0px;\n  margin: 0px 24px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  flex-wrap: nowrap;\n}\n.publicacion-detalle .detalle-container .feature-banner .banner-item {\n  padding: 0px 24px;\n}\n.publicacion-detalle .detalle-container .feature-banner .banner-item:not(:first-child) {\n  border-left: 1px solid rgba(0, 0, 0, 0.66);\n}\n.publicacion-detalle .detalle-container .perfil-agente-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.publicacion-detalle .detalle-container .perfil-agente-container .full-divider {\n  height: 0px;\n  width: 100%;\n  border: thin solid rgba(4, 30, 66, 0.12);\n}\n@media (max-width: 768px) {\n.publicacion-detalle .detalle-container {\n    width: 95%;\n}\n.media-carousel {\n    margin-top: 0px !important;\n}\n.media-carousel .carousel {\n    width: 100% !important;\n}\n.media-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n    height: 35px !important;\n    width: 35px !important;\n    padding: 0px !important;\n}\n.media-carousel .carousel .VueCarousel .VueCarousel-navigation button img {\n    height: inherit !important;\n}\n.media-carousel .carousel .media-item {\n    padding: 0px 2px !important;\n}\n.media-carousel .carousel .media-item .media-source {\n    border: none !important;\n}\n.feature-carousel .carousel .feature-item {\n    padding: 0px 60px !important;\n}\n.feature-banner {\n    margin: 0px !important;\n    padding: 16px 0px !important;\n    flex-wrap: wrap !important;\n}\n.feature-banner .banner-item {\n    padding: 12px 24px !important;\n    border: none !important;\n}\n}", ""]);
+exports.push([module.i, ".publicacion-detalle .detalle-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.publicacion-detalle .detalle-container .m-btn:not(.full-width) {\n  margin: 6px 18px;\n}\n.publicacion-detalle .detalle-container .secondary-fix-color {\n  background-color: #ff7500 !important;\n}\n.publicacion-detalle .detalle-container .media-player {\n  position: relative;\n}\n.publicacion-detalle .detalle-container .media-player .media-content {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding: 26px 0px 52px 0px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.publicacion-detalle .detalle-container .media-player .media-content:hover .media-control {\n  display: inline;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-state {\n  background-color: #ff7500;\n  width: auto;\n  height: auto;\n  max-height: 45px;\n  margin-left: -16px;\n  padding: 14px 32px;\n  font-size: 13px;\n  color: white;\n  text-align: center;\n  text-transform: uppercase;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-control {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  display: none;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-description-container {\n  background-color: rgba(4, 30, 66, 0.9);\n  align-self: flex-end;\n  padding: 32px 56px;\n  height: auto;\n  width: auto;\n  max-height: 164px;\n  max-width: 456px;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-description-container .media-description {\n  max-height: 96px;\n  color: white;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.publicacion-detalle .detalle-container .media-carousel {\n  margin-top: -68px;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel {\n  width: 95%;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 38px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 38px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item {\n  width: 100%;\n  height: 100%;\n  padding: 0px 12px;\n  cursor: pointer;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source {\n  position: relative;\n  width: inherit;\n  height: inherit;\n  border: 4px solid #fff;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source.active {\n  border-color: #041e42;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source .icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source img,\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source video {\n  width: inherit;\n  height: inherit;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source .media-banner {\n  background-color: #ff7500;\n  width: 145px;\n  height: 45px;\n  padding: 12px 32px;\n  font-size: 13px;\n  color: white;\n  text-align: center;\n  text-transform: uppercase;\n  position: absolute;\n}\n.publicacion-detalle .detalle-container .vertical-divider {\n  width: 0px;\n  height: 100%;\n  border: 1px solid rgba(0, 0, 0, 0.66);\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel {\n  width: 100%;\n  padding: 0px 20px;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item {\n  padding: 0px 20px;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item .feature-card .card-text {\n  background-color: #041e42;\n  color: white;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item .feature-card .card-text .divider {\n  width: 72px;\n  height: 0px;\n  border: 1px solid #a08629;\n}\n.publicacion-detalle .detalle-container .feature-banner {\n  background-color: rgba(130, 145, 167, 0.15);\n  border-radius: 15px;\n  padding: 32px 0px;\n  margin: 0px 24px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  flex-wrap: nowrap;\n}\n.publicacion-detalle .detalle-container .feature-banner .banner-item {\n  padding: 0px 24px;\n}\n.publicacion-detalle .detalle-container .feature-banner .banner-item:not(:first-child) {\n  border-left: 1px solid rgba(0, 0, 0, 0.66);\n}\n.publicacion-detalle .detalle-container .perfil-agente-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.publicacion-detalle .detalle-container .perfil-agente-container .full-divider {\n  height: 0px;\n  width: 100%;\n  border: thin solid rgba(4, 30, 66, 0.12);\n}\n@media (max-width: 768px) {\n.publicacion-detalle .detalle-container {\n    width: 95%;\n}\n.media-carousel {\n    margin-top: 0px !important;\n}\n.media-carousel .carousel {\n    width: 100% !important;\n}\n.media-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n    height: 35px !important;\n    width: 35px !important;\n    padding: 0px !important;\n}\n.media-carousel .carousel .VueCarousel .VueCarousel-navigation button img {\n    height: inherit !important;\n}\n.media-carousel .carousel .media-item {\n    padding: 0px 2px !important;\n}\n.media-carousel .carousel .media-item .media-source {\n    border: none !important;\n}\n.feature-carousel .carousel .feature-item {\n    padding: 0px 60px !important;\n}\n.feature-banner {\n    margin: 0px !important;\n    padding: 16px 0px !important;\n    flex-wrap: wrap !important;\n}\n.feature-banner .banner-item {\n    padding: 12px 24px !important;\n    border: none !important;\n}\n}", ""]);
 
 // exports
 
@@ -31048,7 +31127,10 @@ var render = function() {
                     "w-btn",
                     {
                       key: i,
-                      staticStyle: { margin: "2px" },
+                      staticStyle: {
+                        margin: "2px",
+                        "background-color": "white !important"
+                      },
                       attrs: { icon: true, disabled: true }
                     },
                     [
@@ -31847,27 +31929,34 @@ var render = function() {
       _c(
         "w-parallax",
         {
-          attrs: {
-            image: "/images/banners/4.png",
-            height: _vm.windowWidth <= 768 ? "100" : "130"
-          }
+          attrs: { image: "/images/banners/4.png", height: _vm.parallaxHeight }
         },
         [
           _c(
             "div",
-            { staticClass: "flex flex-row justify-between home-container" },
+            {
+              staticClass:
+                "flex flex-row justify-center lg:justify-between flex-wrap lg:flex-no-wrap home-container"
+            },
             [
-              _c("div", { staticClass: "w-3/3 lg:w-1/3 self-center" }, [
-                _c("h1", { staticClass: "home-title bold white-text" }, [
-                  _vm._v("Profesionales inmobiliarios dedicados a usted")
-                ])
-              ]),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "w-full md:w-2/3 lg:w-1/3 mb-10 lg:md-0 self-center"
+                },
+                [
+                  _c("h1", { staticClass: "home-title bold white-text" }, [
+                    _vm._v("Profesionales inmobiliarios dedicados a usted")
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c("div", { staticClass: "hidden lg:block w-1/3" }),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "hidden lg:block w-2/3 self-center" },
+                { staticClass: "w-full md:w-2/3 lg:w-2/3 self-center" },
                 [
                   _c(
                     "w-card",
@@ -31994,7 +32083,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "w-2/2 md:w-2/3 flex flex-row justify-center md:justify-start"
+                      "w-2/2 lg:w-2/3 flex flex-row justify-center md:justify-start"
                   },
                   [
                     _c("w-icon", {
@@ -33942,8 +34031,7 @@ var render = function() {
                     disabled: true,
                     rounded: true,
                     dark: true,
-                    small: true,
-                    color: "primary"
+                    small: true
                   }
                 },
                 [_vm._v("01 PASO")]
@@ -36378,7 +36466,11 @@ var render = function() {
                                     "w-btn",
                                     {
                                       key: i,
-                                      staticStyle: { margin: "2px" },
+                                      staticStyle: {
+                                        margin: "2px",
+                                        "background-color":
+                                          "transparent !important"
+                                      },
                                       attrs: { icon: true, disabled: true }
                                     },
                                     [
@@ -37535,7 +37627,11 @@ var render = function() {
                                         "w-btn",
                                         {
                                           key: i,
-                                          staticStyle: { margin: "2px" },
+                                          staticStyle: {
+                                            margin: "2px",
+                                            "background-color":
+                                              "transparent !important"
+                                          },
                                           attrs: { icon: true, disabled: true }
                                         },
                                         [
@@ -38104,7 +38200,8 @@ var render = function() {
               _c(
                 "w-btn",
                 {
-                  staticClass: "self-start md:self-center m-btn",
+                  staticClass:
+                    "self-start md:self-center m-btn secondary-fix-color",
                   attrs: { small: true, disabled: true, dark: true }
                 },
                 [_vm._v("Comisión " + _vm._s(_vm.property.comision))]
@@ -40483,237 +40580,334 @@ var render = function() {
                       _c("span", { staticClass: "caption black-text" }, [
                         _vm._v(
                           "(" +
-                            _vm._s(_vm.form.files.length) +
+                            _vm._s(_vm.form.photos.length) +
                             " de 20 disponibles)"
                         )
                       ])
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "flex flex-row justify-center flex-wrap" },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/2 px-2" },
-                          [
-                            _c(
-                              "w-card",
-                              {
-                                staticClass: "upload-file-card",
-                                attrs: { shadow: false }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "flex flex-col items-center" },
-                                  [
-                                    _c("w-icon", {
+                    _c("div", { staticClass: "w-full" }, [
+                      _c(
+                        "div",
+                        { staticClass: "flex flex-row justify-center" },
+                        [
+                          _c(
+                            "w-card",
+                            {
+                              staticClass: "upload-file-card",
+                              attrs: { shadow: false }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "flex flex-col items-center" },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "upload-image", h: "137px" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "text-center mt-5" }, [
+                                    _vm._v("Sube fotos desde tu computadora")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "w-btn",
+                                    {
                                       attrs: {
-                                        icon: "upload-image",
-                                        h: "137px"
+                                        color: "#57BCD1",
+                                        dark: true,
+                                        rounded: true,
+                                        small: true,
+                                        disabled:
+                                          _vm.form.photos.length >= 20
+                                            ? true
+                                            : false
                                       }
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "p",
-                                      { staticClass: "text-center mt-5" },
-                                      [
-                                        _vm._v(
-                                          "Sube fotos desde tu computadora"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "w-btn",
-                                      {
+                                    },
+                                    [
+                                      _c("p", [_vm._v("seleccionar fotos")]),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        ref: "photoFile",
+                                        staticClass: "fileInput",
                                         attrs: {
-                                          color: "#57BCD1",
-                                          dark: true,
-                                          rounded: true,
-                                          small: true
-                                        }
-                                      },
-                                      [
-                                        _c("p", [_vm._v("seleccionar fotos")]),
-                                        _vm._v(" "),
-                                        _c("input", {
-                                          ref: "photoFile",
-                                          staticClass: "fileInput",
-                                          attrs: {
-                                            type: "file",
-                                            accept: ".jpg, .jpeg, .png"
-                                          },
-                                          on: {
-                                            change: function($event) {
-                                              return _vm.addFile("photoFile")
-                                            }
-                                          }
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "p",
-                                      { staticClass: "text-center mt-5" },
-                                      [
-                                        _vm._v(
-                                          "\n                                            Formatos permitidos: JPG, JPEG, PNG\n                                            (Tamaño máximo: 5Mb)\n                                        "
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ]
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/2 px-2" },
-                          [
-                            _c(
-                              "w-card",
-                              {
-                                staticClass: "upload-file-card",
-                                attrs: { shadow: false }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  { staticClass: "flex flex-col items-center" },
-                                  [
-                                    _c("w-icon", {
-                                      attrs: {
-                                        icon: "upload-video",
-                                        h: "137px"
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "p",
-                                      { staticClass: "text-center mt-5" },
-                                      [
-                                        _vm._v(
-                                          "Sube videos desde tu computadora"
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "w-btn",
-                                      {
-                                        attrs: {
-                                          color: "#57BCD1",
-                                          dark: true,
-                                          rounded: true,
-                                          small: true
-                                        }
-                                      },
-                                      [
-                                        _c("p", [_vm._v("seleccionar videos")]),
-                                        _vm._v(" "),
-                                        _c("input", {
-                                          ref: "videoFile",
-                                          staticClass: "fileInput",
-                                          attrs: {
-                                            type: "file",
-                                            accept: ".mp4, .avi"
-                                          },
-                                          on: {
-                                            change: function($event) {
-                                              return _vm.addFile("videoFile")
-                                            }
-                                          }
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "p",
-                                      { staticClass: "text-center mt-5" },
-                                      [
-                                        _vm._v(
-                                          "\n                                            Formatos permitidos: MP4, AVI,\n                                            (Tamaño máximo: 50Mb)\n                                        "
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ]
-                            )
-                          ],
-                          1
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "preview" },
-                      [
-                        _c(
-                          "w-carousel",
-                          {
-                            staticClass: "preview-carousel",
-                            attrs: {
-                              items: _vm.carrouselItems,
-                              pagination:
-                                _vm.windowWidth >= 1024 ? false : true,
-                              navigation: _vm.windowWidth >= 1024 ? true : false
-                            }
-                          },
-                          _vm._l(_vm.form.files, function(media, i) {
-                            return _c(
-                              "slide",
-                              { key: i, staticClass: "preview-slide" },
-                              [
-                                _c("div", { staticClass: "preview-item" }, [
-                                  _c("div", { staticClass: "preview-source" }, [
-                                    media.type == "img"
-                                      ? _c("img", { attrs: { src: media.url } })
-                                      : media.type == "video"
-                                      ? _c(
-                                          "video",
-                                          {
-                                            attrs: { autoplay: "", muted: "" },
-                                            domProps: { muted: true }
-                                          },
-                                          [
-                                            _c("source", {
-                                              attrs: { src: media.url }
-                                            })
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "delete-icon",
+                                          type: "file",
+                                          accept: ".jpg, .jpeg, .png",
+                                          disabled:
+                                            _vm.form.photos.length >= 20
+                                              ? true
+                                              : false,
+                                          multiple: "multiple"
+                                        },
                                         on: {
-                                          click: function($event) {
-                                            return _vm.removeFile(media)
+                                          change: function($event) {
+                                            return _vm.addPhoto()
                                           }
                                         }
-                                      },
-                                      [_vm._v("×")]
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "text-center mt-5" }, [
+                                    _vm._v(
+                                      "\n                                            Formatos permitidos: JPG, JPEG, PNG\n                                            (Tamaño máximo: 5Mb)\n                                        "
                                     )
                                   ])
-                                ])
-                              ]
-                            )
-                          }),
-                          1
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "preview" },
+                                [
+                                  _c(
+                                    "w-carousel",
+                                    {
+                                      staticClass: "preview-carousel",
+                                      attrs: {
+                                        items: _vm.carrouselItems,
+                                        pagination:
+                                          _vm.windowWidth >= 1024
+                                            ? false
+                                            : true,
+                                        navigation:
+                                          _vm.windowWidth >= 1024 ? true : false
+                                      }
+                                    },
+                                    _vm._l(_vm.form.photos, function(media, i) {
+                                      return _c(
+                                        "slide",
+                                        {
+                                          key: i,
+                                          staticClass: "preview-slide"
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            { staticClass: "preview-item" },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass: "preview-source"
+                                                },
+                                                [
+                                                  _c("img", {
+                                                    attrs: { src: media.url }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "delete-icon",
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.removePhoto(
+                                                            media
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [_vm._v("×")]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    }),
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "f-header" }, [
+                      _vm._v(
+                        "\n                            Videos\n                            "
+                      ),
+                      _c("span", { staticClass: "caption black-text" }, [
+                        _vm._v(
+                          "(" +
+                            _vm._s(_vm.form.videos.length) +
+                            " de 3 disponibles)"
                         )
-                      ],
-                      1
-                    ),
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "w-full" }, [
+                      _c(
+                        "div",
+                        { staticClass: "flex flex-row justify-center" },
+                        [
+                          _c(
+                            "w-card",
+                            {
+                              staticClass: "upload-file-card",
+                              attrs: { shadow: false }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "flex flex-col items-center" },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: "upload-video", h: "137px" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "text-center mt-5" }, [
+                                    _vm._v("Sube videos desde tu computadora")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "w-btn",
+                                    {
+                                      attrs: {
+                                        color: "#57BCD1",
+                                        dark: true,
+                                        rounded: true,
+                                        small: true,
+                                        disabled:
+                                          _vm.form.videos.length >= 3
+                                            ? true
+                                            : false
+                                      }
+                                    },
+                                    [
+                                      _c("p", [_vm._v("seleccionar videos")]),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        ref: "videoFile",
+                                        staticClass: "fileInput",
+                                        attrs: {
+                                          type: "file",
+                                          accept: ".mp4, .avi",
+                                          disabled:
+                                            _vm.form.videos.length >= 3
+                                              ? true
+                                              : false,
+                                          multiple: "multiple"
+                                        },
+                                        on: {
+                                          change: function($event) {
+                                            return _vm.addVideo()
+                                          }
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "text-center mt-5" }, [
+                                    _vm._v(
+                                      "\n                                            Formatos permitidos: JPG, JPEG, PNG\n                                            (Tamaño máximo: 5Mb)\n                                        "
+                                    )
+                                  ])
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "preview" },
+                                [
+                                  _c(
+                                    "w-carousel",
+                                    {
+                                      staticClass: "preview-carousel",
+                                      attrs: {
+                                        items: _vm.carrouselItems,
+                                        pagination:
+                                          _vm.windowWidth >= 1024
+                                            ? false
+                                            : true,
+                                        navigation:
+                                          _vm.windowWidth >= 1024 ? true : false
+                                      }
+                                    },
+                                    _vm._l(_vm.form.videos, function(media, i) {
+                                      return _c(
+                                        "slide",
+                                        {
+                                          key: i,
+                                          staticClass: "preview-slide"
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            { staticClass: "preview-item" },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass: "preview-source"
+                                                },
+                                                [
+                                                  _c(
+                                                    "video",
+                                                    {
+                                                      attrs: {
+                                                        autoplay: "",
+                                                        muted: ""
+                                                      },
+                                                      domProps: { muted: true }
+                                                    },
+                                                    [
+                                                      _c("source", {
+                                                        attrs: {
+                                                          src: media.url
+                                                        }
+                                                      })
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "delete-icon",
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.removeVideo(
+                                                            media
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [_vm._v("×")]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    }),
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "flex flex-row justify-center" }, [
                       _c(
@@ -60878,6 +61072,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-btn", {
       type: String,
       "default": "secondary"
     },
+    disabled: {
+      type: Boolean,
+      "default": false
+    },
     icon: Boolean,
     large: Boolean,
     small: Boolean,
@@ -60886,7 +61084,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-btn", {
     outlined: Boolean,
     type: String
   },
-  template: "\n        <button :type=\"type\" :class=\"buttonClass\" :style=\"buttonStyle\" @click=\"$emit('click')\">\n            <slot></slot>\n        </button>\n    ",
+  template: "\n        <button \n          :type=\"type\" \n          :class=\"buttonClass\" \n          :style=\"buttonStyle\" \n          :disabled=\"disabled\" \n          @click=\"disabled ? '' : $emit('click')\"\n        >\n            <slot></slot>\n        </button>\n    ",
   computed: {
     buttonClass: function buttonClass() {
       var btnClass = "btn";

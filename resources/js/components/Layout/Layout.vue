@@ -1,7 +1,11 @@
 <template>
     <div class="main-layout">
         <!-- NAVBAR -->
-        <w-navbar :main="currentPath == '/'" v-scroll="handleScroll">
+        <w-navbar
+            :main="currentPath == '/'"
+            v-scroll="handleScroll"
+            :class="currentPath == '/login' ? 'hidden' : ''"
+        >
             <w-top-bar class="desktop-bar">
                 <div class="flex flex-row justify-between">
                     <div>
@@ -266,6 +270,9 @@ export default {
     .fix-footer-btn {
         .btn {
             margin-top: 0px !important;
+            &:disabled {
+                background-color: white !important;
+            }
         }
     }
 }
