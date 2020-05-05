@@ -3359,11 +3359,11 @@ __webpack_require__.r(__webpack_exports__);
       actions: [{
         name: "Perfil",
         icon: "user",
-        path: "/profile"
+        path: "/agente"
       }, {
         name: "Perfil Broker",
         icon: "user",
-        path: "/profile/broker"
+        path: "/perfil/brocker"
       }, {
         name: "Publicación",
         icon: "edit",
@@ -3371,7 +3371,7 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         name: "AMC",
         icon: "database",
-        path: "/"
+        path: "/amc/1"
       }, {
         name: "Cerrar Sesión",
         icon: "logout"
@@ -64842,8 +64842,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\projects\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\projects\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
+__webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
 
 
 /***/ })
