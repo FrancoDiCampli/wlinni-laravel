@@ -1,20 +1,8 @@
 <template>
     <!-- Paginas 30 - 36 - 39 - 41 -->
-
     <div>
         <div class="inmuebles-container">
             <div class="flex flex-row justify-around gap-8">
-                <div class="w-3/12 hidden lg:block">
-                    <div>
-                        <w-card :shadow="false">
-                            <template slot="header">
-                                <p class="caption bold white-text">FILTROS APLICADOS</p>
-                            </template>
-
-                            <FiltrosMapa></FiltrosMapa>
-                        </w-card>
-                    </div>
-                </div>
                 <div class="w-full pb-16" v-if="filtrar">
                     <div class="filter">
                         <div class="filter-header">filtros</div>
@@ -24,25 +12,30 @@
                                 :fullwidth="true"
                                 color="secondary"
                                 :dark="true"
-                                @click="filtrar = false"
+                                @click="showFilters = false"
                             >filtrar</w-btn>
                         </div>
                     </div>
                 </div>
-                <div class="sm:w-full lg:w-9/12 px-6" v-else>
+                <div class="w-full px-6" v-else>
                     <w-card :shadow="false">
-                        <div class="flex flex-row justify-between flex-wrap">
-                            <div class="lg:pl-3">
-                                <h1 class="subtitle bold">Listado de Inmuebles</h1>
-                            </div>
+                        <div class="float-filter w-4/12 lg:w-3/12 hidden md:block">
+                            <w-card>
+                                <template slot="header">
+                                    <p class="caption bold white-text">FILTROS APLICADOS</p>
+                                </template>
+
+                                <FiltrosMapa></FiltrosMapa>
+                            </w-card>
                         </div>
+                        <h1 class="subtitle bold text-center md:text-right">Listado de Inmuebles</h1>
 
                         <div class="pb-2 lg:pb-0">
                             <w-btn
-                                class="lg:hidden"
+                                class="md:hidden"
                                 :dark="true"
                                 color="secondary"
-                                @click="filtrar = true"
+                                @click="showFilters = true"
                             >filtrar</w-btn>
                         </div>
                         <br />
@@ -64,7 +57,8 @@ import Mapas from "../../components/mapas/Mapas";
 
 export default {
     data: () => ({
-        filtrar: false,
+        showFilters: false,
+        windowWidth: window.innerWidth,
         center: { lat: -12.1122095, lng: -77.047945 },
         markers: [
             {
@@ -97,6 +91,27 @@ export default {
         ]
     }),
 
+    computed: {
+        filtrar() {
+            if (this.showFilters) {
+                if (this.windowWidth >= 768) {
+                    this.showFilters = false;
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+    },
+
+    mounted() {
+        window.addEventListener("resize", () => {
+            this.windowWidth = window.innerWidth;
+        });
+    },
+
     components: {
         FiltrosMapa,
         Mapas
@@ -108,6 +123,11 @@ export default {
 .inmuebles-container {
     width: 95%;
     margin: auto;
+    .float-filter {
+        position: absolute;
+        z-index: 4;
+        left: 30px;
+    }
 }
 
 @media (max-width: 764px) {

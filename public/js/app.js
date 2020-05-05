@@ -3604,6 +3604,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3661,7 +3665,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     handleScroll: function handleScroll(evt, el) {
-      window.scrollY > window.innerHeight / 2 ? this.scroll = true : this.scroll = false;
+      window.scrollY > 0 ? this.scroll = true : this.scroll = false;
     }
   }
 });
@@ -3728,12 +3732,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       drop: false,
+      notiDrop: false,
       drawer: false,
       windowWidth: window.innerWidth,
       actions: [{
@@ -3755,6 +3796,21 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         name: "Cerrar Sesión",
         icon: "logout"
+      }],
+      notifications: [{
+        state: "guardar",
+        stars: 3,
+        image: "/images/rostros/1.png",
+        name: "Kazmer Maxi",
+        content: "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet",
+        date: "Hace 2 días"
+      }, {
+        state: "guardar",
+        stars: 3,
+        image: "/images/rostros/2.png",
+        name: "Escobar German",
+        content: "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet",
+        date: "Hace 2 días"
       }]
     };
   },
@@ -3774,15 +3830,29 @@ __webpack_require__.r(__webpack_exports__);
       this.$router.push(path);
       this.drop = !this.drop;
     },
+    showNoti: function showNoti() {
+      if (this.windowWidth <= 768) {
+        this.$router.push("/notificaciones");
+        this.notiDrop = false;
+      } else {
+        this.notiDrop = !this.notiDrop;
+      }
+    },
+    handleScroll: function handleScroll(evt, el) {
+      if (window.scrollY > 0) {
+        this.drop = false;
+        this.notiDrop = false;
+      }
+    },
     logout: function logout() {
       localStorage.setItem("logged", JSON.stringify(false));
       this.drop = !this.drop;
     },
-    enterDrop: function enterDrop() {
-      var dropElement = this.$refs.dropElement;
+    enterDrop: function enterDrop(drop) {
+      var dropElement = this.$refs[drop];
       Object(animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
         targets: dropElement,
-        scaleY: [0, 1],
+        scale: [0, 1],
         duration: 250,
         easing: "easeInOutSine"
       });
@@ -3975,6 +4045,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltroPublicacion",
   data: function data() {
@@ -3982,46 +4056,66 @@ __webpack_require__.r(__webpack_exports__);
       panels: [{
         value: false,
         name: "Tipo de Inmueble",
-        options: ["Departamento", "Casa", "Oficina"]
+        options: ["Departamento", "Casa", "Oficina"],
+        selectOption: null
       }, {
         value: false,
         name: "Distrito / Ubicación",
-        options: ["San Isidro", "Miraflores", "Santiago de Surco", "La Molina"]
+        options: ["San Isidro", "Miraflores", "Santiago de Surco", "La Molina"],
+        selectOption: null
       }, {
         value: false,
         name: "Precio",
-        options: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"]
+        options: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"],
+        selectOption: null
       }, {
         value: false,
         name: "Dormitorios",
-        options: ["Opción 1", "Opción 2", "Opción 3"]
+        options: ["Dormitorios 1", "Dormitorios 2", "Dormitorios 3"],
+        selectOption: null
       }, {
         value: false,
-        name: "Area Toral (m2)",
-        options: ["Opción 1", "Opción 2", "Opción 3"]
+        name: "Area Total (m2)",
+        options: ["Area 1", "Area 2", "Area 3"],
+        selectOption: null
       }, {
         value: false,
         name: "Cocheras",
-        options: ["Opción 1", "Opción 2", "Opción 3"]
+        options: ["Cocheras 1", "Cocheras 2", "Cocheras 3"],
+        selectOption: null
       }, {
         value: false,
         name: "Antigüedad",
-        options: ["Opción 1", "Opción 2", "Opción 3"]
+        options: ["Antigüedad 1", "Antigüedad 2", "Antigüedad 3"],
+        selectOption: null
       }, {
         value: false,
         name: "Estado",
-        options: ["Opción 1", "Opción 2", "Opción 3"]
-      }],
-      filtros: []
+        options: ["Estado 1", "Estado 2", "Estado 3"],
+        selectOption: null
+      }]
     };
   },
+  computed: {
+    filtros: function filtros() {
+      var filtrosArray = [];
+
+      for (var i = 0; i < this.panels.length; i++) {
+        if (this.panels[i].selectOption) {
+          filtrosArray.push(this.panels[i].selectOption);
+        }
+      }
+
+      return filtrosArray;
+    }
+  },
   methods: {
-    set: function set(op) {
-      this.filtros.push(op);
-    },
     unset: function unset(op) {
-      var i = this.filtros.indexOf(op);
-      this.filtros.splice(i, 1);
+      var find = this.panels.find(function (element) {
+        return element.selectOption == op;
+      });
+      var index = this.panels.indexOf(find);
+      this.panels[index].selectOption = null;
     }
   }
 });
@@ -4160,10 +4254,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     markers: Array,
-    center: Object
+    center: Object,
+    showInfo: {
+      type: Boolean,
+      "default": true
+    }
   },
   data: function data() {
     return {
@@ -4171,18 +4275,17 @@ __webpack_require__.r(__webpack_exports__);
         mapTypeControl: false,
         streetViewControl: false
       },
-      // iconos de los marcadores
       markerOptions: {
-        url: "/images/lock-full.png",
+        url: "/images/address-red.png",
         size: {
-          width: 21,
-          height: 37,
+          width: 22.5,
+          height: 31.5,
           f: "px",
           b: "px"
         },
         scaledSize: {
-          width: 21,
-          height: 37,
+          width: 22.5,
+          height: 31.5,
           f: "px",
           b: "px"
         }
@@ -4203,9 +4306,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     toggleInfoWindow: function toggleInfoWindow(marker, idx) {
-      this.infoWindowPos = marker.position;
-      this.card = marker;
-      this.infoWinOpen = !this.infoWinOpen;
+      if (this.showInfo) {
+        this.infoWindowPos = marker.position;
+        this.card = marker;
+        this.infoWinOpen = !this.infoWinOpen;
+      }
+    },
+    closeInfoWindow: function closeInfoWindow() {
+      this.infoWinOpen = false;
     }
   }
 });
@@ -4245,6 +4353,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4257,19 +4366,18 @@ __webpack_require__.r(__webpack_exports__);
         mapTypeControl: false,
         streetViewControl: false
       },
-      places: [],
       currentPlace: null,
       markerOptions: {
-        url: "/images/lock-full.png",
+        url: "/images/address-red.png",
         size: {
-          width: 20,
-          height: 35,
+          width: 22.5,
+          height: 31.5,
           f: "px",
           b: "px"
         },
         scaledSize: {
-          width: 15,
-          height: 25,
+          width: 22.5,
+          height: 31.5,
           f: "px",
           b: "px"
         }
@@ -4300,19 +4408,24 @@ __webpack_require__.r(__webpack_exports__);
     setPlace: function setPlace(place) {
       this.currentPlace = place;
     },
-    addMarker: function addMarker() {
+    search: function search() {
       if (this.currentPlace) {
-        var marker = {
+        this.center = {
           lat: this.currentPlace.geometry.location.lat(),
           lng: this.currentPlace.geometry.location.lng()
         };
-        this.marker = {
-          position: marker
-        };
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
       }
+    },
+    addMaker: function addMaker(e) {
+      var marker = {
+        lat: e.latLng.lat(),
+        lng: e.latLng.lng()
+      };
+      this.marker = {
+        position: marker
+      };
+      this.center = marker;
+      this.currentPlace = null;
     },
     geolocate: function geolocate() {
       var _this = this;
@@ -4364,6 +4477,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltroPublicacion",
   data: function data() {
@@ -4371,26 +4488,41 @@ __webpack_require__.r(__webpack_exports__);
       panels: [{
         value: false,
         name: "operaciones",
-        options: ["Venta", "Alquiler", "Traspaso"]
+        options: ["Venta", "Alquiler", "Traspaso"],
+        selectOption: null
       }, {
         value: false,
         name: "publicaciones",
-        options: ["Publicado", "Vendido", "Borrador"]
+        options: ["Publicado", "Vendido", "Borrador"],
+        selectOption: null
       }, {
         value: false,
         name: "borradores",
-        options: ["Opción 1", "Opción 2", "Opción 3"]
-      }],
-      filtros: []
+        options: ["Opción 1", "Opción 2", "Opción 3"],
+        selectOption: null
+      }]
     };
   },
+  computed: {
+    filtros: function filtros() {
+      var filtrosArray = [];
+
+      for (var i = 0; i < this.panels.length; i++) {
+        if (this.panels[i].selectOption) {
+          filtrosArray.push(this.panels[i].selectOption);
+        }
+      }
+
+      return filtrosArray;
+    }
+  },
   methods: {
-    set: function set(op) {
-      this.filtros.push(op);
-    },
     unset: function unset(op) {
-      var i = this.filtros.indexOf(op);
-      this.filtros.splice(i, 1);
+      var find = this.panels.find(function (element) {
+        return element.selectOption == op;
+      });
+      var index = this.panels.indexOf(find);
+      this.panels[index].selectOption = null;
     }
   }
 });
@@ -4408,102 +4540,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -5117,6 +5153,26 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
+  computed: {
+    carrouselItems: function carrouselItems() {
+      if (this.windowWidth >= 768) {
+        return this.windowWidth >= 1024 ? 3 : 2;
+      } else {
+        return 1;
+      }
+    },
+    carrouselItemsAgentes: function carrouselItemsAgentes() {
+      if (this.windowWidth >= 640) {
+        if (this.windowWidth >= 1024) {
+          return this.windowWidth >= 1280 ? 4 : 3;
+        } else {
+          return this.windowWidth >= 1024 ? 3 : 2;
+        }
+      } else {
+        return 1;
+      }
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -5133,123 +5189,6 @@ __webpack_require__.r(__webpack_exports__);
       return parseDate;
     }
   }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Test.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      form: {},
-      page: 1
-    };
-  } // PAGINACION, EJEMPLO
-  // watch: {
-  //     page() {
-  //         this.$router.push(`/test/${this.page}`);
-  //     }
-  // }
-
 });
 
 /***/ }),
@@ -5580,6 +5519,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     Perfil: _components_agentes_Perfil__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  computed: {
+    carrouselItems: function carrouselItems() {
+      if (this.windowWidth >= 768) {
+        return this.windowWidth >= 1024 ? 3 : 2;
+      } else {
+        return 1;
+      }
+    }
   },
   mounted: function mounted() {
     var _this = this;
@@ -5972,169 +5920,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6335,10 +6120,10 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       checked: true,
+      showFilters: false,
       windowWidth: window.innerWidth,
       select: true,
       form: {},
-      filtrar: false,
       cards: [{
         tipo: "Alquiler",
         image: "/images/departamentos/1.jpg",
@@ -6488,6 +6273,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     FiltroInmueble: _components_inmuebles_FiltroInmueble__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  computed: {
+    filtrar: function filtrar() {
+      if (this.showFilters) {
+        if (this.windowWidth >= 768) {
+          this.showFilters = false;
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        return false;
+      }
+    }
   },
   mounted: function mounted() {
     var _this = this;
@@ -6994,12 +6793,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       code: false,
       form: {},
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      afiliarse: false,
+      usuario: false
     };
   },
   mounted: function mounted() {
@@ -7022,6 +6870,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -7088,6 +6940,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7570,6 +7427,15 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
+  computed: {
+    carrouselItems: function carrouselItems() {
+      if (this.windowWidth >= 768) {
+        return this.windowWidth >= 1024 ? 3 : 2;
+      } else {
+        return 1;
+      }
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -7645,19 +7511,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      filtrar: false,
+      showFilters: false,
+      windowWidth: window.innerWidth,
       center: {
         lat: -12.1122095,
         lng: -77.047945
@@ -7697,6 +7557,27 @@ __webpack_require__.r(__webpack_exports__);
         condicion: "Preventa en planos"
       }]
     };
+  },
+  computed: {
+    filtrar: function filtrar() {
+      if (this.showFilters) {
+        if (this.windowWidth >= 768) {
+          this.showFilters = false;
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        return false;
+      }
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    window.addEventListener("resize", function () {
+      _this.windowWidth = window.innerWidth;
+    });
   },
   components: {
     FiltrosMapa: _components_inmuebles_FiltrosMapa__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -7850,12 +7731,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       page: 1,
-      filtrar: false,
+      showFilters: false,
+      windowWidth: window.innerWidth,
       cards: [{
         tipo: "Alquiler",
         image: "/images/departamentos/1.jpg",
@@ -7996,6 +7882,27 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     FiltroInmueble: _components_inmuebles_FiltroInmueble__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  computed: {
+    filtrar: function filtrar() {
+      if (this.showFilters) {
+        if (this.windowWidth >= 768) {
+          this.showFilters = false;
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        return false;
+      }
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    window.addEventListener("resize", function () {
+      _this.windowWidth = window.innerWidth;
+    });
   }
 });
 
@@ -8010,6 +7917,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -8303,6 +8211,15 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
+  computed: {
+    carrouselItems: function carrouselItems() {
+      if (this.windowWidth >= 768) {
+        return this.windowWidth >= 1024 ? 3 : 2;
+      } else {
+        return 1;
+      }
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -8325,6 +8242,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_mapas_Mapas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/mapas/Mapas */ "./resources/js/components/mapas/Mapas.vue");
 /* harmony import */ var _components_agentes_Perfil__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/agentes/Perfil */ "./resources/js/components/agentes/Perfil.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -8649,6 +8570,19 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Mapas: _components_mapas_Mapas__WEBPACK_IMPORTED_MODULE_0__["default"],
     Perfil: _components_agentes_Perfil__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  computed: {
+    carrouselItems: function carrouselItems() {
+      if (this.windowWidth >= 640) {
+        if (this.windowWidth >= 768) {
+          return this.windowWidth >= 1024 ? 5 : 3;
+        } else {
+          return 2;
+        }
+      } else {
+        return 1;
+      }
+    }
   },
   mounted: function mounted() {
     var _this = this;
@@ -9350,6 +9284,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -9373,6 +9361,19 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     MapasAgregar: _components_mapas_MapasAgregar__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  computed: {
+    carrouselItems: function carrouselItems() {
+      if (this.windowWidth >= 768) {
+        if (this.windowWidth >= 1024) {
+          return this.windowWidth >= 1280 ? 4 : 3;
+        } else {
+          return this.windowWidth >= 1024 ? 3 : 2;
+        }
+      } else {
+        return 1;
+      }
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -9382,10 +9383,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addFile: function addFile(type) {
-      this.form.files.push({
-        file: this.$refs[type].files[0],
-        name: this.$refs[type].files[0].name
-      });
+      if (this.form.files.length < 20) {
+        this.form.files.push({
+          file: this.$refs[type].files[0],
+          url: URL.createObjectURL(this.$refs[type].files[0]),
+          name: this.$refs[type].files[0].name,
+          type: type == "photoFile" ? "img" : "video"
+        });
+      }
+    },
+    removeFile: function removeFile(file) {
+      var index = this.form.files.indexOf(file);
+      this.form.files.splice(index, 1);
     }
   }
 });
@@ -9581,12 +9590,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       page: 1,
-      filtrar: false,
+      showFilters: false,
+      windowWidth: window.innerWidth,
       cards: [{
         showForm: false,
         state: "Publicado",
@@ -9661,6 +9676,27 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     FiltroPublicacion: _components_publicaciones_FiltroPublicacion__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  computed: {
+    filtrar: function filtrar() {
+      if (this.showFilters) {
+        if (this.windowWidth >= 768) {
+          this.showFilters = false;
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        return false;
+      }
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    window.addEventListener("resize", function () {
+      _this.windowWidth = window.innerWidth;
+    });
   }
 });
 
@@ -9679,7 +9715,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".btn {\n  position: relative;\n  margin: 20px 12px 0px 12px;\n  padding: 13px 26px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  border: none;\n  outline: none !important;\n  cursor: pointer;\n  outline: none;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.btn.full-width {\n  width: 100%;\n  margin: 20px 0px 0px 0px;\n}\n\n.btn.dark {\n  color: white;\n}\n\n.btn.large {\n  padding: 20px 40px;\n}\n\n.btn.large.rounded {\n  border-radius: 40px;\n}\n\n.btn.large.outlined {\n  border-width: 4.5px;\n  padding: 16.5px 36.5px;\n}\n\n.btn.small {\n  padding: 8px 18px;\n}\n\n.btn.small.rounded {\n  border-radius: 16px;\n}\n\n.btn.small.outlined {\n  border-width: 1.5px;\n  padding: 7px 17px;\n}\n\n.btn.rounded {\n  border-radius: 26px;\n}\n\n.btn.outlined {\n  background-color: transparent;\n  border-width: 3px;\n  border-style: solid;\n  padding: 11px 24px;\n}\n\n.btn.icon {\n  margin: 0px 8px;\n  padding: 0px;\n  background-color: transparent !important;\n}\n\n.card {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  border-radius: 15px 15px 15px 15px;\n  overflow: hidden;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.card.no-shadow {\n  box-shadow: none !important;\n}\n\n.card:not(.active-state):not(:hover) {\n  background: white !important;\n}\n\n.card.top-hover:hover {\n  background: white !important;\n}\n\n.card.top-hover:hover .image .card-image-content {\n  visibility: visible;\n  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .image {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card.full-hover:hover .image .card-image-content {\n  visibility: visible;\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n  color: white;\n}\n\n.card.active-state .image {\n  display: none;\n}\n\n.card.active-state .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card .image {\n  width: inherit;\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n.card .image .card-image-content {\n  height: inherit;\n  visibility: hidden;\n  padding: 30px;\n  color: white;\n}\n\n.card .card-state {\n  float: left;\n  height: auto;\n  padding: 5px 20px;\n  text-align: center;\n  background-color: #ff7500;\n  margin-left: 12px;\n}\n\n.card .card-state.rounded {\n  border-radius: 20px;\n}\n\n.card .card-state.tile {\n  border-radius: none;\n}\n\n.card .card-text {\n  height: auto;\n  padding: 30px;\n  background-color: white;\n}\n\n.card .card-info {\n  padding: 13px;\n  background-color: #041e42;\n}\n\n.card .card-info .info-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.card .card-info .info-item .dot {\n  width: 7px;\n  height: 7px;\n  border-radius: 50%;\n}\n\n.card .card-info .info-item .dot.primary {\n  background-color: #041e42;\n}\n\n.card .card-info .info-item .dot.secondary {\n  background-color: #ff7500;\n}\n\n.card .card-info .info-item .dot.tertiary {\n  background-color: #a08629;\n}\n\n.card .card-info .info-item .dot.accent {\n  background-color: #193c63;\n}\n\n.card .card-info .info-item .dot.success {\n  background-color: #00ce59;\n}\n\n.card .card-info .info-item .dot.error {\n  background-color: #ff0000;\n}\n\n.card .card-info .info-item p {\n  margin: 0px 6px 0px 12px;\n}\n\n.card .card-selector {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 8;\n  background-color: rgba(160, 134, 41, 0.66);\n}\n\n.card .card-selector .check-circle {\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  margin: 6px;\n  background-color: #00ce59;\n}\n\n.card .card-selector .check-circle .checkmarck {\n  height: 10px;\n  width: 20px;\n  border: 4px solid #fff;\n  border-top: none;\n  border-right: none;\n  position: absolute;\n  top: 15px;\n  left: 13px;\n  transform: rotate(-45deg);\n}\n\n@media (max-width: 768px) {\n  .card .card-text {\n    padding: 15px;\n  }\n}\n\n.carousel-container {\n  display: flex;\n  justify-content: center;\n  overflow: hidden;\n  background-size: 100% 75%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n\n.carousel-container .carousel {\n  width: 75%;\n  margin: auto;\n}\n\n.carousel-container .carousel .carousel-item {\n  padding: 0px 21px;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-navigation button {\n  outline: none;\n}\n\n@media (max-width: 600px) {\n  .carousel-container {\n    background: none;\n  }\n\n  .carousel-container .carousel {\n    width: 100%;\n  }\n\n  .carousel-container .carousel .carousel-item {\n    width: 100%;\n    padding: 0 12px;\n    margin: auto;\n  }\n\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot {\n    width: 12px !important;\n    height: 12px !important;\n    padding: 7px !important;\n    background-color: black !important;\n  }\n\n  .carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot.VueCarousel-dot--active {\n    background-color: #a08629 !important;\n  }\n}\n\n.primary {\n  background-color: #041e42;\n}\n\n.secondary {\n  background-color: #ff7500;\n}\n\n.tertiary {\n  background-color: #a08629;\n}\n\n.accent {\n  background-color: #193c63;\n}\n\n.success {\n  background-color: #00ce59;\n}\n\n.error {\n  background-color: #ff0000;\n}\n\n.black {\n  background-color: black;\n}\n\n.white {\n  background-color: white;\n}\n\n.default {\n  background-color: #aaaa;\n}\n\n.primary-text {\n  color: #041e42;\n}\n\n.secondary-text {\n  color: #ff7500;\n}\n\n.tertiary-text {\n  color: #a08629;\n}\n\n.accent-text {\n  color: #193c63;\n}\n\n.success-text {\n  color: #00ce59;\n}\n\n.error-text {\n  color: #ff0000;\n}\n\n.black-text {\n  color: black;\n}\n\n.white-text {\n  color: white;\n}\n\n.default-text {\n  color: #aaaa;\n}\n\n.primary-border {\n  border-color: #041e42;\n}\n\n.secondary-border {\n  border-color: #ff7500;\n}\n\n.tertiary-border {\n  border-color: #a08629;\n}\n\n@media (min-width: 0px) {\n  .primary-xs {\n    background-color: #041e42;\n  }\n\n  .secondary-xs {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xs {\n    background-color: #a08629;\n  }\n\n  .accent-xs {\n    background-color: #193c63;\n  }\n\n  .success-xs {\n    background-color: #00ce59;\n  }\n\n  .error-xs {\n    background-color: #ff0000;\n  }\n\n  .black-xs {\n    background-color: black;\n  }\n\n  .white-xs {\n    background-color: white;\n  }\n\n  .primary-text-xs {\n    color: #041e42;\n  }\n\n  .secondary-text-xs {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xs {\n    color: #a08629;\n  }\n\n  .accent-text-xs {\n    color: #193c63;\n  }\n\n  .success-text-xs {\n    color: #00ce59;\n  }\n\n  .error-text-xs {\n    color: #ff0000;\n  }\n\n  .black-text-xs {\n    color: black;\n  }\n\n  .white-text-xs {\n    color: white;\n  }\n}\n\n@media (min-width: 576px) {\n  .primary-sm {\n    background-color: #041e42;\n  }\n\n  .secondary-sm {\n    background-color: #ff7500;\n  }\n\n  .tertiary-sm {\n    background-color: #a08629;\n  }\n\n  .accent-sm {\n    background-color: #193c63;\n  }\n\n  .success-sm {\n    background-color: #00ce59;\n  }\n\n  .error-sm {\n    background-color: #ff0000;\n  }\n\n  .black-sm {\n    background-color: black;\n  }\n\n  .white-sm {\n    background-color: white;\n  }\n\n  .primary-text-sm {\n    color: #041e42;\n  }\n\n  .secondary-text-sm {\n    color: #ff7500;\n  }\n\n  .tertiary-text-sm {\n    color: #a08629;\n  }\n\n  .accent-text-sm {\n    color: #193c63;\n  }\n\n  .success-text-sm {\n    color: #00ce59;\n  }\n\n  .error-text-sm {\n    color: #ff0000;\n  }\n\n  .black-text-sm {\n    color: black;\n  }\n\n  .white-text-sm {\n    color: white;\n  }\n}\n\n@media (min-width: 768px) {\n  .primary-md {\n    background-color: #041e42;\n  }\n\n  .secondary-md {\n    background-color: #ff7500;\n  }\n\n  .tertiary-md {\n    background-color: #a08629;\n  }\n\n  .accent-md {\n    background-color: #193c63;\n  }\n\n  .success-md {\n    background-color: #00ce59;\n  }\n\n  .error-md {\n    background-color: #ff0000;\n  }\n\n  .black-md {\n    background-color: black;\n  }\n\n  .white-md {\n    background-color: white;\n  }\n\n  .primary-text-md {\n    color: #041e42;\n  }\n\n  .secondary-text-md {\n    color: #ff7500;\n  }\n\n  .tertiary-text-md {\n    color: #a08629;\n  }\n\n  .accent-text-md {\n    color: #193c63;\n  }\n\n  .success-text-md {\n    color: #00ce59;\n  }\n\n  .error-text-md {\n    color: #ff0000;\n  }\n\n  .black-text-md {\n    color: black;\n  }\n\n  .white-text-md {\n    color: white;\n  }\n}\n\n@media (min-width: 992px) {\n  .primary-lg {\n    background-color: #041e42;\n  }\n\n  .secondary-lg {\n    background-color: #ff7500;\n  }\n\n  .tertiary-lg {\n    background-color: #a08629;\n  }\n\n  .accent-lg {\n    background-color: #193c63;\n  }\n\n  .success-lg {\n    background-color: #00ce59;\n  }\n\n  .error-lg {\n    background-color: #ff0000;\n  }\n\n  .black-lg {\n    background-color: black;\n  }\n\n  .white-lg {\n    background-color: white;\n  }\n\n  .primary-text-lg {\n    color: #041e42;\n  }\n\n  .secondary-text-lg {\n    color: #ff7500;\n  }\n\n  .tertiary-text-lg {\n    color: #a08629;\n  }\n\n  .accent-text-lg {\n    color: #193c63;\n  }\n\n  .success-text-lg {\n    color: #00ce59;\n  }\n\n  .error-text-lg {\n    color: #ff0000;\n  }\n\n  .black-text-lg {\n    color: black;\n  }\n\n  .white-text-lg {\n    color: white;\n  }\n}\n\n@media (min-width: 1200px) {\n  .primary-xl {\n    background-color: #041e42;\n  }\n\n  .secondary-xl {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xl {\n    background-color: #a08629;\n  }\n\n  .accent-xl {\n    background-color: #193c63;\n  }\n\n  .success-xl {\n    background-color: #00ce59;\n  }\n\n  .error-xl {\n    background-color: #ff0000;\n  }\n\n  .black-xl {\n    background-color: black;\n  }\n\n  .white-xl {\n    background-color: white;\n  }\n\n  .primary-text-xl {\n    color: #041e42;\n  }\n\n  .secondary-text-xl {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xl {\n    color: #a08629;\n  }\n\n  .accent-text-xl {\n    color: #193c63;\n  }\n\n  .success-text-xl {\n    color: #00ce59;\n  }\n\n  .error-text-xl {\n    color: #ff0000;\n  }\n\n  .black-text-xl {\n    color: black;\n  }\n\n  .white-text-xl {\n    color: white;\n  }\n}\n\nform {\n  position: relative;\n}\n\nform .input-container {\n  height: auto;\n  margin-bottom: 32px;\n}\n\nform .input-container .input-group,\nform .input-container .select-group {\n  height: auto;\n  min-height: 42px;\n  position: relative;\n  width: 100%;\n  background-color: white;\n  border: thin solid black;\n  border-radius: 21px;\n  padding: 0px 19px;\n  display: flex;\n  align-items: center;\n}\n\nform .input-container .input-group.dark,\nform .input-container .select-group.dark {\n  border-color: white;\n}\n\nform .input-container .input-group.dark input.active ~ label,\nform .input-container .input-group.dark textarea.active ~ label,\nform .input-container .select-group.dark input.active ~ label,\nform .input-container .select-group.dark textarea.active ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:focus ~ label,\nform .input-container .input-group.dark textarea:focus ~ label,\nform .input-container .select-group.dark input:focus ~ label,\nform .input-container .select-group.dark textarea:focus ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:placeholder-shown ~ label,\nform .input-container .input-group.dark textarea:placeholder-shown ~ label,\nform .input-container .select-group.dark input:placeholder-shown ~ label,\nform .input-container .select-group.dark textarea:placeholder-shown ~ label {\n  color: white;\n}\n\nform .input-container .input-group .icon,\nform .input-container .select-group .icon {\n  position: relative;\n}\n\nform .input-container .input-group .icon.before,\nform .input-container .select-group .icon.before {\n  margin: 0px 8px 0px 0px;\n}\n\nform .input-container .input-group .icon.after,\nform .input-container .select-group .icon.after {\n  margin: 0px 0px 0px 8px;\n}\n\nform .input-container .input-group .icon img,\nform .input-container .select-group .icon img {\n  height: 16px !important;\n  width: 16px !important;\n}\n\nform .input-container .input-group.tile,\nform .input-container .select-group.tile {\n  border-radius: 0px;\n  padding: 0px 12px;\n}\n\nform .input-container .input-group .input-label,\nform .input-container .select-group .input-label {\n  height: 100%;\n  width: inherit;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .input-container .input-group .input-label input,\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label input,\nform .input-container .select-group .input-label textarea {\n  height: inherit;\n  width: inherit;\n  font-size: 13px;\n  padding: 12px 0px;\n  border: none;\n}\n\nform .input-container .input-group .input-label input.active ~ label,\nform .input-container .input-group .input-label textarea.active ~ label,\nform .input-container .select-group .input-label input.active ~ label,\nform .input-container .select-group .input-label textarea.active ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input.active ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea.active ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input.active ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea.active ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:focus ~ label,\nform .input-container .input-group .input-label textarea:focus ~ label,\nform .input-container .select-group .input-label input:focus ~ label,\nform .input-container .select-group .input-label textarea:focus ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:focus ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea:focus ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input:focus ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea:focus ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label,\nform .input-container .select-group .input-label input:placeholder-shown ~ label,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:focus,\nform .input-container .input-group .input-label textarea:focus,\nform .input-container .select-group .input-label input:focus,\nform .input-container .select-group .input-label textarea:focus {\n  outline: none;\n}\n\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label textarea {\n  border: none;\n  outline: none;\n  resize: none;\n  overflow: none;\n  height: 125px;\n}\n\nform .input-container .input-group .input-label textarea ~ label,\nform .input-container .select-group .input-label textarea ~ label {\n  top: 10px;\n}\n\nform .input-container .input-group .input-label label,\nform .input-container .select-group .input-label label {\n  color: #000;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  position: absolute;\n  display: flex;\n  flex-direction: row;\n  transition: 0.25s ease all;\n  -moz-transition: 0.25s ease all;\n  -webkit-transition: 0.25s ease all;\n}\n\nform .input-container .input-group .input-label label .snackbar .snackbar-action,\nform .input-container .select-group .input-label label .snackbar .snackbar-action {\n  display: none;\n  margin: 0px 12px;\n}\n\nform .input-container .input-group.disabled {\n  border-color: #9e9e9e;\n}\n\nform .input-container .input-group .input-label input:disabled,\nform .input-container .input-group .input-label textarea:disabled {\n  background-color: white;\n}\n\nform .input-container .input-group .input-label input:disabled ~ label,\nform .input-container .input-group .input-label textarea:disabled ~ label {\n  color: #9e9e9e;\n}\n\nform .input-container .select-group {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .icon.select-icon {\n  margin-top: 4px;\n}\n\nform .input-container .select-group .icon.select-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\nform .input-container .select-group .input-label {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input:disabled {\n  background-color: white;\n}\n\nform .input-container .select-options {\n  height: auto;\n  position: absolute;\n  z-index: 9;\n  border-radius: 21px;\n  margin: 8px 0px;\n  overflow: hidden;\n  transform-origin: 0% 0%;\n  border: thin solid black;\n  background-color: white;\n}\n\nform .input-container .select-options.tile {\n  border-radius: 0px;\n}\n\nform .input-container .select-options .opt {\n  position: relative;\n  padding: 12px 32px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-options .opt:hover {\n  background-color: rgba(0, 0, 0, 0.15);\n}\n\nform .input-container .error-input {\n  margin: 2px 0px 0px 21px;\n  font-size: 13px;\n  color: #ff0000;\n}\n\nform .checkbox-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\nform .checkbox-group label {\n  font-size: 13px;\n  color: black;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .checkbox-group label:before, form .checkbox-group label:after {\n  content: \"\";\n  position: absolute;\n  left: 10px;\n  top: 2px;\n}\n\nform .checkbox-group label:before {\n  width: 15px;\n  height: 15px;\n  background: #fff;\n  border: 1px solid #000;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n\nform .checkbox-group input[type=checkbox] {\n  outline: 0;\n  visibility: hidden;\n  width: 15px;\n  margin: 0;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label {\n  color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label:before {\n  border-color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label {\n  color: #041e42;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label:before {\n  background: #041e42;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label {\n  color: #ff7500;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label:before {\n  background: #ff7500;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label {\n  color: #a08629;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label:before {\n  background: #a08629;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label {\n  color: #193c63;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label:before {\n  background: #193c63;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label {\n  color: #00ce59;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label:before {\n  background: #00ce59;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label {\n  color: #ff0000;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label:before {\n  background: #ff0000;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked:disabled + label:before {\n  background: #9e9e9e;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked + label:after {\n  transform: translate(4px, 4.8076923077px) rotate(-45deg);\n  width: 7px;\n  height: 3.5px;\n  border: 2px solid white;\n  border-top-style: none;\n  border-right-style: none;\n}\n\nform .switch-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .switch-group label {\n  position: relative;\n  cursor: pointer;\n  margin: 0px 16px 20px 16px;\n  padding: 6px 0 6px 44px;\n}\n\nform .switch-group label:before, form .switch-group label:after {\n  content: \"\";\n  position: absolute;\n  margin: 0;\n  outline: 0;\n  top: 49%;\n  transform: translate(0, -50%);\n  transition: all 0.3s ease;\n}\n\nform .switch-group label:before {\n  left: -12px;\n  width: 40px;\n  height: 24px;\n  border-radius: 13px;\n}\n\nform .switch-group label:after {\n  left: -7px;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background-color: #fafafa;\n}\n\nform .switch-group label.switch-primary:before {\n  background-color: #041e42;\n}\n\nform .switch-group label.switch-secondary:before {\n  background-color: #ff7500;\n}\n\nform .switch-group label.switch-tertiary:before {\n  background-color: #a08629;\n}\n\nform .switch-group label.switch-accent:before {\n  background-color: #193c63;\n}\n\nform .switch-group label.switch-success:before {\n  background-color: #00ce59;\n}\n\nform .switch-group label.switch-error:before {\n  background-color: #ff0000;\n}\n\nform .switch-group label:disabled:before {\n  background-color: #9e9e9e;\n}\n\nform .switch-group input[type=checkbox] {\n  display: none;\n}\n\nform .switch-group input[type=checkbox]:checked + label:after {\n  transform: translate(125%, -50%);\n}\n\n.nav-container {\n  margin-bottom: 160px;\n}\n\n.nav-container .navbar {\n  width: 100%;\n  height: auto;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 9;\n  transition: ease 0.25s;\n}\n\n.nav-container .navbar.nav-hidden {\n  transition: ease 1s;\n  transform: translateY(-60px);\n}\n\n.nav-container .navbar.main-nav .top-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .top-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav .bottom-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .bottom-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar {\n  transition: ease 1s;\n  background-color: white;\n  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar .nav-btn {\n  color: black;\n}\n\n.nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n  width: 100%;\n  padding: 0px 60px;\n}\n\n.nav-container .navbar .top-bar {\n  height: 60px;\n  background-color: #041e42;\n}\n\n.nav-container .navbar .top-bar .nav-btn {\n  height: 60px;\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn.disabled {\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn-icon {\n  height: 60px;\n}\n\n.nav-container .navbar .bottom-bar {\n  height: 80px;\n  background-color: white;\n}\n\n.nav-container .navbar .bottom-bar .nav-btn,\n.nav-container .navbar .bottom-bar .nav-btn-icon {\n  height: 80px;\n}\n\n.nav-container .navbar .nav-btn,\n.nav-container .navbar .nav-btn-icon {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: auto;\n  float: left;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.nav-container .navbar .nav-btn.disabled,\n.nav-container .navbar .nav-btn-icon.disabled {\n  color: #757575;\n  cursor: default;\n}\n\n.nav-container .navbar .nav-btn.disabled:hover,\n.nav-container .navbar .nav-btn-icon.disabled:hover {\n  background-color: transparent;\n}\n\n.nav-container .navbar .nav-btn.active,\n.nav-container .navbar .nav-btn-icon.active {\n  font-weight: bold;\n  color: #a08629;\n}\n\n.nav-container .navbar .nav-btn {\n  padding: 16px;\n  text-transform: uppercase;\n}\n\n.nav-container .navbar .nav-btn .icon {\n  margin-right: 16px;\n}\n\n.nav-container .navbar .nav-btn:hover {\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n.nav-container .navbar .nav-btn-icon {\n  padding: 6px;\n}\n\n@media (max-width: 800px) {\n  .nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n    padding: 0px 15px;\n  }\n}\n\n@media (max-width: 768px) {\n  .nav-container {\n    margin-bottom: 100px;\n  }\n\n  .nav-container .navbar.nav-hidden {\n    transform: translateY(0px);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar {\n    transition: ease 1s;\n    background-color: white;\n    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar .nav-btn {\n    color: white;\n  }\n\n  .nav-container .navbar .top-bar.desktop-bar,\n.nav-container .navbar .bottom-bar.desktop-bar {\n    display: none;\n  }\n}\n\n@media (min-width: 769px) {\n  .nav-container .navbar .top-bar.mobile-bar,\n.nav-container .navbar .bottom-bar.mobile-bar {\n    display: none;\n  }\n}\n\n.pagination {\n  position: relative;\n  width: auto;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n}\n\n.pagination .btn {\n  height: 32px;\n  width: 32px;\n  margin: 0px;\n  padding: 0px;\n  font-size: 14px;\n  margin: 12px 6px;\n  border-radius: 50%;\n  background-color: #fff !important;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.pagination .btn.active {\n  background-color: #041e42 !important;\n  color: white;\n}\n\n.pagination .btn:disabled {\n  color: #aaaaaa;\n}\n\n.pagination .btn:disabled.prev-btn .prev-icon,\n.pagination .btn:disabled.prev-btn .next-icon, .pagination .btn:disabled.next-btn .prev-icon,\n.pagination .btn:disabled.next-btn .next-icon {\n  border-color: #aaaaaa;\n}\n\n.pagination .btn.prev-btn .prev-icon,\n.pagination .btn.prev-btn .next-icon, .pagination .btn.next-btn .prev-icon,\n.pagination .btn.next-btn .next-icon {\n  width: 8px;\n  height: 8px;\n  border: 2px solid #000;\n  transform: rotate(135deg);\n}\n\n.pagination .btn.prev-btn .prev-icon, .pagination .btn.next-btn .prev-icon {\n  border-top: none;\n  border-left: none;\n}\n\n.pagination .btn.prev-btn .next-icon, .pagination .btn.next-btn .next-icon {\n  border-bottom: none;\n  border-right: none;\n}\n\n.panel {\n  width: auto;\n  height: auto;\n  background-color: white;\n}\n\n.panel .panel-header {\n  width: inherit;\n  height: auto;\n  padding: 18px 9px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.panel .panel-header .header {\n  color: black;\n  font-weight: bold;\n  font-size: 13px;\n  text-transform: uppercase;\n}\n\n.panel .panel-header .icon.panel-icon {\n  margin-top: 4px;\n}\n\n.panel .panel-header .icon.panel-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\n.panel .panel-body {\n  height: auto;\n  width: 100%;\n  background-color: #ececec;\n  padding: 30px 0px;\n  border-bottom: thin solid black;\n  transform-origin: 0% 0%;\n}\n\n.panel .panel-body .btn {\n  width: 100%;\n  margin: 0px !important;\n  background-color: #ececec !important;\n  color: black !important;\n  text-align: left !important;\n  outline: none !important;\n}\n\n.parallax-container .parallax {\n  width: 100%;\n  top: 0;\n  left: 0;\n  background-position-y: 0;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.snackbar .snackbar-card {\n  height: auto;\n  width: auto;\n  min-width: 132px;\n  max-width: 485px;\n  overflow: hidden;\n  padding: 12px 24px;\n  position: fixed;\n  z-index: 9;\n  top: 16px;\n  right: 16px;\n  background-color: #405470;\n  color: #ffffff;\n  border-radius: 15px 15px 15px 0px;\n  transform-origin: bottom left;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.snackbar .snackbar-card .close-card {\n  position: absolute;\n  top: 0;\n  right: 15px;\n  font-size: 24px;\n  cursor: pointer;\n  color: white;\n}\n\n.snackbar .snackbar-action {\n  position: relative;\n  height: auto;\n  width: auto;\n  cursor: pointer;\n}\n\n@font-face {\n  font-family: \"Roboto-Regular\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Regular.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Regular.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Bold\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Bold.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Bold.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Light\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Light.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Light.ttf")) + ") format(\"truetype\");\n}\n\nhtml {\n  font-family: Roboto-Regular, sans-serif;\n  font-weight: normal;\n}\n\n.bold {\n  font-family: Roboto-Bold, sans-serif;\n  font-weight: bold;\n}\n\n.light {\n  font-family: Roboto-Light, sans-serif;\n  font-weight: lighter;\n}\n\n.title {\n  font-size: 55px;\n}\n\n.subtitle {\n  font-size: 34px;\n}\n\n.body {\n  font-size: 21px;\n}\n\n.caption {\n  font-size: 13px;\n}\n\n@media (min-width: 0px) {\n  .title-xs {\n    font-size: 55px;\n  }\n\n  .subtitle-xs {\n    font-size: 34px;\n  }\n\n  .body-xs {\n    font-size: 21px;\n  }\n\n  .caption-xs {\n    font-size: 13px;\n  }\n\n  .bold-xs {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xs {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 576px) {\n  .title-sm {\n    font-size: 55px;\n  }\n\n  .subtitle-sm {\n    font-size: 34px;\n  }\n\n  .body-sm {\n    font-size: 21px;\n  }\n\n  .caption-sm {\n    font-size: 13px;\n  }\n\n  .bold-sm {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-sm {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 768px) {\n  .title-md {\n    font-size: 55px;\n  }\n\n  .subtitle-md {\n    font-size: 34px;\n  }\n\n  .body-md {\n    font-size: 21px;\n  }\n\n  .caption-md {\n    font-size: 13px;\n  }\n\n  .bold-md {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-md {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 992px) {\n  .title-lg {\n    font-size: 55px;\n  }\n\n  .subtitle-lg {\n    font-size: 34px;\n  }\n\n  .body-lg {\n    font-size: 21px;\n  }\n\n  .caption-lg {\n    font-size: 13px;\n  }\n\n  .bold-lg {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-lg {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 1200px) {\n  .title-xl {\n    font-size: 55px;\n  }\n\n  .subtitle-xl {\n    font-size: 34px;\n  }\n\n  .body-xl {\n    font-size: 21px;\n  }\n\n  .caption-xl {\n    font-size: 13px;\n  }\n\n  .bold-xl {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xl {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\nbody::-webkit-scrollbar {\n  width: 0.5rem;\n}\n\nbody::-webkit-scrollbar-thumb {\n  background-color: #193c63;\n}", ""]);
+exports.push([module.i, ".btn {\n  position: relative;\n  margin: 20px 12px 0px 12px;\n  padding: 13px 26px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  border: none;\n  outline: none !important;\n  cursor: pointer;\n  outline: none;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.btn.full-width {\n  width: 100%;\n  margin: 20px 0px 0px 0px;\n}\n\n.btn.dark {\n  color: white;\n}\n\n.btn.large {\n  padding: 20px 40px;\n}\n\n.btn.large.rounded {\n  border-radius: 40px;\n}\n\n.btn.large.outlined {\n  border-width: 4.5px;\n  padding: 16.5px 36.5px;\n}\n\n.btn.small {\n  padding: 8px 18px;\n}\n\n.btn.small.rounded {\n  border-radius: 16px;\n}\n\n.btn.small.outlined {\n  border-width: 1.5px;\n  padding: 7px 17px;\n}\n\n.btn.rounded {\n  border-radius: 26px;\n}\n\n.btn.outlined {\n  background-color: transparent;\n  border-width: 3px;\n  border-style: solid;\n  padding: 11px 24px;\n}\n\n.btn.icon {\n  margin: 0px 8px;\n  padding: 0px;\n  background-color: transparent !important;\n}\n\n.card {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  border-radius: 15px 15px 15px 15px;\n  overflow: hidden;\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.card.no-shadow {\n  box-shadow: none !important;\n}\n\n.card.pointer-card {\n  cursor: pointer;\n}\n\n.card:not(.active-state):not(:hover) {\n  background: white !important;\n}\n\n.card.top-hover:hover {\n  background: white !important;\n}\n\n.card.top-hover:hover .image .card-image-content {\n  visibility: visible;\n  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .image {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card.full-hover:hover .image .card-image-content {\n  visibility: visible;\n  line-height: 1.2;\n}\n\n.card.full-hover:hover .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n  color: white;\n}\n\n.card.active-state .image {\n  display: none;\n}\n\n.card.active-state .card-text {\n  background: rgba(4, 30, 66, 0.66) !important;\n}\n\n.card .image {\n  width: inherit;\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n.card .image .card-image-content {\n  height: inherit;\n  visibility: hidden;\n  padding: 30px;\n  color: white;\n}\n\n.card .card-state {\n  float: left;\n  height: auto;\n  padding: 5px 20px;\n  text-align: center;\n  background-color: #ff7500;\n  margin-left: 12px;\n}\n\n.card .card-state.rounded {\n  border-radius: 20px;\n}\n\n.card .card-state.tile {\n  border-radius: none;\n}\n\n.card .card-text {\n  height: auto;\n  padding: 30px;\n  background-color: white;\n}\n\n.card .card-info {\n  padding: 13px;\n  background-color: #041e42;\n}\n\n.card .card-info .info-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.card .card-info .info-item .dot {\n  width: 7px;\n  height: 7px;\n  border-radius: 50%;\n}\n\n.card .card-info .info-item .dot.primary {\n  background-color: #041e42;\n}\n\n.card .card-info .info-item .dot.secondary {\n  background-color: #ff7500;\n}\n\n.card .card-info .info-item .dot.tertiary {\n  background-color: #a08629;\n}\n\n.card .card-info .info-item .dot.accent {\n  background-color: #193c63;\n}\n\n.card .card-info .info-item .dot.success {\n  background-color: #00ce59;\n}\n\n.card .card-info .info-item .dot.error {\n  background-color: #ff0000;\n}\n\n.card .card-info .info-item p {\n  margin: 0px 6px 0px 12px;\n}\n\n.card .card-selector {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 8;\n  background-color: rgba(160, 134, 41, 0.66);\n}\n\n.card .card-selector .check-circle {\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  margin: 6px;\n  background-color: #00ce59;\n}\n\n.card .card-selector .check-circle .checkmarck {\n  height: 10px;\n  width: 20px;\n  border: 4px solid #fff;\n  border-top: none;\n  border-right: none;\n  position: absolute;\n  top: 15px;\n  left: 13px;\n  transform: rotate(-45deg);\n}\n\n@media (max-width: 768px) {\n  .card .card-text {\n    padding: 15px;\n  }\n}\n\n.carousel-container {\n  display: flex;\n  justify-content: center;\n  overflow: hidden;\n  background-size: 100% 75%;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n\n.carousel-container .carousel {\n  width: 75%;\n  margin: auto;\n}\n\n.carousel-container .carousel .carousel-item {\n  padding: 0px 21px;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-navigation button {\n  outline: none;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot {\n  width: 12px !important;\n  height: 12px !important;\n  padding: 7px !important;\n  background-color: black !important;\n}\n\n.carousel-container .carousel .VueCarousel .VueCarousel-pagination .VueCarousel-dot-container .VueCarousel-dot.VueCarousel-dot--active {\n  background-color: #a08629 !important;\n}\n\n@media (max-width: 768px) {\n  .carousel-container {\n    background: none;\n  }\n\n  .carousel-container .carousel {\n    width: 100%;\n  }\n\n  .carousel-container .carousel .carousel-item {\n    width: 100%;\n    padding: 0 12px;\n    margin: auto;\n  }\n}\n\n.primary {\n  background-color: #041e42;\n}\n\n.secondary {\n  background-color: #ff7500;\n}\n\n.tertiary {\n  background-color: #a08629;\n}\n\n.accent {\n  background-color: #193c63;\n}\n\n.success {\n  background-color: #00ce59;\n}\n\n.error {\n  background-color: #ff0000;\n}\n\n.black {\n  background-color: black;\n}\n\n.white {\n  background-color: white;\n}\n\n.default {\n  background-color: #aaaa;\n}\n\n.primary-text {\n  color: #041e42;\n}\n\n.secondary-text {\n  color: #ff7500;\n}\n\n.tertiary-text {\n  color: #a08629;\n}\n\n.accent-text {\n  color: #193c63;\n}\n\n.success-text {\n  color: #00ce59;\n}\n\n.error-text {\n  color: #ff0000;\n}\n\n.black-text {\n  color: black;\n}\n\n.white-text {\n  color: white;\n}\n\n.default-text {\n  color: #aaaa;\n}\n\n.primary-border {\n  border-color: #041e42;\n}\n\n.secondary-border {\n  border-color: #ff7500;\n}\n\n.tertiary-border {\n  border-color: #a08629;\n}\n\n@media (min-width: 0px) {\n  .primary-xs {\n    background-color: #041e42;\n  }\n\n  .secondary-xs {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xs {\n    background-color: #a08629;\n  }\n\n  .accent-xs {\n    background-color: #193c63;\n  }\n\n  .success-xs {\n    background-color: #00ce59;\n  }\n\n  .error-xs {\n    background-color: #ff0000;\n  }\n\n  .black-xs {\n    background-color: black;\n  }\n\n  .white-xs {\n    background-color: white;\n  }\n\n  .primary-text-xs {\n    color: #041e42;\n  }\n\n  .secondary-text-xs {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xs {\n    color: #a08629;\n  }\n\n  .accent-text-xs {\n    color: #193c63;\n  }\n\n  .success-text-xs {\n    color: #00ce59;\n  }\n\n  .error-text-xs {\n    color: #ff0000;\n  }\n\n  .black-text-xs {\n    color: black;\n  }\n\n  .white-text-xs {\n    color: white;\n  }\n}\n\n@media (min-width: 576px) {\n  .primary-sm {\n    background-color: #041e42;\n  }\n\n  .secondary-sm {\n    background-color: #ff7500;\n  }\n\n  .tertiary-sm {\n    background-color: #a08629;\n  }\n\n  .accent-sm {\n    background-color: #193c63;\n  }\n\n  .success-sm {\n    background-color: #00ce59;\n  }\n\n  .error-sm {\n    background-color: #ff0000;\n  }\n\n  .black-sm {\n    background-color: black;\n  }\n\n  .white-sm {\n    background-color: white;\n  }\n\n  .primary-text-sm {\n    color: #041e42;\n  }\n\n  .secondary-text-sm {\n    color: #ff7500;\n  }\n\n  .tertiary-text-sm {\n    color: #a08629;\n  }\n\n  .accent-text-sm {\n    color: #193c63;\n  }\n\n  .success-text-sm {\n    color: #00ce59;\n  }\n\n  .error-text-sm {\n    color: #ff0000;\n  }\n\n  .black-text-sm {\n    color: black;\n  }\n\n  .white-text-sm {\n    color: white;\n  }\n}\n\n@media (min-width: 768px) {\n  .primary-md {\n    background-color: #041e42;\n  }\n\n  .secondary-md {\n    background-color: #ff7500;\n  }\n\n  .tertiary-md {\n    background-color: #a08629;\n  }\n\n  .accent-md {\n    background-color: #193c63;\n  }\n\n  .success-md {\n    background-color: #00ce59;\n  }\n\n  .error-md {\n    background-color: #ff0000;\n  }\n\n  .black-md {\n    background-color: black;\n  }\n\n  .white-md {\n    background-color: white;\n  }\n\n  .primary-text-md {\n    color: #041e42;\n  }\n\n  .secondary-text-md {\n    color: #ff7500;\n  }\n\n  .tertiary-text-md {\n    color: #a08629;\n  }\n\n  .accent-text-md {\n    color: #193c63;\n  }\n\n  .success-text-md {\n    color: #00ce59;\n  }\n\n  .error-text-md {\n    color: #ff0000;\n  }\n\n  .black-text-md {\n    color: black;\n  }\n\n  .white-text-md {\n    color: white;\n  }\n}\n\n@media (min-width: 992px) {\n  .primary-lg {\n    background-color: #041e42;\n  }\n\n  .secondary-lg {\n    background-color: #ff7500;\n  }\n\n  .tertiary-lg {\n    background-color: #a08629;\n  }\n\n  .accent-lg {\n    background-color: #193c63;\n  }\n\n  .success-lg {\n    background-color: #00ce59;\n  }\n\n  .error-lg {\n    background-color: #ff0000;\n  }\n\n  .black-lg {\n    background-color: black;\n  }\n\n  .white-lg {\n    background-color: white;\n  }\n\n  .primary-text-lg {\n    color: #041e42;\n  }\n\n  .secondary-text-lg {\n    color: #ff7500;\n  }\n\n  .tertiary-text-lg {\n    color: #a08629;\n  }\n\n  .accent-text-lg {\n    color: #193c63;\n  }\n\n  .success-text-lg {\n    color: #00ce59;\n  }\n\n  .error-text-lg {\n    color: #ff0000;\n  }\n\n  .black-text-lg {\n    color: black;\n  }\n\n  .white-text-lg {\n    color: white;\n  }\n}\n\n@media (min-width: 1200px) {\n  .primary-xl {\n    background-color: #041e42;\n  }\n\n  .secondary-xl {\n    background-color: #ff7500;\n  }\n\n  .tertiary-xl {\n    background-color: #a08629;\n  }\n\n  .accent-xl {\n    background-color: #193c63;\n  }\n\n  .success-xl {\n    background-color: #00ce59;\n  }\n\n  .error-xl {\n    background-color: #ff0000;\n  }\n\n  .black-xl {\n    background-color: black;\n  }\n\n  .white-xl {\n    background-color: white;\n  }\n\n  .primary-text-xl {\n    color: #041e42;\n  }\n\n  .secondary-text-xl {\n    color: #ff7500;\n  }\n\n  .tertiary-text-xl {\n    color: #a08629;\n  }\n\n  .accent-text-xl {\n    color: #193c63;\n  }\n\n  .success-text-xl {\n    color: #00ce59;\n  }\n\n  .error-text-xl {\n    color: #ff0000;\n  }\n\n  .black-text-xl {\n    color: black;\n  }\n\n  .white-text-xl {\n    color: white;\n  }\n}\n\nform {\n  position: relative;\n}\n\nform .input-container {\n  height: auto;\n  margin-bottom: 32px;\n}\n\nform .input-container .input-group,\nform .input-container .select-group {\n  height: auto;\n  min-height: 42px;\n  position: relative;\n  width: 100%;\n  background-color: white;\n  border: thin solid black;\n  border-radius: 21px;\n  padding: 0px 19px;\n  display: flex;\n  align-items: center;\n}\n\nform .input-container .input-group.dark,\nform .input-container .select-group.dark {\n  border-color: white;\n}\n\nform .input-container .input-group.dark input.active ~ label,\nform .input-container .input-group.dark textarea.active ~ label,\nform .input-container .select-group.dark input.active ~ label,\nform .input-container .select-group.dark textarea.active ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:focus ~ label,\nform .input-container .input-group.dark textarea:focus ~ label,\nform .input-container .select-group.dark input:focus ~ label,\nform .input-container .select-group.dark textarea:focus ~ label {\n  color: white;\n}\n\nform .input-container .input-group.dark input:placeholder-shown ~ label,\nform .input-container .input-group.dark textarea:placeholder-shown ~ label,\nform .input-container .select-group.dark input:placeholder-shown ~ label,\nform .input-container .select-group.dark textarea:placeholder-shown ~ label {\n  color: white;\n}\n\nform .input-container .input-group .icon,\nform .input-container .select-group .icon {\n  position: relative;\n}\n\nform .input-container .input-group .icon.before,\nform .input-container .select-group .icon.before {\n  margin: 0px 8px 0px 0px;\n}\n\nform .input-container .input-group .icon.after,\nform .input-container .select-group .icon.after {\n  margin: 0px 0px 0px 8px;\n}\n\nform .input-container .input-group .icon img,\nform .input-container .select-group .icon img {\n  height: 16px !important;\n  width: 16px !important;\n}\n\nform .input-container .input-group.tile,\nform .input-container .select-group.tile {\n  border-radius: 0px;\n  padding: 0px 12px;\n}\n\nform .input-container .input-group .input-label,\nform .input-container .select-group .input-label {\n  height: 100%;\n  width: inherit;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .input-container .input-group .input-label input,\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label input,\nform .input-container .select-group .input-label textarea {\n  height: inherit;\n  width: inherit;\n  font-size: 13px;\n  padding: 12px 0px;\n  border: none;\n}\n\nform .input-container .input-group .input-label input.active ~ label,\nform .input-container .input-group .input-label textarea.active ~ label,\nform .input-container .select-group .input-label input.active ~ label,\nform .input-container .select-group .input-label textarea.active ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input.active ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea.active ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input.active ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea.active ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:focus ~ label,\nform .input-container .input-group .input-label textarea:focus ~ label,\nform .input-container .select-group .input-label input:focus ~ label,\nform .input-container .select-group .input-label textarea:focus ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:focus ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea:focus ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input:focus ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea:focus ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label,\nform .input-container .select-group .input-label input:placeholder-shown ~ label,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label {\n  transform: translateY(-34px);\n}\n\nform .input-container .input-group .input-label input:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .input-group .input-label textarea:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label input:placeholder-shown ~ label .snackbar .snackbar-action,\nform .input-container .select-group .input-label textarea:placeholder-shown ~ label .snackbar .snackbar-action {\n  display: block;\n}\n\nform .input-container .input-group .input-label input:focus,\nform .input-container .input-group .input-label textarea:focus,\nform .input-container .select-group .input-label input:focus,\nform .input-container .select-group .input-label textarea:focus {\n  outline: none;\n}\n\nform .input-container .input-group .input-label textarea,\nform .input-container .select-group .input-label textarea {\n  border: none;\n  outline: none;\n  resize: none;\n  overflow: none;\n  height: 125px;\n}\n\nform .input-container .input-group .input-label textarea ~ label,\nform .input-container .select-group .input-label textarea ~ label {\n  top: 10px;\n}\n\nform .input-container .input-group .input-label label,\nform .input-container .select-group .input-label label {\n  color: #000;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  position: absolute;\n  display: flex;\n  flex-direction: row;\n  transition: 0.25s ease all;\n  -moz-transition: 0.25s ease all;\n  -webkit-transition: 0.25s ease all;\n}\n\nform .input-container .input-group .input-label label .snackbar .snackbar-action,\nform .input-container .select-group .input-label label .snackbar .snackbar-action {\n  display: none;\n  margin: 0px 12px;\n}\n\nform .input-container .input-group.disabled {\n  border-color: #9e9e9e;\n}\n\nform .input-container .input-group .input-label input:disabled,\nform .input-container .input-group .input-label textarea:disabled {\n  background-color: white;\n}\n\nform .input-container .input-group .input-label input:disabled ~ label,\nform .input-container .input-group .input-label textarea:disabled ~ label {\n  color: #9e9e9e;\n}\n\nform .input-container .select-group {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .icon.select-icon {\n  margin-top: 0px;\n}\n\nform .input-container .select-group .icon.select-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\nform .input-container .select-group .input-label {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input {\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-group .input-label input:disabled {\n  background-color: white;\n}\n\nform .input-container .select-options {\n  height: auto;\n  position: absolute;\n  z-index: 9;\n  border-radius: 21px;\n  margin: 8px 0px;\n  overflow: hidden;\n  transform-origin: 0% 0%;\n  border: thin solid black;\n  background-color: white;\n}\n\nform .input-container .select-options.tile {\n  border-radius: 0px;\n}\n\nform .input-container .select-options .opt {\n  position: relative;\n  padding: 12px 32px;\n  font-size: 13px;\n  text-transform: uppercase;\n  overflow: hidden;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .input-container .select-options .opt:hover {\n  background-color: rgba(0, 0, 0, 0.15);\n}\n\nform .input-container .error-input {\n  margin: 2px 0px 0px 21px;\n  font-size: 13px;\n  color: #ff0000;\n}\n\nform .checkbox-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  padding: 0px 19px;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\nform .checkbox-group label {\n  font-size: 13px;\n  color: black;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\nform .checkbox-group label:before, form .checkbox-group label:after {\n  content: \"\";\n  position: absolute;\n  left: 10px;\n  top: 2px;\n}\n\nform .checkbox-group label:before {\n  width: 15px;\n  height: 15px;\n  background: #fff;\n  border: 1px solid #000;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n\nform .checkbox-group input[type=checkbox] {\n  outline: 0;\n  visibility: hidden;\n  width: 15px;\n  margin: 0;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label {\n  color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:disabled + label:before {\n  border-color: #9e9e9e;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label {\n  color: #041e42;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-primary + label:before {\n  background: #041e42;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label {\n  color: #ff7500;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-secondary + label:before {\n  background: #ff7500;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label {\n  color: #a08629;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-tertiary + label:before {\n  background: #a08629;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label {\n  color: #193c63;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-accent + label:before {\n  background: #193c63;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label {\n  color: #00ce59;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-success + label:before {\n  background: #00ce59;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label {\n  color: #ff0000;\n}\n\nform .checkbox-group input[type=checkbox]:checked.checkbox-error + label:before {\n  background: #ff0000;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked:disabled + label:before {\n  background: #9e9e9e;\n  border: none;\n}\n\nform .checkbox-group input[type=checkbox]:checked + label:after {\n  transform: translate(4px, 4.8076923077px) rotate(-45deg);\n  width: 7px;\n  height: 3.5px;\n  border: 2px solid white;\n  border-top-style: none;\n  border-right-style: none;\n}\n\nform .switch-group {\n  position: relative;\n  width: 100%;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\nform .switch-group label {\n  position: relative;\n  cursor: pointer;\n  margin: 0px 16px 20px 16px;\n  padding: 6px 0 6px 44px;\n}\n\nform .switch-group label:before, form .switch-group label:after {\n  content: \"\";\n  position: absolute;\n  margin: 0;\n  outline: 0;\n  top: 49%;\n  transform: translate(0, -50%);\n  transition: all 0.3s ease;\n}\n\nform .switch-group label:before {\n  left: -12px;\n  width: 40px;\n  height: 24px;\n  border-radius: 13px;\n}\n\nform .switch-group label:after {\n  left: -7px;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background-color: #fafafa;\n}\n\nform .switch-group label.switch-primary:before {\n  background-color: #041e42;\n}\n\nform .switch-group label.switch-secondary:before {\n  background-color: #ff7500;\n}\n\nform .switch-group label.switch-tertiary:before {\n  background-color: #a08629;\n}\n\nform .switch-group label.switch-accent:before {\n  background-color: #193c63;\n}\n\nform .switch-group label.switch-success:before {\n  background-color: #00ce59;\n}\n\nform .switch-group label.switch-error:before {\n  background-color: #ff0000;\n}\n\nform .switch-group label:disabled:before {\n  background-color: #9e9e9e;\n}\n\nform .switch-group input[type=checkbox] {\n  display: none;\n}\n\nform .switch-group input[type=checkbox]:checked + label:after {\n  transform: translate(125%, -50%);\n}\n\n.nav-container {\n  margin-bottom: 160px;\n}\n\n.nav-container .navbar {\n  width: 100%;\n  height: auto;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 9;\n  transition: ease 0.25s;\n}\n\n.nav-container .navbar.nav-hidden {\n  transition: ease 1s;\n  transform: translateY(-60px);\n}\n\n.nav-container .navbar.main-nav .top-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .top-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav .bottom-bar {\n  background-color: transparent;\n}\n\n.nav-container .navbar.main-nav .bottom-bar .nav-btn {\n  color: white;\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar {\n  transition: ease 1s;\n  background-color: white;\n  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n}\n\n.nav-container .navbar.main-nav.nav-hidden .bottom-bar .nav-btn {\n  color: black;\n}\n\n.nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n  width: 100%;\n  padding: 0px 60px;\n}\n\n.nav-container .navbar .top-bar {\n  height: 60px;\n  background-color: #041e42;\n}\n\n.nav-container .navbar .top-bar .nav-btn {\n  height: 60px;\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn.disabled {\n  color: white;\n}\n\n.nav-container .navbar .top-bar .nav-btn-icon {\n  height: 60px;\n}\n\n.nav-container .navbar .bottom-bar {\n  height: 80px;\n  background-color: white;\n}\n\n.nav-container .navbar .bottom-bar .nav-btn,\n.nav-container .navbar .bottom-bar .nav-btn-icon {\n  height: 80px;\n}\n\n.nav-container .navbar .nav-btn,\n.nav-container .navbar .nav-btn-icon {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: auto;\n  float: left;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.nav-container .navbar .nav-btn.disabled,\n.nav-container .navbar .nav-btn-icon.disabled {\n  color: #757575;\n  cursor: default;\n}\n\n.nav-container .navbar .nav-btn.disabled:hover,\n.nav-container .navbar .nav-btn-icon.disabled:hover {\n  background-color: transparent;\n}\n\n.nav-container .navbar .nav-btn.active,\n.nav-container .navbar .nav-btn-icon.active {\n  font-weight: bold;\n  color: #a08629;\n}\n\n.nav-container .navbar .nav-btn {\n  padding: 16px;\n  text-transform: uppercase;\n}\n\n.nav-container .navbar .nav-btn .icon {\n  margin-right: 16px;\n}\n\n.nav-container .navbar .nav-btn:hover {\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n.nav-container .navbar .nav-btn-icon {\n  padding: 6px;\n}\n\n@media (max-width: 800px) {\n  .nav-container .navbar .top-bar,\n.nav-container .navbar .bottom-bar {\n    padding: 0px 15px;\n  }\n}\n\n@media (max-width: 768px) {\n  .nav-container {\n    margin-bottom: 100px;\n  }\n\n  .nav-container .navbar.nav-hidden {\n    transform: translateY(0px);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar {\n    transition: ease 1s;\n    background-color: white;\n    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);\n  }\n\n  .nav-container .navbar.main-nav.nav-hidden .top-bar .nav-btn {\n    color: white;\n  }\n\n  .nav-container .navbar .top-bar.desktop-bar,\n.nav-container .navbar .bottom-bar.desktop-bar {\n    display: none;\n  }\n}\n\n@media (min-width: 769px) {\n  .nav-container .navbar .top-bar.mobile-bar,\n.nav-container .navbar .bottom-bar.mobile-bar {\n    display: none;\n  }\n}\n\n.pagination {\n  position: relative;\n  width: auto;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n}\n\n.pagination .btn {\n  height: 32px;\n  width: 32px;\n  margin: 0px;\n  padding: 0px;\n  font-size: 14px;\n  margin: 12px 6px;\n  border-radius: 50%;\n  background-color: #fff !important;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.pagination .btn.active {\n  background-color: #041e42 !important;\n  color: white;\n}\n\n.pagination .btn:disabled {\n  color: #aaaaaa;\n}\n\n.pagination .btn:disabled.prev-btn .prev-icon,\n.pagination .btn:disabled.prev-btn .next-icon, .pagination .btn:disabled.next-btn .prev-icon,\n.pagination .btn:disabled.next-btn .next-icon {\n  border-color: #aaaaaa;\n}\n\n.pagination .btn.prev-btn .prev-icon,\n.pagination .btn.prev-btn .next-icon, .pagination .btn.next-btn .prev-icon,\n.pagination .btn.next-btn .next-icon {\n  width: 8px;\n  height: 8px;\n  border: 2px solid #000;\n  transform: rotate(135deg);\n}\n\n.pagination .btn.prev-btn .prev-icon, .pagination .btn.next-btn .prev-icon {\n  border-top: none;\n  border-left: none;\n}\n\n.pagination .btn.prev-btn .next-icon, .pagination .btn.next-btn .next-icon {\n  border-bottom: none;\n  border-right: none;\n}\n\n.panel {\n  width: auto;\n  height: auto;\n  background-color: white;\n}\n\n.panel .panel-header {\n  width: inherit;\n  height: auto;\n  padding: 18px 9px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  cursor: pointer;\n  -moz-user-disabled: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n}\n\n.panel .panel-header .header {\n  color: black;\n  font-weight: bold;\n  font-size: 13px;\n  text-transform: uppercase;\n}\n\n.panel .panel-header .icon.panel-icon {\n  margin-top: 4px;\n}\n\n.panel .panel-header .icon.panel-icon img {\n  height: 18px !important;\n  width: 18px !important;\n}\n\n.panel .panel-body {\n  height: auto;\n  width: 100%;\n  background-color: #ececec;\n  padding: 30px 0px;\n  border-bottom: thin solid black;\n  transform-origin: 0% 0%;\n}\n\n.panel .panel-body .btn {\n  width: 100%;\n  margin: 0px !important;\n  background-color: #ececec !important;\n  color: black !important;\n  text-align: left !important;\n  outline: none !important;\n}\n\n.parallax-container .parallax {\n  width: 100%;\n  top: 0;\n  left: 0;\n  background-position-y: 0;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n.snackbar .snackbar-card {\n  height: auto;\n  width: auto;\n  min-width: 132px;\n  max-width: 485px;\n  overflow: hidden;\n  padding: 12px 24px;\n  position: fixed;\n  z-index: 9;\n  top: 16px;\n  right: 16px;\n  background-color: #405470;\n  color: #ffffff;\n  border-radius: 15px 15px 15px 0px;\n  transform-origin: bottom left;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n\n.snackbar .snackbar-card .close-card {\n  position: absolute;\n  top: 0;\n  right: 15px;\n  font-size: 24px;\n  cursor: pointer;\n  color: white;\n}\n\n.snackbar .snackbar-action {\n  position: relative;\n  height: auto;\n  width: auto;\n  cursor: pointer;\n}\n\n@font-face {\n  font-family: \"Roboto-Regular\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Regular.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Regular.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Bold\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Bold.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Bold.ttf")) + ") format(\"truetype\");\n}\n\n@font-face {\n  font-family: \"Roboto-Light\";\n\n  src: url(" + escape(__webpack_require__(/*! ../fonts/Roboto-Light.ttf */ "./resources/js/components/wlinii_components/fonts/Roboto-Light.ttf")) + ") format(\"truetype\");\n}\n\nhtml {\n  font-family: Roboto-Regular, sans-serif;\n  font-weight: normal;\n}\n\n.bold {\n  font-family: Roboto-Bold, sans-serif;\n  font-weight: bold;\n}\n\n.light {\n  font-family: Roboto-Light, sans-serif;\n  font-weight: lighter;\n}\n\n.title {\n  font-size: 55px;\n}\n\n.subtitle {\n  font-size: 34px;\n}\n\n.body {\n  font-size: 21px;\n}\n\n.caption {\n  font-size: 13px;\n}\n\n@media (min-width: 0px) {\n  .title-xs {\n    font-size: 55px;\n  }\n\n  .subtitle-xs {\n    font-size: 34px;\n  }\n\n  .body-xs {\n    font-size: 21px;\n  }\n\n  .caption-xs {\n    font-size: 13px;\n  }\n\n  .bold-xs {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xs {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 576px) {\n  .title-sm {\n    font-size: 55px;\n  }\n\n  .subtitle-sm {\n    font-size: 34px;\n  }\n\n  .body-sm {\n    font-size: 21px;\n  }\n\n  .caption-sm {\n    font-size: 13px;\n  }\n\n  .bold-sm {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-sm {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 768px) {\n  .title-md {\n    font-size: 55px;\n  }\n\n  .subtitle-md {\n    font-size: 34px;\n  }\n\n  .body-md {\n    font-size: 21px;\n  }\n\n  .caption-md {\n    font-size: 13px;\n  }\n\n  .bold-md {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-md {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 992px) {\n  .title-lg {\n    font-size: 55px;\n  }\n\n  .subtitle-lg {\n    font-size: 34px;\n  }\n\n  .body-lg {\n    font-size: 21px;\n  }\n\n  .caption-lg {\n    font-size: 13px;\n  }\n\n  .bold-lg {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-lg {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n@media (min-width: 1200px) {\n  .title-xl {\n    font-size: 55px;\n  }\n\n  .subtitle-xl {\n    font-size: 34px;\n  }\n\n  .body-xl {\n    font-size: 21px;\n  }\n\n  .caption-xl {\n    font-size: 13px;\n  }\n\n  .bold-xl {\n    font-family: Roboto-Bold, sans-serif;\n    font-weight: bold;\n  }\n\n  .light-xl {\n    font-family: Roboto-Light, sans-serif;\n    font-weight: lighter;\n  }\n}\n\n* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\nbody::-webkit-scrollbar {\n  width: 0.5rem;\n}\n\nbody::-webkit-scrollbar-thumb {\n  background-color: #193c63;\n}", ""]);
 
 // exports
 
@@ -9755,7 +9791,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".logged {\n  height: 100%;\n}\n.logged .logged-container {\n  height: inherit;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  padding: 4px;\n}\n.logged .logged-container .notification-btn {\n  position: relative;\n}\n.logged .logged-container .notification-btn .badge {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  text-align: center;\n  background-color: #000;\n  color: white;\n  font-size: 12px;\n}\n.logged .avatar {\n  width: 45px;\n  height: 45px;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n.logged .dropdown {\n  align-self: center;\n}\n.logged .dropdown .drop-header {\n  color: white;\n  font-size: 13px;\n  display: flex;\n  flex-direction: row;\n  cursor: pointer;\n}\n.logged .dropdown .drop-header .arrow {\n  width: 10px;\n  height: 10px;\n  border: 2px solid white;\n  border-top: none;\n  border-right: none;\n  margin: 2px 0px 0px 12px;\n  transform: rotate(-45deg);\n}\n.logged .dropdown .drop-body {\n  position: absolute;\n  top: 82px;\n  right: 56px;\n  display: flex;\n  flex-direction: column;\n  background-color: white;\n  padding: 26px;\n  border-radius: 15px 15px 15px 15px;\n  transform-origin: 0 0;\n}\n.logged .dropdown .drop-body .btn {\n  display: flex;\n  flex-direction: row;\n  margin: 0px !important;\n  padding-left: 0px !important;\n  background-color: white !important;\n}\n.logged .dropdown .drop-body .btn .icon,\n.logged .dropdown .drop-body .btn p {\n  align-self: center;\n}\n.logged .dropdown .drop-body .btn .icon {\n  margin-right: 12px;\n}", ""]);
+exports.push([module.i, ".logged {\n  height: 100%;\n}\n.logged .logged-container {\n  height: inherit;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  padding: 4px;\n}\n.logged .logged-container .notification-btn {\n  position: relative;\n}\n.logged .logged-container .notification-btn .badge {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  text-align: center;\n  background-color: #000;\n  color: white;\n  font-size: 12px;\n}\n.logged .avatar {\n  width: 45px;\n  height: 45px;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n.logged .dropdown {\n  align-self: center;\n}\n.logged .dropdown .drop-header {\n  color: white;\n  font-size: 13px;\n  display: flex;\n  flex-direction: row;\n  cursor: pointer;\n}\n.logged .dropdown .drop-header .arrow {\n  width: 10px;\n  height: 10px;\n  border: 2px solid white;\n  border-top: none;\n  border-right: none;\n  margin: 2px 0px 0px 12px;\n  transform: rotate(-45deg);\n}\n.logged .dropdown .drop-body {\n  position: absolute;\n  top: 82px;\n  right: 56px;\n  display: flex;\n  flex-direction: column;\n  background-color: white;\n  padding: 26px;\n  border-radius: 15px 15px 15px 15px;\n  transform-origin: 0 0;\n  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);\n}\n.logged .dropdown .drop-body .noti-drop {\n  max-width: 355px;\n}\n.logged .dropdown .drop-body .noti-drop .avatar {\n  width: 62px;\n  height: 62px;\n}\n.logged .dropdown .drop-body .divider {\n  border: 1px solid #aaaa;\n}\n.logged .dropdown .drop-body .load-more {\n  width: 100%;\n  padding: 26px 12px 0px 12px;\n  text-align: center;\n  cursor: pointer;\n}\n.logged .dropdown .drop-body .btn {\n  display: flex;\n  flex-direction: row;\n  margin: 0px !important;\n  padding-left: 0px !important;\n  background-color: white !important;\n}\n.logged .dropdown .drop-body .btn .icon,\n.logged .dropdown .drop-body .btn p {\n  align-self: center;\n}\n.logged .dropdown .drop-body .btn .icon {\n  margin-right: 12px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/agentes/Perfil.vue?vue&type=style&index=0&lang=scss&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/agentes/Perfil.vue?vue&type=style&index=0&lang=scss& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".agent-component .agent-img {\n  width: 90%;\n  height: auto;\n  max-width: 290px;\n}", ""]);
 
 // exports
 
@@ -9812,26 +9867,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home .home-container {\n  padding: 165px 150px 0px 150px;\n}\n.home .home-container .home-title {\n  font-size: 55px;\n  font-weight: bold;\n  text-align: left;\n  color: white;\n}\n.home .banner-card.card:not(.active-state):not(:hover) {\n  background: transparent !important;\n}\n.home .banner-card.card:hover {\n  background-color: transparent !important;\n}\n.home .banner-card.card .card-text {\n  background-color: rgba(0, 0, 0, 0.66);\n  padding-right: 50px;\n  padding-left: 50px;\n}\n.home .banner-card.card .icon {\n  margin-left: 10px;\n}\n.home .parallax-tag {\n  position: absolute;\n  bottom: -86px;\n  left: 5%;\n  width: 90%;\n  background-color: #041e42;\n  border-top: 2px solid #a08629;\n  padding: 32px 64px;\n  border-radius: 0px 0px 15px 15px;\n}\n.home .home-fix {\n  border: 2px solid transparent;\n  margin-bottom: 128px;\n}\n.home .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n  margin: auto;\n}\n.home .home-item {\n  text-align: center;\n  padding: 50px;\n}\n.home .home-item .icon img {\n  margin: auto !important;\n}\n.home .agent-carousel .carousel {\n  width: 95%;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 48px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 48px !important;\n}\n.home .publi-banner {\n  background-image: url(\"/images/banners/2.png\");\n  text-align: center;\n}\n.home .graph-banner {\n  background-image: url(\"/images/banners/3.png\");\n}\n.home .publi-banner,\n.home .graph-banner {\n  background-size: cover;\n  background-position: center center;\n  padding: 85px 75px;\n}\n@media (max-width: 768px) {\n.home .home-container {\n    padding: 128px 48px 0px 48px;\n}\n.home .home-container .home-title {\n    font-size: 45px;\n    font-weight: bold;\n    text-align: center;\n    color: white;\n}\n.publi-banner {\n    background-position: top right !important;\n    padding-right: 12px !important;\n    padding-left: 12px !important;\n}\n.parallax-tag {\n    bottom: -230px !important;\n    left: 0 !important;\n    width: 100% !important;\n    border-top: none !important;\n}\n.home-fix {\n    margin-bottom: 300px !important;\n}\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&":
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".test-container {\n  max-width: 60%;\n  margin: auto;\n}", ""]);
+exports.push([module.i, ".home .home-container {\n  padding: 165px 150px 0px 150px;\n}\n.home .home-container .home-title {\n  font-size: 55px;\n  font-weight: bold;\n  text-align: left;\n  color: white;\n}\n.home .banner-card.card:not(.active-state):not(:hover) {\n  background: transparent !important;\n}\n.home .banner-card.card:hover {\n  background-color: transparent !important;\n}\n.home .banner-card.card .card-text {\n  background-color: rgba(0, 0, 0, 0.66);\n  padding-right: 50px;\n  padding-left: 50px;\n}\n.home .banner-card.card .icon {\n  margin-left: 10px;\n}\n.home .parallax-tag {\n  position: absolute;\n  bottom: -86px;\n  left: 5%;\n  width: 90%;\n  background-color: #041e42;\n  border-top: 2px solid #a08629;\n  padding: 32px 64px;\n  border-radius: 0px 0px 15px 15px;\n}\n.home .home-fix {\n  border: 2px solid transparent;\n  margin-bottom: 128px;\n}\n.home .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n  margin: auto;\n}\n.home .home-item {\n  text-align: center;\n  padding: 50px;\n}\n.home .home-item .icon img {\n  margin: auto !important;\n}\n.home .agent-carousel .carousel {\n  width: 95%;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 48px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 48px !important;\n}\n.home .publi-banner {\n  background-image: url(\"/images/banners/2.png\");\n  text-align: center;\n}\n.home .graph-banner {\n  background-image: url(\"/images/banners/3.png\");\n}\n.home .publi-banner,\n.home .graph-banner {\n  background-size: cover;\n  background-position: center center;\n  padding: 85px 75px;\n}\n@media (max-width: 1024px) {\n.home .home-container {\n    padding: 165px 48px 0px 48px;\n}\n.home .home-container .home-title {\n    font-size: 45px;\n    font-weight: bold;\n    text-align: center;\n    color: white;\n}\n.parallax-tag {\n    bottom: -200px !important;\n}\n.home-fix {\n    margin-bottom: 200px !important;\n}\n}\n@media (max-width: 768px) {\n.home .home-container {\n    padding: 128px 48px 0px 48px;\n}\n.publi-banner {\n    background-position: top right !important;\n    padding-right: 12px !important;\n    padding-left: 12px !important;\n}\n.parallax-tag {\n    bottom: -190px !important;\n    left: 0 !important;\n    width: 100% !important;\n    border-top: none !important;\n}\n.home-fix {\n    margin-bottom: 300px !important;\n}\n}", ""]);
 
 // exports
 
@@ -9869,7 +9905,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".agente-perfil-container[data-v-748f6370] {\n  width: 90%;\n  margin: auto;\n}\n@media (max-width: 768px) {\n.agente-perfil-container[data-v-748f6370] {\n    width: 95%;\n    margin: auto;\n}\n}", ""]);
+exports.push([module.i, ".agente-perfil-container[data-v-748f6370] {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}", ""]);
 
 // exports
 
@@ -9888,7 +9924,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".amc-1 .amc-container {\n  width: 95%;\n  margin: auto;\n}\n.amc-1 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-1 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n@media (max-width: 768px) {\n.amc-1 .amc-container {\n    width: 100%;\n}\n}", ""]);
+exports.push([module.i, ".amc-1 .amc-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.amc-1 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-1 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-1 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}", ""]);
 
 // exports
 
@@ -9907,7 +9943,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".amc-2 .amc-container {\n  width: 95%;\n  margin: auto;\n}\n.amc-2 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-2 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-2 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-2 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n.amc-2 .amc-container .alert {\n  border-radius: 8px;\n  padding: 18px 36px;\n}\n.amc-2 .amc-container .filter {\n  background-color: white;\n}\n.amc-2 .amc-container .filter .filter-header {\n  width: 100%;\n  background-color: #ff7500;\n  color: white;\n  text-align: center;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 12px;\n}\n.amc-2 .amc-container .filter .filter-body {\n  padding: 12px;\n}\n@media (max-width: 768px) {\n.amc-2 .amc-container {\n    width: 100%;\n}\n}", ""]);
+exports.push([module.i, ".amc-2 .amc-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.amc-2 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-2 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-2 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-2 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n.amc-2 .amc-container .alert {\n  border-radius: 8px;\n  padding: 18px 36px;\n}\n.amc-2 .amc-container .filter {\n  background-color: white;\n}\n.amc-2 .amc-container .filter .filter-header {\n  width: 100%;\n  background-color: #ff7500;\n  color: white;\n  text-align: center;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 12px;\n}\n.amc-2 .amc-container .filter .filter-body {\n  padding: 12px;\n}", ""]);
 
 // exports
 
@@ -9926,7 +9962,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".amc-4 .amc-container {\n  max-width: 90%;\n  margin: auto;\n}\n.amc-4 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-4 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-4 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-4 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n.amc-4 .amc-container .amc-table-container {\n  padding: 0px 20px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table {\n  background-color: rgba(170, 170, 170, 0.18);\n  overflow: hidden;\n  width: 100%;\n  border-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th,\n.amc-4 .amc-container .amc-table-container table.amc-table td {\n  text-align: left;\n  padding: 32px 64px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th {\n  background-color: rgba(170, 170, 170, 0.18);\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:first-child {\n  border-bottom-left-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:last-child {\n  border-bottom-right-radius: 32px;\n}\n.amc-4 .amc-container .alert {\n  border-radius: 31px;\n  padding: 34px 75px;\n}\n@media (max-width: 768px) {\n.amc-4 .amc-container {\n    width: 95%;\n}\n.amc-4 .amc-container .step-btn {\n    padding: 5px 25px;\n    margin: 20px 0px !important;\n}\n.amc-4 .amc-container .amc-table-container {\n    padding: 0px !important;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th,\n.amc-4 .amc-container .amc-table-container table.amc-table td {\n    padding: 16px 32px !important;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table .hidden-cell {\n    display: none;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:first-child {\n    border-bottom-left-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:not(.hidden-cell):not(:first-child) {\n    border-bottom-right-radius: 32px;\n}\n.amc-4 .amc-container .alert {\n    border-radius: 31px;\n    padding: 14px 45px;\n}\n}", ""]);
+exports.push([module.i, ".amc-4 .amc-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.amc-4 .amc-container .step-btn {\n  padding: 5px 25px;\n  margin: 20px 18px;\n}\n.amc-4 .amc-container .amc-progress {\n  width: inherit;\n  margin: 20px 0px;\n}\n.amc-4 .amc-container .amc-progress[value]::-webkit-progress-bar {\n  background-color: #aaaaaa;\n  border-radius: 15px;\n}\n.amc-4 .amc-container .amc-progress[value]::-webkit-progress-value {\n  background-color: #ff7500;\n  border-radius: 15px;\n}\n.amc-4 .amc-container .amc-table-container {\n  padding: 0px 20px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table {\n  background-color: rgba(170, 170, 170, 0.18);\n  overflow: hidden;\n  width: 100%;\n  border-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th,\n.amc-4 .amc-container .amc-table-container table.amc-table td {\n  text-align: left;\n  padding: 32px 48px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th {\n  background-color: rgba(170, 170, 170, 0.18);\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:first-child {\n  border-bottom-left-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:last-child {\n  border-bottom-right-radius: 32px;\n}\n.amc-4 .amc-container .alert {\n  border-radius: 31px;\n  padding: 34px 75px;\n}\n@media (max-width: 1024px) {\n.amc-4 .amc-container .step-btn {\n    padding: 5px 25px;\n    margin: 20px 0px !important;\n}\n.amc-4 .amc-container .amc-table-container {\n    padding: 0px !important;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th,\n.amc-4 .amc-container .amc-table-container table.amc-table td {\n    padding: 16px 32px !important;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table .hidden-cell {\n    display: none;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:first-child {\n    border-bottom-left-radius: 32px;\n}\n.amc-4 .amc-container .amc-table-container table.amc-table th:not(.hidden-cell):not(:first-child) {\n    border-bottom-right-radius: 32px;\n}\n.amc-4 .amc-container .alert {\n    border-radius: 31px;\n    padding: 14px 45px;\n}\n}", ""]);
 
 // exports
 
@@ -9945,7 +9981,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".login .login-container {\n  padding: 75px 150px;\n}\n.login .login-container .login-card {\n  display: flex !important;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n}\n.login .login-container .login-card .image,\n.login .login-container .login-card .card-text {\n  max-width: 50%;\n  height: 490px !important;\n  flex: 1 1 auto;\n}\n.login .login-container .login-card .card-text {\n  padding: 65px;\n}\n.login .login-link {\n  color: #000;\n  text-decoration: underline;\n  cursor: pointer;\n}\n@media (max-width: 1024px) {\n.login .login-container .login-card {\n    justify-content: center;\n}\n.login .login-container .login-card .image {\n    display: none;\n}\n.login .login-container .login-card .card-text {\n    max-width: 100% !important;\n    flex: 0 1 auto;\n    padding: 25px;\n}\n}\n@media (max-width: 768px) {\n.login .login-container {\n    padding: 15px;\n}\n}", ""]);
+exports.push([module.i, ".login .login-container {\n  padding: 75px 150px;\n}\n.login .login-container .login-card {\n  display: flex !important;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  max-width: 982px;\n}\n.login .login-container .login-card .image,\n.login .login-container .login-card .card-text {\n  max-width: 50%;\n  height: 490px !important;\n  flex: 1 1 auto;\n}\n.login .login-container .login-card .card-text {\n  padding: 65px;\n}\n.login .login-link {\n  color: #000;\n  text-decoration: underline;\n  cursor: pointer;\n}\n@media (max-width: 1024px) {\n.login .login-container .login-card {\n    justify-content: center;\n}\n.login .login-container .login-card .image {\n    display: none;\n}\n.login .login-container .login-card .card-text {\n    max-width: 100% !important;\n    flex: 0 1 auto;\n    padding: 25px;\n}\n}\n@media (max-width: 768px) {\n.login .login-container {\n    padding: 15px;\n}\n}", ""]);
 
 // exports
 
@@ -9964,7 +10000,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".register {\n  margin-top: -20px;\n}\n.register .register-container {\n  background-image: url(\"/images/banners/3.png\");\n  background-size: 100% 425px;\n  background-repeat: no-repeat;\n  background-position: top center;\n  padding: 75px 250px;\n}\n.register .register-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.register .register-container .register-card .card-text {\n  padding: 40px 95px;\n}\n.register .register-container .register-card .register-btn {\n  padding: 12px 56px;\n}\n.register .register-container .register-card .primary-alert {\n  background-color: #041e42;\n  color: white;\n  padding: 24px;\n  border-radius: 15px 15px 15px 15px;\n}\n.register .register-container .register-card .grey-alert {\n  background-color: #eeeeee;\n  border: thin #9e9e9e solid;\n  color: black;\n  padding: 24px;\n  border-radius: 15px 15px 15px 15px;\n  margin: 20px 0px 40px 0px;\n}\n@media (max-width: 1024px) {\n.register .register-container .register-card .card-text {\n    padding: 25px;\n}\n}\n@media (max-width: 768px) {\n.register .register-container {\n    padding: 45px 15px;\n}\n}", ""]);
+exports.push([module.i, ".register {\n  margin-top: -20px;\n}\n.register .register-container {\n  background-image: url(\"/images/banners/3.png\");\n  background-size: 100% 425px;\n  background-repeat: no-repeat;\n  background-position: top center;\n  padding: 75px 0px;\n}\n.register .register-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.register .register-container .responsive-register {\n  width: 90%;\n  max-width: 768px;\n  margin: auto;\n}\n.register .register-container .responsive-register .register-card .card-text {\n  padding: 40px 95px;\n}\n.register .register-container .responsive-register .register-card .register-btn {\n  padding: 12px 56px;\n}\n.register .register-container .responsive-register .register-card .primary-alert {\n  background-color: #041e42;\n  color: white;\n  padding: 24px;\n  border-radius: 15px 15px 15px 15px;\n}\n.register .register-container .responsive-register .register-card .grey-alert {\n  background-color: #eeeeee;\n  border: thin #9e9e9e solid;\n  color: black;\n  padding: 24px;\n  border-radius: 15px 15px 15px 15px;\n  margin: 20px 0px 40px 0px;\n}\n@media (max-width: 768px) {\n.register .register-container {\n    padding: 45px 15px;\n}\n.register .register-container .responsive-register .register-card .card-text {\n    padding: 25px;\n}\n}", ""]);
 
 // exports
 
@@ -9983,7 +10019,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".register {\n  margin-top: -20px;\n}\n.register .register-container {\n  background-image: url(\"/images/banners/3.png\");\n  background-size: 100% 425px;\n  background-repeat: no-repeat;\n  background-position: top center;\n  padding: 75px 250px;\n}\n.register .register-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.register .register-container .register-card .card-text {\n  padding: 40px 95px;\n}\n.register .register-container .register-card .register-btn {\n  padding: 12px 56px;\n}\n@media (max-width: 1024px) {\n.register .register-container .register-card .card-text {\n    padding: 25px;\n}\n}\n@media (max-width: 768px) {\n.register .register-container {\n    padding: 45px 15px;\n}\n}", ""]);
+exports.push([module.i, ".register {\n  margin-top: -20px;\n}\n.register .register-success-container {\n  background-image: url(\"/images/banners/3.png\");\n  background-size: 100% 425px;\n  background-repeat: no-repeat;\n  background-position: top center;\n  padding: 75px 0px;\n}\n.register .register-success-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.register .register-success-container .responsive-register {\n  width: 90%;\n  max-width: 768px;\n  margin: auto;\n}\n.register .register-success-container .responsive-register .register-card .card-text {\n  padding: 40px 95px;\n}\n.register .register-success-container .responsive-register .register-card .register-btn {\n  padding: 12px 56px;\n}\n@media (max-width: 768px) {\n.register .register-success-container {\n    padding: 45px 15px;\n}\n.register .register-success-container .responsive-register .register-card .card-text {\n    padding: 25px;\n}\n}", ""]);
 
 // exports
 
@@ -10002,7 +10038,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".brocker-container {\n  width: 90%;\n  margin: auto;\n}\n.brocker-container .brocker-img {\n  width: 290px;\n  height: 370px;\n  background-image: url(\"/images/banners/3.png\");\n  background-repeat: no-repeat;\n  background-position: top center;\n}\n.brocker-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.brocker-container .full-divider {\n  height: 0px;\n  width: 100%;\n  border: thin solid rgba(4, 30, 66, 0.12);\n}\n.brocker-container .user-row .card-text {\n  background-color: #f5f5f5;\n}\n.brocker-container .user-row .card-text .user-check {\n  cursor: pointer;\n  padding: 6px 0px;\n  border-radius: 5px;\n}\n.brocker-container .user-row .card-text .user-check.user-check-active {\n  background-color: #041e42;\n  color: white;\n}\n.brocker-container .user-row .card-text .user-check .avatar {\n  width: 45px;\n  height: 45px;\n  margin: auto;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n.brocker-container .user-card .card-text {\n  background-color: #f5f5f5;\n  padding: 16px;\n}\n.brocker-container .user-card .card-text .user-check {\n  cursor: pointer;\n  padding: 8px 16px;\n  border-radius: 5px;\n}\n.brocker-container .user-card .card-text .user-check.user-check-active {\n  background-color: #041e42;\n  color: white;\n}\n.brocker-container .user-card .card-text .user-check .avatar {\n  width: 52px;\n  height: 52px;\n  margin: auto;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n@media (max-width: 764px) {\n.brocker-container {\n    width: 95%;\n    font-size: 12px;\n}\n}", ""]);
+exports.push([module.i, ".brocker-container {\n  width: 90%;\n  margin: auto;\n}\n.brocker-container .brocker-img {\n  width: 90%;\n  height: 370px;\n  max-width: 290px;\n  max-height: 370px;\n  background-image: url(\"/images/banners/3.png\");\n  background-repeat: no-repeat;\n  background-position: top center;\n}\n.brocker-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.brocker-container .full-divider {\n  height: 0px;\n  width: 100%;\n  border: thin solid rgba(4, 30, 66, 0.12);\n}\n.brocker-container .user-row .card-text {\n  background-color: #f5f5f5;\n}\n.brocker-container .user-row .card-text .user-check {\n  cursor: pointer;\n  padding: 6px 0px;\n  border-radius: 5px;\n}\n.brocker-container .user-row .card-text .user-check.user-check-active {\n  background-color: #041e42;\n  color: white;\n}\n.brocker-container .user-row .card-text .user-check .avatar {\n  width: 45px;\n  height: 45px;\n  margin: auto;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n.brocker-container .user-card .card-text {\n  background-color: #f5f5f5;\n  padding: 16px;\n}\n.brocker-container .user-card .card-text .user-check {\n  cursor: pointer;\n  padding: 8px 16px;\n  border-radius: 5px;\n}\n.brocker-container .user-card .card-text .user-check.user-check-active {\n  background-color: #041e42;\n  color: white;\n}\n.brocker-container .user-card .card-text .user-check .avatar {\n  width: 52px;\n  height: 52px;\n  margin: auto;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n@media (max-width: 764px) {\n.brocker-container {\n    width: 95%;\n    font-size: 12px;\n}\n}", ""]);
 
 // exports
 
@@ -10021,7 +10057,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".inmuebles-container[data-v-7dfa4026] {\n  width: 95%;\n  margin: auto;\n}\n@media (max-width: 764px) {\n.inmuebles-container[data-v-7dfa4026] {\n    width: 100%;\n}\n}\n.filter[data-v-7dfa4026] {\n  background-color: white;\n}\n.filter .filter-header[data-v-7dfa4026] {\n  width: 100%;\n  background-color: #ff7500;\n  color: white;\n  text-align: center;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 12px;\n}\n.filter .filter-body[data-v-7dfa4026] {\n  padding: 12px;\n}", ""]);
+exports.push([module.i, ".inmuebles-container[data-v-7dfa4026] {\n  width: 95%;\n  margin: auto;\n}\n.inmuebles-container .float-filter[data-v-7dfa4026] {\n  position: absolute;\n  z-index: 4;\n  left: 30px;\n}\n@media (max-width: 764px) {\n.inmuebles-container[data-v-7dfa4026] {\n    width: 100%;\n}\n}\n.filter[data-v-7dfa4026] {\n  background-color: white;\n}\n.filter .filter-header[data-v-7dfa4026] {\n  width: 100%;\n  background-color: #ff7500;\n  color: white;\n  text-align: center;\n  font-size: 13px;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 12px;\n}\n.filter .filter-body[data-v-7dfa4026] {\n  padding: 12px;\n}", ""]);
 
 // exports
 
@@ -10097,7 +10133,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".publicacion-detalle .detalle-container {\n  width: 90%;\n  margin: auto;\n}\n.publicacion-detalle .detalle-container .m-btn:not(.full-width) {\n  margin: 6px 18px;\n}\n.publicacion-detalle .detalle-container .media-player {\n  position: relative;\n}\n.publicacion-detalle .detalle-container .media-player .media-content {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding: 26px 0px 52px 0px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.publicacion-detalle .detalle-container .media-player .media-content:hover .media-control {\n  display: inline;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-state {\n  background-color: #ff7500;\n  width: auto;\n  height: auto;\n  max-height: 45px;\n  margin-left: -16px;\n  padding: 14px 32px;\n  font-size: 13px;\n  color: white;\n  text-align: center;\n  text-transform: uppercase;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-control {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  display: none;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-description-container {\n  background-color: rgba(4, 30, 66, 0.9);\n  align-self: flex-end;\n  padding: 32px 56px;\n  height: auto;\n  width: auto;\n  max-height: 164px;\n  max-width: 456px;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-description-container .media-description {\n  max-height: 96px;\n  color: white;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.publicacion-detalle .detalle-container .media-carousel {\n  margin-top: -68px;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel {\n  width: 95%;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 38px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 38px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item {\n  width: 100%;\n  height: 100%;\n  padding: 0px 12px;\n  cursor: pointer;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source {\n  position: relative;\n  width: inherit;\n  height: inherit;\n  border: 4px solid #fff;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source.active {\n  border-color: #041e42;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source .icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source img,\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source video {\n  width: inherit;\n  height: inherit;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source .media-banner {\n  background-color: #ff7500;\n  width: 145px;\n  height: 45px;\n  padding: 12px 32px;\n  font-size: 13px;\n  color: white;\n  text-align: center;\n  text-transform: uppercase;\n  position: absolute;\n}\n.publicacion-detalle .detalle-container .vertical-divider {\n  width: 0px;\n  height: 100%;\n  border: 1px solid rgba(0, 0, 0, 0.66);\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel {\n  width: 100%;\n  padding: 0px 20px;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item {\n  padding: 0px 20px;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item .feature-card .card-text {\n  background-color: #041e42;\n  color: white;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item .feature-card .card-text .divider {\n  width: 72px;\n  height: 0px;\n  border: 1px solid #a08629;\n}\n.publicacion-detalle .detalle-container .feature-banner {\n  background-color: rgba(130, 145, 167, 0.15);\n  border-radius: 15px;\n  padding: 32px 0px;\n  margin: 0px 24px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  flex-wrap: nowrap;\n}\n.publicacion-detalle .detalle-container .feature-banner .banner-item {\n  padding: 0px 24px;\n}\n.publicacion-detalle .detalle-container .feature-banner .banner-item:not(:first-child) {\n  border-left: 1px solid rgba(0, 0, 0, 0.66);\n}\n.publicacion-detalle .detalle-container .perfil-agente-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.publicacion-detalle .detalle-container .perfil-agente-container .full-divider {\n  height: 0px;\n  width: 100%;\n  border: thin solid rgba(4, 30, 66, 0.12);\n}\n@media (max-width: 768px) {\n.publicacion-detalle .detalle-container {\n    width: 95%;\n}\n.media-carousel {\n    margin-top: 0px !important;\n}\n.media-carousel .carousel {\n    width: 100% !important;\n}\n.media-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n    height: 35px !important;\n    width: 35px !important;\n    padding: 0px !important;\n}\n.media-carousel .carousel .VueCarousel .VueCarousel-navigation button img {\n    height: inherit !important;\n}\n.media-carousel .carousel .media-item {\n    padding: 0px 2px !important;\n}\n.media-carousel .carousel .media-item .media-source {\n    border: none !important;\n}\n.feature-carousel .carousel .feature-item {\n    padding: 0px 60px !important;\n}\n.feature-banner {\n    margin: 0px !important;\n    padding: 16px 0px !important;\n    flex-wrap: wrap !important;\n}\n.feature-banner .banner-item {\n    padding: 12px 24px !important;\n    border: none !important;\n}\n}", ""]);
+exports.push([module.i, ".publicacion-detalle .detalle-container {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.publicacion-detalle .detalle-container .m-btn:not(.full-width) {\n  margin: 6px 18px;\n}\n.publicacion-detalle .detalle-container .media-player {\n  position: relative;\n}\n.publicacion-detalle .detalle-container .media-player .media-content {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding: 26px 0px 52px 0px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.publicacion-detalle .detalle-container .media-player .media-content:hover .media-control {\n  display: inline;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-state {\n  background-color: #ff7500;\n  width: auto;\n  height: auto;\n  max-height: 45px;\n  margin-left: -16px;\n  padding: 14px 32px;\n  font-size: 13px;\n  color: white;\n  text-align: center;\n  text-transform: uppercase;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-control {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  display: none;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-description-container {\n  background-color: rgba(4, 30, 66, 0.9);\n  align-self: flex-end;\n  padding: 32px 56px;\n  height: auto;\n  width: auto;\n  max-height: 164px;\n  max-width: 456px;\n}\n.publicacion-detalle .detalle-container .media-player .media-content .media-description-container .media-description {\n  max-height: 96px;\n  color: white;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.publicacion-detalle .detalle-container .media-carousel {\n  margin-top: -68px;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel {\n  width: 95%;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 38px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 38px !important;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item {\n  width: 100%;\n  height: 100%;\n  padding: 0px 12px;\n  cursor: pointer;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source {\n  position: relative;\n  width: inherit;\n  height: inherit;\n  border: 4px solid #fff;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source.active {\n  border-color: #041e42;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source .icon {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source img,\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source video {\n  width: inherit;\n  height: inherit;\n}\n.publicacion-detalle .detalle-container .media-carousel .carousel .media-item .media-source .media-banner {\n  background-color: #ff7500;\n  width: 145px;\n  height: 45px;\n  padding: 12px 32px;\n  font-size: 13px;\n  color: white;\n  text-align: center;\n  text-transform: uppercase;\n  position: absolute;\n}\n.publicacion-detalle .detalle-container .vertical-divider {\n  width: 0px;\n  height: 100%;\n  border: 1px solid rgba(0, 0, 0, 0.66);\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel {\n  width: 100%;\n  padding: 0px 20px;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item {\n  padding: 0px 20px;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item .feature-card .card-text {\n  background-color: #041e42;\n  color: white;\n}\n.publicacion-detalle .detalle-container .feature-carousel .carousel .feature-item .feature-card .card-text .divider {\n  width: 72px;\n  height: 0px;\n  border: 1px solid #a08629;\n}\n.publicacion-detalle .detalle-container .feature-banner {\n  background-color: rgba(130, 145, 167, 0.15);\n  border-radius: 15px;\n  padding: 32px 0px;\n  margin: 0px 24px;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  flex-wrap: nowrap;\n}\n.publicacion-detalle .detalle-container .feature-banner .banner-item {\n  padding: 0px 24px;\n}\n.publicacion-detalle .detalle-container .feature-banner .banner-item:not(:first-child) {\n  border-left: 1px solid rgba(0, 0, 0, 0.66);\n}\n.publicacion-detalle .detalle-container .perfil-agente-container .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n}\n.publicacion-detalle .detalle-container .perfil-agente-container .full-divider {\n  height: 0px;\n  width: 100%;\n  border: thin solid rgba(4, 30, 66, 0.12);\n}\n@media (max-width: 768px) {\n.publicacion-detalle .detalle-container {\n    width: 95%;\n}\n.media-carousel {\n    margin-top: 0px !important;\n}\n.media-carousel .carousel {\n    width: 100% !important;\n}\n.media-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n    height: 35px !important;\n    width: 35px !important;\n    padding: 0px !important;\n}\n.media-carousel .carousel .VueCarousel .VueCarousel-navigation button img {\n    height: inherit !important;\n}\n.media-carousel .carousel .media-item {\n    padding: 0px 2px !important;\n}\n.media-carousel .carousel .media-item .media-source {\n    border: none !important;\n}\n.feature-carousel .carousel .feature-item {\n    padding: 0px 60px !important;\n}\n.feature-banner {\n    margin: 0px !important;\n    padding: 16px 0px !important;\n    flex-wrap: wrap !important;\n}\n.feature-banner .banner-item {\n    padding: 12px 24px !important;\n    border: none !important;\n}\n}", ""]);
 
 // exports
 
@@ -10116,7 +10152,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".nueva_publicacion .container_publicacion {\n  width: 90%;\n  padding: 25px 0px;\n  margin: auto;\n}\n.nueva_publicacion .container_publicacion .f-header {\n  margin: 0px 0px 42px 20px;\n  font-weight: bold;\n  font-size: 21px;\n  color: #a08629;\n}\n.nueva_publicacion .container_publicacion .form-section {\n  margin: 42px 0px;\n}\n.nueva_publicacion .container_publicacion .form-section .form-header {\n  margin: 0px 0px 42px 20px;\n  font-weight: bold;\n  font-size: 21px;\n  color: #a08629;\n}\n.nueva_publicacion .container_publicacion .form-section .form-header .icon {\n  display: none;\n}\n.nueva_publicacion .container_publicacion .upload-file-card {\n  border: 1px solid #e6e6e6;\n}\n.nueva_publicacion .container_publicacion .upload-file-card .card-text {\n  background-color: #fcfcfc;\n}\n.nueva_publicacion .container_publicacion .upload-file-card .card-text .fileInput {\n  cursor: pointer;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 99;\n  font-size: 50px;\n  opacity: 0;\n  -moz-opacity: 0;\n  filter: Alpha(opacity=0);\n}\n@media (max-width: 768px) {\n.nueva_publicacion .container_publicacion .form-section {\n    margin: 42px 0px;\n}\n.nueva_publicacion .container_publicacion .form-section .form-header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    background-color: #e3e3e3;\n    margin-left: 0px;\n    padding: 8px 24px;\n    border-radius: 32px;\n    cursor: pointer;\n}\n.nueva_publicacion .container_publicacion .form-section .form-header .icon {\n    display: block;\n    margin-top: 8px;\n}\n.nueva_publicacion .container_publicacion .form-section .form-header.header-active .icon img {\n    transform: rotate(180deg);\n}\n}", ""]);
+exports.push([module.i, ".nueva-publicacion .container-nueva-publicacion {\n  padding: 25px 0px;\n  margin: auto;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion {\n  width: 90%;\n  max-width: 1180px;\n  margin: auto;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .f-header {\n  margin: 0px 0px 42px 20px;\n  font-weight: bold;\n  font-size: 21px;\n  color: #a08629;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .form-section {\n  margin: 42px 0px;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .form-section .form-header {\n  margin: 0px 0px 42px 20px;\n  font-weight: bold;\n  font-size: 21px;\n  color: #a08629;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .form-section .form-header .icon {\n  display: none;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .upload-file-card {\n  border: 1px solid #e6e6e6;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .upload-file-card .card-text {\n  background-color: #fcfcfc;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .upload-file-card .card-text .fileInput {\n  cursor: pointer;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 99;\n  font-size: 50px;\n  opacity: 0;\n  -moz-opacity: 0;\n  filter: Alpha(opacity=0);\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel {\n  width: 95%;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 38px !important;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 38px !important;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .preview-slide {\n  padding: 12px;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .preview-slide .preview-item {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .preview-slide .preview-item .preview-source {\n  position: relative;\n  width: 225px;\n  height: 125px;\n  overflow: hidden;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .preview-slide .preview-item .preview-source .delete-icon {\n  position: absolute;\n  width: 24px;\n  height: 24px;\n  font-size: 18px;\n  border-radius: 50%;\n  color: white;\n  background-color: #ff0000;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  top: 8px;\n  left: 8px;\n  cursor: pointer;\n  display: none;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .preview-slide .preview-item .preview-source:hover .delete-icon {\n  display: flex;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .preview-slide .preview-item .preview-source img,\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .preview .preview-carousel .carousel .preview-slide .preview-item .preview-source video {\n  width: auto;\n  height: auto;\n}\n@media (max-width: 768px) {\n.nueva-publicacion .container-nueva-publicacion {\n    padding: 25px 0px;\n    margin: auto;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion {\n    width: 90%;\n    max-width: 1180px;\n    margin: auto;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion {\n    margin: 42px 0px;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .form-header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    background-color: #e3e3e3;\n    margin-left: 0px;\n    padding: 8px 24px;\n    border-radius: 32px;\n    cursor: pointer;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .form-header .icon {\n    display: block;\n    margin-top: 8px;\n}\n.nueva-publicacion .container-nueva-publicacion .responsive-nueva-publicacion .card-nueva-publicacion .form-header.header-active .icon img {\n    transform: rotate(180deg);\n}\n}", ""]);
 
 // exports
 
@@ -28431,6 +28467,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/agentes/Perfil.vue?vue&type=style&index=0&lang=scss&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/agentes/Perfil.vue?vue&type=style&index=0&lang=scss& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./Perfil.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/agentes/Perfil.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/mapas/Mapas.vue?vue&type=style&index=0&lang=scss&":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/mapas/Mapas.vue?vue&type=style&index=0&lang=scss& ***!
@@ -28500,36 +28566,6 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Home.vue?vue&type=style&index=0&lang=scss&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Test.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -30188,6 +30224,7 @@ var render = function() {
               expression: "handleScroll"
             }
           ],
+          class: _vm.currentPath == "/login" ? "hidden" : "",
           attrs: { main: _vm.currentPath == "/" }
         },
         [
@@ -30251,7 +30288,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "custom-items-margin" },
+                    { staticClass: "custom-items-margin hidden lg:block" },
                     [
                       _c("w-nav-btn", {
                         attrs: { icon: "facebook-white", iconH: "16px" }
@@ -30656,28 +30693,176 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    {
+      directives: [
+        {
+          name: "scroll",
+          rawName: "v-scroll",
+          value: _vm.handleScroll,
+          expression: "handleScroll"
+        }
+      ]
+    },
     [
       _c("div", { staticClass: "logged" }, [
         _c("div", { staticClass: "logged-container" }, [
           _c(
             "div",
-            { staticClass: "notification-btn mr-3" },
+            { staticClass: "dropdown" },
             [
               _c(
-                "w-btn",
-                {
-                  attrs: { icon: true },
-                  on: {
-                    click: function($event) {
-                      return _vm.$router.push("/notificaciones")
-                    }
-                  }
-                },
-                [_c("w-icon", { attrs: { icon: "notification", h: "45px" } })],
+                "div",
+                { staticClass: "notification-btn mr-3" },
+                [
+                  _c(
+                    "w-btn",
+                    {
+                      attrs: { icon: true },
+                      on: {
+                        click: function($event) {
+                          return _vm.showNoti()
+                        }
+                      }
+                    },
+                    [
+                      _c("w-icon", {
+                        attrs: { icon: "notification", h: "45px" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "badge" }, [_vm._v("3")])
+                ],
                 1
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "badge" }, [_vm._v("3")])
+              _c(
+                "transition",
+                {
+                  on: {
+                    enter: function($event) {
+                      return _vm.enterDrop("notiDrop")
+                    }
+                  }
+                },
+                [
+                  _vm.notiDrop
+                    ? _c(
+                        "div",
+                        { ref: "notiDrop", staticClass: "drop-body" },
+                        [
+                          _vm._l(_vm.notifications, function(noti, i) {
+                            return _c(
+                              "div",
+                              { key: i, staticClass: "noti-drop" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "flex flex-row justify-between flex-wrap"
+                                  },
+                                  [
+                                    _c("div", { staticClass: "w-1/4" }, [
+                                      _c("div", { staticClass: "avatar" }, [
+                                        _c("img", {
+                                          attrs: { src: noti.image }
+                                        })
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "w-3/4 flex flex-col-reverse justify-between"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "w-full flex flex-row justify-between flex-wrap"
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "w-full" },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "bold ml-2" },
+                                                  [_vm._v(_vm._s(noti.name))]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "w-full self-center px-2"
+                                              },
+                                              [
+                                                _c("p", [
+                                                  _vm._v(_vm._s(noti.content))
+                                                ])
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "w-full self-center px-2"
+                                              },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass:
+                                                      "bold text-left mb-5 mt-1"
+                                                  },
+                                                  [_vm._v(_vm._s(noti.date))]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "divider" }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "load-more",
+                              on: {
+                                click: function($event) {
+                                  _vm.$router.push("/notificaciones")
+                                  _vm.notiDrop = false
+                                }
+                              }
+                            },
+                            [
+                              _c("p", { staticClass: "bold" }, [
+                                _vm._v("VER MÁS NOTIFICACIONES")
+                              ])
+                            ]
+                          )
+                        ],
+                        2
+                      )
+                    : _vm._e()
+                ]
+              )
             ],
             1
           ),
@@ -30707,42 +30892,52 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("transition", { on: { enter: _vm.enterDrop } }, [
-                    _vm.drop
-                      ? _c(
-                          "div",
-                          { ref: "dropElement", staticClass: "drop-body" },
-                          _vm._l(_vm.actions, function(action, i) {
-                            return _c(
-                              "w-btn",
-                              {
-                                key: i,
-                                attrs: { fullwidth: true },
-                                on: {
-                                  click: function($event) {
-                                    action.path
-                                      ? _vm.surf(action.path)
-                                      : _vm.logout()
+                  _c(
+                    "transition",
+                    {
+                      on: {
+                        enter: function($event) {
+                          return _vm.enterDrop("userDrop")
+                        }
+                      }
+                    },
+                    [
+                      _vm.drop
+                        ? _c(
+                            "div",
+                            { ref: "userDrop", staticClass: "drop-body" },
+                            _vm._l(_vm.actions, function(action, i) {
+                              return _c(
+                                "w-btn",
+                                {
+                                  key: i,
+                                  attrs: { fullwidth: true },
+                                  on: {
+                                    click: function($event) {
+                                      action.path
+                                        ? _vm.surf(action.path)
+                                        : _vm.logout()
+                                    }
                                   }
-                                }
-                              },
-                              [
-                                _c("w-icon", {
-                                  attrs: { icon: action.icon, h: "15px" }
-                                }),
-                                _vm._v(
-                                  "\n                            " +
-                                    _vm._s(action.name) +
-                                    "\n                        "
-                                )
-                              ],
-                              1
-                            )
-                          }),
-                          1
-                        )
-                      : _vm._e()
-                  ])
+                                },
+                                [
+                                  _c("w-icon", {
+                                    attrs: { icon: action.icon, h: "15px" }
+                                  }),
+                                  _vm._v(
+                                    "\n                            " +
+                                      _vm._s(action.name) +
+                                      "\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            }),
+                            1
+                          )
+                        : _vm._e()
+                    ]
+                  )
                 ],
                 1
               )
@@ -30819,26 +31014,160 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex flex-row justify-between flex-wrap" }, [
-    _c("div", { staticClass: "w-full md:w-1/3" }, [
-      _vm._m(0),
+  return _c(
+    "div",
+    { staticClass: "flex flex-row justify-between flex-wrap agent-component" },
+    [
+      _c("div", { staticClass: "w-full md:w-1/3" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex flex-col items-center flex-wrap" }, [
+          _c("div", { staticClass: "w-full flex flex-row justify-center" }, [
+            _c("img", {
+              staticClass: "agent-img",
+              attrs: { src: _vm.agent.img }
+            })
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "hidden md:w-full md:flex md:flex-row md:justify-center md:flex-wrap"
+            },
+            [
+              _c("p", { staticClass: "my-3" }, [
+                _vm._v("Valoración del agente")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "w-full flex flex-row justify-center" },
+                _vm._l(5, function(i) {
+                  return _c(
+                    "w-btn",
+                    {
+                      key: i,
+                      staticStyle: { margin: "2px" },
+                      attrs: { icon: true, disabled: true }
+                    },
+                    [
+                      _c("w-icon", {
+                        attrs: {
+                          icon:
+                            _vm.agent.stars >= i ? "star-brown" : "star-grey",
+                          h: "14px"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                }),
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "w-full flex flex-row justify-center my-5" },
+                [
+                  _c(
+                    "w-btn",
+                    { attrs: { icon: true } },
+                    [_c("w-icon", { attrs: { icon: "mail-grey", h: "12px" } })],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "w-btn",
+                    { attrs: { icon: true } },
+                    [
+                      _c("w-icon", {
+                        attrs: { icon: "facebook-grey", h: "15px" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "w-btn",
+                    { attrs: { icon: true } },
+                    [
+                      _c("w-icon", {
+                        attrs: { icon: "linkedin-grey", h: "17px" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "w-btn",
+                    { attrs: { icon: true } },
+                    [
+                      _c("w-icon", {
+                        attrs: { icon: "twitter-grey", h: "15px" }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ]
+          )
+        ])
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "flex flex-col items-center flex-wrap" }, [
-        _c("div", { staticClass: "w-full flex flex-row justify-center" }, [
-          _c("img", {
-            attrs: { src: _vm.agent.img, width: "290", height: "auto" }
-          })
+      _c("div", { staticClass: "w-full md:w-2/3" }, [
+        _c("div", { staticClass: "hidden md:block" }, [
+          _c(
+            "div",
+            { staticClass: "flex justify-between items-center" },
+            [
+              _c("p", { staticClass: "bold" }, [_vm._v("PERFIL AGENTES")]),
+              _vm._v(" "),
+              _c(
+                "w-snackbar",
+                { staticClass: "mt-1" },
+                [
+                  _c("w-icon", { attrs: { icon: "info", h: "24px" } }),
+                  _vm._v(" "),
+                  _c("template", { slot: "content" }, [
+                    _c("p", { staticClass: "bold" }, [_vm._v("Importante!")]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
+                      )
+                    ])
+                  ])
+                ],
+                2
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "divider my-5" })
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "hidden md:w-full md:flex md:flex-row md:justify-center md:flex-wrap"
-          },
-          [
-            _c("p", { staticClass: "my-3" }, [_vm._v("Valoración del agente")]),
-            _vm._v(" "),
+        _c("p", { staticClass: "subtitle bold mt-5 md:mt-0" }, [
+          _vm._v(_vm._s(_vm.agent.name))
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "mb-8" }, [_vm._v(_vm._s(_vm.agent.dir))]),
+        _vm._v(" "),
+        _c("p", { staticClass: "bold" }, [_vm._v(_vm._s(_vm.agent.job))]),
+        _vm._v(" "),
+        _c("p", { staticClass: "md:mb-10" }, [
+          _vm._v("Codigo Ministerio de vivienda: " + _vm._s(_vm.agent.cod))
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "full-divider block md:hidden mt-5" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex flex-row flex-wrap md:hidden" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-1/2 self-center" }, [
             _c(
               "div",
               { staticClass: "w-full flex flex-row justify-center" },
@@ -30862,11 +31191,16 @@ var render = function() {
                 )
               }),
               1
-            ),
-            _vm._v(" "),
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-full" }, [
             _c(
               "div",
-              { staticClass: "w-full flex flex-row justify-center my-5" },
+              {
+                staticClass: "w-full flex flex-row justify-start mb-5",
+                staticStyle: { "margin-left": "-6px" }
+              },
               [
                 _c(
                   "w-btn",
@@ -30908,152 +31242,33 @@ var render = function() {
               ],
               1
             )
-          ]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "w-full md:w-2/3" }, [
-      _c("div", { staticClass: "hidden md:block" }, [
-        _c(
-          "div",
-          { staticClass: "flex justify-between items-center" },
-          [
-            _c("p", { staticClass: "bold" }, [_vm._v("PERFIL AGENTES")]),
-            _vm._v(" "),
-            _c(
-              "w-snackbar",
-              { staticClass: "mt-1" },
-              [
-                _c("w-icon", { attrs: { icon: "info", h: "24px" } }),
-                _vm._v(" "),
-                _c("template", { slot: "content" }, [
-                  _c("p", { staticClass: "bold" }, [_vm._v("Importante!")]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
-                    )
-                  ])
-                ])
-              ],
-              2
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "divider my-5" })
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "subtitle bold mt-5 md:mt-0" }, [
-        _vm._v(_vm._s(_vm.agent.name))
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "mb-8" }, [_vm._v(_vm._s(_vm.agent.dir))]),
-      _vm._v(" "),
-      _c("p", { staticClass: "bold" }, [_vm._v(_vm._s(_vm.agent.job))]),
-      _vm._v(" "),
-      _c("p", { staticClass: "md:mb-10" }, [
-        _vm._v("Codigo Ministerio de vivienda: " + _vm._s(_vm.agent.cod))
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "full-divider block md:hidden mt-5" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex flex-row flex-wrap md:hidden" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-1/2 self-center" }, [
-          _c(
-            "div",
-            { staticClass: "w-full flex flex-row justify-center" },
-            _vm._l(5, function(i) {
-              return _c(
-                "w-btn",
-                {
-                  key: i,
-                  staticStyle: { margin: "2px" },
-                  attrs: { icon: true, disabled: true }
-                },
-                [
-                  _c("w-icon", {
-                    attrs: {
-                      icon: _vm.agent.stars >= i ? "star-brown" : "star-grey",
-                      h: "14px"
-                    }
-                  })
-                ],
-                1
-              )
-            }),
-            1
-          )
+          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "w-full" }, [
-          _c(
-            "div",
-            {
-              staticClass: "w-full flex flex-row justify-start mb-5",
-              staticStyle: { "margin-left": "-6px" }
-            },
-            [
-              _c(
-                "w-btn",
-                { attrs: { icon: true } },
-                [_c("w-icon", { attrs: { icon: "mail-grey", h: "12px" } })],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "w-btn",
-                { attrs: { icon: true } },
-                [_c("w-icon", { attrs: { icon: "facebook-grey", h: "15px" } })],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "w-btn",
-                { attrs: { icon: true } },
-                [_c("w-icon", { attrs: { icon: "linkedin-grey", h: "17px" } })],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "w-btn",
-                { attrs: { icon: true } },
-                [_c("w-icon", { attrs: { icon: "twitter-grey", h: "15px" } })],
-                1
-              )
-            ],
-            1
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "full-divider block md:hidden mb-5" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-        _vm._m(2),
+        _c("div", { staticClass: "full-divider block md:hidden mb-5" }),
         _vm._v(" "),
-        _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
-          _c("p", [_vm._v(_vm._s(_vm.agent.cel))])
-        ]),
-        _vm._v(" "),
-        _vm._m(3),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
-          _c("p", [_vm._v(_vm._s(_vm.agent.email))])
-        ]),
-        _vm._v(" "),
-        _vm._m(4),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
-          _c("p", [_vm._v(_vm._s(_vm.agent.description))])
+        _c("div", { staticClass: "flex flex-row flex-wrap" }, [
+          _vm._m(2),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
+            _c("p", [_vm._v(_vm._s(_vm.agent.cel))])
+          ]),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
+            _c("p", [_vm._v(_vm._s(_vm.agent.email))])
+          ]),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-full md:w-2/3 my-3 md:my-3" }, [
+            _c("p", [_vm._v(_vm._s(_vm.agent.description))])
+          ])
         ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -31175,7 +31390,7 @@ var render = function() {
                     key: i,
                     on: {
                       click: function($event) {
-                        return _vm.set(op)
+                        panel.selectOption = op
                       }
                     }
                   },
@@ -31317,7 +31532,12 @@ var render = function() {
         {
           ref: "mapRef",
           staticStyle: { width: "100%", height: "600px" },
-          attrs: { center: _vm.center, zoom: 12, options: _vm.mapOptions }
+          attrs: { center: _vm.center, zoom: 12, options: _vm.mapOptions },
+          on: {
+            click: function($event) {
+              return _vm.closeInfoWindow()
+            }
+          }
         },
         [
           _vm._l(_vm.markers, function(m, index) {
@@ -31387,8 +31607,15 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "w-btn",
-                    { attrs: { fullwidth: true, dark: true, rounded: true } },
-                    [_vm._v("CONTACTAR")]
+                    {
+                      attrs: { fullwidth: true, dark: true, rounded: true },
+                      on: {
+                        click: function($event) {
+                          return _vm.$router.push("/publicaciones/detalle")
+                        }
+                      }
+                    },
+                    [_vm._v("ir al detalle")]
                   ),
                   _vm._v(" "),
                   _c("br")
@@ -31464,9 +31691,13 @@ var render = function() {
                 "w-btn",
                 {
                   attrs: { rounded: true, dark: true },
-                  on: { click: _vm.addMarker }
+                  on: {
+                    click: function($event) {
+                      return _vm.search()
+                    }
+                  }
                 },
-                [_vm._v("agregar")]
+                [_vm._v("Buscar")]
               )
             ],
             1
@@ -31479,7 +31710,8 @@ var render = function() {
         {
           ref: "mapRef",
           staticStyle: { width: "100%", height: "600px" },
-          attrs: { center: _vm.center, zoom: 14, options: _vm.mapOptions }
+          attrs: { center: _vm.center, zoom: 14, options: _vm.mapOptions },
+          on: { click: _vm.addMaker }
         },
         [
           _c("gmap-marker", {
@@ -31569,7 +31801,7 @@ var render = function() {
                     key: i,
                     on: {
                       click: function($event) {
-                        return _vm.set(op)
+                        panel.selectOption = op
                       }
                     }
                   },
@@ -31614,25 +31846,28 @@ var render = function() {
     [
       _c(
         "w-parallax",
-        { attrs: { image: "/images/banners/4.png", height: "120" } },
+        {
+          attrs: {
+            image: "/images/banners/4.png",
+            height: _vm.windowWidth <= 768 ? "100" : "130"
+          }
+        },
         [
           _c(
             "div",
             { staticClass: "flex flex-row justify-between home-container" },
             [
-              _c("div", { staticClass: "w-3/3 md:w-1/3 self-center" }, [
+              _c("div", { staticClass: "w-3/3 lg:w-1/3 self-center" }, [
                 _c("h1", { staticClass: "home-title bold white-text" }, [
-                  _vm._v(
-                    "\n                    Profesionales inmobiliarios dedicados a usted\n                "
-                  )
+                  _vm._v("Profesionales inmobiliarios dedicados a usted")
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "hidden md:block w-1/3" }),
+              _c("div", { staticClass: "hidden lg:block w-1/3" }),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "hidden md:block w-2/3 self-center" },
+                { staticClass: "hidden lg:block w-2/3 self-center" },
                 [
                   _c(
                     "w-card",
@@ -31752,7 +31987,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "flex flex-row justify-between flex-wrap md:flex-no-wrap"
+                  "flex flex-row justify-center md:justify-start flex-wrap lg:flex-no-wrap"
               },
               [
                 _c(
@@ -31774,11 +32009,7 @@ var render = function() {
                           staticClass:
                             "body subtitle-md light white-text text-center md:text-left"
                         },
-                        [
-                          _vm._v(
-                            "\n                            Eres Agente Inmobiliaria\n                        "
-                          )
-                        ]
+                        [_vm._v("Eres Agente Inmobiliaria")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -31787,11 +32018,7 @@ var render = function() {
                           staticClass:
                             "body tertiary-text text-center md:text-left"
                         },
-                        [
-                          _vm._v(
-                            "\n                            solicíta tu cuenta en pocos minutos\n                        "
-                          )
-                        ]
+                        [_vm._v("solicíta tu cuenta en pocos minutos")]
                       )
                     ])
                   ],
@@ -31810,6 +32037,7 @@ var render = function() {
                     _c(
                       "w-btn",
                       {
+                        staticStyle: { "max-height": "56px !important" },
                         attrs: {
                           color: "secondary",
                           dark: true,
@@ -31933,7 +32161,7 @@ var render = function() {
               attrs: {
                 background:
                   _vm.windowWidth >= 768 ? "/images/banners/1.png" : "",
-                items: _vm.windowWidth >= 768 ? 3 : 1,
+                items: _vm.carrouselItems,
                 pagination: _vm.windowWidth < 768,
                 navigation: _vm.windowWidth >= 768
               }
@@ -31942,11 +32170,17 @@ var render = function() {
               return _c("slide", { key: i }, [
                 _c(
                   "div",
-                  { staticClass: "px-5" },
+                  { staticClass: "px-10 lg:px-5" },
                   [
                     _c(
                       "w-card",
-                      { attrs: { image: card.image, hover: "full-hover" } },
+                      {
+                        attrs: {
+                          image: card.image,
+                          pointer: true,
+                          hover: "full-hover"
+                        }
+                      },
                       [
                         _c("template", { slot: "image" }, [
                           _c("p", { staticClass: "bold" }, [
@@ -31963,6 +32197,8 @@ var render = function() {
                             _vm._v(_vm._s(card.tipo))
                           ])
                         ]),
+                        _vm._v(" "),
+                        _c("br"),
                         _vm._v(" "),
                         _c("p", { staticClass: "bold" }, [
                           _vm._v(_vm._s(card.title))
@@ -31983,13 +32219,7 @@ var render = function() {
                             _c(
                               "p",
                               { staticClass: "body bold tertiary-text" },
-                              [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(card.mes) +
-                                    "\n                            "
-                                )
-                              ]
+                              [_vm._v(_vm._s(card.mes))]
                             )
                           ]
                         ),
@@ -32014,11 +32244,7 @@ var render = function() {
                                       }),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                            " +
-                                            _vm._s(card.info.habitaciones) +
-                                            "\n                                        "
-                                        )
+                                        _vm._v(_vm._s(card.info.habitaciones))
                                       ])
                                     ],
                                     1
@@ -32033,11 +32259,7 @@ var render = function() {
                                       }),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                            " +
-                                            _vm._s(card.info.baños) +
-                                            "\n                                        "
-                                        )
+                                        _vm._v(_vm._s(card.info.baños))
                                       ])
                                     ],
                                     1
@@ -32056,9 +32278,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("p", { staticClass: "white-text" }, [
                                         _vm._v(
-                                          "\n                                            " +
-                                            _vm._s(card.info.estacionamiento) +
-                                            "\n                                        "
+                                          _vm._s(card.info.estacionamiento)
                                         )
                                       ])
                                     ],
@@ -32076,11 +32296,7 @@ var render = function() {
                                   }),
                                   _vm._v(" "),
                                   _c("p", { staticClass: "white-text" }, [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(card.info.tamaño) +
-                                        "\n                                    "
-                                    )
+                                    _vm._v(_vm._s(card.info.tamaño))
                                   ])
                                 ],
                                 1
@@ -32119,7 +32335,7 @@ var render = function() {
               attrs: {
                 background:
                   _vm.windowWidth >= 768 ? "/images/banners/1.png" : "",
-                items: _vm.windowWidth >= 768 ? 3 : 1,
+                items: _vm.carrouselItems,
                 pagination: _vm.windowWidth < 768,
                 navigation: _vm.windowWidth >= 768
               }
@@ -32128,11 +32344,17 @@ var render = function() {
               return _c("slide", { key: i }, [
                 _c(
                   "div",
-                  { staticClass: "px-5" },
+                  { staticClass: "px-10 lg:px-5" },
                   [
                     _c(
                       "w-card",
-                      { attrs: { image: card.image, hover: "full-hover" } },
+                      {
+                        attrs: {
+                          image: card.image,
+                          pointer: true,
+                          hover: "full-hover"
+                        }
+                      },
                       [
                         _c("template", { slot: "image" }, [
                           _c("p", { staticClass: "bold" }, [
@@ -32169,13 +32391,7 @@ var render = function() {
                             _c(
                               "p",
                               { staticClass: "body bold tertiary-text" },
-                              [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(card.mes) +
-                                    "\n                            "
-                                )
-                              ]
+                              [_vm._v(_vm._s(card.mes))]
                             )
                           ]
                         ),
@@ -32200,11 +32416,7 @@ var render = function() {
                                       }),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                            " +
-                                            _vm._s(card.info.habitaciones) +
-                                            "\n                                        "
-                                        )
+                                        _vm._v(_vm._s(card.info.habitaciones))
                                       ])
                                     ],
                                     1
@@ -32219,11 +32431,7 @@ var render = function() {
                                       }),
                                       _vm._v(" "),
                                       _c("p", { staticClass: "white-text" }, [
-                                        _vm._v(
-                                          "\n                                            " +
-                                            _vm._s(card.info.baños) +
-                                            "\n                                        "
-                                        )
+                                        _vm._v(_vm._s(card.info.baños))
                                       ])
                                     ],
                                     1
@@ -32242,9 +32450,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("p", { staticClass: "white-text" }, [
                                         _vm._v(
-                                          "\n                                            " +
-                                            _vm._s(card.info.estacionamiento) +
-                                            "\n                                        "
+                                          _vm._s(card.info.estacionamiento)
                                         )
                                       ])
                                     ],
@@ -32262,11 +32468,7 @@ var render = function() {
                                   }),
                                   _vm._v(" "),
                                   _c("p", { staticClass: "white-text" }, [
-                                    _vm._v(
-                                      "\n                                        " +
-                                        _vm._s(card.info.tamaño) +
-                                        "\n                                    "
-                                    )
+                                    _vm._v(_vm._s(card.info.tamaño))
                                   ])
                                 ],
                                 1
@@ -32318,7 +32520,7 @@ var render = function() {
               attrs: {
                 background:
                   _vm.windowWidth >= 768 ? "/images/banners/1.png" : "",
-                items: _vm.windowWidth >= 768 ? 4 : 1,
+                items: _vm.carrouselItemsAgentes,
                 pagination: _vm.windowWidth < 768,
                 navigation: _vm.windowWidth >= 768
               }
@@ -32327,11 +32529,17 @@ var render = function() {
               return _c("slide", { key: i }, [
                 _c(
                   "div",
-                  { staticClass: "px-5" },
+                  { staticClass: "px-10 lg:px-5" },
                   [
                     _c(
                       "w-card",
-                      { attrs: { image: agent.image, hover: "top-hover" } },
+                      {
+                        attrs: {
+                          image: agent.image,
+                          pointer: true,
+                          hover: "top-hover"
+                        }
+                      },
                       [
                         _c("template", { slot: "image" }, [
                           _c(
@@ -32438,13 +32646,7 @@ var render = function() {
                               staticClass: "bold text-center",
                               staticStyle: { "white-space": "nowrap" }
                             },
-                            [
-                              _vm._v(
-                                "\n                                " +
-                                  _vm._s(agent.name) +
-                                  "\n                            "
-                              )
-                            ]
+                            [_vm._v(_vm._s(agent.name))]
                           )
                         ]),
                         _vm._v(" "),
@@ -32471,11 +32673,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("template", { slot: "footer" }, [
                           _c("p", { staticClass: "text-center white-text" }, [
-                            _vm._v(
-                              "\n                                " +
-                                _vm._s(agent.posts) +
-                                " Pub. Activas\n                            "
-                            )
+                            _vm._v(_vm._s(agent.posts) + " Pub. Activas")
                           ])
                         ])
                       ],
@@ -32506,15 +32704,11 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("p", { staticClass: "subtitle light white-text" }, [
-                      _vm._v(
-                        "\n                        Plataforma con Análisis\n                    "
-                      )
+                      _vm._v("Plataforma con Análisis")
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "subtitle bold tertiary-text" }, [
-                      _vm._v(
-                        "\n                        de Mercado Comparativo\n                    "
-                      )
+                      _vm._v("de Mercado Comparativo")
                     ])
                   ],
                   1
@@ -32536,13 +32730,17 @@ var render = function() {
         _vm._l(_vm.news, function(noti, i) {
           return _c(
             "div",
-            { key: i, staticClass: "w-full md:w-1/3 p-5 px-0 md:px-5" },
+            {
+              key: i,
+              staticClass: "w-full md:w-1/2 lg:w-1/3 p-5 px-0 md:px-5"
+            },
             [
               _c(
                 "w-card",
                 {
                   attrs: {
                     image: noti.image,
+                    pointer: true,
                     imageHeight: "200px",
                     state: "tile"
                   }
@@ -32550,19 +32748,11 @@ var render = function() {
                 [
                   _c("template", { slot: "state" }, [
                     _c("p", { staticClass: "body bold white-text" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.parseDate(noti.date).day) +
-                          "\n                    "
-                      )
+                      _vm._v(_vm._s(_vm.parseDate(noti.date).day))
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "caption bold white-text" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.parseDate(noti.date).month) +
-                          "\n                    "
-                      )
+                      _vm._v(_vm._s(_vm.parseDate(noti.date).month))
                     ])
                   ]),
                   _vm._v(" "),
@@ -32583,34 +32773,32 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "graph-banner mt-20" }, [
         _c("div", { staticClass: "flex flex-row justify-between flex-wrap" }, [
-          _c("div", { staticClass: "w-full md:mt-0 md:w-1/4" }, [
-            _c(
-              "div",
-              { staticClass: "flex flex-col justify-center items-center" },
-              [
-                _c("w-icon", { attrs: { icon: "house-price", h: "130px" } }),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "subtitle title-md bold white-text mt-5" },
-                  [
-                    _vm._v(
-                      "\n                        755 300\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "caption bold white-text" }, [
-                  _vm._v(
-                    "\n                        TRANSACCIONES REALIZADAS\n                    "
-                  )
-                ])
-              ],
-              1
-            )
-          ]),
+          _c(
+            "div",
+            { staticClass: "w-full md:mt-20 md:w-2/4 lg:mt-0 lg:w-1/4" },
+            [
+              _c(
+                "div",
+                { staticClass: "flex flex-col justify-center items-center" },
+                [
+                  _c("w-icon", { attrs: { icon: "house-price", h: "130px" } }),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    { staticClass: "subtitle title-md bold white-text mt-5" },
+                    [_vm._v("755 300")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "caption bold white-text" }, [
+                    _vm._v("TRANSACCIONES REALIZADAS")
+                  ])
+                ],
+                1
+              )
+            ]
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "w-full mt-20 md:mt-0 md:w-1/4" }, [
+          _c("div", { staticClass: "w-full mt-20 md:w-2/4 lg:mt-0 lg:w-1/4" }, [
             _c(
               "div",
               { staticClass: "flex flex-col justify-center items-center" },
@@ -32620,11 +32808,7 @@ var render = function() {
                 _c(
                   "p",
                   { staticClass: "subtitle title-md bold white-text mt-5" },
-                  [
-                    _vm._v(
-                      "\n                        17 620\n                    "
-                    )
-                  ]
+                  [_vm._v("17 620")]
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "caption bold white-text" }, [
@@ -32635,7 +32819,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "w-full mt-20 md:mt-0 md:w-1/4" }, [
+          _c("div", { staticClass: "w-full mt-20 md:w-2/4 lg:mt-0 lg:w-1/4" }, [
             _c(
               "div",
               { staticClass: "flex flex-col justify-center items-center" },
@@ -32645,11 +32829,7 @@ var render = function() {
                 _c(
                   "p",
                   { staticClass: "subtitle title-md bold white-text mt-5" },
-                  [
-                    _vm._v(
-                      "\n                        790\n                    "
-                    )
-                  ]
+                  [_vm._v("790")]
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "caption bold white-text" }, [
@@ -32660,7 +32840,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "w-full mt-20 md:mt-0 md:w-1/4" }, [
+          _c("div", { staticClass: "w-full mt-20 md:w-2/4 lg:mt-0 lg:w-1/4" }, [
             _c(
               "div",
               { staticClass: "flex flex-col justify-center items-center" },
@@ -32670,17 +32850,11 @@ var render = function() {
                 _c(
                   "p",
                   { staticClass: "subtitle title-md bold white-text mt-5" },
-                  [
-                    _vm._v(
-                      "\n                        1 580 715\n                    "
-                    )
-                  ]
+                  [_vm._v("1 580 715")]
                 ),
                 _vm._v(" "),
                 _c("p", { staticClass: "caption bold white-text" }, [
-                  _vm._v(
-                    "\n                        MONTOS DE TRANSACCIÓN\n                    "
-                  )
+                  _vm._v("MONTOS DE TRANSACCIÓN")
                 ])
               ],
               1
@@ -32748,301 +32922,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=template&id=b28ce99e&":
-/*!**************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Test.vue?vue&type=template&id=b28ce99e& ***!
-  \**************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "test-container" },
-    [
-      _c(
-        "w-card",
-        { attrs: { shadow: false } },
-        [
-          _c("p", { staticClass: "body bold" }, [_vm._v("Snackbar simple")]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex flex-row" },
-            [
-              _c("p", { staticClass: "bold" }, [
-                _vm._v("INGRESARA A LA PLATAFORMA")
-              ]),
-              _vm._v(" "),
-              _c(
-                "w-snackbar",
-                { staticClass: "ml-5" },
-                [
-                  _c("w-icon", { attrs: { icon: "info", h: "24px" } }),
-                  _vm._v(" "),
-                  _c("template", { slot: "content" }, [
-                    _c("p", { staticClass: "bold" }, [_vm._v("Importante!")]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
-                      )
-                    ])
-                  ])
-                ],
-                2
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("p", { staticClass: "body bold" }, [
-            _vm._v("Snackbar input, select, textarea")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Solo visible cuando el label esta elevado, o sea, cuando el input esta onFocus, con algun valor, o con algun contenido en el atributo placeholder"
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "form",
-            { staticClass: "mt-16" },
-            [
-              _c(
-                "w-input",
-                {
-                  attrs: {
-                    label: "Input label",
-                    placeholder: "Input placeholder"
-                  },
-                  model: {
-                    value: _vm.form.input,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "input", $$v)
-                    },
-                    expression: "form.input"
-                  }
-                },
-                [
-                  _c("template", { slot: "snackbar" }, [
-                    _c("p", { staticClass: "bold" }, [_vm._v("Importante!")]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                      )
-                    ])
-                  ])
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "w-select",
-                {
-                  attrs: {
-                    label: "Select label",
-                    placeholder: "Select placeholder",
-                    options: ["a", "b", "c"]
-                  },
-                  model: {
-                    value: _vm.form.select,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "select", $$v)
-                    },
-                    expression: "form.select"
-                  }
-                },
-                [
-                  _c("template", { slot: "snackbar" }, [
-                    _c("p", { staticClass: "bold" }, [_vm._v("Importante!")]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                      )
-                    ])
-                  ])
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "w-textarea",
-                {
-                  attrs: {
-                    label: "Textarea label",
-                    placeholder: "Textarea placeholder"
-                  },
-                  model: {
-                    value: _vm.form.textarea,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "textarea", $$v)
-                    },
-                    expression: "form.textarea"
-                  }
-                },
-                [
-                  _c("template", { slot: "snackbar" }, [
-                    _c("p", { staticClass: "bold" }, [_vm._v("Importante!")]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                      )
-                    ])
-                  ])
-                ],
-                2
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("p", { staticClass: "body bold" }, [
-            _vm._v("Snackbar Checkbox, switch")
-          ]),
-          _vm._v(" "),
-          _c("form", { staticClass: "mt-16" }, [
-            _c(
-              "div",
-              { staticClass: "flex flex-row justify-between" },
-              [
-                _c("w-switch", {
-                  attrs: {
-                    activeLabel: "Active label",
-                    inactiveLabel: "Inactive label",
-                    color: "secondary"
-                  },
-                  model: {
-                    value: _vm.form.switch,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "switch", $$v)
-                    },
-                    expression: "form.switch"
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "w-snackbar",
-                  { staticClass: "mt-1" },
-                  [
-                    _c("w-icon", { attrs: { icon: "info", h: "24px" } }),
-                    _vm._v(" "),
-                    _c("template", { slot: "content" }, [
-                      _c("p", { staticClass: "bold" }, [_vm._v("Importante!")]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
-                        )
-                      ])
-                    ])
-                  ],
-                  2
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "flex flex-row justify-between" },
-              [
-                _c("w-checkbox", {
-                  attrs: { label: "Checkbox label", color: "secondary" },
-                  model: {
-                    value: _vm.form.checkbox,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "checkbox", $$v)
-                    },
-                    expression: "form.checkbox"
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "w-snackbar",
-                  { staticClass: "mt-1" },
-                  [
-                    _c("w-icon", { attrs: { icon: "info", h: "24px" } }),
-                    _vm._v(" "),
-                    _c("template", { slot: "content" }, [
-                      _c("p", { staticClass: "bold" }, [_vm._v("Importante!")]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
-                        )
-                      ])
-                    ])
-                  ],
-                  2
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("p", { staticClass: "body bold" }, [_vm._v("Pagination")]),
-          _vm._v(" "),
-          _c("w-pagination", {
-            attrs: { length: 6 },
-            on: {
-              click: function($event) {
-                return _vm.navigate()
-              }
-            },
-            model: {
-              value: _vm.page,
-              callback: function($$v) {
-                _vm.page = $$v
-              },
-              expression: "page"
-            }
-          }),
-          _vm._v(" "),
-          _c("p", [_vm._v("Pagina /test/" + _vm._s(_vm.page))])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("br")
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/agentes/Agente.vue?vue&type=template&id=5e720c0a&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/agentes/Agente.vue?vue&type=template&id=5e720c0a& ***!
@@ -33072,7 +32951,7 @@ var render = function() {
               _c("Perfil"),
               _vm._v(" "),
               _c("div", { staticClass: "flex flex-row justify-end" }, [
-                _c("div", { staticClass: "w-full md:w-2/3" }, [
+                _c("div", { staticClass: "w-full lg:w-2/3" }, [
                   _c(
                     "div",
                     { staticClass: "flex flex-row md:justify-end flex-wrap" },
@@ -33139,7 +33018,7 @@ var render = function() {
         {
           staticClass: "mt-10",
           attrs: {
-            items: _vm.windowWidth >= 768 ? 3 : 1,
+            items: _vm.carrouselItems,
             pagination: _vm.windowWidth < 768,
             navigation: _vm.windowWidth >= 768
           }
@@ -33152,7 +33031,13 @@ var render = function() {
               [
                 _c(
                   "w-card",
-                  { attrs: { image: card.image, hover: "full-hover" } },
+                  {
+                    attrs: {
+                      image: card.image,
+                      pointer: true,
+                      hover: "full-hover"
+                    }
+                  },
                   [
                     _c("template", { slot: "image" }, [
                       _c("p", { staticClass: "bold" }, [
@@ -33195,7 +33080,9 @@ var render = function() {
                     _c("template", { slot: "footer" }, [
                       _c(
                         "div",
-                        { staticClass: "flex flex-row justify-between" },
+                        {
+                          staticClass: "flex flex-row justify-between flex-wrap"
+                        },
                         [
                           _c(
                             "div",
@@ -33296,7 +33183,7 @@ var render = function() {
           staticClass: "mt-10",
           attrs: {
             background: _vm.windowWidth >= 768 ? "/images/banners/1.png" : "",
-            items: _vm.windowWidth >= 768 ? 3 : 1,
+            items: _vm.carrouselItems,
             pagination: _vm.windowWidth < 768,
             navigation: _vm.windowWidth >= 768
           }
@@ -33309,7 +33196,13 @@ var render = function() {
               [
                 _c(
                   "w-card",
-                  { attrs: { image: card.image, hover: "full-hover" } },
+                  {
+                    attrs: {
+                      image: card.image,
+                      pointer: true,
+                      hover: "full-hover"
+                    }
+                  },
                   [
                     _c("template", { slot: "image" }, [
                       _c("p", { staticClass: "bold" }, [
@@ -33352,7 +33245,9 @@ var render = function() {
                     _c("template", { slot: "footer" }, [
                       _c(
                         "div",
-                        { staticClass: "flex flex-row justify-between" },
+                        {
+                          staticClass: "flex flex-row justify-between flex-wrap"
+                        },
                         [
                           _c(
                             "div",
@@ -33741,7 +33636,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "px-4" },
+      { staticClass: "agente-perfil-container" },
       [
         _c("w-card", { attrs: { shadow: false } }, [
           _c("p", { staticClass: "tertiary-text bold body ml-5 mb-5" }, [
@@ -33876,7 +33771,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "hidden lg:block md:block px-4" },
+      { staticClass: "hidden lg:block md:block agente-perfil-container" },
       [
         _c("w-card", { attrs: { shadow: false } }, [
           _c("div", { staticClass: "flex justify-around" }, [
@@ -34185,6 +34080,21 @@ var render = function() {
                           }
                         }),
                         _vm._v(" "),
+                        _c("w-select", {
+                          attrs: {
+                            label: "MONEDA",
+                            options: ["Dolares americanos", "Soles"],
+                            placeholder: "Dolares americanos"
+                          },
+                          model: {
+                            value: _vm.form.moneda,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "moneda", $$v)
+                            },
+                            expression: "form.moneda"
+                          }
+                        }),
+                        _vm._v(" "),
                         _c("w-input", {
                           attrs: { label: "PRECIO", placeholder: "S/ 140.45" },
                           model: {
@@ -34283,528 +34193,12 @@ var render = function() {
                         })
                       ],
                       1
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "w-full md:w-1/2" }, [
-                      _c("div", { staticClass: "w-full my-5" }, [
-                        _c("p", { staticClass: "bold ml-4" }, [
-                          _vm._v("CALIDAD DE CONSTRUCCIÓN")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "flex flex-row justify-center flex-wrap"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadConstruccion ==
-                                        "EXCELENTE"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadConstruccion =
-                                          "EXCELENTE"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("EXCELENTE")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadConstruccion == "BUENO"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadConstruccion = "BUENO"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("BUENO")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadConstruccion ==
-                                        "REGULAR"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadConstruccion = "REGULAR"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("REGULAR")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadConstruccion == "MALO"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadConstruccion = "MALO"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("MALO")]
-                                )
-                              ],
-                              1
-                            )
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "w-full my-5" }, [
-                        _c("p", { staticClass: "bold ml-4" }, [
-                          _vm._v("CALIDAD DE ACABADOS")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "flex flex-row justify-center flex-wrap"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadAcabados == "EXCELENTE"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadAcabados = "EXCELENTE"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("EXCELENTE")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadAcabados == "BUENO"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadAcabados = "BUENO"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("BUENO")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadAcabados == "REGULAR"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadAcabados = "REGULAR"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("REGULAR")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadAcabados == "MALO"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadAcabados = "MALO"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("MALO")]
-                                )
-                              ],
-                              1
-                            )
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "w-full my-5" }, [
-                        _c("p", { staticClass: "bold ml-4" }, [
-                          _vm._v("CALIDAD DE CONSERVACIÓN")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "flex flex-row justify-center flex-wrap"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadConservacion ==
-                                        "EXCELENTE"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadConservacion =
-                                          "EXCELENTE"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("EXCELENTE")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadConservacion == "BUENO"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadConservacion = "BUENO"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("BUENO")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadConservacion ==
-                                        "REGULAR"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadConservacion = "REGULAR"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("REGULAR")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.calidadConservacion == "MALO"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.calidadConservacion = "MALO"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("MALO")]
-                                )
-                              ],
-                              1
-                            )
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "w-full my-5" }, [
-                        _c("p", { staticClass: "bold ml-4" }, [
-                          _vm._v("UBICACIÓN")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "flex flex-row justify-center flex-wrap"
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.ubicacion == "EXCELENTE"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.ubicacion = "EXCELENTE"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("EXCELENTE")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.ubicacion == "BUENO"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.ubicacion = "BUENO"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("BUENO")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.ubicacion == "REGULAR"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.ubicacion = "REGULAR"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("REGULAR")]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "w-1/2 md:w-1/3 px-2" },
-                              [
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      fullwidth: true,
-                                      rounded: true,
-                                      color:
-                                        _vm.form.ubicacion == "MALO"
-                                          ? "tertiary"
-                                          : "#aaaaaa",
-                                      dark: true
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.form.ubicacion = "MALO"
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("MALO")]
-                                )
-                              ],
-                              1
-                            )
-                          ]
-                        )
-                      ])
-                    ])
+                    )
                   ]
                 ),
                 _vm._v(" "),
                 _c("div", { staticClass: "flex flex-row justify-center" }, [
-                  _c("div", { staticClass: "w-full md:w-1/2" }, [
+                  _c("div", { staticClass: "w-full md:w-2/3 lg:w-1/2" }, [
                     _c(
                       "div",
                       {
@@ -34921,7 +34315,7 @@ var render = function() {
                         },
                         on: {
                           click: function($event) {
-                            _vm.filtrar = false
+                            _vm.showFilters = false
                           }
                         }
                       },
@@ -35037,123 +34431,110 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "flex flex-row justify-around" }, [
-                _c("div", { staticClass: "w-3/12 hidden lg:block pt-5 px-5" }, [
+              _c(
+                "div",
+                { staticClass: "flex flex-row justify-around md:ml-5" },
+                [
                   _c(
                     "div",
+                    { staticClass: "md:w-4/12 lg:w-3/12 hidden md:block pt-5" },
                     [
                       _c(
-                        "w-card",
-                        { attrs: { shadow: false } },
+                        "div",
                         [
-                          _c("template", { slot: "header" }, [
-                            _c(
-                              "p",
-                              { staticClass: "caption bold white-text" },
-                              [_vm._v("FILTROS")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("FiltroInmueble")
-                        ],
-                        2
-                      )
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "sm:w-full lg:w-9/12" },
-                  [
-                    _c(
-                      "w-btn",
-                      {
-                        staticClass: "lg:hidden",
-                        attrs: { dark: true, color: "secondary" },
-                        on: {
-                          click: function($event) {
-                            _vm.filtrar = true
-                          }
-                        }
-                      },
-                      [_vm._v("filtrar")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "flex flex-row justify-between flex-wrap"
-                      },
-                      _vm._l(_vm.cards, function(card, i) {
-                        return _c(
-                          "div",
-                          {
-                            key: i,
-                            staticClass: "sm:w-full lg:w-1/3 pt-5 md:pr-5"
-                          },
-                          [
-                            _c(
-                              "w-card",
-                              {
-                                staticStyle: { cursor: "pointer" },
-                                attrs: {
-                                  image: card.image,
-                                  value: card.selected
-                                },
-                                on: {
-                                  change: function($event) {
-                                    card.selected = !card.selected
-                                  }
-                                }
-                              },
-                              [
-                                _c("template", { slot: "image" }, [
-                                  _c("p", { staticClass: "bold" }, [
-                                    _vm._v(_vm._s(card.direccion))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("br"),
-                                  _vm._v(" "),
-                                  _c("p", [_vm._v(_vm._s(card.descripcion))])
-                                ]),
-                                _vm._v(" "),
-                                _c("template", { slot: "state" }, [
-                                  _c("p", { staticClass: "white-text" }, [
-                                    _vm._v(_vm._s(card.tipo))
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "bold" }, [
-                                  _vm._v(_vm._s(card.title))
-                                ]),
-                                _vm._v(" "),
-                                _c("p", [_vm._v(_vm._s(card.body))]),
-                                _vm._v(" "),
-                                _c("p", [_vm._v("Comisión")]),
-                                _vm._v(" "),
+                          _c(
+                            "w-card",
+                            { attrs: { shadow: false } },
+                            [
+                              _c("template", { slot: "header" }, [
                                 _c(
-                                  "div",
-                                  {
-                                    staticClass: "flex flex-row justify-between"
+                                  "p",
+                                  { staticClass: "caption bold white-text" },
+                                  [_vm._v("FILTROS")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("FiltroInmueble")
+                            ],
+                            2
+                          )
+                        ],
+                        1
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "w-full md:w-8/12 lg:w-9/12 px-6" },
+                    [
+                      _c(
+                        "w-btn",
+                        {
+                          staticClass: "md:hidden",
+                          attrs: { dark: true, color: "secondary" },
+                          on: {
+                            click: function($event) {
+                              _vm.showFilters = true
+                            }
+                          }
+                        },
+                        [_vm._v("filtrar")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "flex flex-row justify-between flex-wrap"
+                        },
+                        _vm._l(_vm.cards, function(card, i) {
+                          return _c(
+                            "div",
+                            {
+                              key: i,
+                              staticClass:
+                                "sm:w-full md:w-2/4 lg:w-1/3 pt-5 md:pl-3"
+                            },
+                            [
+                              _c(
+                                "w-card",
+                                {
+                                  staticStyle: { cursor: "pointer" },
+                                  attrs: {
+                                    image: card.image,
+                                    value: card.selected
                                   },
-                                  [
-                                    _c("p", { staticClass: "body bold" }, [
-                                      _vm._v(_vm._s(card.comision))
+                                  on: {
+                                    change: function($event) {
+                                      card.selected = !card.selected
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("template", { slot: "image" }, [
+                                    _c("p", { staticClass: "bold" }, [
+                                      _vm._v(_vm._s(card.direccion))
                                     ]),
                                     _vm._v(" "),
-                                    _c(
-                                      "p",
-                                      {
-                                        staticClass: "body bold tertiary-text"
-                                      },
-                                      [_vm._v(_vm._s(card.mes))]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("template", { slot: "footer" }, [
+                                    _c("br"),
+                                    _vm._v(" "),
+                                    _c("p", [_vm._v(_vm._s(card.descripcion))])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("template", { slot: "state" }, [
+                                    _c("p", { staticClass: "white-text" }, [
+                                      _vm._v(_vm._s(card.tipo))
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "bold" }, [
+                                    _vm._v(_vm._s(card.title))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", [_vm._v(_vm._s(card.body))]),
+                                  _vm._v(" "),
+                                  _c("p", [_vm._v("Comisión")]),
+                                  _vm._v(" "),
                                   _c(
                                     "div",
                                     {
@@ -35161,130 +34542,153 @@ var render = function() {
                                         "flex flex-row justify-between"
                                     },
                                     [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "flex flex-row justify-between"
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "info-item" },
-                                            [
-                                              _c("w-icon", {
-                                                attrs: {
-                                                  icon: "room-solid",
-                                                  h: "12px"
-                                                }
-                                              }),
-                                              _vm._v(" "),
-                                              _c(
-                                                "p",
-                                                { staticClass: "white-text" },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                                    " +
-                                                      _vm._s(
-                                                        card.info.habitaciones
-                                                      ) +
-                                                      "\n                                                "
-                                                  )
-                                                ]
-                                              )
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "info-item" },
-                                            [
-                                              _c("w-icon", {
-                                                attrs: {
-                                                  icon: "bath-solid",
-                                                  h: "15px"
-                                                }
-                                              }),
-                                              _vm._v(" "),
-                                              _c(
-                                                "p",
-                                                { staticClass: "white-text" },
-                                                [
-                                                  _vm._v(
-                                                    _vm._s(card.info.baños)
-                                                  )
-                                                ]
-                                              )
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "info-item" },
-                                            [
-                                              _c("w-icon", {
-                                                attrs: {
-                                                  icon: "parking-solid",
-                                                  h: "12px"
-                                                }
-                                              }),
-                                              _vm._v(" "),
-                                              _c(
-                                                "p",
-                                                { staticClass: "white-text" },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                                    " +
-                                                      _vm._s(
-                                                        card.info
-                                                          .estacionamiento
-                                                      ) +
-                                                      "\n                                                "
-                                                  )
-                                                ]
-                                              )
-                                            ],
-                                            1
-                                          )
-                                        ]
-                                      ),
+                                      _c("p", { staticClass: "body bold" }, [
+                                        _vm._v(_vm._s(card.comision))
+                                      ]),
                                       _vm._v(" "),
                                       _c(
-                                        "div",
-                                        { staticClass: "info-item" },
-                                        [
-                                          _c("w-icon", {
-                                            attrs: { icon: "size", h: "15px" }
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "p",
-                                            { staticClass: "white-text" },
-                                            [_vm._v(_vm._s(card.info.tamaño))]
-                                          )
-                                        ],
-                                        1
+                                        "p",
+                                        {
+                                          staticClass: "body bold tertiary-text"
+                                        },
+                                        [_vm._v(_vm._s(card.mes))]
                                       )
                                     ]
-                                  )
-                                ])
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        )
-                      }),
-                      0
-                    ),
-                    _vm._v(" "),
-                    _c("br")
-                  ],
-                  1
-                )
-              ]),
+                                  ),
+                                  _vm._v(" "),
+                                  _c("template", { slot: "footer" }, [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "flex flex-row justify-between flex-wrap"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "flex flex-row justify-between"
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "info-item" },
+                                              [
+                                                _c("w-icon", {
+                                                  attrs: {
+                                                    icon: "room-solid",
+                                                    h: "12px"
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "white-text" },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                                    " +
+                                                        _vm._s(
+                                                          card.info.habitaciones
+                                                        ) +
+                                                        "\n                                                "
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              { staticClass: "info-item" },
+                                              [
+                                                _c("w-icon", {
+                                                  attrs: {
+                                                    icon: "bath-solid",
+                                                    h: "15px"
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "white-text" },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(card.info.baños)
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              { staticClass: "info-item" },
+                                              [
+                                                _c("w-icon", {
+                                                  attrs: {
+                                                    icon: "parking-solid",
+                                                    h: "12px"
+                                                  }
+                                                }),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "p",
+                                                  { staticClass: "white-text" },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                                    " +
+                                                        _vm._s(
+                                                          card.info
+                                                            .estacionamiento
+                                                        ) +
+                                                        "\n                                                "
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "info-item" },
+                                          [
+                                            _c("w-icon", {
+                                              attrs: { icon: "size", h: "15px" }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "white-text" },
+                                              [_vm._v(_vm._s(card.info.tamaño))]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ],
+                                2
+                              )
+                            ],
+                            1
+                          )
+                        }),
+                        0
+                      ),
+                      _vm._v(" "),
+                      _c("br")
+                    ],
+                    1
+                  )
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "div",
@@ -35453,7 +34857,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "amc-table-container mt-5 hidden md:block" },
+            { staticClass: "amc-table-container mt-5 hidden lg:block" },
             [
               _c("table", { staticClass: "amc-table" }, [
                 _c("tr", [
@@ -35497,7 +34901,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "amc-table-container mt-5 block md:hidden" },
+            { staticClass: "amc-table-container mt-5 block lg:hidden" },
             [
               _c("table", { staticClass: "amc-table" }, [
                 _c("tr", [_c("th"), _vm._v(" "), _c("th", [_vm._v("Mínimo")])]),
@@ -35519,7 +34923,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "amc-table-container mt-5 block md:hidden" },
+            { staticClass: "amc-table-container mt-5 block lg:hidden" },
             [
               _c("table", { staticClass: "amc-table" }, [
                 _c("tr", [
@@ -35605,7 +35009,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "flex flex-row justify-center" }, [
-            _c("div", { staticClass: "w-full md:w-1/2" }, [
+            _c("div", { staticClass: "w-full md:w-2/3 lg:w-1/2" }, [
               _c(
                 "div",
                 { staticClass: "flex flex-row justify-between flex-wrap" },
@@ -35836,561 +35240,676 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "register mb-20" }, [
-    _c(
-      "div",
-      { staticClass: "register-container" },
-      [
-        _c("p", { staticClass: "subtitle bold white-text ml-5" }, [
-          _vm._v("Registro")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "divider ml-5 mt-1" }),
-        _vm._v(" "),
-        _c("p", { staticClass: "white-text mt-10 ml-5 hidden md:block" }, [
-          _vm._v("Crear una cuenta")
-        ]),
-        _vm._v(" "),
-        _c(
-          "w-card",
-          { staticClass: "mt-5 register-card", attrs: { shadow: false } },
-          [
-            _c("form", [
-              _c(
-                "div",
-                { staticClass: "flex flex-row justify-between" },
-                [
-                  _c("w-switch", {
-                    attrs: {
-                      activeLabel: "ASESORES INMOBILIARIAS",
-                      inactiveLabel: "REGISTRADOS MVCS",
-                      color: "secondary"
-                    },
-                    model: {
-                      value: _vm.code,
-                      callback: function($$v) {
-                        _vm.code = $$v
+    _c("div", { staticClass: "register-container" }, [
+      _c(
+        "div",
+        { staticClass: "responsive-register" },
+        [
+          _c("p", { staticClass: "subtitle bold white-text ml-5" }, [
+            _vm._v("Registro")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "divider ml-5 mt-1" }),
+          _vm._v(" "),
+          _c("p", { staticClass: "white-text mt-10 ml-5 hidden md:block" }, [
+            _vm._v("Crear una cuenta")
+          ]),
+          _vm._v(" "),
+          _c(
+            "w-card",
+            { staticClass: "mt-5 register-card", attrs: { shadow: false } },
+            [
+              _c("form", [
+                _c(
+                  "div",
+                  { staticClass: "flex flex-row justify-between" },
+                  [
+                    _c("w-switch", {
+                      attrs: {
+                        activeLabel: "ASESORES INMOBILIARIAS",
+                        inactiveLabel: "REGISTRADOS MVCS",
+                        color: "secondary"
                       },
-                      expression: "code"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "w-snackbar",
-                    { staticClass: "mt-1" },
-                    [
-                      _c("w-icon", { attrs: { icon: "info", h: "24px" } }),
-                      _vm._v(" "),
-                      _c("template", { slot: "content" }, [
-                        _c("p", { staticClass: "bold" }, [
-                          _vm._v("Importante!")
+                      model: {
+                        value: _vm.code,
+                        callback: function($$v) {
+                          _vm.code = $$v
+                        },
+                        expression: "code"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "w-snackbar",
+                      { staticClass: "mt-1" },
+                      [
+                        _c("w-icon", { attrs: { icon: "info", h: "24px" } }),
+                        _vm._v(" "),
+                        _c("template", { slot: "content" }, [
+                          _c("p", { staticClass: "bold" }, [
+                            _vm._v("Importante!")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
+                            )
+                          ])
+                        ])
+                      ],
+                      2
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              !_vm.code
+                ? _c("div", { staticClass: "mt-5" }, [
+                    _c(
+                      "form",
+                      [
+                        _c("p", { staticClass: "bold ml-5" }, [
+                          _vm._v("INGRESAR NUEVO USUARIO")
                         ]),
                         _vm._v(" "),
-                        _c("p", [
+                        _c("div", { staticClass: "mt-10" }),
+                        _vm._v(" "),
+                        _c(
+                          "w-input",
+                          {
+                            attrs: {
+                              label: "Código MVCS",
+                              placeholder: "Ingresar nombre / Codigo"
+                            },
+                            model: {
+                              value: _vm.form.code,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "code", $$v)
+                              },
+                              expression: "form.code"
+                            }
+                          },
+                          [
+                            _c("template", { slot: "snackbar" }, [
+                              _c("p", { staticClass: "bold" }, [
+                                _vm._v("Importante!")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                )
+                              ])
+                            ])
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c("w-select", {
+                          attrs: {
+                            label: "TIPO DE EMPRESA",
+                            placeholder: "Tipo Empresa",
+                            options: ["Empresa", "Asesor"]
+                          },
+                          model: {
+                            value: _vm.form.tipoempresa,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "tipoempresa", $$v)
+                            },
+                            expression: "form.tipoempresa"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "w-input",
+                          {
+                            attrs: {
+                              label: "Número Teléfono",
+                              placeholder: "Ingresar número"
+                            },
+                            model: {
+                              value: _vm.form.phone,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "phone", $$v)
+                              },
+                              expression: "form.phone"
+                            }
+                          },
+                          [
+                            _c("template", { slot: "snackbar" }, [
+                              _c("p", { staticClass: "bold" }, [
+                                _vm._v("Importante!")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                )
+                              ])
+                            ])
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "my-5" },
+                          [
+                            _c("p", { staticClass: "bold ml-5" }, [
+                              _vm._v("AFILIARSE")
+                            ]),
+                            _vm._v(" "),
+                            _c("w-switch", {
+                              attrs: {
+                                activeLabel: "Si",
+                                inactiveLabel: "No",
+                                color: "secondary"
+                              },
+                              model: {
+                                value: _vm.afiliarse,
+                                callback: function($$v) {
+                                  _vm.afiliarse = $$v
+                                },
+                                expression: "afiliarse"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.afiliarse
+                              ? _c(
+                                  "w-input",
+                                  {
+                                    staticClass: "mt-5",
+                                    attrs: {
+                                      label: "Codigo",
+                                      placeholder: "Ingresar el codigo"
+                                    },
+                                    model: {
+                                      value: _vm.form.afiliado,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "afiliado", $$v)
+                                      },
+                                      expression: "form.afiliado"
+                                    }
+                                  },
+                                  [
+                                    _c("template", { slot: "snackbar" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v("Importante!")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  2
+                                )
+                              : _vm._e()
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("w-textarea", {
+                          attrs: {
+                            label: "Ingresar breve descripción",
+                            placeholder: "Descripción"
+                          },
+                          model: {
+                            value: _vm.form.description,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "description", $$v)
+                            },
+                            expression: "form.description"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "flex flex-row justify-center" },
+                          [
+                            _c(
+                              "w-btn",
+                              {
+                                staticClass: "register-btn",
+                                attrs: {
+                                  color: "tertiary",
+                                  dark: true,
+                                  fullwidth: _vm.windowWidth <= 768
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.$router.push(
+                                      "/register/successful"
+                                    )
+                                  }
+                                }
+                              },
+                              [_vm._v("REGSITRAR")]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                : _c("div", { staticClass: "mt-5" }, [
+                    _c(
+                      "form",
+                      [
+                        _c("p", { staticClass: "bold ml-5" }, [
+                          _vm._v("INGRESAR NUEVO USUARIO")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "mt-10" }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-row justify-center flex-wrap"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "w-full md:w-1/2 pr-0 md:pr-2" },
+                              [
+                                _c(
+                                  "w-input",
+                                  {
+                                    attrs: {
+                                      label: "Código MVCS",
+                                      placeholder: "Ingresar nombre / Codigo"
+                                    },
+                                    model: {
+                                      value: _vm.form.code,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "code", $$v)
+                                      },
+                                      expression: "form.code"
+                                    }
+                                  },
+                                  [
+                                    _c("template", { slot: "snackbar" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v("Importante!")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  2
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "w-full md:w-1/2 pl-0 md:pl-2 mb-8 md:mb-0"
+                              },
+                              [
+                                _c(
+                                  "w-btn",
+                                  {
+                                    staticStyle: {
+                                      "margin-top": "0px !important"
+                                    },
+                                    attrs: {
+                                      color: "tertiary",
+                                      rounded: true,
+                                      fullwidth: true,
+                                      dark: true
+                                    }
+                                  },
+                                  [_vm._v("Buscar")]
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "primary-alert" }, [
                           _vm._v(
-                            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit"
+                            "* Usted elegio la empresa: Corredores Peru SAC"
                           )
-                        ])
-                      ])
-                    ],
-                    2
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            !_vm.code
-              ? _c("div", { staticClass: "mt-5" }, [
-                  _c(
-                    "form",
-                    [
-                      _c("p", { staticClass: "bold ml-5" }, [
-                        _vm._v("INGRESAR NUEVO USUARIO")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-10" }),
-                      _vm._v(" "),
-                      _c(
-                        "w-input",
-                        {
-                          attrs: {
-                            label: "Código MVCS",
-                            placeholder: "Ingresar nombre / Codigo"
-                          },
-                          model: {
-                            value: _vm.form.code,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "code", $$v)
-                            },
-                            expression: "form.code"
-                          }
-                        },
-                        [
-                          _c("template", { slot: "snackbar" }, [
-                            _c("p", { staticClass: "bold" }, [
-                              _vm._v("Importante!")
-                            ]),
-                            _vm._v(" "),
-                            _c("p", [
-                              _vm._v(
-                                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                              )
-                            ])
-                          ])
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "w-input",
-                        {
-                          attrs: {
-                            label: "Número Teléfono",
-                            placeholder: "Ingresar número"
-                          },
-                          model: {
-                            value: _vm.form.phone,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "phone", $$v)
-                            },
-                            expression: "form.phone"
-                          }
-                        },
-                        [
-                          _c("template", { slot: "snackbar" }, [
-                            _c("p", { staticClass: "bold" }, [
-                              _vm._v("Importante!")
-                            ]),
-                            _vm._v(" "),
-                            _c("p", [
-                              _vm._v(
-                                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                              )
-                            ])
-                          ])
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c("w-textarea", {
-                        attrs: {
-                          label: "Ingresar breve descripción",
-                          placeholder: "Descripción"
-                        },
-                        model: {
-                          value: _vm.form.description,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "description", $$v)
-                          },
-                          expression: "form.description"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "flex flex-row justify-center" },
-                        [
-                          _c(
-                            "w-btn",
-                            {
-                              staticClass: "register-btn",
-                              attrs: {
-                                color: "tertiary",
-                                dark: true,
-                                fullwidth: _vm.windowWidth <= 768
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.$router.push(
-                                    "/register/successful"
-                                  )
-                                }
-                              }
-                            },
-                            [_vm._v("REGSITRAR")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ])
-              : _c("div", { staticClass: "mt-5" }, [
-                  _c(
-                    "form",
-                    [
-                      _c("p", { staticClass: "bold ml-5" }, [
-                        _vm._v("INGRESAR NUEVO USUARIO")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-10" }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "flex flex-row justify-center flex-wrap"
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "w-full md:w-1/2 pr-0 md:pr-2" },
-                            [
-                              _c(
-                                "w-input",
-                                {
-                                  attrs: {
-                                    label: "Código MVCS",
-                                    placeholder: "Ingresar nombre / Codigo"
-                                  },
-                                  model: {
-                                    value: _vm.form.code,
-                                    callback: function($$v) {
-                                      _vm.$set(_vm.form, "code", $$v)
-                                    },
-                                    expression: "form.code"
-                                  }
-                                },
-                                [
-                                  _c("template", { slot: "snackbar" }, [
-                                    _c("p", { staticClass: "bold" }, [
-                                      _vm._v("Importante!")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", [
-                                      _vm._v(
-                                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                                      )
-                                    ])
-                                  ])
-                                ],
-                                2
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "w-full md:w-1/2 pl-0 md:pl-2 mb-8 md:mb-0"
-                            },
-                            [
-                              _c(
-                                "w-btn",
-                                {
-                                  staticStyle: {
-                                    "margin-top": "0px !important"
-                                  },
-                                  attrs: {
-                                    color: "tertiary",
-                                    rounded: true,
-                                    fullwidth: true,
-                                    dark: true
-                                  }
-                                },
-                                [_vm._v("Buscar")]
-                              )
-                            ],
-                            1
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "primary-alert" }, [
-                        _vm._v("* Usted elegio la empresa: Corredores Peru SAC")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "grey-alert" }, [
-                        _c("p", [_vm._v("Empresa: Corredores Peru SAC")]),
+                        ]),
                         _vm._v(" "),
-                        _c("p", [_vm._v("Estado: Activo")]),
+                        _c("div", { staticClass: "grey-alert" }, [
+                          _c("p", [_vm._v("Empresa: Corredores Peru SAC")]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v("Estado: Activo")]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v("Codigo: 2039021323")])
+                        ]),
                         _vm._v(" "),
-                        _c("p", [_vm._v("Codigo: 2039021323")])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "flex flex-row justify-center flex-wrap"
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "w-full md:w-1/2 pr-0 md:pr-2" },
-                            [
-                              _c(
-                                "w-input",
-                                {
-                                  attrs: {
-                                    label: "Primer Nombre",
-                                    placeholder: " "
-                                  },
-                                  model: {
-                                    value: _vm.form.firstname,
-                                    callback: function($$v) {
-                                      _vm.$set(_vm.form, "firstname", $$v)
-                                    },
-                                    expression: "form.firstname"
-                                  }
-                                },
-                                [
-                                  _c("template", { slot: "snackbar" }, [
-                                    _c("p", { staticClass: "bold" }, [
-                                      _vm._v("Importante!")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", [
-                                      _vm._v(
-                                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                                      )
-                                    ])
-                                  ])
-                                ],
-                                2
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "w-full md:w-1/2 pl-0 md:pl-2" },
-                            [
-                              _c(
-                                "w-input",
-                                {
-                                  attrs: {
-                                    label: "Segundo Nombre",
-                                    placeholder: " "
-                                  },
-                                  model: {
-                                    value: _vm.form.secondname,
-                                    callback: function($$v) {
-                                      _vm.$set(_vm.form, "secondname", $$v)
-                                    },
-                                    expression: "form.secondname"
-                                  }
-                                },
-                                [
-                                  _c("template", { slot: "snackbar" }, [
-                                    _c("p", { staticClass: "bold" }, [
-                                      _vm._v("Importante!")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", [
-                                      _vm._v(
-                                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                                      )
-                                    ])
-                                  ])
-                                ],
-                                2
-                              )
-                            ],
-                            1
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "flex flex-row justify-center flex-wrap"
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "w-full md:w-1/2 pr-0 md:pr-2" },
-                            [
-                              _c(
-                                "w-input",
-                                {
-                                  attrs: {
-                                    label: "Apellido Paterno",
-                                    placeholder: " "
-                                  },
-                                  model: {
-                                    value: _vm.form.lastname1,
-                                    callback: function($$v) {
-                                      _vm.$set(_vm.form, "lastname1", $$v)
-                                    },
-                                    expression: "form.lastname1"
-                                  }
-                                },
-                                [
-                                  _c("template", { slot: "snackbar" }, [
-                                    _c("p", { staticClass: "bold" }, [
-                                      _vm._v("Importante!")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", [
-                                      _vm._v(
-                                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                                      )
-                                    ])
-                                  ])
-                                ],
-                                2
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "w-full md:w-1/2 pl-0 md:pl-2" },
-                            [
-                              _c(
-                                "w-input",
-                                {
-                                  attrs: {
-                                    label: "Apellido Materno",
-                                    placeholder: " "
-                                  },
-                                  model: {
-                                    value: _vm.form.lastname2,
-                                    callback: function($$v) {
-                                      _vm.$set(_vm.form, "lastname2", $$v)
-                                    },
-                                    expression: "form.lastname2"
-                                  }
-                                },
-                                [
-                                  _c("template", { slot: "snackbar" }, [
-                                    _c("p", { staticClass: "bold" }, [
-                                      _vm._v("Importante!")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", [
-                                      _vm._v(
-                                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                                      )
-                                    ])
-                                  ])
-                                ],
-                                2
-                              )
-                            ],
-                            1
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "w-input",
-                        {
-                          attrs: {
-                            label: "Ingresar correo electrónico",
-                            placeholder: "example@gmail.com"
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-row justify-center flex-wrap"
                           },
-                          model: {
-                            value: _vm.form.email,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "email", $$v)
-                            },
-                            expression: "form.email"
-                          }
-                        },
-                        [
-                          _c("template", { slot: "snackbar" }, [
-                            _c("p", { staticClass: "bold" }, [
-                              _vm._v("Importante!")
-                            ]),
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "w-full md:w-1/2 pr-0 md:pr-2" },
+                              [
+                                _c(
+                                  "w-input",
+                                  {
+                                    attrs: {
+                                      label: "Primer Nombre",
+                                      placeholder: " "
+                                    },
+                                    model: {
+                                      value: _vm.form.firstname,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "firstname", $$v)
+                                      },
+                                      expression: "form.firstname"
+                                    }
+                                  },
+                                  [
+                                    _c("template", { slot: "snackbar" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v("Importante!")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  2
+                                )
+                              ],
+                              1
+                            ),
                             _vm._v(" "),
-                            _c("p", [
-                              _vm._v(
-                                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                              )
-                            ])
-                          ])
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "w-input",
-                        {
-                          attrs: {
-                            label: "Ingresar documento de identidad",
-                            placeholder: "Ingresar documento"
+                            _c(
+                              "div",
+                              { staticClass: "w-full md:w-1/2 pl-0 md:pl-2" },
+                              [
+                                _c(
+                                  "w-input",
+                                  {
+                                    attrs: {
+                                      label: "Segundo Nombre",
+                                      placeholder: " "
+                                    },
+                                    model: {
+                                      value: _vm.form.secondname,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "secondname", $$v)
+                                      },
+                                      expression: "form.secondname"
+                                    }
+                                  },
+                                  [
+                                    _c("template", { slot: "snackbar" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v("Importante!")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  2
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-row justify-center flex-wrap"
                           },
-                          model: {
-                            value: _vm.form.dni,
-                            callback: function($$v) {
-                              _vm.$set(_vm.form, "dni", $$v)
-                            },
-                            expression: "form.dni"
-                          }
-                        },
-                        [
-                          _c("template", { slot: "snackbar" }, [
-                            _c("p", { staticClass: "bold" }, [
-                              _vm._v("Importante!")
-                            ]),
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "w-full md:w-1/2 pr-0 md:pr-2" },
+                              [
+                                _c(
+                                  "w-input",
+                                  {
+                                    attrs: {
+                                      label: "Apellido Paterno",
+                                      placeholder: " "
+                                    },
+                                    model: {
+                                      value: _vm.form.lastname1,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "lastname1", $$v)
+                                      },
+                                      expression: "form.lastname1"
+                                    }
+                                  },
+                                  [
+                                    _c("template", { slot: "snackbar" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v("Importante!")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  2
+                                )
+                              ],
+                              1
+                            ),
                             _vm._v(" "),
-                            _c("p", [
-                              _vm._v(
-                                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                              )
-                            ])
-                          ])
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c("w-textarea", {
-                        attrs: {
-                          label: "Ingresar breve descripción",
-                          placeholder: "Descripción"
-                        },
-                        model: {
-                          value: _vm.form.description,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "description", $$v)
-                          },
-                          expression: "form.description"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "flex flex-row justify-center" },
-                        [
-                          _c(
-                            "w-btn",
-                            {
-                              staticClass: "register-btn",
-                              attrs: {
-                                color: "tertiary",
-                                dark: true,
-                                fullwidth: _vm.windowWidth <= 768
+                            _c(
+                              "div",
+                              { staticClass: "w-full md:w-1/2 pl-0 md:pl-2" },
+                              [
+                                _c(
+                                  "w-input",
+                                  {
+                                    attrs: {
+                                      label: "Apellido Materno",
+                                      placeholder: " "
+                                    },
+                                    model: {
+                                      value: _vm.form.lastname2,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "lastname2", $$v)
+                                      },
+                                      expression: "form.lastname2"
+                                    }
+                                  },
+                                  [
+                                    _c("template", { slot: "snackbar" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v("Importante!")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  2
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "w-input",
+                          {
+                            attrs: {
+                              label: "Ingresar correo electrónico",
+                              placeholder: "example@gmail.com"
+                            },
+                            model: {
+                              value: _vm.form.email,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "email", $$v)
                               },
-                              on: {
-                                click: function($event) {
-                                  return _vm.$router.push(
-                                    "/register/successful"
-                                  )
-                                }
+                              expression: "form.email"
+                            }
+                          },
+                          [
+                            _c("template", { slot: "snackbar" }, [
+                              _c("p", { staticClass: "bold" }, [
+                                _vm._v("Importante!")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                )
+                              ])
+                            ])
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "my-5" },
+                          [
+                            _c("p", { staticClass: "bold ml-5" }, [
+                              _vm._v("¿Posee usuario Wlinni?")
+                            ]),
+                            _vm._v(" "),
+                            _c("w-switch", {
+                              attrs: {
+                                activeLabel: "Si",
+                                inactiveLabel: "No",
+                                color: "secondary"
+                              },
+                              model: {
+                                value: _vm.usuario,
+                                callback: function($$v) {
+                                  _vm.usuario = $$v
+                                },
+                                expression: "usuario"
                               }
+                            }),
+                            _vm._v(" "),
+                            _vm.usuario
+                              ? _c(
+                                  "w-input",
+                                  {
+                                    staticClass: "mt-5",
+                                    attrs: {
+                                      label: "Usuario",
+                                      placeholder: "Ingresar el Usuario"
+                                    },
+                                    model: {
+                                      value: _vm.form.usuario,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "usuario", $$v)
+                                      },
+                                      expression: "form.usuario"
+                                    }
+                                  },
+                                  [
+                                    _c("template", { slot: "snackbar" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v("Importante!")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  2
+                                )
+                              : _vm._e()
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("w-textarea", {
+                          attrs: {
+                            label: "Ingresar breve descripción",
+                            placeholder: "Descripción"
+                          },
+                          model: {
+                            value: _vm.form.description,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "description", $$v)
                             },
-                            [_vm._v("REGSITRAR")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ])
-          ]
-        )
-      ],
-      1
-    )
+                            expression: "form.description"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "flex flex-row justify-center" },
+                          [
+                            _c(
+                              "w-btn",
+                              {
+                                staticClass: "register-btn",
+                                attrs: {
+                                  color: "tertiary",
+                                  dark: true,
+                                  fullwidth: _vm.windowWidth <= 768
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.$router.push(
+                                      "/register/successful"
+                                    )
+                                  }
+                                }
+                              },
+                              [_vm._v("REGSITRAR")]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ])
+            ]
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -36416,77 +35935,79 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "register mb-20" }, [
-    _c(
-      "div",
-      { staticClass: "register-container" },
-      [
-        _c("p", { staticClass: "subtitle bold white-text ml-5" }, [
-          _vm._v("Registro")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "divider ml-5 mt-1" }),
-        _vm._v(" "),
-        _c("p", { staticClass: "white-text mt-10 ml-5 hidden md:block" }, [
-          _vm._v("Crear una cuenta")
-        ]),
-        _vm._v(" "),
-        _c(
-          "w-card",
-          { staticClass: "mt-5 register-card", attrs: { shadow: false } },
-          [
-            _c(
-              "p",
-              {
-                staticClass: "text-center tertiary-text bold body subtitle-md"
-              },
-              [_vm._v("Registro Satisfactorio!")]
-            ),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-center caption body-md" }, [
-              _vm._v("Sus datos fueron registrados")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex flex-row justify-center my-10" }, [
-              _c("div", { staticClass: "w-2/3" }, [
-                _c("img", { attrs: { src: "/images/register.png" } })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "caption text-center" }, [
-              _vm._v(
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh"
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "flex flex-row justify-center" },
-              [
-                _c(
-                  "w-btn",
-                  {
-                    staticClass: "register-btn",
-                    attrs: {
-                      color: "tertiary",
-                      dark: true,
-                      fullwidth: _vm.windowWidth <= 768
-                    },
-                    on: {
-                      click: function($event) {
-                        return _vm.$router.push("/")
-                      }
-                    }
-                  },
-                  [_vm._v("VOLVER AL INCIO")]
+    _c("div", { staticClass: "register-success-container" }, [
+      _c(
+        "div",
+        { staticClass: "responsive-register" },
+        [
+          _c("p", { staticClass: "subtitle bold white-text ml-5" }, [
+            _vm._v("Registro")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "divider ml-5 mt-1" }),
+          _vm._v(" "),
+          _c("p", { staticClass: "white-text mt-10 ml-5 hidden md:block" }, [
+            _vm._v("Crear una cuenta")
+          ]),
+          _vm._v(" "),
+          _c(
+            "w-card",
+            { staticClass: "mt-5 register-card", attrs: { shadow: false } },
+            [
+              _c(
+                "p",
+                {
+                  staticClass: "text-center tertiary-text bold body subtitle-md"
+                },
+                [_vm._v("Registro Satisfactorio!")]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-center caption body-md" }, [
+                _vm._v("Sus datos fueron registrados")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-row justify-center my-10" }, [
+                _c("div", { staticClass: "w-2/3" }, [
+                  _c("img", { attrs: { src: "/images/register.png" } })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "caption text-center" }, [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh"
                 )
-              ],
-              1
-            )
-          ]
-        )
-      ],
-      1
-    )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "flex flex-row justify-center" },
+                [
+                  _c(
+                    "w-btn",
+                    {
+                      staticClass: "register-btn",
+                      attrs: {
+                        color: "tertiary",
+                        dark: true,
+                        fullwidth: _vm.windowWidth <= 768
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.$router.push("/")
+                        }
+                      }
+                    },
+                    [_vm._v("VOLVER AL INCIO")]
+                  )
+                ],
+                1
+              )
+            ]
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -36813,7 +36334,8 @@ var render = function() {
                               _c(
                                 "div",
                                 {
-                                  staticClass: "w-1/3 self-center px-0 md:px-5"
+                                  staticClass:
+                                    "w-1/2 xl:w-1/3 self-center px-0 md:px-5"
                                 },
                                 [
                                   _c(
@@ -36849,7 +36371,7 @@ var render = function() {
                                 "div",
                                 {
                                   staticClass:
-                                    "w-1/3 flex flex-row justify-center px-5"
+                                    "w-1/2 xl:w-1/3 md:hidden xl:flex flex-row justify-center px-1 md:px-5"
                                 },
                                 _vm._l(5, function(i) {
                                   return _c(
@@ -36876,52 +36398,56 @@ var render = function() {
                                 1
                               ),
                               _vm._v(" "),
-                              _c("div", { staticClass: "w-1/3 self-center" }, [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "flex flex-row justify-center user-check mx-2",
-                                    class:
-                                      user.state == "AFILIADO"
-                                        ? "user-check-active"
-                                        : "",
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.$router.push(
-                                          "/agente/perfil"
-                                        )
+                              _c(
+                                "div",
+                                { staticClass: "w-1/2 xl:w-1/3 self-center" },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "flex flex-row justify-center user-check mx-2",
+                                      class:
+                                        user.state == "AFILIADO"
+                                          ? "user-check-active"
+                                          : "",
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.$router.push(
+                                            "/agente/perfil"
+                                          )
+                                        }
                                       }
-                                    }
-                                  },
-                                  [
-                                    _c("div", { staticClass: "w-1/2" }, [
-                                      _c("div", { staticClass: "avatar" }, [
-                                        _c("img", {
-                                          attrs: { src: user.image }
-                                        })
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "w-1/2 self-center" },
-                                      [
-                                        _c(
-                                          "p",
-                                          {
-                                            staticClass: "bold",
-                                            staticStyle: {
-                                              "line-height": "1.2"
-                                            }
-                                          },
-                                          [_vm._v(_vm._s(user.name))]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
+                                    },
+                                    [
+                                      _c("div", { staticClass: "w-1/2" }, [
+                                        _c("div", { staticClass: "avatar" }, [
+                                          _c("img", {
+                                            attrs: { src: user.image }
+                                          })
+                                        ])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "w-1/2 self-center" },
+                                        [
+                                          _c(
+                                            "p",
+                                            {
+                                              staticClass: "bold",
+                                              staticStyle: {
+                                                "line-height": "1.2"
+                                              }
+                                            },
+                                            [_vm._v(_vm._s(user.name))]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
                             ]
                           ),
                           _vm._v(" "),
@@ -37199,7 +36725,7 @@ var render = function() {
                 attrs: {
                   background:
                     _vm.windowWidth >= 768 ? "/images/banners/1.png" : "",
-                  items: _vm.windowWidth >= 768 ? 3 : 1,
+                  items: _vm.carrouselItems,
                   pagination: _vm.windowWidth < 768,
                   navigation: _vm.windowWidth >= 768
                 }
@@ -37212,7 +36738,13 @@ var render = function() {
                     [
                       _c(
                         "w-card",
-                        { attrs: { image: card.image, hover: "full-hover" } },
+                        {
+                          attrs: {
+                            image: card.image,
+                            pointer: true,
+                            hover: "full-hover"
+                          }
+                        },
                         [
                           _c("template", { slot: "image" }, [
                             _c("p", { staticClass: "bold" }, [
@@ -37257,7 +36789,10 @@ var render = function() {
                           _c("template", { slot: "footer" }, [
                             _c(
                               "div",
-                              { staticClass: "flex flex-row justify-between" },
+                              {
+                                staticClass:
+                                  "flex flex-row justify-between flex-wrap"
+                              },
                               [
                                 _c(
                                   "div",
@@ -37385,29 +36920,6 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "inmuebles-container" }, [
       _c("div", { staticClass: "flex flex-row justify-around gap-8" }, [
-        _c("div", { staticClass: "w-3/12 hidden lg:block" }, [
-          _c(
-            "div",
-            [
-              _c(
-                "w-card",
-                { attrs: { shadow: false } },
-                [
-                  _c("template", { slot: "header" }, [
-                    _c("p", { staticClass: "caption bold white-text" }, [
-                      _vm._v("FILTROS APLICADOS")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("FiltrosMapa")
-                ],
-                2
-              )
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
         _vm.filtrar
           ? _c("div", { staticClass: "w-full pb-16" }, [
               _c("div", { staticClass: "filter" }, [
@@ -37431,7 +36943,7 @@ var render = function() {
                         },
                         on: {
                           click: function($event) {
-                            _vm.filtrar = false
+                            _vm.showFilters = false
                           }
                         }
                       },
@@ -37444,7 +36956,7 @@ var render = function() {
             ])
           : _c(
               "div",
-              { staticClass: "sm:w-full lg:w-9/12 px-6" },
+              { staticClass: "w-full px-6" },
               [
                 _c(
                   "w-card",
@@ -37453,15 +36965,35 @@ var render = function() {
                     _c(
                       "div",
                       {
-                        staticClass: "flex flex-row justify-between flex-wrap"
+                        staticClass:
+                          "float-filter w-4/12 lg:w-3/12 hidden md:block"
                       },
                       [
-                        _c("div", { staticClass: "lg:pl-3" }, [
-                          _c("h1", { staticClass: "subtitle bold" }, [
-                            _vm._v("Listado de Inmuebles")
-                          ])
-                        ])
-                      ]
+                        _c(
+                          "w-card",
+                          [
+                            _c("template", { slot: "header" }, [
+                              _c(
+                                "p",
+                                { staticClass: "caption bold white-text" },
+                                [_vm._v("FILTROS APLICADOS")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("FiltrosMapa")
+                          ],
+                          2
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "h1",
+                      {
+                        staticClass: "subtitle bold text-center md:text-right"
+                      },
+                      [_vm._v("Listado de Inmuebles")]
                     ),
                     _vm._v(" "),
                     _c(
@@ -37471,11 +37003,11 @@ var render = function() {
                         _c(
                           "w-btn",
                           {
-                            staticClass: "lg:hidden",
+                            staticClass: "md:hidden",
                             attrs: { dark: true, color: "secondary" },
                             on: {
                               click: function($event) {
-                                _vm.filtrar = true
+                                _vm.showFilters = true
                               }
                             }
                           },
@@ -37529,7 +37061,7 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "inmuebles-container" }, [
       _c("div", { staticClass: "flex flex-row justify-around gap-8" }, [
-        _c("div", { staticClass: "w-3/12 hidden lg:block" }, [
+        _c("div", { staticClass: "md:w-2/6 lg:w-3/12 hidden md:block" }, [
           _c(
             "div",
             [
@@ -37575,7 +37107,7 @@ var render = function() {
                         },
                         on: {
                           click: function($event) {
-                            _vm.filtrar = false
+                            _vm.showFilters = false
                           }
                         }
                       },
@@ -37588,7 +37120,7 @@ var render = function() {
             ])
           : _c(
               "div",
-              { staticClass: "sm:w-full lg:w-9/12 px-6" },
+              { staticClass: "w-full md:w-4/6 lg:w-9/12 px-6" },
               [
                 _c(
                   "w-card",
@@ -37647,11 +37179,11 @@ var render = function() {
                     _c(
                       "w-btn",
                       {
-                        staticClass: "lg:hidden",
+                        staticClass: "md:hidden",
                         attrs: { dark: true, color: "secondary" },
                         on: {
                           click: function($event) {
-                            _vm.filtrar = true
+                            _vm.showFilters = true
                           }
                         }
                       },
@@ -37668,14 +37200,18 @@ var render = function() {
                       _vm._l(_vm.cards, function(card, i) {
                         return _c(
                           "div",
-                          { key: i, staticClass: "sm:w-full lg:w-1/3 p-3" },
+                          {
+                            key: i,
+                            staticClass: "sm:w-full md:w-2/4 lg:w-1/3 p-3"
+                          },
                           [
                             _c(
                               "w-card",
                               {
                                 attrs: {
                                   image: card.image,
-                                  hover: "full-hover"
+                                  hover: "full-hover",
+                                  pointer: true
                                 }
                               },
                               [
@@ -37728,7 +37264,7 @@ var render = function() {
                                     "div",
                                     {
                                       staticClass:
-                                        "flex flex-row justify-between"
+                                        "flex flex-row justify-between flex-wrap"
                                     },
                                     [
                                       _c(
@@ -37957,14 +37493,14 @@ var render = function() {
                                 "div",
                                 {
                                   staticClass:
-                                    "w-full md:w-1/2 flex flex-row justify-between flex-wrap"
+                                    "w-full md:w-1/2 flex flex-row flex-wrap"
                                 },
                                 [
                                   _c(
                                     "div",
                                     {
                                       staticClass:
-                                        "w-1/2 md:w-1/3 self-center px-0 md:px-5"
+                                        "w-1/2 xl:w-1/3 self-center px-0 md:px-5"
                                     },
                                     [
                                       _c(
@@ -37992,7 +37528,7 @@ var render = function() {
                                     "div",
                                     {
                                       staticClass:
-                                        "w-1/2 md:w-1/3 flex flex-row justify-center px-1 md:px-5"
+                                        "w-1/2 xl:w-1/3 md:hidden xl:flex flex-row justify-center px-1 md:px-5"
                                     },
                                     _vm._l(5, function(i) {
                                       return _c(
@@ -38023,7 +37559,7 @@ var render = function() {
                                     "div",
                                     {
                                       staticClass:
-                                        "hidden md:block w-1/3 self-center"
+                                        "hidden md:block w-1/2 md:w-1/3 self-center"
                                     },
                                     [
                                       _c(
@@ -38204,7 +37740,7 @@ var render = function() {
                 {
                   staticClass: "custom-carousel",
                   attrs: {
-                    items: _vm.windowWidth <= 764 ? 1 : 3,
+                    items: _vm.carrouselItems,
                     pagination: true,
                     navigation: false
                   }
@@ -38366,7 +37902,7 @@ var render = function() {
                 {
                   staticClass: "custom-carousel",
                   attrs: {
-                    items: _vm.windowWidth <= 764 ? 1 : 3,
+                    items: _vm.carrouselItems,
                     pagination: true,
                     navigation: false
                   }
@@ -38897,8 +38433,8 @@ var render = function() {
                 {
                   staticClass: "feature-carousel my-5",
                   attrs: {
-                    items: _vm.windowWidth <= 768 ? 1 : 5,
-                    pagination: _vm.windowWidth <= 768,
+                    items: _vm.carrouselItems,
+                    pagination: _vm.windowWidth <= 1024,
                     navigation: false
                   }
                 },
@@ -39203,7 +38739,8 @@ var render = function() {
             _c("mapas", {
               attrs: {
                 center: _vm.property.mapLocation.position,
-                markers: [_vm.property.mapLocation]
+                markers: [_vm.property.mapLocation],
+                showInfo: false
               }
             })
           ],
@@ -39245,1812 +38782,1972 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "nueva_publicacion" }, [
-    _c(
-      "div",
-      { staticClass: "container_publicacion" },
-      [
-        _c("w-card", { attrs: { shadow: false } }, [
-          _c("p", { staticClass: "subtitle bold mt-5 ml-5" }, [
-            _vm._v("Agregar Publicación")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "ml-5" }, [
-            _vm._v("Agregar la información de la nueva publicación")
-          ]),
-          _vm._v(" "),
+  return _c("div", { staticClass: "nueva-publicacion" }, [
+    _c("div", { staticClass: "container-nueva-publicacion" }, [
+      _c(
+        "div",
+        { staticClass: "responsive-nueva-publicacion" },
+        [
           _c(
-            "div",
-            {
-              staticClass:
-                "lg:w-2/3 primary rounded-bl-full rounded-r-full lg:ml-5 mt-6 p-4"
-            },
+            "w-card",
+            { staticClass: "card-nueva-publicacion", attrs: { shadow: false } },
             [
-              _c("p", { staticClass: "caption white-text truncate" }, [
-                _vm._v(
-                  "Configuración flexible y formas de edición, agregue y edite información de listado, fotos y ubicación de la posición"
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                }
-              }
-            },
-            [
-              _c("div", { staticClass: "form-section" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "form-header",
-                    class: _vm.sections.inmueble ? "header-active" : "",
-                    on: {
-                      click: function($event) {
-                        _vm.windowWidth <= 768
-                          ? (_vm.sections.inmueble = !_vm.sections.inmueble)
-                          : ""
-                      }
-                    }
-                  },
-                  [
-                    _c("p", [_vm._v("Tipo de Inmueble")]),
-                    _vm._v(" "),
-                    _c("w-icon", { attrs: { icon: "arrow-down", h: "18px" } })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.sections.inmueble
-                  ? _c("div", { staticClass: "form-body" }, [
-                      _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "TIPO DE INMUEBLE",
-                                placeholder: "Pendientes",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.tipoinmueble,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "tipoinmueble", $$v)
-                                },
-                                expression: "form.tipoinmueble"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "SUB-TIPO INMUEBLE",
-                                placeholder: "Pendientes",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.tipoinmueble,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "tipoinmueble", $$v)
-                                },
-                                expression: "form.tipoinmueble"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ])
-                    ])
-                  : _vm._e()
+              _c("p", { staticClass: "subtitle bold mt-5 ml-5" }, [
+                _vm._v("Agregar Publicación")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "form-section" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "form-header",
-                    class: _vm.sections.ubicacion ? "header-active" : "",
-                    on: {
-                      click: function($event) {
-                        _vm.windowWidth <= 768
-                          ? (_vm.sections.ubicacion = !_vm.sections.ubicacion)
-                          : ""
-                      }
-                    }
-                  },
-                  [
-                    _c("p", [_vm._v("Ubicación")]),
-                    _vm._v(" "),
-                    _c("w-icon", { attrs: { icon: "arrow-down", h: "18px" } })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.sections.ubicacion
-                  ? _c("div", { staticClass: "form-body" }, [
-                      _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c(
-                              "w-select",
-                              {
-                                attrs: {
-                                  label: "Departamento",
-                                  placeholder: "Elegir departamento...",
-                                  options: ["a", "b", "c"]
-                                },
-                                model: {
-                                  value: _vm.form.departamento,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.form, "departamento", $$v)
-                                  },
-                                  expression: "form.departamento"
-                                }
-                              },
-                              [
-                                _c("template", { slot: "snackbar" }, [
-                                  _c("p", { staticClass: "bold" }, [
-                                    _vm._v("Importante!")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                                    )
-                                  ])
-                                ])
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c(
-                              "w-select",
-                              {
-                                attrs: {
-                                  label: "PROVINCIAS",
-                                  placeholder: "Elegir departamento...",
-                                  options: ["a", "b", "c"]
-                                },
-                                model: {
-                                  value: _vm.form.provincias,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.form, "provincias", $$v)
-                                  },
-                                  expression: "form.provincias"
-                                }
-                              },
-                              [
-                                _c("template", { slot: "snackbar" }, [
-                                  _c("p", { staticClass: "bold" }, [
-                                    _vm._v("Importante!")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                                    )
-                                  ])
-                                ])
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c(
-                              "w-select",
-                              {
-                                attrs: {
-                                  label: "DISTRITO",
-                                  placeholder: "Elegir departamento...",
-                                  options: ["a", "b", "c"]
-                                },
-                                model: {
-                                  value: _vm.form.distrito,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.form, "distrito", $$v)
-                                  },
-                                  expression: "form.distrito"
-                                }
-                              },
-                              [
-                                _c("template", { slot: "snackbar" }, [
-                                  _c("p", { staticClass: "bold" }, [
-                                    _vm._v("Importante!")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                                    )
-                                  ])
-                                ])
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c(
-                              "w-select",
-                              {
-                                attrs: {
-                                  label: "URBANIZACIÓN",
-                                  placeholder: "Elegir departamento...",
-                                  options: ["a", "b", "c"]
-                                },
-                                model: {
-                                  value: _vm.form.urbanizacion,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.form, "urbanizacion", $$v)
-                                  },
-                                  expression: "form.urbanizacion"
-                                }
-                              },
-                              [
-                                _c("template", { slot: "snackbar" }, [
-                                  _c("p", { staticClass: "bold" }, [
-                                    _vm._v("Importante!")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
-                                    )
-                                  ])
-                                ])
-                              ],
-                              2
-                            )
-                          ],
-                          1
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "w-full md:w-1/3 flex flex-row flex-wrap"
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "w-full md:w-1/2" },
-                            [
-                              _c("w-checkbox", {
-                                attrs: { label: "Mostrar dirección" },
-                                model: {
-                                  value: _vm.form.mostrardireccion,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.form, "mostrardireccion", $$v)
-                                  },
-                                  expression: "form.mostrardireccion"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "w-full md:w-1/2" },
-                            [
-                              _c("w-checkbox", {
-                                attrs: { label: "Ocultar dirección" },
-                                model: {
-                                  value: _vm.form.ocultardireccion,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.form, "ocultardireccion", $$v)
-                                  },
-                                  expression: "form.ocultardireccion"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ]
-                      )
-                    ])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-section" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "form-header",
-                    class: _vm.sections.precio ? "header-active" : "",
-                    on: {
-                      click: function($event) {
-                        _vm.windowWidth <= 768
-                          ? (_vm.sections.precio = !_vm.sections.precio)
-                          : ""
-                      }
-                    }
-                  },
-                  [
-                    _c("p", [_vm._v("Precio")]),
-                    _vm._v(" "),
-                    _c("w-icon", { attrs: { icon: "arrow-down", h: "18px" } })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.sections.precio
-                  ? _c("div", { staticClass: "form-body" }, [
-                      _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "MONEDA",
-                                placeholder: "Dolar americanos",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.moneda,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "moneda", $$v)
-                                },
-                                expression: "form.moneda"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "PRECIO",
-                                placeholder: "S/00",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.precio,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "precio", $$v)
-                                },
-                                expression: "form.precio"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "w-full md:w-1/3 self-center",
-                            staticStyle: { "margin-top": "-10px" }
-                          },
-                          [
-                            _c("w-checkbox", {
-                              attrs: { label: "Consultar" },
-                              model: {
-                                value: _vm.form.consultar,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "consultar", $$v)
-                                },
-                                expression: "form.consultar"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ])
-                    ])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-section" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "form-header",
-                    class: _vm.sections.datos ? "header-active" : "",
-                    on: {
-                      click: function($event) {
-                        _vm.windowWidth <= 768
-                          ? (_vm.sections.datos = !_vm.sections.datos)
-                          : ""
-                      }
-                    }
-                  },
-                  [
-                    _c("p", [_vm._v("Datos del inmueble")]),
-                    _vm._v(" "),
-                    _c("w-icon", { attrs: { icon: "arrow-down", h: "18px" } })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.sections.datos
-                  ? _c("div", { staticClass: "form-body" }, [
-                      _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "AREA TOTAL",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.total,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "total", $$v)
-                                },
-                                expression: "form.total"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "AREA CONSTRUIDA",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.construida,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "construida", $$v)
-                                },
-                                expression: "form.construida"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "AREA TERRENO",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.terreno,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "terreno", $$v)
-                                },
-                                expression: "form.terreno"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "ANTIGUEDAD",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.antiguedad,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "antiguedad", $$v)
-                                },
-                                expression: "form.antiguedad"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "FRENTE",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.frente,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "frente", $$v)
-                                },
-                                expression: "form.frente"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "FONDO",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.fondo,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "fondo", $$v)
-                                },
-                                expression: "form.fondo"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "AREA TOTAL",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.total,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "total", $$v)
-                                },
-                                expression: "form.total"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "AREA CONSTRUIDA",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.construida,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "construida", $$v)
-                                },
-                                expression: "form.construida"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "AREA TERRENO",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.terreno,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "terreno", $$v)
-                                },
-                                expression: "form.terreno"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "ANTIGUEDAD",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.antiguedad,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "antiguedad", $$v)
-                                },
-                                expression: "form.antiguedad"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "FRENTE",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.frente,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "frente", $$v)
-                                },
-                                expression: "form.frente"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 px-2" },
-                          [
-                            _c("w-select", {
-                              attrs: {
-                                label: "FONDO",
-                                placeholder: "0",
-                                options: ["a", "b", "c"]
-                              },
-                              model: {
-                                value: _vm.form.fondo,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "fondo", $$v)
-                                },
-                                expression: "form.fondo"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ])
-                    ])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-section" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "form-header",
-                    class: _vm.sections.servicios ? "header-active" : "",
-                    on: {
-                      click: function($event) {
-                        _vm.windowWidth <= 768
-                          ? (_vm.sections.servicios = !_vm.sections.servicios)
-                          : ""
-                      }
-                    }
-                  },
-                  [
-                    _c("p", [_vm._v("Servicios")]),
-                    _vm._v(" "),
-                    _c("w-icon", { attrs: { icon: "arrow-down", h: "18px" } })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.sections.servicios
-                  ? _c("div", { staticClass: "form-body" }, [
-                      _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Agua" },
-                              model: {
-                                value: _vm.form.agua,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "agua", $$v)
-                                },
-                                expression: "form.agua"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Luz" },
-                              model: {
-                                value: _vm.form.luz,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "luz", $$v)
-                                },
-                                expression: "form.luz"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Conexión a gas" },
-                              model: {
-                                value: _vm.form.gas,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "gas", $$v)
-                                },
-                                expression: "form.gas"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Telefono" },
-                              model: {
-                                value: _vm.form.telefono,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "telefono", $$v)
-                                },
-                                expression: "form.telefono"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Cable" },
-                              model: {
-                                value: _vm.form.cable,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "cable", $$v)
-                                },
-                                expression: "form.cable"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Internet" },
-                              model: {
-                                value: _vm.form.internet,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "internet", $$v)
-                                },
-                                expression: "form.internet"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Guardia" },
-                              model: {
-                                value: _vm.form.guardia,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "guardia", $$v)
-                                },
-                                expression: "form.guardia"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Servicio de limpieza" },
-                              model: {
-                                value: _vm.form.limpieza,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "limpieza", $$v)
-                                },
-                                expression: "form.limpieza"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Servicio de seguridad" },
-                              model: {
-                                value: _vm.form.seguridad,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "seguridad", $$v)
-                                },
-                                expression: "form.seguridad"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ])
-                    ])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-section" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "form-header",
-                    class: _vm.sections.ambientes ? "header-active" : "",
-                    on: {
-                      click: function($event) {
-                        _vm.windowWidth <= 768
-                          ? (_vm.sections.ambientes = !_vm.sections.ambientes)
-                          : ""
-                      }
-                    }
-                  },
-                  [
-                    _c("p", [_vm._v("Ambientes")]),
-                    _vm._v(" "),
-                    _c("w-icon", { attrs: { icon: "arrow-down", h: "18px" } })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.sections.ambientes
-                  ? _c("div", { staticClass: "form-body" }, [
-                      _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Agua" },
-                              model: {
-                                value: _vm.form.agua,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "agua", $$v)
-                                },
-                                expression: "form.agua"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Luz" },
-                              model: {
-                                value: _vm.form.luz,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "luz", $$v)
-                                },
-                                expression: "form.luz"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Conexión a gas" },
-                              model: {
-                                value: _vm.form.gas,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "gas", $$v)
-                                },
-                                expression: "form.gas"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Telefono" },
-                              model: {
-                                value: _vm.form.telefono,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "telefono", $$v)
-                                },
-                                expression: "form.telefono"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Cable" },
-                              model: {
-                                value: _vm.form.cable,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "cable", $$v)
-                                },
-                                expression: "form.cable"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Internet" },
-                              model: {
-                                value: _vm.form.internet,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "internet", $$v)
-                                },
-                                expression: "form.internet"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Guardia" },
-                              model: {
-                                value: _vm.form.guardia,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "guardia", $$v)
-                                },
-                                expression: "form.guardia"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Servicio de limpieza" },
-                              model: {
-                                value: _vm.form.limpieza,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "limpieza", $$v)
-                                },
-                                expression: "form.limpieza"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Servicio de seguridad" },
-                              model: {
-                                value: _vm.form.seguridad,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "seguridad", $$v)
-                                },
-                                expression: "form.seguridad"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Agua" },
-                              model: {
-                                value: _vm.form.agua,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "agua", $$v)
-                                },
-                                expression: "form.agua"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Luz" },
-                              model: {
-                                value: _vm.form.luz,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "luz", $$v)
-                                },
-                                expression: "form.luz"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Conexión a gas" },
-                              model: {
-                                value: _vm.form.gas,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "gas", $$v)
-                                },
-                                expression: "form.gas"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Telefono" },
-                              model: {
-                                value: _vm.form.telefono,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "telefono", $$v)
-                                },
-                                expression: "form.telefono"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Cable" },
-                              model: {
-                                value: _vm.form.cable,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "cable", $$v)
-                                },
-                                expression: "form.cable"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Internet" },
-                              model: {
-                                value: _vm.form.internet,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "internet", $$v)
-                                },
-                                expression: "form.internet"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Guardia" },
-                              model: {
-                                value: _vm.form.guardia,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "guardia", $$v)
-                                },
-                                expression: "form.guardia"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Servicio de limpieza" },
-                              model: {
-                                value: _vm.form.limpieza,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "limpieza", $$v)
-                                },
-                                expression: "form.limpieza"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Servicio de seguridad" },
-                              model: {
-                                value: _vm.form.seguridad,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "seguridad", $$v)
-                                },
-                                expression: "form.seguridad"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ])
-                    ])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-section" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "form-header",
-                    class: _vm.sections.areascomunes ? "header-active" : "",
-                    on: {
-                      click: function($event) {
-                        _vm.windowWidth <= 768
-                          ? (_vm.sections.areascomunes = !_vm.sections
-                              .areascomunes)
-                          : ""
-                      }
-                    }
-                  },
-                  [
-                    _c("p", [_vm._v("Areas comunes")]),
-                    _vm._v(" "),
-                    _c("w-icon", { attrs: { icon: "arrow-down", h: "18px" } })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.sections.areascomunes
-                  ? _c("div", { staticClass: "form-body" }, [
-                      _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Agua" },
-                              model: {
-                                value: _vm.form.agua,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "agua", $$v)
-                                },
-                                expression: "form.agua"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Luz" },
-                              model: {
-                                value: _vm.form.luz,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "luz", $$v)
-                                },
-                                expression: "form.luz"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Conexión a gas" },
-                              model: {
-                                value: _vm.form.gas,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "gas", $$v)
-                                },
-                                expression: "form.gas"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Telefono" },
-                              model: {
-                                value: _vm.form.telefono,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "telefono", $$v)
-                                },
-                                expression: "form.telefono"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Cable" },
-                              model: {
-                                value: _vm.form.cable,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "cable", $$v)
-                                },
-                                expression: "form.cable"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Internet" },
-                              model: {
-                                value: _vm.form.internet,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "internet", $$v)
-                                },
-                                expression: "form.internet"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Guardia" },
-                              model: {
-                                value: _vm.form.guardia,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "guardia", $$v)
-                                },
-                                expression: "form.guardia"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Servicio de limpieza" },
-                              model: {
-                                value: _vm.form.limpieza,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "limpieza", $$v)
-                                },
-                                expression: "form.limpieza"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/3 self-center" },
-                          [
-                            _c("w-checkbox", {
-                              staticClass: "ml-5",
-                              attrs: { label: "Servicio de seguridad" },
-                              model: {
-                                value: _vm.form.seguridad,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.form, "seguridad", $$v)
-                                },
-                                expression: "form.seguridad"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ])
-                    ])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("p", { staticClass: "f-header" }, [
-                  _vm._v("Enlace de video")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                  _c(
-                    "div",
-                    { staticClass: "w-full px-2" },
-                    [
-                      _c("w-input", {
-                        attrs: {
-                          label: "Enlace de video",
-                          placeholder:
-                            "Ejemplo: https://www.youtube.com/watch?v=uN5Cux5t0Ak"
-                        },
-                        model: {
-                          value: _vm.form.video,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "video", $$v)
-                          },
-                          expression: "form.video"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("p", { staticClass: "f-header" }, [
-                  _vm._v("Medidas de ambiente")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex flex-row flex-wrap" }, [
-                  _c(
-                    "div",
-                    { staticClass: "w-full md:w-1/2 px-2" },
-                    [
-                      _c("w-input", {
-                        attrs: {
-                          label: "AMBIENTE",
-                          placeholder: "Ejemplo: sala, comedor"
-                        },
-                        model: {
-                          value: _vm.form.ambiente,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "ambiente", $$v)
-                          },
-                          expression: "form.ambiente"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "w-full md:w-1/2 px-2" },
-                    [
-                      _c("w-input", {
-                        attrs: {
-                          label: "AMBIENTE",
-                          placeholder: "Ejemplo: sala, comedor"
-                        },
-                        model: {
-                          value: _vm.form.ambiente,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "ambiente", $$v)
-                          },
-                          expression: "form.ambiente"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "w-full px-2" },
-                    [
-                      _c("w-textarea", {
-                        attrs: {
-                          label: "AMBIENTE",
-                          placeholder: "Ejemplo: sala, comedor"
-                        },
-                        model: {
-                          value: _vm.form.ambiente,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "ambiente", $$v)
-                          },
-                          expression: "form.ambiente"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ])
+              _c("p", { staticClass: "ml-5" }, [
+                _vm._v("Agregar la información de la nueva publicación")
               ]),
               _vm._v(" "),
               _c(
                 "div",
+                {
+                  staticClass:
+                    "lg:w-2/3 primary rounded-bl-full rounded-r-full lg:ml-5 mt-6 p-4"
+                },
                 [
-                  _c(
-                    "p",
-                    { staticClass: "body bold tertiary-text ml-5 mb-4" },
-                    [_vm._v("Locación")]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "ml-5 mb-4" }, [
+                  _c("p", { staticClass: "caption white-text truncate" }, [
                     _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis."
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("mapas-agregar")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "mt-20" }, [
-                _c("div", { staticClass: "f-header" }, [
-                  _vm._v(
-                    "\n                        Fotos\n                        "
-                  ),
-                  _c("span", { staticClass: "caption black-text" }, [
-                    _vm._v(
-                      "(" +
-                        _vm._s(_vm.form.files.length) +
-                        " de 20 disponibles)"
+                      "Configuración flexible y formas de edición, agregue y edite información de listado, fotos y ubicación de la posición"
                     )
                   ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "flex flex-row justify-center flex-wrap" },
-                  [
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "form-section" }, [
                     _c(
                       "div",
-                      { staticClass: "w-full md:w-1/2 px-2" },
+                      {
+                        staticClass: "form-header",
+                        class: _vm.sections.inmueble ? "header-active" : "",
+                        on: {
+                          click: function($event) {
+                            _vm.windowWidth <= 768
+                              ? (_vm.sections.inmueble = !_vm.sections.inmueble)
+                              : ""
+                          }
+                        }
+                      },
+                      [
+                        _c("p", [_vm._v("Tipo de Inmueble")]),
+                        _vm._v(" "),
+                        _c("w-icon", {
+                          attrs: { icon: "arrow-down", h: "18px" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm.sections.inmueble
+                      ? _c("div", { staticClass: "form-body" }, [
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row flex-wrap" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "TIPO DE INMUEBLE",
+                                      placeholder: "Pendientes",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.tipoinmueble,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "tipoinmueble", $$v)
+                                      },
+                                      expression: "form.tipoinmueble"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "SUB-TIPO INMUEBLE",
+                                      placeholder: "Pendientes",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.tipoinmueble,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "tipoinmueble", $$v)
+                                      },
+                                      expression: "form.tipoinmueble"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-section" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-header",
+                        class: _vm.sections.ubicacion ? "header-active" : "",
+                        on: {
+                          click: function($event) {
+                            _vm.windowWidth <= 768
+                              ? (_vm.sections.ubicacion = !_vm.sections
+                                  .ubicacion)
+                              : ""
+                          }
+                        }
+                      },
+                      [
+                        _c("p", [_vm._v("Ubicación")]),
+                        _vm._v(" "),
+                        _c("w-icon", {
+                          attrs: { icon: "arrow-down", h: "18px" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm.sections.ubicacion
+                      ? _c("div", { staticClass: "form-body" }, [
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row flex-wrap" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c(
+                                    "w-select",
+                                    {
+                                      attrs: {
+                                        label: "Departamento",
+                                        placeholder: "Elegir departamento...",
+                                        options: ["a", "b", "c"]
+                                      },
+                                      model: {
+                                        value: _vm.form.departamento,
+                                        callback: function($$v) {
+                                          _vm.$set(
+                                            _vm.form,
+                                            "departamento",
+                                            $$v
+                                          )
+                                        },
+                                        expression: "form.departamento"
+                                      }
+                                    },
+                                    [
+                                      _c("template", { slot: "snackbar" }, [
+                                        _c("p", { staticClass: "bold" }, [
+                                          _vm._v("Importante!")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("p", [
+                                          _vm._v(
+                                            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                          )
+                                        ])
+                                      ])
+                                    ],
+                                    2
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c(
+                                    "w-select",
+                                    {
+                                      attrs: {
+                                        label: "PROVINCIAS",
+                                        placeholder: "Elegir departamento...",
+                                        options: ["a", "b", "c"]
+                                      },
+                                      model: {
+                                        value: _vm.form.provincias,
+                                        callback: function($$v) {
+                                          _vm.$set(_vm.form, "provincias", $$v)
+                                        },
+                                        expression: "form.provincias"
+                                      }
+                                    },
+                                    [
+                                      _c("template", { slot: "snackbar" }, [
+                                        _c("p", { staticClass: "bold" }, [
+                                          _vm._v("Importante!")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("p", [
+                                          _vm._v(
+                                            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                          )
+                                        ])
+                                      ])
+                                    ],
+                                    2
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row flex-wrap" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c(
+                                    "w-select",
+                                    {
+                                      attrs: {
+                                        label: "DISTRITO",
+                                        placeholder: "Elegir departamento...",
+                                        options: ["a", "b", "c"]
+                                      },
+                                      model: {
+                                        value: _vm.form.distrito,
+                                        callback: function($$v) {
+                                          _vm.$set(_vm.form, "distrito", $$v)
+                                        },
+                                        expression: "form.distrito"
+                                      }
+                                    },
+                                    [
+                                      _c("template", { slot: "snackbar" }, [
+                                        _c("p", { staticClass: "bold" }, [
+                                          _vm._v("Importante!")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("p", [
+                                          _vm._v(
+                                            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                          )
+                                        ])
+                                      ])
+                                    ],
+                                    2
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c(
+                                    "w-select",
+                                    {
+                                      attrs: {
+                                        label: "URBANIZACIÓN",
+                                        placeholder: "Elegir departamento...",
+                                        options: ["a", "b", "c"]
+                                      },
+                                      model: {
+                                        value: _vm.form.urbanizacion,
+                                        callback: function($$v) {
+                                          _vm.$set(
+                                            _vm.form,
+                                            "urbanizacion",
+                                            $$v
+                                          )
+                                        },
+                                        expression: "form.urbanizacion"
+                                      }
+                                    },
+                                    [
+                                      _c("template", { slot: "snackbar" }, [
+                                        _c("p", { staticClass: "bold" }, [
+                                          _vm._v("Importante!")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("p", [
+                                          _vm._v(
+                                            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuadas."
+                                          )
+                                        ])
+                                      ])
+                                    ],
+                                    2
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "w-full md:w-1/3 flex flex-row flex-wrap"
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/2" },
+                                [
+                                  _c("w-checkbox", {
+                                    attrs: { label: "Mostrar dirección" },
+                                    model: {
+                                      value: _vm.form.mostrardireccion,
+                                      callback: function($$v) {
+                                        _vm.$set(
+                                          _vm.form,
+                                          "mostrardireccion",
+                                          $$v
+                                        )
+                                      },
+                                      expression: "form.mostrardireccion"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/2" },
+                                [
+                                  _c("w-checkbox", {
+                                    attrs: { label: "Ocultar dirección" },
+                                    model: {
+                                      value: _vm.form.ocultardireccion,
+                                      callback: function($$v) {
+                                        _vm.$set(
+                                          _vm.form,
+                                          "ocultardireccion",
+                                          $$v
+                                        )
+                                      },
+                                      expression: "form.ocultardireccion"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-section" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-header",
+                        class: _vm.sections.precio ? "header-active" : "",
+                        on: {
+                          click: function($event) {
+                            _vm.windowWidth <= 768
+                              ? (_vm.sections.precio = !_vm.sections.precio)
+                              : ""
+                          }
+                        }
+                      },
+                      [
+                        _c("p", [_vm._v("Precio")]),
+                        _vm._v(" "),
+                        _c("w-icon", {
+                          attrs: { icon: "arrow-down", h: "18px" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm.sections.precio
+                      ? _c("div", { staticClass: "form-body" }, [
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row flex-wrap" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "MONEDA",
+                                      placeholder: "Dolar americanos",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.moneda,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "moneda", $$v)
+                                      },
+                                      expression: "form.moneda"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "PRECIO",
+                                      placeholder: "S/00",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.precio,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "precio", $$v)
+                                      },
+                                      expression: "form.precio"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "w-full md:w-1/3 self-center",
+                                  staticStyle: { "margin-top": "-10px" }
+                                },
+                                [
+                                  _c("w-checkbox", {
+                                    attrs: { label: "Consultar" },
+                                    model: {
+                                      value: _vm.form.consultar,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "consultar", $$v)
+                                      },
+                                      expression: "form.consultar"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-section" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-header",
+                        class: _vm.sections.datos ? "header-active" : "",
+                        on: {
+                          click: function($event) {
+                            _vm.windowWidth <= 768
+                              ? (_vm.sections.datos = !_vm.sections.datos)
+                              : ""
+                          }
+                        }
+                      },
+                      [
+                        _c("p", [_vm._v("Datos del inmueble")]),
+                        _vm._v(" "),
+                        _c("w-icon", {
+                          attrs: { icon: "arrow-down", h: "18px" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm.sections.datos
+                      ? _c("div", { staticClass: "form-body" }, [
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row flex-wrap" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "AREA TOTAL",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.total,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "total", $$v)
+                                      },
+                                      expression: "form.total"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "AREA CONSTRUIDA",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.construida,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "construida", $$v)
+                                      },
+                                      expression: "form.construida"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "AREA TERRENO",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.terreno,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "terreno", $$v)
+                                      },
+                                      expression: "form.terreno"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "ANTIGUEDAD",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.antiguedad,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "antiguedad", $$v)
+                                      },
+                                      expression: "form.antiguedad"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "FRENTE",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.frente,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "frente", $$v)
+                                      },
+                                      expression: "form.frente"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "FONDO",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.fondo,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "fondo", $$v)
+                                      },
+                                      expression: "form.fondo"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "AREA TOTAL",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.total,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "total", $$v)
+                                      },
+                                      expression: "form.total"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "AREA CONSTRUIDA",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.construida,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "construida", $$v)
+                                      },
+                                      expression: "form.construida"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "AREA TERRENO",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.terreno,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "terreno", $$v)
+                                      },
+                                      expression: "form.terreno"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "ANTIGUEDAD",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.antiguedad,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "antiguedad", $$v)
+                                      },
+                                      expression: "form.antiguedad"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "FRENTE",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.frente,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "frente", $$v)
+                                      },
+                                      expression: "form.frente"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 px-2" },
+                                [
+                                  _c("w-select", {
+                                    attrs: {
+                                      label: "FONDO",
+                                      placeholder: "0",
+                                      options: ["a", "b", "c"]
+                                    },
+                                    model: {
+                                      value: _vm.form.fondo,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "fondo", $$v)
+                                      },
+                                      expression: "form.fondo"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-section" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-header",
+                        class: _vm.sections.servicios ? "header-active" : "",
+                        on: {
+                          click: function($event) {
+                            _vm.windowWidth <= 768
+                              ? (_vm.sections.servicios = !_vm.sections
+                                  .servicios)
+                              : ""
+                          }
+                        }
+                      },
+                      [
+                        _c("p", [_vm._v("Servicios")]),
+                        _vm._v(" "),
+                        _c("w-icon", {
+                          attrs: { icon: "arrow-down", h: "18px" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm.sections.servicios
+                      ? _c("div", { staticClass: "form-body" }, [
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row flex-wrap" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Agua" },
+                                    model: {
+                                      value: _vm.form.agua,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "agua", $$v)
+                                      },
+                                      expression: "form.agua"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Luz" },
+                                    model: {
+                                      value: _vm.form.luz,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "luz", $$v)
+                                      },
+                                      expression: "form.luz"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Conexión a gas" },
+                                    model: {
+                                      value: _vm.form.gas,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "gas", $$v)
+                                      },
+                                      expression: "form.gas"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Telefono" },
+                                    model: {
+                                      value: _vm.form.telefono,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "telefono", $$v)
+                                      },
+                                      expression: "form.telefono"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Cable" },
+                                    model: {
+                                      value: _vm.form.cable,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "cable", $$v)
+                                      },
+                                      expression: "form.cable"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Internet" },
+                                    model: {
+                                      value: _vm.form.internet,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "internet", $$v)
+                                      },
+                                      expression: "form.internet"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Guardia" },
+                                    model: {
+                                      value: _vm.form.guardia,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "guardia", $$v)
+                                      },
+                                      expression: "form.guardia"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Servicio de limpieza" },
+                                    model: {
+                                      value: _vm.form.limpieza,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "limpieza", $$v)
+                                      },
+                                      expression: "form.limpieza"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Servicio de seguridad" },
+                                    model: {
+                                      value: _vm.form.seguridad,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "seguridad", $$v)
+                                      },
+                                      expression: "form.seguridad"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-section" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-header",
+                        class: _vm.sections.ambientes ? "header-active" : "",
+                        on: {
+                          click: function($event) {
+                            _vm.windowWidth <= 768
+                              ? (_vm.sections.ambientes = !_vm.sections
+                                  .ambientes)
+                              : ""
+                          }
+                        }
+                      },
+                      [
+                        _c("p", [_vm._v("Ambientes")]),
+                        _vm._v(" "),
+                        _c("w-icon", {
+                          attrs: { icon: "arrow-down", h: "18px" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm.sections.ambientes
+                      ? _c("div", { staticClass: "form-body" }, [
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row flex-wrap" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Agua" },
+                                    model: {
+                                      value: _vm.form.agua,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "agua", $$v)
+                                      },
+                                      expression: "form.agua"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Luz" },
+                                    model: {
+                                      value: _vm.form.luz,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "luz", $$v)
+                                      },
+                                      expression: "form.luz"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Conexión a gas" },
+                                    model: {
+                                      value: _vm.form.gas,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "gas", $$v)
+                                      },
+                                      expression: "form.gas"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Telefono" },
+                                    model: {
+                                      value: _vm.form.telefono,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "telefono", $$v)
+                                      },
+                                      expression: "form.telefono"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Cable" },
+                                    model: {
+                                      value: _vm.form.cable,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "cable", $$v)
+                                      },
+                                      expression: "form.cable"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Internet" },
+                                    model: {
+                                      value: _vm.form.internet,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "internet", $$v)
+                                      },
+                                      expression: "form.internet"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Guardia" },
+                                    model: {
+                                      value: _vm.form.guardia,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "guardia", $$v)
+                                      },
+                                      expression: "form.guardia"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Servicio de limpieza" },
+                                    model: {
+                                      value: _vm.form.limpieza,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "limpieza", $$v)
+                                      },
+                                      expression: "form.limpieza"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Servicio de seguridad" },
+                                    model: {
+                                      value: _vm.form.seguridad,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "seguridad", $$v)
+                                      },
+                                      expression: "form.seguridad"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Agua" },
+                                    model: {
+                                      value: _vm.form.agua,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "agua", $$v)
+                                      },
+                                      expression: "form.agua"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Luz" },
+                                    model: {
+                                      value: _vm.form.luz,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "luz", $$v)
+                                      },
+                                      expression: "form.luz"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Conexión a gas" },
+                                    model: {
+                                      value: _vm.form.gas,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "gas", $$v)
+                                      },
+                                      expression: "form.gas"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Telefono" },
+                                    model: {
+                                      value: _vm.form.telefono,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "telefono", $$v)
+                                      },
+                                      expression: "form.telefono"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Cable" },
+                                    model: {
+                                      value: _vm.form.cable,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "cable", $$v)
+                                      },
+                                      expression: "form.cable"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Internet" },
+                                    model: {
+                                      value: _vm.form.internet,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "internet", $$v)
+                                      },
+                                      expression: "form.internet"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Guardia" },
+                                    model: {
+                                      value: _vm.form.guardia,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "guardia", $$v)
+                                      },
+                                      expression: "form.guardia"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Servicio de limpieza" },
+                                    model: {
+                                      value: _vm.form.limpieza,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "limpieza", $$v)
+                                      },
+                                      expression: "form.limpieza"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Servicio de seguridad" },
+                                    model: {
+                                      value: _vm.form.seguridad,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "seguridad", $$v)
+                                      },
+                                      expression: "form.seguridad"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-section" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-header",
+                        class: _vm.sections.areascomunes ? "header-active" : "",
+                        on: {
+                          click: function($event) {
+                            _vm.windowWidth <= 768
+                              ? (_vm.sections.areascomunes = !_vm.sections
+                                  .areascomunes)
+                              : ""
+                          }
+                        }
+                      },
+                      [
+                        _c("p", [_vm._v("Areas comunes")]),
+                        _vm._v(" "),
+                        _c("w-icon", {
+                          attrs: { icon: "arrow-down", h: "18px" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm.sections.areascomunes
+                      ? _c("div", { staticClass: "form-body" }, [
+                          _c(
+                            "div",
+                            { staticClass: "flex flex-row flex-wrap" },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Agua" },
+                                    model: {
+                                      value: _vm.form.agua,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "agua", $$v)
+                                      },
+                                      expression: "form.agua"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Luz" },
+                                    model: {
+                                      value: _vm.form.luz,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "luz", $$v)
+                                      },
+                                      expression: "form.luz"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Conexión a gas" },
+                                    model: {
+                                      value: _vm.form.gas,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "gas", $$v)
+                                      },
+                                      expression: "form.gas"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Telefono" },
+                                    model: {
+                                      value: _vm.form.telefono,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "telefono", $$v)
+                                      },
+                                      expression: "form.telefono"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Cable" },
+                                    model: {
+                                      value: _vm.form.cable,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "cable", $$v)
+                                      },
+                                      expression: "form.cable"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Internet" },
+                                    model: {
+                                      value: _vm.form.internet,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "internet", $$v)
+                                      },
+                                      expression: "form.internet"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Guardia" },
+                                    model: {
+                                      value: _vm.form.guardia,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "guardia", $$v)
+                                      },
+                                      expression: "form.guardia"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Servicio de limpieza" },
+                                    model: {
+                                      value: _vm.form.limpieza,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "limpieza", $$v)
+                                      },
+                                      expression: "form.limpieza"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "w-full md:w-1/3 self-center" },
+                                [
+                                  _c("w-checkbox", {
+                                    staticClass: "ml-5",
+                                    attrs: { label: "Servicio de seguridad" },
+                                    model: {
+                                      value: _vm.form.seguridad,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.form, "seguridad", $$v)
+                                      },
+                                      expression: "form.seguridad"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("p", { staticClass: "f-header" }, [
+                      _vm._v("Enlace de video")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flex flex-row flex-wrap" }, [
+                      _c(
+                        "div",
+                        { staticClass: "w-full px-2" },
+                        [
+                          _c("w-input", {
+                            attrs: {
+                              label: "Enlace de video",
+                              placeholder:
+                                "Ejemplo: https://www.youtube.com/watch?v=uN5Cux5t0Ak"
+                            },
+                            model: {
+                              value: _vm.form.video,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "video", $$v)
+                              },
+                              expression: "form.video"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("p", { staticClass: "f-header" }, [
+                      _vm._v("Medidas de ambiente")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flex flex-row flex-wrap" }, [
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-2" },
+                        [
+                          _c("w-input", {
+                            attrs: {
+                              label: "AMBIENTE",
+                              placeholder: "Ejemplo: sala, comedor"
+                            },
+                            model: {
+                              value: _vm.form.ambiente,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "ambiente", $$v)
+                              },
+                              expression: "form.ambiente"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-2" },
+                        [
+                          _c("w-input", {
+                            attrs: {
+                              label: "AMBIENTE",
+                              placeholder: "Ejemplo: sala, comedor"
+                            },
+                            model: {
+                              value: _vm.form.ambiente,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "ambiente", $$v)
+                              },
+                              expression: "form.ambiente"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full px-2" },
+                        [
+                          _c("w-textarea", {
+                            attrs: {
+                              label: "AMBIENTE",
+                              placeholder: "Ejemplo: sala, comedor"
+                            },
+                            model: {
+                              value: _vm.form.ambiente,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "ambiente", $$v)
+                              },
+                              expression: "form.ambiente"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    [
+                      _c(
+                        "p",
+                        { staticClass: "body bold tertiary-text ml-5 mb-4" },
+                        [_vm._v("Locación")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "ml-5 mb-4" }, [
+                        _vm._v(
+                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis."
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("mapas-agregar")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mt-20" }, [
+                    _c("div", { staticClass: "f-header" }, [
+                      _vm._v(
+                        "\n                            Fotos\n                            "
+                      ),
+                      _c("span", { staticClass: "caption black-text" }, [
+                        _vm._v(
+                          "(" +
+                            _vm._s(_vm.form.files.length) +
+                            " de 20 disponibles)"
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "flex flex-row justify-center flex-wrap" },
                       [
                         _c(
-                          "w-card",
-                          {
-                            staticClass: "upload-file-card",
-                            attrs: { shadow: false }
-                          },
+                          "div",
+                          { staticClass: "w-full md:w-1/2 px-2" },
                           [
                             _c(
-                              "div",
-                              { staticClass: "flex flex-col items-center" },
+                              "w-card",
+                              {
+                                staticClass: "upload-file-card",
+                                attrs: { shadow: false }
+                              },
                               [
-                                _c("w-icon", {
-                                  attrs: { icon: "upload-image", h: "137px" }
-                                }),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-center mt-5" }, [
-                                  _vm._v("Arrastra fotos desde tu computadora")
-                                ]),
-                                _vm._v(" "),
                                 _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      color: "#57BCD1",
-                                      dark: true,
-                                      rounded: true,
-                                      small: true
-                                    }
-                                  },
+                                  "div",
+                                  { staticClass: "flex flex-col items-center" },
                                   [
-                                    _c("p", [_vm._v("seleccionar fotos")]),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      ref: "photoFile",
-                                      staticClass: "fileInput",
+                                    _c("w-icon", {
                                       attrs: {
-                                        type: "file",
-                                        accept: ".jpg, .jpeg, .png"
-                                      },
-                                      on: {
-                                        change: function($event) {
-                                          return _vm.addFile("photoFile")
-                                        }
+                                        icon: "upload-image",
+                                        h: "137px"
                                       }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-center mt-5" }, [
-                                  _vm._v(
-                                    "\n                                        Formatos permitidos: JPG, JPEG, PNG\n                                        (Tamaño máximo: 5Mb)\n                                    "
-                                  )
-                                ])
-                              ],
-                              1
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "text-center mt-5" },
+                                      [
+                                        _vm._v(
+                                          "Sube fotos desde tu computadora"
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "w-btn",
+                                      {
+                                        attrs: {
+                                          color: "#57BCD1",
+                                          dark: true,
+                                          rounded: true,
+                                          small: true
+                                        }
+                                      },
+                                      [
+                                        _c("p", [_vm._v("seleccionar fotos")]),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          ref: "photoFile",
+                                          staticClass: "fileInput",
+                                          attrs: {
+                                            type: "file",
+                                            accept: ".jpg, .jpeg, .png"
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.addFile("photoFile")
+                                            }
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "text-center mt-5" },
+                                      [
+                                        _vm._v(
+                                          "\n                                            Formatos permitidos: JPG, JPEG, PNG\n                                            (Tamaño máximo: 5Mb)\n                                        "
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ]
                             )
-                          ]
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "w-full md:w-1/2 px-2" },
+                          [
+                            _c(
+                              "w-card",
+                              {
+                                staticClass: "upload-file-card",
+                                attrs: { shadow: false }
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  { staticClass: "flex flex-col items-center" },
+                                  [
+                                    _c("w-icon", {
+                                      attrs: {
+                                        icon: "upload-video",
+                                        h: "137px"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "text-center mt-5" },
+                                      [
+                                        _vm._v(
+                                          "Sube videos desde tu computadora"
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "w-btn",
+                                      {
+                                        attrs: {
+                                          color: "#57BCD1",
+                                          dark: true,
+                                          rounded: true,
+                                          small: true
+                                        }
+                                      },
+                                      [
+                                        _c("p", [_vm._v("seleccionar videos")]),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          ref: "videoFile",
+                                          staticClass: "fileInput",
+                                          attrs: {
+                                            type: "file",
+                                            accept: ".mp4, .avi"
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              return _vm.addFile("videoFile")
+                                            }
+                                          }
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "text-center mt-5" },
+                                      [
+                                        _vm._v(
+                                          "\n                                            Formatos permitidos: MP4, AVI,\n                                            (Tamaño máximo: 50Mb)\n                                        "
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "preview" },
+                      [
+                        _c(
+                          "w-carousel",
+                          {
+                            staticClass: "preview-carousel",
+                            attrs: {
+                              items: _vm.carrouselItems,
+                              pagination:
+                                _vm.windowWidth >= 1024 ? false : true,
+                              navigation: _vm.windowWidth >= 1024 ? true : false
+                            }
+                          },
+                          _vm._l(_vm.form.files, function(media, i) {
+                            return _c(
+                              "slide",
+                              { key: i, staticClass: "preview-slide" },
+                              [
+                                _c("div", { staticClass: "preview-item" }, [
+                                  _c("div", { staticClass: "preview-source" }, [
+                                    media.type == "img"
+                                      ? _c("img", { attrs: { src: media.url } })
+                                      : media.type == "video"
+                                      ? _c(
+                                          "video",
+                                          {
+                                            attrs: { autoplay: "", muted: "" },
+                                            domProps: { muted: true }
+                                          },
+                                          [
+                                            _c("source", {
+                                              attrs: { src: media.url }
+                                            })
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "delete-icon",
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.removeFile(media)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("×")]
+                                    )
+                                  ])
+                                ])
+                              ]
+                            )
+                          }),
+                          1
                         )
                       ],
                       1
                     ),
                     _vm._v(" "),
+                    _c("div", { staticClass: "flex flex-row justify-center" }, [
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-2 mt-10 mb-20" },
+                        [
+                          _c("p", { staticClass: "text-center" }, [
+                            _vm._v(
+                              "\n                                    Si ha completadp todos los campos y está\n                                    seguro de la exactitud de toda la\n                                    información, haga clic en el botón a\n                                    continuación para guardar los datos\n                                "
+                            )
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "w-full md:w-1/2 px-2" },
+                      { staticClass: "flex flex-row justify-center" },
                       [
-                        _c(
-                          "w-card",
-                          {
-                            staticClass: "upload-file-card",
-                            attrs: { shadow: false }
-                          },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "flex flex-col items-center" },
-                              [
-                                _c("w-icon", {
-                                  attrs: { icon: "upload-video", h: "137px" }
-                                }),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-center mt-5" }, [
-                                  _vm._v("Arrastra videos desde tu computadora")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "w-btn",
-                                  {
-                                    attrs: {
-                                      color: "#57BCD1",
-                                      dark: true,
-                                      rounded: true,
-                                      small: true
-                                    }
-                                  },
-                                  [
-                                    _c("p", [_vm._v("seleccionar videos")]),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      ref: "videoFile",
-                                      staticClass: "fileInput",
-                                      attrs: {
-                                        type: "file",
-                                        accept: ".mp4, .avi"
-                                      },
-                                      on: {
-                                        change: function($event) {
-                                          return _vm.addFile("videoFile")
-                                        }
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-center mt-5" }, [
-                                  _vm._v(
-                                    "\n                                        Formatos permitidos: MP4, AVI,\n                                        (Tamaño máximo: 50Mb)\n                                    "
-                                  )
-                                ])
-                              ],
-                              1
-                            )
-                          ]
-                        )
+                        _c("w-btn", { attrs: { dark: true, large: true } }, [
+                          _vm._v("GUARDAR AVISO")
+                        ])
                       ],
                       1
                     )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex flex-row justify-center" }, [
-                  _c(
-                    "div",
-                    { staticClass: "w-full md:w-1/2 px-2 mt-10 mb-20" },
-                    [
-                      _c("p", { staticClass: "text-center" }, [
-                        _vm._v(
-                          "\n                                Si ha completadp todos los campos y está\n                                seguro de la exactitud de toda la\n                                información, haga clic en el botón a\n                                continuación para guardar los datos\n                            "
-                        )
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "flex flex-row justify-center" },
-                  [
-                    _c("w-btn", { attrs: { dark: true, large: true } }, [
-                      _vm._v("GUARDAR AVISO")
-                    ])
-                  ],
-                  1
-                )
-              ])
+                  ])
+                ]
+              )
             ]
           )
-        ])
-      ],
-      1
-    )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -41078,7 +40775,7 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "publicaciones-container" }, [
       _c("div", { staticClass: "flex flex-row justify-around" }, [
-        _c("div", { staticClass: "w-3/12 hidden lg:block" }, [
+        _c("div", { staticClass: "md:w-4/10 lg:w-3/12 hidden md:block" }, [
           _c(
             "div",
             [
@@ -41142,7 +40839,7 @@ var render = function() {
                         },
                         on: {
                           click: function($event) {
-                            _vm.filtrar = false
+                            _vm.showFilters = false
                           }
                         }
                       },
@@ -41155,7 +40852,7 @@ var render = function() {
             ])
           : _c(
               "div",
-              { staticClass: "sm:w-full lg:w-9/12 px-6" },
+              { staticClass: "w-full md:w-6/10 lg:w-9/12 px-6" },
               [
                 _c(
                   "w-card",
@@ -41170,11 +40867,11 @@ var render = function() {
                     _c(
                       "w-btn",
                       {
-                        staticClass: "lg:hidden",
+                        staticClass: "md:hidden",
                         attrs: { dark: true, color: "secondary" },
                         on: {
                           click: function($event) {
-                            _vm.filtrar = true
+                            _vm.showFilters = true
                           }
                         }
                       },
@@ -41191,7 +40888,10 @@ var render = function() {
                       _vm._l(_vm.cards, function(card, i) {
                         return _c(
                           "div",
-                          { key: i, staticClass: "sm:w-full lg:w-1/3 p-3" },
+                          {
+                            key: i,
+                            staticClass: "sm:w-full md:w-2/4 lg:w-1/3 p-3"
+                          },
                           [
                             _c(
                               "w-card",
@@ -41199,7 +40899,8 @@ var render = function() {
                                 attrs: {
                                   image: card.foto,
                                   imageHeight: "200px",
-                                  activeContent: true
+                                  activeContent: true,
+                                  pointer: true
                                 },
                                 model: {
                                   value: card.showForm,
@@ -60323,7 +60024,7 @@ var VueGoogleMaps = __webpack_require__(/*! vue2-google-maps */ "./node_modules/
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyA43rPJ1Lt5zxs3KABtJiq9xh4yANAkYUw",
+    key: "",
     libraries: "places"
   }
 });
@@ -60697,7 +60398,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Perfil_vue_vue_type_template_id_65866813___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Perfil.vue?vue&type=template&id=65866813& */ "./resources/js/components/agentes/Perfil.vue?vue&type=template&id=65866813&");
 /* harmony import */ var _Perfil_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Perfil.vue?vue&type=script&lang=js& */ "./resources/js/components/agentes/Perfil.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _Perfil_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Perfil.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/components/agentes/Perfil.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -60705,7 +60408,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _Perfil_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Perfil_vue_vue_type_template_id_65866813___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Perfil_vue_vue_type_template_id_65866813___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -60734,6 +60437,22 @@ component.options.__file = "resources/js/components/agentes/Perfil.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Perfil_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Perfil.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/agentes/Perfil.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Perfil_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/agentes/Perfil.vue?vue&type=style&index=0&lang=scss&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/agentes/Perfil.vue?vue&type=style&index=0&lang=scss& ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Perfil_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./Perfil.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/agentes/Perfil.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Perfil_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Perfil_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Perfil_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Perfil_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Perfil_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -61234,6 +60953,10 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-card", {
       type: Boolean,
       "default": true
     },
+    pointer: {
+      type: Boolean,
+      "default": false
+    },
     hover: String,
     state: {
       type: String,
@@ -61249,6 +60972,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-card", {
     setCardClass: function setCardClass() {
       var cardClass = "card";
       this.shadow ? "" : cardClass += " no-shadow";
+      this.pointer ? cardClass += " pointer-card" : "";
       !this.value && this.hover ? cardClass += " ".concat(this.hover) : "";
       this.value && this.activeContent ? cardClass += " active-state" : "";
       return cardClass;
@@ -61537,7 +61261,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-select", {
     },
     rules: Array
   },
-  template: "\n        <div class=\"input-container\">\n          <div class=\"snackbar\">\n              <transition @enter=\"enterSnack\">\n                  <div class=\"snackbar-card\" ref=\"snack\" v-if=\"$slots.snackbar && activeSnack\">\n                      <div class=\"close-card\" @click=\"activeSnack = false\">\xD7</div>\n                      <slot name=\"snackbar\"></slot>\n                  </div>\n              </transition>\n            </div>\n            <div :class=\"inputGroupClass\" :style=\"inputGroupStyle\"  ref=\"inputGroup\">\n                <w-icon v-if=\"beforeIcon\" :icon=\"beforeIcon\" class=\"before\"></w-icon>\n                <div class=\"input-label\">\n                    <input\n                        readonly\n                        :value=\"selectOption\"\n                        @input=\"$emit('input', $event.target.value)\"\n                        :class=\"inputClass\"\n                        :placeholder=\"placeholder\"\n                        @click=\"showOptions = !showOptions\"\n                    />\n                    <label :style=\"labelStyle\">\n                      {{ label }}\n                      <div class=\"snackbar\" v-if=\"$slots.snackbar\">\n                          <div class=\"snackbar-action\" @click=\"activeSnack = true\">\n                            <w-icon icon=\"info\" h=\"12px\"></w-icon>\n                          </div> \n                      </div>\n                    </label>\n                </div>\n                <div class=\"icon select-icon\">\n                    <img :src=\"iconURL\" ref=\"selectIcon\" />\n                </div>\n                <w-icon v-if=\"afterIcon\" :icon=\"afterIcon\" class=\"after\"></w-icon>\n            </div>\n            <transition @enter=\"enterOptions\" @leave=\"leaveOptions\">\n                <div \n                    class=\"select-options\" \n                    :class=\"tile ? 'tile' : ''\" ref=\"selectOptions\" \n                    :style=\"selectOptionsStyle\"\n                    v-if=\"showOptions\"\n                >\n                    <div \n                        class=\"opt\" \n                        v-for=\"(opt, i) in options\" \n                        :key=\"i\" \n                        @click=\"selectOption = opt; showOptions = !showOptions\"\n                    >{{ opt }}</div>\n                </div>\n            </transition>\n            <div class=\"error-input\">{{ errorMessage }}</div>\n        </div>\n    ",
+  template: "\n        <div class=\"input-container\">\n          <div class=\"snackbar\">\n              <transition @enter=\"enterSnack\">\n                  <div class=\"snackbar-card\" ref=\"snack\" v-if=\"$slots.snackbar && activeSnack\">\n                      <div class=\"close-card\" @click=\"activeSnack = false\">\xD7</div>\n                      <slot name=\"snackbar\"></slot>\n                  </div>\n              </transition>\n            </div>\n            <div \n              :class=\"inputGroupClass\"   \n              :style=\"inputGroupStyle\"  \n              ref=\"inputGroup\" \n              @click=\"showOptions = !showOptions\"\n            >\n                <w-icon v-if=\"beforeIcon\" :icon=\"beforeIcon\" class=\"before\"></w-icon>\n                <div class=\"input-label\">\n                    <input\n                        readonly\n                        :value=\"selectOption\"\n                        @input=\"$emit('input', $event.target.value)\"\n                        :class=\"inputClass\"\n                        :placeholder=\"placeholder\"\n                        \n                    />\n                    <label :style=\"labelStyle\">\n                      {{ label }}\n                      <div class=\"snackbar\" v-if=\"$slots.snackbar\">\n                          <div class=\"snackbar-action\" @click=\"activeSnack = true\">\n                            <w-icon icon=\"info\" h=\"12px\"></w-icon>\n                          </div> \n                      </div>\n                    </label>\n                </div>\n                <div class=\"icon select-icon\">\n                    <img :src=\"iconURL\" ref=\"selectIcon\" />\n                </div>\n                <w-icon v-if=\"afterIcon\" :icon=\"afterIcon\" class=\"after\"></w-icon>\n            </div>\n            <transition @enter=\"enterOptions\" @leave=\"leaveOptions\">\n                <div \n                    class=\"select-options\" \n                    :class=\"tile ? 'tile' : ''\" ref=\"selectOptions\" \n                    :style=\"selectOptionsStyle\"\n                    v-if=\"showOptions\"\n                >\n                    <div \n                        class=\"opt\" \n                        v-for=\"(opt, i) in options\" \n                        :key=\"i\" \n                        @click=\"selectOption = opt; showOptions = !showOptions\"\n                    >{{ opt }}</div>\n                </div>\n            </transition>\n            <div class=\"error-input\">{{ errorMessage }}</div>\n        </div>\n    ",
   computed: {
     selectOption: {
       get: function get() {
@@ -61907,7 +61631,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("w-navbar", {
   },
   methods: {
     handleScroll: function handleScroll(evt, el) {
-      window.scrollY > window.innerHeight / 2 ? this.scroll = true : this.scroll = false;
+      window.scrollY > 0 ? this.scroll = true : this.scroll = false;
     }
   }
 });
@@ -62188,7 +61912,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ // KAZMER MAXIMILIANO EZEQUIEL
 
 /***/ }),
 
@@ -62299,6 +62023,7 @@ module.exports = "/fonts/Roboto-Regular.ttf?11eabca2251325cfc5589c9c6fb57b46";
 
 var map = {
 	"./address-map.png": "./resources/js/components/wlinii_components/iconos/address-map.png",
+	"./address-red.png": "./resources/js/components/wlinii_components/iconos/address-red.png",
 	"./address-secondary.png": "./resources/js/components/wlinii_components/iconos/address-secondary.png",
 	"./address.png": "./resources/js/components/wlinii_components/iconos/address.png",
 	"./arrow-down.png": "./resources/js/components/wlinii_components/iconos/arrow-down.png",
@@ -62402,6 +62127,17 @@ webpackContext.id = "./resources/js/components/wlinii_components/iconos sync rec
 /***/ (function(module, exports) {
 
 module.exports = "/images/address-map.png?995ebe63dcc840d216ff4a033c007104";
+
+/***/ }),
+
+/***/ "./resources/js/components/wlinii_components/iconos/address-red.png":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/wlinii_components/iconos/address-red.png ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/address-red.png?eba49b9d41b3ad8a1750948a0509f0de";
 
 /***/ }),
 
@@ -63265,29 +63001,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/Home */ "./resources/js/views/Home.vue");
-/* harmony import */ var _views_Test__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/Test */ "./resources/js/views/Test.vue");
-/* harmony import */ var _views_auth_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/auth/Login */ "./resources/js/views/auth/Login.vue");
-/* harmony import */ var _views_auth_Register__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/auth/Register */ "./resources/js/views/auth/Register.vue");
-/* harmony import */ var _views_auth_RegisterSuccessful__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/auth/RegisterSuccessful */ "./resources/js/views/auth/RegisterSuccessful.vue");
-/* harmony import */ var _views_precios_Precios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/precios/Precios */ "./resources/js/views/precios/Precios.vue");
-/* harmony import */ var _views_publicaciones_Publicaciones__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/publicaciones/Publicaciones */ "./resources/js/views/publicaciones/Publicaciones.vue");
-/* harmony import */ var _views_publicaciones_NuevaPublicacion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../views/publicaciones/NuevaPublicacion */ "./resources/js/views/publicaciones/NuevaPublicacion.vue");
-/* harmony import */ var _views_publicaciones_DetallePublicacion__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../views/publicaciones/DetallePublicacion */ "./resources/js/views/publicaciones/DetallePublicacion.vue");
-/* harmony import */ var _views_inmuebles_Inmuebles__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../views/inmuebles/Inmuebles */ "./resources/js/views/inmuebles/Inmuebles.vue");
-/* harmony import */ var _views_inmuebles_InmuebleMapa__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../views/inmuebles/InmuebleMapa */ "./resources/js/views/inmuebles/InmuebleMapa.vue");
-/* harmony import */ var _views_notificaciones_Notificaciones__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../views/notificaciones/Notificaciones */ "./resources/js/views/notificaciones/Notificaciones.vue");
-/* harmony import */ var _views_amc_AMC1__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../views/amc/AMC1 */ "./resources/js/views/amc/AMC1.vue");
-/* harmony import */ var _views_amc_AMC2__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../views/amc/AMC2 */ "./resources/js/views/amc/AMC2.vue");
-/* harmony import */ var _views_amc_AMC3__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../views/amc/AMC3 */ "./resources/js/views/amc/AMC3.vue");
-/* harmony import */ var _views_brocker_Brocker__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../views/brocker/Brocker */ "./resources/js/views/brocker/Brocker.vue");
-/* harmony import */ var _views_agentes_Agente__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../views/agentes/Agente */ "./resources/js/views/agentes/Agente.vue");
-/* harmony import */ var _views_agentes_PerfilDeAgente__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../views/agentes/PerfilDeAgente */ "./resources/js/views/agentes/PerfilDeAgente.vue");
+/* harmony import */ var _views_auth_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/auth/Login */ "./resources/js/views/auth/Login.vue");
+/* harmony import */ var _views_auth_Register__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/auth/Register */ "./resources/js/views/auth/Register.vue");
+/* harmony import */ var _views_auth_RegisterSuccessful__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/auth/RegisterSuccessful */ "./resources/js/views/auth/RegisterSuccessful.vue");
+/* harmony import */ var _views_precios_Precios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/precios/Precios */ "./resources/js/views/precios/Precios.vue");
+/* harmony import */ var _views_publicaciones_Publicaciones__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/publicaciones/Publicaciones */ "./resources/js/views/publicaciones/Publicaciones.vue");
+/* harmony import */ var _views_publicaciones_NuevaPublicacion__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/publicaciones/NuevaPublicacion */ "./resources/js/views/publicaciones/NuevaPublicacion.vue");
+/* harmony import */ var _views_publicaciones_DetallePublicacion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../views/publicaciones/DetallePublicacion */ "./resources/js/views/publicaciones/DetallePublicacion.vue");
+/* harmony import */ var _views_inmuebles_Inmuebles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../views/inmuebles/Inmuebles */ "./resources/js/views/inmuebles/Inmuebles.vue");
+/* harmony import */ var _views_inmuebles_InmuebleMapa__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../views/inmuebles/InmuebleMapa */ "./resources/js/views/inmuebles/InmuebleMapa.vue");
+/* harmony import */ var _views_notificaciones_Notificaciones__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../views/notificaciones/Notificaciones */ "./resources/js/views/notificaciones/Notificaciones.vue");
+/* harmony import */ var _views_amc_AMC1__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../views/amc/AMC1 */ "./resources/js/views/amc/AMC1.vue");
+/* harmony import */ var _views_amc_AMC2__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../views/amc/AMC2 */ "./resources/js/views/amc/AMC2.vue");
+/* harmony import */ var _views_amc_AMC3__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../views/amc/AMC3 */ "./resources/js/views/amc/AMC3.vue");
+/* harmony import */ var _views_brocker_Brocker__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../views/brocker/Brocker */ "./resources/js/views/brocker/Brocker.vue");
+/* harmony import */ var _views_agentes_Agente__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../views/agentes/Agente */ "./resources/js/views/agentes/Agente.vue");
+/* harmony import */ var _views_agentes_PerfilDeAgente__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../views/agentes/PerfilDeAgente */ "./resources/js/views/agentes/PerfilDeAgente.vue");
 
 
- // BORRAR________________________
-
- // ______________________________
-// AUTH
+ // AUTH
 
 
 
@@ -63315,93 +63047,89 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: "history",
-  routes: [// BORRAR___________
-  {
-    path: "/test",
-    name: "test",
-    component: _views_Test__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }, // _________________
-  {
+  routes: [{
     path: "/",
     name: "home",
     component: _views_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }, {
-    path: "/test",
-    name: "test",
-    component: _views_amc_AMC2__WEBPACK_IMPORTED_MODULE_15__["default"]
   }, // AUTH
   {
     path: "/login",
     name: "login",
-    component: _views_auth_Login__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _views_auth_Login__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: "/register",
     name: "register",
-    component: _views_auth_Register__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _views_auth_Register__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
     path: "/register/successful",
     name: "register_successful",
-    component: _views_auth_RegisterSuccessful__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _views_auth_RegisterSuccessful__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, // PRECIOS
   {
     path: "/precios",
     name: "precios",
-    component: _views_precios_Precios__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _views_precios_Precios__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, // PUBLICACIONES
   {
     path: "/publicaciones",
     name: "publicaciones",
-    component: _views_publicaciones_Publicaciones__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _views_publicaciones_Publicaciones__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
     path: "/publicaciones/nueva",
     name: "publicaciones_nueva",
-    component: _views_publicaciones_NuevaPublicacion__WEBPACK_IMPORTED_MODULE_9__["default"]
+    component: _views_publicaciones_NuevaPublicacion__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, {
     path: "/publicaciones/detalle",
     name: "publicaciones_detalle",
-    component: _views_publicaciones_DetallePublicacion__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _views_publicaciones_DetallePublicacion__WEBPACK_IMPORTED_MODULE_9__["default"]
   }, // INMUEBLES
   {
     path: "/inmuebles",
     name: "inmuebles",
-    component: _views_inmuebles_Inmuebles__WEBPACK_IMPORTED_MODULE_11__["default"]
+    component: _views_inmuebles_Inmuebles__WEBPACK_IMPORTED_MODULE_10__["default"]
   }, {
     path: "/inmuebles/mapa",
     name: "inmuebles_mapa",
-    component: _views_inmuebles_InmuebleMapa__WEBPACK_IMPORTED_MODULE_12__["default"]
+    component: _views_inmuebles_InmuebleMapa__WEBPACK_IMPORTED_MODULE_11__["default"]
   }, // NOTIFICACIONES
   {
     path: "/notificaciones",
     name: "notificaciones",
-    component: _views_notificaciones_Notificaciones__WEBPACK_IMPORTED_MODULE_13__["default"]
+    component: _views_notificaciones_Notificaciones__WEBPACK_IMPORTED_MODULE_12__["default"]
   }, // AMC
   {
     path: "/amc/1",
     name: "amc_1",
-    component: _views_amc_AMC1__WEBPACK_IMPORTED_MODULE_14__["default"]
+    component: _views_amc_AMC1__WEBPACK_IMPORTED_MODULE_13__["default"]
   }, {
     path: "/amc/2",
     name: "amc_2",
-    component: _views_amc_AMC2__WEBPACK_IMPORTED_MODULE_15__["default"]
+    component: _views_amc_AMC2__WEBPACK_IMPORTED_MODULE_14__["default"]
   }, {
     path: "/amc/3",
     name: "amc_3",
-    component: _views_amc_AMC3__WEBPACK_IMPORTED_MODULE_16__["default"]
+    component: _views_amc_AMC3__WEBPACK_IMPORTED_MODULE_15__["default"]
   }, // Brocker
   {
     path: "/perfil/brocker",
     name: "perfil_brocker",
-    component: _views_brocker_Brocker__WEBPACK_IMPORTED_MODULE_17__["default"]
+    component: _views_brocker_Brocker__WEBPACK_IMPORTED_MODULE_16__["default"]
   }, // Agente
   {
     path: "/agente",
     name: "agente",
-    component: _views_agentes_Agente__WEBPACK_IMPORTED_MODULE_18__["default"]
+    component: _views_agentes_Agente__WEBPACK_IMPORTED_MODULE_17__["default"]
   }, {
     path: "/agente/perfil",
     name: "agente_perfil",
-    component: _views_agentes_PerfilDeAgente__WEBPACK_IMPORTED_MODULE_19__["default"]
-  }]
+    component: _views_agentes_PerfilDeAgente__WEBPACK_IMPORTED_MODULE_18__["default"]
+  }],
+  scrollBehavior: function scrollBehavior(to, from) {
+    return {
+      x: 0,
+      y: 0
+    };
+  }
 }));
 
 /***/ }),
@@ -63512,93 +63240,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_63cd6604___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_63cd6604___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/views/Test.vue":
-/*!*************************************!*\
-  !*** ./resources/js/views/Test.vue ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Test.vue?vue&type=template&id=b28ce99e& */ "./resources/js/views/Test.vue?vue&type=template&id=b28ce99e&");
-/* harmony import */ var _Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Test.vue?vue&type=script&lang=js& */ "./resources/js/views/Test.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Test.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/views/Test.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/views/Test.vue?vue&type=script&lang=js&":
-/*!**************************************************************!*\
-  !*** ./resources/js/views/Test.vue?vue&type=script&lang=js& ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Test.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&":
-/*!***********************************************************************!*\
-  !*** ./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss& ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Test.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=style&index=0&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/js/views/Test.vue?vue&type=template&id=b28ce99e&":
-/*!********************************************************************!*\
-  !*** ./resources/js/views/Test.vue?vue&type=template&id=b28ce99e& ***!
-  \********************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Test.vue?vue&type=template&id=b28ce99e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Test.vue?vue&type=template&id=b28ce99e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_template_id_b28ce99e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

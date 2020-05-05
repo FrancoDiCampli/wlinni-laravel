@@ -17,6 +17,9 @@
     -moz-box-shadow: none !important;
     box-shadow: none !important;
   }
+  &.pointer-card {
+    cursor: pointer;
+  }
 
   &:not(.active-state) {
     &:not(:hover) {

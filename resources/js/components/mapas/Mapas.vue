@@ -6,6 +6,7 @@
             :zoom="12"
             :options="mapOptions"
             style="width: 100%; height: 600px;"
+            @click="closeInfoWindow()"
         >
             <gmap-marker
                 :key="index"
@@ -30,7 +31,12 @@
                         <p>{{ card.entrega }}</p>
                         <p>{{ card.condicion }}</p>
                     </div>
-                    <w-btn :fullwidth="true" :dark="true" :rounded="true">CONTACTAR</w-btn>
+                    <w-btn
+                        :fullwidth="true"
+                        :dark="true"
+                        :rounded="true"
+                        @click="$router.push('/publicaciones/detalle')"
+                    >ir al detalle</w-btn>
                     <br />
                 </w-card>
             </gmap-info-window>
@@ -42,18 +48,22 @@
 export default {
     props: {
         markers: Array,
-        center: Object
+        center: Object,
+        showInfo: {
+            type: Boolean,
+            default: true
+        }
     },
+
     data: () => ({
         mapOptions: {
             mapTypeControl: false,
             streetViewControl: false
         },
-        // iconos de los marcadores
         markerOptions: {
-            url: "/images/lock-full.png",
-            size: { width: 21, height: 37, f: "px", b: "px" },
-            scaledSize: { width: 21, height: 37, f: "px", b: "px" }
+            url: "/images/address-red.png",
+            size: { width: 22.5, height: 31.5, f: "px", b: "px" },
+            scaledSize: { width: 22.5, height: 31.5, f: "px", b: "px" }
         },
 
         infoWindowPos: {
@@ -70,11 +80,18 @@ export default {
         },
         card: {}
     }),
+
     methods: {
-        toggleInfoWindow: function(marker, idx) {
-            this.infoWindowPos = marker.position;
-            this.card = marker;
-            this.infoWinOpen = !this.infoWinOpen;
+        toggleInfoWindow(marker, idx) {
+            if (this.showInfo) {
+                this.infoWindowPos = marker.position;
+                this.card = marker;
+                this.infoWinOpen = !this.infoWinOpen;
+            }
+        },
+
+        closeInfoWindow() {
+            this.infoWinOpen = false;
         }
     }
 };

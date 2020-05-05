@@ -22,7 +22,7 @@
                                     <p class="caption bold white-text">+51 994641341</p>
                                 </w-nav-btn>
                             </div>
-                            <div class="custom-items-margin">
+                            <div class="custom-items-margin hidden lg:block">
                                 <w-nav-btn icon="facebook-white" iconH="16px"></w-nav-btn>
                                 <w-nav-btn icon="instagram-white" iconH="16px"></w-nav-btn>
                                 <w-nav-btn icon="twitter-white" iconH="15px"></w-nav-btn>
@@ -230,9 +230,7 @@ export default {
 
     methods: {
         handleScroll(evt, el) {
-            window.scrollY > window.innerHeight / 2
-                ? (this.scroll = true)
-                : (this.scroll = false);
+            window.scrollY > 0 ? (this.scroll = true) : (this.scroll = false);
         }
     }
 };
