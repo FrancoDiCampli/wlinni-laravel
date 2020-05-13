@@ -4362,6 +4362,7 @@ __webpack_require__.r(__webpack_exports__);
         lng: -77.047945
       },
       marker: {},
+      address: "hola",
       mapOptions: {
         mapTypeControl: false,
         streetViewControl: false
@@ -4426,6 +4427,20 @@ __webpack_require__.r(__webpack_exports__);
       };
       this.center = marker;
       this.currentPlace = null;
+      this.searchAddress(marker);
+      this.address = localStorage.direccion;
+      this.$emit("eventAddress", this.address);
+    },
+    searchAddress: function searchAddress(marker) {
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({
+        location: {
+          lat: marker.lat,
+          lng: marker.lng
+        }
+      }, function (results) {
+        return localStorage.direccion = results[0].formatted_address;
+      });
     },
     geolocate: function geolocate() {
       var _this = this;
@@ -9385,8 +9400,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -9406,7 +9419,8 @@ __webpack_require__.r(__webpack_exports__);
         photos: [],
         videos: []
       },
-      test: false
+      test: false,
+      searchDireccion: ""
     };
   },
   components: {
@@ -9433,6 +9447,9 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    eventDireccion: function eventDireccion(params) {
+      this.searchDireccion = params;
+    },
     addPhoto: function addPhoto() {
       if (this.form.photos.length < 20) {
         var files = this.$refs["photoFile"].files;
@@ -40562,12 +40579,12 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _c("p", { staticClass: "ml-5 mb-4" }, [
-                        _vm._v(
-                          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis."
-                        )
+                        _vm._v(_vm._s(_vm.searchDireccion))
                       ]),
                       _vm._v(" "),
-                      _c("mapas-agregar")
+                      _c("mapas-agregar", {
+                        on: { eventAddress: _vm.eventDireccion }
+                      })
                     ],
                     1
                   ),

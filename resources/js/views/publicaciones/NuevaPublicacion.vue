@@ -598,10 +598,8 @@
                         </div>
                         <div>
                             <p class="body bold tertiary-text ml-5 mb-4">Locación</p>
-                            <p
-                                class="ml-5 mb-4"
-                            >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
-                            <mapas-agregar></mapas-agregar>
+                            <p class="ml-5 mb-4">{{searchDireccion}}</p>
+                            <mapas-agregar @eventAddress="eventDireccion"></mapas-agregar>
                         </div>
                         <div class="mt-20">
                             <!-- FOTOS -->
@@ -785,7 +783,8 @@ export default {
             photos: [],
             videos: []
         },
-        test: false
+        test: false,
+        searchDireccion: ""
     }),
 
     components: {
@@ -813,6 +812,10 @@ export default {
     },
 
     methods: {
+        eventDireccion(params) {
+            this.searchDireccion = params;
+        },
+
         addPhoto() {
             if (this.form.photos.length < 20) {
                 const files = this.$refs["photoFile"].files;

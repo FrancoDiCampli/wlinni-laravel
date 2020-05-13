@@ -28,6 +28,7 @@ export default {
     data: () => ({
         center: { lat: -12.1122095, lng: -77.047945 },
         marker: {},
+        address: "hola",
         mapOptions: {
             mapTypeControl: false,
             streetViewControl: false
@@ -87,6 +88,27 @@ export default {
             this.marker = { position: marker };
             this.center = marker;
             this.currentPlace = null;
+
+            this.searchAddress(marker);
+
+            this.address = localStorage.direccion;
+
+            this.$emit("eventAddress", this.address);
+        },
+
+        searchAddress(marker) {
+            let geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode(
+                {
+                    location: {
+                        lat: marker.lat,
+                        lng: marker.lng
+                    }
+                },
+                results =>
+                    (localStorage.direccion = results[0].formatted_address)
+            );
         },
 
         geolocate() {
