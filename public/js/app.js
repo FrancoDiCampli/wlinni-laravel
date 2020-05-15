@@ -9454,7 +9454,6 @@ __webpack_require__.r(__webpack_exports__);
     eventDireccion: function eventDireccion(params) {
       this.verDireccion = params.direccion;
       this.coordenadas = params.coordenadas.position;
-      console.log(this.coordenadas);
     },
     addPhoto: function addPhoto() {
       if (this.form.photos.length < 20) {
@@ -60252,7 +60251,7 @@ var VueGoogleMaps = __webpack_require__(/*! vue2-google-maps */ "./node_modules/
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyBqqsnB3kmMQyeSBtVyaTGWYHXO3mrRQjM",
+    key: "",
     libraries: "places"
   }
 });

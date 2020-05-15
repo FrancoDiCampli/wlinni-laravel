@@ -816,7 +816,6 @@ export default {
         eventDireccion(params) {
             this.verDireccion = params.direccion;
             this.coordenadas = params.coordenadas.position;
-            console.log(this.coordenadas);
         },
 
         addPhoto() {
