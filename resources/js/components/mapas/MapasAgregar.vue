@@ -28,7 +28,6 @@ export default {
     data: () => ({
         center: { lat: -12.1122095, lng: -77.047945 },
         marker: {},
-        address: "hola",
         mapOptions: {
             mapTypeControl: false,
             streetViewControl: false
@@ -52,7 +51,8 @@ export default {
                 height: -35
             }
         },
-        card: {}
+        card: {},
+        dir: ""
     }),
 
     mounted() {
@@ -81,7 +81,7 @@ export default {
         },
 
         addMaker(e) {
-            const marker = {
+            let marker = {
                 lat: e.latLng.lat(),
                 lng: e.latLng.lng()
             };
@@ -89,25 +89,23 @@ export default {
             this.center = marker;
             this.currentPlace = null;
 
-            this.searchAddress(marker);
-
-            this.address = localStorage.direccion;
-
-            this.$emit("eventAddress", this.address);
+            this.searchAddress(e);
         },
 
-        searchAddress(marker) {
+        searchAddress(e) {
             let geocoder = new google.maps.Geocoder();
-
             geocoder.geocode(
                 {
                     location: {
-                        lat: marker.lat,
-                        lng: marker.lng
+                        lat: e.latLng.lat(),
+                        lng: e.latLng.lng()
                     }
                 },
                 results =>
-                    (localStorage.direccion = results[0].formatted_address)
+                    this.$emit("eventAddress", {
+                        coordenadas: this.marker,
+                        direccion: results[0].formatted_address
+                    })
             );
         },
 

@@ -598,8 +598,8 @@
                         </div>
                         <div>
                             <p class="body bold tertiary-text ml-5 mb-4">Locación</p>
-                            <p class="ml-5 mb-4">{{searchDireccion}}</p>
-                            <mapas-agregar @eventAddress="eventDireccion"></mapas-agregar>
+                            <w-input disabled v-model="verDireccion"></w-input>
+                            <mapas-agregar @eventAddress="eventDireccion($event)"></mapas-agregar>
                         </div>
                         <div class="mt-20">
                             <!-- FOTOS -->
@@ -784,7 +784,8 @@ export default {
             videos: []
         },
         test: false,
-        searchDireccion: ""
+        coordenadas: null,
+        verDireccion: ""
     }),
 
     components: {
@@ -813,7 +814,9 @@ export default {
 
     methods: {
         eventDireccion(params) {
-            this.searchDireccion = params;
+            this.verDireccion = params.direccion;
+            this.coordenadas = params.coordenadas.position;
+            console.log(this.coordenadas);
         },
 
         addPhoto() {

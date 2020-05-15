@@ -4362,7 +4362,6 @@ __webpack_require__.r(__webpack_exports__);
         lng: -77.047945
       },
       marker: {},
-      address: "hola",
       mapOptions: {
         mapTypeControl: false,
         streetViewControl: false
@@ -4394,7 +4393,8 @@ __webpack_require__.r(__webpack_exports__);
           height: -35
         }
       },
-      card: {}
+      card: {},
+      dir: ""
     };
   },
   mounted: function mounted() {
@@ -4427,26 +4427,29 @@ __webpack_require__.r(__webpack_exports__);
       };
       this.center = marker;
       this.currentPlace = null;
-      this.searchAddress(marker);
-      this.address = localStorage.direccion;
-      this.$emit("eventAddress", this.address);
+      this.searchAddress(e);
     },
-    searchAddress: function searchAddress(marker) {
+    searchAddress: function searchAddress(e) {
+      var _this = this;
+
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode({
         location: {
-          lat: marker.lat,
-          lng: marker.lng
+          lat: e.latLng.lat(),
+          lng: e.latLng.lng()
         }
       }, function (results) {
-        return localStorage.direccion = results[0].formatted_address;
+        return _this.$emit("eventAddress", {
+          coordenadas: _this.marker,
+          direccion: results[0].formatted_address
+        });
       });
     },
     geolocate: function geolocate() {
-      var _this = this;
+      var _this2 = this;
 
       navigator.geolocation.getCurrentPosition(function (position) {
-        _this.center = {
+        _this2.center = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
@@ -9420,7 +9423,8 @@ __webpack_require__.r(__webpack_exports__);
         videos: []
       },
       test: false,
-      searchDireccion: ""
+      coordenadas: null,
+      verDireccion: ""
     };
   },
   components: {
@@ -9448,7 +9452,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     eventDireccion: function eventDireccion(params) {
-      this.searchDireccion = params;
+      this.verDireccion = params.direccion;
+      this.coordenadas = params.coordenadas.position;
+      console.log(this.coordenadas);
     },
     addPhoto: function addPhoto() {
       if (this.form.photos.length < 20) {
@@ -40578,12 +40584,23 @@ var render = function() {
                         [_vm._v("Locación")]
                       ),
                       _vm._v(" "),
-                      _c("p", { staticClass: "ml-5 mb-4" }, [
-                        _vm._v(_vm._s(_vm.searchDireccion))
-                      ]),
+                      _c("w-input", {
+                        attrs: { disabled: "" },
+                        model: {
+                          value: _vm.verDireccion,
+                          callback: function($$v) {
+                            _vm.verDireccion = $$v
+                          },
+                          expression: "verDireccion"
+                        }
+                      }),
                       _vm._v(" "),
                       _c("mapas-agregar", {
-                        on: { eventAddress: _vm.eventDireccion }
+                        on: {
+                          eventAddress: function($event) {
+                            return _vm.eventDireccion($event)
+                          }
+                        }
                       })
                     ],
                     1
@@ -60235,7 +60252,7 @@ var VueGoogleMaps = __webpack_require__(/*! vue2-google-maps */ "./node_modules/
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(VueGoogleMaps, {
   load: {
-    key: "",
+    key: "AIzaSyBqqsnB3kmMQyeSBtVyaTGWYHXO3mrRQjM",
     libraries: "places"
   }
 });
