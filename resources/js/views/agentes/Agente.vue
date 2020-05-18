@@ -48,7 +48,7 @@
             :navigation="windowWidth >= 768"
         >
             <slide v-for="(card, i) in cards" :key="i">
-                <div class="px-5">
+                <div @click="$router.push('/publicaciones/detalle')" class="px-5">
                     <w-card :image="card.image" :pointer="true" hover="full-hover">
                         <template slot="image">
                             <p class="bold">{{ card.direccion }}</p>
@@ -108,7 +108,7 @@
             :navigation="windowWidth >= 768"
         >
             <slide v-for="(card, i) in cards" :key="i">
-                <div class="px-5">
+                <div @click="$router.push('/publicaciones/detalle')" class="px-5">
                     <w-card :image="card.image" :pointer="true" hover="full-hover">
                         <template slot="image">
                             <p class="bold">{{ card.direccion }}</p>

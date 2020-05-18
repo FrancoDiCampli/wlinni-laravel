@@ -72,56 +72,58 @@
                                 v-for="(card, i) in cards"
                                 :key="i"
                             >
-                                <w-card :image="card.image" hover="full-hover" :pointer="true">
-                                    <template slot="image">
-                                        <p class="bold">{{ card.direccion }}</p>
-                                        <br />
-                                        <p>{{ card.descripcion }}</p>
-                                    </template>
-                                    <template slot="state">
-                                        <p class="white-text">{{ card.tipo }}</p>
-                                    </template>
-                                    <p class="bold">{{ card.title }}</p>
-                                    <p>{{ card.body }}</p>
-                                    <p>Comisión</p>
-                                    <div class="flex flex-row justify-between">
-                                        <p class="body bold">{{ card.comision }}</p>
-                                        <p class="body bold tertiary-text">{{ card.mes }}</p>
-                                    </div>
-
-                                    <template slot="footer">
-                                        <div class="flex flex-row justify-between flex-wrap">
-                                            <div class="flex flex-row justify-between">
-                                                <div class="info-item">
-                                                    <w-icon icon="room-solid" h="12px"></w-icon>
-                                                    <p class="white-text">
-                                                        {{
-                                                        card.info
-                                                        .habitaciones
-                                                        }}
-                                                    </p>
-                                                </div>
-                                                <div class="info-item">
-                                                    <w-icon icon="bath-solid" h="15px"></w-icon>
-                                                    <p class="white-text">{{ card.info.baños }}</p>
-                                                </div>
-                                                <div class="info-item">
-                                                    <w-icon icon="parking-solid" h="12px"></w-icon>
-                                                    <p class="white-text">
-                                                        {{
-                                                        card.info
-                                                        .estacionamiento
-                                                        }}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="info-item">
-                                                <w-icon icon="size" h="15px"></w-icon>
-                                                <p class="white-text">{{ card.info.tamaño }}</p>
-                                            </div>
+                                <div @click="$router.push('/publicaciones/detalle')">
+                                    <w-card :image="card.image" hover="full-hover" :pointer="true">
+                                        <template slot="image">
+                                            <p class="bold">{{ card.direccion }}</p>
+                                            <br />
+                                            <p>{{ card.descripcion }}</p>
+                                        </template>
+                                        <template slot="state">
+                                            <p class="white-text">{{ card.tipo }}</p>
+                                        </template>
+                                        <p class="bold">{{ card.title }}</p>
+                                        <p>{{ card.body }}</p>
+                                        <p>Comisión</p>
+                                        <div class="flex flex-row justify-between">
+                                            <p class="body bold">{{ card.comision }}</p>
+                                            <p class="body bold tertiary-text">{{ card.mes }}</p>
                                         </div>
-                                    </template>
-                                </w-card>
+
+                                        <template slot="footer">
+                                            <div class="flex flex-row justify-between flex-wrap">
+                                                <div class="flex flex-row justify-between">
+                                                    <div class="info-item">
+                                                        <w-icon icon="room-solid" h="12px"></w-icon>
+                                                        <p class="white-text">
+                                                            {{
+                                                            card.info
+                                                            .habitaciones
+                                                            }}
+                                                        </p>
+                                                    </div>
+                                                    <div class="info-item">
+                                                        <w-icon icon="bath-solid" h="15px"></w-icon>
+                                                        <p class="white-text">{{ card.info.baños }}</p>
+                                                    </div>
+                                                    <div class="info-item">
+                                                        <w-icon icon="parking-solid" h="12px"></w-icon>
+                                                        <p class="white-text">
+                                                            {{
+                                                            card.info
+                                                            .estacionamiento
+                                                            }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="info-item">
+                                                    <w-icon icon="size" h="15px"></w-icon>
+                                                    <p class="white-text">{{ card.info.tamaño }}</p>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </w-card>
+                                </div>
                             </div>
                         </div>
                         <br />

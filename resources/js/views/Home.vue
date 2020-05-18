@@ -64,6 +64,7 @@
                                 :fullwidth="true"
                                 color="tertiary"
                                 :dark="true"
+                                @click="$router.push('/inmuebles/mapa')"
                             >Buscar</w-btn>
                         </form>
                     </w-card>
@@ -91,6 +92,7 @@
                             :dark="true"
                             :fullwidth="true"
                             style="max-height: 56px !important;"
+                            @click="$router.push('/register')"
                         >INICIA TU CUENTA AHORA</w-btn>
                     </div>
                 </div>
@@ -156,7 +158,7 @@
                 :navigation="windowWidth >= 768"
             >
                 <slide v-for="(card, i) in cards" :key="i">
-                    <div class="px-10 lg:px-5">
+                    <div @click="$router.push('/publicaciones/detalle')" class="px-10 lg:px-5">
                         <w-card :image="card.image" :pointer="true" hover="full-hover">
                             <template slot="image">
                                 <p class="bold">{{ card.direccion }}</p>
@@ -214,7 +216,7 @@
                 :navigation="windowWidth >= 768"
             >
                 <slide v-for="(card, i) in cards" :key="i">
-                    <div class="px-10 lg:px-5">
+                    <div @click="$router.push('/publicaciones/detalle')" class="px-10 lg:px-5">
                         <w-card :image="card.image" :pointer="true" hover="full-hover">
                             <template slot="image">
                                 <p class="bold">{{ card.direccion }}</p>
@@ -287,7 +289,7 @@
                 class="agent-carousel mt-10"
             >
                 <slide v-for="(agent, i) in agents" :key="i">
-                    <div class="px-10 lg:px-5">
+                    <div @click="$router.push('/agente')" class="px-10 lg:px-5">
                         <w-card :image="agent.image" :pointer="true" hover="top-hover">
                             <template slot="image">
                                 <div style="margin-top: 160px;">

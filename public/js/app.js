@@ -4973,6 +4973,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -7624,6 +7626,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_inmuebles_FiltroInmueble__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/inmuebles/FiltroInmueble */ "./resources/js/components/inmuebles/FiltroInmueble.vue");
+//
+//
 //
 //
 //
@@ -32078,6 +32082,11 @@ var render = function() {
                                 fullwidth: true,
                                 color: "tertiary",
                                 dark: true
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.$router.push("/inmuebles/mapa")
+                                }
                               }
                             },
                             [_vm._v("Buscar")]
@@ -32153,6 +32162,11 @@ var render = function() {
                           color: "secondary",
                           dark: true,
                           fullwidth: true
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.$router.push("/register")
+                          }
                         }
                       },
                       [_vm._v("INICIA TU CUENTA AHORA")]
@@ -32281,7 +32295,14 @@ var render = function() {
               return _c("slide", { key: i }, [
                 _c(
                   "div",
-                  { staticClass: "px-10 lg:px-5" },
+                  {
+                    staticClass: "px-10 lg:px-5",
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push("/publicaciones/detalle")
+                      }
+                    }
+                  },
                   [
                     _c(
                       "w-card",
@@ -32455,7 +32476,14 @@ var render = function() {
               return _c("slide", { key: i }, [
                 _c(
                   "div",
-                  { staticClass: "px-10 lg:px-5" },
+                  {
+                    staticClass: "px-10 lg:px-5",
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push("/publicaciones/detalle")
+                      }
+                    }
+                  },
                   [
                     _c(
                       "w-card",
@@ -32640,7 +32668,14 @@ var render = function() {
               return _c("slide", { key: i }, [
                 _c(
                   "div",
-                  { staticClass: "px-10 lg:px-5" },
+                  {
+                    staticClass: "px-10 lg:px-5",
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.push("/agente")
+                      }
+                    }
+                  },
                   [
                     _c(
                       "w-card",
@@ -33138,7 +33173,14 @@ var render = function() {
           return _c("slide", { key: i }, [
             _c(
               "div",
-              { staticClass: "px-5" },
+              {
+                staticClass: "px-5",
+                on: {
+                  click: function($event) {
+                    return _vm.$router.push("/publicaciones/detalle")
+                  }
+                }
+              },
               [
                 _c(
                   "w-card",
@@ -33303,7 +33345,14 @@ var render = function() {
           return _c("slide", { key: i }, [
             _c(
               "div",
-              { staticClass: "px-5" },
+              {
+                staticClass: "px-5",
+                on: {
+                  click: function($event) {
+                    return _vm.$router.push("/publicaciones/detalle")
+                  }
+                }
+              },
               [
                 _c(
                   "w-card",
@@ -37320,100 +37369,178 @@ var render = function() {
                           },
                           [
                             _c(
-                              "w-card",
+                              "div",
                               {
-                                attrs: {
-                                  image: card.image,
-                                  hover: "full-hover",
-                                  pointer: true
+                                on: {
+                                  click: function($event) {
+                                    return _vm.$router.push(
+                                      "/publicaciones/detalle"
+                                    )
+                                  }
                                 }
                               },
                               [
-                                _c("template", { slot: "image" }, [
-                                  _c("p", { staticClass: "bold" }, [
-                                    _vm._v(_vm._s(card.direccion))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("br"),
-                                  _vm._v(" "),
-                                  _c("p", [_vm._v(_vm._s(card.descripcion))])
-                                ]),
-                                _vm._v(" "),
-                                _c("template", { slot: "state" }, [
-                                  _c("p", { staticClass: "white-text" }, [
-                                    _vm._v(_vm._s(card.tipo))
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "bold" }, [
-                                  _vm._v(_vm._s(card.title))
-                                ]),
-                                _vm._v(" "),
-                                _c("p", [_vm._v(_vm._s(card.body))]),
-                                _vm._v(" "),
-                                _c("p", [_vm._v("Comisión")]),
-                                _vm._v(" "),
                                 _c(
-                                  "div",
+                                  "w-card",
                                   {
-                                    staticClass: "flex flex-row justify-between"
+                                    attrs: {
+                                      image: card.image,
+                                      hover: "full-hover",
+                                      pointer: true
+                                    }
                                   },
                                   [
-                                    _c("p", { staticClass: "body bold" }, [
-                                      _vm._v(_vm._s(card.comision))
+                                    _c("template", { slot: "image" }, [
+                                      _c("p", { staticClass: "bold" }, [
+                                        _vm._v(_vm._s(card.direccion))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(_vm._s(card.descripcion))
+                                      ])
                                     ]),
                                     _vm._v(" "),
+                                    _c("template", { slot: "state" }, [
+                                      _c("p", { staticClass: "white-text" }, [
+                                        _vm._v(_vm._s(card.tipo))
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "bold" }, [
+                                      _vm._v(_vm._s(card.title))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", [_vm._v(_vm._s(card.body))]),
+                                    _vm._v(" "),
+                                    _c("p", [_vm._v("Comisión")]),
+                                    _vm._v(" "),
                                     _c(
-                                      "p",
+                                      "div",
                                       {
-                                        staticClass: "body bold tertiary-text"
+                                        staticClass:
+                                          "flex flex-row justify-between"
                                       },
-                                      [_vm._v(_vm._s(card.mes))]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("template", { slot: "footer" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "flex flex-row justify-between flex-wrap"
-                                    },
-                                    [
+                                      [
+                                        _c("p", { staticClass: "body bold" }, [
+                                          _vm._v(_vm._s(card.comision))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "body bold tertiary-text"
+                                          },
+                                          [_vm._v(_vm._s(card.mes))]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("template", { slot: "footer" }, [
                                       _c(
                                         "div",
                                         {
                                           staticClass:
-                                            "flex flex-row justify-between"
+                                            "flex flex-row justify-between flex-wrap"
                                         },
                                         [
                                           _c(
                                             "div",
-                                            { staticClass: "info-item" },
+                                            {
+                                              staticClass:
+                                                "flex flex-row justify-between"
+                                            },
                                             [
-                                              _c("w-icon", {
-                                                attrs: {
-                                                  icon: "room-solid",
-                                                  h: "12px"
-                                                }
-                                              }),
+                                              _c(
+                                                "div",
+                                                { staticClass: "info-item" },
+                                                [
+                                                  _c("w-icon", {
+                                                    attrs: {
+                                                      icon: "room-solid",
+                                                      h: "12px"
+                                                    }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass: "white-text"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                                        " +
+                                                          _vm._s(
+                                                            card.info
+                                                              .habitaciones
+                                                          ) +
+                                                          "\n                                                    "
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              ),
                                               _vm._v(" "),
                                               _c(
-                                                "p",
-                                                { staticClass: "white-text" },
+                                                "div",
+                                                { staticClass: "info-item" },
                                                 [
-                                                  _vm._v(
-                                                    "\n                                                    " +
-                                                      _vm._s(
-                                                        card.info.habitaciones
-                                                      ) +
-                                                      "\n                                                "
+                                                  _c("w-icon", {
+                                                    attrs: {
+                                                      icon: "bath-solid",
+                                                      h: "15px"
+                                                    }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass: "white-text"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(card.info.baños)
+                                                      )
+                                                    ]
                                                   )
-                                                ]
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "info-item" },
+                                                [
+                                                  _c("w-icon", {
+                                                    attrs: {
+                                                      icon: "parking-solid",
+                                                      h: "12px"
+                                                    }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass: "white-text"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                                        " +
+                                                          _vm._s(
+                                                            card.info
+                                                              .estacionamiento
+                                                          ) +
+                                                          "\n                                                    "
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
                                               )
-                                            ],
-                                            1
+                                            ]
                                           ),
                                           _vm._v(" "),
                                           _c(
@@ -37422,7 +37549,7 @@ var render = function() {
                                             [
                                               _c("w-icon", {
                                                 attrs: {
-                                                  icon: "bath-solid",
+                                                  icon: "size",
                                                   h: "15px"
                                                 }
                                               }),
@@ -37432,36 +37559,7 @@ var render = function() {
                                                 { staticClass: "white-text" },
                                                 [
                                                   _vm._v(
-                                                    _vm._s(card.info.baños)
-                                                  )
-                                                ]
-                                              )
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "info-item" },
-                                            [
-                                              _c("w-icon", {
-                                                attrs: {
-                                                  icon: "parking-solid",
-                                                  h: "12px"
-                                                }
-                                              }),
-                                              _vm._v(" "),
-                                              _c(
-                                                "p",
-                                                { staticClass: "white-text" },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                                    " +
-                                                      _vm._s(
-                                                        card.info
-                                                          .estacionamiento
-                                                      ) +
-                                                      "\n                                                "
+                                                    _vm._s(card.info.tamaño)
                                                   )
                                                 ]
                                               )
@@ -37469,32 +37567,15 @@ var render = function() {
                                             1
                                           )
                                         ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "info-item" },
-                                        [
-                                          _c("w-icon", {
-                                            attrs: { icon: "size", h: "15px" }
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "p",
-                                            { staticClass: "white-text" },
-                                            [_vm._v(_vm._s(card.info.tamaño))]
-                                          )
-                                        ],
-                                        1
                                       )
-                                    ]
-                                  )
-                                ])
+                                    ])
+                                  ],
+                                  2
+                                )
                               ],
-                              2
+                              1
                             )
-                          ],
-                          1
+                          ]
                         )
                       }),
                       0
