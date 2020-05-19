@@ -4051,49 +4051,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltroPublicacion",
+  props: ["panels"],
   data: function data() {
-    return {
-      panels: [{
-        value: false,
-        name: "Tipo de Inmueble",
-        options: ["Departamento", "Casa", "Oficina"],
-        selectOption: null
-      }, {
-        value: false,
-        name: "Distrito / Ubicación",
-        options: ["San Isidro", "Miraflores", "Santiago de Surco", "La Molina"],
-        selectOption: null
-      }, {
-        value: false,
-        name: "Precio",
-        options: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"],
-        selectOption: null
-      }, {
-        value: false,
-        name: "Dormitorios",
-        options: ["Dormitorios 1", "Dormitorios 2", "Dormitorios 3"],
-        selectOption: null
-      }, {
-        value: false,
-        name: "Area Total (m2)",
-        options: ["Area 1", "Area 2", "Area 3"],
-        selectOption: null
-      }, {
-        value: false,
-        name: "Cocheras",
-        options: ["Cocheras 1", "Cocheras 2", "Cocheras 3"],
-        selectOption: null
-      }, {
-        value: false,
-        name: "Antigüedad",
-        options: ["Antigüedad 1", "Antigüedad 2", "Antigüedad 3"],
-        selectOption: null
-      }, {
-        value: false,
-        name: "Estado",
-        options: ["Estado 1", "Estado 2", "Estado 3"],
-        selectOption: null
-      }]
+    return {//   panels: [
+      //     {
+      //       value: false,
+      //       name: "Tipo de Inmueble",
+      //       options: ["Departamento", "Casa", "Oficina"],
+      //       selectOption: null
+      //     },
+      //     {
+      //       value: false,
+      //       name: "Distrito / Ubicación",
+      //       options: [
+      //         "San Isidro",
+      //         "Miraflores",
+      //         "Santiago de Surco",
+      //         "La Molina"
+      //       ],
+      //       selectOption: null
+      //     },
+      //     {
+      //       value: false,
+      //       name: "Precio",
+      //       options: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"],
+      //       selectOption: null
+      //     },
+      //     {
+      //       value: false,
+      //       name: "Dormitorios",
+      //       options: ["Dormitorios 1", "Dormitorios 2", "Dormitorios 3"],
+      //       selectOption: null
+      //     },
+      //     {
+      //       value: false,
+      //       name: "Area Total (m2)",
+      //       options: ["Area 1", "Area 2", "Area 3"],
+      //       selectOption: null
+      //     },
+      //     {
+      //       value: false,
+      //       name: "Cocheras",
+      //       options: ["Cocheras 1", "Cocheras 2", "Cocheras 3"],
+      //       selectOption: null
+      //     },
+      //     {
+      //       value: false,
+      //       name: "Antigüedad",
+      //       options: ["Antigüedad 1", "Antigüedad 2", "Antigüedad 3"],
+      //       selectOption: null
+      //     },
+      //     {
+      //       value: false,
+      //       name: "Estado",
+      //       options: ["Estado 1", "Estado 2", "Estado 3"],
+      //       selectOption: null
+      //     }
+      //   ]
     };
   },
   computed: {
@@ -7908,6 +7922,47 @@ __webpack_require__.r(__webpack_exports__);
           estacionamiento: 2,
           tamaño: "120m"
         }
+      }],
+      panels: [{
+        value: false,
+        name: "Tipo de Inmueble",
+        options: ["Departamento", "Casa", "Oficina"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Distrito / Ubicación",
+        options: ["San Isidro", "Miraflores", "Santiago de Surco", "La Molina"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Precio",
+        options: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Dormitorios",
+        options: ["Dormitorios 1", "Dormitorios 2", "Dormitorios 3"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Area Total (m2)",
+        options: ["Area 1", "Area 2", "Area 3"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Cocheras",
+        options: ["Cocheras 1", "Cocheras 2", "Cocheras 3"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Antigüedad",
+        options: ["Antigüedad 1", "Antigüedad 2", "Antigüedad 3"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Estado",
+        options: ["Estado 1", "Estado 2", "Estado 3"],
+        selectOption: null
       }]
     };
   },
@@ -9407,6 +9462,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -9426,6 +9498,7 @@ __webpack_require__.r(__webpack_exports__);
         photos: [],
         videos: []
       },
+      selectVideo: false,
       test: false,
       coordenadas: null,
       verDireccion: ""
@@ -37238,7 +37311,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("FiltroInmueble")
+                  _c("FiltroInmueble", { attrs: { panels: _vm.panels } })
                 ],
                 2
               )
@@ -37258,7 +37331,7 @@ var render = function() {
                   "div",
                   { staticClass: "filter-body" },
                   [
-                    _c("FiltroInmueble"),
+                    _c("FiltroInmueble", { attrs: { panels: _vm.panels } }),
                     _vm._v(" "),
                     _c(
                       "w-btn",
@@ -40882,10 +40955,6 @@ var render = function() {
                                     attrs: { icon: "upload-video", h: "137px" }
                                   }),
                                   _vm._v(" "),
-                                  _c("p", { staticClass: "text-center mt-5" }, [
-                                    _vm._v("Sube videos desde tu computadora")
-                                  ]),
-                                  _vm._v(" "),
                                   _c(
                                     "w-btn",
                                     {
@@ -40893,129 +40962,113 @@ var render = function() {
                                         color: "#57BCD1",
                                         dark: true,
                                         rounded: true,
-                                        small: true,
-                                        disabled:
-                                          _vm.form.videos.length >= 3
-                                            ? true
-                                            : false
+                                        small: true
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.selectVideo = !_vm.selectVideo
+                                        }
                                       }
                                     },
-                                    [
-                                      _c("p", [_vm._v("seleccionar videos")]),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        ref: "videoFile",
-                                        staticClass: "fileInput",
-                                        attrs: {
-                                          type: "file",
-                                          accept: ".mp4, .avi",
-                                          disabled:
-                                            _vm.form.videos.length >= 3
-                                              ? true
-                                              : false,
-                                          multiple: "multiple"
-                                        },
-                                        on: {
-                                          change: function($event) {
-                                            return _vm.addVideo()
-                                          }
-                                        }
-                                      })
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "text-center mt-5" }, [
-                                    _vm._v(
-                                      "\n                                            Formatos permitidos: JPG, JPEG, PNG\n                                            (Tamaño máximo: 5Mb)\n                                        "
-                                    )
-                                  ])
+                                    [_c("p", [_vm._v("seleccionar videos")])]
+                                  )
                                 ],
                                 1
                               ),
                               _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "preview" },
-                                [
-                                  _c(
-                                    "w-carousel",
-                                    {
-                                      staticClass: "preview-carousel",
-                                      attrs: {
-                                        items: _vm.carrouselItems,
-                                        pagination:
-                                          _vm.windowWidth >= 1024
-                                            ? false
-                                            : true,
-                                        navigation:
-                                          _vm.windowWidth >= 1024 ? true : false
-                                      }
-                                    },
-                                    _vm._l(_vm.form.videos, function(media, i) {
-                                      return _c(
-                                        "slide",
-                                        {
-                                          key: i,
-                                          staticClass: "preview-slide"
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "preview-item" },
-                                            [
-                                              _c(
-                                                "div",
-                                                {
-                                                  staticClass: "preview-source"
-                                                },
-                                                [
-                                                  _c(
-                                                    "video",
-                                                    {
-                                                      attrs: {
-                                                        autoplay: "",
-                                                        muted: ""
-                                                      },
-                                                      domProps: { muted: true }
-                                                    },
-                                                    [
-                                                      _c("source", {
-                                                        attrs: {
-                                                          src: media.url
-                                                        }
-                                                      })
-                                                    ]
-                                                  ),
-                                                  _vm._v(" "),
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "delete-icon",
-                                                      on: {
-                                                        click: function(
-                                                          $event
-                                                        ) {
-                                                          return _vm.removeVideo(
-                                                            media
-                                                          )
-                                                        }
-                                                      }
-                                                    },
-                                                    [_vm._v("×")]
+                              _vm.selectVideo
+                                ? _c("div", [
+                                    _c("p", { staticClass: "f-header" }, [
+                                      _vm._v("Enlace de video")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "flex flex-row flex-wrap"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "w-full px-2" },
+                                          [
+                                            _c("w-input", {
+                                              attrs: {
+                                                label: "Enlace de video",
+                                                placeholder:
+                                                  "Ejemplo: https://www.youtube.com/watch?v=uN5Cux5t0Ak"
+                                              },
+                                              model: {
+                                                value: _vm.form.link1,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "link1",
+                                                    $$v
                                                   )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    }),
-                                    1
-                                  )
-                                ],
-                                1
-                              )
+                                                },
+                                                expression: "form.link1"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "w-full px-2" },
+                                          [
+                                            _c("w-input", {
+                                              attrs: {
+                                                label: "Enlace de video",
+                                                placeholder:
+                                                  "Ejemplo: https://www.youtube.com/watch?v=uN5Cux5t0Ak"
+                                              },
+                                              model: {
+                                                value: _vm.form.link2,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "link2",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "form.link2"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "w-full px-2" },
+                                          [
+                                            _c("w-input", {
+                                              attrs: {
+                                                label: "Enlace de video",
+                                                placeholder:
+                                                  "Ejemplo: https://www.youtube.com/watch?v=uN5Cux5t0Ak"
+                                              },
+                                              model: {
+                                                value: _vm.form.link3,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "link3",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "form.link3"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                : _vm._e()
                             ]
                           )
                         ],

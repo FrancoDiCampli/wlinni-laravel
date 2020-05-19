@@ -1,9 +1,9 @@
 <template>
-    <!-- 
-        
+    <!--
+
         agregar-registrar-publicacion (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/edaef1db-8cea-4963-8887-edecec3db37f/agregar-registrar-publicacion-/)
         MB-agregar-registrar-publicacion (https://xd.adobe.com/view/b3577435-af55-46c5-4321-42f0fe99b140-c566/screen/039be02f-d3fc-497a-ab2d-d2f19a9dd66b/MB-agregar-registrar-publicacion-/)
-    
+
     -->
 
     <div class="nueva-publicacion">
@@ -685,34 +685,51 @@
                                     <w-card :shadow="false" class="upload-file-card">
                                         <div class="flex flex-col items-center">
                                             <w-icon icon="upload-video" h="137px"></w-icon>
-                                            <p
-                                                class="text-center mt-5"
-                                            >Sube videos desde tu computadora</p>
+                                            <!-- <p class="text-center mt-5">Sube videos desde tu computadora</p> -->
 
                                             <w-btn
                                                 color="#57BCD1"
                                                 :dark="true"
+                                                @click="selectVideo =!selectVideo"
                                                 :rounded="true"
                                                 :small="true"
-                                                :disabled="form.videos.length >= 3 ? true : false"
                                             >
                                                 <p>seleccionar videos</p>
-                                                <input
-                                                    class="fileInput"
-                                                    type="file"
-                                                    ref="videoFile"
-                                                    accept=".mp4, .avi"
-                                                    :disabled="form.videos.length >= 3 ? true : false"
-                                                    multiple="multiple"
-                                                    @change="addVideo()"
-                                                />
                                             </w-btn>
-                                            <p class="text-center mt-5">
+                                            <!-- <p class="text-center mt-5">
                                                 Formatos permitidos: JPG, JPEG, PNG
                                                 (Tamaño máximo: 5Mb)
-                                            </p>
+                                            </p>-->
                                         </div>
-                                        <div class="preview">
+
+                                        <div v-if="selectVideo">
+                                            <p class="f-header">Enlace de video</p>
+                                            <div class="flex flex-row flex-wrap">
+                                                <div class="w-full px-2">
+                                                    <w-input
+                                                        label="Enlace de video"
+                                                        placeholder="Ejemplo: https://www.youtube.com/watch?v=uN5Cux5t0Ak"
+                                                        v-model="form.link1"
+                                                    ></w-input>
+                                                </div>
+                                                <div class="w-full px-2">
+                                                    <w-input
+                                                        label="Enlace de video"
+                                                        placeholder="Ejemplo: https://www.youtube.com/watch?v=uN5Cux5t0Ak"
+                                                        v-model="form.link2"
+                                                    ></w-input>
+                                                </div>
+                                                <div class="w-full px-2">
+                                                    <w-input
+                                                        label="Enlace de video"
+                                                        placeholder="Ejemplo: https://www.youtube.com/watch?v=uN5Cux5t0Ak"
+                                                        v-model="form.link3"
+                                                    ></w-input>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="preview">
                                             <w-carousel
                                                 :items="carrouselItems"
                                                 :pagination="windowWidth >= 1024 ? false : true"
@@ -737,7 +754,7 @@
                                                     </div>
                                                 </slide>
                                             </w-carousel>
-                                        </div>
+                                        </div>-->
                                     </w-card>
                                 </div>
                             </div>
@@ -783,6 +800,7 @@ export default {
             photos: [],
             videos: []
         },
+        selectVideo: false,
         test: false,
         coordenadas: null,
         verDireccion: ""
