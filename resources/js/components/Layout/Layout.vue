@@ -89,9 +89,7 @@
                     <div class="flex-auto">
                         <div class="flex flex-row justify-end">
                             <div v-if="logged" class="mt-3">
-                                <UserLogged :barIcon="barBtn">
-                                    <template name="bars">asdf</template>
-                                </UserLogged>
+                                <UserLogged :barIcon="barBtn" @drawerClick="drawer = !drawer"></UserLogged>
                             </div>
                             <div v-else>
                                 <w-nav-btn
@@ -121,7 +119,12 @@
         </w-navbar>
 
         <!-- SIDENAV -->
-        <Drawer v-model="drawer"></Drawer>
+        <div v-if="logged">
+            <DrawerLogged v-model="drawer"></DrawerLogged>
+        </div>
+        <div v-else>
+            <Drawer v-model="drawer"></Drawer>
+        </div>
 
         <!-- PAGES -->
         <router-view></router-view>
@@ -183,6 +186,7 @@
 <script>
 import UserLogged from "./UserLogged";
 import Drawer from "./Drawer";
+import DrawerLogged from "./DrawerLogged";
 
 export default {
     data: () => ({
@@ -201,7 +205,8 @@ export default {
 
     components: {
         UserLogged,
-        Drawer
+        Drawer,
+        DrawerLogged
     },
 
     mounted() {

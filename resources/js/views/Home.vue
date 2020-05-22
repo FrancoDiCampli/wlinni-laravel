@@ -27,7 +27,7 @@
                             <h1 class="body bold white-text">Busqueda</h1>
                             <w-icon icon="map" h="17px"></w-icon>
                         </div>
-                        <p class="white-text mt-5">
+                        <p class="white-text mt-5 hidden md:block">
                             Atención!! Se filtraran las propiedades en el mapa
                             automáticamente se elija la condición
                         </p>
@@ -832,6 +832,9 @@ export default {
     .home {
         .home-container {
             padding: 128px 48px 0px 48px;
+            .home-title {
+                font-size: 30px;
+            }
         }
     }
 

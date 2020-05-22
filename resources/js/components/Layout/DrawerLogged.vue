@@ -109,7 +109,7 @@ export default {
     position: fixed;
     top: 0;
     right: 0px;
-    z-index: 99;
+    z-index: 999;
     height: 100%;
     width: 375px;
     background-color: $primary;

@@ -3426,6 +3426,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UserLogged__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UserLogged */ "./resources/js/components/Layout/UserLogged.vue");
 /* harmony import */ var _Drawer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Drawer */ "./resources/js/components/Layout/Drawer.vue");
+/* harmony import */ var _DrawerLogged__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DrawerLogged */ "./resources/js/components/Layout/DrawerLogged.vue");
 //
 //
 //
@@ -3608,6 +3609,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3637,7 +3642,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     UserLogged: _UserLogged__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Drawer: _Drawer__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Drawer: _Drawer__WEBPACK_IMPORTED_MODULE_1__["default"],
+    DrawerLogged: _DrawerLogged__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   mounted: function mounted() {
     this.currentPath = this.$router.currentRoute.path;
@@ -3682,7 +3688,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs */ "./node_modules/animejs/lib/anime.es.js");
-/* harmony import */ var _DrawerLogged_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DrawerLogged.vue */ "./resources/js/components/Layout/DrawerLogged.vue");
 //
 //
 //
@@ -3767,8 +3772,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3815,9 +3818,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: ["barIcon"],
-  components: {
-    DrawerLogged: _DrawerLogged_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  },
   mounted: function mounted() {
     var _this = this;
 
@@ -9931,7 +9931,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".drawer-logged {\n  position: fixed;\n  top: 0;\n  right: 0px;\n  z-index: 99;\n  height: 100%;\n  width: 375px;\n  background-color: #041e42;\n}\n.drawer-logged .drawer-content {\n  padding: 35px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.drawer-logged .drawer-content .drawer-close {\n  position: absolute;\n  top: 21px;\n  right: 21px;\n  font-size: 34px;\n  color: white;\n  font-weight: bold;\n  cursor: pointer;\n}\n.drawer-logged .drawer-content .avatar {\n  width: 94px;\n  height: 94px;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n.drawer-logged .drawer-content .drawer-divider {\n  width: 100%;\n  margin: 23px 0px;\n  border: 1px solid rgba(255, 255, 255, 0.66);\n}\n.drawer-logged .drawer-content .btn {\n  background-color: transparent !important;\n  font-weight: bold;\n  font-size: 21px;\n  color: white;\n  display: flex;\n  flex-direction: row;\n  margin: 0px !important;\n}\n.drawer-logged .drawer-content .btn .icon,\n.drawer-logged .drawer-content .btn p {\n  align-self: center;\n}\n.drawer-logged .drawer-content .btn .icon {\n  margin-right: 12px;\n}", ""]);
+exports.push([module.i, ".drawer-logged {\n  position: fixed;\n  top: 0;\n  right: 0px;\n  z-index: 999;\n  height: 100%;\n  width: 375px;\n  background-color: #041e42;\n}\n.drawer-logged .drawer-content {\n  padding: 35px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.drawer-logged .drawer-content .drawer-close {\n  position: absolute;\n  top: 21px;\n  right: 21px;\n  font-size: 34px;\n  color: white;\n  font-weight: bold;\n  cursor: pointer;\n}\n.drawer-logged .drawer-content .avatar {\n  width: 94px;\n  height: 94px;\n  border-radius: 50%;\n  overflow: hidden;\n  border: 2px solid #ff7500;\n}\n.drawer-logged .drawer-content .drawer-divider {\n  width: 100%;\n  margin: 23px 0px;\n  border: 1px solid rgba(255, 255, 255, 0.66);\n}\n.drawer-logged .drawer-content .btn {\n  background-color: transparent !important;\n  font-weight: bold;\n  font-size: 21px;\n  color: white;\n  display: flex;\n  flex-direction: row;\n  margin: 0px !important;\n}\n.drawer-logged .drawer-content .btn .icon,\n.drawer-logged .drawer-content .btn p {\n  align-self: center;\n}\n.drawer-logged .drawer-content .btn .icon {\n  margin-right: 12px;\n}", ""]);
 
 // exports
 
@@ -10045,7 +10045,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home .home-container {\n  padding: 165px 150px 0px 150px;\n}\n.home .home-container .home-title {\n  font-size: 55px;\n  font-weight: bold;\n  text-align: left;\n  color: white;\n}\n.home .banner-card.card:not(.active-state):not(:hover) {\n  background: transparent !important;\n}\n.home .banner-card.card:hover {\n  background-color: transparent !important;\n}\n.home .banner-card.card .card-text {\n  background-color: rgba(0, 0, 0, 0.66);\n  padding-right: 50px;\n  padding-left: 50px;\n}\n.home .banner-card.card .icon {\n  margin-left: 10px;\n}\n.home .parallax-tag {\n  position: absolute;\n  bottom: -86px;\n  left: 5%;\n  width: 90%;\n  background-color: #041e42;\n  border-top: 2px solid #a08629;\n  padding: 32px 64px;\n  border-radius: 0px 0px 15px 15px;\n}\n.home .home-fix {\n  border: 2px solid transparent;\n  margin-bottom: 128px;\n}\n.home .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n  margin: auto;\n}\n.home .home-item {\n  text-align: center;\n  padding: 50px;\n}\n.home .home-item .icon img {\n  margin: auto !important;\n}\n.home .agent-carousel .carousel {\n  width: 95%;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 48px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 48px !important;\n}\n.home .publi-banner {\n  background-image: url(\"/images/banners/2.png\");\n  text-align: center;\n}\n.home .graph-banner {\n  background-image: url(\"/images/banners/3.png\");\n}\n.home .publi-banner,\n.home .graph-banner {\n  background-size: cover;\n  background-position: center center;\n  padding: 85px 75px;\n}\n@media (max-width: 1024px) {\n.home .home-container {\n    padding: 165px 48px 0px 48px;\n}\n.home .home-container .home-title {\n    font-size: 45px;\n    font-weight: bold;\n    text-align: center;\n    color: white;\n}\n.parallax-tag {\n    bottom: -216px !important;\n    width: 95% !important;\n    left: 2.5% !important;\n}\n.home-fix {\n    margin-bottom: 250px !important;\n}\n}\n@media (max-width: 768px) {\n.home .home-container {\n    padding: 128px 48px 0px 48px;\n}\n.publi-banner {\n    background-position: top right !important;\n    padding-right: 12px !important;\n    padding-left: 12px !important;\n}\n.parallax-tag {\n    bottom: -190px !important;\n    left: 0 !important;\n    width: 100% !important;\n    border-top: none !important;\n}\n.home-fix {\n    margin-bottom: 300px !important;\n}\n}", ""]);
+exports.push([module.i, ".home .home-container {\n  padding: 165px 150px 0px 150px;\n}\n.home .home-container .home-title {\n  font-size: 55px;\n  font-weight: bold;\n  text-align: left;\n  color: white;\n}\n.home .banner-card.card:not(.active-state):not(:hover) {\n  background: transparent !important;\n}\n.home .banner-card.card:hover {\n  background-color: transparent !important;\n}\n.home .banner-card.card .card-text {\n  background-color: rgba(0, 0, 0, 0.66);\n  padding-right: 50px;\n  padding-left: 50px;\n}\n.home .banner-card.card .icon {\n  margin-left: 10px;\n}\n.home .parallax-tag {\n  position: absolute;\n  bottom: -86px;\n  left: 5%;\n  width: 90%;\n  background-color: #041e42;\n  border-top: 2px solid #a08629;\n  padding: 32px 64px;\n  border-radius: 0px 0px 15px 15px;\n}\n.home .home-fix {\n  border: 2px solid transparent;\n  margin-bottom: 128px;\n}\n.home .divider {\n  height: 0px;\n  width: 32px;\n  border: thin solid #a08629;\n  margin: auto;\n}\n.home .home-item {\n  text-align: center;\n  padding: 50px;\n}\n.home .home-item .icon img {\n  margin: auto !important;\n}\n.home .agent-carousel .carousel {\n  width: 95%;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation button {\n  padding: 0px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-prev {\n  margin-left: 48px !important;\n}\n.home .agent-carousel .carousel .VueCarousel .VueCarousel-navigation .VueCarousel-navigation-next {\n  margin-right: 48px !important;\n}\n.home .publi-banner {\n  background-image: url(\"/images/banners/2.png\");\n  text-align: center;\n}\n.home .graph-banner {\n  background-image: url(\"/images/banners/3.png\");\n}\n.home .publi-banner,\n.home .graph-banner {\n  background-size: cover;\n  background-position: center center;\n  padding: 85px 75px;\n}\n@media (max-width: 1024px) {\n.home .home-container {\n    padding: 165px 48px 0px 48px;\n}\n.home .home-container .home-title {\n    font-size: 45px;\n    font-weight: bold;\n    text-align: center;\n    color: white;\n}\n.parallax-tag {\n    bottom: -216px !important;\n    width: 95% !important;\n    left: 2.5% !important;\n}\n.home-fix {\n    margin-bottom: 250px !important;\n}\n}\n@media (max-width: 768px) {\n.home .home-container {\n    padding: 128px 48px 0px 48px;\n}\n.home .home-container .home-title {\n    font-size: 30px;\n}\n.publi-banner {\n    background-position: top right !important;\n    padding-right: 12px !important;\n    padding-left: 12px !important;\n}\n.parallax-tag {\n    bottom: -190px !important;\n    left: 0 !important;\n    width: 100% !important;\n    border-top: none !important;\n}\n.home-fix {\n    margin-bottom: 300px !important;\n}\n}", ""]);
 
 // exports
 
@@ -30604,12 +30604,14 @@ var render = function() {
                         "div",
                         { staticClass: "mt-3" },
                         [
-                          _c(
-                            "UserLogged",
-                            { attrs: { barIcon: _vm.barBtn } },
-                            [[_vm._v("asdf")]],
-                            2
-                          )
+                          _c("UserLogged", {
+                            attrs: { barIcon: _vm.barBtn },
+                            on: {
+                              drawerClick: function($event) {
+                                _vm.drawer = !_vm.drawer
+                              }
+                            }
+                          })
                         ],
                         1
                       )
@@ -30665,15 +30667,37 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("Drawer", {
-        model: {
-          value: _vm.drawer,
-          callback: function($$v) {
-            _vm.drawer = $$v
-          },
-          expression: "drawer"
-        }
-      }),
+      _vm.logged
+        ? _c(
+            "div",
+            [
+              _c("DrawerLogged", {
+                model: {
+                  value: _vm.drawer,
+                  callback: function($$v) {
+                    _vm.drawer = $$v
+                  },
+                  expression: "drawer"
+                }
+              })
+            ],
+            1
+          )
+        : _c(
+            "div",
+            [
+              _c("Drawer", {
+                model: {
+                  value: _vm.drawer,
+                  callback: function($$v) {
+                    _vm.drawer = $$v
+                  },
+                  expression: "drawer"
+                }
+              })
+            ],
+            1
+          ),
       _vm._v(" "),
       _c("router-view"),
       _vm._v(" "),
@@ -31129,7 +31153,7 @@ var render = function() {
                       attrs: { icon: true },
                       on: {
                         click: function($event) {
-                          _vm.drawer = true
+                          return _vm.$emit("drawerClick")
                         }
                       }
                     },
@@ -31146,19 +31170,8 @@ var render = function() {
                 1
               )
         ])
-      ]),
-      _vm._v(" "),
-      _c("DrawerLogged", {
-        model: {
-          value: _vm.drawer,
-          callback: function($$v) {
-            _vm.drawer = $$v
-          },
-          expression: "drawer"
-        }
-      })
-    ],
-    1
+      ])
+    ]
   )
 }
 var staticRenderFns = [
@@ -32074,11 +32087,15 @@ var render = function() {
                         1
                       ),
                       _vm._v(" "),
-                      _c("p", { staticClass: "white-text mt-5" }, [
-                        _vm._v(
-                          "\n                        Atención!! Se filtraran las propiedades en el mapa\n                        automáticamente se elija la condición\n                    "
-                        )
-                      ]),
+                      _c(
+                        "p",
+                        { staticClass: "white-text mt-5 hidden md:block" },
+                        [
+                          _vm._v(
+                            "\n                        Atención!! Se filtraran las propiedades en el mapa\n                        automáticamente se elija la condición\n                    "
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
                       _c(
                         "form",

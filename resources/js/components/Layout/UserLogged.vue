@@ -73,19 +73,17 @@
                     </transition>
                 </div>
                 <div v-else style="align-self: center;">
-                    <w-btn :icon="true" @click="drawer = true">
+                    <w-btn :icon="true" @click="$emit('drawerClick')">
                         <w-icon v-if="barIcon" :icon="barIcon" h="30px"></w-icon>
                     </w-btn>
                 </div>
             </div>
         </div>
-        <DrawerLogged v-model="drawer"></DrawerLogged>
     </div>
 </template>
 
 <script>
 import anime from "animejs";
-import DrawerLogged from "./DrawerLogged.vue";
 
 export default {
     data: () => ({
@@ -142,10 +140,6 @@ export default {
     }),
 
     props: ["barIcon"],
-
-    components: {
-        DrawerLogged
-    },
 
     mounted() {
         window.addEventListener("resize", () => {
