@@ -69,7 +69,7 @@ export default {
 
 .login {
     .login-container {
-        padding: 75px 0px;
+        padding: 75px;
         display: flex;
         justify-content: center;
         .login-card {
