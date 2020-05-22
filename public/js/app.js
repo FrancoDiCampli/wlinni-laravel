@@ -10159,7 +10159,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".login .login-container {\n  padding: 75px 150px;\n}\n.login .login-container .login-card {\n  display: flex !important;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  max-width: 982px;\n}\n.login .login-container .login-card .image,\n.login .login-container .login-card .card-text {\n  max-width: 50%;\n  height: 490px !important;\n  flex: 1 1 auto;\n}\n.login .login-container .login-card .card-text {\n  padding: 65px;\n}\n.login .login-link {\n  color: #000;\n  text-decoration: underline;\n  cursor: pointer;\n}\n@media (max-width: 1024px) {\n.login .login-container .login-card {\n    justify-content: center;\n}\n.login .login-container .login-card .image {\n    display: none;\n}\n.login .login-container .login-card .card-text {\n    max-width: 100% !important;\n    flex: 0 1 auto;\n    padding: 25px;\n}\n}\n@media (max-width: 768px) {\n.login .login-container {\n    padding: 15px;\n}\n}", ""]);
+exports.push([module.i, ".login .login-container {\n  padding: 75px 0px;\n  display: flex;\n  justify-content: center;\n}\n.login .login-container .login-card {\n  display: flex !important;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  max-width: 982px;\n}\n.login .login-container .login-card .image,\n.login .login-container .login-card .card-text {\n  max-width: 50%;\n  height: 490px !important;\n  flex: 1 1 auto;\n}\n.login .login-container .login-card .card-text {\n  padding: 65px;\n}\n.login .login-link {\n  color: #000;\n  text-decoration: underline;\n  cursor: pointer;\n}\n@media (max-width: 1024px) {\n.login .login-container .login-card {\n    justify-content: center;\n}\n.login .login-container .login-card .image {\n    display: none;\n}\n.login .login-container .login-card .card-text {\n    max-width: 100% !important;\n    flex: 0 1 auto;\n    padding: 25px;\n}\n}\n@media (max-width: 768px) {\n.login .login-container {\n    padding: 15px;\n}\n}", ""]);
 
 // exports
 
@@ -65009,8 +65009,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
+__webpack_require__(/*! C:\xampp\htdocs\projects\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\projects\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
 
 
 /***/ })
