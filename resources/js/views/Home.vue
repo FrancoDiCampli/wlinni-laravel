@@ -836,6 +836,15 @@ export default {
                 font-size: 30px;
             }
         }
+
+        .banner-card {
+            &.card {
+                .card-text {
+                    padding-right: 24px;
+                    padding-left: 24px;
+                }
+            }
+        }
     }
 
     .publi-banner {
