@@ -7,7 +7,7 @@
                     <div class="filter">
                         <div class="filter-header">filtros</div>
                         <div class="filter-body">
-                            <FiltrosMapa></FiltrosMapa>
+                            <FiltrosMapa :panels="panels"></FiltrosMapa>
                             <w-btn
                                 :fullwidth="true"
                                 color="secondary"
@@ -25,7 +25,7 @@
                                     <p class="caption bold white-text">FILTROS APLICADOS</p>
                                 </template>
 
-                                <FiltrosMapa></FiltrosMapa>
+                                <FiltrosMapa :panels="panels"></FiltrosMapa>
                             </w-card>
                         </div>
                         <h1 class="subtitle bold text-center md:text-right">Listado de Inmuebles</h1>
@@ -88,7 +88,58 @@ export default {
                 entrega: "Inmediata",
                 condicion: "Preventa en planos"
             }
-        ]
+        ],
+         panels: [
+      {
+        value: false,
+        name: "Tipo de Inmueble",
+        options: ["Departamento", "Casa", "Oficina"],
+        selectOption: null
+      },
+      {
+        value: false,
+        name: "Distrito / Ubicación",
+        options: ["San Isidro", "Miraflores", "Santiago de Surco", "La Molina"],
+        selectOption: null
+      },
+      {
+        value: false,
+        name: "Precio",
+        options: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"],
+        selectOption: null
+      },
+      {
+        value: false,
+        name: "Dormitorios",
+        options: ["Dormitorios 1", "Dormitorios 2", "Dormitorios 3"],
+        selectOption: null
+      },
+
+      {
+        value: false,
+        name: "Area Total (m2)",
+        options: ["Area 1", "Area 2", "Area 3"],
+        selectOption: null
+      },
+      {
+        value: false,
+        name: "Cocheras",
+        options: ["Cocheras 1", "Cocheras 2", "Cocheras 3"],
+        selectOption: null
+      },
+      {
+        value: false,
+        name: "Antigüedad",
+        options: ["Antigüedad 1", "Antigüedad 2", "Antigüedad 3"],
+        selectOption: null
+      },
+      {
+        value: false,
+        name: "Estado",
+        options: ["Estado 1", "Estado 2", "Estado 3"],
+        selectOption: null
+      }
+    ]
     }),
 
     computed: {

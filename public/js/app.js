@@ -7537,6 +7537,47 @@ __webpack_require__.r(__webpack_exports__);
         precio: "90,232",
         entrega: "Inmediata",
         condicion: "Preventa en planos"
+      }],
+      panels: [{
+        value: false,
+        name: "Tipo de Inmueble",
+        options: ["Departamento", "Casa", "Oficina"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Distrito / Ubicación",
+        options: ["San Isidro", "Miraflores", "Santiago de Surco", "La Molina"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Precio",
+        options: ["S/ 2500", "S/ 1500", "S/ 3550", "S/ 5400"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Dormitorios",
+        options: ["Dormitorios 1", "Dormitorios 2", "Dormitorios 3"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Area Total (m2)",
+        options: ["Area 1", "Area 2", "Area 3"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Cocheras",
+        options: ["Cocheras 1", "Cocheras 2", "Cocheras 3"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Antigüedad",
+        options: ["Antigüedad 1", "Antigüedad 2", "Antigüedad 3"],
+        selectOption: null
+      }, {
+        value: false,
+        name: "Estado",
+        options: ["Estado 1", "Estado 2", "Estado 3"],
+        selectOption: null
       }]
     };
   },
@@ -37123,7 +37164,7 @@ var render = function() {
                   "div",
                   { staticClass: "filter-body" },
                   [
-                    _c("FiltrosMapa"),
+                    _c("FiltrosMapa", { attrs: { panels: _vm.panels } }),
                     _vm._v(" "),
                     _c(
                       "w-btn",
@@ -37172,7 +37213,7 @@ var render = function() {
                               )
                             ]),
                             _vm._v(" "),
-                            _c("FiltrosMapa")
+                            _c("FiltrosMapa", { attrs: { panels: _vm.panels } })
                           ],
                           2
                         )
@@ -64933,8 +64974,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\proyectos\wlinii-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\proyectos\wlinii-laravel\resources\css\main.css */"./resources/css/main.css");
+__webpack_require__(/*! C:\xampp\htdocs\proyectos\wlinni-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\proyectos\wlinni-laravel\resources\css\main.css */"./resources/css/main.css");
 
 
 /***/ })
